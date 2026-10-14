@@ -1,0 +1,33 @@
+{
+ "name": "ty_num_both",
+ "material": {
+  "key": "TextMeshPro/Sprite@78921214",
+  "name": "TextMeshPro/Sprite",
+  "shader": "TextMeshPro/Sprite",
+  "floats": {
+   "_ColorMask": 15.0,
+   "_CullMode": 0.0,
+   "_Stencil": 0.0,
+   "_StencilComp": 8.0,
+   "_StencilOp": 0.0,
+   "_StencilReadMask": 255.0,
+   "_StencilWriteMask": 255.0,
+   "_UseUIAlphaClip": 0.0
+  },
+  "colors": {
+   "_ClipRect": [
+    -32767.0,
+    -32767.0,
+    32767.0,
+    32767.0
+   ],
+   "_Color": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ]
+  },
+  "keywords": []
+ }
+}

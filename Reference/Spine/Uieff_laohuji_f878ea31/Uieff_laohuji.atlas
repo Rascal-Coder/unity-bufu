@@ -1,0 +1,132 @@
+
+Uieff_laohuji.png
+size: 1671,874
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: true
+  xy: 1374, 158
+  size: 142, 138
+  orig: 144, 140
+  offset: 1, 1
+  index: -1
+6
+  rotate: true
+  xy: 1110, 148
+  size: 152, 144
+  orig: 152, 144
+  offset: 0, 0
+  index: -1
+laohuji_1
+  rotate: false
+  xy: 1469, 327
+  size: 110, 110
+  orig: 111, 111
+  offset: 0, 0
+  index: -1
+laohuji_2
+  rotate: true
+  xy: 1256, 6
+  size: 42, 116
+  orig: 44, 116
+  offset: 1, 0
+  index: -1
+laohuji_3
+  rotate: true
+  xy: 1110, 302
+  size: 570, 357
+  orig: 574, 361
+  offset: 2, 2
+  index: -1
+laohuji_4
+  rotate: true
+  xy: 2, 5
+  size: 867, 1106
+  orig: 869, 1108
+  offset: 1, 1
+  index: -1
+light_1
+  rotate: false
+  xy: 1110, 2
+  size: 144, 144
+  orig: 150, 150
+  offset: 3, 3
+  index: -1
+light_2
+  rotate: false
+  xy: 1581, 361
+  size: 76, 76
+  orig: 78, 78
+  offset: 1, 1
+  index: -1
+light_3
+  rotate: true
+  xy: 1256, 130
+  size: 170, 116
+  orig: 172, 118
+  offset: 1, 1
+  index: -1
+light_4
+  rotate: false
+  xy: 1434, 16
+  size: 135, 140
+  orig: 140, 143
+  offset: 4, 1
+  index: -1
+touzi_00
+  rotate: true
+  xy: 1514, 176
+  size: 72, 136
+  orig: 160, 200
+  offset: 43, 53
+  index: -1
+touzi_01
+  rotate: true
+  xy: 1514, 250
+  size: 75, 155
+  orig: 160, 200
+  offset: 39, 34
+  index: -1
+touzi_02
+  rotate: true
+  xy: 1256, 50
+  size: 78, 176
+  orig: 160, 200
+  offset: 39, 13
+  index: -1
+touzi_03
+  rotate: false
+  xy: 1571, 696
+  size: 77, 176
+  orig: 160, 200
+  offset: 40, 13
+  index: -1
+touzi_04
+  rotate: false
+  xy: 1571, 518
+  size: 73, 176
+  orig: 160, 200
+  offset: 45, 13
+  index: -1
+touzi_05
+  rotate: false
+  xy: 1469, 696
+  size: 77, 176
+  orig: 160, 200
+  offset: 41, 13
+  index: -1
+touzi_06
+  rotate: true
+  xy: 1469, 439
+  size: 77, 157
+  orig: 160, 200
+  offset: 40, 13
+  index: -1
+touzi_07
+  rotate: false
+  xy: 1469, 518
+  size: 72, 176
+  orig: 160, 200
+  offset: 43, 13
+  index: -1

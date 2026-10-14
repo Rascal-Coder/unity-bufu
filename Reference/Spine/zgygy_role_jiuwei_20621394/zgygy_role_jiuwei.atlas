@@ -1,0 +1,209 @@
+
+zgygy_role_jiuwei.png
+size: 788,527
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body_1_bei_jiuwei
+  rotate: false
+  xy: 2, 2
+  size: 115, 109
+  orig: 128, 120
+  offset: 0, 3
+  index: -1
+body_1_jiuwei
+  rotate: true
+  xy: 635, 248
+  size: 111, 125
+  orig: 120, 160
+  offset: 5, 22
+  index: -1
+body_tang_jiuwei
+  rotate: true
+  xy: 496, 357
+  size: 168, 137
+  orig: 168, 139
+  offset: 0, 1
+  index: -1
+eye_1_jiuwei
+  rotate: false
+  xy: 339, 150
+  size: 49, 30
+  orig: 50, 31
+  offset: 0, 1
+  index: -1
+eye_2_jiuwei
+  rotate: false
+  xy: 390, 151
+  size: 49, 29
+  orig: 50, 29
+  offset: 0, 0
+  index: -1
+hand_l_1_bei_jiuwei
+  rotate: false
+  xy: 451, 87
+  size: 49, 93
+  orig: 60, 120
+  offset: 6, 11
+  index: -1
+hand_l_1_jiuwei
+  rotate: true
+  xy: 502, 167
+  size: 55, 103
+  orig: 60, 130
+  offset: 5, 13
+  index: -1
+hand_l_2_jiuwei
+  rotate: true
+  xy: 543, 12
+  size: 75, 101
+  orig: 96, 102
+  offset: 8, 1
+  index: -1
+hand_r_1_bei_jiuwei
+  rotate: true
+  xy: 502, 89
+  size: 53, 97
+  orig: 60, 130
+  offset: 4, 16
+  index: -1
+hand_r_1_jiuwei
+  rotate: false
+  xy: 720, 49
+  size: 64, 93
+  orig: 70, 120
+  offset: 3, 14
+  index: -1
+hand_r_1_tang_jiuwei
+  rotate: true
+  xy: 646, 22
+  size: 35, 64
+  orig: 35, 64
+  offset: 0, 0
+  index: -1
+hand_r_2_bei_jiuwei
+  rotate: true
+  xy: 646, 59
+  size: 87, 72
+  orig: 88, 82
+  offset: 1, 10
+  index: -1
+head_1_bei_jiuwei
+  rotate: true
+  xy: 165, 149
+  size: 185, 172
+  orig: 200, 220
+  offset: 10, 47
+  index: -1
+head_1_jiuwei
+  rotate: true
+  xy: 145, 336
+  size: 189, 184
+  orig: 200, 220
+  offset: 8, 36
+  index: -1
+head_tang_jiuwei
+  rotate: false
+  xy: 451, 2
+  size: 90, 83
+  orig: 91, 84
+  offset: 0, 1
+  index: -1
+heart_jiuwei
+  rotate: false
+  xy: 615, 148
+  size: 105, 98
+  orig: 107, 100
+  offset: 1, 1
+  index: -1
+leg_l_1_jiuwei
+  rotate: true
+  xy: 502, 294
+  size: 61, 112
+  orig: 80, 120
+  offset: 14, 1
+  index: -1
+leg_l_bei_jiuwei
+  rotate: false
+  xy: 119, 5
+  size: 59, 106
+  orig: 76, 120
+  offset: 0, 6
+  index: -1
+leg_r_1_jiuwei
+  rotate: false
+  xy: 722, 144
+  size: 64, 102
+  orig: 70, 110
+  offset: 1, 0
+  index: -1
+leg_r_bei_jiuwei
+  rotate: true
+  xy: 502, 224
+  size: 68, 111
+  orig: 80, 120
+  offset: 9, 3
+  index: -1
+mouth_tang_jiuwei
+  rotate: true
+  xy: 165, 114
+  size: 33, 21
+  orig: 33, 21
+  offset: 0, 0
+  index: -1
+shadow_jiuwei
+  rotate: true
+  xy: 353, 12
+  size: 136, 96
+  orig: 136, 96
+  offset: 0, 0
+  index: -1
+weiba_l_bei_jiuwei
+  rotate: false
+  xy: 635, 361
+  size: 148, 164
+  orig: 170, 176
+  offset: 14, 6
+  index: -1
+weiba_l_jiuwei
+  rotate: true
+  xy: 331, 353
+  size: 172, 163
+  orig: 190, 180
+  offset: 8, 9
+  index: -1
+weiba_m_bei_jiuwei
+  rotate: true
+  xy: 2, 113
+  size: 202, 161
+  orig: 210, 176
+  offset: 4, 10
+  index: -1
+weiba_m_jiuwei
+  rotate: true
+  xy: 2, 317
+  size: 208, 141
+  orig: 220, 150
+  offset: 5, 5
+  index: -1
+weiba_r_bei_jiuwei
+  rotate: true
+  xy: 339, 182
+  size: 169, 161
+  orig: 180, 170
+  offset: 3, 5
+  index: -1
+weiba_r_jiuwei
+  rotate: true
+  xy: 188, 6
+  size: 141, 163
+  orig: 160, 170
+  offset: 12, 4
+  index: -1
+z_tang_jiuwei
+  rotate: true
+  xy: 601, 99
+  size: 47, 40
+  orig: 47, 40
+  offset: 0, 0
+  index: -1

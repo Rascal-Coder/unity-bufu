@@ -1,0 +1,130 @@
+{
+  "skeleton": {
+    "hash": "bVodHPCP7hWHW2kRdaJ3dg4KZxQ",
+    "spine": "3.8.75",
+    "x": -208,
+    "y": -19.78,
+    "width": 416,
+    "height": 671,
+    "fps": 60,
+    "images": "./images/",
+    "audio": ""
+  },
+  "bones": [
+    {
+      "name": "root"
+    },
+    {
+      "name": "bone",
+      "parent": "root"
+    },
+    {
+      "name": "2",
+      "parent": "root",
+      "y": 333.43
+    }
+  ],
+  "slots": [
+    {
+      "name": "1",
+      "bone": "bone",
+      "attachment": "1"
+    },
+    {
+      "name": "2",
+      "bone": "2",
+      "attachment": "2"
+    }
+  ],
+  "skins": [
+    {
+      "name": "default",
+      "attachments": {
+        "1": {
+          "1": {
+            "y": 315.72,
+            "width": 416,
+            "height": 671
+          }
+        },
+        "2": {
+          "2": {
+            "y": -17.71,
+            "width": 358,
+            "height": 616
+          }
+        }
+      }
+    }
+  ],
+  "animations": {
+    "effect": {
+      "slots": {
+        "2": {
+          "color": [
+            {
+              "color": "ffffff00"
+            },
+            {
+              "time": 0.0833,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 0.1667,
+              "color": "ffffffff"
+            },
+            {
+              "time": 0.3333,
+              "color": "ffffff00"
+            }
+          ]
+        },
+        "1": {
+          "color": [
+            {
+              "time": 0.0833,
+              "color": "ffffff00"
+            },
+            {
+              "time": 0.25,
+              "color": "ffffffff",
+              "curve": "stepped"
+            },
+            {
+              "time": 0.3333,
+              "color": "ffffffff"
+            },
+            {
+              "time": 0.5,
+              "color": "ffffff00"
+            }
+          ],
+          "attachment": [
+            {
+              "name": null
+            },
+            {
+              "time": 0.0833,
+              "name": "1"
+            }
+          ]
+        }
+      },
+      "bones": {
+        "2": {
+          "scale": [
+            {
+              "time": 0.0833
+            },
+            {
+              "time": 0.3333,
+              "x": 1.337,
+              "y": 1.086
+            }
+          ]
+        }
+      }
+    }
+  }
+}

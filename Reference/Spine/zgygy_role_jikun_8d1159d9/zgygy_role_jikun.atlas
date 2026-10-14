@@ -1,0 +1,153 @@
+
+zgygy_role_jikun.png
+size: 1159,224
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body_1_bei_jikun
+  rotate: false
+  xy: 1055, 12
+  size: 101, 105
+  orig: 128, 110
+  offset: 13, 2
+  index: -1
+body_1_jikun
+  rotate: true
+  xy: 943, 16
+  size: 101, 110
+  orig: 120, 120
+  offset: 9, 8
+  index: -1
+body_2_bei_jikun
+  rotate: false
+  xy: 968, 119
+  size: 117, 103
+  orig: 128, 110
+  offset: 6, 4
+  index: -1
+body_2_jikun
+  rotate: false
+  xy: 830, 16
+  size: 111, 108
+  orig: 120, 120
+  offset: 2, 10
+  index: -1
+body_tang_jikun
+  rotate: false
+  xy: 685, 82
+  size: 143, 140
+  orig: 160, 180
+  offset: 10, 23
+  index: -1
+hand_l_1_bei_jikun
+  rotate: true
+  xy: 111, 5
+  size: 52, 93
+  orig: 53, 93
+  offset: 1, 0
+  index: -1
+hand_l_1_jikun
+  rotate: true
+  xy: 2, 6
+  size: 51, 107
+  orig: 51, 108
+  offset: 0, 1
+  index: -1
+hand_r_1_bei_jikun
+  rotate: true
+  xy: 685, 24
+  size: 56, 100
+  orig: 56, 100
+  offset: 0, 0
+  index: -1
+hand_r_1_jikun
+  rotate: true
+  xy: 409, 2
+  size: 66, 93
+  orig: 70, 93
+  offset: 2, 0
+  index: -1
+head_1_bei
+  rotate: false
+  xy: 518, 66
+  size: 165, 156
+  orig: 180, 180
+  offset: 7, 24
+  index: -1
+head_1_jikun
+  rotate: false
+  xy: 346, 70
+  size: 170, 152
+  orig: 180, 180
+  offset: 8, 25
+  index: -1
+head_2_bei_jikun
+  rotate: false
+  xy: 173, 70
+  size: 171, 152
+  orig: 180, 180
+  offset: 7, 24
+  index: -1
+head_2_jikun
+  rotate: false
+  xy: 2, 59
+  size: 169, 163
+  orig: 180, 180
+  offset: 7, 12
+  index: -1
+leg_l_1_jikun
+  rotate: false
+  xy: 1087, 121
+  size: 70, 101
+  orig: 74, 104
+  offset: 2, 2
+  index: -1
+leg_l_bei_jikun
+  rotate: true
+  xy: 206, 4
+  size: 64, 100
+  orig: 64, 100
+  offset: 0, 0
+  index: -1
+leg_r_1_jikun
+  rotate: true
+  xy: 504, 4
+  size: 60, 86
+  orig: 64, 100
+  offset: 1, 7
+  index: -1
+leg_r_1_tang_jikun
+  rotate: false
+  xy: 592, 16
+  size: 42, 48
+  orig: 42, 48
+  offset: 0, 0
+  index: -1
+leg_r_bei_jikun
+  rotate: true
+  xy: 308, 2
+  size: 66, 99
+  orig: 74, 104
+  offset: 8, 3
+  index: -1
+mouth_tang_jikun
+  rotate: true
+  xy: 787, 29
+  size: 51, 40
+  orig: 51, 40
+  offset: 0, 0
+  index: -1
+shadow_jikun
+  rotate: false
+  xy: 830, 126
+  size: 136, 96
+  orig: 136, 96
+  offset: 0, 0
+  index: -1
+z_tang_jikun
+  rotate: false
+  xy: 636, 24
+  size: 47, 40
+  orig: 47, 40
+  offset: 0, 0
+  index: -1

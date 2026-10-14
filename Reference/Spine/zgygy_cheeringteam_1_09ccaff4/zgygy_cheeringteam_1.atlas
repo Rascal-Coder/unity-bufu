@@ -1,0 +1,76 @@
+
+zgygy_cheeringteam_1.png
+size: 203,468
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body_1
+  rotate: false
+  xy: 2, 107
+  size: 133, 128
+  orig: 140, 160
+  offset: 4, 18
+  index: -1
+eye_1
+  rotate: false
+  xy: 150, 327
+  size: 49, 30
+  orig: 50, 31
+  offset: 0, 1
+  index: -1
+eye_3
+  rotate: false
+  xy: 140, 218
+  size: 60, 19
+  orig: 61, 19
+  offset: 0, 0
+  index: -1
+hand_l_1
+  rotate: false
+  xy: 150, 359
+  size: 51, 107
+  orig: 56, 110
+  offset: 2, 2
+  index: -1
+hand_r_1
+  rotate: false
+  xy: 137, 119
+  size: 64, 97
+  orig: 70, 100
+  offset: 2, 3
+  index: -1
+head_1
+  rotate: false
+  xy: 2, 335
+  size: 146, 131
+  orig: 146, 131
+  offset: 0, 0
+  index: -1
+huaqiu
+  rotate: false
+  xy: 2, 2
+  size: 102, 103
+  orig: 103, 103
+  offset: 1, 0
+  index: -1
+leg_l_1
+  rotate: false
+  xy: 106, 4
+  size: 70, 101
+  orig: 74, 104
+  offset: 2, 2
+  index: -1
+leg_r_1
+  rotate: false
+  xy: 140, 239
+  size: 60, 86
+  orig: 64, 100
+  offset: 1, 7
+  index: -1
+shadow
+  rotate: false
+  xy: 2, 237
+  size: 136, 96
+  orig: 136, 96
+  offset: 0, 0
+  index: -1

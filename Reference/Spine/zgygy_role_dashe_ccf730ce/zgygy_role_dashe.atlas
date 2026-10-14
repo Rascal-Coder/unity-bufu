@@ -1,0 +1,153 @@
+
+zgygy_role_dashe.png
+size: 252,896
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body_1_bei_dashe
+  rotate: false
+  xy: 2, 225
+  size: 115, 108
+  orig: 128, 110
+  offset: 5, 2
+  index: -1
+body_1_dashe
+  rotate: true
+  xy: 2, 115
+  size: 108, 112
+  orig: 120, 120
+  offset: 7, 7
+  index: -1
+eye_1_dashe
+  rotate: true
+  xy: 140, 325
+  size: 57, 21
+  orig: 57, 22
+  offset: 0, 0
+  index: -1
+hand_can_1_dashe
+  rotate: false
+  xy: 119, 209
+  size: 59, 114
+  orig: 60, 116
+  offset: 1, 1
+  index: -1
+hand_can_2_dashe
+  rotate: false
+  xy: 192, 768
+  size: 54, 126
+  orig: 56, 127
+  offset: 1, 1
+  index: -1
+hand_l_1_bei_dashe
+  rotate: true
+  xy: 106, 7
+  size: 52, 103
+  orig: 60, 120
+  offset: 6, 5
+  index: -1
+hand_l_1_dashe
+  rotate: false
+  xy: 192, 651
+  size: 54, 115
+  orig: 60, 130
+  offset: 3, 4
+  index: -1
+hand_r_1_bei_dashe
+  rotate: false
+  xy: 192, 540
+  size: 55, 109
+  orig: 60, 130
+  offset: 2, 5
+  index: -1
+hand_r_1_dashe
+  rotate: true
+  xy: 2, 56
+  size: 57, 102
+  orig: 70, 120
+  offset: 12, 6
+  index: -1
+hand_tang_dashe
+  rotate: false
+  xy: 116, 122
+  size: 133, 85
+  orig: 133, 86
+  offset: 0, 0
+  index: -1
+head_1_bei_dashe
+  rotate: false
+  xy: 2, 433
+  size: 180, 153
+  orig: 200, 180
+  offset: 5, 25
+  index: -1
+head_1_dashe
+  rotate: false
+  xy: 2, 742
+  size: 188, 152
+  orig: 200, 180
+  offset: 10, 25
+  index: -1
+head_tang_dashe
+  rotate: false
+  xy: 2, 588
+  size: 188, 152
+  orig: 200, 180
+  offset: 10, 25
+  index: -1
+leg_l_1_dashe
+  rotate: false
+  xy: 184, 426
+  size: 61, 112
+  orig: 80, 120
+  offset: 14, 1
+  index: -1
+leg_l_bei_dashe
+  rotate: true
+  xy: 116, 61
+  size: 59, 106
+  orig: 76, 120
+  offset: 0, 6
+  index: -1
+leg_r_1_dashe
+  rotate: false
+  xy: 180, 209
+  size: 64, 102
+  orig: 70, 110
+  offset: 1, 0
+  index: -1
+leg_r_bei_dashe
+  rotate: false
+  xy: 182, 313
+  size: 68, 111
+  orig: 80, 120
+  offset: 9, 3
+  index: -1
+mouth_tang_dashe
+  rotate: true
+  xy: 224, 87
+  size: 33, 21
+  orig: 33, 21
+  offset: 0, 0
+  index: -1
+pao_tang_dashe
+  rotate: false
+  xy: 2, 2
+  size: 69, 52
+  orig: 69, 52
+  offset: 0, 0
+  index: -1
+shadow_dashe
+  rotate: false
+  xy: 2, 335
+  size: 136, 96
+  orig: 136, 96
+  offset: 0, 0
+  index: -1
+z_tang_dashe
+  rotate: true
+  xy: 140, 384
+  size: 47, 40
+  orig: 47, 40
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,1893 @@
+{
+  "skeleton": {
+    "hash": "Zq0O2dkHaKDIr25th/lxzEiyx8c",
+    "spine": "3.8.75",
+    "x": -58.45,
+    "y": -51.9,
+    "width": 126,
+    "height": 126,
+    "fps": 60,
+    "images": "./images/",
+    "audio": ""
+  },
+  "bones": [
+    {
+      "name": "root",
+      "scaleX": 0.5,
+      "scaleY": 0.5
+    },
+    {
+      "name": "dice",
+      "parent": "root",
+      "scaleX": 2,
+      "scaleY": 2
+    },
+    {
+      "name": "smoke",
+      "parent": "root",
+      "scaleX": 4,
+      "scaleY": 4
+    },
+    {
+      "name": "num",
+      "parent": "root",
+      "scaleX": 2,
+      "scaleY": 2
+    }
+  ],
+  "slots": [
+    {
+      "name": "zgygy_roleskill_smoke_dushen_02",
+      "bone": "smoke"
+    },
+    {
+      "name": "1",
+      "bone": "dice",
+      "attachment": "1"
+    },
+    {
+      "name": "2",
+      "bone": "dice",
+      "color": "8542ffff",
+      "blend": "additive"
+    },
+    {
+      "name": "num_1",
+      "bone": "num"
+    }
+  ],
+  "skins": [
+    {
+      "name": "default",
+      "attachments": {
+        "zgygy_roleskill_smoke_dushen_02": {
+          "zgygy_roleskill_smoke_dushen_02": {
+            "x": 4.22,
+            "y": 3.71,
+            "width": 179,
+            "height": 157
+          },
+          "zgygy_roleskill_smoke_dushen_03": {
+            "x": 4.22,
+            "y": 3.71,
+            "width": 179,
+            "height": 157
+          },
+          "zgygy_roleskill_smoke_dushen_04": {
+            "x": 4.22,
+            "y": 3.71,
+            "width": 179,
+            "height": 157
+          },
+          "zgygy_roleskill_smoke_dushen_05": {
+            "x": 4.22,
+            "y": 3.71,
+            "width": 179,
+            "height": 157
+          },
+          "zgygy_roleskill_smoke_dushen_06": {
+            "x": 4.22,
+            "y": 3.71,
+            "width": 179,
+            "height": 157
+          },
+          "zgygy_roleskill_smoke_dushen_07": {
+            "x": 4.22,
+            "y": 3.71,
+            "width": 179,
+            "height": 157
+          },
+          "zgygy_roleskill_smoke_dushen_08": {
+            "x": 4.22,
+            "y": 3.71,
+            "width": 179,
+            "height": 157
+          },
+          "zgygy_roleskill_smoke_dushen_09": {
+            "x": 4.22,
+            "y": 3.71,
+            "width": 179,
+            "height": 157
+          },
+          "zgygy_roleskill_smoke_dushen_10": {
+            "x": 4.22,
+            "y": 3.71,
+            "width": 179,
+            "height": 157
+          },
+          "zgygy_roleskill_smoke_dushen_11": {
+            "x": 4.22,
+            "y": 3.71,
+            "width": 179,
+            "height": 157
+          },
+          "zgygy_roleskill_smoke_dushen_12": {
+            "x": 4.22,
+            "y": 3.71,
+            "width": 179,
+            "height": 157
+          },
+          "zgygy_roleskill_smoke_dushen_13": {
+            "x": 4.22,
+            "y": 3.71,
+            "width": 179,
+            "height": 157
+          }
+        },
+        "1": {
+          "1": {
+            "x": 4.55,
+            "y": 11.1,
+            "width": 126,
+            "height": 126
+          },
+          "2": {
+            "x": 4.55,
+            "y": 11.1,
+            "width": 126,
+            "height": 126
+          },
+          "3": {
+            "x": 4.55,
+            "y": 11.1,
+            "width": 126,
+            "height": 126
+          },
+          "4": {
+            "x": 4.55,
+            "y": 11.1,
+            "width": 126,
+            "height": 126
+          },
+          "5": {
+            "x": 4.55,
+            "y": 11.1,
+            "width": 126,
+            "height": 126
+          },
+          "6": {
+            "x": 4.55,
+            "y": 11.1,
+            "width": 126,
+            "height": 126
+          },
+          "7": {
+            "x": 4.55,
+            "y": 11.1,
+            "width": 126,
+            "height": 126
+          },
+          "8": {
+            "x": 4.55,
+            "y": 11.1,
+            "width": 126,
+            "height": 126
+          },
+          "9": {
+            "x": 4.55,
+            "y": 11.1,
+            "width": 126,
+            "height": 126
+          },
+          "10": {
+            "x": 4.55,
+            "y": 11.1,
+            "width": 126,
+            "height": 126
+          },
+          "11": {
+            "x": 4.55,
+            "y": 11.1,
+            "width": 126,
+            "height": 126
+          }
+        },
+        "2": {
+          "1": {
+            "x": 4.55,
+            "y": 11.1,
+            "width": 126,
+            "height": 126
+          },
+          "2": {
+            "x": 4.55,
+            "y": 11.1,
+            "width": 126,
+            "height": 126
+          },
+          "3": {
+            "x": 4.55,
+            "y": 11.1,
+            "width": 126,
+            "height": 126
+          },
+          "4": {
+            "x": 4.55,
+            "y": 11.1,
+            "width": 126,
+            "height": 126
+          },
+          "5": {
+            "x": 4.55,
+            "y": 11.1,
+            "width": 126,
+            "height": 126
+          },
+          "6": {
+            "x": 4.55,
+            "y": 11.1,
+            "width": 126,
+            "height": 126
+          },
+          "7": {
+            "x": 4.55,
+            "y": 11.1,
+            "width": 126,
+            "height": 126
+          },
+          "8": {
+            "x": 4.55,
+            "y": 11.1,
+            "width": 126,
+            "height": 126
+          },
+          "9": {
+            "x": 4.55,
+            "y": 11.1,
+            "width": 126,
+            "height": 126
+          },
+          "10": {
+            "x": 4.55,
+            "y": 11.1,
+            "width": 126,
+            "height": 126
+          },
+          "11": {
+            "x": 4.55,
+            "y": 11.1,
+            "width": 126,
+            "height": 126
+          }
+        },
+        "num_1": {
+          "num_1": {
+            "width": 74,
+            "height": 84
+          },
+          "num_2": {
+            "width": 74,
+            "height": 84
+          },
+          "num_3": {
+            "width": 74,
+            "height": 84
+          },
+          "num_4": {
+            "width": 74,
+            "height": 84
+          },
+          "num_5": {
+            "width": 74,
+            "height": 84
+          },
+          "num_6": {
+            "width": 74,
+            "height": 84
+          }
+        }
+      }
+    }
+  ],
+  "animations": {
+    "idle": {
+      "slots": {
+        "2": {
+          "attachment": [
+            {
+              "name": "1"
+            },
+            {
+              "time": 0.0333,
+              "name": "2"
+            },
+            {
+              "time": 0.0667,
+              "name": "3"
+            },
+            {
+              "time": 0.1,
+              "name": "4"
+            },
+            {
+              "time": 0.1333,
+              "name": "5"
+            },
+            {
+              "time": 0.1667,
+              "name": "6"
+            },
+            {
+              "time": 0.2,
+              "name": "7"
+            },
+            {
+              "time": 0.2333,
+              "name": "8"
+            },
+            {
+              "time": 0.2667,
+              "name": "9"
+            },
+            {
+              "time": 0.3,
+              "name": "10"
+            },
+            {
+              "time": 0.3333,
+              "name": "11"
+            },
+            {
+              "time": 0.3667,
+              "name": "1"
+            },
+            {
+              "time": 0.4,
+              "name": "2"
+            },
+            {
+              "time": 0.4333,
+              "name": "3"
+            }
+          ]
+        },
+        "1": {
+          "attachment": [
+            {
+              "time": 0.0333,
+              "name": "2"
+            },
+            {
+              "time": 0.0667,
+              "name": "3"
+            },
+            {
+              "time": 0.1,
+              "name": "4"
+            },
+            {
+              "time": 0.1333,
+              "name": "5"
+            },
+            {
+              "time": 0.1667,
+              "name": "6"
+            },
+            {
+              "time": 0.2,
+              "name": "7"
+            },
+            {
+              "time": 0.2333,
+              "name": "8"
+            },
+            {
+              "time": 0.2667,
+              "name": "9"
+            },
+            {
+              "time": 0.3,
+              "name": "10"
+            },
+            {
+              "time": 0.3333,
+              "name": "11"
+            },
+            {
+              "time": 0.3667,
+              "name": "1"
+            },
+            {
+              "time": 0.4,
+              "name": "2"
+            },
+            {
+              "time": 0.4333,
+              "name": "3"
+            }
+          ]
+        }
+      }
+    },
+    "num_1": {
+      "slots": {
+        "zgygy_roleskill_smoke_dushen_02": {
+          "attachment": [
+            {
+              "time": 0.1667,
+              "name": "zgygy_roleskill_smoke_dushen_02"
+            },
+            {
+              "time": 0.2,
+              "name": "zgygy_roleskill_smoke_dushen_03"
+            },
+            {
+              "time": 0.2333,
+              "name": "zgygy_roleskill_smoke_dushen_04"
+            },
+            {
+              "time": 0.2667,
+              "name": "zgygy_roleskill_smoke_dushen_05"
+            },
+            {
+              "time": 0.3,
+              "name": "zgygy_roleskill_smoke_dushen_06"
+            },
+            {
+              "time": 0.3333,
+              "name": "zgygy_roleskill_smoke_dushen_07"
+            },
+            {
+              "time": 0.3667,
+              "name": "zgygy_roleskill_smoke_dushen_08"
+            },
+            {
+              "time": 0.4,
+              "name": "zgygy_roleskill_smoke_dushen_09"
+            },
+            {
+              "time": 0.4333,
+              "name": "zgygy_roleskill_smoke_dushen_10"
+            },
+            {
+              "time": 0.4667,
+              "name": "zgygy_roleskill_smoke_dushen_11"
+            },
+            {
+              "time": 0.5,
+              "name": "zgygy_roleskill_smoke_dushen_12"
+            },
+            {
+              "time": 0.5333,
+              "name": "zgygy_roleskill_smoke_dushen_13"
+            },
+            {
+              "time": 0.55,
+              "name": null
+            }
+          ]
+        },
+        "num_1": {
+          "color": [
+            {
+              "time": 0.8333,
+              "color": "ffffffff"
+            },
+            {
+              "time": 1,
+              "color": "ffffff00"
+            }
+          ],
+          "attachment": [
+            {
+              "time": 0.5,
+              "name": "num_1"
+            }
+          ]
+        },
+        "2": {
+          "color": [
+            {
+              "time": 0.1,
+              "color": "8441ffff"
+            },
+            {
+              "time": 0.25,
+              "color": "ffffff00"
+            }
+          ],
+          "attachment": [
+            {
+              "name": "6"
+            },
+            {
+              "time": 0.0333,
+              "name": "7"
+            },
+            {
+              "time": 0.0667,
+              "name": "8"
+            },
+            {
+              "time": 0.1,
+              "name": "9"
+            },
+            {
+              "time": 0.1333,
+              "name": "10"
+            },
+            {
+              "time": 0.1667,
+              "name": "11"
+            },
+            {
+              "time": 0.2,
+              "name": "1"
+            },
+            {
+              "time": 0.2333,
+              "name": "2"
+            },
+            {
+              "time": 0.2667,
+              "name": "3"
+            },
+            {
+              "time": 0.5,
+              "name": null
+            }
+          ]
+        },
+        "1": {
+          "color": [
+            {
+              "color": "ffffffea",
+              "curve": "stepped"
+            },
+            {
+              "time": 0.8333,
+              "color": "ffffffea"
+            },
+            {
+              "time": 1,
+              "color": "ffffff00"
+            }
+          ],
+          "attachment": [
+            {
+              "name": "6"
+            },
+            {
+              "time": 0.0333,
+              "name": "7"
+            },
+            {
+              "time": 0.0667,
+              "name": "8"
+            },
+            {
+              "time": 0.1,
+              "name": "9"
+            },
+            {
+              "time": 0.1333,
+              "name": "10"
+            },
+            {
+              "time": 0.1667,
+              "name": "11"
+            },
+            {
+              "time": 0.2,
+              "name": "1"
+            },
+            {
+              "time": 0.2333,
+              "name": "2"
+            },
+            {
+              "time": 0.2667,
+              "name": "3"
+            },
+            {
+              "time": 0.3,
+              "name": "4"
+            },
+            {
+              "time": 0.3333,
+              "name": "5"
+            },
+            {
+              "time": 0.3667,
+              "name": "6"
+            },
+            {
+              "time": 0.4,
+              "name": "7"
+            },
+            {
+              "time": 0.4333,
+              "name": "8"
+            },
+            {
+              "time": 0.4667,
+              "name": "9"
+            },
+            {
+              "time": 0.5,
+              "name": null
+            }
+          ]
+        }
+      },
+      "bones": {
+        "dice": {
+          "translate": [
+            {
+              "time": 0.0833
+            },
+            {
+              "time": 0.1667,
+              "x": -10.58,
+              "y": 304.37
+            },
+            {
+              "time": 0.3333,
+              "x": -10.58,
+              "y": 363.84
+            },
+            {
+              "time": 0.5
+            }
+          ]
+        }
+      },
+      "drawOrder": [
+        {
+          "time": 0.4833,
+          "offsets": [
+            {
+              "slot": "zgygy_roleskill_smoke_dushen_02",
+              "offset": 2
+            }
+          ]
+        }
+      ]
+    },
+    "num_2": {
+      "slots": {
+        "zgygy_roleskill_smoke_dushen_02": {
+          "attachment": [
+            {
+              "time": 0.1667,
+              "name": "zgygy_roleskill_smoke_dushen_02"
+            },
+            {
+              "time": 0.2,
+              "name": "zgygy_roleskill_smoke_dushen_03"
+            },
+            {
+              "time": 0.2333,
+              "name": "zgygy_roleskill_smoke_dushen_04"
+            },
+            {
+              "time": 0.2667,
+              "name": "zgygy_roleskill_smoke_dushen_05"
+            },
+            {
+              "time": 0.3,
+              "name": "zgygy_roleskill_smoke_dushen_06"
+            },
+            {
+              "time": 0.3333,
+              "name": "zgygy_roleskill_smoke_dushen_07"
+            },
+            {
+              "time": 0.3667,
+              "name": "zgygy_roleskill_smoke_dushen_08"
+            },
+            {
+              "time": 0.4,
+              "name": "zgygy_roleskill_smoke_dushen_09"
+            },
+            {
+              "time": 0.4333,
+              "name": "zgygy_roleskill_smoke_dushen_10"
+            },
+            {
+              "time": 0.4667,
+              "name": "zgygy_roleskill_smoke_dushen_11"
+            },
+            {
+              "time": 0.5,
+              "name": "zgygy_roleskill_smoke_dushen_12"
+            },
+            {
+              "time": 0.5333,
+              "name": "zgygy_roleskill_smoke_dushen_13"
+            },
+            {
+              "time": 0.55,
+              "name": null
+            }
+          ]
+        },
+        "num_1": {
+          "color": [
+            {
+              "time": 0.8333,
+              "color": "ffffffff"
+            },
+            {
+              "time": 1,
+              "color": "ffffff00"
+            }
+          ],
+          "attachment": [
+            {
+              "time": 0.5,
+              "name": "num_2"
+            }
+          ]
+        },
+        "2": {
+          "color": [
+            {
+              "time": 0.1,
+              "color": "8441ffff"
+            },
+            {
+              "time": 0.25,
+              "color": "ffffff00"
+            }
+          ],
+          "attachment": [
+            {
+              "name": "6"
+            },
+            {
+              "time": 0.0333,
+              "name": "7"
+            },
+            {
+              "time": 0.0667,
+              "name": "8"
+            },
+            {
+              "time": 0.1,
+              "name": "9"
+            },
+            {
+              "time": 0.1333,
+              "name": "10"
+            },
+            {
+              "time": 0.1667,
+              "name": "11"
+            },
+            {
+              "time": 0.2,
+              "name": "1"
+            },
+            {
+              "time": 0.2333,
+              "name": "2"
+            },
+            {
+              "time": 0.2667,
+              "name": "3"
+            },
+            {
+              "time": 0.5,
+              "name": null
+            }
+          ]
+        },
+        "1": {
+          "color": [
+            {
+              "color": "ffffffea",
+              "curve": "stepped"
+            },
+            {
+              "time": 0.8333,
+              "color": "ffffffea"
+            },
+            {
+              "time": 1,
+              "color": "ffffff00"
+            }
+          ],
+          "attachment": [
+            {
+              "name": "6"
+            },
+            {
+              "time": 0.0333,
+              "name": "7"
+            },
+            {
+              "time": 0.0667,
+              "name": "8"
+            },
+            {
+              "time": 0.1,
+              "name": "9"
+            },
+            {
+              "time": 0.1333,
+              "name": "10"
+            },
+            {
+              "time": 0.1667,
+              "name": "11"
+            },
+            {
+              "time": 0.2,
+              "name": "1"
+            },
+            {
+              "time": 0.2333,
+              "name": "2"
+            },
+            {
+              "time": 0.2667,
+              "name": "3"
+            },
+            {
+              "time": 0.3,
+              "name": "4"
+            },
+            {
+              "time": 0.3333,
+              "name": "5"
+            },
+            {
+              "time": 0.3667,
+              "name": "6"
+            },
+            {
+              "time": 0.4,
+              "name": "7"
+            },
+            {
+              "time": 0.4333,
+              "name": "8"
+            },
+            {
+              "time": 0.4667,
+              "name": "9"
+            },
+            {
+              "time": 0.5,
+              "name": null
+            }
+          ]
+        }
+      },
+      "bones": {
+        "dice": {
+          "translate": [
+            {
+              "time": 0.0833
+            },
+            {
+              "time": 0.1667,
+              "x": -10.58,
+              "y": 304.37
+            },
+            {
+              "time": 0.3333,
+              "x": -10.58,
+              "y": 363.84
+            },
+            {
+              "time": 0.5
+            }
+          ]
+        }
+      },
+      "drawOrder": [
+        {
+          "time": 0.4833,
+          "offsets": [
+            {
+              "slot": "zgygy_roleskill_smoke_dushen_02",
+              "offset": 2
+            }
+          ]
+        }
+      ]
+    },
+    "num_3": {
+      "slots": {
+        "zgygy_roleskill_smoke_dushen_02": {
+          "attachment": [
+            {
+              "time": 0.1667,
+              "name": "zgygy_roleskill_smoke_dushen_02"
+            },
+            {
+              "time": 0.2,
+              "name": "zgygy_roleskill_smoke_dushen_03"
+            },
+            {
+              "time": 0.2333,
+              "name": "zgygy_roleskill_smoke_dushen_04"
+            },
+            {
+              "time": 0.2667,
+              "name": "zgygy_roleskill_smoke_dushen_05"
+            },
+            {
+              "time": 0.3,
+              "name": "zgygy_roleskill_smoke_dushen_06"
+            },
+            {
+              "time": 0.3333,
+              "name": "zgygy_roleskill_smoke_dushen_07"
+            },
+            {
+              "time": 0.3667,
+              "name": "zgygy_roleskill_smoke_dushen_08"
+            },
+            {
+              "time": 0.4,
+              "name": "zgygy_roleskill_smoke_dushen_09"
+            },
+            {
+              "time": 0.4333,
+              "name": "zgygy_roleskill_smoke_dushen_10"
+            },
+            {
+              "time": 0.4667,
+              "name": "zgygy_roleskill_smoke_dushen_11"
+            },
+            {
+              "time": 0.5,
+              "name": "zgygy_roleskill_smoke_dushen_12"
+            },
+            {
+              "time": 0.5333,
+              "name": "zgygy_roleskill_smoke_dushen_13"
+            },
+            {
+              "time": 0.55,
+              "name": null
+            }
+          ]
+        },
+        "num_1": {
+          "color": [
+            {
+              "time": 0.8333,
+              "color": "ffffffff"
+            },
+            {
+              "time": 1,
+              "color": "ffffff00"
+            }
+          ],
+          "attachment": [
+            {
+              "time": 0.5,
+              "name": "num_3"
+            }
+          ]
+        },
+        "2": {
+          "color": [
+            {
+              "time": 0.1,
+              "color": "8441ffff"
+            },
+            {
+              "time": 0.25,
+              "color": "ffffff00"
+            }
+          ],
+          "attachment": [
+            {
+              "name": "6"
+            },
+            {
+              "time": 0.0333,
+              "name": "7"
+            },
+            {
+              "time": 0.0667,
+              "name": "8"
+            },
+            {
+              "time": 0.1,
+              "name": "9"
+            },
+            {
+              "time": 0.1333,
+              "name": "10"
+            },
+            {
+              "time": 0.1667,
+              "name": "11"
+            },
+            {
+              "time": 0.2,
+              "name": "1"
+            },
+            {
+              "time": 0.2333,
+              "name": "2"
+            },
+            {
+              "time": 0.2667,
+              "name": "3"
+            },
+            {
+              "time": 0.5,
+              "name": null
+            }
+          ]
+        },
+        "1": {
+          "color": [
+            {
+              "color": "ffffffea",
+              "curve": "stepped"
+            },
+            {
+              "time": 0.8333,
+              "color": "ffffffea"
+            },
+            {
+              "time": 1,
+              "color": "ffffff00"
+            }
+          ],
+          "attachment": [
+            {
+              "name": "6"
+            },
+            {
+              "time": 0.0333,
+              "name": "7"
+            },
+            {
+              "time": 0.0667,
+              "name": "8"
+            },
+            {
+              "time": 0.1,
+              "name": "9"
+            },
+            {
+              "time": 0.1333,
+              "name": "10"
+            },
+            {
+              "time": 0.1667,
+              "name": "11"
+            },
+            {
+              "time": 0.2,
+              "name": "1"
+            },
+            {
+              "time": 0.2333,
+              "name": "2"
+            },
+            {
+              "time": 0.2667,
+              "name": "3"
+            },
+            {
+              "time": 0.3,
+              "name": "4"
+            },
+            {
+              "time": 0.3333,
+              "name": "5"
+            },
+            {
+              "time": 0.3667,
+              "name": "6"
+            },
+            {
+              "time": 0.4,
+              "name": "7"
+            },
+            {
+              "time": 0.4333,
+              "name": "8"
+            },
+            {
+              "time": 0.4667,
+              "name": "9"
+            },
+            {
+              "time": 0.5,
+              "name": null
+            }
+          ]
+        }
+      },
+      "bones": {
+        "dice": {
+          "translate": [
+            {
+              "time": 0.0833
+            },
+            {
+              "time": 0.1667,
+              "x": -10.58,
+              "y": 304.37
+            },
+            {
+              "time": 0.3333,
+              "x": -10.58,
+              "y": 363.84
+            },
+            {
+              "time": 0.5
+            }
+          ]
+        }
+      },
+      "drawOrder": [
+        {
+          "time": 0.4833,
+          "offsets": [
+            {
+              "slot": "zgygy_roleskill_smoke_dushen_02",
+              "offset": 2
+            }
+          ]
+        }
+      ]
+    },
+    "num_4": {
+      "slots": {
+        "zgygy_roleskill_smoke_dushen_02": {
+          "attachment": [
+            {
+              "time": 0.1667,
+              "name": "zgygy_roleskill_smoke_dushen_02"
+            },
+            {
+              "time": 0.2,
+              "name": "zgygy_roleskill_smoke_dushen_03"
+            },
+            {
+              "time": 0.2333,
+              "name": "zgygy_roleskill_smoke_dushen_04"
+            },
+            {
+              "time": 0.2667,
+              "name": "zgygy_roleskill_smoke_dushen_05"
+            },
+            {
+              "time": 0.3,
+              "name": "zgygy_roleskill_smoke_dushen_06"
+            },
+            {
+              "time": 0.3333,
+              "name": "zgygy_roleskill_smoke_dushen_07"
+            },
+            {
+              "time": 0.3667,
+              "name": "zgygy_roleskill_smoke_dushen_08"
+            },
+            {
+              "time": 0.4,
+              "name": "zgygy_roleskill_smoke_dushen_09"
+            },
+            {
+              "time": 0.4333,
+              "name": "zgygy_roleskill_smoke_dushen_10"
+            },
+            {
+              "time": 0.4667,
+              "name": "zgygy_roleskill_smoke_dushen_11"
+            },
+            {
+              "time": 0.5,
+              "name": "zgygy_roleskill_smoke_dushen_12"
+            },
+            {
+              "time": 0.5333,
+              "name": "zgygy_roleskill_smoke_dushen_13"
+            },
+            {
+              "time": 0.55,
+              "name": null
+            }
+          ]
+        },
+        "num_1": {
+          "color": [
+            {
+              "time": 0.8333,
+              "color": "ffffffff"
+            },
+            {
+              "time": 1,
+              "color": "ffffff00"
+            }
+          ],
+          "attachment": [
+            {
+              "time": 0.5,
+              "name": "num_4"
+            }
+          ]
+        },
+        "2": {
+          "color": [
+            {
+              "time": 0.1,
+              "color": "8441ffff"
+            },
+            {
+              "time": 0.25,
+              "color": "ffffff00"
+            }
+          ],
+          "attachment": [
+            {
+              "name": "6"
+            },
+            {
+              "time": 0.0333,
+              "name": "7"
+            },
+            {
+              "time": 0.0667,
+              "name": "8"
+            },
+            {
+              "time": 0.1,
+              "name": "9"
+            },
+            {
+              "time": 0.1333,
+              "name": "10"
+            },
+            {
+              "time": 0.1667,
+              "name": "11"
+            },
+            {
+              "time": 0.2,
+              "name": "1"
+            },
+            {
+              "time": 0.2333,
+              "name": "2"
+            },
+            {
+              "time": 0.2667,
+              "name": "3"
+            },
+            {
+              "time": 0.5,
+              "name": null
+            }
+          ]
+        },
+        "1": {
+          "color": [
+            {
+              "color": "ffffffea",
+              "curve": "stepped"
+            },
+            {
+              "time": 0.8333,
+              "color": "ffffffea"
+            },
+            {
+              "time": 1,
+              "color": "ffffff00"
+            }
+          ],
+          "attachment": [
+            {
+              "name": "6"
+            },
+            {
+              "time": 0.0333,
+              "name": "7"
+            },
+            {
+              "time": 0.0667,
+              "name": "8"
+            },
+            {
+              "time": 0.1,
+              "name": "9"
+            },
+            {
+              "time": 0.1333,
+              "name": "10"
+            },
+            {
+              "time": 0.1667,
+              "name": "11"
+            },
+            {
+              "time": 0.2,
+              "name": "1"
+            },
+            {
+              "time": 0.2333,
+              "name": "2"
+            },
+            {
+              "time": 0.2667,
+              "name": "3"
+            },
+            {
+              "time": 0.3,
+              "name": "4"
+            },
+            {
+              "time": 0.3333,
+              "name": "5"
+            },
+            {
+              "time": 0.3667,
+              "name": "6"
+            },
+            {
+              "time": 0.4,
+              "name": "7"
+            },
+            {
+              "time": 0.4333,
+              "name": "8"
+            },
+            {
+              "time": 0.4667,
+              "name": "9"
+            },
+            {
+              "time": 0.5,
+              "name": null
+            }
+          ]
+        }
+      },
+      "bones": {
+        "dice": {
+          "translate": [
+            {
+              "time": 0.0833
+            },
+            {
+              "time": 0.1667,
+              "x": -10.58,
+              "y": 304.37
+            },
+            {
+              "time": 0.3333,
+              "x": -10.58,
+              "y": 363.84
+            },
+            {
+              "time": 0.5
+            }
+          ]
+        }
+      },
+      "drawOrder": [
+        {
+          "time": 0.4833,
+          "offsets": [
+            {
+              "slot": "zgygy_roleskill_smoke_dushen_02",
+              "offset": 2
+            }
+          ]
+        }
+      ]
+    },
+    "num_5": {
+      "slots": {
+        "zgygy_roleskill_smoke_dushen_02": {
+          "attachment": [
+            {
+              "time": 0.1667,
+              "name": "zgygy_roleskill_smoke_dushen_02"
+            },
+            {
+              "time": 0.2,
+              "name": "zgygy_roleskill_smoke_dushen_03"
+            },
+            {
+              "time": 0.2333,
+              "name": "zgygy_roleskill_smoke_dushen_04"
+            },
+            {
+              "time": 0.2667,
+              "name": "zgygy_roleskill_smoke_dushen_05"
+            },
+            {
+              "time": 0.3,
+              "name": "zgygy_roleskill_smoke_dushen_06"
+            },
+            {
+              "time": 0.3333,
+              "name": "zgygy_roleskill_smoke_dushen_07"
+            },
+            {
+              "time": 0.3667,
+              "name": "zgygy_roleskill_smoke_dushen_08"
+            },
+            {
+              "time": 0.4,
+              "name": "zgygy_roleskill_smoke_dushen_09"
+            },
+            {
+              "time": 0.4333,
+              "name": "zgygy_roleskill_smoke_dushen_10"
+            },
+            {
+              "time": 0.4667,
+              "name": "zgygy_roleskill_smoke_dushen_11"
+            },
+            {
+              "time": 0.5,
+              "name": "zgygy_roleskill_smoke_dushen_12"
+            },
+            {
+              "time": 0.5333,
+              "name": "zgygy_roleskill_smoke_dushen_13"
+            },
+            {
+              "time": 0.55,
+              "name": null
+            }
+          ]
+        },
+        "num_1": {
+          "color": [
+            {
+              "time": 0.8333,
+              "color": "ffffffff"
+            },
+            {
+              "time": 1,
+              "color": "ffffff00"
+            }
+          ],
+          "attachment": [
+            {
+              "time": 0.5,
+              "name": "num_5"
+            }
+          ]
+        },
+        "2": {
+          "color": [
+            {
+              "time": 0.1,
+              "color": "8441ffff"
+            },
+            {
+              "time": 0.25,
+              "color": "ffffff00"
+            }
+          ],
+          "attachment": [
+            {
+              "name": "6"
+            },
+            {
+              "time": 0.0333,
+              "name": "7"
+            },
+            {
+              "time": 0.0667,
+              "name": "8"
+            },
+            {
+              "time": 0.1,
+              "name": "9"
+            },
+            {
+              "time": 0.1333,
+              "name": "10"
+            },
+            {
+              "time": 0.1667,
+              "name": "11"
+            },
+            {
+              "time": 0.2,
+              "name": "1"
+            },
+            {
+              "time": 0.2333,
+              "name": "2"
+            },
+            {
+              "time": 0.2667,
+              "name": "3"
+            },
+            {
+              "time": 0.5,
+              "name": null
+            }
+          ]
+        },
+        "1": {
+          "color": [
+            {
+              "color": "ffffffea",
+              "curve": "stepped"
+            },
+            {
+              "time": 0.8333,
+              "color": "ffffffea"
+            },
+            {
+              "time": 1,
+              "color": "ffffff00"
+            }
+          ],
+          "attachment": [
+            {
+              "name": "6"
+            },
+            {
+              "time": 0.0333,
+              "name": "7"
+            },
+            {
+              "time": 0.0667,
+              "name": "8"
+            },
+            {
+              "time": 0.1,
+              "name": "9"
+            },
+            {
+              "time": 0.1333,
+              "name": "10"
+            },
+            {
+              "time": 0.1667,
+              "name": "11"
+            },
+            {
+              "time": 0.2,
+              "name": "1"
+            },
+            {
+              "time": 0.2333,
+              "name": "2"
+            },
+            {
+              "time": 0.2667,
+              "name": "3"
+            },
+            {
+              "time": 0.3,
+              "name": "4"
+            },
+            {
+              "time": 0.3333,
+              "name": "5"
+            },
+            {
+              "time": 0.3667,
+              "name": "6"
+            },
+            {
+              "time": 0.4,
+              "name": "7"
+            },
+            {
+              "time": 0.4333,
+              "name": "8"
+            },
+            {
+              "time": 0.4667,
+              "name": "9"
+            },
+            {
+              "time": 0.5,
+              "name": null
+            }
+          ]
+        }
+      },
+      "bones": {
+        "dice": {
+          "translate": [
+            {
+              "time": 0.0833
+            },
+            {
+              "time": 0.1667,
+              "x": -10.58,
+              "y": 304.37
+            },
+            {
+              "time": 0.3333,
+              "x": -10.58,
+              "y": 363.84
+            },
+            {
+              "time": 0.5
+            }
+          ]
+        }
+      },
+      "drawOrder": [
+        {
+          "time": 0.4833,
+          "offsets": [
+            {
+              "slot": "zgygy_roleskill_smoke_dushen_02",
+              "offset": 2
+            }
+          ]
+        }
+      ]
+    },
+    "num_6": {
+      "slots": {
+        "zgygy_roleskill_smoke_dushen_02": {
+          "attachment": [
+            {
+              "time": 0.1667,
+              "name": "zgygy_roleskill_smoke_dushen_02"
+            },
+            {
+              "time": 0.2,
+              "name": "zgygy_roleskill_smoke_dushen_03"
+            },
+            {
+              "time": 0.2333,
+              "name": "zgygy_roleskill_smoke_dushen_04"
+            },
+            {
+              "time": 0.2667,
+              "name": "zgygy_roleskill_smoke_dushen_05"
+            },
+            {
+              "time": 0.3,
+              "name": "zgygy_roleskill_smoke_dushen_06"
+            },
+            {
+              "time": 0.3333,
+              "name": "zgygy_roleskill_smoke_dushen_07"
+            },
+            {
+              "time": 0.3667,
+              "name": "zgygy_roleskill_smoke_dushen_08"
+            },
+            {
+              "time": 0.4,
+              "name": "zgygy_roleskill_smoke_dushen_09"
+            },
+            {
+              "time": 0.4333,
+              "name": "zgygy_roleskill_smoke_dushen_10"
+            },
+            {
+              "time": 0.4667,
+              "name": "zgygy_roleskill_smoke_dushen_11"
+            },
+            {
+              "time": 0.5,
+              "name": "zgygy_roleskill_smoke_dushen_12"
+            },
+            {
+              "time": 0.5333,
+              "name": "zgygy_roleskill_smoke_dushen_13"
+            },
+            {
+              "time": 0.55,
+              "name": null
+            }
+          ]
+        },
+        "num_1": {
+          "color": [
+            {
+              "time": 0.8333,
+              "color": "ffffffff"
+            },
+            {
+              "time": 1,
+              "color": "ffffff00"
+            }
+          ],
+          "attachment": [
+            {
+              "time": 0.5,
+              "name": "num_6"
+            }
+          ]
+        },
+        "2": {
+          "color": [
+            {
+              "time": 0.1,
+              "color": "8441ffff"
+            },
+            {
+              "time": 0.25,
+              "color": "ffffff00"
+            }
+          ],
+          "attachment": [
+            {
+              "name": "6"
+            },
+            {
+              "time": 0.0333,
+              "name": "7"
+            },
+            {
+              "time": 0.0667,
+              "name": "8"
+            },
+            {
+              "time": 0.1,
+              "name": "9"
+            },
+            {
+              "time": 0.1333,
+              "name": "10"
+            },
+            {
+              "time": 0.1667,
+              "name": "11"
+            },
+            {
+              "time": 0.2,
+              "name": "1"
+            },
+            {
+              "time": 0.2333,
+              "name": "2"
+            },
+            {
+              "time": 0.2667,
+              "name": "3"
+            },
+            {
+              "time": 0.5,
+              "name": null
+            }
+          ]
+        },
+        "1": {
+          "color": [
+            {
+              "color": "ffffffea",
+              "curve": "stepped"
+            },
+            {
+              "time": 0.8333,
+              "color": "ffffffea"
+            },
+            {
+              "time": 1,
+              "color": "ffffff00"
+            }
+          ],
+          "attachment": [
+            {
+              "name": "6"
+            },
+            {
+              "time": 0.0333,
+              "name": "7"
+            },
+            {
+              "time": 0.0667,
+              "name": "8"
+            },
+            {
+              "time": 0.1,
+              "name": "9"
+            },
+            {
+              "time": 0.1333,
+              "name": "10"
+            },
+            {
+              "time": 0.1667,
+              "name": "11"
+            },
+            {
+              "time": 0.2,
+              "name": "1"
+            },
+            {
+              "time": 0.2333,
+              "name": "2"
+            },
+            {
+              "time": 0.2667,
+              "name": "3"
+            },
+            {
+              "time": 0.3,
+              "name": "4"
+            },
+            {
+              "time": 0.3333,
+              "name": "5"
+            },
+            {
+              "time": 0.3667,
+              "name": "6"
+            },
+            {
+              "time": 0.4,
+              "name": "7"
+            },
+            {
+              "time": 0.4333,
+              "name": "8"
+            },
+            {
+              "time": 0.4667,
+              "name": "9"
+            },
+            {
+              "time": 0.5,
+              "name": null
+            }
+          ]
+        }
+      },
+      "bones": {
+        "dice": {
+          "translate": [
+            {
+              "time": 0.0833
+            },
+            {
+              "time": 0.1667,
+              "x": -10.58,
+              "y": 304.37
+            },
+            {
+              "time": 0.3333,
+              "x": -10.58,
+              "y": 363.84
+            },
+            {
+              "time": 0.5
+            }
+          ]
+        }
+      },
+      "drawOrder": [
+        {
+          "time": 0.4833,
+          "offsets": [
+            {
+              "slot": "zgygy_roleskill_smoke_dushen_02",
+              "offset": 2
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

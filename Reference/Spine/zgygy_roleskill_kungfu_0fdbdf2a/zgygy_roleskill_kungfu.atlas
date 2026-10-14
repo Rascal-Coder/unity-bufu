@@ -1,0 +1,83 @@
+
+zgygy_roleskill_kungfu.png
+size: 735,348
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+kungfu_smoke_01
+  rotate: false
+  xy: 625, 112
+  size: 108, 118
+  orig: 170, 179
+  offset: 25, 39
+  index: -1
+kungfu_smoke_02
+  rotate: false
+  xy: 487, 61
+  size: 136, 136
+  orig: 170, 179
+  offset: 14, 29
+  index: -1
+kungfu_smoke_03
+  rotate: false
+  xy: 339, 199
+  size: 147, 147
+  orig: 170, 179
+  offset: 11, 23
+  index: -1
+kungfu_smoke_04
+  rotate: false
+  xy: 330, 11
+  size: 155, 159
+  orig: 170, 179
+  offset: 8, 15
+  index: -1
+kungfu_smoke_05
+  rotate: true
+  xy: 2, 4
+  size: 163, 168
+  orig: 170, 179
+  offset: 4, 8
+  index: -1
+kungfu_smoke_06
+  rotate: false
+  xy: 170, 172
+  size: 167, 174
+  orig: 170, 179
+  offset: 2, 4
+  index: -1
+kungfu_smoke_07
+  rotate: false
+  xy: 2, 169
+  size: 166, 177
+  orig: 170, 179
+  offset: 1, 0
+  index: -1
+kungfu_smoke_08
+  rotate: false
+  xy: 172, 4
+  size: 156, 166
+  orig: 170, 179
+  offset: 1, 10
+  index: -1
+zhang_1
+  rotate: true
+  xy: 607, 232
+  size: 114, 119
+  orig: 114, 119
+  offset: 0, 0
+  index: -1
+zhang_2
+  rotate: false
+  xy: 488, 221
+  size: 117, 125
+  orig: 117, 125
+  offset: 0, 0
+  index: -1
+zhang_3
+  rotate: false
+  xy: 625, 2
+  size: 100, 108
+  orig: 100, 108
+  offset: 0, 0
+  index: -1

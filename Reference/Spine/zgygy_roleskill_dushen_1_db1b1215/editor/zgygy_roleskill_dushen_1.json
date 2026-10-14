@@ -1,0 +1,714 @@
+{
+  "skeleton": {
+    "hash": "mgFQbyus03etGaX2sozFRSab4Rg",
+    "spine": "3.8.75",
+    "x": -212.69,
+    "y": -191.08,
+    "width": 455.4,
+    "height": 455.4,
+    "fps": 60,
+    "images": "./images/",
+    "audio": ""
+  },
+  "bones": [
+    {
+      "name": "root",
+      "scaleX": 0.5,
+      "scaleY": 0.5
+    },
+    {
+      "name": "dice2",
+      "parent": "root",
+      "scaleX": 6.6,
+      "scaleY": 6.6
+    },
+    {
+      "name": "tuowei",
+      "parent": "root",
+      "x": -36.83,
+      "scaleX": 8,
+      "scaleY": 8
+    }
+  ],
+  "slots": [
+    {
+      "name": "3",
+      "bone": "dice2",
+      "color": "debfecff",
+      "attachment": "1"
+    },
+    {
+      "name": "skill_dushen_1_00",
+      "bone": "tuowei"
+    },
+    {
+      "name": "4",
+      "bone": "dice2",
+      "color": "8542ffff",
+      "blend": "additive"
+    }
+  ],
+  "skins": [
+    {
+      "name": "default",
+      "attachments": {
+        "skill_dushen_1_00": {
+          "skill_dushen_1_00": {
+            "x": -70.12,
+            "width": 184,
+            "height": 115
+          },
+          "skill_dushen_1_01": {
+            "x": -70.12,
+            "width": 184,
+            "height": 115
+          },
+          "skill_dushen_1_02": {
+            "x": -70.12,
+            "width": 184,
+            "height": 115
+          },
+          "skill_dushen_1_03": {
+            "x": -70.12,
+            "width": 184,
+            "height": 115
+          },
+          "skill_dushen_1_04": {
+            "x": -70.12,
+            "width": 184,
+            "height": 115
+          },
+          "skill_dushen_1_05": {
+            "x": -70.12,
+            "width": 184,
+            "height": 115
+          },
+          "skill_dushen_1_06": {
+            "x": -70.12,
+            "width": 184,
+            "height": 115
+          },
+          "skill_dushen_1_07": {
+            "x": -70.12,
+            "width": 184,
+            "height": 115
+          },
+          "skill_dushen_1_08": {
+            "x": -70.12,
+            "width": 184,
+            "height": 115
+          },
+          "skill_dushen_1_09": {
+            "x": -70.12,
+            "width": 184,
+            "height": 115
+          },
+          "skill_dushen_1_10": {
+            "x": -70.12,
+            "width": 184,
+            "height": 115
+          }
+        },
+        "3": {
+          "1": {
+            "x": 4.55,
+            "y": 11.1,
+            "width": 138,
+            "height": 138
+          },
+          "2": {
+            "x": 4.55,
+            "y": 11.1,
+            "width": 138,
+            "height": 138
+          },
+          "3": {
+            "x": 4.55,
+            "y": 11.1,
+            "width": 138,
+            "height": 138
+          },
+          "4": {
+            "x": 4.55,
+            "y": 11.1,
+            "width": 138,
+            "height": 138
+          },
+          "5": {
+            "x": 4.55,
+            "y": 11.1,
+            "width": 138,
+            "height": 138
+          },
+          "6": {
+            "x": 4.55,
+            "y": 11.1,
+            "width": 138,
+            "height": 138
+          },
+          "7": {
+            "x": 4.55,
+            "y": 11.1,
+            "width": 138,
+            "height": 138
+          },
+          "8": {
+            "x": 4.55,
+            "y": 11.1,
+            "width": 138,
+            "height": 138
+          },
+          "9": {
+            "x": 4.55,
+            "y": 11.1,
+            "width": 138,
+            "height": 138
+          },
+          "10": {
+            "x": 4.55,
+            "y": 11.1,
+            "width": 138,
+            "height": 138
+          },
+          "11": {
+            "x": 4.55,
+            "y": 11.1,
+            "width": 138,
+            "height": 138
+          }
+        },
+        "4": {
+          "1": {
+            "x": 4.55,
+            "y": 11.1,
+            "width": 138,
+            "height": 138
+          },
+          "2": {
+            "x": 4.55,
+            "y": 11.1,
+            "width": 138,
+            "height": 138
+          },
+          "3": {
+            "x": 4.55,
+            "y": 11.1,
+            "width": 138,
+            "height": 138
+          },
+          "4": {
+            "x": 4.55,
+            "y": 11.1,
+            "width": 138,
+            "height": 138
+          },
+          "5": {
+            "x": 4.55,
+            "y": 11.1,
+            "width": 138,
+            "height": 138
+          },
+          "6": {
+            "x": 4.55,
+            "y": 11.1,
+            "width": 138,
+            "height": 138
+          },
+          "7": {
+            "x": 4.55,
+            "y": 11.1,
+            "width": 138,
+            "height": 138
+          },
+          "8": {
+            "x": 4.55,
+            "y": 11.1,
+            "width": 138,
+            "height": 138
+          },
+          "9": {
+            "x": 4.55,
+            "y": 11.1,
+            "width": 138,
+            "height": 138
+          },
+          "10": {
+            "x": 4.55,
+            "y": 11.1,
+            "width": 138,
+            "height": 138
+          },
+          "11": {
+            "x": 4.55,
+            "y": 11.1,
+            "width": 138,
+            "height": 138
+          }
+        }
+      }
+    }
+  ],
+  "animations": {
+    "effect": {
+      "slots": {
+        "4": {
+          "color": [
+            {
+              "color": "8542ffff"
+            },
+            {
+              "time": 0.1667,
+              "color": "8442ff64"
+            },
+            {
+              "time": 0.3333,
+              "color": "8542ffff"
+            },
+            {
+              "time": 0.5,
+              "color": "8442ff64"
+            },
+            {
+              "time": 0.6667,
+              "color": "8542ffff"
+            },
+            {
+              "time": 0.8333,
+              "color": "8442ff64"
+            },
+            {
+              "time": 1,
+              "color": "8542ffff"
+            }
+          ],
+          "attachment": [
+            {
+              "name": "1"
+            },
+            {
+              "time": 0.0333,
+              "name": "2"
+            },
+            {
+              "time": 0.0667,
+              "name": "3"
+            },
+            {
+              "time": 0.1,
+              "name": "4"
+            },
+            {
+              "time": 0.1333,
+              "name": "5"
+            },
+            {
+              "time": 0.1667,
+              "name": "6"
+            },
+            {
+              "time": 0.2,
+              "name": "7"
+            },
+            {
+              "time": 0.2333,
+              "name": "8"
+            },
+            {
+              "time": 0.2667,
+              "name": "9"
+            },
+            {
+              "time": 0.3,
+              "name": "10"
+            },
+            {
+              "time": 0.3333,
+              "name": "1"
+            },
+            {
+              "time": 0.3667,
+              "name": "2"
+            },
+            {
+              "time": 0.4,
+              "name": "3"
+            },
+            {
+              "time": 0.4333,
+              "name": "4"
+            },
+            {
+              "time": 0.4667,
+              "name": "5"
+            },
+            {
+              "time": 0.5,
+              "name": "6"
+            },
+            {
+              "time": 0.5333,
+              "name": "7"
+            },
+            {
+              "time": 0.5667,
+              "name": "8"
+            },
+            {
+              "time": 0.6,
+              "name": "9"
+            },
+            {
+              "time": 0.6333,
+              "name": "10"
+            },
+            {
+              "time": 0.6667,
+              "name": "1"
+            },
+            {
+              "time": 0.7,
+              "name": "2"
+            },
+            {
+              "time": 0.7333,
+              "name": "3"
+            },
+            {
+              "time": 0.7667,
+              "name": "4"
+            },
+            {
+              "time": 0.8,
+              "name": "5"
+            },
+            {
+              "time": 0.8333,
+              "name": "6"
+            },
+            {
+              "time": 0.8667,
+              "name": "7"
+            },
+            {
+              "time": 0.9,
+              "name": "8"
+            },
+            {
+              "time": 0.9333,
+              "name": "9"
+            },
+            {
+              "time": 0.9667,
+              "name": "10"
+            },
+            {
+              "time": 1,
+              "name": "11"
+            }
+          ]
+        },
+        "3": {
+          "attachment": [
+            {
+              "time": 0.0333,
+              "name": "2"
+            },
+            {
+              "time": 0.0667,
+              "name": "3"
+            },
+            {
+              "time": 0.1,
+              "name": "4"
+            },
+            {
+              "time": 0.1333,
+              "name": "5"
+            },
+            {
+              "time": 0.1667,
+              "name": "6"
+            },
+            {
+              "time": 0.2,
+              "name": "7"
+            },
+            {
+              "time": 0.2333,
+              "name": "8"
+            },
+            {
+              "time": 0.2667,
+              "name": "9"
+            },
+            {
+              "time": 0.3,
+              "name": "10"
+            },
+            {
+              "time": 0.3333,
+              "name": "1"
+            },
+            {
+              "time": 0.3667,
+              "name": "2"
+            },
+            {
+              "time": 0.4,
+              "name": "3"
+            },
+            {
+              "time": 0.4333,
+              "name": "4"
+            },
+            {
+              "time": 0.4667,
+              "name": "5"
+            },
+            {
+              "time": 0.5,
+              "name": "6"
+            },
+            {
+              "time": 0.5333,
+              "name": "7"
+            },
+            {
+              "time": 0.5667,
+              "name": "8"
+            },
+            {
+              "time": 0.6,
+              "name": "9"
+            },
+            {
+              "time": 0.6333,
+              "name": "10"
+            },
+            {
+              "time": 0.6667,
+              "name": "1"
+            },
+            {
+              "time": 0.7,
+              "name": "2"
+            },
+            {
+              "time": 0.7333,
+              "name": "3"
+            },
+            {
+              "time": 0.7667,
+              "name": "4"
+            },
+            {
+              "time": 0.8,
+              "name": "5"
+            },
+            {
+              "time": 0.8333,
+              "name": "6"
+            },
+            {
+              "time": 0.8667,
+              "name": "7"
+            },
+            {
+              "time": 0.9,
+              "name": "8"
+            },
+            {
+              "time": 0.9333,
+              "name": "9"
+            },
+            {
+              "time": 0.9667,
+              "name": "10"
+            },
+            {
+              "time": 1,
+              "name": "11"
+            }
+          ]
+        },
+        "skill_dushen_1_00": {
+          "attachment": [
+            {
+              "name": "skill_dushen_1_00"
+            },
+            {
+              "time": 0.0333,
+              "name": "skill_dushen_1_01"
+            },
+            {
+              "time": 0.0667,
+              "name": "skill_dushen_1_02"
+            },
+            {
+              "time": 0.1,
+              "name": "skill_dushen_1_03"
+            },
+            {
+              "time": 0.1333,
+              "name": "skill_dushen_1_04"
+            },
+            {
+              "time": 0.1667,
+              "name": "skill_dushen_1_05"
+            },
+            {
+              "time": 0.2,
+              "name": "skill_dushen_1_06"
+            },
+            {
+              "time": 0.2333,
+              "name": "skill_dushen_1_07"
+            },
+            {
+              "time": 0.2667,
+              "name": "skill_dushen_1_08"
+            },
+            {
+              "time": 0.3,
+              "name": "skill_dushen_1_09"
+            },
+            {
+              "time": 0.3167,
+              "name": "skill_dushen_1_10"
+            },
+            {
+              "time": 0.3333,
+              "name": "skill_dushen_1_00"
+            },
+            {
+              "time": 0.3667,
+              "name": "skill_dushen_1_01"
+            },
+            {
+              "time": 0.4,
+              "name": "skill_dushen_1_02"
+            },
+            {
+              "time": 0.4333,
+              "name": "skill_dushen_1_03"
+            },
+            {
+              "time": 0.4667,
+              "name": "skill_dushen_1_04"
+            },
+            {
+              "time": 0.5,
+              "name": "skill_dushen_1_05"
+            },
+            {
+              "time": 0.5333,
+              "name": "skill_dushen_1_06"
+            },
+            {
+              "time": 0.5667,
+              "name": "skill_dushen_1_07"
+            },
+            {
+              "time": 0.6,
+              "name": "skill_dushen_1_08"
+            },
+            {
+              "time": 0.6333,
+              "name": "skill_dushen_1_09"
+            },
+            {
+              "time": 0.65,
+              "name": "skill_dushen_1_10"
+            },
+            {
+              "time": 0.6667,
+              "name": "skill_dushen_1_00"
+            },
+            {
+              "time": 0.7,
+              "name": "skill_dushen_1_01"
+            },
+            {
+              "time": 0.7333,
+              "name": "skill_dushen_1_02"
+            },
+            {
+              "time": 0.7667,
+              "name": "skill_dushen_1_03"
+            },
+            {
+              "time": 0.8,
+              "name": "skill_dushen_1_04"
+            },
+            {
+              "time": 0.8333,
+              "name": "skill_dushen_1_05"
+            },
+            {
+              "time": 0.8667,
+              "name": "skill_dushen_1_06"
+            },
+            {
+              "time": 0.9,
+              "name": "skill_dushen_1_07"
+            },
+            {
+              "time": 0.9333,
+              "name": "skill_dushen_1_08"
+            },
+            {
+              "time": 0.9667,
+              "name": "skill_dushen_1_09"
+            },
+            {
+              "time": 1,
+              "name": "skill_dushen_1_10"
+            }
+          ]
+        }
+      },
+      "bones": {
+        "dice2": {
+          "translate": [
+            {
+              "curve": 0.292,
+              "c2": 0.55,
+              "c3": 0.663,
+              "c4": 0.85
+            },
+            {
+              "time": 0.1667,
+              "y": -47.54,
+              "curve": 0.379,
+              "c2": 0.74,
+              "c3": 0.731
+            },
+            {
+              "time": 0.3333,
+              "curve": 0.306,
+              "c2": 0.8,
+              "c3": 0.75
+            },
+            {
+              "time": 0.5,
+              "y": -47.54,
+              "curve": 0.379,
+              "c2": 0.74,
+              "c3": 0.731
+            },
+            {
+              "time": 0.6667,
+              "curve": 0.306,
+              "c2": 0.8,
+              "c3": 0.75
+            },
+            {
+              "time": 0.8333,
+              "y": -47.54
+            }
+          ]
+        }
+      }
+    }
+  }
+}

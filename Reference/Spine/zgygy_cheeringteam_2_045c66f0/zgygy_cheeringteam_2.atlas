@@ -1,0 +1,104 @@
+
+zgygy_cheeringteam_2.png
+size: 155,812
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: true
+  xy: 100, 252
+  size: 30, 46
+  orig: 32, 48
+  offset: 1, 1
+  index: -1
+2
+  rotate: true
+  xy: 100, 316
+  size: 37, 49
+  orig: 38, 50
+  offset: 0, 0
+  index: -1
+3
+  rotate: false
+  xy: 90, 2
+  size: 61, 69
+  orig: 61, 70
+  offset: 0, 1
+  index: -1
+body_1
+  rotate: false
+  xy: 2, 549
+  size: 133, 128
+  orig: 140, 160
+  offset: 4, 18
+  index: -1
+eye_1
+  rotate: false
+  xy: 100, 284
+  size: 49, 30
+  orig: 50, 31
+  offset: 0, 1
+  index: -1
+eye_3
+  rotate: true
+  xy: 105, 83
+  size: 60, 19
+  orig: 61, 19
+  offset: 0, 0
+  index: -1
+hand_l_1
+  rotate: false
+  xy: 102, 440
+  size: 51, 107
+  orig: 56, 110
+  offset: 2, 2
+  index: -1
+hand_r_1
+  rotate: true
+  xy: 102, 355
+  size: 83, 50
+  orig: 87, 50
+  offset: 2, 0
+  index: -1
+head_1
+  rotate: false
+  xy: 2, 679
+  size: 146, 131
+  orig: 146, 131
+  offset: 0, 0
+  index: -1
+leg_l_1
+  rotate: true
+  xy: 2, 73
+  size: 70, 101
+  orig: 74, 104
+  offset: 2, 2
+  index: -1
+leg_r_1
+  rotate: true
+  xy: 2, 11
+  size: 60, 86
+  orig: 64, 100
+  offset: 1, 7
+  index: -1
+maozi
+  rotate: false
+  xy: 2, 390
+  size: 98, 157
+  orig: 98, 157
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: true
+  xy: 2, 252
+  size: 136, 96
+  orig: 136, 96
+  offset: 0, 0
+  index: -1
+xiaohao
+  rotate: false
+  xy: 2, 145
+  size: 142, 105
+  orig: 147, 109
+  offset: 5, 2
+  index: -1

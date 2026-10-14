@@ -1,0 +1,611 @@
+{
+  "skeleton": {
+    "hash": "Q9vliRzQzqwveS7YLi5fMyQhr2Q",
+    "spine": "3.8.75",
+    "x": -559.32,
+    "y": -613.51,
+    "width": 1118.63,
+    "height": 1172.83,
+    "fps": 60,
+    "images": "./images/",
+    "audio": ""
+  },
+  "bones": [
+    {
+      "name": "root"
+    },
+    {
+      "name": "deng",
+      "parent": "root"
+    },
+    {
+      "name": "deng_1",
+      "parent": "deng",
+      "rotation": 30
+    },
+    {
+      "name": "deng_2",
+      "parent": "deng",
+      "rotation": 60
+    },
+    {
+      "name": "deng_3",
+      "parent": "deng",
+      "rotation": 120
+    },
+    {
+      "name": "deng_4",
+      "parent": "deng",
+      "rotation": 150
+    },
+    {
+      "name": "deng_5",
+      "parent": "deng",
+      "rotation": 30
+    },
+    {
+      "name": "deng_6",
+      "parent": "deng",
+      "rotation": -30
+    },
+    {
+      "name": "deng_7",
+      "parent": "deng",
+      "rotation": -60
+    },
+    {
+      "name": "deng_8",
+      "parent": "deng",
+      "rotation": -90
+    },
+    {
+      "name": "deng_9",
+      "parent": "deng",
+      "rotation": -120
+    }
+  ],
+  "slots": [
+    {
+      "name": "deng_1",
+      "bone": "deng_1",
+      "attachment": "deng_2"
+    },
+    {
+      "name": "deng_2",
+      "bone": "deng_2",
+      "attachment": "deng_2"
+    },
+    {
+      "name": "deng_3",
+      "bone": "deng_3",
+      "attachment": "deng_2"
+    },
+    {
+      "name": "deng_4",
+      "bone": "deng_4",
+      "attachment": "deng_1"
+    },
+    {
+      "name": "deng_5",
+      "bone": "deng_5",
+      "attachment": "deng_1"
+    },
+    {
+      "name": "deng_6",
+      "bone": "deng_6",
+      "attachment": "deng_2"
+    },
+    {
+      "name": "deng_7",
+      "bone": "deng_7",
+      "attachment": "deng_1"
+    },
+    {
+      "name": "deng_8",
+      "bone": "deng_8",
+      "attachment": "deng_2"
+    },
+    {
+      "name": "deng_9",
+      "bone": "deng_9",
+      "attachment": "deng_1"
+    }
+  ],
+  "skins": [
+    {
+      "name": "default",
+      "attachments": {
+        "deng_1": {
+          "deng_1": {
+            "x": -557.51,
+            "width": 74,
+            "height": 73
+          },
+          "deng_2": {
+            "x": -557.51,
+            "width": 112,
+            "height": 112
+          }
+        },
+        "deng_2": {
+          "deng_1": {
+            "x": 557.51,
+            "width": 74,
+            "height": 73
+          },
+          "deng_2": {
+            "x": 557.51,
+            "width": 112,
+            "height": 112
+          }
+        },
+        "deng_3": {
+          "deng_1": {
+            "x": 557.51,
+            "width": 74,
+            "height": 73
+          },
+          "deng_2": {
+            "x": 557.51,
+            "width": 112,
+            "height": 112
+          }
+        },
+        "deng_4": {
+          "deng_1": {
+            "x": 557.51,
+            "width": 74,
+            "height": 73
+          },
+          "deng_2": {
+            "x": 557.51,
+            "width": 112,
+            "height": 112
+          }
+        },
+        "deng_5": {
+          "deng_1": {
+            "x": 557.51,
+            "width": 74,
+            "height": 73
+          },
+          "deng_2": {
+            "x": 557.51,
+            "width": 112,
+            "height": 112
+          }
+        },
+        "deng_6": {
+          "deng_1": {
+            "x": 557.51,
+            "width": 74,
+            "height": 73
+          },
+          "deng_2": {
+            "x": 557.51,
+            "width": 112,
+            "height": 112
+          }
+        },
+        "deng_7": {
+          "deng_1": {
+            "x": 557.51,
+            "width": 74,
+            "height": 73
+          },
+          "deng_2": {
+            "x": 557.51,
+            "width": 112,
+            "height": 112
+          }
+        },
+        "deng_8": {
+          "deng_1": {
+            "x": 557.51,
+            "width": 74,
+            "height": 73
+          },
+          "deng_2": {
+            "x": 557.51,
+            "width": 112,
+            "height": 112
+          }
+        },
+        "deng_9": {
+          "deng_1": {
+            "x": 557.51,
+            "width": 74,
+            "height": 73
+          },
+          "deng_2": {
+            "x": 557.51,
+            "width": 112,
+            "height": 112
+          }
+        }
+      }
+    }
+  ],
+  "animations": {
+    "idle": {
+      "slots": {
+        "deng_6": {
+          "attachment": [
+            {
+              "time": 0.1667,
+              "name": "deng_1"
+            },
+            {
+              "time": 0.3333,
+              "name": "deng_2"
+            },
+            {
+              "time": 0.5,
+              "name": "deng_1"
+            },
+            {
+              "time": 0.6667,
+              "name": "deng_2"
+            },
+            {
+              "time": 0.8333,
+              "name": "deng_1"
+            },
+            {
+              "time": 1,
+              "name": "deng_2"
+            }
+          ]
+        },
+        "deng_1": {
+          "attachment": [
+            {
+              "time": 0.1667,
+              "name": "deng_1"
+            },
+            {
+              "time": 0.3333,
+              "name": "deng_2"
+            },
+            {
+              "time": 0.5,
+              "name": "deng_1"
+            },
+            {
+              "time": 0.6667,
+              "name": "deng_2"
+            },
+            {
+              "time": 0.8333,
+              "name": "deng_1"
+            },
+            {
+              "time": 1,
+              "name": "deng_2"
+            }
+          ]
+        },
+        "deng_4": {
+          "attachment": [
+            {
+              "time": 0.1667,
+              "name": "deng_2"
+            },
+            {
+              "time": 0.3333,
+              "name": "deng_1"
+            },
+            {
+              "time": 0.5,
+              "name": "deng_2"
+            },
+            {
+              "time": 0.6667,
+              "name": "deng_1"
+            },
+            {
+              "time": 0.8333,
+              "name": "deng_2"
+            },
+            {
+              "time": 1,
+              "name": "deng_1"
+            }
+          ]
+        },
+        "deng_2": {
+          "attachment": [
+            {
+              "time": 0.1667,
+              "name": "deng_1"
+            },
+            {
+              "time": 0.3333,
+              "name": "deng_2"
+            },
+            {
+              "time": 0.5,
+              "name": "deng_1"
+            },
+            {
+              "time": 0.6667,
+              "name": "deng_2"
+            },
+            {
+              "time": 0.8333,
+              "name": "deng_1"
+            },
+            {
+              "time": 1,
+              "name": "deng_2"
+            }
+          ]
+        },
+        "deng_9": {
+          "attachment": [
+            {
+              "time": 0.1667,
+              "name": "deng_2"
+            },
+            {
+              "time": 0.3333,
+              "name": "deng_1"
+            },
+            {
+              "time": 0.5,
+              "name": "deng_2"
+            },
+            {
+              "time": 0.6667,
+              "name": "deng_1"
+            },
+            {
+              "time": 0.8333,
+              "name": "deng_2"
+            },
+            {
+              "time": 1,
+              "name": "deng_1"
+            }
+          ]
+        },
+        "deng_8": {
+          "attachment": [
+            {
+              "time": 0.1667,
+              "name": "deng_1"
+            },
+            {
+              "time": 0.3333,
+              "name": "deng_2"
+            },
+            {
+              "time": 0.5,
+              "name": "deng_1"
+            },
+            {
+              "time": 0.6667,
+              "name": "deng_2"
+            },
+            {
+              "time": 0.8333,
+              "name": "deng_1"
+            },
+            {
+              "time": 1,
+              "name": "deng_2"
+            }
+          ]
+        },
+        "deng_3": {
+          "attachment": [
+            {
+              "time": 0.1667,
+              "name": "deng_1"
+            },
+            {
+              "time": 0.3333,
+              "name": "deng_2"
+            },
+            {
+              "time": 0.5,
+              "name": "deng_1"
+            },
+            {
+              "time": 0.6667,
+              "name": "deng_2"
+            },
+            {
+              "time": 0.8333,
+              "name": "deng_1"
+            },
+            {
+              "time": 1,
+              "name": "deng_2"
+            }
+          ]
+        },
+        "deng_5": {
+          "attachment": [
+            {
+              "time": 0.1667,
+              "name": "deng_2"
+            },
+            {
+              "time": 0.3333,
+              "name": "deng_1"
+            },
+            {
+              "time": 0.5,
+              "name": "deng_2"
+            },
+            {
+              "time": 0.6667,
+              "name": "deng_1"
+            },
+            {
+              "time": 0.8333,
+              "name": "deng_2"
+            },
+            {
+              "time": 1,
+              "name": "deng_1"
+            }
+          ]
+        },
+        "deng_7": {
+          "attachment": [
+            {
+              "time": 0.1667,
+              "name": "deng_2"
+            },
+            {
+              "time": 0.3333,
+              "name": "deng_1"
+            },
+            {
+              "time": 0.5,
+              "name": "deng_2"
+            },
+            {
+              "time": 0.6667,
+              "name": "deng_1"
+            },
+            {
+              "time": 0.8333,
+              "name": "deng_2"
+            },
+            {
+              "time": 1,
+              "name": "deng_1"
+            }
+          ]
+        }
+      }
+    },
+    "rolling": {
+      "slots": {
+        "deng_6": {
+          "attachment": [
+            {
+              "name": "deng_1"
+            },
+            {
+              "time": 0.1667,
+              "name": "deng_2"
+            },
+            {
+              "time": 0.8,
+              "name": "deng_1"
+            }
+          ]
+        },
+        "deng_1": {
+          "attachment": [
+            {
+              "name": "deng_1"
+            },
+            {
+              "time": 0.5,
+              "name": "deng_2"
+            },
+            {
+              "time": 0.9333,
+              "name": "deng_1"
+            }
+          ]
+        },
+        "deng_4": {
+          "attachment": [
+            {
+              "time": 0.5833,
+              "name": "deng_2"
+            },
+            {
+              "time": 0.9667,
+              "name": "deng_1"
+            }
+          ]
+        },
+        "deng_2": {
+          "attachment": [
+            {
+              "time": 0.7333,
+              "name": "deng_1"
+            },
+            {
+              "time": 1,
+              "name": "deng_2"
+            }
+          ]
+        },
+        "deng_9": {
+          "attachment": [
+            {
+              "time": 0.4167,
+              "name": "deng_2"
+            },
+            {
+              "time": 0.9,
+              "name": "deng_1"
+            }
+          ]
+        },
+        "deng_8": {
+          "attachment": [
+            {
+              "name": "deng_1"
+            },
+            {
+              "time": 0.3333,
+              "name": "deng_2"
+            },
+            {
+              "time": 0.8667,
+              "name": "deng_1"
+            }
+          ]
+        },
+        "deng_3": {
+          "attachment": [
+            {
+              "name": "deng_1"
+            },
+            {
+              "time": 0.6667,
+              "name": "deng_2"
+            },
+            {
+              "time": 1,
+              "name": "deng_1"
+            }
+          ]
+        },
+        "deng_5": {
+          "attachment": [
+            {
+              "time": 0.0833,
+              "name": "deng_2"
+            },
+            {
+              "time": 0.7667,
+              "name": "deng_1"
+            }
+          ]
+        },
+        "deng_7": {
+          "attachment": [
+            {
+              "time": 0.25,
+              "name": "deng_2"
+            },
+            {
+              "time": 0.8333,
+              "name": "deng_1"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

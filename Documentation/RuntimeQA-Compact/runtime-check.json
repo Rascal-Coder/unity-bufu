@@ -1,0 +1,27 @@
+{
+    "passed": true,
+    "error": "",
+    "editor": "2022.3.62t16",
+    "width": 360,
+    "height": 640,
+    "checks": 17,
+    "messages": [
+        "runtime initialization",
+        "new game renders 3 real copper VAT coins",
+        "runtime coin audio loaded",
+        "rendered screenshot contains real UI colors 01-new-game.png",
+        "actual UI raycast reaches a coin",
+        "pointer input starts coin animation",
+        "manual animation completion settles actual income",
+        "affordable helper button enabled",
+        "helper purchase creates animated actor",
+        "automatic helpers produce income without manual input",
+        "UI value upgrade changes economy",
+        "rendered screenshot contains real UI colors 02-helpers-upgrades.png",
+        "save to disk and restore preserves progress",
+        "world UI switches to original dice assets",
+        "rendered screenshot contains real UI colors 03-dice-world.png",
+        "dice animation completes and settles face rewards",
+        "no runtime errors or exceptions"
+    ]
+}

@@ -1,0 +1,90 @@
+
+zgygy_roleskill_halande.png
+size: 876,329
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+kungfu_smoke_01
+  rotate: false
+  xy: 146, 19
+  size: 124, 129
+  orig: 171, 181
+  offset: 18, 35
+  index: -1
+kungfu_smoke_02
+  rotate: false
+  xy: 2, 6
+  size: 142, 142
+  orig: 171, 181
+  offset: 13, 29
+  index: -1
+kungfu_smoke_03
+  rotate: true
+  xy: 382, 2
+  size: 151, 154
+  orig: 171, 181
+  offset: 10, 21
+  index: -1
+kungfu_smoke_04
+  rotate: true
+  xy: 701, 58
+  size: 159, 164
+  orig: 171, 181
+  offset: 7, 14
+  index: -1
+kungfu_smoke_05
+  rotate: false
+  xy: 341, 155
+  size: 165, 172
+  orig: 171, 181
+  offset: 4, 8
+  index: -1
+kungfu_smoke_06
+  rotate: false
+  xy: 172, 153
+  size: 167, 174
+  orig: 170, 179
+  offset: 2, 4
+  index: -1
+kungfu_smoke_07
+  rotate: false
+  xy: 2, 150
+  size: 168, 177
+  orig: 171, 181
+  offset: 2, 4
+  index: -1
+kungfu_smoke_08
+  rotate: true
+  xy: 508, 170
+  size: 157, 178
+  orig: 171, 181
+  offset: 1, 1
+  index: -1
+zhang_1
+  rotate: false
+  xy: 688, 219
+  size: 106, 108
+  orig: 106, 109
+  offset: 0, 0
+  index: -1
+zhang_2
+  rotate: false
+  xy: 538, 3
+  size: 161, 165
+  orig: 164, 167
+  offset: 2, 1
+  index: -1
+zhang_3
+  rotate: false
+  xy: 796, 241
+  size: 78, 86
+  orig: 78, 86
+  offset: 0, 0
+  index: -1
+zhang_4
+  rotate: false
+  xy: 272, 40
+  size: 108, 111
+  orig: 108, 111
+  offset: 0, 0
+  index: -1

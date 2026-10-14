@@ -1,0 +1,429 @@
+{
+ "prefabs": [
+  {
+   "path": "Assets/GameRes/NewUI/CheckIn/prefabs/AdCheckInReward.prefab",
+   "resource": "UI/Prefabs/CheckIn/AdCheckInReward",
+   "nodes": 24
+  },
+  {
+   "path": "Assets/GameRes/NewUI/CheckIn/prefabs/CheckIn.prefab",
+   "resource": "UI/Prefabs/CheckIn/CheckIn",
+   "nodes": 16
+  },
+  {
+   "path": "Assets/GameRes/NewUI/CheckIn/prefabs/FreeCheckInReward.prefab",
+   "resource": "UI/Prefabs/CheckIn/FreeCheckInReward",
+   "nodes": 15
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Common/prefabs/DownPanel.prefab",
+   "resource": "UI/Prefabs/Common/DownPanel",
+   "nodes": 82
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Common/prefabs/GameObject 1.prefab",
+   "resource": "UI/Prefabs/Common/GameObject 1",
+   "nodes": 10
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Common/prefabs/MainScene.prefab",
+   "resource": "UI/Prefabs/Common/MainScene",
+   "nodes": 14
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Common/prefabs/MainSceneVat.prefab",
+   "resource": "UI/Prefabs/Common/MainSceneVat",
+   "nodes": 14
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Common/prefabs/adFoldPanel.prefab",
+   "resource": "UI/Prefabs/Common/adFoldPanel",
+   "nodes": 14
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Common/prefabs/combine.prefab",
+   "resource": "UI/Prefabs/Common/combine",
+   "nodes": 1
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Common/prefabs/commonDialog.prefab",
+   "resource": "UI/Prefabs/Common/commonDialog",
+   "nodes": 7
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Common/prefabs/dialogPanel.prefab",
+   "resource": "UI/Prefabs/Common/dialogPanel",
+   "nodes": 4
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Common/prefabs/diceWorldGuide.prefab",
+   "resource": "UI/Prefabs/Common/diceWorldGuide",
+   "nodes": 16
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Common/prefabs/fingerGuide.prefab",
+   "resource": "UI/Prefabs/Common/fingerGuide",
+   "nodes": 1
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Common/prefabs/panel1.prefab",
+   "resource": "UI/Prefabs/Common/panel1",
+   "nodes": 8
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Common/prefabs/panel2.prefab",
+   "resource": "UI/Prefabs/Common/panel2",
+   "nodes": 8
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Common/prefabs/panel3.prefab",
+   "resource": "UI/Prefabs/Common/panel3",
+   "nodes": 9
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Common/prefabs/panel4.prefab",
+   "resource": "UI/Prefabs/Common/panel4",
+   "nodes": 9
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Common/prefabs/panel5.prefab",
+   "resource": "UI/Prefabs/Common/panel5",
+   "nodes": 9
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Common/prefabs/rewardKuang.prefab",
+   "resource": "UI/Prefabs/Common/rewardKuang",
+   "nodes": 3
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Common/prefabs/skillTips.prefab",
+   "resource": "UI/Prefabs/Common/skillTips",
+   "nodes": 3
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Common/prefabs/tip.prefab",
+   "resource": "UI/Prefabs/Common/tip",
+   "nodes": 3
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Common/prefabs/topPanel.prefab",
+   "resource": "UI/Prefabs/Common/topPanel",
+   "nodes": 35
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Common/prefabs/upgradeItem.prefab",
+   "resource": "UI/Prefabs/Common/upgradeItem",
+   "nodes": 27
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Common/prefabs/upgradeItemDice.prefab",
+   "resource": "UI/Prefabs/Common/upgradeItemDice",
+   "nodes": 27
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Common/prefabs/upgradePanel.prefab",
+   "resource": "UI/Prefabs/Common/upgradePanel",
+   "nodes": 115
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Evolve/prefabs/EvolvePanel.prefab",
+   "resource": "UI/Prefabs/Evolve/EvolvePanel",
+   "nodes": 21
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Facility/prefabs/SkillTips.prefab",
+   "resource": "UI/Prefabs/Facility/SkillTips",
+   "nodes": 11
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Facility/prefabs/deskItem.prefab",
+   "resource": "UI/Prefabs/Facility/deskItem",
+   "nodes": 14
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Facility/prefabs/deskUpgrade.prefab",
+   "resource": "UI/Prefabs/Facility/deskUpgrade",
+   "nodes": 31
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Facility/prefabs/facility.prefab",
+   "resource": "UI/Prefabs/Facility/facility",
+   "nodes": 54
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Facility/prefabs/helperItem 1.prefab",
+   "resource": "UI/Prefabs/Facility/helperItem 1",
+   "nodes": 18
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Facility/prefabs/helperItem.prefab",
+   "resource": "UI/Prefabs/Facility/helperItem",
+   "nodes": 26
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Facility/prefabs/helperUpgrade.prefab",
+   "resource": "UI/Prefabs/Facility/helperUpgrade",
+   "nodes": 97
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Facility/prefabs/notEnough.prefab",
+   "resource": "UI/Prefabs/Facility/notEnough",
+   "nodes": 10
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Facility/prefabs/upgradeTips.prefab",
+   "resource": "UI/Prefabs/Facility/upgradeTips",
+   "nodes": 6
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Facility/prefabs/upgradeTips2.prefab",
+   "resource": "UI/Prefabs/Facility/upgradeTips2",
+   "nodes": 5
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Popup/prefabs/OfflineReward.prefab",
+   "resource": "UI/Prefabs/Popup/OfflineReward",
+   "nodes": 17
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Popup/prefabs/congratulationPanel.prefab",
+   "resource": "UI/Prefabs/Popup/congratulationPanel",
+   "nodes": 16
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Popup/prefabs/goalReachPanel.prefab",
+   "resource": "UI/Prefabs/Popup/goalReachPanel",
+   "nodes": 19
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Popup/prefabs/lv8Dice.prefab",
+   "resource": "UI/Prefabs/Popup/lv8Dice",
+   "nodes": 18
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Popup/prefabs/setupPanel.prefab",
+   "resource": "UI/Prefabs/Popup/setupPanel",
+   "nodes": 33
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Shop/prefabs/shop.prefab",
+   "resource": "UI/Prefabs/Shop/shop",
+   "nodes": 131
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Shop/prefabs/shop_0.prefab",
+   "resource": "UI/Prefabs/Shop/shop_0",
+   "nodes": 1
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Shop/prefabs/shop_1.prefab",
+   "resource": "UI/Prefabs/Shop/shop_1",
+   "nodes": 1
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Shop/prefabs/shop_2.prefab",
+   "resource": "UI/Prefabs/Shop/shop_2",
+   "nodes": 1
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Talent/prefabs/GoTalentTip.prefab",
+   "resource": "UI/Prefabs/Talent/GoTalentTip",
+   "nodes": 6
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Talent/prefabs/SkillTip.prefab",
+   "resource": "UI/Prefabs/Talent/SkillTip",
+   "nodes": 14
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Talent/prefabs/diceTalent.prefab",
+   "resource": "UI/Prefabs/Talent/diceTalent",
+   "nodes": 271
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Talent/prefabs/talent.prefab",
+   "resource": "UI/Prefabs/Talent/talent",
+   "nodes": 271
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Talent/prefabs/talentCardItem.prefab",
+   "resource": "UI/Prefabs/Talent/talentCardItem",
+   "nodes": 8
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Talent/prefabs/talentRebornTipsItem.prefab",
+   "resource": "UI/Prefabs/Talent/talentRebornTipsItem",
+   "nodes": 35
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Talent/prefabs/talentResetTipsItem.prefab",
+   "resource": "UI/Prefabs/Talent/talentResetTipsItem",
+   "nodes": 14
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Talent/prefabs/talentSkillTipsItem.prefab",
+   "resource": "UI/Prefabs/Talent/talentSkillTipsItem",
+   "nodes": 11
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Talent/prefabs/talentTips.prefab",
+   "resource": "UI/Prefabs/Talent/talentTips",
+   "nodes": 14
+  },
+  {
+   "path": "Assets/GameRes/NewUI/Talent/prefabs/upgradeBtn.prefab",
+   "resource": "UI/Prefabs/Talent/upgradeBtn",
+   "nodes": 1
+  },
+  {
+   "path": "Assets/GameRes/NewUI/UIbase/Background.prefab",
+   "resource": "UI/Prefabs/UIbase/Background",
+   "nodes": 1
+  },
+  {
+   "path": "Assets/GameRes/NewUI/UIbase/Main.prefab",
+   "resource": "UI/Prefabs/UIbase/Main",
+   "nodes": 1
+  },
+  {
+   "path": "Assets/GameRes/NewUI/UIbase/Popup.prefab",
+   "resource": "UI/Prefabs/UIbase/Popup",
+   "nodes": 1
+  },
+  {
+   "path": "Assets/GameRes/NewUI/UIbase/System.prefab",
+   "resource": "UI/Prefabs/UIbase/System",
+   "nodes": 1
+  },
+  {
+   "path": "Assets/GameRes/NewUI/fly/prefabs/1.prefab",
+   "resource": "UI/Prefabs/fly/1",
+   "nodes": 1
+  },
+  {
+   "path": "Assets/GameRes/NewUI/fly/prefabs/101.prefab",
+   "resource": "UI/Prefabs/fly/101",
+   "nodes": 1
+  },
+  {
+   "path": "Assets/GameRes/NewUI/fly/prefabs/102.prefab",
+   "resource": "UI/Prefabs/fly/102",
+   "nodes": 1
+  },
+  {
+   "path": "Assets/GameRes/NewUI/fly/prefabs/103.prefab",
+   "resource": "UI/Prefabs/fly/103",
+   "nodes": 1
+  },
+  {
+   "path": "Assets/GameRes/NewUI/fly/prefabs/104.prefab",
+   "resource": "UI/Prefabs/fly/104",
+   "nodes": 1
+  },
+  {
+   "path": "Assets/GameRes/NewUI/fly/prefabs/105.prefab",
+   "resource": "UI/Prefabs/fly/105",
+   "nodes": 1
+  },
+  {
+   "path": "Assets/GameRes/NewUI/fly/prefabs/106.prefab",
+   "resource": "UI/Prefabs/fly/106",
+   "nodes": 1
+  },
+  {
+   "path": "Assets/GameRes/NewUI/fly/prefabs/107.prefab",
+   "resource": "UI/Prefabs/fly/107",
+   "nodes": 1
+  },
+  {
+   "path": "Assets/GameRes/NewUI/fly/prefabs/108.prefab",
+   "resource": "UI/Prefabs/fly/108",
+   "nodes": 1
+  },
+  {
+   "path": "Assets/GameRes/NewUI/fly/prefabs/2.prefab",
+   "resource": "UI/Prefabs/fly/2",
+   "nodes": 1
+  },
+  {
+   "path": "Assets/GameRes/NewUI/fly/prefabs/3.prefab",
+   "resource": "UI/Prefabs/fly/3",
+   "nodes": 1
+  },
+  {
+   "path": "Assets/GameRes/NewUI/fly/prefabs/4.prefab",
+   "resource": "UI/Prefabs/fly/4",
+   "nodes": 1
+  },
+  {
+   "path": "Assets/GameRes/NewUI/fly/prefabs/5.prefab",
+   "resource": "UI/Prefabs/fly/5",
+   "nodes": 1
+  },
+  {
+   "path": "Assets/GameRes/NewUI/fly/prefabs/6.prefab",
+   "resource": "UI/Prefabs/fly/6",
+   "nodes": 1
+  },
+  {
+   "path": "Assets/GameRes/NewUI/fly/prefabs/all.prefab",
+   "resource": "UI/Prefabs/fly/all",
+   "nodes": 6
+  },
+  {
+   "path": "Assets/GameRes/NewUI/loading/prefabs/Loading.prefab",
+   "resource": "UI/Prefabs/loading/Loading",
+   "nodes": 8
+  },
+  {
+   "path": "Assets/GameRes/NewUI/world/prefabs/WorldNode 1.prefab",
+   "resource": "UI/Prefabs/world/WorldNode 1",
+   "nodes": 26
+  },
+  {
+   "path": "Assets/GameRes/NewUI/world/prefabs/WorldNode ComingSoon.prefab",
+   "resource": "UI/Prefabs/world/WorldNode ComingSoon",
+   "nodes": 25
+  },
+  {
+   "path": "Assets/GameRes/NewUI/world/prefabs/WorldNode.prefab",
+   "resource": "UI/Prefabs/world/WorldNode",
+   "nodes": 21
+  },
+  {
+   "path": "Assets/GameRes/NewUI/world/prefabs/worldSelectionPanel.prefab",
+   "resource": "UI/Prefabs/world/worldSelectionPanel",
+   "nodes": 66
+  },
+  {
+   "path": "Assets/GameRes/Role/coinCriticalText.prefab",
+   "resource": "UI/Prefabs/Role/coinCriticalText",
+   "nodes": 1
+  },
+  {
+   "path": "Assets/GameRes/Role/coinNormalText.prefab",
+   "resource": "UI/Prefabs/Role/coinNormalText",
+   "nodes": 1
+  },
+  {
+   "path": "Assets/GameRes/font/gamefont/crit.prefab",
+   "resource": "UI/Prefabs/font/crit",
+   "nodes": 1
+  },
+  {
+   "path": "Assets/GameRes/font/gamefont/damage.prefab",
+   "resource": "UI/Prefabs/font/damage",
+   "nodes": 1
+  },
+  {
+   "path": "Assets/GameRes/font/gamefont/heal.prefab",
+   "resource": "UI/Prefabs/font/heal",
+   "nodes": 1
+  },
+  {
+   "path": "Assets/GameRes/font/gamefont/player.prefab",
+   "resource": "UI/Prefabs/font/player",
+   "nodes": 1
+  }
+ ]
+}

@@ -1,0 +1,195 @@
+
+zgygy_role_magician_juexing.png
+size: 796,511
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body_1_bei_magician
+  rotate: true
+  xy: 339, 19
+  size: 100, 96
+  orig: 102, 106
+  offset: 0, 9
+  index: -1
+body_1_magician
+  rotate: false
+  xy: 201, 121
+  size: 100, 99
+  orig: 101, 104
+  offset: 1, 5
+  index: -1
+body_2_bei_magician
+  rotate: true
+  xy: 236, 2
+  size: 117, 101
+  orig: 118, 101
+  offset: 1, 0
+  index: -1
+body_2_magician
+  rotate: false
+  xy: 607, 148
+  size: 110, 97
+  orig: 111, 98
+  offset: 1, 0
+  index: -1
+body_tang_magician
+  rotate: false
+  xy: 2, 294
+  size: 207, 215
+  orig: 240, 300
+  offset: 17, 28
+  index: -1
+eye_1_magician
+  rotate: true
+  xy: 764, 327
+  size: 49, 30
+  orig: 50, 31
+  offset: 0, 1
+  index: -1
+guang_1_magician
+  rotate: false
+  xy: 633, 247
+  size: 129, 129
+  orig: 129, 129
+  offset: 0, 0
+  index: -1
+guang_2_magician
+  rotate: false
+  xy: 700, 64
+  size: 72, 72
+  orig: 72, 72
+  offset: 0, 0
+  index: -1
+guang_3_magician
+  rotate: false
+  xy: 695, 3
+  size: 59, 59
+  orig: 59, 59
+  offset: 0, 0
+  index: -1
+hand_l_1_bei_magician
+  rotate: true
+  xy: 505, 2
+  size: 57, 92
+  orig: 66, 93
+  offset: 1, 0
+  index: -1
+hand_l_1_magician
+  rotate: false
+  xy: 719, 138
+  size: 56, 107
+  orig: 66, 108
+  offset: 7, 1
+  index: -1
+hand_r_1_bei_magician
+  rotate: false
+  xy: 303, 121
+  size: 58, 99
+  orig: 70, 100
+  offset: 8, 1
+  index: -1
+hand_r_1_magician
+  rotate: true
+  xy: 607, 87
+  size: 59, 91
+  orig: 66, 93
+  offset: 1, 2
+  index: -1
+hat_bei_magician
+  rotate: false
+  xy: 2, 121
+  size: 197, 171
+  orig: 197, 171
+  offset: 0, 0
+  index: -1
+hat_magician
+  rotate: false
+  xy: 211, 348
+  size: 199, 161
+  orig: 200, 161
+  offset: 0, 0
+  index: -1
+head_1_magician
+  rotate: false
+  xy: 648, 378
+  size: 146, 131
+  orig: 146, 131
+  offset: 0, 0
+  index: -1
+head_2_bei_magician
+  rotate: false
+  xy: 412, 265
+  size: 147, 134
+  orig: 148, 135
+  offset: 0, 1
+  index: -1
+head_2_magician
+  rotate: false
+  xy: 363, 130
+  size: 144, 133
+  orig: 146, 133
+  offset: 0, 0
+  index: -1
+leg_l_1_magician
+  rotate: false
+  xy: 561, 298
+  size: 70, 101
+  orig: 74, 104
+  offset: 2, 2
+  index: -1
+leg_l_bei_magician
+  rotate: true
+  xy: 505, 61
+  size: 64, 100
+  orig: 64, 100
+  offset: 0, 0
+  index: -1
+leg_r_1_magician
+  rotate: true
+  xy: 607, 25
+  size: 60, 86
+  orig: 64, 100
+  offset: 1, 7
+  index: -1
+leg_r_bei_magician
+  rotate: false
+  xy: 437, 29
+  size: 66, 99
+  orig: 74, 104
+  offset: 8, 3
+  index: -1
+qunbai_1_magician
+  rotate: false
+  xy: 211, 222
+  size: 150, 124
+  orig: 150, 126
+  offset: 0, 2
+  index: -1
+shadow_magician
+  rotate: true
+  xy: 509, 127
+  size: 136, 96
+  orig: 136, 96
+  offset: 0, 0
+  index: -1
+wand_1_bei_magician
+  rotate: true
+  xy: 412, 401
+  size: 108, 234
+  orig: 108, 234
+  offset: 0, 0
+  index: -1
+wand_1_magician
+  rotate: true
+  xy: 2, 10
+  size: 109, 232
+  orig: 109, 233
+  offset: 0, 1
+  index: -1
+z_tang_magician
+  rotate: false
+  xy: 363, 306
+  size: 47, 40
+  orig: 47, 40
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,97 @@
+{
+  "project": "E:\\rea-games\\BufuRebuild",
+  "scene": "Assets/Scenes/Main.unity",
+  "playable": "E:\\rea-games\\BufuRebuild\\Build\\Windows\\BufuRebuild.exe",
+  "editor": "2022.3.62t16",
+  "source_version": "2026-10-14-626",
+  "same_as_phone_cache": "not established",
+  "status": "playable offline reconstruction",
+  "features": [
+    "manual coin flipping",
+    "original base values and geometric upgrade prices",
+    "critical income",
+    "growth rewards",
+    "automatic generic helpers",
+    "61 original VAT assets",
+    "evolution",
+    "selected talent and rebirth progression",
+    "offline income",
+    "local save with backup",
+    "independent coin/dice worlds"
+  ],
+  "limits": [
+    "not a complete recreation of the original project",
+    "no original cloud backend, ads, ranking, invitations, live operations, challenges or auctions",
+    "special helper skills and complete talent prerequisite trees not restored",
+    "manual controls are available immediately",
+    "at most 100 visible entities per currency quality",
+    "Windows tested; Android, iOS, WebGL not tested",
+    "system font used"
+  ],
+  "build": {
+    "result": "Succeeded",
+    "editor": "2022.3.62t16",
+    "errors": 0,
+    "warnings": 1,
+    "bytes": 153689228
+  },
+  "editor_check_count": 115,
+  "runtime_checks": [
+    {
+      "passed": true,
+      "error": "",
+      "editor": "2022.3.62t16",
+      "width": 1280,
+      "height": 720,
+      "checks": 17,
+      "messages": [
+        "runtime initialization",
+        "new game renders 3 real copper VAT coins",
+        "runtime coin audio loaded",
+        "rendered screenshot contains real UI colors 01-new-game.png",
+        "actual UI raycast reaches a coin",
+        "pointer input starts coin animation",
+        "manual animation completion settles actual income",
+        "affordable helper button enabled",
+        "helper purchase creates animated actor",
+        "automatic helpers produce income without manual input",
+        "UI value upgrade changes economy",
+        "rendered screenshot contains real UI colors 02-helpers-upgrades.png",
+        "save to disk and restore preserves progress",
+        "world UI switches to original dice assets",
+        "rendered screenshot contains real UI colors 03-dice-world.png",
+        "dice animation completes and settles face rewards",
+        "no runtime errors or exceptions"
+      ]
+    },
+    {
+      "passed": true,
+      "error": "",
+      "editor": "2022.3.62t16",
+      "width": 360,
+      "height": 640,
+      "checks": 17,
+      "messages": [
+        "runtime initialization",
+        "new game renders 3 real copper VAT coins",
+        "runtime coin audio loaded",
+        "rendered screenshot contains real UI colors 01-new-game.png",
+        "actual UI raycast reaches a coin",
+        "pointer input starts coin animation",
+        "manual animation completion settles actual income",
+        "affordable helper button enabled",
+        "helper purchase creates animated actor",
+        "automatic helpers produce income without manual input",
+        "UI value upgrade changes economy",
+        "rendered screenshot contains real UI colors 02-helpers-upgrades.png",
+        "save to disk and restore preserves progress",
+        "world UI switches to original dice assets",
+        "rendered screenshot contains real UI colors 03-dice-world.png",
+        "dice animation completes and settles face rewards",
+        "no runtime errors or exceptions"
+      ]
+    }
+  ],
+  "exe_sha256": "aa134a7f951ead5ac97a6bec1dc3c03709ce0eba39545cb41d53632133d89b3f",
+  "reference_directory": "Reference: decompiled source and 81 original Spine suites; never compiled as runtime code"
+}

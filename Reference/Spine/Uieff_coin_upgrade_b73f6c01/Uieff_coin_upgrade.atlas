@@ -1,0 +1,90 @@
+
+Uieff_coin_upgrade.png
+size: 1096,334
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: true
+  xy: 288, 6
+  size: 105, 95
+  orig: 109, 99
+  offset: 2, 2
+  index: -1
+jiantou
+  rotate: false
+  xy: 288, 113
+  size: 195, 219
+  orig: 207, 229
+  offset: 6, 4
+  index: -1
+jinbi
+  rotate: true
+  xy: 2, 28
+  size: 304, 284
+  orig: 314, 293
+  offset: 5, 5
+  index: -1
+light
+  rotate: false
+  xy: 2, 2
+  size: 136, 24
+  orig: 138, 26
+  offset: 1, 1
+  index: -1
+upgrade_00
+  rotate: false
+  xy: 954, 67
+  size: 134, 116
+  orig: 158, 158
+  offset: 11, 8
+  index: -1
+upgrade_01
+  rotate: true
+  xy: 953, 185
+  size: 147, 141
+  orig: 158, 158
+  offset: 6, 5
+  index: -1
+upgrade_02
+  rotate: false
+  xy: 799, 180
+  size: 152, 152
+  orig: 158, 158
+  offset: 3, 3
+  index: -1
+upgrade_03
+  rotate: false
+  xy: 642, 20
+  size: 154, 154
+  orig: 158, 158
+  offset: 2, 2
+  index: -1
+upgrade_04
+  rotate: true
+  xy: 485, 176
+  size: 156, 155
+  orig: 158, 158
+  offset: 1, 1
+  index: -1
+upgrade_05
+  rotate: true
+  xy: 485, 18
+  size: 156, 155
+  orig: 158, 158
+  offset: 1, 1
+  index: -1
+upgrade_06
+  rotate: true
+  xy: 642, 176
+  size: 156, 155
+  orig: 158, 158
+  offset: 1, 1
+  index: -1
+upgrade_07
+  rotate: false
+  xy: 798, 20
+  size: 154, 154
+  orig: 158, 158
+  offset: 2, 2
+  index: -1

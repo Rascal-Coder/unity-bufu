@@ -1,0 +1,41 @@
+
+coin_copper_3.png
+size: 167,568
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: false
+  xy: 2, 534
+  size: 163, 32
+  orig: 163, 34
+  offset: 0, 1
+  index: -1
+yinbi_1
+  rotate: false
+  xy: 2, 410
+  size: 145, 122
+  orig: 145, 122
+  offset: 0, 0
+  index: -1
+yinbi_2
+  rotate: false
+  xy: 2, 286
+  size: 145, 122
+  orig: 145, 122
+  offset: 0, 0
+  index: -1
+yinbi_3
+  rotate: false
+  xy: 2, 152
+  size: 145, 132
+  orig: 145, 132
+  offset: 0, 0
+  index: -1
+yinbi_4
+  rotate: false
+  xy: 2, 2
+  size: 161, 148
+  orig: 163, 148
+  offset: 1, 0
+  index: -1

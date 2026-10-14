@@ -1,0 +1,118 @@
+
+dice_copper.png
+size: 845,441
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: false
+  xy: 2, 171
+  size: 142, 141
+  orig: 200, 200
+  offset: 27, 16
+  index: -1
+10
+  rotate: false
+  xy: 676, 2
+  size: 164, 163
+  orig: 200, 200
+  offset: 24, 17
+  index: -1
+2
+  rotate: false
+  xy: 146, 171
+  size: 160, 141
+  orig: 200, 200
+  offset: 23, 17
+  index: -1
+3
+  rotate: false
+  xy: 452, 169
+  size: 163, 143
+  orig: 200, 200
+  offset: 19, 17
+  index: -1
+4
+  rotate: false
+  xy: 308, 171
+  size: 142, 141
+  orig: 200, 200
+  offset: 33, 22
+  index: -1
+5
+  rotate: false
+  xy: 617, 167
+  size: 150, 145
+  orig: 200, 200
+  offset: 31, 24
+  index: -1
+6
+  rotate: false
+  xy: 513, 5
+  size: 161, 160
+  orig: 200, 200
+  offset: 22, 24
+  index: -1
+7
+  rotate: true
+  xy: 347, 13
+  size: 154, 164
+  orig: 200, 200
+  offset: 23, 19
+  index: -1
+8
+  rotate: true
+  xy: 2, 23
+  size: 146, 169
+  orig: 200, 200
+  offset: 27, 20
+  index: -1
+9
+  rotate: true
+  xy: 173, 20
+  size: 149, 172
+  orig: 200, 200
+  offset: 27, 16
+  index: -1
+num_1
+  rotate: true
+  xy: 142, 314
+  size: 125, 139
+  orig: 127, 141
+  offset: 1, 1
+  index: -1
+num_2
+  rotate: true
+  xy: 283, 314
+  size: 125, 139
+  orig: 127, 141
+  offset: 1, 1
+  index: -1
+num_3
+  rotate: true
+  xy: 424, 314
+  size: 125, 139
+  orig: 127, 141
+  offset: 1, 1
+  index: -1
+num_4
+  rotate: true
+  xy: 565, 314
+  size: 125, 138
+  orig: 127, 140
+  offset: 1, 1
+  index: -1
+num_5
+  rotate: true
+  xy: 705, 314
+  size: 125, 138
+  orig: 127, 140
+  offset: 1, 1
+  index: -1
+num_6
+  rotate: true
+  xy: 2, 314
+  size: 125, 138
+  orig: 127, 140
+  offset: 1, 1
+  index: -1

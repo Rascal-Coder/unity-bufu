@@ -1,0 +1,146 @@
+
+zgygy_zuanshishangren.png
+size: 422,534
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bag
+  rotate: false
+  xy: 202, 103
+  size: 74, 88
+  orig: 88, 88
+  offset: 0, 0
+  index: -1
+body_1
+  rotate: false
+  xy: 2, 105
+  size: 136, 128
+  orig: 140, 128
+  offset: 3, 0
+  index: -1
+eye_1
+  rotate: false
+  xy: 348, 5
+  size: 49, 30
+  orig: 50, 31
+  offset: 0, 1
+  index: -1
+eye_3
+  rotate: true
+  xy: 340, 105
+  size: 97, 53
+  orig: 97, 53
+  offset: 0, 0
+  index: -1
+hand_l_1
+  rotate: true
+  xy: 297, 204
+  size: 60, 102
+  orig: 60, 110
+  offset: 0, 3
+  index: -1
+hand_r_1
+  rotate: false
+  xy: 278, 110
+  size: 60, 92
+  orig: 60, 100
+  offset: 0, 7
+  index: -1
+head_1
+  rotate: false
+  xy: 2, 370
+  size: 167, 162
+  orig: 171, 163
+  offset: 4, 1
+  index: -1
+head_2
+  rotate: true
+  xy: 255, 210
+  size: 74, 40
+  orig: 74, 40
+  offset: 0, 0
+  index: -1
+head_zuanshi.png_00
+  rotate: true
+  xy: 348, 37
+  size: 66, 58
+  orig: 195, 163
+  offset: 14, 95
+  index: -1
+head_zuanshi.png_01
+  rotate: false
+  xy: 146, 193
+  size: 107, 91
+  orig: 195, 163
+  offset: 14, 64
+  index: -1
+head_zuanshi.png_02
+  rotate: false
+  xy: 171, 286
+  size: 134, 117
+  orig: 195, 163
+  offset: 15, 38
+  index: -1
+head_zuanshi.png_03
+  rotate: false
+  xy: 2, 235
+  size: 142, 133
+  orig: 195, 163
+  offset: 25, 17
+  index: -1
+head_zuanshi.png_04
+  rotate: false
+  xy: 171, 405
+  size: 140, 127
+  orig: 195, 163
+  offset: 41, 8
+  index: -1
+head_zuanshi.png_05
+  rotate: true
+  xy: 307, 266
+  size: 128, 113
+  orig: 195, 163
+  offset: 53, 8
+  index: -1
+head_zuanshi.png_06
+  rotate: false
+  xy: 74, 6
+  size: 112, 97
+  orig: 195, 163
+  offset: 69, 8
+  index: -1
+head_zuanshi.png_07
+  rotate: true
+  xy: 188, 11
+  size: 90, 80
+  orig: 195, 163
+  offset: 91, 8
+  index: -1
+leg_l_1
+  rotate: false
+  xy: 2, 2
+  size: 70, 101
+  orig: 74, 104
+  offset: 2, 2
+  index: -1
+leg_r_1
+  rotate: false
+  xy: 140, 105
+  size: 60, 86
+  orig: 64, 100
+  offset: 1, 7
+  index: -1
+shadow
+  rotate: true
+  xy: 313, 396
+  size: 136, 96
+  orig: 136, 96
+  offset: 0, 0
+  index: -1
+star
+  rotate: false
+  xy: 270, 25
+  size: 76, 76
+  orig: 76, 76
+  offset: 0, 0
+  index: -1

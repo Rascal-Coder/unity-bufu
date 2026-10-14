@@ -1,0 +1,41 @@
+
+coin_silver_2.png
+size: 300,276
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: false
+  xy: 143, 2
+  size: 152, 32
+  orig: 154, 34
+  offset: 1, 1
+  index: -1
+yinbi_1
+  rotate: false
+  xy: 2, 12
+  size: 139, 118
+  orig: 139, 118
+  offset: 0, 0
+  index: -1
+yinbi_2
+  rotate: false
+  xy: 159, 156
+  size: 139, 118
+  orig: 139, 118
+  offset: 0, 0
+  index: -1
+yinbi_3
+  rotate: false
+  xy: 159, 36
+  size: 139, 118
+  orig: 139, 118
+  offset: 0, 0
+  index: -1
+yinbi_4
+  rotate: false
+  xy: 2, 132
+  size: 155, 142
+  orig: 156, 142
+  offset: 0, 0
+  index: -1

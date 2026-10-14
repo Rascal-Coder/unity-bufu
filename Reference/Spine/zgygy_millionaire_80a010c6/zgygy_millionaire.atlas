@@ -1,0 +1,90 @@
+
+zgygy_millionaire.png
+size: 417,271
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body_1
+  rotate: false
+  xy: 2, 5
+  size: 140, 127
+  orig: 140, 127
+  offset: 0, 0
+  index: -1
+eye_1
+  rotate: false
+  xy: 309, 9
+  size: 49, 30
+  orig: 50, 31
+  offset: 0, 1
+  index: -1
+eye_2
+  rotate: true
+  xy: 259, 90
+  size: 41, 39
+  orig: 41, 39
+  offset: 0, 0
+  index: -1
+eye_3
+  rotate: true
+  xy: 394, 209
+  size: 60, 19
+  orig: 61, 19
+  offset: 0, 0
+  index: -1
+hand_l_1
+  rotate: true
+  xy: 150, 90
+  size: 56, 107
+  orig: 56, 110
+  offset: 0, 2
+  index: -1
+hand_r_1
+  rotate: false
+  xy: 309, 41
+  size: 58, 90
+  orig: 60, 100
+  offset: 0, 6
+  index: -1
+head_1
+  rotate: false
+  xy: 2, 134
+  size: 146, 135
+  orig: 160, 146
+  offset: 7, 4
+  index: -1
+leg_l_1
+  rotate: true
+  xy: 206, 18
+  size: 70, 101
+  orig: 74, 104
+  offset: 2, 2
+  index: -1
+leg_r_1
+  rotate: false
+  xy: 144, 2
+  size: 60, 86
+  orig: 64, 100
+  offset: 1, 7
+  index: -1
+maozi
+  rotate: false
+  xy: 150, 148
+  size: 144, 121
+  orig: 144, 121
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: true
+  xy: 296, 133
+  size: 136, 96
+  orig: 136, 96
+  offset: 0, 0
+  index: -1
+shenshigun
+  rotate: false
+  xy: 369, 39
+  size: 46, 92
+  orig: 47, 92
+  offset: 1, 0
+  index: -1

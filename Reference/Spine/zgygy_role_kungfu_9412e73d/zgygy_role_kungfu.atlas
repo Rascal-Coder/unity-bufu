@@ -1,0 +1,188 @@
+
+zgygy_role_kungfu.png
+size: 1155,280
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body_1_bei_kungfu
+  rotate: true
+  xy: 876, 13
+  size: 117, 116
+  orig: 136, 130
+  offset: 8, 1
+  index: -1
+body_1_kungfu
+  rotate: true
+  xy: 762, 2
+  size: 114, 112
+  orig: 130, 130
+  offset: 10, 11
+  index: -1
+body_2_bei_kungfu
+  rotate: false
+  xy: 385, 2
+  size: 128, 109
+  orig: 136, 120
+  offset: 2, 2
+  index: -1
+body_2_kungfu
+  rotate: false
+  xy: 637, 12
+  size: 123, 99
+  orig: 130, 130
+  offset: 2, 14
+  index: -1
+body_tang_kungfu
+  rotate: false
+  xy: 818, 132
+  size: 83, 146
+  orig: 83, 146
+  offset: 0, 0
+  index: -1
+eye_1_kungfu
+  rotate: false
+  xy: 176, 80
+  size: 49, 30
+  orig: 50, 31
+  offset: 0, 1
+  index: -1
+hand_l_1_bei_kungfu
+  rotate: false
+  xy: 1001, 183
+  size: 57, 95
+  orig: 60, 100
+  offset: 1, 2
+  index: -1
+hand_l_1_kungfu
+  rotate: false
+  xy: 328, 7
+  size: 55, 103
+  orig: 60, 110
+  offset: 2, 5
+  index: -1
+hand_r_1_bei_kungfu
+  rotate: false
+  xy: 581, 11
+  size: 54, 100
+  orig: 66, 110
+  offset: 6, 4
+  index: -1
+hand_r_1_kungfu
+  rotate: false
+  xy: 994, 44
+  size: 56, 96
+  orig: 70, 100
+  offset: 13, 2
+  index: -1
+head_1_bei_kungfu
+  rotate: false
+  xy: 656, 118
+  size: 160, 160
+  orig: 186, 186
+  offset: 13, 24
+  index: -1
+head_1_kungfu
+  rotate: true
+  xy: 502, 113
+  size: 165, 152
+  orig: 180, 180
+  offset: 11, 25
+  index: -1
+head_2_bei_kungfu
+  rotate: true
+  xy: 341, 113
+  size: 165, 159
+  orig: 180, 180
+  offset: 15, 20
+  index: -1
+head_2_kungfu
+  rotate: false
+  xy: 176, 112
+  size: 163, 166
+  orig: 180, 180
+  offset: 9, 11
+  index: -1
+leg_l_1_kungfu
+  rotate: true
+  xy: 2, 8
+  size: 70, 101
+  orig: 74, 104
+  offset: 2, 2
+  index: -1
+leg_l_bei_kungfu
+  rotate: false
+  xy: 515, 11
+  size: 64, 100
+  orig: 64, 100
+  offset: 0, 0
+  index: -1
+leg_r_1_kungfu
+  rotate: false
+  xy: 1052, 60
+  size: 60, 86
+  orig: 64, 100
+  offset: 1, 7
+  index: -1
+leg_r_bei_kungfu
+  rotate: true
+  xy: 105, 12
+  size: 66, 99
+  orig: 74, 104
+  offset: 8, 3
+  index: -1
+light_1_kungfu
+  rotate: false
+  xy: 227, 7
+  size: 99, 103
+  orig: 101, 105
+  offset: 1, 1
+  index: -1
+light_2_kungfu
+  rotate: false
+  xy: 1060, 185
+  size: 93, 93
+  orig: 95, 95
+  offset: 1, 1
+  index: -1
+mouth_tang_kungfu
+  rotate: true
+  xy: 1001, 143
+  size: 38, 29
+  orig: 38, 29
+  offset: 0, 0
+  index: -1
+shadow_kungfu
+  rotate: true
+  xy: 903, 142
+  size: 136, 96
+  orig: 136, 96
+  offset: 0, 0
+  index: -1
+shou_l_1_tang_kungfu
+  rotate: true
+  xy: 1032, 148
+  size: 33, 51
+  orig: 33, 52
+  offset: 0, 1
+  index: -1
+shou_r_1_tang_kungfu
+  rotate: true
+  xy: 1043, 3
+  size: 39, 49
+  orig: 39, 49
+  offset: 0, 0
+  index: -1
+ying_kungfu
+  rotate: true
+  xy: 2, 80
+  size: 198, 172
+  orig: 206, 181
+  offset: 4, 4
+  index: -1
+z_tang_kungfu
+  rotate: false
+  xy: 994, 2
+  size: 47, 40
+  orig: 47, 40
+  offset: 0, 0
+  index: -1

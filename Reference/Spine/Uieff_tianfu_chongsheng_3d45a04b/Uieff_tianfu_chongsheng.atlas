@@ -1,0 +1,76 @@
+
+Uieff_tianfu_chongsheng.png
+size: 557,1048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: false
+  xy: 2, 478
+  size: 387, 307
+  orig: 387, 307
+  offset: 0, 0
+  index: -1
+10
+  rotate: true
+  xy: 2, 2
+  size: 474, 159
+  orig: 482, 181
+  offset: 0, 0
+  index: -1
+2
+  rotate: true
+  xy: 458, 813
+  size: 233, 90
+  orig: 241, 98
+  offset: 4, 4
+  index: -1
+3
+  rotate: false
+  xy: 163, 37
+  size: 202, 200
+  orig: 244, 244
+  offset: 21, 22
+  index: -1
+4
+  rotate: true
+  xy: 391, 468
+  size: 142, 143
+  orig: 182, 182
+  offset: 20, 20
+  index: -1
+5
+  rotate: true
+  xy: 382, 285
+  size: 181, 169
+  orig: 215, 201
+  offset: 17, 16
+  index: -1
+6
+  rotate: true
+  xy: 391, 612
+  size: 173, 164
+  orig: 207, 196
+  offset: 17, 16
+  index: -1
+7
+  rotate: true
+  xy: 163, 239
+  size: 237, 217
+  orig: 269, 247
+  offset: 16, 15
+  index: -1
+8
+  rotate: true
+  xy: 367, 42
+  size: 195, 180
+  orig: 228, 212
+  offset: 17, 16
+  index: -1
+9
+  rotate: false
+  xy: 2, 787
+  size: 454, 259
+  orig: 457, 333
+  offset: 2, 0
+  index: -1

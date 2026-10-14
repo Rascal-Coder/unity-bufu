@@ -1,0 +1,41 @@
+
+coin_silver_3.png
+size: 167,556
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: false
+  xy: 2, 522
+  size: 163, 32
+  orig: 163, 34
+  offset: 0, 1
+  index: -1
+yinbi_1
+  rotate: false
+  xy: 2, 398
+  size: 145, 122
+  orig: 145, 122
+  offset: 0, 0
+  index: -1
+yinbi_2
+  rotate: false
+  xy: 2, 274
+  size: 145, 122
+  orig: 145, 122
+  offset: 0, 0
+  index: -1
+yinbi_3
+  rotate: false
+  xy: 2, 150
+  size: 145, 122
+  orig: 145, 122
+  offset: 0, 0
+  index: -1
+yinbi_4
+  rotate: false
+  xy: 2, 2
+  size: 161, 146
+  orig: 163, 146
+  offset: 1, 0
+  index: -1

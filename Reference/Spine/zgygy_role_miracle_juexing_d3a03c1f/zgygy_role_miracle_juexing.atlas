@@ -1,0 +1,223 @@
+
+zgygy_role_miracle_juexing.png
+size: 1152,343
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body_1_bei_miracle
+  rotate: true
+  xy: 281, 64
+  size: 101, 108
+  orig: 110, 120
+  offset: 4, 4
+  index: -1
+body_1_miracle
+  rotate: true
+  xy: 391, 64
+  size: 101, 106
+  orig: 110, 112
+  offset: 4, 2
+  index: -1
+body_tang_miracle
+  rotate: false
+  xy: 2, 61
+  size: 277, 280
+  orig: 277, 283
+  offset: 0, 2
+  index: -1
+eye_1_miracle
+  rotate: true
+  xy: 1107, 60
+  size: 49, 30
+  orig: 50, 31
+  offset: 0, 1
+  index: -1
+feng_00
+  rotate: true
+  xy: 581, 11
+  size: 52, 31
+  orig: 101, 56
+  offset: 26, 11
+  index: -1
+feng_01
+  rotate: false
+  xy: 1066, 160
+  size: 66, 38
+  orig: 101, 56
+  offset: 19, 9
+  index: -1
+feng_02
+  rotate: false
+  xy: 1066, 200
+  size: 76, 44
+  orig: 101, 56
+  offset: 13, 6
+  index: -1
+feng_03
+  rotate: false
+  xy: 969, 124
+  size: 86, 48
+  orig: 101, 56
+  offset: 8, 4
+  index: -1
+feng_04
+  rotate: true
+  xy: 756, 76
+  size: 91, 48
+  orig: 101, 56
+  offset: 5, 4
+  index: -1
+feng_05
+  rotate: false
+  xy: 205, 7
+  size: 98, 52
+  orig: 101, 56
+  offset: 1, 2
+  index: -1
+feng_06
+  rotate: true
+  xy: 705, 69
+  size: 97, 49
+  orig: 101, 56
+  offset: 2, 3
+  index: -1
+feng_07
+  rotate: false
+  xy: 104, 5
+  size: 99, 54
+  orig: 101, 56
+  offset: 1, 1
+  index: -1
+hand_l_1_bei_miracle
+  rotate: true
+  xy: 486, 10
+  size: 52, 93
+  orig: 53, 93
+  offset: 1, 0
+  index: -1
+hand_l_1_miracle
+  rotate: true
+  xy: 614, 12
+  size: 51, 107
+  orig: 51, 108
+  offset: 0, 1
+  index: -1
+hand_r_1_bei_miracle
+  rotate: true
+  xy: 2, 4
+  size: 55, 100
+  orig: 56, 100
+  offset: 0, 0
+  index: -1
+hand_r_1_miracle
+  rotate: true
+  xy: 393, 3
+  size: 59, 91
+  orig: 60, 93
+  offset: 0, 1
+  index: -1
+head_1_bei_miracle
+  rotate: true
+  xy: 598, 168
+  size: 173, 150
+  orig: 200, 200
+  offset: 27, 34
+  index: -1
+head_1_miracle
+  rotate: true
+  xy: 832, 2
+  size: 165, 135
+  orig: 200, 200
+  offset: 8, 34
+  index: -1
+head_2_bei_miracle
+  rotate: true
+  xy: 454, 167
+  size: 174, 142
+  orig: 200, 200
+  offset: 26, 26
+  index: -1
+head_2_miracle
+  rotate: true
+  xy: 923, 174
+  size: 167, 141
+  orig: 200, 200
+  offset: 4, 26
+  index: -1
+leg_l_1_miracle
+  rotate: false
+  xy: 499, 64
+  size: 70, 101
+  orig: 74, 104
+  offset: 2, 2
+  index: -1
+leg_l_bei_miracle
+  rotate: false
+  xy: 571, 65
+  size: 64, 100
+  orig: 64, 100
+  offset: 0, 0
+  index: -1
+leg_r_1_miracle
+  rotate: true
+  xy: 305, 2
+  size: 60, 86
+  orig: 64, 100
+  offset: 1, 7
+  index: -1
+leg_r_1_tang_miracle
+  rotate: false
+  xy: 1066, 246
+  size: 84, 95
+  orig: 84, 95
+  offset: 0, 0
+  index: -1
+leg_r_bei_miracle
+  rotate: false
+  xy: 637, 67
+  size: 66, 99
+  orig: 74, 104
+  offset: 8, 3
+  index: -1
+lingzi_1_miracle
+  rotate: false
+  xy: 723, 2
+  size: 107, 65
+  orig: 111, 66
+  offset: 0, 1
+  index: -1
+mouth_tang_miracle
+  rotate: false
+  xy: 1057, 129
+  size: 38, 29
+  orig: 38, 29
+  offset: 0, 0
+  index: -1
+pifeng_1_bei_miracle
+  rotate: false
+  xy: 281, 167
+  size: 171, 174
+  orig: 180, 180
+  offset: 1, 5
+  index: -1
+pifeng_1_miracle
+  rotate: false
+  xy: 750, 169
+  size: 171, 172
+  orig: 180, 180
+  offset: 6, 4
+  index: -1
+shadow_miracle
+  rotate: false
+  xy: 969, 26
+  size: 136, 96
+  orig: 136, 96
+  offset: 0, 0
+  index: -1
+z_tang_miracle
+  rotate: true
+  xy: 1107, 111
+  size: 47, 40
+  orig: 47, 40
+  offset: 0, 0
+  index: -1

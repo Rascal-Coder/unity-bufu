@@ -1,0 +1,3660 @@
+{
+"paths": [
+{
+"path": "Assets/GameRes/MapRes/fight_bg_1.png",
+"key": "fight_bg_1"
+},
+{
+"path": "Assets/GameRes/MapRes/fight_bg_101.png",
+"key": "fight_bg_101"
+},
+{
+"path": "Assets/GameRes/MapRes/fight_bg_102.png",
+"key": "fight_bg_102"
+},
+{
+"path": "Assets/GameRes/MapRes/fight_bg_103.png",
+"key": "fight_bg_103"
+},
+{
+"path": "Assets/GameRes/MapRes/fight_bg_104.png",
+"key": "fight_bg_104"
+},
+{
+"path": "Assets/GameRes/MapRes/fight_bg_105.png",
+"key": "fight_bg_105"
+},
+{
+"path": "Assets/GameRes/MapRes/fight_bg_106.png",
+"key": "fight_bg_106"
+},
+{
+"path": "Assets/GameRes/MapRes/fight_bg_107.png",
+"key": "fight_bg_107"
+},
+{
+"path": "Assets/GameRes/MapRes/fight_bg_108.png",
+"key": "fight_bg_108"
+},
+{
+"path": "Assets/GameRes/MapRes/fight_bg_2.png",
+"key": "fight_bg_2"
+},
+{
+"path": "Assets/GameRes/MapRes/fight_bg_3.png",
+"key": "fight_bg_3"
+},
+{
+"path": "Assets/GameRes/MapRes/fight_bg_4.png",
+"key": "fight_bg_4"
+},
+{
+"path": "Assets/GameRes/MapRes/fight_bg_5.png",
+"key": "fight_bg_5"
+},
+{
+"path": "Assets/GameRes/MapRes/fight_bg_6.png",
+"key": "fight_bg_6"
+},
+{
+"path": "Assets/GameRes/MapRes/fight_bg_7.png",
+"key": "fight_bg_7"
+},
+{
+"path": "Assets/GameRes/MapRes/fight_bg_8.png",
+"key": "fight_bg_8"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/ad_btn_summon.png",
+"key": "ad_btn_summon"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/ad_icon_dafuweng.png",
+"key": "ad_icon_dafuweng"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/ad_icon_gongfudashi.png",
+"key": "ad_icon_gongfudashi"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/ad_icon_guwudashi.png",
+"key": "ad_icon_guwudashi"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/ad_icon_zhaohuandashepng.png",
+"key": "ad_icon_zhaohuandashepng"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/ad_icon_zhuanqiandashi.png",
+"key": "ad_icon_zhuanqiandashi"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/ad_pic_chaoji666.png",
+"key": "ad_pic_chaoji666"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/ad_pic_dafuweng_scale2.png",
+"key": "ad_pic_dafuweng_scale2"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/ad_pic_gongfudashiBg_scale2.png",
+"key": "ad_pic_gongfudashiBg_scale2"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/ad_pic_gongfudashi_scale2.png",
+"key": "ad_pic_gongfudashi_scale2"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/ad_pic_guwudashi_scale2.png",
+"key": "ad_pic_guwudashi_scale2"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/ad_pic_investAsk_scale2.png",
+"key": "ad_pic_investAsk_scale2"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/ad_pic_investBg01_scale2.png",
+"key": "ad_pic_investBg01_scale2"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/ad_pic_investBg02_scale2.png",
+"key": "ad_pic_investBg02_scale2"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/ad_pic_investBgLight_scale2.png.png",
+"key": "ad_pic_investBgLight_scale2.png"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/ad_pic_investGetDiamond_scale2.png.png",
+"key": "ad_pic_investGetDiamond_scale2.png"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/ad_pic_investGetMoney_scale2.png",
+"key": "ad_pic_investGetMoney_scale2"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/ad_pic_investLostDiamond_scale2.png",
+"key": "ad_pic_investLostDiamond_scale2"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/ad_pic_investLostMoney_scale2.png.png",
+"key": "ad_pic_investLostMoney_scale2.png"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/ad_pic_tiqianshiyong.png",
+"key": "ad_pic_tiqianshiyong"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/ad_pic_title_chaoji666.png",
+"key": "ad_pic_title_chaoji666"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/ad_pic_title_dafuweng.png",
+"key": "ad_pic_title_dafuweng"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/ad_pic_title_gongfudashi.png",
+"key": "ad_pic_title_gongfudashi"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/ad_pic_title_guwudashi.png",
+"key": "ad_pic_title_guwudashi"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/ad_pic_title_zhuanqiandashi.png",
+"key": "ad_pic_title_zhuanqiandashi"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/ad_pic_title_zuanshishangren.png",
+"key": "ad_pic_title_zuanshishangren"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/ad_pic_title_zuanshizhiyuan.png",
+"key": "ad_pic_title_zuanshizhiyuan"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/ad_pic_zhaohuandasheBg_scale2.png",
+"key": "ad_pic_zhaohuandasheBg_scale2"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/ad_pic_zhaohuandashe_scale2.png",
+"key": "ad_pic_zhaohuandashe_scale2"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/ad_pic_zhuanqiandashi_scale2.png",
+"key": "ad_pic_zhuanqiandashi_scale2"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/ad_pic_zuanshishangren_2.png",
+"key": "ad_pic_zuanshishangren_2"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/ad_pic_zuanshizhiyuani_scale2.png",
+"key": "ad_pic_zuanshizhiyuani_scale2"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/ad_pnl_timeBg02.png",
+"key": "ad_pnl_timeBg02"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/ad_zi_shouxiahaoyun.png",
+"key": "ad_zi_shouxiahaoyun"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/ad_zi_teshuqiyu.png",
+"key": "ad_zi_teshuqiyu"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/ad_zi_touzi.png",
+"key": "ad_zi_touzi"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/ad_zi_yaohuibenqian.png",
+"key": "ad_zi_yaohuibenqian"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/sw_bac_jiayou_.png",
+"key": "sw_bac_jiayou_"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/ty_btn_invite01.png",
+"key": "ty_btn_invite01"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/ty_btn_invited.png",
+"key": "ty_btn_invited"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/ty_icon_invite.png",
+"key": "ty_icon_invite@7582ad00"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/ty_icon_invited.png",
+"key": "ty_icon_invited"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/ty_icon_refresh.png",
+"key": "ty_icon_refresh"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/ty_pic_invited_sign.png",
+"key": "ty_pic_invited_sign"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/ty_pnl_inviteBg_scale2.png",
+"key": "ty_pnl_inviteBg_scale2"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/zjm_bac_bar_1.png",
+"key": "zjm_bac_bar_1"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/zjm_bac_bar_2.png",
+"key": "zjm_bac_bar_2"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/zjm_bac_bottom_1.png",
+"key": "zjm_bac_bottom_1_0"
+},
+{
+"path": "Assets/GameRes/NewUI/Ad/images/zjm_icon_laohuji.png",
+"key": "zjm_icon_laohuji"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/ad_icon_dafuweng_02.png",
+"key": "ad_icon_dafuweng_02"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/ad_pic_dafuweng_02_scale2.png",
+"key": "ad_pic_dafuweng_02_scale2"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_icon_exchange.png",
+"key": "challenge_icon_exchange"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_icon_ticket01.png",
+"key": "challenge_icon_ticket01"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_lab_player_arrow.png",
+"key": "challenge_lab_player_arrow"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pic_bg_grad.png",
+"key": "challenge_pic_bg_grad"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pic_character_crowd_bottom.png",
+"key": "challenge_pic_character_crowd_bottom"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pic_character_crowd_left.png",
+"key": "challenge_pic_character_crowd_left"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pic_character_crowd_right.png",
+"key": "challenge_pic_character_crowd_right"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pic_character_monopoly.png",
+"key": "challenge_pic_character_monopoly"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pic_condition.png",
+"key": "challenge_pic_condition"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pic_countdown.png",
+"key": "challenge_pic_countdown"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pic_dialog_01.png",
+"key": "challenge_pic_dialog_01"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pic_dialog_02.png",
+"key": "challenge_pic_dialog_02"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pic_dialog_03.png",
+"key": "challenge_pic_dialog_03"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pic_emoji_angry.png",
+"key": "challenge_pic_emoji_angry"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pic_emoji_happy.png",
+"key": "challenge_pic_emoji_happy"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pic_emoji_nervous.png",
+"key": "challenge_pic_emoji_nervous"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pic_emoji_question.png",
+"key": "challenge_pic_emoji_question"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pic_emoji_sad.png",
+"key": "challenge_pic_emoji_sad"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pic_emoji_shocked.png",
+"key": "challenge_pic_emoji_shocked"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pic_emoji_stunned.png",
+"key": "challenge_pic_emoji_stunned"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pic_exchange num_bg_02.png",
+"key": "challenge_pic_exchange num_bg_02"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pic_exchange_arrow.png",
+"key": "challenge_pic_exchange_arrow"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pic_exchange_bg.png",
+"key": "challenge_pic_exchange_bg"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pic_exchange_bg_01_scale2.png",
+"key": "challenge_pic_exchange_bg_01_scale2"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pic_exchange_bg_02_scale2.png",
+"key": "challenge_pic_exchange_bg_02_scale2"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pic_exchange_bg_03.png",
+"key": "challenge_pic_exchange_bg_03"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pic_exchange_bg_04.png",
+"key": "challenge_pic_exchange_bg_04"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pic_exchange_num_bg.png",
+"key": "challenge_pic_exchange_num_bg"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pic_exchange_process_01.png",
+"key": "challenge_pic_exchange_process_01"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pic_exchange_process_02.png",
+"key": "challenge_pic_exchange_process_02"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pic_exchange_process_btn.png",
+"key": "challenge_pic_exchange_process_btn"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pic_island_light_scale2.png",
+"key": "challenge_pic_island_light_scale2"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pic_island_scale2.png",
+"key": "challenge_pic_island_scale2"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pic_match_countdown_bg.png",
+"key": "challenge_pic_match_countdown_bg"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pic_match_light_scale10.png",
+"key": "challenge_pic_match_light_scale10"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pic_process_01.png",
+"key": "challenge_pic_process_01"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pic_process_02.png",
+"key": "challenge_pic_process_02"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pic_process_num.png",
+"key": "challenge_pic_process_num"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pic_resule_bg_01.png",
+"key": "challenge_pic_resule_bg_01"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pic_resule_bg_02.png",
+"key": "challenge_pic_resule_bg_02"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pic_resule_light_01.png",
+"key": "challenge_pic_resule_light_01"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pic_resule_light_02.png",
+"key": "challenge_pic_resule_light_02"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pic_title_chujichang.png",
+"key": "challenge_pic_title_chujichang"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pic_title_huobiduihuan.png",
+"key": "challenge_pic_title_huobiduihuan"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pnl_down_01.png",
+"key": "challenge_pnl_down_01"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pnl_match_avatar_bg_01.png",
+"key": "challenge_pnl_match_avatar_bg_01"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pnl_match_avatar_bg_02.png",
+"key": "challenge_pnl_match_avatar_bg_02"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pnl_match_avatar_bg_03.png",
+"key": "challenge_pnl_match_avatar_bg_03"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_pnl_result.png",
+"key": "challenge_pnl_result"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_task_01_scale2.png",
+"key": "challenge_task_01_scale2"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_zi_chujichang.png",
+"key": "challenge_zi_chujichang"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_zi_duihuan.png",
+"key": "challenge_zi_duihuan"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_zi_fanhui.png",
+"key": "challenge_zi_fanhui"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_zi_jixu.png",
+"key": "challenge_zi_jixu"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_zi_kuisun.png",
+"key": "challenge_zi_kuisun"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_zi_maichu.png",
+"key": "challenge_zi_maichu"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_zi_paimai.png",
+"key": "challenge_zi_paimai"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_zi_paimaichang.png",
+"key": "challenge_zi_paimaichang"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_zi_shuangbeimaichu.png",
+"key": "challenge_zi_shuangbeimaichu"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_zi_taijiajieduan.png",
+"key": "challenge_zi_taijiajieduan"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_zi_yingli.png",
+"key": "challenge_zi_yingli"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_zi_zailaiyiju.png",
+"key": "challenge_zi_zailaiyiju"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_zi_zhunbei.png",
+"key": "challenge_zi_zhunbei"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/challenge_zi_zongjia.png",
+"key": "challenge_zi_zongjia"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/gqxz_icon_arror01.png",
+"key": "gqxz_icon_arror01"
+},
+{
+"path": "Assets/GameRes/NewUI/Auction/images/ty_btn_back.png",
+"key": "ty_btn_back"
+},
+{
+"path": "Assets/GameRes/NewUI/Challenge/images/challenge_pic_avatarMask.png",
+"key": "challenge_pic_avatarMask"
+},
+{
+"path": "Assets/GameRes/NewUI/Challenge/images/challenge_pic_avatarN01.png",
+"key": "challenge_pic_avatarN01"
+},
+{
+"path": "Assets/GameRes/NewUI/Challenge/images/challenge_pic_avatarN02.png",
+"key": "challenge_pic_avatarN02"
+},
+{
+"path": "Assets/GameRes/NewUI/Challenge/images/challenge_pic_avatarR01.png",
+"key": "challenge_pic_avatarR01"
+},
+{
+"path": "Assets/GameRes/NewUI/Challenge/images/challenge_pic_avatarR02.png",
+"key": "challenge_pic_avatarR02"
+},
+{
+"path": "Assets/GameRes/NewUI/Challenge/images/challenge_pic_avatarSR01.png",
+"key": "challenge_pic_avatarSR01"
+},
+{
+"path": "Assets/GameRes/NewUI/Challenge/images/challenge_pic_avatarSR02.png",
+"key": "challenge_pic_avatarSR02"
+},
+{
+"path": "Assets/GameRes/NewUI/Challenge/images/challenge_pic_bg2_scale2.png",
+"key": "challenge_pic_bg2_scale2"
+},
+{
+"path": "Assets/GameRes/NewUI/Challenge/images/challenge_pic_bg3_scale2.png",
+"key": "challenge_pic_bg3_scale2"
+},
+{
+"path": "Assets/GameRes/NewUI/Challenge/images/challenge_pic_bg_#563528.png",
+"key": "challenge_pic_bg_#563528"
+},
+{
+"path": "Assets/GameRes/NewUI/Challenge/images/challenge_pic_countdownBg.png",
+"key": "challenge_pic_countdownBg"
+},
+{
+"path": "Assets/GameRes/NewUI/Challenge/images/challenge_pic_deployNumBg.png",
+"key": "challenge_pic_deployNumBg_0"
+},
+{
+"path": "Assets/GameRes/NewUI/Challenge/images/challenge_pic_lvBg.png",
+"key": "challenge_pic_lvBg"
+},
+{
+"path": "Assets/GameRes/NewUI/Challenge/images/challenge_pic_talbe.png",
+"key": "challenge_pic_talbe"
+},
+{
+"path": "Assets/GameRes/NewUI/Challenge/images/challenge_pic_titleBg.png",
+"key": "challenge_pic_titleBg"
+},
+{
+"path": "Assets/GameRes/NewUI/Challenge/images/challenge_pic_titleIcon.png",
+"key": "challenge_pic_titleIcon"
+},
+{
+"path": "Assets/GameRes/NewUI/Challenge/images/challenge_pnl_roleBg.png",
+"key": "challenge_pnl_roleBg"
+},
+{
+"path": "Assets/GameRes/NewUI/Challenge/images/challenge_pnl_roleLockMask.png",
+"key": "challenge_pnl_roleLockMask"
+},
+{
+"path": "Assets/GameRes/NewUI/Challenge/images/challenge_task_01_scale2 1.png",
+"key": "challenge_task_01_scale2 1"
+},
+{
+"path": "Assets/GameRes/NewUI/Challenge/images/challenge_task_01_scale2.png",
+"key": "challenge_task_01_scale2@808ced84"
+},
+{
+"path": "Assets/GameRes/NewUI/Challenge/images/challenge_zi_bangshouzudui.png",
+"key": "challenge_zi_bangshouzudui"
+},
+{
+"path": "Assets/GameRes/NewUI/Challenge/images/challenge_zi_jiangli.png",
+"key": "challenge_zi_jiangli"
+},
+{
+"path": "Assets/GameRes/NewUI/Challenge/images/challenge_zi_tiaozhan.png",
+"key": "challenge_zi_tiaozhan"
+},
+{
+"path": "Assets/GameRes/NewUI/Challenge/images/challenge_zi_xianshitiaozhan.png",
+"key": "challenge_zi_xianshitiaozhan"
+},
+{
+"path": "Assets/GameRes/NewUI/Challenge/images/challenge_zi_yijianzudui.png",
+"key": "challenge_zi_yijianzudui"
+},
+{
+"path": "Assets/GameRes/NewUI/Challenge/images/challenge_zi_zhunbeihaola.png",
+"key": "challenge_zi_zhunbeihaola"
+},
+{
+"path": "Assets/GameRes/NewUI/Challenge/images/ty_btn_challenge.png",
+"key": "ty_btn_challenge"
+},
+{
+"path": "Assets/GameRes/NewUI/Challenge/images/ty_btn_exitChallenge.png",
+"key": "ty_btn_exitChallenge"
+},
+{
+"path": "Assets/GameRes/NewUI/Challenge/images/ty_icon_goal.png",
+"key": "ty_icon_goal"
+},
+{
+"path": "Assets/GameRes/NewUI/Challenge/images/ty_icon_miaobiao01.png",
+"key": "ty_icon_miaobiao01"
+},
+{
+"path": "Assets/GameRes/NewUI/Challenge/images/ty_pic_btnNumBg.png",
+"key": "ty_pic_btnNumBg"
+},
+{
+"path": "Assets/GameRes/NewUI/Challenge/images/ty_pic_challenge_fail_scale2.png",
+"key": "ty_pic_challenge_fail_scale2"
+},
+{
+"path": "Assets/GameRes/NewUI/Challenge/images/ty_pic_challenge_successl_scale2.png",
+"key": "ty_pic_challenge_successl_scale2"
+},
+{
+"path": "Assets/GameRes/NewUI/Challenge/images/ty_pic_countdown.png",
+"key": "ty_pic_countdown"
+},
+{
+"path": "Assets/GameRes/NewUI/Challenge/images/ty_pic_item01.png",
+"key": "ty_pic_item01"
+},
+{
+"path": "Assets/GameRes/NewUI/Challenge/images/ty_pic_process.png",
+"key": "ty_pic_process"
+},
+{
+"path": "Assets/GameRes/NewUI/Challenge/images/ty_pic_process02.png",
+"key": "ty_pic_process02_0"
+},
+{
+"path": "Assets/GameRes/NewUI/Challenge/images/ty_pic_processBg1.png",
+"key": "ty_pic_processBg1"
+},
+{
+"path": "Assets/GameRes/NewUI/Challenge/images/ty_pic_processBg2.png",
+"key": "ty_pic_processBg2"
+},
+{
+"path": "Assets/GameRes/NewUI/Challenge/images/ty_zi_fuhuo.png",
+"key": "ty_zi_fuhuo"
+},
+{
+"path": "Assets/GameRes/NewUI/CheckIn/images/qd_lab_get.png",
+"key": "qd_lab_get"
+},
+{
+"path": "Assets/GameRes/NewUI/CheckIn/images/qd_pic_bg_scale2.png",
+"key": "qd_pic_bg_scale2"
+},
+{
+"path": "Assets/GameRes/NewUI/CheckIn/images/qd_pic_kongfu_scale2.png",
+"key": "qd_pic_kongfu_scale2"
+},
+{
+"path": "Assets/GameRes/NewUI/CheckIn/images/qd_pnl_adBg 1.png",
+"key": "qd_pnl_adBg 1"
+},
+{
+"path": "Assets/GameRes/NewUI/CheckIn/images/qd_pnl_adBg.png",
+"key": "qd_pnl_adBg"
+},
+{
+"path": "Assets/GameRes/NewUI/CheckIn/images/qd_pnl_item_01 1.png",
+"key": "qd_pnl_item_01 1"
+},
+{
+"path": "Assets/GameRes/NewUI/CheckIn/images/qd_pnl_item_02.png",
+"key": "qd_pnl_item_02"
+},
+{
+"path": "Assets/GameRes/NewUI/CheckIn/images/qd_pnl_item_03.png",
+"key": "qd_pnl_item_03"
+},
+{
+"path": "Assets/GameRes/NewUI/CheckIn/images/qd_pnl_nomorlBg.png",
+"key": "qd_pnl_nomorlBg"
+},
+{
+"path": "Assets/GameRes/NewUI/CheckIn/images/qd_zi_as.png",
+"key": "qd_zi_as"
+},
+{
+"path": "Assets/GameRes/NewUI/CheckIn/images/qd_zi_dingyue.png",
+"key": "qd_zi_dingyue"
+},
+{
+"path": "Assets/GameRes/NewUI/CheckIn/images/qd_zi_nomorl.png",
+"key": "qd_zi_nomorl"
+},
+{
+"path": "Assets/GameRes/NewUI/CheckInWorldCup/images/ly_icon_haaland.png",
+"key": "ly_icon_haaland"
+},
+{
+"path": "Assets/GameRes/NewUI/CheckInWorldCup/images/ly_icon_points.png",
+"key": "ly_icon_points"
+},
+{
+"path": "Assets/GameRes/NewUI/CheckInWorldCup/images/ly_pic_chacked.png",
+"key": "ly_pic_chacked"
+},
+{
+"path": "Assets/GameRes/NewUI/CheckInWorldCup/images/ly_pic_haalandGuide.png",
+"key": "ly_pic_haalandGuide"
+},
+{
+"path": "Assets/GameRes/NewUI/CheckInWorldCup/images/ly_pic_mainBg_scale2.png",
+"key": "ly_pic_mainBg_scale2"
+},
+{
+"path": "Assets/GameRes/NewUI/CheckInWorldCup/images/ly_pic_pointsBg.png",
+"key": "ly_pic_pointsBg"
+},
+{
+"path": "Assets/GameRes/NewUI/CheckInWorldCup/images/ly_pic_process_b_01.png",
+"key": "ly_pic_process_b_01"
+},
+{
+"path": "Assets/GameRes/NewUI/CheckInWorldCup/images/ly_pic_process_b_02.png",
+"key": "ly_pic_process_b_02"
+},
+{
+"path": "Assets/GameRes/NewUI/CheckInWorldCup/images/ly_pic_process_g_01.png",
+"key": "ly_pic_process_g_01"
+},
+{
+"path": "Assets/GameRes/NewUI/CheckInWorldCup/images/ly_pic_process_g_02.png",
+"key": "ly_pic_process_g_02"
+},
+{
+"path": "Assets/GameRes/NewUI/CheckInWorldCup/images/ly_pic_taskBg.png",
+"key": "ly_pic_taskBg_0"
+},
+{
+"path": "Assets/GameRes/NewUI/CheckInWorldCup/images/ly_pic_title_ad.png",
+"key": "ly_pic_title_ad"
+},
+{
+"path": "Assets/GameRes/NewUI/CheckInWorldCup/images/ly_pic_title_price.png",
+"key": "ly_pic_title_price"
+},
+{
+"path": "Assets/GameRes/NewUI/CheckInWorldCup/images/ly_pnl_haaland.png",
+"key": "ly_pnl_haaland"
+},
+{
+"path": "Assets/GameRes/NewUI/CheckInWorldCup/images/ly_pnl_taskBg.png",
+"key": "ly_pnl_taskBg"
+},
+{
+"path": "Assets/GameRes/NewUI/CheckInWorldCup/images/ly_tab_bg.png",
+"key": "ly_tab_bg"
+},
+{
+"path": "Assets/GameRes/NewUI/CheckInWorldCup/images/ly_tab_sign01.png",
+"key": "ly_tab_sign01"
+},
+{
+"path": "Assets/GameRes/NewUI/CheckInWorldCup/images/ly_tab_sign02.png",
+"key": "ly_tab_sign02"
+},
+{
+"path": "Assets/GameRes/NewUI/CheckInWorldCup/images/ly_tab_task01.png",
+"key": "ly_tab_task01"
+},
+{
+"path": "Assets/GameRes/NewUI/CheckInWorldCup/images/ly_tab_task02.png",
+"key": "ly_tab_task02"
+},
+{
+"path": "Assets/GameRes/NewUI/CheckInWorldCup/images/ly_zi_lingqu.png",
+"key": "ly_zi_lingqu"
+},
+{
+"path": "Assets/GameRes/NewUI/CheckInWorldCup/images/ly_zi_weiwancheng.png",
+"key": "ly_zi_weiwancheng"
+},
+{
+"path": "Assets/GameRes/NewUI/CheckInWorldCup/images/qd_pic_item_zhezhao.png",
+"key": "qd_pic_item_zhezhao"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/1.png",
+"key": "1@b9d7966c"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/calan_pnl_item01.png",
+"key": "calan_pnl_item01"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/celan_btn_celan01.png",
+"key": "celan_btn_celan01"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/celan_btn_fold.png",
+"key": "celan_btn_fold"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/celan_btn_lingqujiangli01.png",
+"key": "celan_btn_lingqujiangli01"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/celan_btn_open.png",
+"key": "celan_btn_open"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/celan_icon_celan01.png.png",
+"key": "celan_icon_celan01.png"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/celan_icon_dingyueyoujiang.png",
+"key": "celan_icon_dingyueyoujiang"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/celan_icon_zhuomian01.png.png",
+"key": "celan_icon_zhuomian01.png"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/celan_pic_buzhou_02_shiyixia_dou_x2.png",
+"key": "celan_pic_buzhou_02_shiyixia_dou_x2"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/celan_pic_buzhou_icon_01.png",
+"key": "celan_pic_buzhou_icon_01"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/celan_pic_title_dingyueyouli.png",
+"key": "celan_pic_title_dingyueyouli"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/celan_pnl_BG01.png",
+"key": "celan_pnl_BG01"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/celan_pnl_BG01_open.png",
+"key": "celan_pnl_BG01_open"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/celan_zi_num_1.png",
+"key": "celan_zi_num_1"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/celan_zi_num_2.png",
+"key": "celan_zi_num_2"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/celan_zi_num_3.png",
+"key": "celan_zi_num_3"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/common_btn.png",
+"key": "common_btn"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/lxsy_btn_queding.png",
+"key": "lxsy_btn_queding"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/lxsy_btn_shuangbeihuoqu.png",
+"key": "lxsy_btn_shuangbeihuoqu"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/mx/ad_icon.png",
+"key": "ad_icon"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/mx/ad_icon_zuanshizhiyuani.png",
+"key": "ad_icon_zuanshizhiyuani"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/mx/ad_pic_desBg.png",
+"key": "ad_pic_desBg"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/mx/ad_pnl_timeBg.png",
+"key": "ad_pnl_timeBg"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/mx/challenge_icon_coin01.png",
+"key": "challenge_icon_coin01"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/mx/challenge_pic_title_bg.png",
+"key": "challenge_pic_title_bg"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/mx/common_btn.png",
+"key": "common_btn@81b90b65"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/mx/talent_btn_back.png",
+"key": "talent_btn_back@415814fc"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/mx/talent_pic_Bg_pattern.png",
+"key": "talent_pic_Bg_pattern"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/mx/talent_pic_Bg_pattern02.png",
+"key": "talent_pic_Bg_pattern02"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/mx/talent_pic_Bg_pattern03.png",
+"key": "talent_pic_Bg_pattern03"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/mx/talent_pnl_talentBg.png",
+"key": "talent_pnl_talentBg"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/mx/talent_pnl_talentTitle.png",
+"key": "talent_pnl_talentTitle"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/mx/ty_btn_goto.png",
+"key": "ty_btn_goto"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/mx/ty_btn_hui01.png",
+"key": "ty_btn_hui01"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/mx/ty_btn_yellow01.png",
+"key": "ty_btn_yellow01"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/mx/ty_icon_coin01.png",
+"key": "ty_icon_coin01"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/mx/ty_lab_N.png",
+"key": "ty_lab_N"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/mx/ty_lab_R.png",
+"key": "ty_lab_R"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/mx/ty_lab_SR.png",
+"key": "ty_lab_SR"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/mx/ty_pic_numTag.png",
+"key": "ty_pic_numTag"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/mx/wupin_zi_lv01.png",
+"key": "wupin_zi_lv01"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/mx/zm_pic_bs_titleBg01.png",
+"key": "zm_pic_bs_titleBg01"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/talent_btn_back.png",
+"key": "talent_btn_back"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/tu_pic_redDot.png",
+"key": "tu_pic_redDot"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/ty_btn_hui01.png",
+"key": "ty_btn_hui01@8099cc38"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/ty_btn_quxiao.png",
+"key": "ty_btn_quxiao"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/ty_icon_coin01.png",
+"key": "ty_icon_coin01@4f9b2316"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/ty_icon_coin02.png",
+"key": "ty_icon_coin02"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/ty_icon_coinAuction.png",
+"key": "ty_icon_coinAuction"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/ty_icon_diamond01.png",
+"key": "ty_icon_diamond01"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/ty_icon_game.png",
+"key": "ty_icon_game"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/ty_icon_invite.png",
+"key": "ty_icon_invite"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/ty_icon_item_01.png",
+"key": "ty_icon_item_01"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/ty_icon_item_02.png",
+"key": "ty_icon_item_02"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/ty_icon_qiandao.png",
+"key": "ty_icon_qiandao"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/ty_icon_ranking.png",
+"key": "ty_icon_ranking"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/ty_icon_setup.png",
+"key": "ty_icon_setup"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/ty_icon_skill_01.png",
+"key": "ty_icon_skill_01"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/ty_icon_strengthen_01.png",
+"key": "ty_icon_strengthen_01"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/ty_icon_talentPoint.png",
+"key": "ty_icon_talentPoint"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/ty_icon_task.png",
+"key": "ty_icon_task"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/ty_pic_clip.png",
+"key": "ty_pic_clip"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/ty_pic_dialogBg_scale2.png",
+"key": "ty_pic_dialogBg_scale2"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/ty_pic_dogeWax.png",
+"key": "ty_pic_dogeWax"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/ty_pic_line_tabs.png",
+"key": "ty_pic_line_tabs"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/ty_pic_maskpanel.png",
+"key": "ty_pic_maskpanel"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/ty_pic_panel_01_tile.png",
+"key": "ty_pic_panel_01_tile"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/ty_pic_panel_01x2.png",
+"key": "ty_pic_panel_01x2"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/ty_pic_panel_02_tile.png",
+"key": "ty_pic_panel_02_tile"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/ty_pic_panel_02x2.png",
+"key": "ty_pic_panel_02x2"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/ty_pic_panel_03_tile.png",
+"key": "ty_pic_panel_03_tile"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/ty_pic_panel_03x2.png",
+"key": "ty_pic_panel_03x2"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/ty_pic_panel_04_tile.png",
+"key": "ty_pic_panel_04_tile"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/ty_pic_panel_04x2.png",
+"key": "ty_pic_panel_04x2"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/ty_pic_panel_05_tile.png",
+"key": "ty_pic_panel_05_tile"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/ty_pic_panel_05x2.png",
+"key": "ty_pic_panel_05x2"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/ty_pic_panel_diceBG_tile.png",
+"key": "ty_pic_panel_diceBG_tile"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/ty_pic_panel_diceBgx2.png",
+"key": "ty_pic_panel_diceBgx2"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/ty_pic_reward_bg_01.png",
+"key": "ty_pic_reward_bg_01"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/ty_pic_titleBg.png",
+"key": "ty_pic_titleBg"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/ty_pnl_gameTarget.png",
+"key": "ty_pnl_gameTarget"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/ty_pnl_tabs_bg.png",
+"key": "ty_pnl_tabs_bg"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/ty_pnl_tabs_open.png",
+"key": "ty_pnl_tabs_open"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/ty_pnl_upgrade.png",
+"key": "ty_pnl_upgrade"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/ty_title_gongxihuode.png",
+"key": "ty_title_gongxihuode"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/ty_zi_earn.png",
+"key": "ty_zi_earn"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/ty_zi_gameTarget.png",
+"key": "ty_zi_gameTarget"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/ty_zi_gengduo.png",
+"key": "ty_zi_gengduo"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/ty_zi_shouqi.png",
+"key": "ty_zi_shouqi"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/upgrade_icon_information.png",
+"key": "upgrade_icon_information"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/upgrade_icon_information_dice.png",
+"key": "upgrade_icon_information_dice"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/wupin_btn_adShengji01.png",
+"key": "wupin_btn_adShengji01"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/wupin_btn_buzhu01.png",
+"key": "wupin_btn_buzhu01"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/wupin_btn_buzhu02.png",
+"key": "wupin_btn_buzhu02"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/wupin_btn_shengji01.png",
+"key": "wupin_btn_shengji01"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/wupin_btn_shengji02.png",
+"key": "wupin_btn_shengji02"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/wupin_btn_yidashagnxian01.png",
+"key": "wupin_btn_yidashagnxian01"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/wupin_pic_BG01_scale2.png",
+"key": "wupin_pic_BG01_scale2"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/wupin_pic_item_bg1_pattern_20alpha.png",
+"key": "wupin_pic_item_bg1_pattern_20alpha"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/wupin_pic_item_dice_bg1_pattern_20alpha.png",
+"key": "wupin_pic_item_dice_bg1_pattern_20alpha"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/wupin_pic_jiantou01.png",
+"key": "wupin_pic_jiantou01"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/wupin_pic_skill_bg1_pattern_20alpha.png",
+"key": "wupin_pic_skill_bg1_pattern_20alpha"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/wupin_pic_skill_dice_bg1_pattern_20alpha.png",
+"key": "wupin_pic_skill_dice_bg1_pattern_20alpha"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/wupin_pic_tips01.png",
+"key": "wupin_pic_tips01"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/wupin_pnl_dice_lvUp01.png",
+"key": "wupin_pnl_dice_lvUp01"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/wupin_pnl_lvUp01.png",
+"key": "wupin_pnl_lvUp01"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/xsyd_huanxing.png",
+"key": "xsyd_huanxing"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/xsyd_yijies.png",
+"key": "xsyd_yijies"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/xsyd_zhuanqianshengji.png",
+"key": "xsyd_zhuanqianshengji"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/yindaotu.png",
+"key": "yindaotu"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/zjm_btn_shangcheng01.png",
+"key": "zjm_btn_shangcheng01"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/zjm_btn_shengji01.png",
+"key": "zjm_btn_shengji01"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/zjm_btn_sheshi01.png",
+"key": "zjm_btn_sheshi01"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/zjm_btn_shijie01.png",
+"key": "zjm_btn_shijie01"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/zjm_btn_tianfu01.png",
+"key": "zjm_btn_tianfu01"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/zjm_btn_tiaozhan01.png",
+"key": "zjm_btn_tiaozhan01"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/zjm_btn_wupin01.png",
+"key": "zjm_btn_wupin01"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/zjm_icon_arrow_01.png",
+"key": "zjm_icon_arrow_01"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/zjm_pic_chenghao1.png",
+"key": "zjm_pic_chenghao1"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/zjm_pic_chenghao2.png",
+"key": "zjm_pic_chenghao2"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/zjm_pic_chenghao_grogressBg1.png",
+"key": "zjm_pic_chenghao_grogressBg1"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/zjm_pic_chenghao_grogressBg2.png",
+"key": "zjm_pic_chenghao_grogressBg2"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/zjm_pic_jindutiao_light01.png",
+"key": "zjm_pic_jindutiao_light01"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/zjm_pic_lock01.png",
+"key": "zjm_pic_lock01"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/zjm_pnl_btnBG01.png",
+"key": "zjm_pnl_btnBG01"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/zjm_pnl_btnBG02.png",
+"key": "zjm_pnl_btnBG02"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/zjm_pnl_zhiyuan01.png",
+"key": "zjm_pnl_zhiyuan01"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/zm_btn_bs_diamond.png",
+"key": "zm_btn_bs_diamond"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/zm_btn_bs_diamond02.png",
+"key": "zm_btn_bs_diamond02"
+},
+{
+"path": "Assets/GameRes/NewUI/Common/images1/设置.png",
+"key": "设置"
+},
+{
+"path": "Assets/GameRes/NewUI/Evolve/images/coin_1_1.png",
+"key": "coin_1_1"
+},
+{
+"path": "Assets/GameRes/NewUI/Evolve/images/coin_1_2.png",
+"key": "coin_1_2"
+},
+{
+"path": "Assets/GameRes/NewUI/Evolve/images/coin_1_3.png",
+"key": "coin_1_3"
+},
+{
+"path": "Assets/GameRes/NewUI/Evolve/images/coin_1_4.png",
+"key": "coin_1_4"
+},
+{
+"path": "Assets/GameRes/NewUI/Evolve/images/coin_1_5.png",
+"key": "coin_1_5"
+},
+{
+"path": "Assets/GameRes/NewUI/Evolve/images/coin_2_1.png",
+"key": "coin_2_1"
+},
+{
+"path": "Assets/GameRes/NewUI/Evolve/images/coin_2_2.png",
+"key": "coin_2_2"
+},
+{
+"path": "Assets/GameRes/NewUI/Evolve/images/coin_2_3.png",
+"key": "coin_2_3"
+},
+{
+"path": "Assets/GameRes/NewUI/Evolve/images/coin_2_4.png",
+"key": "coin_2_4"
+},
+{
+"path": "Assets/GameRes/NewUI/Evolve/images/coin_2_5.png",
+"key": "coin_2_5"
+},
+{
+"path": "Assets/GameRes/NewUI/Evolve/images/coin_3_1.png",
+"key": "coin_3_1"
+},
+{
+"path": "Assets/GameRes/NewUI/Evolve/images/coin_3_2.png",
+"key": "coin_3_2"
+},
+{
+"path": "Assets/GameRes/NewUI/Evolve/images/coin_3_3.png",
+"key": "coin_3_3"
+},
+{
+"path": "Assets/GameRes/NewUI/Evolve/images/coin_3_4.png",
+"key": "coin_3_4"
+},
+{
+"path": "Assets/GameRes/NewUI/Evolve/images/coin_3_5.png",
+"key": "coin_3_5"
+},
+{
+"path": "Assets/GameRes/NewUI/Evolve/images/coin_4_1.png",
+"key": "coin_4_1"
+},
+{
+"path": "Assets/GameRes/NewUI/Evolve/images/coin_4_2.png",
+"key": "coin_4_2"
+},
+{
+"path": "Assets/GameRes/NewUI/Evolve/images/coin_4_3.png",
+"key": "coin_4_3"
+},
+{
+"path": "Assets/GameRes/NewUI/Evolve/images/coin_4_4.png",
+"key": "coin_4_4"
+},
+{
+"path": "Assets/GameRes/NewUI/Evolve/images/coin_4_5.png",
+"key": "coin_4_5"
+},
+{
+"path": "Assets/GameRes/NewUI/Evolve/images/dice_1_1.png",
+"key": "dice_1_1"
+},
+{
+"path": "Assets/GameRes/NewUI/Evolve/images/dice_1_2.png",
+"key": "dice_1_2"
+},
+{
+"path": "Assets/GameRes/NewUI/Evolve/images/dice_1_3.png",
+"key": "dice_1_3"
+},
+{
+"path": "Assets/GameRes/NewUI/Evolve/images/dice_1_4.png",
+"key": "dice_1_4"
+},
+{
+"path": "Assets/GameRes/NewUI/Evolve/images/dice_1_5.png",
+"key": "dice_1_5"
+},
+{
+"path": "Assets/GameRes/NewUI/Evolve/images/dice_2_1.png",
+"key": "dice_2_1"
+},
+{
+"path": "Assets/GameRes/NewUI/Evolve/images/dice_2_2.png",
+"key": "dice_2_2"
+},
+{
+"path": "Assets/GameRes/NewUI/Evolve/images/dice_2_3.png",
+"key": "dice_2_3"
+},
+{
+"path": "Assets/GameRes/NewUI/Evolve/images/dice_2_4.png",
+"key": "dice_2_4"
+},
+{
+"path": "Assets/GameRes/NewUI/Evolve/images/dice_2_5.png",
+"key": "dice_2_5"
+},
+{
+"path": "Assets/GameRes/NewUI/Evolve/images/dice_3_1.png",
+"key": "dice_3_1"
+},
+{
+"path": "Assets/GameRes/NewUI/Evolve/images/dice_3_2.png",
+"key": "dice_3_2"
+},
+{
+"path": "Assets/GameRes/NewUI/Evolve/images/dice_3_3.png",
+"key": "dice_3_3"
+},
+{
+"path": "Assets/GameRes/NewUI/Evolve/images/dice_3_4.png",
+"key": "dice_3_4"
+},
+{
+"path": "Assets/GameRes/NewUI/Evolve/images/dice_3_5.png",
+"key": "dice_3_5"
+},
+{
+"path": "Assets/GameRes/NewUI/Evolve/images/dice_4_1.png",
+"key": "dice_4_1"
+},
+{
+"path": "Assets/GameRes/NewUI/Evolve/images/dice_4_2.png",
+"key": "dice_4_2"
+},
+{
+"path": "Assets/GameRes/NewUI/Evolve/images/dice_4_3.png",
+"key": "dice_4_3"
+},
+{
+"path": "Assets/GameRes/NewUI/Evolve/images/dice_4_4.png",
+"key": "dice_4_4"
+},
+{
+"path": "Assets/GameRes/NewUI/Evolve/images/dice_4_5.png",
+"key": "dice_4_5"
+},
+{
+"path": "Assets/GameRes/NewUI/Evolve/images/evolve_icon_arrow.png",
+"key": "evolve_icon_arrow"
+},
+{
+"path": "Assets/GameRes/NewUI/Evolve/images/evolve_pic_title_bg.png",
+"key": "evolve_pic_title_bg"
+},
+{
+"path": "Assets/GameRes/NewUI/Evolve/images/evolve_pnl_bg.png",
+"key": "evolve_pnl_bg"
+},
+{
+"path": "Assets/GameRes/NewUI/Evolve/images/ty_btn_deco_01.png",
+"key": "ty_btn_deco_01"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/bs_btn_subscribe.png",
+"key": "bs_btn_subscribe"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/bs_btn_unlock.png",
+"key": "bs_btn_unlock"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/bs_pic_line.png",
+"key": "bs_pic_line"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/bs_pic_tips01.png",
+"key": "bs_pic_tips01"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/bs_pnl_N01.png",
+"key": "bs_pnl_N01"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/bs_pnl_N02.png",
+"key": "bs_pnl_N02"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/bs_pnl_N_numBg01.png",
+"key": "bs_pnl_N_numBg01"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/bs_pnl_R01.png",
+"key": "bs_pnl_R01"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/bs_pnl_R02.png",
+"key": "bs_pnl_R02"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/bs_pnl_R_numBg.png",
+"key": "bs_pnl_R_numBg"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/bs_pnl_SR01.png",
+"key": "bs_pnl_SR01"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/bs_pnl_SR2.png",
+"key": "bs_pnl_SR2"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/bs_pnl_SR_numBg.png",
+"key": "bs_pnl_SR_numBg"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/bs_pnl_lock01.png",
+"key": "bs_pnl_lock01"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/bs_pnl_upgradeFeedback.png",
+"key": "bs_pnl_upgradeFeedback"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/bs_pnl_upgradeFeedback2.png",
+"key": "bs_pnl_upgradeFeedback2"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/bs_zi_juexingjineng.png",
+"key": "bs_zi_juexingjineng"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/lxsy_btn_shuangbeihuoqu.png",
+"key": "lxsy_btn_shuangbeihuoqu@c9d514cc"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/ty_icon_subscribe.png",
+"key": "ty_icon_subscribe"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/ty_pic_item_need.png",
+"key": "ty_pic_item_need"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/ty_pic_skill01.png",
+"key": "ty_pic_skill01"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/ty_pic_skill02.png",
+"key": "ty_pic_skill02"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/ty_pic_skill_lock.png",
+"key": "ty_pic_skill_lock"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/ty_pic_title_suipianbuzu.png",
+"key": "ty_pic_title_suipianbuzu"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/ty_zi_qushangcheng.png",
+"key": "ty_zi_qushangcheng"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/ty_zi_upgrade.png",
+"key": "ty_zi_upgrade"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/zm_btn_bs_diamond.png",
+"key": "zm_btn_bs_diamond@123665ea"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/zm_btn_bs_diamond02.png",
+"key": "zm_btn_bs_diamond02@b007806c"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/zm_btn_bs_minus01.png",
+"key": "zm_btn_bs_minus01"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/zm_btn_bs_minus02.png",
+"key": "zm_btn_bs_minus02"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/zm_btn_bs_plus01.png",
+"key": "zm_btn_bs_plus01"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/zm_btn_bs_plus02.png",
+"key": "zm_btn_bs_plus02"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/zm_btn_bs_upgrade.png",
+"key": "zm_btn_bs_upgrade"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/zm_btn_use.png",
+"key": "zm_btn_use"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/zm_lab_haaland.png",
+"key": "zm_lab_haaland"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/zm_lab_inUse.png",
+"key": "zm_lab_inUse"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/zm_lab_sign3.png",
+"key": "zm_lab_sign3"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/zm_lab_sign7.png",
+"key": "zm_lab_sign7"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/zm_pic_bg#7282c5_dice.png",
+"key": "zm_pic_bg#7282c5_dice"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/zm_pic_bg#8e76cc_coin.png",
+"key": "zm_pic_bg#8e76cc_coin"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/zm_pic_bs_arrow.png",
+"key": "zm_pic_bs_arrow"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/zm_pic_bs_bgLock.png",
+"key": "zm_pic_bs_bgLock"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/zm_pic_bs_bgOn.png",
+"key": "zm_pic_bs_bgOn"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/zm_pic_bs_count.png",
+"key": "zm_pic_bs_count"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/zm_pic_bs_count_dice.png",
+"key": "zm_pic_bs_count_dice"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/zm_pic_bs_titleBg02.png",
+"key": "zm_pic_bs_titleBg02"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/zm_pic_helperBg_N.png",
+"key": "zm_pic_helperBg_N"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/zm_pic_helperBg_R.png",
+"key": "zm_pic_helperBg_R"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/zm_pic_helperBg_SR.png",
+"key": "zm_pic_helperBg_SR"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/zm_pic_helperBg_art_scale2.png",
+"key": "zm_pic_helperBg_art_scale2"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/zm_pic_helperBg_paper.png",
+"key": "zm_pic_helperBg_paper"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/zm_pic_helperSikllTitle.png",
+"key": "zm_pic_helperSikllTitle"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/zm_pic_line.png",
+"key": "zm_pic_line"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/zm_pic_reachLv.png",
+"key": "zm_pic_reachLv"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/zm_pic_reachLv_line.png",
+"key": "zm_pic_reachLv_line"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/zm_pic_suipianNum.png",
+"key": "zm_pic_suipianNum"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/zm_pic_suipianbuzu_scale2.png",
+"key": "zm_pic_suipianbuzu_scale2"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/zm_pic_using.png",
+"key": "zm_pic_using"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/zm_pic_zm_des.png",
+"key": "zm_pic_zm_des"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/zm_pic_zm_inUse.png",
+"key": "zm_pic_zm_inUse"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/zm_pic_zm_lock.png",
+"key": "zm_pic_zm_lock"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/zm_pic_zm_notInUse.png",
+"key": "zm_pic_zm_notInUse"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/zm_tags_BG01.png",
+"key": "zm_tags_BG01"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/zm_tags_bs.png",
+"key": "zm_tags_bs"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/zm_tags_zm.png",
+"key": "zm_tags_zm"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/zm_zi_cailiaobuzu.png",
+"key": "zm_zi_cailiaobuzu"
+},
+{
+"path": "Assets/GameRes/NewUI/Facility/images/正在使用.png",
+"key": "正在使用"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_101.png",
+"key": "talent_icon_101"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_102.png",
+"key": "talent_icon_102"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_103.png",
+"key": "talent_icon_103"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_104.png",
+"key": "talent_icon_104"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_105.png",
+"key": "talent_icon_105"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_106.png",
+"key": "talent_icon_106"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_107.png",
+"key": "talent_icon_107"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_108.png",
+"key": "talent_icon_108"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_109.png",
+"key": "talent_icon_109"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_206.png",
+"key": "talent_icon_206"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_207.png",
+"key": "talent_icon_207"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_208.png",
+"key": "talent_icon_208"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_209.png",
+"key": "talent_icon_209"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_305.png",
+"key": "talent_icon_305"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_306.png",
+"key": "talent_icon_306"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_307.png",
+"key": "talent_icon_307"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_308.png",
+"key": "talent_icon_308"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_309.png",
+"key": "talent_icon_309"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_anwenshuimian.png",
+"key": "talent_icon_anwenshuimian"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_dafuweng.png",
+"key": "talent_icon_dafuweng"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_dalianghuoyao.png",
+"key": "talent_icon_dalianghuoyao"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_dalishileyuan.png",
+"key": "talent_icon_dalishileyuan"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_dianjidashi.png",
+"key": "talent_icon_dianjidashi"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_ewaijingxi.png",
+"key": "talent_icon_ewaijingxi"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_ewaishouyi.png",
+"key": "talent_icon_ewaishouyi"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_fanzhuanzijintouzi.png",
+"key": "talent_icon_fanzhuanzijintouzi"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_gaoduanzhanli.png",
+"key": "talent_icon_gaoduanzhanli"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_guanggaodaren.png",
+"key": "talent_icon_guanggaodaren"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_huangjinshidai.png",
+"key": "talent_icon_huangjinshidai"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_jiangshangjiajiang.png",
+"key": "talent_icon_jiangshangjiajiang"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_jichengzhe.png",
+"key": "talent_icon_jichengzhe"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_jingdaxisuan.png",
+"key": "talent_icon_jingdaxisuan"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_jingyingjiaoyu.png",
+"key": "talent_icon_jingyingjiaoyu"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_kafeiyin.png",
+"key": "talent_icon_kafeiyin"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_kuaisushuimian.png",
+"key": "talent_icon_kuaisushuimian"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_laladui.png",
+"key": "talent_icon_laladui"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_lianjialaodongli.png",
+"key": "talent_icon_lianjialaodongli"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_lianjinshu.png",
+"key": "talent_icon_lianjinshu"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_liuyunxuneng.png",
+"key": "talent_icon_liuyunxuneng"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_mianfeilaogong.png",
+"key": "talent_icon_mianfeilaogong"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_mofaxueyuan.png",
+"key": "talent_icon_mofaxueyuan"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_pifengguodu.png",
+"key": "talent_icon_pifengguodu"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_qiangzhehengqiang.png",
+"key": "talent_icon_qiangzhehengqiang"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_shikongniuqu.png",
+"key": "talent_icon_shikongniuqu"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_shimian.png",
+"key": "talent_icon_shimian"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_tianfu_201.png",
+"key": "talent_icon_tianfu_201"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_tianfu_202.png",
+"key": "talent_icon_tianfu_202"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_tianfu_203.png",
+"key": "talent_icon_tianfu_203"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_tianfu_204.png",
+"key": "talent_icon_tianfu_204"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_tianfu_205.png",
+"key": "talent_icon_tianfu_205"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_tianfu_301.png",
+"key": "talent_icon_tianfu_301"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_tianfu_302.png",
+"key": "talent_icon_tianfu_302"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_tianfu_303.png",
+"key": "talent_icon_tianfu_303"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_tianfu_304.png",
+"key": "talent_icon_tianfu_304"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_tiaozhandaren.png",
+"key": "talent_icon_tiaozhandaren"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_touziyu.png",
+"key": "talent_icon_touziyu"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_tuanjiecaishililiang.png",
+"key": "talent_icon_tuanjiecaishililiang"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_tuposhangxian.png",
+"key": "talent_icon_tuposhangxian"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_xingyunhuixiang.png",
+"key": "talent_icon_xingyunhuixiang"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_xingyunjiashi.png",
+"key": "talent_icon_xingyunjiashi"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_yuanshililiang.png",
+"key": "talent_icon_yuanshililiang"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_yueduoyuehao.png",
+"key": "talent_icon_yueduoyuehao"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_zhongliudizhu.png",
+"key": "talent_icon_zhongliudizhu"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_zhuanshenghongli.png",
+"key": "talent_icon_zhuanshenghongli"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/talent/talent_icon_zhuanzhuanzhuan.png",
+"key": "talent_icon_zhuanzhuanzhuan"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/zgygy_coin_copper_1.png",
+"key": "zgygy_coin_copper_1"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/zgygy_coin_copper_2.png",
+"key": "zgygy_coin_copper_2"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/zgygy_coin_gold_1.png",
+"key": "zgygy_coin_gold_1"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/zgygy_coin_gold_2.png",
+"key": "zgygy_coin_gold_2"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/zgygy_coin_purple_1.png",
+"key": "zgygy_coin_purple_1"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/zgygy_coin_purple_2.png",
+"key": "zgygy_coin_purple_2"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/zgygy_coin_silver_1.png",
+"key": "zgygy_coin_silver_1"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/zgygy_coin_silver_2.png",
+"key": "zgygy_coin_silver_2"
+},
+{
+"path": "Assets/GameRes/NewUI/Icon/zgygy_icon_man_180.png",
+"key": "zgygy_icon_man_180"
+},
+{
+"path": "Assets/GameRes/NewUI/Popup/images/lv8Dice_pic_dushen_x2.png",
+"key": "lv8Dice_pic_dushen_x2"
+},
+{
+"path": "Assets/GameRes/NewUI/Popup/images/lv8Dice_pic_light_bg_x5.png",
+"key": "lv8Dice_pic_light_bg_x5"
+},
+{
+"path": "Assets/GameRes/NewUI/Popup/images/lv8Dice_pic_slogn_newHelper_x2.png",
+"key": "lv8Dice_pic_slogn_newHelper_x2"
+},
+{
+"path": "Assets/GameRes/NewUI/Popup/images/lv8Dice_pic_slogn_nextStation_x2.png",
+"key": "lv8Dice_pic_slogn_nextStation_x2"
+},
+{
+"path": "Assets/GameRes/NewUI/Popup/images/lv8Dice_pic_star.png",
+"key": "lv8Dice_pic_star"
+},
+{
+"path": "Assets/GameRes/NewUI/Popup/images/lv8Dice_pic_title_main_x2.png",
+"key": "lv8Dice_pic_title_main_x2"
+},
+{
+"path": "Assets/GameRes/NewUI/Popup/images/lv8Dice_pic_title_sub_x2.png",
+"key": "lv8Dice_pic_title_sub_x2"
+},
+{
+"path": "Assets/GameRes/NewUI/Popup/images/lv8Dice_pic_world_01_x2.png",
+"key": "lv8Dice_pic_world_01_x2"
+},
+{
+"path": "Assets/GameRes/NewUI/Popup/images/lv8Dice_zi_jingqingqidai.png",
+"key": "lv8Dice_zi_jingqingqidai"
+},
+{
+"path": "Assets/GameRes/NewUI/Popup/images/lxsy_pic_bg_ziyuan.png",
+"key": "lxsy_pic_bg_ziyuan"
+},
+{
+"path": "Assets/GameRes/NewUI/Popup/images/lxsy_pic_title_lixianshouyi.png",
+"key": "lxsy_pic_title_lixianshouyi"
+},
+{
+"path": "Assets/GameRes/NewUI/Popup/images/lxsy_pic_title_lixianshouyiBg_dice_x2.png",
+"key": "lxsy_pic_title_lixianshouyiBg_dice_x2"
+},
+{
+"path": "Assets/GameRes/NewUI/Popup/images/lxsy_pic_title_lixianshouyiBg_x2.png",
+"key": "lxsy_pic_title_lixianshouyiBg_x2"
+},
+{
+"path": "Assets/GameRes/NewUI/Popup/images/lxsy_pnl_timeBg.png",
+"key": "lxsy_pnl_timeBg"
+},
+{
+"path": "Assets/GameRes/NewUI/Popup/images/qd_pnl_item_01.png",
+"key": "qd_pnl_item_01"
+},
+{
+"path": "Assets/GameRes/NewUI/Popup/images/ty_btn_setup.png",
+"key": "ty_btn_setup"
+},
+{
+"path": "Assets/GameRes/NewUI/Popup/images/ty_icon_confirmed.png",
+"key": "ty_icon_confirmed"
+},
+{
+"path": "Assets/GameRes/NewUI/Popup/images/ty_pic_chaoeshouji_radiant light01_scale8.png",
+"key": "ty_pic_chaoeshouji_radiant light01_scale8"
+},
+{
+"path": "Assets/GameRes/NewUI/Popup/images/ty_pic_dachengmubiao_scale2.png",
+"key": "ty_pic_dachengmubiao_scale2"
+},
+{
+"path": "Assets/GameRes/NewUI/Popup/images/ty_pic_process01.png",
+"key": "ty_pic_process01"
+},
+{
+"path": "Assets/GameRes/NewUI/Popup/images/ty_pic_process02.png",
+"key": "ty_pic_process02"
+},
+{
+"path": "Assets/GameRes/NewUI/Popup/images/ty_pic_title_setup.png",
+"key": "ty_pic_title_setup"
+},
+{
+"path": "Assets/GameRes/NewUI/Popup/images/ty_pnl_gongsihuode_bgLight_scale10.png",
+"key": "ty_pnl_gongsihuode_bgLight_scale10"
+},
+{
+"path": "Assets/GameRes/NewUI/Popup/images/ty_pnl_gongsihuode_scale2.png",
+"key": "ty_pnl_gongsihuode_scale2"
+},
+{
+"path": "Assets/GameRes/NewUI/Popup/images/ty_pnl_unconfirmed.png",
+"key": "ty_pnl_unconfirmed"
+},
+{
+"path": "Assets/GameRes/NewUI/Popup/images/ty_title_gongxihuode 1.png",
+"key": "ty_title_gongxihuode 1"
+},
+{
+"path": "Assets/GameRes/NewUI/Popup/images/ty_zi_cleanSave.png",
+"key": "ty_zi_cleanSave"
+},
+{
+"path": "Assets/GameRes/NewUI/Popup/images/ty_zi_restoreSave.png",
+"key": "ty_zi_restoreSave"
+},
+{
+"path": "Assets/GameRes/NewUI/Popup/images/zgygy_cash.png",
+"key": "zgygy_cash"
+},
+{
+"path": "Assets/GameRes/NewUI/Rank/images/rank_icon_one.png",
+"key": "rank_icon_one"
+},
+{
+"path": "Assets/GameRes/NewUI/Rank/images/rank_icon_three.png",
+"key": "rank_icon_three"
+},
+{
+"path": "Assets/GameRes/NewUI/Rank/images/rank_icon_two.png",
+"key": "rank_icon_two"
+},
+{
+"path": "Assets/GameRes/NewUI/Rank/images/rank_label_player.png",
+"key": "rank_label_player"
+},
+{
+"path": "Assets/GameRes/NewUI/Rank/images/rank_pic_avatar.png",
+"key": "rank_pic_avatar"
+},
+{
+"path": "Assets/GameRes/NewUI/Rank/images/rank_pic_frame.png",
+"key": "rank_pic_frame"
+},
+{
+"path": "Assets/GameRes/NewUI/Rank/images/rank_pic_headerDot.png",
+"key": "rank_pic_headerDot"
+},
+{
+"path": "Assets/GameRes/NewUI/Rank/images/rank_pic_img01_scale2.png",
+"key": "rank_pic_img01_scale2"
+},
+{
+"path": "Assets/GameRes/NewUI/Rank/images/rank_pic_line.png",
+"key": "rank_pic_line"
+},
+{
+"path": "Assets/GameRes/NewUI/Rank/images/rank_pic_rank.png",
+"key": "rank_pic_rank"
+},
+{
+"path": "Assets/GameRes/NewUI/Rank/images/rank_pic_tableTitle.png",
+"key": "rank_pic_tableTitle"
+},
+{
+"path": "Assets/GameRes/NewUI/Rank/images/rank_pic_tableTitle2.png",
+"key": "rank_pic_tableTitle2"
+},
+{
+"path": "Assets/GameRes/NewUI/Rank/images/rank_pnl_Bg_scale2.png",
+"key": "rank_pnl_Bg_scale2"
+},
+{
+"path": "Assets/GameRes/NewUI/Rank/images/rank_pnl_choseBg.png",
+"key": "rank_pnl_choseBg"
+},
+{
+"path": "Assets/GameRes/NewUI/Rank/images/rank_pnl_one.png",
+"key": "rank_pnl_one"
+},
+{
+"path": "Assets/GameRes/NewUI/Rank/images/rank_pnl_other.png",
+"key": "rank_pnl_other"
+},
+{
+"path": "Assets/GameRes/NewUI/Rank/images/rank_pnl_player.png",
+"key": "rank_pnl_player"
+},
+{
+"path": "Assets/GameRes/NewUI/Rank/images/rank_pnl_three.png",
+"key": "rank_pnl_three"
+},
+{
+"path": "Assets/GameRes/NewUI/Rank/images/rank_pnl_two.png",
+"key": "rank_pnl_two"
+},
+{
+"path": "Assets/GameRes/NewUI/Rank/images/rank_tab_bg.png",
+"key": "rank_tab_bg"
+},
+{
+"path": "Assets/GameRes/NewUI/Rank/images/rank_tab_coin_01.png",
+"key": "rank_tab_coin_01"
+},
+{
+"path": "Assets/GameRes/NewUI/Rank/images/rank_tab_coin_02.png",
+"key": "rank_tab_coin_02"
+},
+{
+"path": "Assets/GameRes/NewUI/Rank/images/rank_tab_dice_01.png",
+"key": "rank_tab_dice_01"
+},
+{
+"path": "Assets/GameRes/NewUI/Rank/images/rank_tab_dice_02.png",
+"key": "rank_tab_dice_02"
+},
+{
+"path": "Assets/GameRes/NewUI/Rank/images/rank_tab_friends01.png",
+"key": "rank_tab_friends01"
+},
+{
+"path": "Assets/GameRes/NewUI/Rank/images/rank_tab_friends02.png",
+"key": "rank_tab_friends02"
+},
+{
+"path": "Assets/GameRes/NewUI/Rank/images/rank_tab_world01.png",
+"key": "rank_tab_world01"
+},
+{
+"path": "Assets/GameRes/NewUI/Rank/images/rank_tab_world02.png",
+"key": "rank_tab_world02"
+},
+{
+"path": "Assets/GameRes/NewUI/Rank/images/rank_zi_touzishijie.png",
+"key": "rank_zi_touzishijie"
+},
+{
+"path": "Assets/GameRes/NewUI/Rank/images/rank_zi_yingbishijie.png",
+"key": "rank_zi_yingbishijie"
+},
+{
+"path": "Assets/GameRes/NewUI/Rank/images/ty_zi_quyaoqing.png",
+"key": "ty_zi_quyaoqing"
+},
+{
+"path": "Assets/GameRes/NewUI/Shop/images/shop_btn_getItem.png",
+"key": "shop_btn_getItem"
+},
+{
+"path": "Assets/GameRes/NewUI/Shop/images/shop_btn_roll.png",
+"key": "shop_btn_roll"
+},
+{
+"path": "Assets/GameRes/NewUI/Shop/images/shop_btn_roll_desMask.png",
+"key": "shop_btn_roll_desMask"
+},
+{
+"path": "Assets/GameRes/NewUI/Shop/images/shop_icon_adDiamond.png",
+"key": "shop_icon_adDiamond"
+},
+{
+"path": "Assets/GameRes/NewUI/Shop/images/shop_icon_chest_process_01_scale2.png",
+"key": "shop_icon_chest_process_01_scale2"
+},
+{
+"path": "Assets/GameRes/NewUI/Shop/images/shop_icon_chest_process_02_scale2.png",
+"key": "shop_icon_chest_process_02_scale2"
+},
+{
+"path": "Assets/GameRes/NewUI/Shop/images/shop_icon_chest_purple.png",
+"key": "shop_icon_chest_purple"
+},
+{
+"path": "Assets/GameRes/NewUI/Shop/images/shop_icon_chest_sliver.png",
+"key": "shop_icon_chest_sliver"
+},
+{
+"path": "Assets/GameRes/NewUI/Shop/images/shop_pic_countdownMask.png",
+"key": "shop_pic_countdownMask"
+},
+{
+"path": "Assets/GameRes/NewUI/Shop/images/shop_pic_getItem_img.png",
+"key": "shop_pic_getItem_img"
+},
+{
+"path": "Assets/GameRes/NewUI/Shop/images/shop_pic_getItem_numBg.png",
+"key": "shop_pic_getItem_numBg"
+},
+{
+"path": "Assets/GameRes/NewUI/Shop/images/shop_pic_process01.png",
+"key": "shop_pic_process01"
+},
+{
+"path": "Assets/GameRes/NewUI/Shop/images/shop_pic_process02.png",
+"key": "shop_pic_process02"
+},
+{
+"path": "Assets/GameRes/NewUI/Shop/images/shop_pic_process_countBg.png",
+"key": "shop_pic_process_countBg"
+},
+{
+"path": "Assets/GameRes/NewUI/Shop/images/shop_pic_scene01_scale2.png",
+"key": "shop_pic_scene01_scale2"
+},
+{
+"path": "Assets/GameRes/NewUI/Shop/images/shop_pic_spinner01.png",
+"key": "shop_pic_spinner01"
+},
+{
+"path": "Assets/GameRes/NewUI/Shop/images/shop_pic_spinner02.png",
+"key": "shop_pic_spinner02"
+},
+{
+"path": "Assets/GameRes/NewUI/Shop/images/shop_pic_spinner03.png",
+"key": "shop_pic_spinner03"
+},
+{
+"path": "Assets/GameRes/NewUI/Shop/images/shop_pic_spinner04.png",
+"key": "shop_pic_spinner04"
+},
+{
+"path": "Assets/GameRes/NewUI/Shop/images/shop_zi_ad.png",
+"key": "shop_zi_ad"
+},
+{
+"path": "Assets/GameRes/NewUI/Shop/images/shop_zi_everydayFree.png",
+"key": "shop_zi_everydayFree"
+},
+{
+"path": "Assets/GameRes/NewUI/Shop/images/shop_zi_srDes.png",
+"key": "shop_zi_srDes"
+},
+{
+"path": "Assets/GameRes/NewUI/Shop/images/ty_icon_coin01.png",
+"key": "ty_icon_coin01@3464aeb9"
+},
+{
+"path": "Assets/GameRes/NewUI/Shop/images/ty_icon_diamond01.png",
+"key": "ty_icon_diamond01@f0497b36"
+},
+{
+"path": "Assets/GameRes/NewUI/Shop/images/ty_icon_diamond02.png",
+"key": "ty_icon_diamond02"
+},
+{
+"path": "Assets/GameRes/NewUI/Shop/images/ty_icon_diamond03.png",
+"key": "ty_icon_diamond03"
+},
+{
+"path": "Assets/GameRes/NewUI/Shop/images/ty_icon_money02.png",
+"key": "ty_icon_money02"
+},
+{
+"path": "Assets/GameRes/NewUI/Shop/images/ty_icon_money02_dice.png",
+"key": "ty_icon_money02_dice"
+},
+{
+"path": "Assets/GameRes/NewUI/Shop/images/ty_icon_money03.png",
+"key": "ty_icon_money03"
+},
+{
+"path": "Assets/GameRes/NewUI/Shop/images/ty_icon_money03_dice.png",
+"key": "ty_icon_money03_dice"
+},
+{
+"path": "Assets/GameRes/NewUI/Shop/images/ty_pic_square.png",
+"key": "ty_pic_square"
+},
+{
+"path": "Assets/GameRes/NewUI/Talent/images/talent_btn_cancle.png",
+"key": "talent_btn_cancle"
+},
+{
+"path": "Assets/GameRes/NewUI/Talent/images/talent_btn_reborn.png",
+"key": "talent_btn_reborn"
+},
+{
+"path": "Assets/GameRes/NewUI/Talent/images/talent_btn_reset.png",
+"key": "talent_btn_reset"
+},
+{
+"path": "Assets/GameRes/NewUI/Talent/images/talent_btn_reset02.png",
+"key": "talent_btn_reset02"
+},
+{
+"path": "Assets/GameRes/NewUI/Talent/images/talent_btn_talent.png",
+"key": "talent_btn_talent"
+},
+{
+"path": "Assets/GameRes/NewUI/Talent/images/talent_btn_talent2.png",
+"key": "talent_btn_talent2"
+},
+{
+"path": "Assets/GameRes/NewUI/Talent/images/talent_btn_talent20.png",
+"key": "talent_btn_talent20"
+},
+{
+"path": "Assets/GameRes/NewUI/Talent/images/talent_btn_yellow.png",
+"key": "talent_btn_yellow"
+},
+{
+"path": "Assets/GameRes/NewUI/Talent/images/talent_icon_lock.png",
+"key": "talent_icon_lock"
+},
+{
+"path": "Assets/GameRes/NewUI/Talent/images/talent_icon_talentOff.png",
+"key": "talent_icon_talentOff"
+},
+{
+"path": "Assets/GameRes/NewUI/Talent/images/talent_icon_talentOn.png",
+"key": "talent_icon_talentOn"
+},
+{
+"path": "Assets/GameRes/NewUI/Talent/images/talent_pic_Bg_01.png",
+"key": "talent_pic_Bg_01"
+},
+{
+"path": "Assets/GameRes/NewUI/Talent/images/talent_pic_Bg_02.png",
+"key": "talent_pic_Bg_02"
+},
+{
+"path": "Assets/GameRes/NewUI/Talent/images/talent_pic_Bg_03.png",
+"key": "talent_pic_Bg_03"
+},
+{
+"path": "Assets/GameRes/NewUI/Talent/images/talent_pic_Bg_04.png",
+"key": "talent_pic_Bg_04"
+},
+{
+"path": "Assets/GameRes/NewUI/Talent/images/talent_pic_Bg_4a9172.png",
+"key": "talent_pic_Bg_4a9172"
+},
+{
+"path": "Assets/GameRes/NewUI/Talent/images/talent_pic_Bg_4c508f.png",
+"key": "talent_pic_Bg_4c508f"
+},
+{
+"path": "Assets/GameRes/NewUI/Talent/images/talent_pic_fenge.png",
+"key": "talent_pic_fenge"
+},
+{
+"path": "Assets/GameRes/NewUI/Talent/images/talent_pic_progress01.png",
+"key": "talent_pic_progress01"
+},
+{
+"path": "Assets/GameRes/NewUI/Talent/images/talent_pic_progress02.png",
+"key": "talent_pic_progress02"
+},
+{
+"path": "Assets/GameRes/NewUI/Talent/images/talent_pic_progress03.png",
+"key": "talent_pic_progress03"
+},
+{
+"path": "Assets/GameRes/NewUI/Talent/images/talent_pic_progress04.png",
+"key": "talent_pic_progress04"
+},
+{
+"path": "Assets/GameRes/NewUI/Talent/images/talent_pic_rebirth.png",
+"key": "talent_pic_rebirth"
+},
+{
+"path": "Assets/GameRes/NewUI/Talent/images/talent_pic_rebirth_scale2.png",
+"key": "talent_pic_rebirth_scale2"
+},
+{
+"path": "Assets/GameRes/NewUI/Talent/images/talent_pic_tabBG.png",
+"key": "talent_pic_tabBG"
+},
+{
+"path": "Assets/GameRes/NewUI/Talent/images/talent_pic_tabBG_coin.png",
+"key": "talent_pic_tabBG_coin"
+},
+{
+"path": "Assets/GameRes/NewUI/Talent/images/talent_pic_tabBG_helper.png",
+"key": "talent_pic_tabBG_helper"
+},
+{
+"path": "Assets/GameRes/NewUI/Talent/images/talent_pic_tabBG_special.png",
+"key": "talent_pic_tabBG_special"
+},
+{
+"path": "Assets/GameRes/NewUI/Talent/images/talent_pic_tabBangshou.png",
+"key": "talent_pic_tabBangshou"
+},
+{
+"path": "Assets/GameRes/NewUI/Talent/images/talent_pic_tabJinqian.png",
+"key": "talent_pic_tabJinqian"
+},
+{
+"path": "Assets/GameRes/NewUI/Talent/images/talent_pic_tabTeshu.png",
+"key": "talent_pic_tabTeshu"
+},
+{
+"path": "Assets/GameRes/NewUI/Talent/images/talent_pic_table.png",
+"key": "talent_pic_table"
+},
+{
+"path": "Assets/GameRes/NewUI/Talent/images/talent_pic_table_dice_x2.png",
+"key": "talent_pic_table_dice_x2"
+},
+{
+"path": "Assets/GameRes/NewUI/Talent/images/talent_pic_talentPoint.png",
+"key": "talent_pic_talentPoint"
+},
+{
+"path": "Assets/GameRes/NewUI/Talent/images/talent_pic_talentPoint_dice.png",
+"key": "talent_pic_talentPoint_dice"
+},
+{
+"path": "Assets/GameRes/NewUI/Talent/images/talent_pic_title_reborn.png",
+"key": "talent_pic_title_reborn"
+},
+{
+"path": "Assets/GameRes/NewUI/Talent/images/talent_pic_title_reset.png",
+"key": "talent_pic_title_reset"
+},
+{
+"path": "Assets/GameRes/NewUI/Talent/images/talent_pic_title_talent01.png",
+"key": "talent_pic_title_talent01"
+},
+{
+"path": "Assets/GameRes/NewUI/Talent/images/talent_pnl_titl01e.png",
+"key": "talent_pnl_titl01e"
+},
+{
+"path": "Assets/GameRes/NewUI/Talent/images/talent_pnl_ziyuanBg01.png",
+"key": "talent_pnl_ziyuanBg01"
+},
+{
+"path": "Assets/GameRes/NewUI/Talent/images/talent_pnl_ziyuanBg02.png",
+"key": "talent_pnl_ziyuanBg02"
+},
+{
+"path": "Assets/GameRes/NewUI/Talent/images/ty_icon_talentPoint.png",
+"key": "ty_icon_talentPoint@33eea29e"
+},
+{
+"path": "Assets/GameRes/NewUI/Talent/images/ty_icon_talentPoint_dice.png",
+"key": "ty_icon_talentPoint_dice"
+},
+{
+"path": "Assets/GameRes/NewUI/fufang/images/calan_pic_zhuomian01_scale2.png",
+"key": "calan_pic_zhuomian01_scale2"
+},
+{
+"path": "Assets/GameRes/NewUI/fufang/images/celan_btn_qudingyue01.png",
+"key": "celan_btn_qudingyue01"
+},
+{
+"path": "Assets/GameRes/NewUI/fufang/images/celan_btn_zhuomian01.png",
+"key": "celan_btn_zhuomian01"
+},
+{
+"path": "Assets/GameRes/NewUI/fufang/images/celan_pic_buzhou_01_baofu_x2.png",
+"key": "celan_pic_buzhou_01_baofu_x2"
+},
+{
+"path": "Assets/GameRes/NewUI/fufang/images/celan_pic_buzhou_02_baofu_x2.png",
+"key": "celan_pic_buzhou_02_baofu_x2"
+},
+{
+"path": "Assets/GameRes/NewUI/fufang/images/celan_pic_buzhou_02_facai_doux2.png",
+"key": "celan_pic_buzhou_02_facai_doux2"
+},
+{
+"path": "Assets/GameRes/NewUI/fufang/images/celan_pic_buzhou_dou_01_x2.png",
+"key": "celan_pic_buzhou_dou_01_x2"
+},
+{
+"path": "Assets/GameRes/NewUI/fufang/images/zdjm_zi_daojishi01.png",
+"key": "zdjm_zi_daojishi01_6"
+},
+{
+"path": "Assets/GameRes/NewUI/loading/images/ty_pic_kaolu_bg_scale2.png",
+"key": "ty_pic_kaolu_bg_scale2"
+},
+{
+"path": "Assets/GameRes/NewUI/loading/images/ty_pic_kaolu_progress01.png",
+"key": "ty_pic_kaolu_progress01"
+},
+{
+"path": "Assets/GameRes/NewUI/loading/images/ty_pic_kaolu_progress02.png",
+"key": "ty_pic_kaolu_progress02"
+},
+{
+"path": "Assets/GameRes/NewUI/loading/images/ty_pic_kaolu_progress_cat01.png",
+"key": "ty_pic_kaolu_progress_cat01"
+},
+{
+"path": "Assets/GameRes/NewUI/loading/images/ty_zi_dot01.png",
+"key": "ty_zi_dot01"
+},
+{
+"path": "Assets/GameRes/NewUI/loading/images/ty_zi_dot02.png",
+"key": "ty_zi_dot02"
+},
+{
+"path": "Assets/GameRes/NewUI/loading/images/ty_zi_dot03.png",
+"key": "ty_zi_dot03"
+},
+{
+"path": "Assets/GameRes/NewUI/loading/images/ty_zi_jiazaizhong01.png",
+"key": "ty_zi_jiazaizhong01"
+},
+{
+"path": "Assets/GameRes/NewUI/video/ty_zi_tiaoguo01.png",
+"key": "ty_zi_tiaoguo01"
+},
+{
+"path": "Assets/GameRes/NewUI/world/images/world_character_touziren.png",
+"key": "world_character_touziren"
+},
+{
+"path": "Assets/GameRes/NewUI/world/images/world_icon_dice_copper_3.png",
+"key": "world_icon_dice_copper_3"
+},
+{
+"path": "Assets/GameRes/NewUI/world/images/world_icon_dice_gold_4.png",
+"key": "world_icon_dice_gold_4"
+},
+{
+"path": "Assets/GameRes/NewUI/world/images/world_icon_dice_purple_3.png",
+"key": "world_icon_dice_purple_3"
+},
+{
+"path": "Assets/GameRes/NewUI/world/images/world_icon_dice_silver_5.png",
+"key": "world_icon_dice_silver_5"
+},
+{
+"path": "Assets/GameRes/NewUI/world/images/world_pic_bg_01.png",
+"key": "world_pic_bg_01"
+},
+{
+"path": "Assets/GameRes/NewUI/world/images/world_pic_island_01_water_x2.png",
+"key": "world_pic_island_01_water_x2"
+},
+{
+"path": "Assets/GameRes/NewUI/world/images/world_pic_island_01_x2.png",
+"key": "world_pic_island_01_x2"
+},
+{
+"path": "Assets/GameRes/NewUI/world/images/world_pic_island_02_water_x2.png",
+"key": "world_pic_island_02_water_x2"
+},
+{
+"path": "Assets/GameRes/NewUI/world/images/world_pic_island_02_x2.png",
+"key": "world_pic_island_02_x2"
+},
+{
+"path": "Assets/GameRes/NewUI/world/images/world_pic_island_comingSoon_water_x2.png",
+"key": "world_pic_island_comingSoon_water_x2"
+},
+{
+"path": "Assets/GameRes/NewUI/world/images/world_pic_island_comingSoon_x2.png",
+"key": "world_pic_island_comingSoon_x2"
+},
+{
+"path": "Assets/GameRes/NewUI/world/images/world_pic_line_ants_01.png",
+"key": "world_pic_line_ants_01"
+},
+{
+"path": "Assets/GameRes/NewUI/world/images/world_pic_water_01.png",
+"key": "world_pic_water_01"
+},
+{
+"path": "Assets/GameRes/NewUI/world/images/world_tips_bg01.png",
+"key": "world_tips_bg01"
+},
+{
+"path": "Assets/GameRes/NewUI/world/images/world_zi_dangqian.png",
+"key": "world_zi_dangqian"
+},
+{
+"path": "Assets/GameRes/auction_challenge/challenge_pic_BG_scale2.png",
+"key": "challenge_pic_BG_scale2"
+},
+{
+"path": "Assets/GameRes/auction_challenge/challenge_pic_carton_01_01.png",
+"key": "challenge_pic_carton_01_01"
+},
+{
+"path": "Assets/GameRes/auction_challenge/challenge_pic_carton_01_02.png",
+"key": "challenge_pic_carton_01_02"
+},
+{
+"path": "Assets/GameRes/auction_challenge/challenge_pic_carton_01_03.png",
+"key": "challenge_pic_carton_01_03"
+},
+{
+"path": "Assets/GameRes/auction_challenge/challenge_pic_carton_02_01.png",
+"key": "challenge_pic_carton_02_01"
+},
+{
+"path": "Assets/GameRes/auction_challenge/challenge_pic_carton_02_02.png",
+"key": "challenge_pic_carton_02_02"
+},
+{
+"path": "Assets/GameRes/auction_challenge/challenge_pic_carton_02_03.png",
+"key": "challenge_pic_carton_02_03"
+},
+{
+"path": "Assets/GameRes/auction_challenge/challenge_pic_carton_03_01.png",
+"key": "challenge_pic_carton_03_01"
+},
+{
+"path": "Assets/GameRes/auction_challenge/challenge_pic_carton_03_02.png",
+"key": "challenge_pic_carton_03_02"
+},
+{
+"path": "Assets/GameRes/auction_challenge/challenge_pic_carton_03_03.png",
+"key": "challenge_pic_carton_03_03"
+},
+{
+"path": "Assets/GameRes/auction_challenge/challenge_pic_carton_04_01.png",
+"key": "challenge_pic_carton_04_01"
+},
+{
+"path": "Assets/GameRes/auction_challenge/challenge_pic_carton_04_02.png",
+"key": "challenge_pic_carton_04_02"
+},
+{
+"path": "Assets/GameRes/auction_challenge/challenge_pic_carton_04_03.png",
+"key": "challenge_pic_carton_04_03"
+},
+{
+"path": "Assets/GameRes/auction_challenge/challenge_pic_carton_05_01.png",
+"key": "challenge_pic_carton_05_01"
+},
+{
+"path": "Assets/GameRes/auction_challenge/challenge_pic_carton_05_02.png",
+"key": "challenge_pic_carton_05_02"
+},
+{
+"path": "Assets/GameRes/auction_challenge/challenge_pic_carton_05_03.png",
+"key": "challenge_pic_carton_05_03"
+},
+{
+"path": "Assets/GameRes/auction_challenge/challenge_pic_carton_06_01.png",
+"key": "challenge_pic_carton_06_01"
+},
+{
+"path": "Assets/GameRes/auction_challenge/challenge_pic_carton_06_02.png",
+"key": "challenge_pic_carton_06_02"
+},
+{
+"path": "Assets/GameRes/auction_challenge/challenge_pic_carton_06_03.png",
+"key": "challenge_pic_carton_06_03"
+},
+{
+"path": "Assets/GameRes/auction_challenge/challenge_pic_speedline_01_scale4.png",
+"key": "challenge_pic_speedline_01_scale4"
+},
+{
+"path": "Assets/GameRes/auction_challenge/challenge_pic_speedline_02_scale4.png",
+"key": "challenge_pic_speedline_02_scale4"
+},
+{
+"path": "Assets/GameRes/bilibili/celan_pic_shenqing_baofu_x2.png",
+"key": "celan_pic_shenqing_baofu_x2"
+},
+{
+"path": "Assets/GameRes/honor/1.png",
+"key": "1"
+},
+{
+"path": "Assets/GameRes/honor/10.png",
+"key": "10"
+},
+{
+"path": "Assets/GameRes/honor/11.png",
+"key": "11"
+},
+{
+"path": "Assets/GameRes/honor/12.png",
+"key": "12"
+},
+{
+"path": "Assets/GameRes/honor/13.png",
+"key": "13"
+},
+{
+"path": "Assets/GameRes/honor/14.png",
+"key": "14"
+},
+{
+"path": "Assets/GameRes/honor/15.png",
+"key": "15"
+},
+{
+"path": "Assets/GameRes/honor/16.png",
+"key": "16"
+},
+{
+"path": "Assets/GameRes/honor/2.png",
+"key": "2"
+},
+{
+"path": "Assets/GameRes/honor/3.png",
+"key": "3@5f1400c5"
+},
+{
+"path": "Assets/GameRes/honor/4.png",
+"key": "4@4e40175c"
+},
+{
+"path": "Assets/GameRes/honor/5.png",
+"key": "5@233870ab"
+},
+{
+"path": "Assets/GameRes/honor/6.png",
+"key": "6"
+},
+{
+"path": "Assets/GameRes/honor/7.png",
+"key": "7"
+},
+{
+"path": "Assets/GameRes/honor/8.png",
+"key": "8"
+},
+{
+"path": "Assets/GameRes/honor/9.png",
+"key": "9"
+},
+{
+"path": "Assets/GameRes/icon/auction/10001.png",
+"key": "10001"
+},
+{
+"path": "Assets/GameRes/icon/auction/10002.png",
+"key": "10002"
+},
+{
+"path": "Assets/GameRes/icon/auction/10003.png",
+"key": "10003"
+},
+{
+"path": "Assets/GameRes/icon/auction/10004.png",
+"key": "10004"
+},
+{
+"path": "Assets/GameRes/icon/auction/10005.png",
+"key": "10005"
+},
+{
+"path": "Assets/GameRes/icon/auction/10006.png",
+"key": "10006"
+},
+{
+"path": "Assets/GameRes/icon/auction/10007.png",
+"key": "10007"
+},
+{
+"path": "Assets/GameRes/icon/auction/10008.png",
+"key": "10008"
+},
+{
+"path": "Assets/GameRes/icon/auction/10009.png",
+"key": "10009"
+},
+{
+"path": "Assets/GameRes/icon/auction/10010.png",
+"key": "10010"
+},
+{
+"path": "Assets/GameRes/icon/auction/10011.png",
+"key": "10011"
+},
+{
+"path": "Assets/GameRes/icon/auction/10012.png",
+"key": "10012"
+},
+{
+"path": "Assets/GameRes/icon/auction/10013.png",
+"key": "10013"
+},
+{
+"path": "Assets/GameRes/icon/auction/10014.png",
+"key": "10014"
+},
+{
+"path": "Assets/GameRes/icon/auction/10015.png",
+"key": "10015"
+},
+{
+"path": "Assets/GameRes/icon/auction/10016.png",
+"key": "10016"
+},
+{
+"path": "Assets/GameRes/icon/auction/10017.png",
+"key": "10017"
+},
+{
+"path": "Assets/GameRes/icon/auction/10018.png",
+"key": "10018"
+},
+{
+"path": "Assets/GameRes/icon/auction/10019.png",
+"key": "10019"
+},
+{
+"path": "Assets/GameRes/icon/auction/10020.png",
+"key": "10020"
+},
+{
+"path": "Assets/GameRes/icon/auction/10021.png",
+"key": "10021"
+},
+{
+"path": "Assets/GameRes/icon/auction/10022.png",
+"key": "10022"
+},
+{
+"path": "Assets/GameRes/icon/auction/10023.png",
+"key": "10023"
+},
+{
+"path": "Assets/GameRes/icon/auction/10024.png",
+"key": "10024"
+},
+{
+"path": "Assets/GameRes/icon/auction/10025.png",
+"key": "10025"
+},
+{
+"path": "Assets/GameRes/icon/auction/10026.png",
+"key": "10026"
+},
+{
+"path": "Assets/GameRes/icon/auction/10027.png",
+"key": "10027"
+},
+{
+"path": "Assets/GameRes/icon/auction/10028.png",
+"key": "10028"
+},
+{
+"path": "Assets/GameRes/icon/auction/10029.png",
+"key": "10029"
+},
+{
+"path": "Assets/GameRes/icon/auction/10030.png",
+"key": "10030"
+},
+{
+"path": "Assets/GameRes/icon/auction/challenge_pic_case_black.png",
+"key": "challenge_pic_case_black"
+},
+{
+"path": "Assets/GameRes/icon/auction/challenge_pic_case_green.png",
+"key": "challenge_pic_case_green"
+},
+{
+"path": "Assets/GameRes/icon/auction/challenge_pic_case_purple.png",
+"key": "challenge_pic_case_purple"
+},
+{
+"path": "Assets/GameRes/icon/auction_avatar/challenge_pnl_match_avatar_01.png",
+"key": "challenge_pnl_match_avatar_01"
+},
+{
+"path": "Assets/GameRes/icon/auction_avatar/challenge_pnl_match_avatar_02.png",
+"key": "challenge_pnl_match_avatar_02"
+},
+{
+"path": "Assets/GameRes/icon/auction_avatar/challenge_pnl_match_avatar_03.png",
+"key": "challenge_pnl_match_avatar_03"
+},
+{
+"path": "Assets/GameRes/icon/auction_avatar/challenge_pnl_match_avatar_04.png",
+"key": "challenge_pnl_match_avatar_04"
+},
+{
+"path": "Assets/GameRes/icon/auction_avatar/challenge_pnl_match_avatar_05.png",
+"key": "challenge_pnl_match_avatar_05"
+},
+{
+"path": "Assets/GameRes/icon/auction_avatar/challenge_pnl_match_avatar_06.png",
+"key": "challenge_pnl_match_avatar_06"
+},
+{
+"path": "Assets/GameRes/icon/auction_role/challenge_pic_character_01_back.png",
+"key": "challenge_pic_character_01_back"
+},
+{
+"path": "Assets/GameRes/icon/auction_role/challenge_pic_character_01_front.png",
+"key": "challenge_pic_character_01_front"
+},
+{
+"path": "Assets/GameRes/icon/auction_role/challenge_pic_character_01_happy.png",
+"key": "challenge_pic_character_01_happy"
+},
+{
+"path": "Assets/GameRes/icon/auction_role/challenge_pic_character_01_sad.png",
+"key": "challenge_pic_character_01_sad"
+},
+{
+"path": "Assets/GameRes/icon/auction_role/challenge_pic_character_02_front.png",
+"key": "challenge_pic_character_02_front"
+},
+{
+"path": "Assets/GameRes/icon/auction_role/challenge_pic_character_02_happy.png",
+"key": "challenge_pic_character_02_happy"
+},
+{
+"path": "Assets/GameRes/icon/auction_role/challenge_pic_character_02_sad.png",
+"key": "challenge_pic_character_02_sad"
+},
+{
+"path": "Assets/GameRes/icon/auction_role/challenge_pic_character_03_front.png",
+"key": "challenge_pic_character_03_front"
+},
+{
+"path": "Assets/GameRes/icon/auction_role/challenge_pic_character_03_happy.png",
+"key": "challenge_pic_character_03_happy"
+},
+{
+"path": "Assets/GameRes/icon/auction_role/challenge_pic_character_03_sad.png",
+"key": "challenge_pic_character_03_sad"
+},
+{
+"path": "Assets/GameRes/icon/auction_role/challenge_pic_character_04_front.png",
+"key": "challenge_pic_character_04_front"
+},
+{
+"path": "Assets/GameRes/icon/auction_role/challenge_pic_character_04_happy.png",
+"key": "challenge_pic_character_04_happy"
+},
+{
+"path": "Assets/GameRes/icon/auction_role/challenge_pic_character_04_sad.png",
+"key": "challenge_pic_character_04_sad"
+},
+{
+"path": "Assets/GameRes/icon/auction_role/challenge_pic_character_05_front.png",
+"key": "challenge_pic_character_05_front"
+},
+{
+"path": "Assets/GameRes/icon/auction_role/challenge_pic_character_05_happy.png",
+"key": "challenge_pic_character_05_happy"
+},
+{
+"path": "Assets/GameRes/icon/auction_role/challenge_pic_character_05_sad.png",
+"key": "challenge_pic_character_05_sad"
+},
+{
+"path": "Assets/GameRes/icon/auction_role/challenge_pic_character_06_front.png",
+"key": "challenge_pic_character_06_front"
+},
+{
+"path": "Assets/GameRes/icon/auction_role/challenge_pic_character_06_happy.png",
+"key": "challenge_pic_character_06_happy"
+},
+{
+"path": "Assets/GameRes/icon/auction_role/challenge_pic_character_06_sad.png",
+"key": "challenge_pic_character_06_sad"
+},
+{
+"path": "Assets/GameRes/icon/auction_title/challenge_pic_island_01_scale2.png",
+"key": "challenge_pic_island_01_scale2"
+},
+{
+"path": "Assets/GameRes/icon/auction_title/challenge_pic_island_02_scale2.png",
+"key": "challenge_pic_island_02_scale2"
+},
+{
+"path": "Assets/GameRes/icon/auction_title/challenge_pic_island_03_scale2.png",
+"key": "challenge_pic_island_03_scale2"
+},
+{
+"path": "Assets/GameRes/icon/auction_title/challenge_pic_island_04_scale2.png",
+"key": "challenge_pic_island_04_scale2"
+},
+{
+"path": "Assets/GameRes/icon/auction_title/challenge_pic_island_05_scale2.png",
+"key": "challenge_pic_island_05_scale2"
+},
+{
+"path": "Assets/GameRes/icon/auction_title/challenge_pic_island_06_scale2.png",
+"key": "challenge_pic_island_06_scale2"
+},
+{
+"path": "Assets/GameRes/icon/auction_title/challenge_pic_title_1.png",
+"key": "challenge_pic_title_1"
+},
+{
+"path": "Assets/GameRes/icon/auction_title/challenge_pic_title_2.png",
+"key": "challenge_pic_title_2"
+},
+{
+"path": "Assets/GameRes/icon/auction_title/challenge_pic_title_3.png",
+"key": "challenge_pic_title_3"
+},
+{
+"path": "Assets/GameRes/icon/auction_title/challenge_pic_title_4.png",
+"key": "challenge_pic_title_4"
+},
+{
+"path": "Assets/GameRes/icon/auction_title/challenge_pic_title_5.png",
+"key": "challenge_pic_title_5"
+},
+{
+"path": "Assets/GameRes/icon/auction_title/challenge_pic_title_6.png",
+"key": "challenge_pic_title_6"
+},
+{
+"path": "Assets/GameRes/icon/desk/icon_zm01.png",
+"key": "icon_zm01"
+},
+{
+"path": "Assets/GameRes/icon/desk/icon_zm02.png",
+"key": "icon_zm02"
+},
+{
+"path": "Assets/GameRes/icon/desk/icon_zm03.png",
+"key": "icon_zm03"
+},
+{
+"path": "Assets/GameRes/icon/desk/icon_zm04.png",
+"key": "icon_zm04"
+},
+{
+"path": "Assets/GameRes/icon/desk/icon_zm05.png",
+"key": "icon_zm05"
+},
+{
+"path": "Assets/GameRes/icon/desk/icon_zm06.png",
+"key": "icon_zm06"
+},
+{
+"path": "Assets/GameRes/icon/desk/icon_zm07.png",
+"key": "icon_zm07"
+},
+{
+"path": "Assets/GameRes/icon/desk/icon_zm08.png",
+"key": "icon_zm08"
+},
+{
+"path": "Assets/GameRes/icon/desk/icon_zm101.png",
+"key": "icon_zm101"
+},
+{
+"path": "Assets/GameRes/icon/desk/icon_zm102.png",
+"key": "icon_zm102"
+},
+{
+"path": "Assets/GameRes/icon/desk/icon_zm103.png",
+"key": "icon_zm103"
+},
+{
+"path": "Assets/GameRes/icon/desk/icon_zm104.png",
+"key": "icon_zm104"
+},
+{
+"path": "Assets/GameRes/icon/desk/icon_zm105.png",
+"key": "icon_zm105"
+},
+{
+"path": "Assets/GameRes/icon/desk/icon_zm106.png",
+"key": "icon_zm106"
+},
+{
+"path": "Assets/GameRes/icon/desk/icon_zm107.png",
+"key": "icon_zm107"
+},
+{
+"path": "Assets/GameRes/icon/desk/icon_zm108.png",
+"key": "icon_zm108"
+},
+{
+"path": "Assets/GameRes/icon/helper/icon_dali.png",
+"key": "icon_dali"
+},
+{
+"path": "Assets/GameRes/icon/helper/icon_dashe.png",
+"key": "icon_dashe"
+},
+{
+"path": "Assets/GameRes/icon/helper/icon_dushen.png",
+"key": "icon_dushen"
+},
+{
+"path": "Assets/GameRes/icon/helper/icon_gangtierenpng.png",
+"key": "icon_gangtierenpng"
+},
+{
+"path": "Assets/GameRes/icon/helper/icon_halande.png",
+"key": "icon_halande"
+},
+{
+"path": "Assets/GameRes/icon/helper/icon_jikun.png",
+"key": "icon_jikun"
+},
+{
+"path": "Assets/GameRes/icon/helper/icon_jiuwei.png",
+"key": "icon_jiuwei"
+},
+{
+"path": "Assets/GameRes/icon/helper/icon_kungfu.png",
+"key": "icon_kungfu"
+},
+{
+"path": "Assets/GameRes/icon/helper/icon_mofa.png",
+"key": "icon_mofa"
+},
+{
+"path": "Assets/GameRes/icon/helper/icon_pifeng.png",
+"key": "icon_pifeng"
+},
+{
+"path": "Assets/GameRes/icon/helperskill/ty_icon_dashe_1.png",
+"key": "ty_icon_dashe_1"
+},
+{
+"path": "Assets/GameRes/icon/helperskill/ty_icon_dashe_2.png",
+"key": "ty_icon_dashe_2"
+},
+{
+"path": "Assets/GameRes/icon/helperskill/ty_icon_dashe_3.png",
+"key": "ty_icon_dashe_3"
+},
+{
+"path": "Assets/GameRes/icon/helperskill/ty_icon_dushen_1.png",
+"key": "ty_icon_dushen_1"
+},
+{
+"path": "Assets/GameRes/icon/helperskill/ty_icon_dushen_2.png",
+"key": "ty_icon_dushen_2"
+},
+{
+"path": "Assets/GameRes/icon/helperskill/ty_icon_dushen_3.png",
+"key": "ty_icon_dushen_3"
+},
+{
+"path": "Assets/GameRes/icon/helperskill/ty_icon_gangtiern_1.png",
+"key": "ty_icon_gangtiern_1"
+},
+{
+"path": "Assets/GameRes/icon/helperskill/ty_icon_gangtiern_2.png",
+"key": "ty_icon_gangtiern_2"
+},
+{
+"path": "Assets/GameRes/icon/helperskill/ty_icon_gangtiern_3.png",
+"key": "ty_icon_gangtiern_3"
+},
+{
+"path": "Assets/GameRes/icon/helperskill/ty_icon_halande_1.png",
+"key": "ty_icon_halande_1"
+},
+{
+"path": "Assets/GameRes/icon/helperskill/ty_icon_halande_2.png",
+"key": "ty_icon_halande_2"
+},
+{
+"path": "Assets/GameRes/icon/helperskill/ty_icon_halande_3.png",
+"key": "ty_icon_halande_3"
+},
+{
+"path": "Assets/GameRes/icon/helperskill/ty_icon_jikun_1.png",
+"key": "ty_icon_jikun_1"
+},
+{
+"path": "Assets/GameRes/icon/helperskill/ty_icon_jikun_2.png",
+"key": "ty_icon_jikun_2"
+},
+{
+"path": "Assets/GameRes/icon/helperskill/ty_icon_jikun_3.png",
+"key": "ty_icon_jikun_3"
+},
+{
+"path": "Assets/GameRes/icon/helperskill/ty_icon_jiuwei_1.png",
+"key": "ty_icon_jiuwei_1"
+},
+{
+"path": "Assets/GameRes/icon/helperskill/ty_icon_jiuwei_2.png",
+"key": "ty_icon_jiuwei_2"
+},
+{
+"path": "Assets/GameRes/icon/helperskill/ty_icon_jiuwei_3.png",
+"key": "ty_icon_jiuwei_3"
+},
+{
+"path": "Assets/GameRes/icon/helperskill/ty_icon_kungfu_1.png",
+"key": "ty_icon_kungfu_1"
+},
+{
+"path": "Assets/GameRes/icon/helperskill/ty_icon_kungfu_2.png",
+"key": "ty_icon_kungfu_2"
+},
+{
+"path": "Assets/GameRes/icon/helperskill/ty_icon_magician_1.png",
+"key": "ty_icon_magician_1"
+},
+{
+"path": "Assets/GameRes/icon/helperskill/ty_icon_magician_2.png",
+"key": "ty_icon_magician_2"
+},
+{
+"path": "Assets/GameRes/icon/helperskill/ty_icon_miracle_1.png",
+"key": "ty_icon_miracle_1"
+},
+{
+"path": "Assets/GameRes/icon/helperskill/ty_icon_toughguy_1.png",
+"key": "ty_icon_toughguy_1"
+},
+{
+"path": "Assets/GameRes/icon/item/icon_biliqianghua1.png",
+"key": "icon_biliqianghua1"
+},
+{
+"path": "Assets/GameRes/icon/item/icon_biliqianghua2.png",
+"key": "icon_biliqianghua2"
+},
+{
+"path": "Assets/GameRes/icon/item/icon_chaoji666.png",
+"key": "icon_chaoji666"
+},
+{
+"path": "Assets/GameRes/icon/item/icon_copperDice.png",
+"key": "icon_copperDice"
+},
+{
+"path": "Assets/GameRes/icon/item/icon_eyunxiaochu.png",
+"key": "icon_eyunxiaochu"
+},
+{
+"path": "Assets/GameRes/icon/item/icon_fanqijintouzi.png",
+"key": "icon_fanqijintouzi"
+},
+{
+"path": "Assets/GameRes/icon/item/icon_fanqiyintouzi.png",
+"key": "icon_fanqiyintouzi"
+},
+{
+"path": "Assets/GameRes/icon/item/icon_goldDice.png",
+"key": "icon_goldDice"
+},
+{
+"path": "Assets/GameRes/icon/item/icon_gongmingDice.png",
+"key": "icon_gongmingDice"
+},
+{
+"path": "Assets/GameRes/icon/item/icon_haoyunchangzai.png",
+"key": "icon_haoyunchangzai"
+},
+{
+"path": "Assets/GameRes/icon/item/icon_huadongshouge1Dice.png",
+"key": "icon_huadongshouge1Dice"
+},
+{
+"path": "Assets/GameRes/icon/item/icon_huadongshouge2Dice.png",
+"key": "icon_huadongshouge2Dice"
+},
+{
+"path": "Assets/GameRes/icon/item/icon_huadongshouge3Dice.png",
+"key": "icon_huadongshouge3Dice"
+},
+{
+"path": "Assets/GameRes/icon/item/icon_jinbi.png",
+"key": "icon_jinbi"
+},
+{
+"path": "Assets/GameRes/icon/item/icon_jinbishangzhang.png",
+"key": "icon_jinbishangzhang"
+},
+{
+"path": "Assets/GameRes/icon/item/icon_jintouzishangzhang.png",
+"key": "icon_jintouzishangzhang"
+},
+{
+"path": "Assets/GameRes/icon/item/icon_kuaisushouge1.png",
+"key": "icon_kuaisushouge1"
+},
+{
+"path": "Assets/GameRes/icon/item/icon_kuaisushouge2.png",
+"key": "icon_kuaisushouge2"
+},
+{
+"path": "Assets/GameRes/icon/item/icon_kuaisushouge3.png",
+"key": "icon_kuaisushouge3"
+},
+{
+"path": "Assets/GameRes/icon/item/icon_kuaisuyidong.png",
+"key": "icon_kuaisuyidong"
+},
+{
+"path": "Assets/GameRes/icon/item/icon_liansuofanying.png",
+"key": "icon_liansuofanying"
+},
+{
+"path": "Assets/GameRes/icon/item/icon_liansuofanying_02.png",
+"key": "icon_liansuofanying_02"
+},
+{
+"path": "Assets/GameRes/icon/item/icon_liudianjiazhu.png",
+"key": "icon_liudianjiazhu"
+},
+{
+"path": "Assets/GameRes/icon/item/icon_purpleDice.png",
+"key": "icon_purpleDice"
+},
+{
+"path": "Assets/GameRes/icon/item/icon_silverDice.png",
+"key": "icon_silverDice"
+},
+{
+"path": "Assets/GameRes/icon/item/icon_tongbi.png",
+"key": "icon_tongbi@80f5baea"
+},
+{
+"path": "Assets/GameRes/icon/item/icon_tongbishangzhang.png",
+"key": "icon_tongbishangzhang"
+},
+{
+"path": "Assets/GameRes/icon/item/icon_tongtouzishangzhang.png",
+"key": "icon_tongtouzishangzhang"
+},
+{
+"path": "Assets/GameRes/icon/item/icon_xiaobangshou.png",
+"key": "icon_xiaobangshou"
+},
+{
+"path": "Assets/GameRes/icon/item/icon_xingyunhuixiang.png",
+"key": "icon_xingyunhuixiang"
+},
+{
+"path": "Assets/GameRes/icon/item/icon_xingyunhuixiangDice.png",
+"key": "icon_xingyunhuixiangDice"
+},
+{
+"path": "Assets/GameRes/icon/item/icon_yinbi.png",
+"key": "icon_yinbi"
+},
+{
+"path": "Assets/GameRes/icon/item/icon_yinbishangzhang.png",
+"key": "icon_yinbishangzhang"
+},
+{
+"path": "Assets/GameRes/icon/item/icon_yintouzishangzhang.png",
+"key": "icon_yintouzishangzhang"
+},
+{
+"path": "Assets/GameRes/icon/item/icon_zhaohuanzibi.png",
+"key": "icon_zhaohuanzibi"
+},
+{
+"path": "Assets/GameRes/icon/item/icon_zibishangzhang.png",
+"key": "icon_zibishangzhang"
+},
+{
+"path": "Assets/GameRes/icon/item/icon_zijinbi.png",
+"key": "icon_zijinbi"
+},
+{
+"path": "Assets/GameRes/icon/item/icon_zijintouzishangzhang.png",
+"key": "icon_zijintouzishangzhang"
+},
+{
+"path": "Assets/GameRes/icon/item/icon_zuanshishangren.png",
+"key": "icon_zuanshishangren"
+},
+{
+"path": "Assets/GameRes/icon/skill/icon_1.png",
+"key": "icon_1"
+},
+{
+"path": "Assets/GameRes/icon/skill/icon_jinbi.png",
+"key": "icon_jinbi@a236790f"
+},
+{
+"path": "Assets/GameRes/icon/skill/icon_tongbi.png",
+"key": "icon_tongbi"
+},
+{
+"path": "Assets/GameRes/icon/skill/icon_xiaobangshou.png",
+"key": "icon_xiaobangshou@822020ee"
+},
+{
+"path": "Assets/GameRes/icon/skill/icon_yinbi.png",
+"key": "icon_yinbi@312e8a32"
+},
+{
+"path": "Assets/GameRes/icon/suipian/101.png",
+"key": "101"
+},
+{
+"path": "Assets/GameRes/icon/suipian/102.png",
+"key": "102"
+},
+{
+"path": "Assets/GameRes/icon/suipian/103.png",
+"key": "103"
+},
+{
+"path": "Assets/GameRes/icon/suipian/104.png",
+"key": "104"
+},
+{
+"path": "Assets/GameRes/icon/suipian/105.png",
+"key": "105"
+},
+{
+"path": "Assets/GameRes/icon/suipian/106.png",
+"key": "106"
+},
+{
+"path": "Assets/GameRes/icon/suipian/107.png",
+"key": "107"
+},
+{
+"path": "Assets/GameRes/icon/suipian/108.png",
+"key": "108"
+},
+{
+"path": "Assets/GameRes/icon/suipian/109.png",
+"key": "109"
+},
+{
+"path": "Assets/GameRes/icon/suipian/110.png",
+"key": "110"
+},
+{
+"path": "Assets/GameRes/icon/suipian/3.png",
+"key": "3"
+},
+{
+"path": "Assets/GameRes/icon/suipian/4.png",
+"key": "4"
+},
+{
+"path": "Assets/GameRes/icon/suipian/5.png",
+"key": "5"
+},
+{
+"path": "Assets/GameRes/icon/zgygy_rolebuff_666/zgygy_rolebuff_666_00.png",
+"key": "zgygy_rolebuff_666_00"
+},
+{
+"path": "Assets/GameRes/icon/zgygy_rolebuff_666/zgygy_rolebuff_666_01.png",
+"key": "zgygy_rolebuff_666_01"
+},
+{
+"path": "Assets/GameRes/icon/zgygy_rolebuff_666/zgygy_rolebuff_666_02.png",
+"key": "zgygy_rolebuff_666_02"
+},
+{
+"path": "Assets/GameRes/icon/zgygy_rolebuff_666/zgygy_rolebuff_666_03.png",
+"key": "zgygy_rolebuff_666_03"
+},
+{
+"path": "Assets/GameRes/icon/zgygy_rolebuff_666/zgygy_rolebuff_666_04.png",
+"key": "zgygy_rolebuff_666_04"
+},
+{
+"path": "Assets/GameRes/icon/zgygy_rolebuff_666/zgygy_rolebuff_666_05.png",
+"key": "zgygy_rolebuff_666_05"
+},
+{
+"path": "Assets/GameRes/icon/zgygy_rolebuff_666/zgygy_rolebuff_666_06.png",
+"key": "zgygy_rolebuff_666_06"
+},
+{
+"path": "Assets/GameRes/icon/zgygy_rolebuff_666/zgygy_rolebuff_666_07.png",
+"key": "zgygy_rolebuff_666_07"
+}
+]
+}

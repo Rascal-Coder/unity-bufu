@@ -1,0 +1,174 @@
+
+zgygy_role_toughguy.png
+size: 1825,366
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body_1_bei_toughguy
+  rotate: false
+  xy: 494, 129
+  size: 218, 235
+  orig: 300, 260
+  offset: 40, 13
+  index: -1
+body_1_toughguy
+  rotate: false
+  xy: 273, 118
+  size: 219, 246
+  orig: 300, 260
+  offset: 40, 9
+  index: -1
+body_2_1_toughguy
+  rotate: true
+  xy: 714, 130
+  size: 234, 215
+  orig: 300, 260
+  offset: 10, 16
+  index: -1
+body_2_2_toughguy
+  rotate: true
+  xy: 1377, 143
+  size: 221, 194
+  orig: 300, 260
+  offset: 10, 16
+  index: -1
+body_2_bei_1_toughguy
+  rotate: false
+  xy: 931, 134
+  size: 219, 230
+  orig: 300, 260
+  offset: 47, 14
+  index: -1
+body_2_bei_2_toughguy
+  rotate: false
+  xy: 1152, 139
+  size: 223, 225
+  orig: 300, 260
+  offset: 49, 15
+  index: -1
+body_tang_toughguy
+  rotate: true
+  xy: 2, 71
+  size: 293, 269
+  orig: 302, 269
+  offset: 9, 0
+  index: -1
+eye_1_toughguy
+  rotate: true
+  xy: 205, 20
+  size: 49, 30
+  orig: 50, 31
+  offset: 0, 1
+  index: -1
+hand_l_1_bei_toughguy
+  rotate: true
+  xy: 1072, 24
+  size: 108, 222
+  orig: 108, 222
+  offset: 0, 0
+  index: -1
+hand_l_1_toughguy
+  rotate: true
+  xy: 279, 4
+  size: 112, 235
+  orig: 113, 235
+  offset: 0, 0
+  index: -1
+hand_l_tang_toughguy
+  rotate: false
+  xy: 516, 2
+  size: 103, 125
+  orig: 104, 127
+  offset: 1, 2
+  index: -1
+hand_r_1_bei_toughguy
+  rotate: true
+  xy: 846, 20
+  size: 108, 224
+  orig: 108, 224
+  offset: 0, 0
+  index: -1
+hand_r_1_toughguy
+  rotate: true
+  xy: 621, 6
+  size: 121, 223
+  orig: 121, 224
+  offset: 0, 0
+  index: -1
+head_1_toughguy
+  rotate: true
+  xy: 1573, 218
+  size: 146, 131
+  orig: 146, 131
+  offset: 0, 0
+  index: -1
+head_2_bei_toughguy
+  rotate: false
+  xy: 1296, 3
+  size: 147, 134
+  orig: 148, 135
+  offset: 0, 1
+  index: -1
+head_2_toughguy
+  rotate: false
+  xy: 1679, 83
+  size: 144, 133
+  orig: 146, 133
+  offset: 0, 0
+  index: -1
+head_tang_toughguy
+  rotate: true
+  xy: 1445, 2
+  size: 139, 134
+  orig: 140, 134
+  offset: 1, 0
+  index: -1
+leg_l_1_toughguy
+  rotate: true
+  xy: 1706, 284
+  size: 80, 101
+  orig: 80, 104
+  offset: 0, 2
+  index: -1
+leg_l_bei_toughguy
+  rotate: true
+  xy: 103, 5
+  size: 64, 100
+  orig: 64, 100
+  offset: 0, 0
+  index: -1
+leg_r_1_toughguy
+  rotate: true
+  xy: 1573, 143
+  size: 73, 97
+  orig: 74, 100
+  offset: 0, 3
+  index: -1
+leg_r_bei_toughguy
+  rotate: true
+  xy: 2, 3
+  size: 66, 99
+  orig: 74, 104
+  offset: 8, 3
+  index: -1
+mouth_tang_toughguy
+  rotate: false
+  xy: 1072, 3
+  size: 24, 19
+  orig: 25, 19
+  offset: 0, 0
+  index: -1
+shadow_toughguy
+  rotate: true
+  xy: 1581, 5
+  size: 136, 96
+  orig: 136, 96
+  offset: 0, 0
+  index: -1
+z_tang_toughguy
+  rotate: true
+  xy: 237, 22
+  size: 47, 40
+  orig: 47, 40
+  offset: 0, 0
+  index: -1

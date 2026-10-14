@@ -1,0 +1,153 @@
+
+zgygy_role.png
+size: 995,263
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body_1
+  rotate: false
+  xy: 700, 157
+  size: 101, 104
+  orig: 101, 104
+  offset: 0, 0
+  index: -1
+body_1_bei
+  rotate: false
+  xy: 637, 23
+  size: 101, 105
+  orig: 102, 106
+  offset: 0, 0
+  index: -1
+body_2
+  rotate: true
+  xy: 538, 5
+  size: 110, 97
+  orig: 111, 98
+  offset: 1, 0
+  index: -1
+body_2_bei
+  rotate: false
+  xy: 419, 14
+  size: 117, 101
+  orig: 118, 101
+  offset: 1, 0
+  index: -1
+body_tang
+  rotate: false
+  xy: 2, 3
+  size: 277, 258
+  orig: 277, 258
+  offset: 0, 0
+  index: -1
+eye_1
+  rotate: false
+  xy: 826, 60
+  size: 49, 30
+  orig: 50, 31
+  offset: 0, 1
+  index: -1
+hand_l_1
+  rotate: true
+  xy: 842, 7
+  size: 51, 107
+  orig: 51, 108
+  offset: 0, 1
+  index: -1
+hand_l_1_bei
+  rotate: false
+  xy: 941, 168
+  size: 52, 93
+  orig: 53, 93
+  offset: 1, 0
+  index: -1
+hand_r_1
+  rotate: false
+  xy: 941, 168
+  size: 52, 93
+  orig: 53, 93
+  offset: 1, 0
+  index: -1
+hand_r_1_bei
+  rotate: true
+  xy: 740, 2
+  size: 56, 100
+  orig: 56, 100
+  offset: 0, 0
+  index: -1
+head_1
+  rotate: false
+  xy: 552, 130
+  size: 146, 131
+  orig: 146, 131
+  offset: 0, 0
+  index: -1
+head_2
+  rotate: true
+  xy: 417, 117
+  size: 144, 133
+  orig: 146, 133
+  offset: 0, 0
+  index: -1
+head_2_bei
+  rotate: true
+  xy: 281, 114
+  size: 147, 134
+  orig: 148, 135
+  offset: 0, 1
+  index: -1
+leg_l_1
+  rotate: false
+  xy: 803, 160
+  size: 70, 101
+  orig: 74, 104
+  offset: 2, 2
+  index: -1
+leg_l_bei
+  rotate: false
+  xy: 875, 161
+  size: 64, 100
+  orig: 64, 100
+  offset: 0, 0
+  index: -1
+leg_r_1
+  rotate: false
+  xy: 927, 73
+  size: 60, 86
+  orig: 64, 100
+  offset: 1, 7
+  index: -1
+leg_r_1_tang
+  rotate: false
+  xy: 740, 60
+  size: 84, 95
+  orig: 84, 95
+  offset: 0, 0
+  index: -1
+leg_r_bei
+  rotate: true
+  xy: 826, 92
+  size: 66, 99
+  orig: 74, 104
+  offset: 8, 3
+  index: -1
+mouth_tang
+  rotate: false
+  xy: 877, 61
+  size: 38, 29
+  orig: 38, 29
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 281, 16
+  size: 136, 96
+  orig: 136, 96
+  offset: 0, 0
+  index: -1
+z_tang
+  rotate: true
+  xy: 951, 24
+  size: 47, 40
+  orig: 47, 40
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,20 @@
+
+Uieff_zhuanpan_light_2.png
+size: 188,114
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+deng_1
+  rotate: false
+  xy: 114, 40
+  size: 72, 72
+  orig: 74, 73
+  offset: 1, 0
+  index: -1
+deng_2
+  rotate: false
+  xy: 2, 2
+  size: 110, 110
+  orig: 112, 112
+  offset: 1, 1
+  index: -1

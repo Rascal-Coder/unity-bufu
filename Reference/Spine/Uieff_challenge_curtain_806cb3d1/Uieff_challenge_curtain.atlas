@@ -1,0 +1,20 @@
+
+Uieff_challenge_curtain.png
+size: 1782,992
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+challenge_pic_curtain_01
+  rotate: true
+  xy: 2, 350
+  size: 640, 1778
+  orig: 640, 1778
+  offset: 0, 0
+  index: -1
+challenge_pic_curtain_02
+  rotate: false
+  xy: 2, 2
+  size: 1628, 346
+  orig: 1628, 370
+  offset: 0, 24
+  index: -1

@@ -1,0 +1,22 @@
+{
+    "passed": true,
+    "error": "",
+    "editor": "2022.3.62t16",
+    "width": 720,
+    "height": 1080,
+    "checks": 12,
+    "messages": [
+        "runtime initialization",
+        "new game renders 3 real copper VAT coins",
+        "runtime coin audio loaded",
+        "manual animation completion settles actual income",
+        "affordable helper button enabled",
+        "helper purchase creates animated actor",
+        "automatic helpers produce income without manual input",
+        "UI value upgrade changes economy",
+        "save to disk and restore preserves progress",
+        "world UI switches to original dice assets",
+        "dice animation completes and settles face rewards",
+        "no runtime errors or exceptions"
+    ]
+}
