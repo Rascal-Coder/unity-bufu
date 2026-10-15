@@ -1,0 +1,41 @@
+
+Uieff_common_guide.png
+size: 650,378
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+jiantou
+  rotate: false
+  xy: 2, 2
+  size: 509, 122
+  orig: 511, 122
+  offset: 1, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 472, 139
+  size: 115, 59
+  orig: 115, 59
+  offset: 0, 0
+  index: -1
+xszy_icon_shouzhi01
+  rotate: false
+  xy: 254, 146
+  size: 216, 230
+  orig: 216, 230
+  offset: 0, 0
+  index: -1
+xszy_pic_dianji01
+  rotate: false
+  xy: 472, 200
+  size: 176, 176
+  orig: 188, 188
+  offset: 6, 6
+  index: -1
+xszy_pic_dianji02
+  rotate: false
+  xy: 2, 126
+  size: 250, 250
+  orig: 266, 266
+  offset: 8, 8
+  index: -1

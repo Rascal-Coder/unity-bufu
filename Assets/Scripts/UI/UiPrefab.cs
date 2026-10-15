@@ -48,7 +48,8 @@ namespace Bufu.Rebuild.UI {
         /// <summary>Puts a cropped sprite back inside its original pixel rect. A larger source is scaled to that rect.</summary>
         static Texture2D Pad(Texture2D src,int w,int h) {
             if(src.width>w||src.height>h)return Read(src,w,h);
-            var copy=Read(src,src.width,src.height);var pixels=copy.GetPixels32();UnityEngine.Object.Destroy(copy);
+            var copy=Read(src,src.width,src.height);var pixels=copy.GetPixels32();
+            if(Application.isPlaying)UnityEngine.Object.Destroy(copy);else UnityEngine.Object.DestroyImmediate(copy);
             var canvas=new Color32[w*h];int ox=(w-src.width)/2,oy=(h-src.height)/2;
             for(int y=0;y<src.height;y++)Array.Copy(pixels,y*src.width,canvas,(oy+y)*w+ox,src.width);
             var tex=new Texture2D(w,h,TextureFormat.RGBA32,false,false);
@@ -133,10 +134,13 @@ namespace Bufu.Rebuild.UI {
         public static UiView Instantiate(string resource,Transform parent) {
             if(!resource.StartsWith("UI/"))resource="UI/Prefabs/"+resource;
             var data=Load(resource);var list=data.Arr("nodes");int count=list.Count;
+            bool nativeParticles=NativeParticles.Sources.Any(x=>resource=="UI/Prefabs/"+x);
             var nodes=new GameObject[count];var comps=new List<Data>[count];var raw=new Data[count];
             for(int i=0;i<count;i++) {
                 var n=(Data)list[i];raw[i]=n;int p=n.I("p",-1);
-                var go=n.ContainsKey("rt")?new GameObject(n.Str("n"),typeof(RectTransform)):new GameObject(n.Str("n"));
+                bool particle=nativeParticles&&(n.Arr("c")??new List<object>()).OfType<Data>().Any(c=>c.Str("t")=="ParticleSystem");
+                var go=particle?NativeParticles.Create(resource,i,p<0?parent:nodes[p].transform):n.ContainsKey("rt")?new GameObject(n.Str("n"),typeof(RectTransform)):new GameObject(n.Str("n"));
+                go.name=n.Str("n");
                 go.SetActive(false);go.transform.SetParent(p<0?parent:nodes[p].transform,false);nodes[i]=go;
                 ApplyTransform(go.transform,n);
                 comps[i]=(n.Arr("c")??new List<object>()).Cast<Data>().ToList();
@@ -144,6 +148,16 @@ namespace Bufu.Rebuild.UI {
             var view=new UiView(resource,nodes,comps);
             for(int i=0;i<count;i++)foreach(var c in comps[i].Where(IsGraphic))AddComponent(view,nodes[i],c);
             for(int i=0;i<count;i++)foreach(var c in comps[i].Where(c=>!IsGraphic(c)))AddComponent(view,nodes[i],c);
+            if(nativeParticles)for(int i=0;i<count;i++)foreach(var c in comps[i].Where(c=>c.Str("t")=="UIParticle"))NativeParticles.Bind(view,i,c);
+            // The original list scripts resized their grids after populating them. Their exported
+            // content rects are only placeholders; ScrollRect needs the populated layout's size.
+            foreach(var node in nodes) {
+                var scroll=node.GetComponent<ScrollRect>();
+                if(!scroll||!scroll.content||!scroll.content.GetComponent<GridLayoutGroup>())continue;
+                var fit=scroll.content.GetComponent<ContentSizeFitter>()??scroll.content.gameObject.AddComponent<ContentSizeFitter>();
+                if(scroll.vertical)fit.verticalFit=ContentSizeFitter.FitMode.PreferredSize;
+                if(scroll.horizontal)fit.horizontalFit=ContentSizeFitter.FitMode.PreferredSize;
+            }
             for(int i=count-1;i>=0;i--)nodes[i].SetActive(raw[i].B("a",true));
             return view;
         }

@@ -18,7 +18,7 @@ namespace Bufu.Rebuild {
         }
 
         // ------------------------------------------------------------ facility
-        int facilityTab=2,facilityWorld;
+        int facilityTab=1,facilityWorld;
 
         void EnsureFacility() {
             if(facilityView!=null&&facilityView.Root)return;
@@ -36,7 +36,7 @@ namespace Bufu.Rebuild {
             // deskItemPrefab is an external prefab reference, not a node. Cards are instantiated from Facility/deskItem.
             // The embedded helperItem template is not used here.
             foreach(var n in v.Nodes)if(n.name=="helperItem"&&n.GetComponent<RectTransform>()&&n.transform.parent==v.Root.transform)On(n,false);
-            facilityTab=2;applyTab();
+            facilityTab=1;applyTab();
             Watch(v.Root,()=>{
                 int world=Model.Data.world;
                 if(facilityWorld!=world){
@@ -48,7 +48,7 @@ namespace Bufu.Rebuild {
                 }
                 On(deskRed,Model.desks.Any(d=>d.WorldId==world&&Model.DeskUpgradeable(d)));
                 EnsureHelperList();
-                On(v.Ref(cls,"helperTabRedDot"),Model.helperRoles.Any(r=>Model.CanUpgradeHelper(r.id)||Model.CanAdUnlock(r)));
+                On(v.Ref(cls,"helperTabRedDot"),Model.AnyHelperUpgradeNotification);
             });
         }
 
@@ -119,6 +119,7 @@ namespace Bufu.Rebuild {
             const string cls="ShopTurntablePanel";
             var v=OpenTabPanel("Shop/shop");shopView=v;
             // Original bottom row: ad-diamond card, then the two chests, laid out by the prefab's HorizontalLayoutGroup.
+            FitShopLayout(v);
             var closeLayer=v.Node("closebtn");On(closeLayer,false);
             On(v.Node("mask"),false);On(v.Node("mask2"),false);
             FitClock(v.Ref<TMP_Text>(cls,"spinAdButtonText"));FitClock(v.Ref<TMP_Text>(cls,"diamondButtonText"));
@@ -141,6 +142,7 @@ namespace Bufu.Rebuild {
             var diamondButton=v.Ref<Button>(cls,"button201");var diamondMask=v.Node("mask");var diamondClock=v.Ref<TMP_Text>(cls,"diamondButtonText");
             Click(diamondButton,()=>{
                 hideInfo();
+                if(spinning)return;
                 if(Model.DiamondCooling)return;
                 var offer=Model.shop.First(s=>s.id==201);
                 if(!Model.ClaimDiamondAd()){PlayCantBuy();ShowToast("今日次数已用完");return;}
@@ -153,26 +155,30 @@ namespace Bufu.Rebuild {
                 int id=pair.Key;var item=Model.shop.First(s=>s.id==id);
                 Click(v.Ref<Button>(cls,pair.Value),()=>{
                     hideInfo();
+                    if(spinning)return;
                     int used=Model.Data.shopDate==GameModel.TodayNumber()?(id==202?Model.Data.chestNormal:Model.Data.chestRare):0;
-                    if(item.todayLimit>0&&used>=item.todayLimit){PlayCantBuy();ShowToast("今日购买次数已达上限");return;}
+                    if(!Model.DeveloperMode&&item.todayLimit>0&&used>=item.todayLimit){PlayCantBuy();ShowToast("今日购买次数已达上限");return;}
                     if(Model.Data.diamonds<item.cost){PlayCantBuy();ShowToast("钻石不足");return;}
-                    var rewards=new List<KeyValuePair<int,double>>();
-                    for(int i=0;i<item.rewardType.Length&&i<item.count.Length;i++)rewards.Add(new KeyValuePair<int,double>(item.rewardType[i],item.count[i]));
-                    if(Model.BuyChest(id)){PlayUpgrade();ShowRewardBox(rewards);}else PlayCantBuy();
+                    if(Model.BuyChest(id,out var rewards)){PlayUpgrade();ShowRewardBox(rewards);}else PlayCantBuy();
                 });
             }
             Txt(v.Ref<TMP_Text>(cls,"adDiamondText2"),((int)Model.shop.First(s=>s.id==202).cost).ToString());
             Txt(v.Ref<TMP_Text>(cls,"adDiamondText3"),((int)Model.shop.First(s=>s.id==203).cost).ToString());
             // wheel
             var slots=v.Refs(cls,"wheelSlots");var wheelItems=Model.WheelItems.Take(slots.Length).ToArray();
+            var refreshWheel=new List<Action>();
             for(int i=0;i<slots.Length;i++) {
                 const string view="ShopRewardItemView";
                 int node=v.IndexOf(slots[i]);var script=v.Script(view,node);if(script==null||i>=wheelItems.Length){On(slots[i],false);continue;}
                 var item=wheelItems[i];int type=item.rewardType[0];
                 Func<string,GameObject> r=field=>v.Nodes[script.Obj(field).I("node")];
-                var iconSprite=type==1?Sp(Model.Data.world==2?"ty_icon_coin02":"ty_icon_coin01@4f9b2316"):RewardIcon(type);
-                if(iconSprite){var image=r("icon").GetComponent<Image>();image.sprite=iconSprite;image.SetNativeSize();}
-                Txt(r("valueText").GetComponent<TMP_Text>(),GameModel.Format(item.count[0]));
+                var image=r("icon").GetComponent<Image>();var value=r("valueText").GetComponent<TMP_Text>();
+                refreshWheel.Add(()=>{
+                    var iconSprite=ShopWheelIcon(item);
+                    if(iconSprite){image.sprite=iconSprite;image.preserveAspect=true;}
+                    Txt(value,GameModel.Format(Model.ShopRewardAmount(item,0)));
+                });
+                On(r("valueCon"),type<3||type>5);On(r("colorbg"),type==5);
                 var quality=script.Arr("qualityImages");
                 for(int q=0;q<3&&quality!=null&&q<quality.Count;q++)On(v.Nodes[((Data)quality[q]).I("node")],type>=3&&type<=5&&q==type-3);
             }
@@ -184,32 +190,38 @@ namespace Bufu.Rebuild {
                 if(!Model.CanSpin){PlayCantBuy();ShowToast("今日次数已用完");return;}
                 spinning=true;spinButton.interactable=false;
                 var result=Model.Spin(UnityEngine.Random.value);if(result==null){spinning=false;return;}
+                // Settle the displayed reward once before presentation. Hiding the shop stops its
+                // graphics, and quitting during an animation must not consume a spin without a prize.
+                var rewards=Model.BuildShopRewards(result);Model.GrantShop(result,rewards);
+                if(!VerificationMode)SaveStore.Save(Model);
                 int index=Math.Max(0,Array.IndexOf(wheelItems,result));
                 wheelGlow?.Play("rolling",true);wheelLamps?.Play("rolling",true);
                 float start=wheel.localEulerAngles.z>180?wheel.localEulerAngles.z-360:wheel.localEulerAngles.z;
-                float target=40*index-360*(v.Script(cls).F("spinExtraRounds",6)+1);
-                StartCoroutine(Tween(4.5f,t=>{if(wheel)wheel.localEulerAngles=new Vector3(0,0,Mathf.Lerp(start,target,1-Mathf.Pow(1-t,3)));},()=>FinishSpin(result)));
+                float selected=360f/Math.Max(1,wheelItems.Length)*index+v.Script(cls).F("spinAngleOffset");
+                float target=start-Mathf.Repeat(start-selected,360)-360*(v.Script(cls).F("spinExtraRounds",6)+1);
+                StartCoroutine(Tween(4.5f,t=>{if(wheel)wheel.localEulerAngles=new Vector3(0,0,Mathf.Lerp(start,target,1-Mathf.Pow(1-t,3)));},()=>FinishSpin(rewards)));
             });
             // guaranteed chest progress
             var progress=v.Ref<Image>(cls,"progressSlider");var progressText=v.Ref<TMP_Text>(cls,"progressText");var chest=v.Ref<Button>(cls,"button301");
             Click(chest,()=>{
+                if(spinning)return;
                 if(Model.SpinProgress<GameModel.SpinProgressMax){ShowToast("转盘进度未满");return;}
-                var item=Model.shop.First(s=>s.id==301);var gained=new List<KeyValuePair<int,double>>();
-                for(int i=0;i<item.rewardType.Length&&i<item.count.Length;i++)gained.Add(new KeyValuePair<int,double>(item.rewardType[i],Model.ShopRewardAmount(item,i)));
-                if(Model.ClaimSpinChest()){PlayReward();ShowRewardBox(gained);}
+                if(Model.ClaimSpinChest(out var gained)){PlayReward();ShowRewardBox(gained);}
             });
             var shaker=chest.gameObject.GetComponent<ChestShake>()??chest.gameObject.AddComponent<ChestShake>();
             Watch(v.Root,()=>{
+                if(!spinning)foreach(var refresh in refreshWheel)refresh();
                 bool free=Model.SpinIsFree,cool=Model.SpinCooling,can=Model.CanSpin;
                 On(freeIcon,free);On(adIcon,!free);On(cooldown,cool);spinButton.interactable=can&&!spinning;
                 if(cool)Txt(cooldownText,Clock(Model.SpinCooldownLeft));
                 bool diamondCool=Model.DiamondCooling;
-                On(diamondMask,diamondCool);diamondButton.interactable=!diamondCool;
+                On(diamondMask,diamondCool);diamondButton.interactable=!spinning&&!diamondCool;
+                v.Ref<Button>(cls,"button202").interactable=!spinning;v.Ref<Button>(cls,"button203").interactable=!spinning;
                 if(diamondCool)Txt(diamondClock,Clock(Model.DiamondCooldownLeft));
                 progress.fillAmount=Mathf.Clamp01(Model.SpinProgress/(float)GameModel.SpinProgressMax);
                 Txt(progressText,Model.SpinProgress+"/"+GameModel.SpinProgressMax);
                 shaker.shaking=Model.SpinProgress>=GameModel.SpinProgressMax;
-                chest.interactable=Model.SpinProgress>=GameModel.SpinProgressMax;
+                chest.interactable=!spinning&&Model.SpinProgress>=GameModel.SpinProgressMax;
             });
             StartCoroutine(ShopClock(v));
         }
@@ -218,22 +230,47 @@ namespace Bufu.Rebuild {
             if(!text)return;text.enableWordWrapping=false;text.overflowMode=TextOverflowModes.Overflow;
             var rect=text.rectTransform;rect.sizeDelta=new Vector2(520,rect.sizeDelta.y);
         }
+        static void FitShopLayout(UiView view) {
+            // Keep progress and its count below the shared currency bar.
+            var progress=(RectTransform)view.Node("processBar").transform;
+            progress.anchorMin=progress.anchorMax=new Vector2(.5f,1);
+            progress.anchoredPosition=new Vector2(progress.anchoredPosition.x,-518);
+            // The exported scene places the 426-high offer cards underneath the bottom tabs
+            // and their unlock labels (which reach 374 units above the screen bottom).
+            // Keep the original artwork and card sizes, reserving that complete navigation area.
+            var offers=(RectTransform)view.Node("itemLayout").transform;
+            offers.anchorMin=offers.anchorMax=new Vector2(.5f,0);
+            offers.anchoredPosition=new Vector2(offers.anchoredPosition.x,612);
+            var spin=(RectTransform)view.Node("rollBtnGroup").transform;
+            spin.anchorMin=spin.anchorMax=new Vector2(.5f,0);spin.anchoredPosition=new Vector2(0,968);
+            var wheel=(RectTransform)view.Node("spinnerGroup").transform;
+            wheel.anchorMin=wheel.anchorMax=new Vector2(.5f,0);wheel.anchoredPosition=new Vector2(0,1608);wheel.localScale=new Vector3(.68f,.68f,1);
+        }
         static string Clock(int seconds){if(seconds<0)seconds=0;return (seconds/60).ToString("00")+":"+(seconds%60).ToString("00");}
         static SpineGraphic AttachWheelLight(GameObject go,string asset,string animation) {
             if(!go)return null;var graphic=go.GetComponent<SpineGraphic>()??go.AddComponent<SpineGraphic>();
             if(!graphic.Load(asset))return null;graphic.Play(animation,true);return graphic;
         }
-        void FinishSpin(ShopItem result) {
+        Sprite ShopWheelIcon(ShopItem item) {
+            if(item.id==101)return RewardIcon(1);
+            string image=null;
+            if(item.id==102||item.id==103)image="ty_icon_money0"+(item.id-100)+(Model.Data.world==2?"_dice":"");
+            else if(item.id>=104&&item.id<=106)image="ty_icon_diamond0"+(item.id-103);
+            return image==null?RewardIcon(item.rewardType[0]):SpAt("Assets/GameRes/NewUI/Shop/images/"+image+".png");
+        }
+        void FinishSpin(List<KeyValuePair<int,double>> rewards) {
             wheelGlow?.Play("idle",true);wheelLamps?.Play("idle",true);
-            Action grant=()=>{
-                spinning=false;
-                var gained=new List<KeyValuePair<int,double>>();
-                for(int i=0;i<result.rewardType.Length&&i<result.count.Length;i++)gained.Add(new KeyValuePair<int,double>(result.rewardType[i],Model.ShopRewardAmount(result,i)));
-                Model.GrantShop(result);PlayReward();ShowRewardBox(gained);
-            };
-            if(!wheelBurst){grant();return;}
-            int times=0;wheelBurst.gameObject.SetActive(true);
-            wheelBurst.Play("effect",true,()=>{times++;if(times<3)return;wheelBurst.gameObject.SetActive(false);grant();});
+            StartCoroutine(CompleteSpin(rewards));
+        }
+        IEnumerator CompleteSpin(List<KeyValuePair<int,double>> rewards) {
+            if(wheelBurst) {
+                wheelBurst.gameObject.SetActive(true);wheelBurst.Play("effect",true);
+                // A graphic's Update is suspended when its tab is hidden. The controller owns
+                // completion so switching tabs cannot leave the shop locked forever.
+                yield return new WaitForSecondsRealtime(wheelBurst.AnimationDuration*3);
+                if(wheelBurst)wheelBurst.gameObject.SetActive(false);
+            }
+            spinning=false;RefreshAll();PlayReward();ShowRewardBox(rewards);
         }
         IEnumerator ShopClock(UiView v){while(v!=null&&v.Root){yield return new WaitForSecondsRealtime(1);if(v.Root&&v.Root.activeInHierarchy)RefreshAll();}}
 
@@ -247,7 +284,7 @@ namespace Bufu.Rebuild {
             worldStatus=v.Ref<TMP_Text>(cls,"statusText");Txt(worldStatus,"");
             Click(v.Ref<Button>(cls,"closeButton"),()=>SelectTab(1));
             var rootButton=v.Root.GetComponent<Button>();if(rootButton)rootButton.onClick.RemoveAllListeners();
-            BuildWorldNodes(v);
+            FitWorldPage(v);BuildWorldNodes(v);
             Watch(v.Root,()=>RefreshWorldNodes());
         }
 
@@ -258,20 +295,20 @@ namespace Bufu.Rebuild {
             var scroll=panel.Ref<ScrollRect>("WorldSelectionPanel","worldScrollView");var content=scroll.content;
             var viewport=scroll.viewport?scroll.viewport:(RectTransform)content.parent;
             foreach(Transform child in content)Destroy(child.gameObject);worldNodeRefreshers.Clear();
-            var configs=Model.worlds.OrderByDescending(x=>x.sort).ToArray();
+            var configs=Model.worlds.OrderBy(x=>x.sort).ToArray();
             var layout=content.GetComponent<VerticalLayoutGroup>();
-            float height=scroll.GetComponent<RectTransform>().rect.height;
-            if(layout){layout.padding.top=(int)(height*.35f);layout.padding.bottom=(int)(height*.45f);layout.childControlHeight=false;layout.childControlWidth=false;layout.childForceExpandHeight=false;layout.childAlignment=TextAnchor.UpperCenter;}
+            float height=viewport.rect.height;
+            if(layout){layout.padding.top=layout.padding.bottom=Mathf.Max(64,Mathf.RoundToInt((height-WorldNodeHeight)/2));layout.spacing=layout.padding.top+64;layout.childControlHeight=false;layout.childControlWidth=false;layout.childForceExpandHeight=false;layout.childForceExpandWidth=false;layout.childAlignment=TextAnchor.UpperCenter;}
             var nodes=new RectTransform[configs.Length+1];
             for(int index=0;index<=configs.Length;index++) {
                 const string cls="WorldNode";
-                World config=index==0?null:configs[index-1];
+                World config=index<configs.Length?configs[index]:null;
                 string prefab=config==null?"world/WorldNode ComingSoon":config.id==2?"world/WorldNode 1":"world/WorldNode";
-                var v=UiPrefab.Instantiate(prefab,content);On(v.Root,true);nodes[index]=v.Rect;int nodeIndex=index;
-                On(v.Ref(cls,"tail"),nodeIndex>0);
+                var v=UiPrefab.Instantiate(prefab,content);On(v.Root,true);nodes[index]=v.Rect;
+                On(v.Ref(cls,"tail"),false);FitWorldNode(v,config);
                 var island=v.Ref<Button>(cls,"islandButton");var image=v.Ref<Image>(cls,"islandImage");var lockPanel=v.Ref(cls,"lockPanel");var unlockPanel=v.Ref(cls,"unlockPanel");var lockText=v.Ref<TMP_Text>(cls,"lockText");
                 GameObject currentImage=null;try{currentImage=v.Ref(cls,"currentImage");}catch(KeyNotFoundException){}
-                if(config==null){Txt(lockText,"敬请期待");On(lockPanel,true);On(unlockPanel,false);Click(island,()=>ShowWorldStatus("更多世界敬请期待"));continue;}
+                if(config==null){Txt(v.Ref<TMP_Text>(cls,"titleText"),"更多世界");Txt(lockText,"敬请期待");On(lockPanel,true);On(unlockPanel,false);Click(island,()=>ShowWorldStatus("更多世界敬请期待"));continue;}
                 Txt(v.Ref<TMP_Text>(cls,"titleText"),config.worldName);
                 var captured=config;
                 Click(island,()=>OnSelectWorld(captured));
@@ -286,7 +323,7 @@ namespace Bufu.Rebuild {
             RefreshWorldNodes();
             Canvas.ForceUpdateCanvases();LayoutRebuilder.ForceRebuildLayoutImmediate(content);
             content.sizeDelta=new Vector2(content.sizeDelta.x,Mathf.Max(LayoutUtility.GetPreferredHeight(content),viewport.rect.height));
-            int current=Array.FindIndex(configs,w=>w.id==Model.Data.world)+1;
+            int current=Math.Max(0,Array.FindIndex(configs,w=>w.id==Model.Data.world));
             float center=-nodes[current].anchoredPosition.y;
             content.anchoredPosition=new Vector2(content.anchoredPosition.x,Mathf.Clamp(center-viewport.rect.height/2,0,Mathf.Max(0,content.sizeDelta.y-viewport.rect.height)));
         }
@@ -296,7 +333,7 @@ namespace Bufu.Rebuild {
             if(worldStatusRoutine!=null)StopCoroutine(worldStatusRoutine);
             worldStatusRoutine=StartCoroutine(ClearWorldStatus());
         }
-        IEnumerator ClearWorldStatus(){yield return new WaitForSecondsRealtime(2);if(worldStatus)Txt(worldStatus,"");}
+        IEnumerator ClearWorldStatus(){yield return new WaitForSecondsRealtime(2);if(worldStatus)Txt(worldStatus,WorldHint);}
 
         void OnSelectWorld(World config) {
             if(Model.Data.world==config.id){ShowWorldStatus("当前已处于该世界");return;}

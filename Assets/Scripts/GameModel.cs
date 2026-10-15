@@ -29,27 +29,30 @@ namespace Bufu.Rebuild {
     }
     /// <summary>HelperInfo of one world: level, how many are on the field, and the hire cap.</summary>
     [Serializable] public sealed class HelperState { public int id,level=1,count,max=1,ad; }
-    [Serializable] public sealed class SignReward { public int id,worldId; public int[] normalReward; }
+    [Serializable] public sealed class SignReward { public int id,worldId; public int[] normalReward,AdReward; }
     [Serializable] public sealed class ShopItem { public int id,todayLimit; public string name,desc; public int[] rewardType,count; public double rate,cost; }
     [Serializable] public sealed class WorldState {
         public double gold, lifetime, averagePerMinute=1, pendingOffline, rebirthMultiplier=1;
-        public int mission,rebirth,points,checkDay=1,checkDate,checkMask,helperAdCap,usingDesk,rebornLevel=-1; public bool checkClaimed; public long lastExit;
+        public long[] supportLastTime=new long[3]; public int promotionId=1; public int mission,rebirth,points,checkDay=1,checkDate,checkMask,checkAdMask,helperAdCap,usingDesk,rebornLevel=-1; public bool checkClaimed; public long lastExit;
         public int[] quantity=new int[128], boosts=new int[128], evolution=new int[128], evolvedAt=new int[128], talents=new int[400], skills=new int[128], deskLevel=new int[128];
         public List<int> pendingGoals=new List<int>(); public List<HelperState> helpers=new List<HelperState>();
     }
     [Serializable] public sealed class SaveData { public int schema=1,world=1,shopDate,chestNormal,chestRare,spinCount,spinProgress,diamondClaims; public long spinReadyAt,diamondReadyAt; public bool diceUnlocked,worldEntry; public double diamonds=20; public int[] shards=new int[128]; public WorldState[] worlds={new WorldState(),new WorldState()}; }
-    public sealed class GameModel {
+    public sealed partial class GameModel {
+        public bool DeveloperMode {get;private set;}
         public readonly Common[] common; public readonly Upgrade[] quantities, boosts, skills;
         public readonly Mission[] missions; public readonly Talent[] coinTalents,diceTalents; public readonly PointReward[] coinPoints,dicePoints;
         public readonly Desk[] desks; public readonly SignReward[] signs; public readonly ShopItem[] shop; public readonly World[] worlds; public readonly HelperRole[] helperRoles;
         public SaveData Data {get;private set;} public WorldState State => Data.worlds[Data.world-1];
         public event Action Changed; public event Action<string> Notice;
         readonly Queue<KeyValuePair<double,double>> income=new Queue<KeyValuePair<double,double>>();
-        public GameModel(SaveData data=null) {
+        public GameModel(SaveData data=null,bool developerMode=false) {
+            DeveloperMode=developerMode;
             common=Read<Common>("tbcommon"); quantities=Read<Upgrade>("tbitemupgrade1"); boosts=Read<Upgrade>("tbitemupgrade2"); skills=Read<Upgrade>("tbitemupgrade3"); missions=Read<Mission>("tbmainmission");
             coinTalents=Read<Talent>("tbtalent"); diceTalents=Read<Talent>("tbtalent2"); coinPoints=Read<PointReward>("tbtalentpoint");dicePoints=Read<PointReward>("tbtalentpoint2");
             desks=Read<Desk>("tbdesk"); signs=Read<SignReward>("tbsignreward"); shop=Read<ShopItem>("tbshop"); worlds=Read<World>("tbworld"); helperRoles=Read<HelperRole>("tbhelperrole");
-            Data=data??new SaveData(); Validate();
+            Data=data??new SaveData(); Validate();InitializeIncome(Time.unscaledTime);
+            if(DeveloperMode)PrepareDeveloperSave();
         }
         static T[] Read<T>(string name) {var asset=Resources.Load<TextAsset>("Config/"+name); if(!asset) throw new InvalidOperationException("Missing config "+name); return JsonUtility.FromJson<Table<T>>(asset.text).rows;}
         public void Validate() {
@@ -57,8 +60,14 @@ namespace Bufu.Rebuild {
             if(Data.world<1||Data.world>2) Data.world=1;
             if(!Finite(Data.diamonds)||Data.diamonds<0)Data.diamonds=20;
             if(Data.shards==null||Data.shards.Length!=128)Data.shards=new int[128];
+            // Earlier saves kept rarity IDs here, but helper upgrades consume concrete helper IDs.
+            for(int rarity=3;rarity<=5;rarity++)if(Data.shards[rarity]>0) {
+                int count=Data.shards[rarity];Data.shards[rarity]=0;GrantItem(rarity,count);
+            }
             foreach(var s in Data.worlds) {
                 if(s==null || s.quantity==null || s.quantity.Length!=128 || s.boosts==null || s.boosts.Length!=128 || s.talents==null || s.talents.Length!=400 || s.evolution==null || s.evolution.Length!=128 || s.evolvedAt==null || s.evolvedAt.Length!=128) throw new InvalidOperationException("存档数据损坏");
+                if(s.supportLastTime==null||s.supportLastTime.Length!=3)Array.Resize(ref s.supportLastTime,3);
+                if(s.promotionId==0||s.promotionId < -1||s.promotionId>40)s.promotionId=1;
                 if(s.skills==null || s.skills.Length!=128)s.skills=new int[128];
                 if(s.deskLevel==null || s.deskLevel.Length!=128)s.deskLevel=new int[128];
                 if(s.checkDay<1||s.checkDay>7)s.checkDay=1;
@@ -89,7 +98,7 @@ namespace Bufu.Rebuild {
         public int BaseId=>Data.world==1?0:100;
         /// <summary>The original "main mission level": the 1-based index of the goal currently being worked on.</summary>
         public int MainLevel=>State.mission+1;
-        public bool LevelAbove(int factorId)=>MainLevel>(int)Factor(factorId);
+        public bool LevelAbove(int factorId)=>DeveloperMode||MainLevel>(int)Factor(factorId);
         public Mission[] WorldMissions=>missions.Where(x=>x.worldId==Data.world).OrderBy(x=>x.id).ToArray();
         public Mission TitleMission(int level){var all=WorldMissions;return all.Length==0?null:all[Math.Max(1,Math.Min(level,all.Length))-1];}
         public int KindOf(Upgrade c){if(skills!=null&&Array.IndexOf(skills,c)>=0)return 2;if(Array.IndexOf(boosts,c)>=0)return 1;return 0;}
@@ -129,6 +138,7 @@ namespace Bufu.Rebuild {
             return t==null?0:t.upgradeResult[Math.Min(lv-1,t.upgradeResult.Length-1)];
         }
         public bool Unlocked(Upgrade c) {
+            if(DeveloperMode)return true;
             if(c.unLockCondition==-1)return true;
             if(c.unLockCondition==-2) {
                 if(c.id==BaseId+5)return TalentValue(102)>0;
@@ -157,13 +167,14 @@ namespace Bufu.Rebuild {
         }
         public int NextEvolutionLevel(int id){var c=Config(id,false);int lv=State.quantity[id];foreach(int t in c.evolutionLevel)if(t>=lv&&t>0)return t;return -1;}
         public bool CanHelperFlip(int quality) {
+            if(DeveloperMode)return quality>=1&&quality<=4;
             if(quality<=1)return true;
             if(quality==2)return Level(Data.world==1?4:104,true)>0;
             if(quality==3)return Level(Data.world==1?5:105,true)>0;
             if(quality==4)return TalentValue(Data.world==1?107:104)>0;
             return false;
         }
-        public bool CanSwipe(int quality){if(quality<1||quality>3)return false;return Level(Data.world==1?5+quality:105+quality,true)>0;}
+        public bool CanSwipe(int quality){if(quality<1||quality>3)return false;return DeveloperMode||Level(Data.world==1?5+quality:105+quality,true)>0;}
         public float FrontChance(){float weight=.65f;if(Data.world==1)weight*=1f+(float)TalentValue(108);return Math.Min(.95f,Math.Max(.05f,weight));}
         public float FlightSeconds(){float scale=Data.world==1?1f-(float)TalentValue(106):(State.talents[107]>0?1f-(float)TalentValue(107):1f);return .8f*Math.Max(.2f,scale);}
         /// <summary>RoleVat.RefreshSleepProbability: 30% every 5 s; the talent "失眠" (201 coin / 202 dice) scales it.</summary>
@@ -187,7 +198,7 @@ namespace Bufu.Rebuild {
         public float EchoChance(){if(Data.world==1)return State.boosts[12]*(float)(Config(12,true).upgradeResult-1);return State.skills[103]*(float)(ConfigKind(103,2).upgradeResult-1);}
         public float CritChance(){float rate=(float)Factor(16);if(Data.world==1)rate+=(float)TalentValue(303);else if(State.talents[302]>0)rate+=(float)TalentValue(302);if(HelperCount(7)>0&&HelperAwake(7)>=3)rate+=.5f;return Math.Min(1f,Math.Max(0,rate));}
         /// <summary>DeskItem: a desk is owned at level 1 once the main mission level reaches its condition.</summary>
-        public bool DeskUnlocked(Desk d)=>d.deskUnlockCondition==-1||MainLevel>=d.deskUnlockCondition;
+        public bool DeskUnlocked(Desk d)=>DeveloperMode||d.deskUnlockCondition==-1||MainLevel>=d.deskUnlockCondition;
         public int DeskLevel(Desk d)=>DeskUnlocked(d)?Math.Max(1,State.deskLevel[d.id]):0;
         public double DeskPower(Desk d){int lv=DeskLevel(d);return lv<=0?1:d.skillNum*Math.Pow(d.skillUpgradeBuff,lv-1);}
         public double DeskPowerAt(Desk d,int lv)=>d.skillNum*Math.Pow(d.skillUpgradeBuff,Math.Max(0,lv-1));
@@ -206,22 +217,39 @@ namespace Bufu.Rebuild {
         public int UsingDesk=>State.usingDesk>0&&desks.Any(x=>x.id==State.usingDesk&&x.WorldId==Data.world)?State.usingDesk:BaseId+1;
         public bool UseDesk(int id){var d=desks.FirstOrDefault(x=>x.id==id);if(d==null||d.WorldId!=Data.world||!DeskUnlocked(d)||UsingDesk==id)return false;State.usingDesk=id;Changed?.Invoke();return true;}
         public void AdvanceCheckIn(int today) {
-            if(State.checkDate==0){State.checkDate=today;if(State.checkDay<1)State.checkDay=1;return;}
-            if(State.checkDate==today)return;
-            State.checkDay++;if(State.checkDay>7){State.checkDay=1;State.checkMask=0;}
-            State.checkClaimed=false;State.checkDate=today;
+            // GameDataManager.UpdateAllWorldsCheckInDay advances every world's
+            // calendar together while preserving each world's separate claims.
+            foreach(var state in Data.worlds) {
+                if(state.checkDate==0){state.checkDate=today;if(state.checkDay<1)state.checkDay=1;continue;}
+                if(state.checkDate==today)continue;
+                state.checkDay++;if(state.checkDay>7){state.checkDay=1;state.checkMask=0;state.checkAdMask=0;}
+                state.checkClaimed=false;state.checkDate=today;
+            }
         }
         public SignReward SignFor(int day)=>signs.Where(x=>x.worldId==Data.world).OrderBy(x=>x.id).Skip(day-1).FirstOrDefault();
         public SignReward TodaySign()=>SignFor(State.checkDay);
-        public bool CheckInClaimed(int day)=>(State.checkMask&(1<<day))!=0;
-        public bool CanClaimCheckIn(int day)=>day>=1&&day<=State.checkDay&&!CheckInClaimed(day)&&SignFor(day)!=null;
-        public bool AnyCheckInClaimable(){for(int d=1;d<=7;d++)if(CanClaimCheckIn(d))return true;return false;}
+        public bool CheckInClaimed(int day,bool special=false)=>((special?State.checkAdMask:State.checkMask)&(1<<day))!=0;
+        public bool CanClaimCheckIn(int day,bool special=false)=>day>=1&&day<=(DeveloperMode?7:State.checkDay)&&!CheckInClaimed(day,special)&&CheckInRewards(day,special)?.Length>=4;
+        public int[] CheckInRewards(int day,bool special=false){var sign=SignFor(day);return special?sign?.AdReward:sign?.normalReward;}
+        public bool AnyCheckInClaimable(){for(int d=1;d<=7;d++)if(CanClaimCheckIn(d)||CanClaimCheckIn(d,true))return true;return false;}
         /// <summary>Gold rewards scale with the recent per-minute income, like CheckInRewardItem.realCounts.</summary>
         public double RewardAmount(int itemId,int count)=>itemId==1?count*State.averagePerMinute:count;
-        public bool ClaimCheckIn(int day) {
-            AdvanceCheckIn(TodayNumber());if(!CanClaimCheckIn(day))return false;var sign=SignFor(day);
-            for(int i=0;i+1<sign.normalReward.Length;i+=2)GrantAmount(sign.normalReward[i],RewardAmount(sign.normalReward[i],sign.normalReward[i+1]));
-            State.checkMask|=1<<day;State.checkClaimed=day==State.checkDay;CheckGrowth();Changed?.Invoke();return true;
+        public bool ClaimCheckIn(int day)=>ClaimCheckIn(day,false,out _);
+        public bool ClaimCheckIn(int day,bool special,out List<KeyValuePair<int,double>> rewards) {
+            rewards=null;AdvanceCheckIn(TodayNumber());if(!CanClaimCheckIn(day,special))return false;
+            var pairs=CheckInRewards(day,special);rewards=new List<KeyValuePair<int,double>>();
+            bool unlock=special&&(day==3||day==7)&&pairs[2]>=101&&pairs[2]<=110&&!HelperOwned(pairs[2]-100);
+            // Mark the claim before notifying listeners or granting gold: re-entrant refreshes cannot claim twice.
+            if(special)State.checkAdMask|=1<<day;else State.checkMask|=1<<day;
+            if(!special)State.checkClaimed=day==State.checkDay;
+            for(int i=0;i+1<pairs.Length;i+=2) {
+                int id=pairs[i];double amount=RewardAmount(id,pairs[i+1]);
+                if(i==2&&unlock){State.helpers.Add(new HelperState{id=id-100,level=1,max=1,ad=1});continue;}
+                if(id>=3&&id<=5)rewards.AddRange(ResolveFragments(id,(int)amount));
+                else rewards.Add(new KeyValuePair<int,double>(id,amount));
+            }
+            foreach(var reward in rewards)if(reward.Key==1)AddEarnedGold(reward.Value,Time.unscaledTime);else GrantAmount(reward.Key,reward.Value);
+            CheckGrowth();Changed?.Invoke();return true;
         }
         public bool ClaimCheckIn(){for(int d=1;d<=7;d++)if(CanClaimCheckIn(d))return ClaimCheckIn(d);return false;}
         public void GrantAmount(int itemId,double amount) {
@@ -232,15 +260,19 @@ namespace Bufu.Rebuild {
         public void GrantPairs(int[] reward){if(reward==null)return;for(int i=0;i+1<reward.Length;i+=2)GrantItem(reward[i],reward[i+1]);}
         public void GrantItem(int itemId,int count) {
             if(count<=0)return;
+            if(itemId>=3&&itemId<=5){foreach(var reward in ResolveFragments(itemId,count))Data.shards[reward.Key]+=(int)reward.Value;return;}
             if(itemId==1)State.gold+=count;else if(itemId==2)Data.diamonds+=count;else if(itemId==6)State.points+=count;else Data.shards[itemId]+=count;
         }
-        public string ItemName(int id){if(id==1)return "金币";if(id==2)return "钻石";if(id==3)return "N碎片";if(id==4)return "R碎片";if(id==5)return "SR碎片";if(id==6)return "天赋点";if(id>=101&&id<=110)return "帮手"+(id-100)+"碎片";return "道具"+id;}
-        public bool BuyChest(int id) {
+        public string ItemName(int id){if(id==1)return "金币";if(id==2)return "钻石";if(id==3)return "N碎片";if(id==4)return "R碎片";if(id==5)return "SR碎片";if(id==6)return "天赋点";if(id>=101&&id<=110)return (HelperConfig(id-100)?.helperName??"帮手"+(id-100))+"碎片";return "道具"+id;}
+        public bool BuyChest(int id)=>BuyChest(id,out _);
+        public bool BuyChest(int id,out List<KeyValuePair<int,double>> rewards) {
+            rewards=null;
             var item=shop.FirstOrDefault(x=>x.id==id);if(item==null||item.cost<=0)return false;
             ResetShopDay();
-            int used=id==202?Data.chestNormal:Data.chestRare;if(item.todayLimit>0&&used>=item.todayLimit)return false;
-            if(Data.diamonds<item.cost)return false;Data.diamonds-=item.cost;
-            for(int i=0;i<item.rewardType.Length&&i<item.count.Length;i++)GrantItem(item.rewardType[i],item.count[i]);
+            int used=id==202?Data.chestNormal:Data.chestRare;if(!DeveloperMode&&item.todayLimit>0&&used>=item.todayLimit)return false;
+            if(Data.diamonds<item.cost)return false;
+            rewards=BuildShopRewards(item);Data.diamonds-=item.cost;
+            foreach(var reward in rewards)GrantAmount(reward.Key,reward.Value);
             if(id==202)Data.chestNormal++;else Data.chestRare++;CheckGrowth();Changed?.Invoke();return true;
         }
         public bool CanEvolve(int quality) {int id=BaseId+quality+1;var c=Config(id,false);int tier=State.evolution[id];return tier<c.evolutionLevel.Length&&c.evolutionLevel[tier]>0&&State.quantity[id]>=c.evolutionLevel[tier];}
@@ -257,6 +289,7 @@ namespace Bufu.Rebuild {
         }
         /// <summary>Helper hiring stops every 5 levels (from 10) until the ad step is taken; ads are free here.</summary>
         public int HelperCap() {
+            if(DeveloperMode)return MaxLevel(Config(BaseId+1,false));
             int lv=Helpers,max=MaxLevel(Config(BaseId+1,false));
             int need=Math.Max(10,(int)Math.Ceiling(lv/5.0)*5);
             return Math.Min(Math.Max(State.helperAdCap,need),max);
@@ -291,7 +324,7 @@ namespace Bufu.Rebuild {
             if(role==3&&HelperAwake(3)>1)grown+=.3; // magician awake: the thrown coin's value multiplier gains 0.3
             double value=baseValue*grown;
             var evo=Config(BaseId+quality+1,false);for(int i=0;i<State.evolution[evo.id];i++)value*=evo.evolutionBuff[i];
-            value*=1+TalentValue(101);if(manual)value*=1+TalentValue(103);
+            value*=SupportIncomeMultiplier+TalentValue(101);if(manual)value*=1+TalentValue(103);
             value*=RebornGain();
             if(quality>=1&&quality<=3)value*=DeskProduct(quality);
             value*=DeskProduct(6);if(manual)value*=DeskProduct(4);
@@ -306,14 +339,14 @@ namespace Bufu.Rebuild {
             double reward=Value(quality,manual,critical,role)*multiplier*Math.Max(0,rewardScale);
             if(!Finite(reward)||reward<=0)return 0;
             State.gold+=reward;State.lifetime+=reward;income.Enqueue(new KeyValuePair<double,double>(now,reward));
-            UpdateRate(now);CheckGrowth();Changed?.Invoke();return reward;
+            UpdateRate(now);ObservePromotionIncome(reward);CheckGrowth();Changed?.Invoke();return reward;
         }
         public void UpdateRate(double now) {while(income.Count>0&&now-income.Peek().Key>30)income.Dequeue();State.averagePerMinute=Math.Max(1,income.Sum(x=>x.Value)*2*Math.Max(.1,Factor(13)));}
         public Mission NextMission=>missions.Where(x=>x.worldId==Data.world).OrderBy(x=>x.id).Skip(State.mission).FirstOrDefault();
         public event Action Growth;
         void CheckGrowth() {
             var m=NextMission;int guard=0;bool grew=false;
-            while(m!=null&&State.gold>=m.mainMissionNum&&guard++<100) {
+            while(!PromotionReady&&m!=null&&State.gold>=m.mainMissionNum&&guard++<100) {
                 State.mission++;State.pendingGoals.Add(m.id);grew=true;
                 m=NextMission;
             }
@@ -322,9 +355,9 @@ namespace Bufu.Rebuild {
         }
         public Mission PendingGoal=>State.pendingGoals.Count==0?null:missions.FirstOrDefault(x=>x.id==State.pendingGoals[0]);
         /// <summary>Mission rewards are granted when the goal panel is confirmed, like GoalReachPanel.ClaimCurrentReward.</summary>
-        public bool ClaimGoal() {
+        public bool ClaimGoal(int multiplier=1) {
             var m=PendingGoal;if(m==null)return false;State.pendingGoals.RemoveAt(0);
-            GrantAmount(m.rewardType,m.rewardNum);CheckGrowth();Changed?.Invoke();return true;
+            GrantAmount(m.rewardType,m.rewardNum*multiplier);CheckGrowth();Changed?.Invoke();return true;
         }
         public int MissionLevel(Mission m)=>Array.IndexOf(WorldMissions.Select(x=>x.id).ToArray(),m.id)+1;
         double TalentValueForWorld(int world,int id) {
@@ -344,7 +377,7 @@ namespace Bufu.Rebuild {
         public bool SwitchWorld(int world) {
             RefreshWorldUnlocks();
             if(world<1||world>2||world==Data.world || !WorldUnlocked(world))return false;
-            Data.world=world;income.Clear();Changed?.Invoke();return true;
+            CancelPromotion();promotionResultGate=false;promotionClaimGate=false;Data.world=world;InitializeIncome(Time.unscaledTime);Changed?.Invoke();return true;
         }
         public PointReward[] RebornTable=>Data.world==1?coinPoints:dicePoints;
         /// <summary>TalentRebornTip.CalculateLevel: the highest reborn goal the current gold has passed.</summary>
@@ -370,6 +403,7 @@ namespace Bufu.Rebuild {
             State.gold=Finite(kept)&&kept>0?kept:0;State.averagePerMinute=1;
             Array.Clear(State.quantity,0,128);Array.Clear(State.boosts,0,128);Array.Clear(State.skills,0,128);Array.Clear(State.evolution,0,128);Array.Clear(State.evolvedAt,0,128);income.Clear();
             State.helperAdCap=0;
+            if(DeveloperMode)PrepareDeveloperSave();
             Changed?.Invoke();return true;
         }
         public Talent[] Talents=>Data.world==1?coinTalents:diceTalents;
@@ -378,6 +412,7 @@ namespace Bufu.Rebuild {
         /// <summary>TalentCardItem.SetItemInfo: the card at sibling index i needs the card at index Parent[i]-1 upgraded once.</summary>
         static readonly int[] TalentParent={-1,1,1,2,3,4,4,5,5,6,7,8,9};
         public bool TalentUnlocked(Talent t) {
+            if(DeveloperMode)return true;
             var page=TalentPage(t.talentType);int i=Array.IndexOf(page,t);if(i<0)return false;
             if(Data.world==1&&(t.id==1||t.id==7||t.id==14))return true;
             int parent=i<TalentParent.Length?TalentParent[i]:-1;
@@ -402,11 +437,11 @@ namespace Bufu.Rebuild {
         /// <summary>ShopTurntablePanel wheel limit is the first wedge's todayLimit (10). The first spin each day is free; later ones wait out common factor 35.</summary>
         public int WheelLimit{get{ResetShopDay();var w=WheelItems;return w.Length==0?0:Math.Max(0,w[0].todayLimit);}}
         public bool SpinIsFree{get{ResetShopDay();return Data.spinCount==0;}}
-        public bool SpinCooling=>UnixNow()<Data.spinReadyAt;
-        public int SpinCooldownLeft{get{long s=Data.spinReadyAt-UnixNow();return s<=0?0:(int)s;}}
-        public bool CanSpin{get{ResetShopDay();return Data.spinCount<WheelLimit&&!SpinCooling;}}
-        public bool DiamondCooling=>UnixNow()<Data.diamondReadyAt;
-        public int DiamondCooldownLeft{get{long s=Data.diamondReadyAt-UnixNow();return s<=0?0:(int)s;}}
+        public bool SpinCooling=>!DeveloperMode&&UnixNow()<Data.spinReadyAt;
+        public int SpinCooldownLeft{get{long s=Data.spinReadyAt-UnixNow();return DeveloperMode||s<=0?0:(int)s;}}
+        public bool CanSpin{get{ResetShopDay();return DeveloperMode||Data.spinCount<WheelLimit&&!SpinCooling;}}
+        public bool DiamondCooling=>!DeveloperMode&&UnixNow()<Data.diamondReadyAt;
+        public int DiamondCooldownLeft{get{long s=Data.diamondReadyAt-UnixNow();return DeveloperMode||s<=0?0:(int)s;}}
         public int SpinProgress=>Data.spinProgress;
         public const int SpinProgressMax=5;
         public ShopItem Spin(float roll) {
@@ -422,19 +457,41 @@ namespace Bufu.Rebuild {
         public bool ClaimDiamondAd() {
             ResetShopDay();var item=shop.FirstOrDefault(x=>x.id==201);
             if(item==null||DiamondCooling)return false;
-            if(item.todayLimit>0&&Data.diamondClaims>=item.todayLimit)return false;
+            if(!DeveloperMode&&item.todayLimit>0&&Data.diamondClaims>=item.todayLimit)return false;
             if(item.count==null||item.count.Length==0)return false;
             GrantItem(item.rewardType[0],item.count[0]);
             Data.diamondClaims++;Data.diamondReadyAt=UnixNow()+(long)(Factor(36)*60);
             Changed?.Invoke();return true;
         }
         public double ShopRewardAmount(ShopItem item,int index)=>item.rewardType[index]==1?State.averagePerMinute*item.count[index]:item.count[index];
-        public void GrantShop(ShopItem item) {
-            for(int i=0;i<item.rewardType.Length&&i<item.count.Length;i++)GrantAmount(item.rewardType[i],ShopRewardAmount(item,i));
+        List<KeyValuePair<int,double>> ResolveFragments(int type,int count) {
+            // Helper 9 is event-only and has no acquisition path in the offline rebuild.
+            var pool=helperRoles.Where(r=>r.Rare==type-2&&r.id!=9).Select(r=>100+r.id).ToArray();
+            var amounts=new Dictionary<int,double>();
+            for(int i=0;i<count&&pool.Length>0;i++) {
+                int id=pool[UnityEngine.Random.Range(0,pool.Length)];
+                amounts[id]=amounts.TryGetValue(id,out var amount)?amount+1:1;
+            }
+            return amounts.OrderBy(x=>x.Key).ToList();
+        }
+        /// <summary>Resolve random helper shards once, so the receipt exactly matches the granted items.</summary>
+        public List<KeyValuePair<int,double>> BuildShopRewards(ShopItem item) {
+            var rewards=new List<KeyValuePair<int,double>>();
+            for(int i=0;i<item.rewardType.Length&&i<item.count.Length;i++) {
+                int type=item.rewardType[i];
+                if(type>=3&&type<=5)rewards.AddRange(ResolveFragments(type,item.count[i]));
+                else rewards.Add(new KeyValuePair<int,double>(type,ShopRewardAmount(item,i)));
+            }
+            return rewards;
+        }
+        public void GrantShop(ShopItem item)=>GrantShop(item,BuildShopRewards(item));
+        public void GrantShop(ShopItem item,List<KeyValuePair<int,double>> rewards) {
+            foreach(var reward in rewards)GrantAmount(reward.Key,reward.Value);
             if(item.id>=101&&item.id<=110)Data.spinProgress=Math.Min(SpinProgressMax,Data.spinProgress+1);
             CheckGrowth();Changed?.Invoke();
         }
-        public bool ClaimSpinChest(){var item=shop.FirstOrDefault(x=>x.id==301);if(item==null||Data.spinProgress<SpinProgressMax)return false;Data.spinProgress=0;GrantShop(item);return true;}
+        public bool ClaimSpinChest()=>ClaimSpinChest(out _);
+        public bool ClaimSpinChest(out List<KeyValuePair<int,double>> rewards){rewards=null;var item=shop.FirstOrDefault(x=>x.id==301);if(item==null||Data.spinProgress<SpinProgressMax)return false;rewards=BuildShopRewards(item);Data.spinProgress=0;GrantShop(item,rewards);return true;}
         // ------------------------------------------------------------ premium helpers (HelperInfo / UseHelperUI / RoleVat)
         public HelperRole HelperConfig(int id){return helperRoles==null?null:helperRoles.FirstOrDefault(x=>x.id==id);}
         public HelperState HelperOf(int id){return State.helpers==null?null:State.helpers.Find(x=>x.id==id);}

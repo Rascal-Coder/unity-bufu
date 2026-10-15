@@ -13,6 +13,7 @@ public static class RebuildEditor {
     static void Assert(bool condition,string name) {if(!condition)throw new Exception("CHECK FAILED: "+name);passed.Add(name);}
     [MenuItem("不服开一局/生成主场景与验证")]
     public static void Setup() {
+        passed.Clear();
         Directory.CreateDirectory("Assets/Scenes");Directory.CreateDirectory("Documentation");
         PlayerSettings.companyName="REA Local";PlayerSettings.productName="不服开一局 本地复刻";
         PlayerSettings.defaultScreenWidth=540;PlayerSettings.defaultScreenHeight=960;PlayerSettings.fullScreenMode=FullScreenMode.Windowed;
@@ -26,13 +27,23 @@ public static class RebuildEditor {
         EditorSceneManager.SaveScene(scene,"Assets/Scenes/Main.unity");
         EditorBuildSettings.scenes=new[]{new EditorBuildSettingsScene("Assets/Scenes/Main.unity",true)};
         UiAssetBuilder.BuildFonts();UiAssetBuilder.BuildSpriteAssets();
-        AssetDatabase.SaveAssets();VerifyCore();VerifyVAT();VerifyUi();
+        AssetDatabase.SaveAssets();NativeParticleBuilder.Build();VerifyCore();VerifyVAT();VerifyUi();
         File.WriteAllText("Documentation/validation.json",JsonUtility.ToJson(new Checks{editor=Application.unityVersion,checks=passed.ToArray(),passed=true},true));
         Debug.Log("REBUILD_VALIDATION_OK "+passed.Count);
     }
     [Serializable] sealed class Checks {public string editor;public bool passed;public string[] checks;}
     public static void Build() {
-        Setup();Directory.CreateDirectory("Build/Windows");
+        Setup();BuildPlayer();
+    }
+    // Rebuild code fixes using the existing scene and imported UI assets.
+    public static void BuildCurrent() {
+        passed.Clear();NativeParticleBuilder.Build();VerifyCore();VerifyVAT();VerifyUi();
+        Directory.CreateDirectory("Documentation");
+        File.WriteAllText("Documentation/validation.json",JsonUtility.ToJson(new Checks{editor=Application.unityVersion,checks=passed.ToArray(),passed=true},true));
+        BuildPlayer();
+    }
+    static void BuildPlayer() {
+        Directory.CreateDirectory("Build/Windows");
         var report=BuildPipeline.BuildPlayer(new BuildPlayerOptions{scenes=new[]{"Assets/Scenes/Main.unity"},locationPathName="Build/Windows/BufuRebuild.exe",target=BuildTarget.StandaloneWindows64,options=BuildOptions.Development});
         File.WriteAllText("Documentation/build-result.json",JsonUtility.ToJson(new BuildResult{result=report.summary.result.ToString(),errors=report.summary.totalErrors,warnings=report.summary.totalWarnings,bytes=(long)report.summary.totalSize,editor=Application.unityVersion},true));
         if(report.summary.result!=BuildResultType())throw new Exception("Build failed: "+report.summary.result);
@@ -41,6 +52,10 @@ public static class RebuildEditor {
     static UnityEditor.Build.Reporting.BuildResult BuildResultType()=>UnityEditor.Build.Reporting.BuildResult.Succeeded;
     [Serializable] sealed class BuildResult {public string result,editor;public int errors,warnings;public long bytes;}
     public static void VerifyCore() {
+        DevModeChecks.Verify(Assert);
+        PromotionChecks.Verify(Assert);
+        SupportChecks.Verify(Assert);
+        ParityChecks.Verify(Assert);
         var g=new GameModel();var copper=g.Config(2,false);var helpers=g.Config(1,false);
         Assert(g.Count(1)==3&&g.State.gold==0,"new game: 3 copper coins, zero gold");
         Assert(GameModel.Cost(copper,0)==30&&GameModel.Cost(copper,1)==45,"original copper early price table");
@@ -68,6 +83,30 @@ public static class RebuildEditor {
         var dice=new GameModel();dice.Data.worlds[0].mission=10;Assert(dice.SwitchWorld(2)&&dice.Count(1)==3,"world 2 unlock preserves independent progress");
         Assert(dice.Settle(2,1,6,true,false,0)==6,"dice face six settlement");
         Assert(!GameModel.Finite(double.NaN)&&!GameModel.Finite(double.PositiveInfinity),"non-finite reward guard");
+        var prizes=new GameModel();prizes.Data.diamonds=500;
+        Assert(prizes.BuyChest(202,out var normal)&&normal.Sum(x=>x.Value)==4&&normal.All(x=>x.Key>=101&&x.Key<=104),"normal chest resolves four usable N/R helper fragments");
+        Assert(normal.Where(x=>prizes.HelperConfig(x.Key-100).Rare==1).Sum(x=>x.Value)==2&&normal.Where(x=>prizes.HelperConfig(x.Key-100).Rare==2).Sum(x=>x.Value)==2,"normal chest preserves two N and two R fragments");
+        Assert(normal.All(x=>prizes.Data.shards[x.Key]==x.Value)&&prizes.Data.diamonds==450,"chest receipt matches inventory and diamond deduction");
+        var earned=normal.First(x=>prizes.HelperConfig(x.Key-100).Rare==1);int helperId=earned.Key-100;
+        prizes.State.mission=30;prizes.RefreshHelperUnlocks(1);prizes.HelperOf(helperId).level=4;prizes.State.gold=1e12;
+        int earnedBefore=prizes.Fragments(helperId),earnedCost=prizes.HelperFragmentCost(prizes.HelperConfig(helperId),4);
+        Assert(earnedCost>0&&prizes.UpgradeHelper(helperId)&&prizes.Fragments(helperId)==earnedBefore-earnedCost,"chest fragments can be consumed by actual helper upgrades");
+        Assert(prizes.BuyChest(203,out var rare)&&rare.Sum(x=>x.Value)==6&&rare.All(x=>x.Key>=103&&x.Key<=110),"rare chest resolves six usable R/SR helper fragments");
+        Assert(rare.Where(x=>prizes.HelperConfig(x.Key-100).Rare==2).Sum(x=>x.Value)==3&&rare.Where(x=>prizes.HelperConfig(x.Key-100).Rare==3).Sum(x=>x.Value)==3&&rare.All(x=>x.Key!=109),"rare chest preserves three R and three obtainable SR fragments");
+        prizes.State.averagePerMinute=123;
+        var goldPrize=prizes.shop.First(x=>x.id==101);var receipt=prizes.BuildShopRewards(goldPrize);double goldBefore=prizes.State.gold;
+        prizes.GrantShop(goldPrize,receipt);
+        Assert(receipt.Count==1&&receipt[0].Value==369&&prizes.State.gold-goldBefore==369,"wheel gold receipt uses actual income multiplier");
+        prizes.Data.spinProgress=GameModel.SpinProgressMax;
+        Assert(prizes.ClaimSpinChest(out var bonus)&&bonus.Sum(x=>x.Value)==2&&bonus.All(x=>x.Key>=105&&x.Key<=110),"progress chest resolves two SR helper fragments");
+        Assert(!prizes.ClaimSpinChest(out _)&&prizes.Data.spinProgress==0,"progress chest cannot be claimed twice");
+        prizes.Data.diamonds=0;int fragmentsBefore=prizes.Data.shards.Sum();
+        Assert(!prizes.BuyChest(202,out var denied)&&denied==null&&prizes.Data.shards.Sum()==fragmentsBefore,"unaffordable chest grants no fragments");
+        var legacySave=new SaveData();legacySave.shards[3]=4;legacySave.shards[4]=3;legacySave.shards[5]=2;legacySave.shards[110]=7;
+        var migrated=new GameModel(legacySave);
+        Assert(migrated.Data.shards[3]+migrated.Data.shards[4]+migrated.Data.shards[5]==0&&migrated.Data.shards.Skip(101).Sum()==16&&migrated.Data.shards[110]>=7,"legacy generic fragments migrate without losing existing helper fragments");
+        var migratedAgain=new GameModel(JsonUtility.FromJson<SaveData>(JsonUtility.ToJson(migrated.Data)));
+        Assert(migratedAgain.Data.shards.SequenceEqual(migrated.Data.shards),"fragment migration is stable after save and reload");
         foreach(var c in g.quantities.Concat(g.boosts)){Assert(c.costMoneyBuff.Length==c.costMoneyLevel.Length&&c.baseCostMoney.Length>0,"config cost schema "+c.id+" "+c.itemName);}
     }
     static void VerifyUi() {
@@ -83,6 +122,11 @@ public static class RebuildEditor {
             foreach(Dictionary<string,object> p in (List<object>)index["prefabs"]) {
                 var view=Bufu.Rebuild.UI.UiPrefab.Instantiate((string)p["resource"],host.transform);
                 if(view.Nodes.Length!=Convert.ToInt32(p["nodes"]))throw new Exception("Node count mismatch "+p["resource"]);
+                foreach(var scroll in view.Root.GetComponentsInChildren<UnityEngine.UI.ScrollRect>(true)) {
+                    if(!scroll.content||!scroll.content.GetComponent<UnityEngine.UI.GridLayoutGroup>())continue;
+                    var fit=scroll.content.GetComponent<UnityEngine.UI.ContentSizeFitter>();
+                    if(scroll.vertical&&(!fit||fit.verticalFit!=UnityEngine.UI.ContentSizeFitter.FitMode.PreferredSize))throw new Exception("Grid content does not grow: "+p["resource"]);
+                }
                 UnityEngine.Object.DestroyImmediate(view.Root);count++;
             }
             Assert(count>=80,"all original UI prefabs instantiate ("+count+")");

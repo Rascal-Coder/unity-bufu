@@ -101,7 +101,7 @@ namespace Bufu.Rebuild {
         public float RoleThrowDuration=>World==1?.8f:DiceThrowDelay+Math.Max(.01f,Game.Model.FlightSeconds());
 
         void Settle() {
-            double reward=Game.Model.Settle(World,Quality,World==1?(frontShowing?1:0):face,manual,critical,Time.realtimeSinceStartupAsDouble,throwRole,rewardScale);
+            double reward=Game.Model.Settle(World,Quality,World==1?(frontShowing?1:0):face,manual,critical,Time.unscaledTime,throwRole,rewardScale);
             Game.FloatReward(Rect.anchoredPosition,reward,critical,face);
         }
 
@@ -176,7 +176,7 @@ namespace Bufu.Rebuild {
             if(asset==loadedAsset)return;loadedAsset=asset;Visual.Load(asset);
         }
 
-        float MoveSpeed=>BaseMoveSpeed*(1f+Game.Model.Level(Game.Model.BaseId+9,true)*.05f);
+        float MoveSpeed=>BaseMoveSpeed*(1f+Game.Model.Level(Game.Model.BaseId+9,true)*.05f)*Game.Model.SupportSpeedMultiplier;
 
         void Update() {
             if(!Game||Game.Model==null)return;

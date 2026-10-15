@@ -1,0 +1,553 @@
+{
+  "path": "Assets/GameRes/NewUI/Challenge/prefabs/challengeUI.prefab",
+  "nodes": [
+    {
+      "n": "challengeUI",
+      "p": -1,
+      "a": true,
+      "c": [
+        {
+          "m_Enabled": 1,
+          "progress": {
+            "node": 6,
+            "comp": "Image"
+          },
+          "follow": {
+            "node": 7,
+            "comp": "RectTransform"
+          },
+          "sum": {
+            "node": 4,
+            "comp": "TextMeshProUGUI"
+          },
+          "time": {
+            "node": 2,
+            "comp": "TextMeshProUGUI"
+          },
+          "t": "ChallengeManager"
+        }
+      ],
+      "rt": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.0,
+        -36.0,
+        100.0,
+        100.0,
+        0.5,
+        0.5,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "n": "title",
+      "p": 0,
+      "a": true,
+      "c": [
+        {
+          "m_Enabled": 1,
+          "m_Color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "m_RaycastTarget": 0,
+          "m_Sprite": {
+            "sprite": "ty_pic_countdown"
+          },
+          "m_Type": 0,
+          "m_PreserveAspect": 0,
+          "m_FillCenter": 1,
+          "m_FillMethod": 4,
+          "m_FillAmount": 1.0,
+          "m_FillClockwise": 1,
+          "m_FillOrigin": 0,
+          "m_UseSpriteMesh": 0,
+          "m_PixelsPerUnitMultiplier": 1.0,
+          "t": "Image"
+        }
+      ],
+      "rt": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        597.0,
+        649.0,
+        457.0,
+        71.0,
+        0.5,
+        0.5,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "n": "time",
+      "p": 1,
+      "a": true,
+      "c": [
+        {
+          "m_Enabled": 1,
+          "m_Color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "m_RaycastTarget": 0,
+          "m_text": "00:99",
+          "m_fontAsset": {
+            "font": "hdhSDF"
+          },
+          "m_sharedMaterial": {
+            "material": "hdhSDF Material@73475051"
+          },
+          "m_fontSharedMaterials": [],
+          "m_fontMaterials": [],
+          "m_fontColor": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "m_enableVertexGradient": 0,
+          "m_colorMode": 3,
+          "m_fontColorGradient": {
+            "topLeft": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+            },
+            "topRight": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+            },
+            "bottomLeft": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+            },
+            "bottomRight": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+            }
+          },
+          "m_tintAllSprites": 0,
+          "m_overrideHtmlColors": 0,
+          "m_faceColor": {
+            "rgba": 4294967295
+          },
+          "m_fontSize": 42.0,
+          "m_fontSizeBase": 42.0,
+          "m_fontWeight": 400,
+          "m_enableAutoSizing": 0,
+          "m_fontSizeMin": 18.0,
+          "m_fontSizeMax": 72.0,
+          "m_fontStyle": 0,
+          "m_HorizontalAlignment": 2,
+          "m_VerticalAlignment": 512,
+          "m_textAlignment": 65535,
+          "m_characterSpacing": 0.0,
+          "m_wordSpacing": 0.0,
+          "m_lineSpacing": 0.0,
+          "m_lineSpacingMax": 0.0,
+          "m_paragraphSpacing": 0.0,
+          "m_charWidthMaxAdj": 0.0,
+          "m_enableWordWrapping": 1,
+          "m_wordWrappingRatios": 0.4000000059604645,
+          "m_overflowMode": 0,
+          "m_isRichText": 1,
+          "m_useMaxVisibleDescender": 1,
+          "m_pageToDisplay": 1,
+          "m_margin": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "t": "TextMeshProUGUI"
+        }
+      ],
+      "rt": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        109.4000015258789,
+        0.0,
+        200.0,
+        50.0,
+        0.5,
+        0.5,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "n": "down",
+      "p": 0,
+      "a": true,
+      "c": [
+        {
+          "m_Enabled": 1,
+          "m_Color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "m_RaycastTarget": 0,
+          "m_Sprite": {
+            "sprite": "ty_pic_processBg2"
+          },
+          "m_Type": 0,
+          "m_PreserveAspect": 0,
+          "m_FillCenter": 1,
+          "m_FillMethod": 4,
+          "m_FillAmount": 1.0,
+          "m_FillClockwise": 1,
+          "m_FillOrigin": 0,
+          "m_UseSpriteMesh": 0,
+          "m_PixelsPerUnitMultiplier": 1.0,
+          "t": "Image"
+        }
+      ],
+      "rt": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        597.0,
+        481.0,
+        528.0,
+        80.0,
+        0.5,
+        0.5,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "n": "sum",
+      "p": 3,
+      "a": true,
+      "c": [
+        {
+          "m_Enabled": 1,
+          "m_Color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "m_RaycastTarget": 0,
+          "m_text": "New Text",
+          "m_fontAsset": {
+            "font": "hdhSDF"
+          },
+          "m_sharedMaterial": {
+            "material": "hdhSDF Material@73475051"
+          },
+          "m_fontSharedMaterials": [],
+          "m_fontMaterials": [],
+          "m_fontColor": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "m_enableVertexGradient": 0,
+          "m_colorMode": 3,
+          "m_fontColorGradient": {
+            "topLeft": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+            },
+            "topRight": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+            },
+            "bottomLeft": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+            },
+            "bottomRight": {
+              "r": 1.0,
+              "g": 1.0,
+              "b": 1.0,
+              "a": 1.0
+            }
+          },
+          "m_tintAllSprites": 0,
+          "m_overrideHtmlColors": 0,
+          "m_faceColor": {
+            "rgba": 4294967295
+          },
+          "m_fontSize": 44.599998474121094,
+          "m_fontSizeBase": 44.599998474121094,
+          "m_fontWeight": 400,
+          "m_enableAutoSizing": 0,
+          "m_fontSizeMin": 18.0,
+          "m_fontSizeMax": 72.0,
+          "m_fontStyle": 0,
+          "m_HorizontalAlignment": 2,
+          "m_VerticalAlignment": 512,
+          "m_textAlignment": 65535,
+          "m_characterSpacing": 0.0,
+          "m_wordSpacing": 0.0,
+          "m_lineSpacing": 0.0,
+          "m_lineSpacingMax": 0.0,
+          "m_paragraphSpacing": 0.0,
+          "m_charWidthMaxAdj": 0.0,
+          "m_enableWordWrapping": 1,
+          "m_wordWrappingRatios": 0.4000000059604645,
+          "m_overflowMode": 0,
+          "m_isRichText": 1,
+          "m_useMaxVisibleDescender": 1,
+          "m_pageToDisplay": 1,
+          "m_margin": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          },
+          "t": "TextMeshProUGUI"
+        }
+      ],
+      "rt": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.0,
+        6.0,
+        437.2550964355469,
+        80.0,
+        0.5,
+        0.5,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "n": "bg",
+      "p": 0,
+      "a": true,
+      "c": [
+        {
+          "m_Enabled": 1,
+          "m_Color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "m_RaycastTarget": 0,
+          "m_Sprite": {
+            "sprite": "ty_pic_processBg1"
+          },
+          "m_Type": 0,
+          "m_PreserveAspect": 0,
+          "m_FillCenter": 1,
+          "m_FillMethod": 4,
+          "m_FillAmount": 1.0,
+          "m_FillClockwise": 1,
+          "m_FillOrigin": 0,
+          "m_UseSpriteMesh": 0,
+          "m_PixelsPerUnitMultiplier": 1.0,
+          "t": "Image"
+        }
+      ],
+      "rt": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        597.0,
+        557.0,
+        772.0,
+        96.0,
+        0.5,
+        0.5,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "n": "progress",
+      "p": 0,
+      "a": true,
+      "c": [
+        {
+          "m_Enabled": 1,
+          "m_Color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "m_RaycastTarget": 0,
+          "m_Sprite": {
+            "sprite": "ty_pic_process"
+          },
+          "m_Type": 3,
+          "m_PreserveAspect": 0,
+          "m_FillCenter": 1,
+          "m_FillMethod": 0,
+          "m_FillAmount": 0.0,
+          "m_FillClockwise": 1,
+          "m_FillOrigin": 0,
+          "m_UseSpriteMesh": 0,
+          "m_PixelsPerUnitMultiplier": 1.0,
+          "t": "Image"
+        }
+      ],
+      "rt": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        597.0,
+        557.0,
+        772.0,
+        96.0,
+        0.5,
+        0.5,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "n": "follow",
+      "p": 6,
+      "a": true,
+      "c": [
+        {
+          "m_Enabled": 1,
+          "m_Color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "m_RaycastTarget": 0,
+          "m_Sprite": {
+            "sprite": "ty_pic_process02_0"
+          },
+          "m_Type": 0,
+          "m_PreserveAspect": 0,
+          "m_FillCenter": 1,
+          "m_FillMethod": 4,
+          "m_FillAmount": 1.0,
+          "m_FillClockwise": 1,
+          "m_FillOrigin": 0,
+          "m_UseSpriteMesh": 0,
+          "m_PixelsPerUnitMultiplier": 1.0,
+          "t": "Image"
+        }
+      ],
+      "rt": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        360.0,
+        0.0,
+        13.0,
+        96.0,
+        0.5,
+        0.5,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "n": "img",
+      "p": 0,
+      "a": true,
+      "c": [
+        {
+          "m_Enabled": 1,
+          "m_Color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "m_RaycastTarget": 0,
+          "m_Sprite": {
+            "sprite": "ty_icon_goal"
+          },
+          "m_Type": 0,
+          "m_PreserveAspect": 0,
+          "m_FillCenter": 1,
+          "m_FillMethod": 4,
+          "m_FillAmount": 1.0,
+          "m_FillClockwise": 1,
+          "m_FillOrigin": 0,
+          "m_UseSpriteMesh": 0,
+          "m_PixelsPerUnitMultiplier": 1.0,
+          "t": "Image"
+        }
+      ],
+      "rt": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        995.0,
+        566.0,
+        141.0,
+        142.0,
+        0.5,
+        0.5,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    }
+  ]
+}

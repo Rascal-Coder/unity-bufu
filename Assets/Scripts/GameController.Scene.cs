@@ -31,9 +31,12 @@ namespace Bufu.Rebuild {
 
         /// <summary>MainSceneVat.GetRandomLandingPosition: 60..120 px away from the start, kept inside the scene.</summary>
         public Vector2 RandomLanding(Vector2 start) {
-            float radius=UnityEngine.Random.Range(60f,120f);
-            var direction=UnityEngine.Random.insideUnitCircle.normalized;
-            return ClampScene(start+direction*radius,40);
+            for(int i=0;i<20;i++) {
+                float radius=UnityEngine.Random.Range(60f,120f);
+                var direction=UnityEngine.Random.insideUnitCircle.normalized;
+                var result=ClampScene(start+direction*radius,40);if(!InAvoidRect(result))return result;
+            }
+            return PushOutAvoidRects(ClampScene(start+UnityEngine.Random.insideUnitCircle*120,40));
         }
 
         /// <summary>MainSceneVat.GetRandomSpawnPosition: away from the other idle coins.</summary>
@@ -42,10 +45,19 @@ namespace Bufu.Rebuild {
             Vector2 p=Vector2.zero;
             for(int i=0;i<50;i++) {
                 p=new Vector2(UnityEngine.Random.Range(-half.x+safe,half.x-safe),UnityEngine.Random.Range(-half.y+safe,half.y-safe));
-                bool crowded=false;foreach(var coin in Coins)if(coin&&!coin.Busy&&Vector2.Distance(coin.Rect.anchoredPosition,p)<60f){crowded=true;break;}
-                if(!crowded)return p;
+                float interval=mainScene.Script("MainScene").F("minSpawnDistance",100);
+                bool crowded=false;foreach(var coin in Coins)if(coin&&!coin.Busy&&Vector2.Distance(coin.Rect.anchoredPosition,p)<interval){crowded=true;break;}
+                if(!crowded&&!InAvoidRect(p))return p;
             }
-            return p;
+            p=new Vector2(UnityEngine.Random.Range(-half.x+safe,half.x-safe),UnityEngine.Random.Range(-half.y+safe,half.y-safe));
+            return PushOutAvoidRects(p);
+        }
+
+        // MainSceneVat.SpawnPositions are relative to the background, not the scene-box centre.
+        static readonly Vector2[] InitialCoinPositions={new Vector2(-95,295),new Vector2(-87,-200),new Vector2(213,-150)};
+        public Vector2 InitialCoinSpawn(int index) {
+            var bg=mainScene.Ref<RectTransform>("MainScene","bgImage");
+            return ActorPool.InverseTransformPoint(bg.TransformPoint(InitialCoinPositions[index]));
         }
 
         /// <summary>RoleManager.GetSpawnPositionWithInterval: helpers stay at least 50 px apart where possible.</summary>

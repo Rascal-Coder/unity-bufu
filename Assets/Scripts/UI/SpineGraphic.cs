@@ -14,7 +14,7 @@ namespace Bufu.Rebuild.UI {
             public int parent=-1; public float setupRot,setupX,setupY,setupSx=1,setupSy=1;
             public float rot,x,y,sx=1,sy=1,a=1,b,c,d=1,wx,wy;
         }
-        sealed class Region { public Vector2[] corner,uv; }
+        sealed class Region { public Vector2[] corner,uv; public int[] triangles,weightedBones;public float[] weights; }
         sealed class Track {
             public float[] time,x,y,cx1,cy1,cx2,cy2; public bool[] step,bezier; public string[] attachment; public Color[] color;
             public bool scale; public int Count=>time==null?0:time.Length;
@@ -25,13 +25,15 @@ namespace Bufu.Rebuild.UI {
             public readonly Dictionary<int,Track> slotColor=new Dictionary<int,Track>(),slotAttach=new Dictionary<int,Track>();
         }
         sealed class Clip {
-            public Texture2D texture; public Bone[] bones; public string[] slotName,setupAttach; public int[] boneOf;
+            public Texture2D texture; public Bone[] bones; public string[] slotName,setupAttach; public int[] boneOf;public Color[] setupColor;
             public Dictionary<string,Region> regions; public Dictionary<string,Anim> anims;
         }
 
         static readonly Dictionary<string,Clip> cache=new Dictionary<string,Clip>();
         Clip clip; Anim anim; float elapsed; bool loop,playing;
         public Action Finished;
+        public bool UseScaledTime;
+        public float AnimationDuration=>anim==null?0:anim.duration;
         public override Texture mainTexture {
             get { if(clip!=null&&clip.texture)return clip.texture; if(!s_WhiteTexture)s_WhiteTexture=Texture2D.whiteTexture; return s_WhiteTexture; }
         }
@@ -54,7 +56,7 @@ namespace Bufu.Rebuild.UI {
 
         void Update() {
             if(!playing||anim==null)return;
-            elapsed+=Time.unscaledDeltaTime; float dur=Mathf.Max(.0001f,anim.duration);
+            elapsed+=UseScaledTime?Time.deltaTime:Time.unscaledDeltaTime; float dur=Mathf.Max(.0001f,anim.duration);
             if(elapsed>=dur) {
                 if(loop){elapsed%=dur;Finished?.Invoke();}
                 else{elapsed=dur;playing=false;var done=Finished;Finished=null;done?.Invoke();}
@@ -91,18 +93,30 @@ namespace Bufu.Rebuild.UI {
             vh.Clear(); if(clip==null||anim==null)return;
             float time=anim==null?0:Mathf.Min(elapsed,anim.duration);
             for(int s=0;s<clip.setupAttach.Length;s++) {
-                string attachment=clip.setupAttach[s]; var tintSlot=Color.white;
+                string attachment=clip.setupAttach[s]; var tintSlot=clip.setupColor[s];
                 if(anim.slotAttach.TryGetValue(s,out var at)){if(!SampleAttach(at,time,ref attachment))continue;}
                 if(string.IsNullOrEmpty(attachment))continue;
                 if(anim.slotColor.TryGetValue(s,out var ct))tintSlot=SampleColor(ct,time);
                 if(tintSlot.a<=.004f||!clip.regions.TryGetValue(clip.slotName[s]+"/"+attachment,out var region))continue;
                 var bone=clip.bones[clip.boneOf[s]]; var c=tintSlot*color; if(c.a<=.004f)continue;
                 int v=vh.currentVertCount;
-                for(int i=0;i<4;i++) {
+                for(int i=0;i<region.uv.Length;i++) {
+                    if(region.weightedBones!=null) {
+                        int boneAt=0,weightAt=0;Vector2 point=Vector2.zero;
+                        for(int vertex=0;vertex<=i;vertex++) {
+                            int count=region.weightedBones[boneAt++];point=Vector2.zero;
+                            for(int weight=0;weight<count;weight++) {
+                                var b=clip.bones[region.weightedBones[boneAt++]];float x=region.weights[weightAt++],y=region.weights[weightAt++],w=region.weights[weightAt++];
+                                point+=new Vector2(x*b.a+y*b.b+b.wx,x*b.c+y*b.d+b.wy)*w;
+                            }
+                        }
+                        vh.AddVert(point,c,region.uv[i]);continue;
+                    }
                     var p=region.corner[i];
                     vh.AddVert(new Vector3(p.x*bone.a+p.y*bone.b+bone.wx, p.x*bone.c+p.y*bone.d+bone.wy, 0), c, region.uv[i]);
                 }
-                vh.AddTriangle(v,v+1,v+2); vh.AddTriangle(v,v+2,v+3);
+                if(region.triangles!=null)for(int i=0;i<region.triangles.Length;i+=3)vh.AddTriangle(v+region.triangles[i],v+region.triangles[i+1],v+region.triangles[i+2]);
+                else {vh.AddTriangle(v,v+1,v+2); vh.AddTriangle(v,v+2,v+3);}
             }
         }
 
@@ -157,11 +171,12 @@ namespace Bufu.Rebuild.UI {
                 clip.bones[i]=bone; boneIndex[b.Str("name")]=i;
             }
             var slotList=root.Arr("slots")??new List<object>();
-            clip.slotName=new string[slotList.Count]; clip.setupAttach=new string[slotList.Count]; clip.boneOf=new int[slotList.Count];
+            clip.slotName=new string[slotList.Count]; clip.setupAttach=new string[slotList.Count]; clip.boneOf=new int[slotList.Count];clip.setupColor=new Color[slotList.Count];
             var slotIndex=new Dictionary<string,int>();
             for(int i=0;i<slotList.Count;i++) {
                 var s=(Dictionary<string,object>)slotList[i];
                 clip.slotName[i]=s.Str("name"); slotIndex[clip.slotName[i]]=i;
+                clip.setupColor[i]=Hex(s.Str("color","ffffffff"));
                 string setup=s.Str("attachment",null); clip.setupAttach[i]=string.IsNullOrEmpty(setup)?null:setup;
                 clip.boneOf[i]=boneIndex.TryGetValue(s.Str("bone"),out int bi)?bi:0;
             }
@@ -171,10 +186,10 @@ namespace Bufu.Rebuild.UI {
                     if(!slotIndex.ContainsKey(slot.Key))continue;
                     foreach(var item in (Dictionary<string,object>)slot.Value) {
                         var data=(Dictionary<string,object>)item.Value;
-                        if(data.Str("type","region")!="region")continue;
+                        string type=data.Str("type","region");if(type!="region"&&type!="mesh")continue;
                         string image=data.Str("name",item.Key); if(string.IsNullOrEmpty(image))image=item.Key;
                         if(!pages.TryGetValue(image,out var page))continue;
-                        clip.regions[slot.Key+"/"+item.Key]=MakeRegion(data,page);
+                        clip.regions[slot.Key+"/"+item.Key]=type=="mesh"?MakeMesh(data,page):MakeRegion(data,page);
                     }
                 }
             }
@@ -200,6 +215,24 @@ namespace Bufu.Rebuild.UI {
             if(page.degrees==90){bl=new Vector2(page.u2,page.v);tl=new Vector2(page.u,page.v);tr=new Vector2(page.u,page.v2);br=new Vector2(page.u2,page.v2);}
             else{bl=new Vector2(page.u,page.v);tl=new Vector2(page.u,page.v2);tr=new Vector2(page.u2,page.v2);br=new Vector2(page.u2,page.v);}
             return new Region{corner=corner,uv=new[]{bl,tl,tr,br}};
+        }
+
+        static Region MakeMesh(Dictionary<string,object> data,Page page) {
+            var raw=data.Arr("uvs");var vertices=data.Arr("vertices");int count=raw.Count/2;
+            var region=new Region{uv=new Vector2[count],triangles=data.Arr("triangles").ConvertAll(x=>Convert.ToInt32(x)).ToArray()};
+            for(int i=0;i<count;i++) {
+                float u=Num(raw[i*2]),v=Num(raw[i*2+1]);
+                region.uv[i]=page.degrees==90?new Vector2(Mathf.Lerp(page.u,page.u2,v),Mathf.Lerp(page.v2,page.v,u)):new Vector2(Mathf.Lerp(page.u,page.u2,u),Mathf.Lerp(page.v2,page.v,v));
+            }
+            if(vertices.Count==count*2) {
+                region.corner=new Vector2[count];for(int i=0;i<count;i++)region.corner[i]=new Vector2(Num(vertices[i*2]),Num(vertices[i*2+1]));
+            } else {
+                var bones=new List<int>();var weights=new List<float>();int at=0;
+                for(int i=0;i<count;i++) {int n=Convert.ToInt32(vertices[at++]);bones.Add(n);
+                    for(int k=0;k<n;k++){bones.Add(Convert.ToInt32(vertices[at++]));weights.Add(Num(vertices[at++]));weights.Add(Num(vertices[at++]));weights.Add(Num(vertices[at++]));}}
+                region.weightedBones=bones.ToArray();region.weights=weights.ToArray();
+            }
+            return region;
         }
 
         static Anim MakeAnim(Dictionary<string,object> data,Dictionary<string,int> bones,Dictionary<string,int> slots) {
@@ -250,7 +283,15 @@ namespace Bufu.Rebuild.UI {
             var pages=new Dictionary<string,Page>();
             var lines=atlas.Replace("\r","").Split('\n');
             int i=0; while(i<lines.Length&&string.IsNullOrWhiteSpace(lines[i]))i++;
-            i++; while(i<lines.Length&&lines[i].Contains(":"))i++;
+            i++;
+            // Unity can resize a non-power-of-two texture on import. Atlas coordinates still use
+            // the source page dimensions, so normalizing by the imported texture breaks every UV.
+            while(i<lines.Length&&lines[i].Contains(":")) {
+                var header=lines[i++].Split(':');
+                if(header[0].Trim()!="size"||header.Length<2)continue;
+                var size=header[1].Split(',');
+                if(size.Length==2&&int.TryParse(size[0].Trim(),out int width)&&int.TryParse(size[1].Trim(),out int height)&&width>0&&height>0){texW=width;texH=height;}
+            }
             while(i<lines.Length) {
                 while(i<lines.Length&&string.IsNullOrWhiteSpace(lines[i]))i++;
                 if(i>=lines.Length)break;

@@ -98,7 +98,7 @@ namespace Bufu.Rebuild {
                 SkillDelay.After(game,.7f,()=>{
                     TossAround(game,hit,200f,10,role,false,0,scale,1,false);
                     foreach(var dir in new[]{Vector2.up,Vector2.down,Vector2.left,Vector2.right})
-                        Shot(game,hit,dir,700f,1600f,80f,0,role,0,scale,1,false,"zgygy_roleskill_dushen",-1,null);
+                        Shot(game,hit,dir,700f,1600f,80f,0,role,0,scale,1,false,null,-1,null,"zgygy_roleskill_dushen_1");
                 });
             }
         }
@@ -122,10 +122,10 @@ namespace Bufu.Rebuild {
             for(int i=0;i<n;i++)list[i].Launch(game.RandomLanding(list[i].Rect.anchoredPosition),false,role,critAdd,rewardScale,speed,instant);
         }
 
-        static SkillShot Shot(GameController game,Vector2 from,Vector2 dir,float speed,float distance,float hit,int bounces,int role,float critAdd,float reward,float tossSpeed,bool instant,string frames,int frameStart,Action<Vector2> done) {
+        static SkillShot Shot(GameController game,Vector2 from,Vector2 dir,float speed,float distance,float hit,int bounces,int role,float critAdd,float reward,float tossSpeed,bool instant,string frames,int frameStart,Action<Vector2> done,string vatAsset=null) {
             var rt=GameController.NewRect("Skill",game.SmokePool);rt.anchorMin=rt.anchorMax=new Vector2(.5f,.5f);rt.anchoredPosition=from;
             var shot=rt.gameObject.AddComponent<SkillShot>();
-            shot.Begin(game,dir,speed,distance,hit,bounces,role,critAdd,reward,tossSpeed,instant,frames,frameStart,done);
+            shot.Begin(game,dir,speed,distance,hit,bounces,role,critAdd,reward,tossSpeed,instant,frames,frameStart,done,vatAsset);
             return shot;
         }
 
@@ -143,12 +143,19 @@ namespace Bufu.Rebuild {
         GameController game;Vector2 dir,origin;float speed,remain,hitRadius,reward=1,tossSpeed=1,critAdd;int bounces,role;bool instant,returning;
         readonly HashSet<int> seen=new HashSet<int>();
         public bool comeBack;public Action<Vector2> done;
-        public void Begin(GameController game,Vector2 direction,float speed,float distance,float hit,int bounces,int role,float critAdd,float reward,float tossSpeed,bool instant,string frames,int frameStart,Action<Vector2> done) {
+        public void Begin(GameController game,Vector2 direction,float speed,float distance,float hit,int bounces,int role,float critAdd,float reward,float tossSpeed,bool instant,string frames,int frameStart,Action<Vector2> done,string vatAsset=null) {
             this.game=game;dir=direction.sqrMagnitude<.001f?Vector2.right:direction.normalized;this.speed=speed;remain=distance;hitRadius=hit;this.bounces=bounces;this.role=role;this.critAdd=critAdd;this.reward=reward;this.tossSpeed=tossSpeed;this.instant=instant;this.done=done;
             origin=((RectTransform)transform).anchoredPosition;
-            var image=gameObject.AddComponent<Image>();image.raycastTarget=false;
+            if(!string.IsNullOrEmpty(vatAsset)) {
+                var visual=VatGraphic.AddTo(gameObject);visual.raycastTarget=false;visual.PixelsPerUnit=64;
+                visual.Load(vatAsset);visual.Play("effect",true);
+                transform.localEulerAngles=new Vector3(0,0,Mathf.Atan2(dir.y,dir.x)*Mathf.Rad2Deg);
+                return;
+            }
+            // A sprite-less uGUI Image renders as a solid white quad.
+            var image=gameObject.AddComponent<Image>();image.raycastTarget=false;image.enabled=false;
             if(frameStart>=0)gameObject.AddComponent<FrameAnim>().Begin(image,frames,frameStart,false);
-            else {var sprite=UiAssets.Sprite(frames);if(sprite){image.sprite=sprite;image.SetNativeSize();}}
+            else {var sprite=UiAssets.Sprite(frames);if(sprite){image.sprite=sprite;image.SetNativeSize();image.enabled=true;}}
         }
         void Update() {
             if(!game){Destroy(gameObject);return;}
@@ -172,9 +179,9 @@ namespace Bufu.Rebuild {
     public sealed class FrameAnim:MonoBehaviour {
         Image image;Sprite[] frames;float timer;int index;bool once;
         public void Begin(Image image,string prefix,int start,bool destroyAtEnd) {
-            this.image=image;once=destroyAtEnd;var list=new List<Sprite>();
+            this.image=image;image.enabled=false;once=destroyAtEnd;var list=new List<Sprite>();
             for(int i=0;i<24;i++){var sprite=UiAssets.Sprite(prefix+(start+i).ToString("00"));if(!sprite)break;list.Add(sprite);}
-            frames=list.ToArray();if(frames.Length>0){image.sprite=frames[0];image.SetNativeSize();}
+            frames=list.ToArray();if(frames.Length>0){image.sprite=frames[0];image.SetNativeSize();image.enabled=true;}
         }
         void Update() {
             if(frames==null||frames.Length==0){if(once)Destroy(gameObject);return;}

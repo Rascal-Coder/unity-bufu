@@ -4,9 +4,11 @@ using System.Text;
 using UnityEngine;
 namespace Bufu.Rebuild {
     public static class SaveStore {
-        public static string PathName=>Path.Combine(Application.persistentDataPath,"bufu-local-v1.json");
-        public static SaveData Load() {
-            foreach(var p in new[]{PathName,PathName+".bak"}) {
+        public static string PathForMode(bool developerMode)=>Path.Combine(Application.persistentDataPath,developerMode?"bufu-local-dev-v1.json":"bufu-local-v1.json");
+        public static string PathName=>PathForMode(DevMode.Enabled);
+        public static SaveData Load(bool developerMode=false) {
+            string path=PathForMode(developerMode);
+            foreach(var p in new[]{path,path+".bak"}) {
                 if(!File.Exists(p))continue;
                 try {var data=JsonUtility.FromJson<SaveData>(File.ReadAllText(p,Encoding.UTF8));new GameModel(data);return data;}
                 catch(Exception e){Debug.LogWarning("存档读取失败，尝试备份: "+e.Message);}
@@ -15,7 +17,7 @@ namespace Bufu.Rebuild {
         }
         public static void Save(GameModel game) {
             if(GameController.VerificationMode)return;
-            string p=PathName;Directory.CreateDirectory(Path.GetDirectoryName(p));
+            string p=PathForMode(game.DeveloperMode);Directory.CreateDirectory(Path.GetDirectoryName(p));
             foreach(var state in game.Data.worlds)state.lastExit=DateTimeOffset.UtcNow.ToUnixTimeSeconds();
             File.WriteAllText(p+".tmp",JsonUtility.ToJson(game.Data,true),new UTF8Encoding(false));
             if(File.Exists(p))File.Replace(p+".tmp",p,p+".bak");else File.Move(p+".tmp",p);

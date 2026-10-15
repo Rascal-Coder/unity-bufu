@@ -12,7 +12,7 @@ using UnityEngine.UI;
 namespace Bufu.Rebuild {
     /// <summary>Dialogs and popups: commonDialog, goalReachPanel, OfflineReward, EvolvePanel, setupPanel, CheckIn, congratulationPanel.</summary>
     public sealed partial class GameController {
-        UiView goalView,offlineView;
+        UiView goalView,offlineView,checkInView,rewardBoxView;
 
         // ------------------------------------------------------------ commonDialog
         public void ShowDialog(string message,Action onConfirm,Action onCancel=null) {
@@ -45,23 +45,26 @@ namespace Bufu.Rebuild {
                 Txt(v.Node("honorTxt").GetComponent<TMP_Text>(),honorMission.titleName);
             }
             var icon=RewardIcon(m.rewardType);if(icon){var image=v.Ref<Image>(cls,"itemIcon");image.sprite=icon;image.SetNativeSize();}
-            On(v.Ref(cls,"goalTmp"),false);On(v.Ref(cls,"adBtn"),false);
-            var confirm=v.Ref<Button>(cls,"confirmBtn");var confirmRect=(RectTransform)confirm.transform;confirmRect.anchoredPosition=new Vector2(0,confirmRect.anchoredPosition.y);
-            var body=(RectTransform)v.Node("GameObject").transform;Vector2 home=body.anchoredPosition;Vector3 scale=body.localScale;
-            var script=v.Script(cls);float fall=script.F("fallDuration",.5f),exit=script.F("exitDuration",.4f),startScale=script.F("startScale",1.3f),startRotation=script.F("startRotation",15),startY=script.F("startYOffset",1200),exitScale=script.F("exitScale",.3f),exitRotation=script.F("exitRotation",-10);
-            On(confirm.gameObject,false);
-            StartCoroutine(Tween(fall,t=>{
-                if(!body)return;float e=OutBack(t);
-                body.anchoredPosition=home+Vector2.up*startY*(1-e);body.localScale=Vector3.LerpUnclamped(scale*startScale,scale,e);body.localEulerAngles=new Vector3(0,0,startRotation*(1-e));
-            },()=>{if(confirm)On(confirm.gameObject,true);}));
-            bool closing=false;
-            Click(confirm,()=>{
-                if(closing)return;closing=true;Model.ClaimGoal();PlayReward();
-                StartCoroutine(Tween(exit,t=>{
-                    if(!body)return;float e=InBack(t);
-                    body.anchoredPosition=home+Vector2.down*startY*e;body.localScale=Vector3.LerpUnclamped(scale,scale*exitScale,e);body.localEulerAngles=new Vector3(0,0,exitRotation*e);
-                },()=>{ClosePopup(v);goalView=null;}));
-            });
+            Txt(v.Ref<TMP_Text>(cls,"goalTmp"),"恭喜达成<color=#f8642a>"+GameModel.Format(m.mainMissionNum)+"</color>小目标！");
+            var root=v.Rect;var script=v.Script(cls);
+            float fall=script.F("fallDuration",.5f),exit=script.F("exitDuration",.4f),startScale=script.F("startScale",1.3f),startRotation=script.F("startRotation",15),startY=script.F("startYOffset",1200),exitScale=script.F("exitScale",.3f),exitRotation=script.F("exitRotation",-10);
+            root.anchoredPosition=Vector2.up*startY;root.localScale=Vector3.one*startScale;root.localEulerAngles=new Vector3(0,0,startRotation);
+            bool ready=false,closing=false;
+            var rain=v.Ref<ParticleSystem>(cls,"coinRainEffect");
+            StartCoroutine(PromotionTween(fall,t=>{
+                if(!root)return;float e=OutBack(t);
+                root.anchoredPosition=Vector2.up*startY*(1-e);root.localScale=Vector3.one*Mathf.LerpUnclamped(startScale,1,e);root.localEulerAngles=new Vector3(0,0,startRotation*(1-e));
+            },()=>{ready=true;if(rain){rain.gameObject.SetActive(true);rain.Play();}}));
+            Action<int> claim=multiplier=>{
+                if(!ready||closing)return;closing=true;ready=false;Model.ClaimGoal(multiplier);if(multiplier>1)PlayClick();
+                if(rain){rain.Stop();rain.gameObject.SetActive(false);}
+                StartCoroutine(PromotionTween(exit,t=>{
+                    if(!root)return;float e=InBack(t);
+                    root.anchoredPosition=Vector2.down*startY*e;root.localScale=Vector3.one*Mathf.LerpUnclamped(1,exitScale,e);root.localEulerAngles=new Vector3(0,0,exitRotation*e);
+                },()=>{ClosePopup(v);goalView=null;shownMainLevel=Model.MainLevel;RefreshAll();}));
+            };
+            Click(v.Ref<Button>(cls,"confirmBtn"),()=>claim(1));
+            Click(v.Ref<Button>(cls,"adBtn"),()=>{if(ready&&!closing)ShowOriginalAd(()=>claim(2));});
         }
 
         // ------------------------------------------------------------ OfflineReward
@@ -125,41 +128,46 @@ namespace Bufu.Rebuild {
             const string cls="DailyCheckIn";
             Model.AdvanceCheckIn(GameModel.TodayNumber());
             var v=OpenPopup("CheckIn/CheckIn");
-            // Only the free column exists here: ad rewards and subscription are left out, so it is centred.
-            foreach(var name in new[]{"adgrid","tip2"})On(v.Node(name),false);On(v.Ref(cls,"subscribeRect"),false);
-            foreach(var name in new[]{"freegrid","tip1"}){var r=(RectTransform)v.Node(name).transform;r.anchoredPosition=new Vector2(0,r.anchoredPosition.y);}
+            checkInView=v;
+            On(v.Ref(cls,"subscribeRect"),false);
             Click(v.Ref<Button>(cls,"closeButton"),()=>ClosePopup(v));Click(v.Ref<Button>(cls,"maskButton"),()=>ClosePopup(v));
             var icons=v.Script(cls).Arr("itemIcons");
             Func<int,Sprite> iconFor=id=>{
+                if(id==1&&Model.Data.world==2)return RewardIcon(id);
                 int index=CheckInIconIndex(id);
                 if(icons!=null&&index>=0&&index<icons.Count&&icons[index] is Data d&&!string.IsNullOrEmpty(d.Str("sprite")))return Sp(d.Str("sprite"));
                 return RewardIcon(id);
             };
-            var parent=v.Ref<RectTransform>(cls,"freeRewardListParent");
+            for(int column=0;column<2;column++) {
+            bool special=column==1;
+            var parent=v.Ref<RectTransform>(cls,special?"adRewardListParent":"freeRewardListParent");
             for(int day=1;day<=7;day++) {
-                int d=day;var sign=Model.SignFor(d);if(sign==null)continue;
-                var item=UiPrefab.Instantiate("CheckIn/FreeCheckInReward",parent);var n=item.Nodes;
-                Txt(n[1].GetComponent<TMP_Text>(),"第"+d+"天");
-                var reward=sign.normalReward;int pairs=reward==null?0:reward.Length/2;
-                var slots=new[]{new[]{n[2],n[3],n[4],n[5],n[6]},new[]{n[7],n[8],n[9],n[10],n[11]}};
-                for(int s=0;s<2;s++) {
-                    On(slots[s][0],s<pairs);if(s>=pairs)continue;
-                    int itemId=reward[s*2];int count=reward[s*2+1];
-                    var sprite=iconFor(itemId);if(sprite){var image=slots[s][1].GetComponent<Image>();image.sprite=sprite;image.SetNativeSize();}
-                    Txt(slots[s][2].GetComponent<TMP_Text>(),GameModel.Format(Model.RewardAmount(itemId,count)));
-                }
-                if(pairs==1){var r=(RectTransform)n[2].transform;r.anchoredPosition=new Vector2(r.anchoredPosition.x+83,r.anchoredPosition.y);}
-                Click(n[12],()=>{
-                    if(!Model.CanClaimCheckIn(d)){if(Model.CheckInClaimed(d))ShowToast("已领取");else ShowToast("还没有到领取时间");return;}
-                    var gained=new List<KeyValuePair<int,double>>();var r=Model.SignFor(d).normalReward;
-                    for(int k=0;k+1<r.Length;k+=2)gained.Add(new KeyValuePair<int,double>(r[k],Model.RewardAmount(r[k],r[k+1])));
-                    if(Model.ClaimCheckIn(d)){PlayReward();ShowRewardBox(gained);}
+                int d=day;var reward=Model.CheckInRewards(d,special);if(reward==null||reward.Length<4)continue;
+                var item=UiPrefab.Instantiate(special?"CheckIn/AdCheckInReward":"CheckIn/FreeCheckInReward",parent);
+                item.Root.name=(special?"Special":"Free")+"Day"+day;
+                Txt(item.Node("title").GetComponent<TMP_Text>(),"第"+d+"天");
+                var slots=new[]{item.Find("rewardbtn1"),item.Find("rewardbtn2")};
+                // Original rows claim both rewards together and show only allredpoint.
+                foreach(var slot in slots)On(slot.transform.Find("redpoint").gameObject,false);
+                Click(item.Node("allRewardBtn"),()=>{
+                    if(!Model.CanClaimCheckIn(d,special)){ShowToast(Model.CheckInClaimed(d,special)?"已领取":"还没有到领取时间");return;}
+                    Action claim=()=>{if(Model.ClaimCheckIn(d,special,out var gained)){PlayReward();ShowRewardBox(gained);}};
+                    if(special)ShowOriginalAd(claim);else claim();
                 });
                 Watch(item.Root,()=>{
-                    bool claimed=Model.CheckInClaimed(d),canClaim=Model.CanClaimCheckIn(d);
-                    On(n[13],d>Model.State.checkDay);On(n[14],canClaim);
-                    for(int s=0;s<pairs&&s<2;s++){On(slots[s][3],canClaim);On(slots[s][4],claimed);}
+                    bool claimed=Model.CheckInClaimed(d,special),canClaim=Model.CanClaimCheckIn(d,special);
+                    On(item.Node("mask"),!Model.DeveloperMode&&d>Model.State.checkDay);On(item.Node("allredpoint"),canClaim);
+                    for(int s=0;s<2;s++) {
+                        var slot=slots[s].transform;int id=reward[s*2];
+                        bool unlock=special&&s==1&&(d==3||d==7)&&id>=101&&id<=110&&!Model.HelperOwned(id-100);
+                        var sprite=unlock?Sp(HelperIcons[id-100]):iconFor(id);
+                        var image=slot.Find("itemimg").GetComponent<Image>();if(sprite&&image.sprite!=sprite){image.sprite=sprite;image.SetNativeSize();}
+                        Txt(slot.Find("count").GetComponent<TMP_Text>(),unlock?"1":GameModel.Format(Model.RewardAmount(id,reward[s*2+1])));
+                        On(slot.Find("clamped").gameObject,claimed);
+                        var get=slot.Find("huoqv");if(get)On(get.gameObject,unlock);
+                    }
                 });
+            }
             }
         }
 
@@ -167,6 +175,7 @@ namespace Bufu.Rebuild {
         public void ShowRewardBox(List<KeyValuePair<int,double>> rewards) {
             const string cls="RewardBoxUI";
             var v=OpenPopup("Popup/congratulationPanel");
+            rewardBoxView=v;
             On(v.Ref(cls,"doubleButton"),false);
             var template=v.Ref(cls,"item1");var container=v.Ref<RectTransform>(cls,"con");
             foreach(var r in rewards) {

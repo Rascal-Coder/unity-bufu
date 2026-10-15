@@ -12,16 +12,22 @@ namespace Bufu.Rebuild {
     /// <summary>TopPanel and UpgradePanel (bottom tab bar + ItemPanel with the upgradeItem cards).</summary>
     public sealed partial class GameController {
         // ------------------------------------------------------------ top panel
-        UiView top;TMP_Text goldTmp,diamondTmp,levelTmp,taskTmp,honorTxt;Image taskFill,honorImage;
-        GameObject[] coinIcons,rewardIcons;GameObject topMain,permanentPanel,checkInButton,checkRedPoint;
+        UiView top;TMP_Text goldTmp,diamondTmp,levelTmp,taskTmp,honorTxt;Image taskFill,honorImage;int shownMainLevel;
+        GameObject[] coinIcons,rewardIcons;GameObject topMain,permanentPanel,levelBadge,checkInButton,checkRedPoint;
 
         void BuildTop() {
             const string cls="TopPanel";
             top=UiPrefab.Instantiate("Common/topPanel",mainLayer);
+            shownMainLevel=Model.MainLevel;
             goldTmp=top.Ref<TMP_Text>(cls,"goldNumTmp");diamondTmp=top.Ref<TMP_Text>(cls,"diamondNumTmp");levelTmp=top.Ref<TMP_Text>(cls,"levelTmp");
+            // The exported badge has almost no spare line height at 96pt. Keep every
+            // growth level on one line and let TMP fit the digits inside the badge.
+            levelTmp.enableWordWrapping=false;levelTmp.enableAutoSizing=true;
+            levelTmp.fontSizeMax=levelTmp.fontSize;levelTmp.fontSizeMin=Mathf.Min(48,levelTmp.fontSize);
             taskTmp=top.Ref<TMP_Text>(cls,"taskTmp");honorTxt=top.Ref<TMP_Text>(cls,"honorTxt");taskFill=top.Ref<Image>(cls,"taskProgress");honorImage=top.Ref<Image>(cls,"honor");
             coinIcons=top.Refs(cls,"goldCoinIcons");rewardIcons=top.Refs(cls,"rewardTypeImgs");
             topMain=top.Ref(cls,"main");permanentPanel=top.Ref(cls,"permanentPanel");checkInButton=top.Ref(cls,"checkInBtn");checkRedPoint=top.Ref(cls,"checkRepoint");
+            levelBadge=top.Ref(cls,"mainLevelBg");
             // Not part of the offline rebuild: ranking, invite, recovery, income tip, guide arrow.
             foreach(var field in new[]{"averageIncome","tipRect","recoveryBtn","rankBtn","inviteBtn","yindaotu"})On(top.Ref(cls,field),false);
             Click(top.Ref<Button>(cls,"setupBtn"),ShowSetup);
@@ -33,26 +39,25 @@ namespace Bufu.Rebuild {
             if(top==null||!top.Root)return;
             Txt(goldTmp,GameModel.Format(Model.State.gold));Txt(diamondTmp,GameModel.Format(Model.Data.diamonds));
             for(int i=0;i<coinIcons.Length;i++)On(coinIcons[i],i==Model.Data.world-1);
-            int level=Model.MainLevel;Txt(levelTmp,level.ToString());
+            if(Model.PendingGoal==null&&goalView==null)shownMainLevel=Model.MainLevel;
+            int level=shownMainLevel;Txt(levelTmp,level.ToString());
             var title=Model.TitleMission(level);
             if(title!=null) {
                 var s=SpAt("Assets/GameRes/honor/"+title.picId+".png");if(s&&honorImage.sprite!=s)honorImage.sprite=s;
                 Txt(honorTxt,title.titleName);
             }
-            var next=Model.NextMission;var last=Model.WorldMissions.LastOrDefault();
-            var shown=next??last;
-            if(shown!=null) {
-                Txt(taskTmp,GameModel.Format(Model.State.gold)+"/"+GameModel.Format(shown.mainMissionNum));
-                taskFill.fillAmount=next==null?1:(float)Math.Min(1,Model.State.gold/shown.mainMissionNum);
-                for(int i=0;i<rewardIcons.Length;i++)On(rewardIcons[i],next!=null&&shown.rewardType==i+1);
-            }
+            var next=Model.NextMission;
+            Txt(taskTmp,next==null?"":GameModel.Format(Model.State.gold)+"/"+GameModel.Format(next.mainMissionNum));
+            taskFill.fillAmount=next==null?0:(float)Math.Min(1,Model.State.gold/Math.Max(double.Epsilon,next.mainMissionNum));
+            for(int i=0;i<rewardIcons.Length;i++)On(rewardIcons[i],next!=null&&next.rewardType==i+1);
             On(checkInButton,Model.LevelAbove(28));On(checkRedPoint,Model.AnyCheckInClaimable());
         }
 
-        void ShowTopMain(bool main){On(topMain,main);On(permanentPanel,main);}
+        void ShowTopMain(bool main){On(topMain,main&&!Model.PromotionReady);On(permanentPanel,main&&!Model.PromotionRunning);On(levelBadge,main&&!Model.PromotionRunning&&!Model.PromotionWonPending);}
 
         // ------------------------------------------------------------ upgrade panel
         UiView upgrade;int tab=1,subTab=1,builtWorld;
+        static readonly int[] MainTabs={1,2,3,5,6};
         GameObject[] chooseImages,lockImages,unlockedHints,subWorldBack,subWorldButton,subWorldSelected;GameObject[] panelRoots=new GameObject[7];
         Image[] tabImages;Button[] subButtons;GameObject sub2Selected,sub3Selected,sub3Hint,itemPanelRoot,talentMount,talentRedDot;
         RectTransform[] subPanels=new RectTransform[3],subContents=new RectTransform[3];RectTransform itemTip;TMP_Text itemTipText;GameObject itemTipMask;
@@ -60,7 +65,9 @@ namespace Bufu.Rebuild {
         void BuildUpgrade() {
             const string cls="UpgradePanel",sub="UpgradeItemPanel";
             upgrade=UiPrefab.Instantiate("Common/upgradePanel",mainLayer);
-            for(int n=1;n<=6;n++){int index=n;Click(upgrade.Ref<Button>(cls,"button"+n),()=>OnTabClicked(index));}
+            foreach(int n in MainTabs){int index=n;Click(upgrade.Ref<Button>(cls,"button"+n),()=>OnTabClicked(index));}
+            var removed=upgrade.Ref<Button>(cls,"button4");removed.onClick.RemoveAllListeners();On(removed.gameObject,false);
+            LayoutBottomNavigation();
             chooseImages=Enumerable.Range(1,6).Select(n=>upgrade.Ref(cls,"chooseImg"+n)).ToArray();
             lockImages=upgrade.Refs(cls,"lockImgs");unlockedHints=upgrade.Refs(cls,"yijiesuoImgs");
             tabImages=upgrade.Refs(cls,"btnImgs").Select(x=>x.GetComponent<Image>()).ToArray();
@@ -77,20 +84,42 @@ namespace Bufu.Rebuild {
             subContents[0]=(RectTransform)upgrade.Find("ItemPanel/panel1/Scroll View/Viewport/Content").transform;
             subContents[1]=(RectTransform)upgrade.Find("ItemPanel/panel2/Scroll View/Viewport/Content").transform;
             subContents[2]=(RectTransform)upgrade.Find("ItemPanel/panel3/Scroll View/Viewport/Content").transform;
-            foreach(var content in subContents)if(!content.GetComponent<ContentSizeFitter>()){var f=content.gameObject.AddComponent<ContentSizeFitter>();f.verticalFit=ContentSizeFitter.FitMode.PreferredSize;}
+            foreach(var content in subContents) {
+                var grid=content.GetComponent<GridLayoutGroup>();
+                grid.padding.bottom=Math.Max(grid.padding.bottom,64);
+            }
             // item tip popup
             itemTip=upgrade.Ref<RectTransform>(cls,"itemTip");itemTipText=upgrade.Ref<TMP_Text>("SkillTip","tipText");itemTipMask=upgrade.Ref(cls,"itemTipMask");
             Click(itemTipMask,HideItemTip);HideItemTip();
             BuildItemCards();
+            Canvas.ForceUpdateCanvases();
+        }
+
+        void LayoutBottomNavigation() {
+            var row=upgrade.Get<RectTransform>("bottoms");
+            var fitter=row.GetComponent<ContentSizeFitter>();if(fitter)fitter.enabled=false;
+            row.anchorMin=new Vector2(0,0);row.anchorMax=new Vector2(1,0);
+            row.sizeDelta=new Vector2(-32,232);row.anchoredPosition=new Vector2(0,116);
+            var layout=row.GetComponent<HorizontalLayoutGroup>();
+            layout.spacing=8;layout.childControlWidth=true;layout.childForceExpandWidth=true;
+            layout.childControlHeight=false;layout.childForceExpandHeight=false;
+            foreach(int n in MainTabs) {
+                var button=upgrade.Ref<RectTransform>("UpgradePanel","button"+n);
+                var cell=button.gameObject.AddComponent<LayoutElement>();cell.minWidth=0;cell.preferredWidth=0;cell.flexibleWidth=1;
+                var selection=upgrade.Ref<RectTransform>("UpgradePanel","chooseImg"+n);
+                selection.anchorMin=new Vector2(0,.5f);selection.anchorMax=new Vector2(1,.5f);
+                selection.sizeDelta=new Vector2(0,232);selection.anchoredPosition=Vector2.zero;
+            }
         }
 
         // Tab unlock rules of UpgradePanel: Button2..6 depend on the growth level (Level > factor).
         bool TabUnlocked(int n) {
+            if(!MainTabs.Contains(n))return false;
             switch(n) {
                 case 1:return true;
                 case 2:return Model.LevelAbove(20);
                 case 3:return Model.LevelAbove(21);
-                case 4:return false; // challenge mode is not part of the rebuild
+                case 4:return false;
                 case 5:return Model.LevelAbove(27);
                 default:return Model.WorldEntryUnlocked;
             }
@@ -104,8 +133,8 @@ namespace Bufu.Rebuild {
                 default:return "完成成长等级"+(int)Model.Factor(59)+"后解锁";
             }
         }
-        static bool Clicked(string key)=>PlayerPrefs.GetInt("button_clicked_"+key,0)==1;
-        static void MarkClicked(string key){PlayerPrefs.SetInt("button_clicked_"+key,1);PlayerPrefs.Save();}
+        static bool Clicked(string key)=>!VerificationMode&&PlayerPrefs.GetInt(PrefKey("button_clicked_"+key),0)==1;
+        static void MarkClicked(string key){if(VerificationMode)return;PlayerPrefs.SetInt(PrefKey("button_clicked_"+key),1);PlayerPrefs.Save();}
 
         void OnTabClicked(int n) {
             if(!TabUnlocked(n)){ShowToast(TabLockText(n));return;}
@@ -115,13 +144,13 @@ namespace Bufu.Rebuild {
         static void Show(UiView view,bool on){if(view!=null&&view.Root)On(view.Root,on);}
 
         void SelectTab(int n) {
-            tab=n;HideItemTip();
+            tab=n;HideItemTip();HideUpgradeFeedback();
             for(int i=0;i<chooseImages.Length;i++)On(chooseImages[i],i==n-1);
             On(itemPanelRoot,n==1);On(talentMount,n==3);
             if(n==2)EnsureFacility();if(n==3)EnsureTalent();if(n==5)EnsureShop();if(n==6)EnsureWorld();
             Show(facilityView,n==2);Show(talentView,n==3);Show(shopView,n==5);Show(worldView,n==6);
             ShowTopMain(n==1);
-            // The top bar is created before the full-screen pages, so talent/facility would cover the level and currencies.
+            // Keep currency controls above the full-screen pages.
             if(top!=null&&top.Root)top.Root.transform.SetAsLastSibling();
             RefreshAll();
         }
@@ -132,7 +161,7 @@ namespace Bufu.Rebuild {
             if(n==3&&!Model.LevelAbove(80)){ShowToast("完成成长等级"+(int)Model.Factor(80)+"后解锁");return;}
             if(n==2&&!Clicked("sub2"))MarkClicked("sub2");
             if(n==3&&!Clicked("sub3"))MarkClicked("sub3");
-            subTab=n;HideItemTip();ApplySubTabs();RefreshUpgradePanel();
+            subTab=n;HideItemTip();HideUpgradeFeedback();ApplySubTabs();RefreshUpgradePanel();
         }
 
         void ApplySubTabs() {
@@ -145,7 +174,7 @@ namespace Bufu.Rebuild {
         void RefreshUpgradePanel() {
             if(upgrade==null||!upgrade.Root)return;
             if(builtWorld!=Model.Data.world)BuildItemCards();
-            for(int n=2;n<=6;n++) {
+            foreach(int n in MainTabs.Skip(1)) {
                 bool open=TabUnlocked(n);On(lockImages[n-1],!open);On(unlockedHints[n-1],open&&!Clicked(n.ToString()));
                 tabImages[n-1].color=open?Color.white:new Color(.5f,.5f,.5f,1);
             }
@@ -153,7 +182,38 @@ namespace Bufu.Rebuild {
             On(lockImages[0],!sub2);On(unlockedHints[0],sub2&&!Clicked("sub2"));
             On(lockImages[6],!sub3&&Model.Data.world==2);On(sub3Hint,sub3&&!Clicked("sub3")&&Model.Data.world==2);
             ApplySubTabs();
+            FitCardScrollAreas();
             On(talentRedDot,TabUnlocked(3)&&Model.Talents.Any(Model.TalentUpgradeable));
+            RefreshNotificationDots();
+        }
+
+        void FitCardScrollAreas() {
+            // The exported viewport extends behind the bottom tabs. Content bounds alone
+            // cannot make the final row visible; the viewport must end above that overlay.
+            var corners=new Vector3[4];float navTop=float.NegativeInfinity;
+            void include(RectTransform rect,float rise=0) {
+                rect.GetWorldCorners(corners);
+                Vector3 offset=rect.parent.TransformVector(Vector3.up*rise);
+                foreach(var corner in corners)navTop=Mathf.Max(navTop,upgrade.Rect.InverseTransformPoint(corner+offset).y);
+            }
+            include(upgrade.Get<RectTransform>("bottomBgImg"));
+            foreach(int i in MainTabs)include(upgrade.Ref<RectTransform>("UpgradePanel","button"+i));
+            // Newly unlocked tab hints rise above their buttons and also cover the list.
+            foreach(var hint in unlockedHints.Skip(1))if(hint&&hint.activeInHierarchy) {
+                var rect=(RectTransform)hint.transform;var motion=hint.GetComponent<UpDownAnimator>();
+                include(rect,motion?motion.HighestY-rect.anchoredPosition.y:0);
+            }
+            Vector3 edge=upgrade.Rect.TransformPoint(new Vector3(0,navTop,0));
+            Action<ScrollRect> fit=scroll=>{
+                var grid=scroll.content.GetComponent<GridLayoutGroup>();
+                if(grid&&grid.padding.bottom<64)grid.padding=new RectOffset(grid.padding.left,grid.padding.right,grid.padding.top,64);
+                var viewport=scroll.viewport;
+                var parent=(RectTransform)viewport.parent;var inset=viewport.offsetMin;
+                float bottom=Mathf.Clamp(parent.InverseTransformPoint(edge).y-parent.rect.yMin,0,parent.rect.height-1);
+                if(!Mathf.Approximately(inset.y,bottom)){inset.y=bottom;viewport.offsetMin=inset;}
+            };
+            foreach(var panel in subPanels)fit(panel.GetComponentInChildren<ScrollRect>(true));
+            if(facilityView!=null&&facilityView.Root)foreach(var scroll in facilityView.Root.GetComponentsInChildren<ScrollRect>(true))fit(scroll);
         }
 
         // ------------------------------------------------------------ item tip
@@ -166,6 +226,12 @@ namespace Bufu.Rebuild {
             On(itemTipMask,true);On(itemTip.gameObject,true);itemTip.SetAsLastSibling();
         }
         void HideItemTip(){if(itemTip)On(itemTip.gameObject,false);On(itemTipMask,false);}
+        void HideUpgradeFeedback() {
+            // Purchase feedback is temporarily lifted outside the card's scroll mask.
+            // Hide it with its source page when switching tabs.
+            if(upgrade==null||!upgrade.Root)return;
+            foreach(Transform child in upgrade.Rect)if(child.name=="upgradeTips")On(child.gameObject,false);
+        }
 
         // ------------------------------------------------------------ cards
         static readonly Dictionary<int,string> QuantityIcons=new Dictionary<int,string>{

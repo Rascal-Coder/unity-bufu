@@ -4,6 +4,7 @@ using UnityEngine.UI;
 namespace Bufu.Rebuild.UI {
     public sealed class UpDownAnimator:MonoBehaviour {
         float moveHeight=.1f,moveTime=.5f,timer,baseY;bool isUI;RectTransform rect;
+        public float HighestY=>baseY+Mathf.Max(0,moveHeight);
         public void Configure(float height,float time,bool ui) {
             moveHeight=height;moveTime=Mathf.Max(.01f,time);isUI=ui;rect=transform as RectTransform;
             baseY=isUI&&rect?rect.anchoredPosition.y:transform.localPosition.y;

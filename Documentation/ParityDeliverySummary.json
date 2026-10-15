@@ -1,0 +1,55 @@
+{
+  "build": {
+    "result": "Succeeded",
+    "editor": "2022.3.62t16",
+    "errors": 0,
+    "warnings": 1,
+    "bytes": 523638826
+  },
+  "modelChecks": 230,
+  "runtimeSuites": [
+    {
+      "suite": "CashDelivery-Compact",
+      "passed": true,
+      "checks": 104,
+      "width": 360,
+      "height": 640
+    },
+    {
+      "suite": "CashDelivery-Landscape",
+      "passed": true,
+      "checks": 104,
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "suite": "SignBadgeQA-Compact",
+      "passed": true,
+      "checks": 130,
+      "width": 360,
+      "height": 640
+    },
+    {
+      "suite": "SignBadgeQA-Landscape",
+      "passed": true,
+      "checks": 130,
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "suite": "ParityRegression-Normal",
+      "passed": true,
+      "checks": 188,
+      "width": 360,
+      "height": 640
+    },
+    {
+      "suite": "ParityRegression-Dev",
+      "passed": true,
+      "checks": 134,
+      "width": 1280,
+      "height": 720
+    }
+  ],
+  "note": "Full gameplay regression preceded the final sign-in badge coordinate inset; final coordinate changes passed both focused suites."
+}

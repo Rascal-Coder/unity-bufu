@@ -23,6 +23,8 @@ namespace Bufu.Rebuild {
         public RectTransform Root,Field;
         public bool ModalOpen {get{popups.RemoveAll(x=>!x);return popups.Count>0;}}
         public static bool VerificationMode=>Environment.GetCommandLineArgs().Contains("--verify-rebuild");
+        static bool developerSession;
+        static string PrefKey(string key)=>(developerSession?"dev.":"")+key;
 
         readonly List<GameObject> popups=new List<GameObject>();
         readonly List<KeyValuePair<GameObject,Action>> watchers=new List<KeyValuePair<GameObject,Action>>();
@@ -41,20 +43,21 @@ namespace Bufu.Rebuild {
 
         void Start() {
             Application.targetFrameRate=60;
-            soundOn=PlayerPrefs.GetInt("bufu.sound.on",1)==1;musicOn=PlayerPrefs.GetInt("bufu.music.on",1)==1;
-            soundVolume=PlayerPrefs.GetFloat("bufu.sound.volume",1);musicVolume=PlayerPrefs.GetFloat("bufu.music.volume",1);
-            Model=new GameModel(VerificationMode?new SaveData():SaveStore.Load());
+            bool dev=developerSession=DevMode.Enabled;
+            soundOn=PlayerPrefs.GetInt(PrefKey("bufu.sound.on"),1)==1;musicOn=PlayerPrefs.GetInt(PrefKey("bufu.music.on"),1)==1;
+            soundVolume=PlayerPrefs.GetFloat(PrefKey("bufu.sound.volume"),1);musicVolume=PlayerPrefs.GetFloat(PrefKey("bufu.music.volume"),1);
+            Model=new GameModel(VerificationMode?new SaveData():SaveStore.Load(dev),dev);
             long now=DateTimeOffset.UtcNow.ToUnixTimeSeconds();
             for(int i=0;i<2;i++){var s=Model.Data.worlds[i];awaySeconds[i]=s.lastExit>0?Math.Min(Math.Max(0,now-s.lastExit),21600):0;}
             Model.AccumulateOffline(now);Model.Changed+=OnChanged;
             LoadAudio();
-            BuildCanvas();BuildAll();
+            BuildCanvas();BuildAll();BuildDeveloperControls();
             if(Model.State.pendingOffline>0)ShowOffline();
         }
 
         void BuildAll() {
             Model.AdvanceCheckIn(GameModel.TodayNumber());
-            BuildMainScene();BuildTop();BuildUpgrade();
+            BuildMainScene();BuildTop();BuildUpgrade();BuildPromotion();
             RebuildActors();SelectTab(1);RefreshAll();
         }
 
@@ -63,11 +66,16 @@ namespace Bufu.Rebuild {
             if(dirty&&saveTimer>10&&!VerificationMode){SaveStore.Save(Model);dirty=false;saveTimer=0;}
             if(Input.GetKeyDown(KeyCode.Escape)&&ModalOpen)CloseTopPopup();
             if(Input.GetKeyDown(KeyCode.Space)&&!ModalOpen)FlipAll();
-            if(Model!=null&&goalView==null&&offlineView==null&&Model.PendingGoal!=null)ShowGoal();
+            if(Model!=null&&!Model.PromotionRunning&&!Model.PromotionWonPending&&goalView==null&&offlineView==null&&Model.PendingGoal!=null)ShowGoal();
+            UpdatePromotion();
             ApplyAudio();
+            if(Model!=null&&Model.DeveloperMode) {
+                if(Input.GetKeyDown(KeyCode.F1))ToggleDeveloperPanel();
+                if(Input.GetKeyDown(KeyCode.F2))RefillDeveloperResources();
+            }
         }
         void LateUpdate(){SortActors();}
-        void OnApplicationQuit(){if(Model!=null&&!VerificationMode)SaveStore.Save(Model);}
+        void OnApplicationQuit(){if(Model!=null&&!VerificationMode){Model.CancelPromotion();SaveStore.Save(Model);}}
         void OnApplicationPause(bool pause){if(pause&&Model!=null&&!VerificationMode)SaveStore.Save(Model);}
 
         // ---------------------------------------------------------------- canvas
@@ -113,7 +121,7 @@ namespace Bufu.Rebuild {
         void OnChanged(){dirty=true;RefreshAll();}
         void RefreshAll() {
             watchers.RemoveAll(x=>!x.Key);
-            RefreshTop();RefreshUpgradePanel();
+            RefreshTop();RefreshUpgradePanel();RefreshPromotion();
             foreach(var w in watchers.ToArray())if(w.Key)w.Value();
         }
         public static IEnumerator Tween(float duration,Action<float> step,Action done=null) {
@@ -127,7 +135,7 @@ namespace Bufu.Rebuild {
         // ---------------------------------------------------------------- popups
         public UiView OpenPopup(string resource) {var v=UiPrefab.Instantiate(resource,popupLayer);popups.Add(v.Root);return v;}
         public void ClosePopup(UiView v){if(v==null||!v.Root)return;popups.Remove(v.Root);Destroy(v.Root);}
-        void CloseTopPopup(){popups.RemoveAll(x=>!x);if(popups.Count==0)return;var go=popups[popups.Count-1];popups.RemoveAt(popups.Count-1);Destroy(go);}
+        void CloseTopPopup(){if(originalAd)return;if(promotionDialog!=null&&promotionDialog.Root&&popups.LastOrDefault()==promotionDialog.Root){promotionDialog.Ref<Button>("DialogPanel","bgButton").onClick.Invoke();return;}popups.RemoveAll(x=>!x);if(popups.Count==0)return;var go=popups[popups.Count-1];popups.RemoveAt(popups.Count-1);Destroy(go);}
 
         GameObject toastObject;
         /// <summary>BroadcastManager.ShowPopUpTip: fades in, holds 2s, then fades out while rising.</summary>
@@ -185,7 +193,7 @@ namespace Bufu.Rebuild {
             musicSource.volume=musicVolume*.5f;
             if(musicName!=want||!musicSource.isPlaying){musicSource.clip=clip;musicSource.Play();musicName=want;}
         }
-        void SavePrefs(){PlayerPrefs.SetInt("bufu.sound.on",soundOn?1:0);PlayerPrefs.SetInt("bufu.music.on",musicOn?1:0);PlayerPrefs.SetFloat("bufu.sound.volume",soundVolume);PlayerPrefs.SetFloat("bufu.music.volume",musicVolume);PlayerPrefs.Save();}
+        void SavePrefs(){if(VerificationMode)return;PlayerPrefs.SetInt(PrefKey("bufu.sound.on"),soundOn?1:0);PlayerPrefs.SetInt(PrefKey("bufu.music.on"),musicOn?1:0);PlayerPrefs.SetFloat(PrefKey("bufu.sound.volume"),soundVolume);PlayerPrefs.SetFloat(PrefKey("bufu.music.volume"),musicVolume);PlayerPrefs.Save();}
 
         // ---------------------------------------------------------------- main scene
         const string BackgroundPath="Assets/GameRes/MapRes/fight_bg_";
@@ -201,11 +209,11 @@ namespace Bufu.Rebuild {
         public void RebuildActors() {
             foreach(var coin in Coins)if(coin)Destroy(coin.gameObject);Coins.Clear();
             foreach(var helper in HelperActors)if(helper)Destroy(helper.gameObject);HelperActors.Clear();SleepTipActive=false;
-            SyncActors();
+            SyncActors(true);
         }
         static readonly string[] CoinKinds={"copper","silver","gold","purple"};
         /// <summary>Adds the coins and helpers the model says should exist without moving the ones already on the field.</summary>
-        public void SyncActors() {
+        public void SyncActors(bool initial=false) {
             if(!Field)return;Canvas.ForceUpdateCanvases();
             int world=Model.Data.world;
             for(int quality=1;quality<=4;quality++) {
@@ -215,7 +223,7 @@ namespace Bufu.Rebuild {
                 int tier=Model.State.evolution[Model.BaseId+quality+1];string asset=(world==1?"coin_":"dice_")+CoinKinds[quality-1]+(tier==0?"":"_"+(tier+1));
                 for(int i=Math.Min(list.Count,visible);i<visible;i++) {
                     var rt=NewRect("Coin "+quality+" "+i,ActorPool);rt.anchorMin=rt.anchorMax=new Vector2(.5f,.5f);rt.sizeDelta=new Vector2(CoinSize,CoinSize);
-                    rt.anchoredPosition=RandomCoinSpawn();
+                    rt.anchoredPosition=initial&&quality==1&&visible<=3?InitialCoinSpawn(i):RandomCoinSpawn();
                     var coin=rt.gameObject.AddComponent<CoinActor>();coin.Init(this,quality,world,asset);Coins.Add(coin);
                 }
             }
@@ -275,8 +283,10 @@ namespace Bufu.Rebuild {
 
         // ---------------------------------------------------------------- restart after "clear save"
         void ResetGame() {
-            Model.Changed-=OnChanged;Model=new GameModel();Model.Changed+=OnChanged;SaveStore.Save(Model);
+            bool dev=Model.DeveloperMode;
+            Model.Changed-=OnChanged;Model=new GameModel(null,dev);Model.Changed+=OnChanged;SaveStore.Save(Model);
             watchers.Clear();popups.Clear();goalView=null;offlineView=null;facilityView=null;shopView=null;worldView=null;talentView=null;
+            helperWorld=-1;promotionView=null;promotionHud=null;promotionDialog=null;shownPromotion=null;Time.timeScale=1;
             foreach(var layer in new[]{bgLayer,mainLayer,popupLayer})foreach(Transform child in layer)Destroy(child.gameObject);
             Coins.Clear();BuildAll();
         }
