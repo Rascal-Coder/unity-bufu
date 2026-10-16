@@ -58,15 +58,24 @@ namespace Bufu.Rebuild {
             const string cls="DeskItem";
             var v=UiPrefab.Instantiate("Facility/deskItem",parent);On(v.Root,true);v.Root.name="desk"+d.id;
             var icon=v.Ref<Image>(cls,"usingIcon");var sprite=DeskIcon(d);if(sprite){icon.sprite=sprite;icon.SetNativeSize();}
-            Txt(v.Ref<TMP_Text>(cls,"deskNameText"),d.deskName);
+            var deskName=v.Ref<TMP_Text>(cls,"deskNameText");
+            var deskDesc=v.Ref<TMP_Text>(cls,"deskDescText");
+            var deskUnlock=v.Ref<TMP_Text>(cls,"unlockConditionText");
+            deskName.enableWordWrapping=false;deskDesc.enableWordWrapping=true;deskUnlock.enableWordWrapping=true;
+            deskName.overflowMode=deskDesc.overflowMode=deskUnlock.overflowMode=TextOverflowModes.Ellipsis;
+            Txt(deskName,d.deskName);
             var usingBg=v.Ref(cls,"usingImage");var usingLabel=v.Node("usingLabelImp");var red=v.Ref(cls,"reddotGo");var lockRoot=v.Ref(cls,"lockIcon");
             Action open=()=>{if(Model.DeskUnlocked(d))ShowUseDesk(d);};
             Click(v.Ref<Button>(cls,"itemButton"),open);Click(usingBg,open);
             Watch(v.Root,()=>{
                 bool unlocked=Model.DeskUnlocked(d),using_=Model.UsingDesk==d.id;
                 On(lockRoot,!unlocked);
-                Txt(v.Ref<TMP_Text>(cls,"unlockConditionText"),"解锁条件\n成长等级达到"+d.deskUnlockCondition+"级");
-                Txt(v.Ref<TMP_Text>(cls,"deskDescText"),d.deskDesc+"*"+Model.DeskPower(d).ToString("0.0")+"倍");
+                // The yellow Upgrade pill is baked into the lower card. Keep the longer English lines above it, and keep the name clear of the level badge.
+                PlaceLocalized(deskName.rectTransform,new Vector2(248,70),new Vector2(-52,268));
+                PlaceLocalized(deskDesc.rectTransform,new Vector2(390,120),new Vector2(0,-112));
+                PlaceLocalized(deskUnlock.rectTransform,new Vector2(390,160),new Vector2(0,-150));
+                Txt(deskUnlock,"解锁条件\n成长等级达到"+d.deskUnlockCondition+"级");
+                Txt(deskDesc,d.deskDesc+"*"+Model.DeskPower(d).ToString("0.0",L10n.Culture)+"倍");
                 Txt(v.Ref<TMP_Text>(cls,"levelText"),Model.DeskLevel(d).ToString());
                 On(usingBg,unlocked&&using_);On(usingLabel,unlocked&&using_);On(red,Model.DeskUpgradeable(d));
             });
@@ -89,8 +98,8 @@ namespace Bufu.Rebuild {
             Watch(v.Root,()=>{
                 int lv=Model.DeskLevel(d);bool max=lv>=d.skillLevelMax,using_=Model.UsingDesk==d.id;
                 Txt(v.Ref<TMP_Text>(cls,"levelText"),lv.ToString());
-                Txt(v.Ref<TMP_Text>(cls,"currentSkillText"),Model.DeskPowerAt(d,lv).ToString("0.0")+"倍");
-                Txt(v.Ref<TMP_Text>(cls,"nextSkillText"),Model.DeskPowerAt(d,lv+1).ToString("0.0")+"倍");
+                Txt(v.Ref<TMP_Text>(cls,"currentSkillText"),Model.DeskPowerAt(d,lv).ToString("0.0",L10n.Culture)+"倍");
+                Txt(v.Ref<TMP_Text>(cls,"nextSkillText"),Model.DeskPowerAt(d,lv+1).ToString("0.0",L10n.Culture)+"倍");
                 On(maxLevel,max);On(buy.gameObject,!max&&d.buyType!=2);On(moneyBuy.gameObject,!max&&d.buyType==2);
                 string cost=GameModel.Format(d.buyType==2?(int)Model.DeskPrice(d):Model.DeskPrice(d));
                 Txt(v.Ref<TMP_Text>(cls,"buyButtonText"),cost);Txt(v.Ref<TMP_Text>(cls,"moneyBuyButtonText"),cost);

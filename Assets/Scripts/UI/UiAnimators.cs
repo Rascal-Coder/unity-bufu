@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -45,6 +46,11 @@ namespace Bufu.Rebuild.UI {
             if(autoPlay)Play();
         }
         public void Play(){index=0;timer=0;playing=frames!=null&&frames.Length>0;if(playing&&image)image.sprite=frames[0];}
+        public void Retarget(Func<Sprite,Sprite> map) {
+            if(frames==null||map==null)return;
+            for(int i=0;i<frames.Length;i++)if(frames[i]){var next=map(frames[i]);if(next)frames[i]=next;}
+            if(image&&frames.Length>0){int i=index>=0&&index<frames.Length?index:0;if(frames[i])image.sprite=frames[i];}
+        }
         void Update() {
             if(!playing||!image)return;timer+=Time.deltaTime;
             while(timer>=interval) {

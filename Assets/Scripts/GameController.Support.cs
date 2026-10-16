@@ -130,13 +130,14 @@ namespace Bufu.Rebuild {
             var background=NewRect("Background",root);Stretch(background);background.gameObject.AddComponent<Image>().color=Color.black;
             TMP_Text label(string name,float font,Vector2 size,Vector2 anchor,string value) {
                 var r=NewRect(name,root);r.anchorMin=r.anchorMax=anchor;r.sizeDelta=size;
-                var t=r.gameObject.AddComponent<TextMeshProUGUI>();t.font=UiAssets.Font();t.color=Color.white;t.fontSize=font;t.alignment=TextAlignmentOptions.Center;t.text=value;return t;
+                var t=r.gameObject.AddComponent<TextMeshProUGUI>();t.font=UiAssets.Font();t.color=Color.white;t.fontSize=font;t.alignment=TextAlignmentOptions.Center;Txt(t,value);return t;
             }
-            var countdown=label("CountdownText",48,new Vector2(200,100),new Vector2(.5f,.5f),"0:02");
-            var content=label("AdContentText",80,new Vector2(1000,500),new Vector2(.5f,.6f),"观看广告获得奖励\n倒计时结束后可关闭广告");
+            var countdown=label("CountdownText",48,new Vector2(200,100),new Vector2(.5f,.32f),"0:02");
+            var content=label("AdContentText",Mathf.Clamp(Screen.width*.055f,18,42),new Vector2(1000,500),new Vector2(.5f,.6f),"观看广告获得奖励\n倒计时结束后可关闭广告");
+            var contentRect=content.rectTransform;contentRect.anchorMin=new Vector2(.08f,.5f);contentRect.anchorMax=new Vector2(.92f,.76f);contentRect.offsetMin=contentRect.offsetMax=Vector2.zero;
             var rect=NewRect("CloseButton",root);rect.anchorMin=rect.anchorMax=rect.pivot=Vector2.one;rect.anchoredPosition=new Vector2(-50,-50);rect.sizeDelta=new Vector2(120,50);
             var image=rect.gameObject.AddComponent<Image>();image.color=new Color(1,.3f,.3f,1);var button=rect.gameObject.AddComponent<Button>();button.targetGraphic=image;
-            var text=NewRect("ButtonText",rect);Stretch(text);var tmp=text.gameObject.AddComponent<TextMeshProUGUI>();tmp.font=UiAssets.Font();tmp.fontSize=24;tmp.alignment=TextAlignmentOptions.Center;tmp.text="关闭广告";
+            var text=NewRect("ButtonText",rect);Stretch(text);var tmp=text.gameObject.AddComponent<TextMeshProUGUI>();tmp.font=UiAssets.Font();tmp.fontSize=24;tmp.alignment=TextAlignmentOptions.Center;Txt(tmp,"关闭广告");
             On(rect.gameObject,false);originalAdFinished=false;
             Click(button,()=>{if(!originalAdFinished)return;popups.Remove(go);Destroy(go);originalAd=null;StartCoroutine(OriginalAdAward(awarded));});
             StartCoroutine(OriginalAdCountdown(countdown,content,rect.gameObject));
@@ -144,7 +145,7 @@ namespace Bufu.Rebuild {
         IEnumerator OriginalAdCountdown(TMP_Text timer,TMP_Text content,GameObject close) {
             float left=2;
             while(left>0&&originalAd){left=Mathf.Max(0,left-Time.unscaledDeltaTime);timer.text=Mathf.FloorToInt(left/60)+":"+Mathf.FloorToInt(left%60).ToString("00");yield return null;}
-            if(!originalAd)yield break;originalAdFinished=true;close.SetActive(true);timer.text="0:00";content.text="广告播放完成！\n点击关闭按钮获取奖励";
+            if(!originalAd)yield break;originalAdFinished=true;close.SetActive(true);timer.text="0:00";Txt(content,"广告播放完成！\n点击关闭按钮获取奖励");
         }
         static IEnumerator OriginalAdAward(Action action){yield return null;action?.Invoke();}
     }

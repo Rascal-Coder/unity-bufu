@@ -21,7 +21,7 @@ namespace Bufu.Rebuild {
         public GameModel Model {get;private set;}
         public readonly List<CoinActor> Coins=new List<CoinActor>();
         public RectTransform Root,Field;
-        public bool ModalOpen {get{popups.RemoveAll(x=>!x);return popups.Count>0;}}
+        public bool ModalOpen {get{popups.RemoveAll(x=>!x);return CutscenePlaying||popups.Count>0;}}
         public static bool VerificationMode=>Environment.GetCommandLineArgs().Contains("--verify-rebuild");
         static bool developerSession;
         static string PrefKey(string key)=>(developerSession?"dev.":"")+key;
@@ -44,6 +44,7 @@ namespace Bufu.Rebuild {
         void Start() {
             Application.targetFrameRate=60;
             bool dev=developerSession=DevMode.Enabled;
+            L10n.Initialize(dev,VerificationMode);
             soundOn=PlayerPrefs.GetInt(PrefKey("bufu.sound.on"),1)==1;musicOn=PlayerPrefs.GetInt(PrefKey("bufu.music.on"),1)==1;
             soundVolume=PlayerPrefs.GetFloat(PrefKey("bufu.sound.volume"),1);musicVolume=PlayerPrefs.GetFloat(PrefKey("bufu.music.volume"),1);
             Model=new GameModel(VerificationMode?new SaveData():SaveStore.Load(dev),dev);
@@ -52,6 +53,7 @@ namespace Bufu.Rebuild {
             Model.AccumulateOffline(now);Model.Changed+=OnChanged;
             LoadAudio();
             BuildCanvas();BuildAll();BuildDeveloperControls();
+            L10n.Changed+=RefreshLanguage;
             if(Model.State.pendingOffline>0)ShowOffline();
         }
 
@@ -66,7 +68,7 @@ namespace Bufu.Rebuild {
             if(dirty&&saveTimer>10&&!VerificationMode){SaveStore.Save(Model);dirty=false;saveTimer=0;}
             if(Input.GetKeyDown(KeyCode.Escape)&&ModalOpen)CloseTopPopup();
             if(Input.GetKeyDown(KeyCode.Space)&&!ModalOpen)FlipAll();
-            if(Model!=null&&!Model.PromotionRunning&&!Model.PromotionWonPending&&goalView==null&&offlineView==null&&Model.PendingGoal!=null)ShowGoal();
+            if(Model!=null&&!CutscenePlaying&&!Model.PromotionRunning&&!Model.PromotionWonPending&&goalView==null&&offlineView==null&&Model.PendingGoal!=null)ShowGoal();
             UpdatePromotion();
             ApplyAudio();
             if(Model!=null&&Model.DeveloperMode) {
@@ -110,14 +112,22 @@ namespace Bufu.Rebuild {
         }
 
         // ---------------------------------------------------------------- helpers
-        static void Txt(TMP_Text t,string s){if(t&&t.text!=s)t.text=s;}
+        static void Txt(TMP_Text t,string s)=>LocalizedText.Set(t,s);
         static void On(GameObject go,bool value){if(go&&go.activeSelf!=value)go.SetActive(value);}
-        void Click(Button b,Action action){if(!b)return;b.onClick.RemoveAllListeners();b.onClick.AddListener(()=>{PlayClick();action();});}
+        void Click(Button b,Action action){if(!b)return;b.onClick.RemoveAllListeners();b.onClick.AddListener(()=>{if(CutscenePlaying)return;PlayClick();action();});}
         void Click(GameObject go,Action action){if(go)Click(go.GetComponent<Button>(),action);}
         static Sprite Sp(string key)=>UiAssets.Sprite(key);
         static Sprite SpAt(string path)=>UiAssets.SpriteAt(path);
         /// <summary>Calls refresh now and again on every model change for as long as owner exists.</summary>
         void Watch(GameObject owner,Action refresh){watchers.Add(new KeyValuePair<GameObject,Action>(owner,refresh));refresh();}
+        readonly Dictionary<int,Vector4> textHome=new Dictionary<int,Vector4>();
+        /// <summary>English copy is longer. Remember the prefab rect and swap in a fitted one while English is active.</summary>
+        void PlaceLocalized(RectTransform rt,Vector2 size,Vector2 position) {
+            int id=rt.GetInstanceID();
+            if(!textHome.TryGetValue(id,out var home)){home=new Vector4(rt.sizeDelta.x,rt.sizeDelta.y,rt.anchoredPosition.x,rt.anchoredPosition.y);textHome[id]=home;}
+            if(L10n.IsEnglish){rt.sizeDelta=size;rt.anchoredPosition=position;}
+            else {rt.sizeDelta=new Vector2(home.x,home.y);rt.anchoredPosition=new Vector2(home.z,home.w);}
+        }
         void OnChanged(){dirty=true;RefreshAll();}
         void RefreshAll() {
             watchers.RemoveAll(x=>!x.Key);
@@ -135,7 +145,7 @@ namespace Bufu.Rebuild {
         // ---------------------------------------------------------------- popups
         public UiView OpenPopup(string resource) {var v=UiPrefab.Instantiate(resource,popupLayer);popups.Add(v.Root);return v;}
         public void ClosePopup(UiView v){if(v==null||!v.Root)return;popups.Remove(v.Root);Destroy(v.Root);}
-        void CloseTopPopup(){if(originalAd)return;if(promotionDialog!=null&&promotionDialog.Root&&popups.LastOrDefault()==promotionDialog.Root){promotionDialog.Ref<Button>("DialogPanel","bgButton").onClick.Invoke();return;}popups.RemoveAll(x=>!x);if(popups.Count==0)return;var go=popups[popups.Count-1];popups.RemoveAt(popups.Count-1);Destroy(go);}
+        void CloseTopPopup(){if(CutscenePlaying||originalAd)return;if(promotionDialog!=null&&promotionDialog.Root&&popups.LastOrDefault()==promotionDialog.Root){promotionDialog.Ref<Button>("DialogPanel","bgButton").onClick.Invoke();return;}popups.RemoveAll(x=>!x);if(popups.Count==0)return;var go=popups[popups.Count-1];popups.RemoveAt(popups.Count-1);Destroy(go);}
 
         GameObject toastObject;
         /// <summary>BroadcastManager.ShowPopUpTip: fades in, holds 2s, then fades out while rising.</summary>
@@ -143,9 +153,9 @@ namespace Bufu.Rebuild {
             if(!popupLayer||string.IsNullOrEmpty(message))return;
             if(toastObject)Destroy(toastObject);
             var v=UiPrefab.Instantiate("Common/tip",popupLayer);toastObject=v.Root;
-            var text=v.Node("text").GetComponent<TMP_Text>();text.text=message;text.color=Color.yellow;text.raycastTarget=false;
+            var text=v.Node("text").GetComponent<TMP_Text>();Txt(text,message);text.color=Color.yellow;text.raycastTarget=false;
             var bg=v.Node("bg").GetComponent<Image>();bg.raycastTarget=false;
-            Vector2 pref=text.GetPreferredValues(message,text.rectTransform.rect.width,100);
+            Vector2 pref=text.GetPreferredValues(text.text,text.rectTransform.rect.width,100);
             bg.rectTransform.sizeDelta=new Vector2(Mathf.Max(pref.x+40,200),Mathf.Max(pref.y+40,80));
             var rt=v.Rect;rt.anchoredPosition=new Vector2(0,600);rt.SetAsLastSibling();
             var group=v.Root.AddComponent<CanvasGroup>();group.alpha=0;group.blocksRaycasts=false;group.interactable=false;
@@ -251,7 +261,9 @@ namespace Bufu.Rebuild {
             var v=UiPrefab.Instantiate(critical?"Role/coinCriticalText":"Role/coinNormalText",Field);
             var text=v.Root.GetComponent<TMP_Text>();text.raycastTarget=false;
             float scale=Mathf.Clamp(1-.4f*floatingCount/FloatingMax,.6f,1f);
-            text.richText=true;text.text=SpriteText((critical?"暴":"+")+GameModel.Format(reward),critical);text.fontSize=48*scale;
+            // Sprite 12 is the red crit bolt, not a Chinese character. Both languages keep it.
+            string shown=(critical?"暴":"")+"+"+GameModel.Format(reward);
+            text.richText=true;text.text=SpriteText(shown,critical);text.fontSize=48*scale;
             var rt=v.Rect;rt.localScale=Vector3.one*2.8f;rt.anchoredPosition=position+new Vector2(0,83);floatingCount++;
             StartCoroutine(FloatRoutine(v.Root,rt,text));
         }

@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 namespace Bufu.Rebuild.UI {
     /// <summary>
-    /// Spine 3.8 region-attachment player for the shop marquee (Uieff_zhuanpan_light*).
-    /// Those effects have no mesh deformation. One canvas unit is one spine pixel.
+    /// Spine 3.8 region and weighted-mesh player for shop lights and the original
+    /// rebirth cutscene. One canvas unit is one spine pixel.
     /// </summary>
     [RequireComponent(typeof(CanvasRenderer))]
     public sealed class SpineGraphic:MaskableGraphic {
@@ -187,7 +187,7 @@ namespace Bufu.Rebuild.UI {
                     foreach(var item in (Dictionary<string,object>)slot.Value) {
                         var data=(Dictionary<string,object>)item.Value;
                         string type=data.Str("type","region");if(type!="region"&&type!="mesh")continue;
-                        string image=data.Str("name",item.Key); if(string.IsNullOrEmpty(image))image=item.Key;
+                        string image=data.Str("path",data.Str("name",item.Key)); if(string.IsNullOrEmpty(image))image=item.Key;
                         if(!pages.TryGetValue(image,out var page))continue;
                         clip.regions[slot.Key+"/"+item.Key]=type=="mesh"?MakeMesh(data,page):MakeRegion(data,page);
                     }

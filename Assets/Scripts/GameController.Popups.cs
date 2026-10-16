@@ -94,6 +94,11 @@ namespace Bufu.Rebuild {
             var v=OpenPopup("Evolve/EvolvePanel");
             string title=(world==1?EvolveTitles:DiceEvolveTitles)[Mathf.Clamp(quality-1,0,3)];Txt(v.Ref<TMP_Text>(cls,"titleTxt"),title);
             var titleImage=v.Ref<RectTransform>(cls,"titleImage");titleImage.sizeDelta=new Vector2(title.Length==4?500:title.Length==5?580:660,166);
+            var titleText=v.Ref<TMP_Text>(cls,"titleTxt");var titleSize=titleText.rectTransform.sizeDelta;bool titleWrap=titleText.enableWordWrapping;
+            Watch(v.Root,()=>{
+                titleText.rectTransform.sizeDelta=L10n.IsEnglish?new Vector2((titleImage.rect.width-135)*titleImage.lossyScale.x/titleText.rectTransform.lossyScale.x,titleSize.y):titleSize;
+                titleText.enableWordWrapping=L10n.IsEnglish?false:titleWrap;
+            });
             string kind=world==1?"coin":"dice";
             var first=SpAt("Assets/GameRes/NewUI/Evolve/images/"+kind+"_"+quality+"_"+(tier+1)+".png");if(first)v.Ref<Image>(cls,"objImage1").sprite=first;
             var second=SpAt("Assets/GameRes/NewUI/Evolve/images/"+kind+"_"+quality+"_"+(tier+2)+".png");if(second)v.Ref<Image>(cls,"objImage2").sprite=second;
@@ -120,6 +125,7 @@ namespace Bufu.Rebuild {
             // Server features of the original (restore archive, exit, version, GM) are not part of the offline rebuild.
             foreach(var field in new[]{"restoreButton","exitButton","gameVersion"})On(v.Ref(cls,field),false);
             var gm=v.Ref<Button>(cls,"gmBtn");if(gm)gm.onClick.RemoveAllListeners();
+            BuildLanguageSettings(v);
         }
 
         // ------------------------------------------------------------ CheckIn

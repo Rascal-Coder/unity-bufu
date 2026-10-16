@@ -273,7 +273,7 @@ namespace Bufu.Rebuild {
                 normalDiamond=Sp(v.SpriteField(cls,"normalDiamondBtnSprite")),disabledDiamond=Sp(v.SpriteField(cls,"disabledDiamondBtnSprite")),ad=Sp(v.SpriteField(cls,"adBtnSprite"));
             int baseId=Model.BaseId;bool isHelper=kind==0&&c.id==baseId+1;int quality=c.id-baseId-1;bool currency=kind==0&&quality>=1&&quality<=4;
             var iconSprite=ItemIcon(kind,c.id);if(iconSprite)icon.sprite=iconSprite;
-            nameTmp.text=c.itemName;On(tips,false);var tipsRect=(RectTransform)tips.transform;Vector2 tipsHome=tipsRect.anchoredPosition;var tipCard=tipsRect.parent;Coroutine tipRoutine=null;
+            Txt(nameTmp,c.itemName);On(tips,false);var tipsRect=(RectTransform)tips.transform;Vector2 tipsHome=tipsRect.anchoredPosition;var tipCard=tipsRect.parent;Coroutine tipRoutine=null;
             var cardRect=v.Rect;
 
             Func<bool> affordable=()=>{
@@ -297,7 +297,14 @@ namespace Bufu.Rebuild {
                 bool unlocked=Model.Unlocked(c);int lv=Model.LevelKind(c.id,kind);int max=Model.MaxLevel(c);bool maxed=lv>=max;
                 On(unlockImage,!unlocked);On(lockTmp.gameObject,!unlocked);
                 if(!unlocked){
+                    // The English requirement is wider than the card. Keep it inside the icon and the card edge.
+                    PlaceLocalized(lockTmp.rectTransform,new Vector2(400,92),new Vector2(68,-50));
                     Txt(lockTmp,Model.LockText(c));
+                    if(L10n.IsEnglish){
+                        lockTmp.enableWordWrapping=true;lockTmp.overflowMode=TextOverflowModes.Ellipsis;
+                        lockTmp.enableAutoSizing=true;lockTmp.fontSizeMax=32;lockTmp.fontSizeMin=20;
+                        lockTmp.horizontalAlignment=HorizontalAlignmentOptions.Left;
+                    }
                     On(upgradeBtn.gameObject,false);On(lvImage,false);On(lvTmp.gameObject,false);On(evolveBtn.gameObject,false);On(levelMax,false);On(maxTip,false);
                     return;
                 }

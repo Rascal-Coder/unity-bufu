@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Coffee.UIExtensions;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,6 +14,8 @@ namespace Bufu.Rebuild.UI {
         sealed class SpriteMeta {public int w,h;public Vector4 border;public float ppu=100;public Vector2 pivot=new Vector2(.5f,.5f);}
         static Dictionary<string,SpriteMeta> metas;
         static readonly Dictionary<string,Sprite> sprites=new Dictionary<string,Sprite>();
+        static readonly Dictionary<string,bool> englishArt=new Dictionary<string,bool>();
+        static readonly Dictionary<string,Sprite> authored=new Dictionary<string,Sprite>();
         static readonly Dictionary<string,TMP_FontAsset> fonts=new Dictionary<string,TMP_FontAsset>();
 
         static void LoadMetas() {
@@ -27,11 +30,23 @@ namespace Bufu.Rebuild.UI {
             }
         }
 
+        public static bool HasEnglishArt(string key) {
+            if(string.IsNullOrEmpty(key))return false;
+            if(englishArt.TryGetValue(key,out var yes))return yes;
+            yes=Resources.Load<Texture2D>("UI/Sprites/en/"+key);
+            englishArt[key]=yes;return yes;
+        }
+
         public static Sprite Sprite(string key) {
             if(string.IsNullOrEmpty(key))return null;
-            if(sprites.TryGetValue(key,out var cached))return cached;
+            bool english=L10n.IsEnglish&&HasEnglishArt(key);
+            return LoadSprite(key,english?"en:"+key:"zh:"+key,english?"UI/Sprites/en/"+key:"UI/Sprites/"+key);
+        }
+
+        static Sprite LoadSprite(string key,string cacheKey,string resource) {
+            if(sprites.TryGetValue(cacheKey,out var cached))return cached;
             LoadMetas();
-            var tex=Resources.Load<Texture2D>("UI/Sprites/"+key);
+            var tex=Resources.Load<Texture2D>(resource);
             Sprite sprite=null;
             if(tex) {
                 metas.TryGetValue(key,out var m);m=m??new SpriteMeta();
@@ -42,7 +57,37 @@ namespace Bufu.Rebuild.UI {
                 sprite=UnityEngine.Sprite.Create(tex,new Rect(0,0,w,h),m.pivot,m.ppu<=0?100:m.ppu,0,SpriteMeshType.FullRect,m.border);
                 sprite.name=key;
             }
-            sprites[key]=sprite;return sprite;
+            sprites[cacheKey]=sprite;return sprite;
+        }
+
+        /// <summary>Swap remade artwork on an existing tree. Sprite names stay the original keys.</summary>
+        public static void ApplyLanguage(GameObject root) {
+            if(!root)return;
+            foreach(var image in root.GetComponentsInChildren<Image>(true)) {
+                var next=Localize(image.sprite);
+                if(next&&next!=image.sprite)image.sprite=next;
+            }
+            foreach(var sequence in root.GetComponentsInChildren<UISpriteAnimationSequence>(true))sequence.Retarget(Localize);
+            foreach(var system in root.GetComponentsInChildren<ParticleSystem>(true)) {
+                var sheet=system.textureSheetAnimation;
+                if(sheet.mode!=ParticleSystemAnimationMode.Sprites)continue;
+                for(int i=0;i<sheet.spriteCount;i++) {
+                    var next=Localize(sheet.GetSprite(i));
+                    if(next&&next!=sheet.GetSprite(i))sheet.SetSprite(i,next);
+                }
+            }
+            foreach(var particle in root.GetComponentsInChildren<UIParticle>(true))particle.RefreshParticles();
+        }
+
+        static Sprite Localize(Sprite current) {
+            if(!current||string.IsNullOrEmpty(current.name)||!HasEnglishArt(current.name))return current;
+            if(L10n.IsEnglish) {
+                var next=Sprite(current.name);
+                if(next&&next!=current&&!authored.ContainsKey(current.name))authored[current.name]=current;
+                return next?next:current;
+            }
+            if(authored.TryGetValue(current.name,out var original))return original;
+            return LoadSprite(current.name,"zh:"+current.name,"UI/Sprites/"+current.name)??current;
         }
 
         /// <summary>Puts a cropped sprite back inside its original pixel rect. A larger source is scaled to that rect.</summary>
@@ -159,6 +204,7 @@ namespace Bufu.Rebuild.UI {
                 if(scroll.horizontal)fit.horizontalFit=ContentSizeFitter.FitMode.PreferredSize;
             }
             for(int i=count-1;i>=0;i--)nodes[i].SetActive(raw[i].B("a",true));
+            if(L10n.IsEnglish)UiAssets.ApplyLanguage(view.Root);
             return view;
         }
 
@@ -248,6 +294,7 @@ namespace Bufu.Rebuild.UI {
                     var spriteAsset=UiAssets.SpriteAsset(c.Obj("m_spriteAsset").Str("spriteAsset",null));
                     if(spriteAsset)t.spriteAsset=spriteAsset;
                     t.text=c.Str("m_text");
+                    LocalizedText.Set(t,t.text);
                     break;
                 }
                 case "TextMeshProOutline": {

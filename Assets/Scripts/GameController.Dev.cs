@@ -39,7 +39,7 @@ namespace Bufu.Rebuild {
         static void DeveloperText(Transform parent,string text,Vector2 size,Vector2 position) {
             var rect=NewRect("Label",parent);rect.sizeDelta=size;rect.anchoredPosition=position;
             var label=rect.gameObject.AddComponent<TextMeshProUGUI>();label.font=UiAssets.Font();label.fontSize=42;
-            label.alignment=TextAlignmentOptions.Center;label.color=Color.white;label.text=text;label.raycastTarget=false;
+            label.alignment=TextAlignmentOptions.Center;label.color=Color.white;Txt(label,text);label.raycastTarget=false;
         }
 
         RectTransform DeveloperButton(Transform parent,string name,string label,Vector2 size,Action action) {

@@ -1,0 +1,4728 @@
+{
+  "languages": [
+    "zh-CN",
+    "en"
+  ],
+  "entries": [
+    {
+      "key": "original.001",
+      "zh": "初级场",
+      "en": "Starter Auction"
+    },
+    {
+      "key": "original.002",
+      "zh": "街区场",
+      "en": "District Auction"
+    },
+    {
+      "key": "original.003",
+      "zh": "港口场",
+      "en": "Harbor Auction"
+    },
+    {
+      "key": "original.004",
+      "zh": "仓储场",
+      "en": "Warehouse Auction"
+    },
+    {
+      "key": "original.005",
+      "zh": "国际场",
+      "en": "Global Auction"
+    },
+    {
+      "key": "original.006",
+      "zh": "黑金场",
+      "en": "Black Gold Auction"
+    },
+    {
+      "key": "original.007",
+      "zh": "旧毛巾",
+      "en": "Old Towel"
+    },
+    {
+      "key": "original.008",
+      "zh": "塑料水杯",
+      "en": "Plastic Cup"
+    },
+    {
+      "key": "original.009",
+      "zh": "电风扇",
+      "en": "Electric Fan"
+    },
+    {
+      "key": "original.010",
+      "zh": "香水",
+      "en": "Perfume"
+    },
+    {
+      "key": "original.011",
+      "zh": "玩具车",
+      "en": "Toy Car"
+    },
+    {
+      "key": "original.012",
+      "zh": "运动鞋",
+      "en": "Sneakers"
+    },
+    {
+      "key": "original.013",
+      "zh": "蓝牙耳机",
+      "en": "Bluetooth Earbuds"
+    },
+    {
+      "key": "original.014",
+      "zh": "手持游戏机",
+      "en": "Handheld Console"
+    },
+    {
+      "key": "original.015",
+      "zh": "咖啡机",
+      "en": "Coffee Maker"
+    },
+    {
+      "key": "original.016",
+      "zh": "行李箱",
+      "en": "Suitcase"
+    },
+    {
+      "key": "original.017",
+      "zh": "平板电脑",
+      "en": "Tablet"
+    },
+    {
+      "key": "original.018",
+      "zh": "名牌包",
+      "en": "Designer Bag"
+    },
+    {
+      "key": "original.019",
+      "zh": "单反相机",
+      "en": "DSLR Camera"
+    },
+    {
+      "key": "original.020",
+      "zh": "笔记本电脑",
+      "en": "Laptop"
+    },
+    {
+      "key": "original.021",
+      "zh": "高级音响",
+      "en": "Premium Speakers"
+    },
+    {
+      "key": "original.022",
+      "zh": "名表",
+      "en": "Luxury Watch"
+    },
+    {
+      "key": "original.023",
+      "zh": "金项链",
+      "en": "Gold Necklace"
+    },
+    {
+      "key": "original.024",
+      "zh": "古董花瓶",
+      "en": "Antique Vase"
+    },
+    {
+      "key": "original.025",
+      "zh": "限量球鞋",
+      "en": "Limited Sneakers"
+    },
+    {
+      "key": "original.026",
+      "zh": "名家画作",
+      "en": "Masterpiece"
+    },
+    {
+      "key": "original.027",
+      "zh": "钻石戒指",
+      "en": "Diamond Ring"
+    },
+    {
+      "key": "original.028",
+      "zh": "黄金怀表",
+      "en": "Gold Pocket Watch"
+    },
+    {
+      "key": "original.029",
+      "zh": "珍藏邮票",
+      "en": "Rare Stamps"
+    },
+    {
+      "key": "original.030",
+      "zh": "古董青铜器",
+      "en": "Antique Bronze"
+    },
+    {
+      "key": "original.031",
+      "zh": "稀有宝石",
+      "en": "Rare Gem"
+    },
+    {
+      "key": "original.032",
+      "zh": "破损电视",
+      "en": "Broken TV"
+    },
+    {
+      "key": "original.033",
+      "zh": "旧木椅",
+      "en": "Old Wooden Chair"
+    },
+    {
+      "key": "original.034",
+      "zh": "复古唱片机",
+      "en": "Vintage Turntable"
+    },
+    {
+      "key": "original.035",
+      "zh": "保险箱",
+      "en": "Safe"
+    },
+    {
+      "key": "original.036",
+      "zh": "神秘木箱",
+      "en": "Mystery Crate"
+    },
+    {
+      "key": "original.037",
+      "zh": "初始金钱",
+      "en": "Starting Cash"
+    },
+    {
+      "key": "original.038",
+      "zh": "红毯酒馆",
+      "en": "Red Carpet Lounge"
+    },
+    {
+      "key": "original.039",
+      "zh": "铜币收益",
+      "en": "Bronze Coin Earnings"
+    },
+    {
+      "key": "original.040",
+      "zh": "大理石桌",
+      "en": "Marble Table"
+    },
+    {
+      "key": "original.041",
+      "zh": "手动翻转的硬币收益",
+      "en": "Manual Coin Flip Earnings"
+    },
+    {
+      "key": "original.042",
+      "zh": "玛雅古石",
+      "en": "Mayan Stone"
+    },
+    {
+      "key": "original.043",
+      "zh": "所有硬币暴击收益",
+      "en": "All Coin Crit Earnings"
+    },
+    {
+      "key": "original.044",
+      "zh": "磁力星空",
+      "en": "Magnetic Cosmos"
+    },
+    {
+      "key": "original.045",
+      "zh": "经典绿呢",
+      "en": "Classic Green Felt"
+    },
+    {
+      "key": "original.046",
+      "zh": "银币收益",
+      "en": "Silver Coin Earnings"
+    },
+    {
+      "key": "original.047",
+      "zh": "赛博工坊",
+      "en": "Cyber Workshop"
+    },
+    {
+      "key": "original.048",
+      "zh": "金币收益",
+      "en": "Gold Coin Earnings"
+    },
+    {
+      "key": "original.049",
+      "zh": "街头公路",
+      "en": "Street Highway"
+    },
+    {
+      "key": "original.050",
+      "zh": "涂鸦黑板",
+      "en": "Graffiti Board"
+    },
+    {
+      "key": "original.051",
+      "zh": "所有硬币收益",
+      "en": "All Coin Earnings"
+    },
+    {
+      "key": "original.052",
+      "zh": "绒布桌台",
+      "en": "Velvet Table"
+    },
+    {
+      "key": "original.053",
+      "zh": "铜骰子收益",
+      "en": "Bronze Die Earnings"
+    },
+    {
+      "key": "original.054",
+      "zh": "远古树桩",
+      "en": "Ancient Stump"
+    },
+    {
+      "key": "original.055",
+      "zh": "手动翻转的骰子收益",
+      "en": "Manual Dice Flip Earnings"
+    },
+    {
+      "key": "original.056",
+      "zh": "桌游版图",
+      "en": "Board Game Map"
+    },
+    {
+      "key": "original.057",
+      "zh": "所有骰子暴击收益",
+      "en": "All Dice Crit Earnings"
+    },
+    {
+      "key": "original.058",
+      "zh": "机械平台",
+      "en": "Mech Platform"
+    },
+    {
+      "key": "original.059",
+      "zh": "星空银河",
+      "en": "Cosmic Galaxy"
+    },
+    {
+      "key": "original.060",
+      "zh": "银骰子收益",
+      "en": "Silver Die Earnings"
+    },
+    {
+      "key": "original.061",
+      "zh": "丛林空地",
+      "en": "Jungle Clearing"
+    },
+    {
+      "key": "original.062",
+      "zh": "金骰子收益",
+      "en": "Gold Die Earnings"
+    },
+    {
+      "key": "original.063",
+      "zh": "滨海小道",
+      "en": "Coastal Trail"
+    },
+    {
+      "key": "original.064",
+      "zh": "骰子磁场",
+      "en": "Dice Magnet"
+    },
+    {
+      "key": "original.065",
+      "zh": "所有骰子收益",
+      "en": "All Dice Earnings"
+    },
+    {
+      "key": "original.066",
+      "zh": "大力士",
+      "en": "Strongman"
+    },
+    {
+      "key": "original.067",
+      "zh": "产生的暴击收益*sss倍",
+      "en": "Crit Earnings xsss"
+    },
+    {
+      "key": "original.068",
+      "zh": "抛起硬币后，寻找最近的硬币",
+      "en": "After tossing a coin, finds the nearest coin"
+    },
+    {
+      "key": "original.069",
+      "zh": "镇守一方",
+      "en": "Hold the Line"
+    },
+    {
+      "key": "original.070",
+      "zh": "披风侠",
+      "en": "Cape Hero"
+    },
+    {
+      "key": "original.071",
+      "zh": "召唤sss个旋风，将沿路的硬币抛起",
+      "en": "Summons sss whirlwinds that toss coins along their paths"
+    },
+    {
+      "key": "original.072",
+      "zh": "飓风移动更快更远。",
+      "en": "Hurricanes move faster and farther."
+    },
+    {
+      "key": "original.073",
+      "zh": "蓝色飓风",
+      "en": "Blue Hurricane"
+    },
+    {
+      "key": "original.074",
+      "zh": "魔法师",
+      "en": "Mage"
+    },
+    {
+      "key": "original.075",
+      "zh": "每次抛起周围sss个硬币",
+      "en": "Tosses sss nearby coins each time"
+    },
+    {
+      "key": "original.076",
+      "zh": "优先抛起价值更高的硬币。",
+      "en": "Prioritizes higher-value coins."
+    },
+    {
+      "key": "original.077",
+      "zh": "被抛起的硬币暴击概率增加30%",
+      "en": "Tossed coins gain +30% Crit Chance"
+    },
+    {
+      "key": "original.078",
+      "zh": "精准打击",
+      "en": "Precision Strike"
+    },
+    {
+      "key": "original.079",
+      "zh": "附魔",
+      "en": "Enchant"
+    },
+    {
+      "key": "original.080",
+      "zh": "功夫",
+      "en": "Kung Fu"
+    },
+    {
+      "key": "original.081",
+      "zh": "如来神掌：击起地面sss范围的硬币",
+      "en": "Buddha Palm: Tosses coins in an sss area"
+    },
+    {
+      "key": "original.082",
+      "zh": "如来神掌打击范围增加",
+      "en": "Buddha Palm range increased"
+    },
+    {
+      "key": "original.083",
+      "zh": "如来神掌周围硬币有概率被抛起",
+      "en": "Coins near Buddha Palm may be tossed"
+    },
+    {
+      "key": "original.084",
+      "zh": "大手印",
+      "en": "Giant Palm"
+    },
+    {
+      "key": "original.085",
+      "zh": "余波",
+      "en": "Aftershock"
+    },
+    {
+      "key": "original.086",
+      "zh": "练习生",
+      "en": "Rookie"
+    },
+    {
+      "key": "original.087",
+      "zh": "发射SSS个篮球，将沿路硬币抛起",
+      "en": "Fires SSS basketballs that toss coins along their paths"
+    },
+    {
+      "key": "original.088",
+      "zh": "篮球碰到边缘会反弹1次",
+      "en": "Basketballs bounce once at the edge"
+    },
+    {
+      "key": "original.089",
+      "zh": "反弹次数+2",
+      "en": "Bounces +2"
+    },
+    {
+      "key": "original.090",
+      "zh": "反弹次数+3",
+      "en": "Bounces +3"
+    },
+    {
+      "key": "original.091",
+      "zh": "反弹I",
+      "en": "Bounce I"
+    },
+    {
+      "key": "original.092",
+      "zh": "反弹II",
+      "en": "Bounce II"
+    },
+    {
+      "key": "original.093",
+      "zh": "反弹III",
+      "en": "Bounce III"
+    },
+    {
+      "key": "original.094",
+      "zh": "大蛇",
+      "en": "Orochi"
+    },
+    {
+      "key": "original.095",
+      "zh": "召唤SSS个触手，将周围的硬币抛起",
+      "en": "Summons SSS tentacles to toss nearby coins"
+    },
+    {
+      "key": "original.096",
+      "zh": "硬币抛起过程变快",
+      "en": "Coins are tossed faster"
+    },
+    {
+      "key": "original.097",
+      "zh": "被触手抛起的硬币立刻结算，不再翻转",
+      "en": "Tentacle-tossed coins settle instantly without flipping"
+    },
+    {
+      "key": "original.098",
+      "zh": "优先抛起价值更高的硬币",
+      "en": "Prioritizes higher-value coins"
+    },
+    {
+      "key": "original.099",
+      "zh": "唯快不破",
+      "en": "Speed Wins"
+    },
+    {
+      "key": "original.100",
+      "zh": "时间黑洞",
+      "en": "Time Vortex"
+    },
+    {
+      "key": "original.101",
+      "zh": "九尾狐",
+      "en": "Nine-Tailed Fox"
+    },
+    {
+      "key": "original.102",
+      "zh": "发射SSS颗爱心光球，随机抛起路径上硬币",
+      "en": "Fires SSS heart orbs that randomly toss coins in their paths"
+    },
+    {
+      "key": "original.103",
+      "zh": "爱心光球能够来回往返",
+      "en": "Heart orbs can travel back and forth"
+    },
+    {
+      "key": "original.104",
+      "zh": "爱心光球抵达终点后，会吸引周围硬币",
+      "en": "Heart orbs attract nearby coins at the end"
+    },
+    {
+      "key": "original.105",
+      "zh": "九尾狐登场后，全场硬币暴击率增加",
+      "en": "Nine-Tailed Fox boosts all Coin Crit Chance"
+    },
+    {
+      "key": "original.106",
+      "zh": "双倍快乐",
+      "en": "Double Delight"
+    },
+    {
+      "key": "original.107",
+      "zh": "魅惑",
+      "en": "Charm"
+    },
+    {
+      "key": "original.108",
+      "zh": "恋爱暴击",
+      "en": "Love Crit"
+    },
+    {
+      "key": "original.109",
+      "zh": "钢铁人",
+      "en": "Iron Hero"
+    },
+    {
+      "key": "original.110",
+      "zh": "发射SSS颗导弹，将范围硬币抛起",
+      "en": "Fires SSS missiles that toss coins in range"
+    },
+    {
+      "key": "original.111",
+      "zh": "导弹自动瞄准硬币密集处",
+      "en": "Missiles target dense coin clusters"
+    },
+    {
+      "key": "original.112",
+      "zh": "被导弹击中的硬币，收益暴击率增加",
+      "en": "Missile-hit coins gain Crit Chance"
+    },
+    {
+      "key": "original.113",
+      "zh": "每隔一段时间，释放核弹，全屏硬币抛起",
+      "en": "Periodically drops a nuke, tossing all coins"
+    },
+    {
+      "key": "original.114",
+      "zh": "优先打击",
+      "en": "Priority Target"
+    },
+    {
+      "key": "original.115",
+      "zh": "火力覆盖",
+      "en": "Firestorm"
+    },
+    {
+      "key": "original.116",
+      "zh": "全屏轰炸",
+      "en": "Full-Screen Blast"
+    },
+    {
+      "key": "original.117",
+      "zh": "哈大壮",
+      "en": "Big Hal"
+    },
+    {
+      "key": "original.118",
+      "zh": "召唤魔人大脚，击起地面sss范围的硬币",
+      "en": "Summons a giant demon foot to toss coins in an sss area"
+    },
+    {
+      "key": "original.119",
+      "zh": "被翻起的硬币，会额外翻转一次",
+      "en": "Tossed coins flip one extra time"
+    },
+    {
+      "key": "original.120",
+      "zh": "释放大脚时，会召唤1个足球，抛起沿路的硬币",
+      "en": "Giant Foot also summons 1 soccer ball to toss coins in its path"
+    },
+    {
+      "key": "original.121",
+      "zh": "释放大脚时，会召唤2个足球，抛起沿路的硬币",
+      "en": "Giant Foot also summons 2 soccer balls to toss coins in their paths"
+    },
+    {
+      "key": "original.122",
+      "zh": "无敌冲撞",
+      "en": "Unstoppable Charge"
+    },
+    {
+      "key": "original.123",
+      "zh": "梅开二度",
+      "en": "Double Score"
+    },
+    {
+      "key": "original.124",
+      "zh": "帽子戏法",
+      "en": "Hat Trick"
+    },
+    {
+      "key": "original.125",
+      "zh": "赌神",
+      "en": "Dice God"
+    },
+    {
+      "key": "original.126",
+      "zh": "召唤炸弹，抛起十字范围内的所有骰子",
+      "en": "Summons a bomb that tosses all dice in a cross"
+    },
+    {
+      "key": "original.127",
+      "zh": "收益会乘以骰子炸弹的点数",
+      "en": "Earnings are multiplied by the Dice Bomb roll"
+    },
+    {
+      "key": "original.128",
+      "zh": "同时召唤2个骰子炸弹",
+      "en": "Summons 2 Dice Bombs at once"
+    },
+    {
+      "key": "original.129",
+      "zh": "骰子炸弹点数固定为6点",
+      "en": "Dice Bomb always rolls 6"
+    },
+    {
+      "key": "original.130",
+      "zh": "幸运爆棚",
+      "en": "Jackpot Luck"
+    },
+    {
+      "key": "original.131",
+      "zh": "双重引信",
+      "en": "Double Fuse"
+    },
+    {
+      "key": "original.132",
+      "zh": "天选六点",
+      "en": "Chosen Six"
+    },
+    {
+      "key": "original.133",
+      "zh": "金钱",
+      "en": "Cash"
+    },
+    {
+      "key": "original.134",
+      "zh": "翻硬币获得的基础资源",
+      "en": "Base resource earned by flipping coins"
+    },
+    {
+      "key": "original.135",
+      "zh": "钻石",
+      "en": "Diamonds"
+    },
+    {
+      "key": "original.136",
+      "zh": "游戏内常见资源",
+      "en": "A common in-game resource"
+    },
+    {
+      "key": "original.137",
+      "zh": "N级帮手碎片",
+      "en": "N Helper Shards"
+    },
+    {
+      "key": "original.138",
+      "zh": "用于N级帮手升级的碎片",
+      "en": "Used to upgrade N Helpers"
+    },
+    {
+      "key": "original.139",
+      "zh": "R级帮手碎片",
+      "en": "R Helper Shards"
+    },
+    {
+      "key": "original.140",
+      "zh": "用于R级帮手升级的碎片",
+      "en": "Used to upgrade R Helpers"
+    },
+    {
+      "key": "original.141",
+      "zh": "SR级帮手碎片",
+      "en": "SR Helper Shards"
+    },
+    {
+      "key": "original.142",
+      "zh": "用于SR级帮手升级的碎片",
+      "en": "Used to upgrade SR Helpers"
+    },
+    {
+      "key": "original.143",
+      "zh": "天赋点",
+      "en": "Talent Points"
+    },
+    {
+      "key": "original.144",
+      "zh": "用于天赋树技能升级",
+      "en": "Used to upgrade Talent Tree skills"
+    },
+    {
+      "key": "original.145",
+      "zh": "帮手",
+      "en": "Helper"
+    },
+    {
+      "key": "original.146",
+      "zh": "召唤1个帮手",
+      "en": "Summon 1 Helper"
+    },
+    {
+      "key": "original.147",
+      "zh": "铜币",
+      "en": "Bronze Coin"
+    },
+    {
+      "key": "original.148",
+      "zh": "召唤1个铜币",
+      "en": "Summon 1 Bronze Coin"
+    },
+    {
+      "key": "original.149",
+      "zh": "银币",
+      "en": "Silver Coin"
+    },
+    {
+      "key": "original.150",
+      "zh": "召唤1个银币",
+      "en": "Summon 1 Silver Coin"
+    },
+    {
+      "key": "original.151",
+      "zh": "金币",
+      "en": "Gold Coin"
+    },
+    {
+      "key": "original.152",
+      "zh": "召唤1个金币",
+      "en": "Summon 1 Gold Coin"
+    },
+    {
+      "key": "original.153",
+      "zh": "紫金币",
+      "en": "Purple Coin"
+    },
+    {
+      "key": "original.154",
+      "zh": "召唤1个紫金币",
+      "en": "Summon 1 Purple Coin"
+    },
+    {
+      "key": "original.155",
+      "zh": "铜骰子",
+      "en": "Bronze Die"
+    },
+    {
+      "key": "original.156",
+      "zh": "召唤1个铜骰子",
+      "en": "Summon 1 Bronze Die"
+    },
+    {
+      "key": "original.157",
+      "zh": "银骰子",
+      "en": "Silver Die"
+    },
+    {
+      "key": "original.158",
+      "zh": "召唤1个银骰子",
+      "en": "Summon 1 Silver Die"
+    },
+    {
+      "key": "original.159",
+      "zh": "金骰子",
+      "en": "Gold Die"
+    },
+    {
+      "key": "original.160",
+      "zh": "召唤1个金骰子",
+      "en": "Summon 1 Gold Die"
+    },
+    {
+      "key": "original.161",
+      "zh": "紫金骰子",
+      "en": "Purple Die"
+    },
+    {
+      "key": "original.162",
+      "zh": "召唤1个紫金骰子",
+      "en": "Summon 1 Purple Die"
+    },
+    {
+      "key": "original.163",
+      "zh": "铜币上涨",
+      "en": "Bronze Coin Boost"
+    },
+    {
+      "key": "original.164",
+      "zh": "增加铜币价值",
+      "en": "Increase Bronze Coin value"
+    },
+    {
+      "key": "original.165",
+      "zh": "铜币价值+15%",
+      "en": "Bronze Coin Value +15%"
+    },
+    {
+      "key": "original.166",
+      "zh": "银币上涨",
+      "en": "Silver Coin Boost"
+    },
+    {
+      "key": "original.167",
+      "zh": "增加银币价值",
+      "en": "Increase Silver Coin value"
+    },
+    {
+      "key": "original.168",
+      "zh": "银币价值+15%",
+      "en": "Silver Coin Value +15%"
+    },
+    {
+      "key": "original.169",
+      "zh": "金币上涨",
+      "en": "Gold Coin Boost"
+    },
+    {
+      "key": "original.170",
+      "zh": "增加金币价值",
+      "en": "Increase Gold Coin value"
+    },
+    {
+      "key": "original.171",
+      "zh": "金币价值+15%",
+      "en": "Gold Coin Value +15%"
+    },
+    {
+      "key": "original.172",
+      "zh": "翻起银币",
+      "en": "Flip Silver Coins"
+    },
+    {
+      "key": "original.173",
+      "zh": "帮手可翻银币",
+      "en": "Helpers can flip Silver Coins"
+    },
+    {
+      "key": "original.174",
+      "zh": "帮手现在可以抛起银币啦！",
+      "en": "Helpers can now toss Silver Coins!"
+    },
+    {
+      "key": "original.175",
+      "zh": "翻起金币",
+      "en": "Flip Gold Coins"
+    },
+    {
+      "key": "original.176",
+      "zh": "帮手可翻金币",
+      "en": "Helpers can flip Gold Coins"
+    },
+    {
+      "key": "original.177",
+      "zh": "帮手现在可以抛起金币啦！",
+      "en": "Helpers can now toss Gold Coins!"
+    },
+    {
+      "key": "original.178",
+      "zh": "滑动收割1",
+      "en": "Swipe Harvest I"
+    },
+    {
+      "key": "original.179",
+      "zh": "滑动可抛起铜币",
+      "en": "Swipe to toss Bronze Coins"
+    },
+    {
+      "key": "original.180",
+      "zh": "手指滑动铜币就可丝滑抛起！",
+      "en": "Swipe across Bronze Coins to toss them!"
+    },
+    {
+      "key": "original.181",
+      "zh": "滑动收割2",
+      "en": "Swipe Harvest II"
+    },
+    {
+      "key": "original.182",
+      "zh": "滑动可抛起银币",
+      "en": "Swipe to toss Silver Coins"
+    },
+    {
+      "key": "original.183",
+      "zh": "手指滑动银币就可丝滑抛起！",
+      "en": "Swipe across Silver Coins to toss them!"
+    },
+    {
+      "key": "original.184",
+      "zh": "滑动收割3",
+      "en": "Swipe Harvest III"
+    },
+    {
+      "key": "original.185",
+      "zh": "滑动可抛起金币",
+      "en": "Swipe to toss Gold Coins"
+    },
+    {
+      "key": "original.186",
+      "zh": "手指滑动金币就可丝滑抛起！",
+      "en": "Swipe across Gold Coins to toss them!"
+    },
+    {
+      "key": "original.187",
+      "zh": "快速移动",
+      "en": "Quick Step"
+    },
+    {
+      "key": "original.188",
+      "zh": "帮手移动速度提升",
+      "en": "Helper Move Speed increased"
+    },
+    {
+      "key": "original.189",
+      "zh": "连环反应1",
+      "en": "Chain Reaction I"
+    },
+    {
+      "key": "original.190",
+      "zh": "银币落下让铜币翻转",
+      "en": "Falling Silver Coins flip Bronze Coins"
+    },
+    {
+      "key": "original.191",
+      "zh": "银币砸下可触发铜币抛起",
+      "en": "Falling Silver Coins toss Bronze Coins"
+    },
+    {
+      "key": "original.192",
+      "zh": "连环反应2",
+      "en": "Chain Reaction II"
+    },
+    {
+      "key": "original.193",
+      "zh": "金币落下让银币翻转",
+      "en": "Falling Gold Coins flip Silver Coins"
+    },
+    {
+      "key": "original.194",
+      "zh": "金币砸下可触发铜币和银币抛起",
+      "en": "Falling Gold Coins toss Bronze and Silver Coins"
+    },
+    {
+      "key": "original.195",
+      "zh": "幸运回响",
+      "en": "Lucky Echo"
+    },
+    {
+      "key": "original.196",
+      "zh": "硬币+5%概率重复翻转",
+      "en": "Coins have +5% chance to flip again"
+    },
+    {
+      "key": "original.197",
+      "zh": "硬币+5%概率会重复翻转一次",
+      "en": "Coins have +5% chance to flip one more time"
+    },
+    {
+      "key": "original.198",
+      "zh": "紫金上涨",
+      "en": "Purple Coin Boost"
+    },
+    {
+      "key": "original.199",
+      "zh": "增加紫金币价值",
+      "en": "Increase Purple Coin value"
+    },
+    {
+      "key": "original.200",
+      "zh": "紫金币价值+15%",
+      "en": "Purple Coin Value +15%"
+    },
+    {
+      "key": "original.201",
+      "zh": "铜骰子上涨",
+      "en": "Bronze Die Boost"
+    },
+    {
+      "key": "original.202",
+      "zh": "增加铜骰子价值",
+      "en": "Increase Bronze Die value"
+    },
+    {
+      "key": "original.203",
+      "zh": "铜骰子价值+15%",
+      "en": "Bronze Die Value +15%"
+    },
+    {
+      "key": "original.204",
+      "zh": "银骰子上涨",
+      "en": "Silver Die Boost"
+    },
+    {
+      "key": "original.205",
+      "zh": "增加银骰子价值",
+      "en": "Increase Silver Die value"
+    },
+    {
+      "key": "original.206",
+      "zh": "银骰子价值+15%",
+      "en": "Silver Die Value +15%"
+    },
+    {
+      "key": "original.207",
+      "zh": "金骰子上涨",
+      "en": "Gold Die Boost"
+    },
+    {
+      "key": "original.208",
+      "zh": "增加金骰子价值",
+      "en": "Increase Gold Die value"
+    },
+    {
+      "key": "original.209",
+      "zh": "金骰子价值+15%",
+      "en": "Gold Die Value +15%"
+    },
+    {
+      "key": "original.210",
+      "zh": "翻起银骰子",
+      "en": "Flip Silver Dice"
+    },
+    {
+      "key": "original.211",
+      "zh": "帮手可翻银骰子",
+      "en": "Helpers can flip Silver Dice"
+    },
+    {
+      "key": "original.212",
+      "zh": "帮手现在可以抛起银骰子啦！",
+      "en": "Helpers can now toss Silver Dice!"
+    },
+    {
+      "key": "original.213",
+      "zh": "翻起金骰子",
+      "en": "Flip Gold Dice"
+    },
+    {
+      "key": "original.214",
+      "zh": "帮手可翻金骰子",
+      "en": "Helpers can flip Gold Dice"
+    },
+    {
+      "key": "original.215",
+      "zh": "帮手现在可以抛起金骰子啦！",
+      "en": "Helpers can now toss Gold Dice!"
+    },
+    {
+      "key": "original.216",
+      "zh": "滑动可抛起铜骰子",
+      "en": "Swipe to toss Bronze Dice"
+    },
+    {
+      "key": "original.217",
+      "zh": "手指滑动铜骰子就可丝滑抛起！",
+      "en": "Swipe across Bronze Dice to toss them!"
+    },
+    {
+      "key": "original.218",
+      "zh": "滑动可抛起银骰子",
+      "en": "Swipe to toss Silver Dice"
+    },
+    {
+      "key": "original.219",
+      "zh": "手指滑动银骰子就可丝滑抛起！",
+      "en": "Swipe across Silver Dice to toss them!"
+    },
+    {
+      "key": "original.220",
+      "zh": "滑动可抛起金骰子",
+      "en": "Swipe to toss Gold Dice"
+    },
+    {
+      "key": "original.221",
+      "zh": "手指滑动金骰子就可丝滑抛起！",
+      "en": "Swipe across Gold Dice to toss them!"
+    },
+    {
+      "key": "original.222",
+      "zh": "增加紫金骰子价值",
+      "en": "Increase Purple Die value"
+    },
+    {
+      "key": "original.223",
+      "zh": "紫金骰子价值+15%",
+      "en": "Purple Die Value +15%"
+    },
+    {
+      "key": "original.224",
+      "zh": "厄运消除",
+      "en": "Banish Bad Luck"
+    },
+    {
+      "key": "original.225",
+      "zh": "骰子1,2,3点概率降低",
+      "en": "Lower chance to roll 1, 2, or 3"
+    },
+    {
+      "key": "original.226",
+      "zh": "所有骰子1,2,3点概率降低3%",
+      "en": "All dice have -3% chance to roll 1, 2, or 3"
+    },
+    {
+      "key": "original.227",
+      "zh": "好运常在",
+      "en": "Good Luck"
+    },
+    {
+      "key": "original.228",
+      "zh": "骰子6点概率提升",
+      "en": "Higher chance to roll 6"
+    },
+    {
+      "key": "original.229",
+      "zh": "所有骰子6点概率提升3%",
+      "en": "All dice have +3% chance to roll 6"
+    },
+    {
+      "key": "original.230",
+      "zh": "骰子+2%概率重复翻转",
+      "en": "Dice have +2% chance to flip again"
+    },
+    {
+      "key": "original.231",
+      "zh": "骰子+2%概率会重复翻转一次",
+      "en": "Dice have +2% chance to flip one more time"
+    },
+    {
+      "key": "original.232",
+      "zh": "共鸣",
+      "en": "Resonance"
+    },
+    {
+      "key": "original.233",
+      "zh": "骰子落下概率抛起其他骰子",
+      "en": "Falling dice may toss other dice"
+    },
+    {
+      "key": "original.234",
+      "zh": "骰子落下时有5%概率抛起周围相同点数的骰子",
+      "en": "Falling dice have a 5% chance to toss nearby matching dice"
+    },
+    {
+      "key": "original.235",
+      "zh": "六点加注",
+      "en": "Six Bonus"
+    },
+    {
+      "key": "original.236",
+      "zh": "投掷6点奖励倍增",
+      "en": "Higher rewards for rolling 6"
+    },
+    {
+      "key": "original.237",
+      "zh": "投掷到6点,奖励增加15%",
+      "en": "Roll a 6 for +15% rewards"
+    },
+    {
+      "key": "original.238",
+      "zh": "超级666",
+      "en": "Super 666"
+    },
+    {
+      "key": "original.239",
+      "zh": "解锁超级666",
+      "en": "Unlock Super 666"
+    },
+    {
+      "key": "original.240",
+      "zh": "累计投掷一定数量的6点后，激活全场狂欢",
+      "en": "Roll enough sixes to start a board-wide frenzy"
+    },
+    {
+      "key": "original.241",
+      "zh": "钻石商人",
+      "en": "Diamond Dealer"
+    },
+    {
+      "key": "original.242",
+      "zh": "解锁钻石商人",
+      "en": "Unlock Diamond Dealer"
+    },
+    {
+      "key": "original.243",
+      "zh": "钻石商人每隔一段时间就会免费赠送钻石",
+      "en": "The Diamond Dealer gives free Diamonds over time"
+    },
+    {
+      "key": "original.244",
+      "zh": "街头穷光蛋",
+      "en": "Broke on the Block"
+    },
+    {
+      "key": "original.245",
+      "zh": "牌桌小新手",
+      "en": "Table Rookie"
+    },
+    {
+      "key": "original.246",
+      "zh": "小镇暴发户",
+      "en": "Small-Town Tycoon"
+    },
+    {
+      "key": "original.247",
+      "zh": "职场老油条",
+      "en": "Office Veteran"
+    },
+    {
+      "key": "original.248",
+      "zh": "金牌理财师",
+      "en": "Gold Advisor"
+    },
+    {
+      "key": "original.249",
+      "zh": "百万新贵族",
+      "en": "Millionaire Elite"
+    },
+    {
+      "key": "original.250",
+      "zh": "城市大首富",
+      "en": "City Mogul"
+    },
+    {
+      "key": "original.251",
+      "zh": "跨国大财团",
+      "en": "Global Conglomerate"
+    },
+    {
+      "key": "original.252",
+      "zh": "华尔街巨鳄 I",
+      "en": "Wall Street Shark I"
+    },
+    {
+      "key": "original.253",
+      "zh": "华尔街巨鳄 II",
+      "en": "Wall Street Shark II"
+    },
+    {
+      "key": "original.254",
+      "zh": "华尔街巨鳄 III",
+      "en": "Wall Street Shark III"
+    },
+    {
+      "key": "original.255",
+      "zh": "蓝星掌控者 I",
+      "en": "Planet Ruler I"
+    },
+    {
+      "key": "original.256",
+      "zh": "蓝星掌控者 II",
+      "en": "Planet Ruler II"
+    },
+    {
+      "key": "original.257",
+      "zh": "蓝星掌控者 III",
+      "en": "Planet Ruler III"
+    },
+    {
+      "key": "original.258",
+      "zh": "太阳系矿主 I",
+      "en": "Solar Mine Lord I"
+    },
+    {
+      "key": "original.259",
+      "zh": "太阳系矿主 II",
+      "en": "Solar Mine Lord II"
+    },
+    {
+      "key": "original.260",
+      "zh": "太阳系矿主 III",
+      "en": "Solar Mine Lord III"
+    },
+    {
+      "key": "original.261",
+      "zh": "银河大买办 I",
+      "en": "Galactic Magnate I"
+    },
+    {
+      "key": "original.262",
+      "zh": "银河大买办 II",
+      "en": "Galactic Magnate II"
+    },
+    {
+      "key": "original.263",
+      "zh": "银河大买办 III",
+      "en": "Galactic Magnate III"
+    },
+    {
+      "key": "original.264",
+      "zh": "宇宙大财阀 I",
+      "en": "Cosmic Tycoon I"
+    },
+    {
+      "key": "original.265",
+      "zh": "宇宙大财阀 II",
+      "en": "Cosmic Tycoon II"
+    },
+    {
+      "key": "original.266",
+      "zh": "宇宙大财阀 III",
+      "en": "Cosmic Tycoon III"
+    },
+    {
+      "key": "original.267",
+      "zh": "维度收割者 I",
+      "en": "Dimension Reaper I"
+    },
+    {
+      "key": "original.268",
+      "zh": "维度收割者 II",
+      "en": "Dimension Reaper II"
+    },
+    {
+      "key": "original.269",
+      "zh": "维度收割者 III",
+      "en": "Dimension Reaper III"
+    },
+    {
+      "key": "original.270",
+      "zh": "规则铸造师 I",
+      "en": "Rule Forger I"
+    },
+    {
+      "key": "original.271",
+      "zh": "规则铸造师 II",
+      "en": "Rule Forger II"
+    },
+    {
+      "key": "original.272",
+      "zh": "规则铸造师 III",
+      "en": "Rule Forger III"
+    },
+    {
+      "key": "original.273",
+      "zh": "奇点印钞机 I",
+      "en": "Singularity Mint I"
+    },
+    {
+      "key": "original.274",
+      "zh": "奇点印钞机 II",
+      "en": "Singularity Mint II"
+    },
+    {
+      "key": "original.275",
+      "zh": "奇点印钞机 III",
+      "en": "Singularity Mint III"
+    },
+    {
+      "key": "original.276",
+      "zh": "看广告获取钻石",
+      "en": "Watch an ad for Diamonds"
+    },
+    {
+      "key": "original.277",
+      "zh": "普通宝箱",
+      "en": "Basic Chest"
+    },
+    {
+      "key": "original.278",
+      "zh": "花钻石购买宝箱",
+      "en": "Buy a Chest with Diamonds"
+    },
+    {
+      "key": "original.279",
+      "zh": "高级宝箱",
+      "en": "Premium Chest"
+    },
+    {
+      "key": "original.280",
+      "zh": "花钻石购买高级宝箱",
+      "en": "Buy a Premium Chest with Diamonds"
+    },
+    {
+      "key": "original.281",
+      "zh": "广告宝箱",
+      "en": "Ad Chest"
+    },
+    {
+      "key": "original.282",
+      "zh": "按照进度获取的宝箱",
+      "en": "Chest earned through progress"
+    },
+    {
+      "key": "original.283",
+      "zh": "炼金术",
+      "en": "Alchemy"
+    },
+    {
+      "key": "original.284",
+      "zh": "基础硬币价值+SSS%",
+      "en": "Base Coin Value +SSS%"
+    },
+    {
+      "key": "original.285",
+      "zh": "解锁紫金币",
+      "en": "Unlock Purple Coins"
+    },
+    {
+      "key": "original.286",
+      "zh": "解锁更稀有、价值更高的紫金币",
+      "en": "Unlock rarer, more valuable Purple Coins"
+    },
+    {
+      "key": "original.287",
+      "zh": "点击大师",
+      "en": "Tap Master"
+    },
+    {
+      "key": "original.288",
+      "zh": "手动点击硬币赚取收益+SSS%",
+      "en": "Manual Coin Tap Earnings +SSS%"
+    },
+    {
+      "key": "original.289",
+      "zh": "安稳睡眠",
+      "en": "Sound Sleep"
+    },
+    {
+      "key": "original.290",
+      "zh": "离线收益+SSS%",
+      "en": "Offline Earnings +SSS%"
+    },
+    {
+      "key": "original.291",
+      "zh": "黄金时代",
+      "en": "Golden Age"
+    },
+    {
+      "key": "original.292",
+      "zh": "离线收益的时长上限+SSS%",
+      "en": "Max Offline Time +SSS%"
+    },
+    {
+      "key": "original.293",
+      "zh": "硬币雨",
+      "en": "Coin Rain"
+    },
+    {
+      "key": "original.294",
+      "zh": "硬币抛起落地时间-SSS%",
+      "en": "Coin Air Time -SSS%"
+    },
+    {
+      "key": "original.295",
+      "zh": "翻转紫金币",
+      "en": "Flip Purple Coins"
+    },
+    {
+      "key": "original.296",
+      "zh": "紫金币可以被帮手翻起",
+      "en": "Helpers can flip Purple Coins"
+    },
+    {
+      "key": "original.297",
+      "zh": "幸运翻转",
+      "en": "Lucky Flip"
+    },
+    {
+      "key": "original.298",
+      "zh": "硬币翻到正面的概率+SSS%",
+      "en": "Coin Heads Chance +SSS%"
+    },
+    {
+      "key": "original.299",
+      "zh": "强者恒强",
+      "en": "Rich Get Richer"
+    },
+    {
+      "key": "original.300",
+      "zh": "紫金币价值额外+SSS%",
+      "en": "Purple Coin Value +SSS%"
+    },
+    {
+      "key": "original.301",
+      "zh": "失眠",
+      "en": "Insomnia"
+    },
+    {
+      "key": "original.302",
+      "zh": "帮手睡觉概率大幅降低",
+      "en": "Helpers are far less likely to sleep"
+    },
+    {
+      "key": "original.303",
+      "zh": "睡觉概率降低80%",
+      "en": "Sleep Chance -80%"
+    },
+    {
+      "key": "original.304",
+      "zh": "大力士乐园",
+      "en": "Strongman Park"
+    },
+    {
+      "key": "original.305",
+      "zh": "每存在1个大力士，全局收益+SSS%",
+      "en": "Global Earnings +SSS% per Strongman"
+    },
+    {
+      "key": "original.306",
+      "zh": "披风国度",
+      "en": "Cape Kingdom"
+    },
+    {
+      "key": "original.307",
+      "zh": "每存在1个披风侠，全局收益+SSS%",
+      "en": "Global Earnings +SSS% per Cape Hero"
+    },
+    {
+      "key": "original.308",
+      "zh": "魔法学院",
+      "en": "Magic Academy"
+    },
+    {
+      "key": "original.309",
+      "zh": "每存在1个魔法师，全局收益+SSS%",
+      "en": "Global Earnings +SSS% per Mage"
+    },
+    {
+      "key": "original.310",
+      "zh": "团结才是力量",
+      "en": "Strength in Unity"
+    },
+    {
+      "key": "original.311",
+      "zh": "桌面上每存在一种不同形象的帮手，全局收益+SSS%",
+      "en": "Global Earnings +SSS% per unique Helper on the table"
+    },
+    {
+      "key": "original.312",
+      "zh": "廉价劳动力",
+      "en": "Cheap Labor"
+    },
+    {
+      "key": "original.313",
+      "zh": "升级帮手的金钱消耗减少至原来的：SSS%",
+      "en": "Helper upgrade cost reduced to SSS%"
+    },
+    {
+      "key": "original.314",
+      "zh": "使用乘法",
+      "en": "Multiply"
+    },
+    {
+      "key": "original.315",
+      "zh": "精英教育",
+      "en": "Elite Training"
+    },
+    {
+      "key": "original.316",
+      "zh": "帮手数量的等级上限+SSS 级",
+      "en": "Helper count level cap +SSS"
+    },
+    {
+      "key": "original.317",
+      "zh": "九尾妖狐",
+      "en": "Demon Fox"
+    },
+    {
+      "key": "original.318",
+      "zh": "九尾狐获取的硬币收益+SSS%",
+      "en": "Nine-Tailed Fox Coin Earnings +SSS%"
+    },
+    {
+      "key": "original.319",
+      "zh": "钢铁洪流",
+      "en": "Iron Legion"
+    },
+    {
+      "key": "original.320",
+      "zh": "钢铁人获取的硬币收益+SSS%",
+      "en": "Iron Hero Coin Earnings +SSS%"
+    },
+    {
+      "key": "original.321",
+      "zh": "突破上限",
+      "en": "Break the Limit"
+    },
+    {
+      "key": "original.322",
+      "zh": "硬币上涨升级项的最大等级+SSS",
+      "en": "Coin Boost max level +SSS"
+    },
+    {
+      "key": "original.323",
+      "zh": "解锁幸运回响升级项，硬币有概率重复翻转",
+      "en": "Unlock Lucky Echo: Coins may flip again"
+    },
+    {
+      "key": "original.324",
+      "zh": "额外惊喜",
+      "en": "Bonus Surprise"
+    },
+    {
+      "key": "original.325",
+      "zh": "硬币+SSS%概率触发暴击收益",
+      "en": "Coins gain +SSS% Crit Chance"
+    },
+    {
+      "key": "original.326",
+      "zh": "继承者",
+      "en": "Heir"
+    },
+    {
+      "key": "original.327",
+      "zh": "每次转生继承原来SSS%金钱",
+      "en": "Keep SSS% of Cash after each Prestige"
+    },
+    {
+      "key": "original.328",
+      "zh": "大富翁",
+      "en": "Tycoon"
+    },
+    {
+      "key": "original.329",
+      "zh": "大富翁广告奖励的效果+SSS%",
+      "en": "Tycoon ad reward effect +SSS%"
+    },
+    {
+      "key": "original.330",
+      "zh": "挑战达人",
+      "en": "Challenge Pro"
+    },
+    {
+      "key": "original.331",
+      "zh": "限时挑战任务的奖励SSS%概率翻倍",
+      "en": "Timed Challenge rewards have SSS% chance to double"
+    },
+    {
+      "key": "original.332",
+      "zh": "时空扭曲",
+      "en": "Time Warp"
+    },
+    {
+      "key": "original.333",
+      "zh": "限时挑战任务的规定时间增加 SSS%",
+      "en": "Timed Challenge time limit +SSS%"
+    },
+    {
+      "key": "original.334",
+      "zh": "转生红利",
+      "en": "Prestige Bonus"
+    },
+    {
+      "key": "original.335",
+      "zh": "达成重生目标后，获得的天赋点+SSS",
+      "en": "Talent Points from Prestige goals +SSS"
+    },
+    {
+      "key": "original.336",
+      "zh": "塞翁失马",
+      "en": "Silver Lining"
+    },
+    {
+      "key": "original.337",
+      "zh": "硬币翻到反面，也会获得SSS%收益",
+      "en": "Tails also grants SSS% earnings"
+    },
+    {
+      "key": "original.338",
+      "zh": "基础骰子价值+SSS%",
+      "en": "Base Dice Value +SSS%"
+    },
+    {
+      "key": "original.339",
+      "zh": "解锁紫金骰子",
+      "en": "Unlock Purple Dice"
+    },
+    {
+      "key": "original.340",
+      "zh": "解锁更稀有、价值更高的紫金骰子",
+      "en": "Unlock rarer, more valuable Purple Dice"
+    },
+    {
+      "key": "original.341",
+      "zh": "手动点击骰子赚取收益+SSS%",
+      "en": "Manual Dice Tap Earnings +SSS%"
+    },
+    {
+      "key": "original.342",
+      "zh": "翻转紫金骰子",
+      "en": "Flip Purple Dice"
+    },
+    {
+      "key": "original.343",
+      "zh": "紫金骰子可以被帮手翻起",
+      "en": "Helpers can flip Purple Dice"
+    },
+    {
+      "key": "original.344",
+      "zh": "精打细算",
+      "en": "Smart Spending"
+    },
+    {
+      "key": "original.345",
+      "zh": "物品升级的金钱消耗降低至SSS%",
+      "en": "Item upgrade cost reduced to SSS%"
+    },
+    {
+      "key": "original.346",
+      "zh": "紫金骰子价值额外+SSS%",
+      "en": "Purple Die Value +SSS%"
+    },
+    {
+      "key": "original.347",
+      "zh": "骰子雨",
+      "en": "Dice Rain"
+    },
+    {
+      "key": "original.348",
+      "zh": "骰子抛起落地时间-SSS%",
+      "en": "Dice Air Time -SSS%"
+    },
+    {
+      "key": "original.349",
+      "zh": "奖上加奖",
+      "en": "Bonus Bonus"
+    },
+    {
+      "key": "original.350",
+      "zh": "商店大转盘额外获得金钱奖励",
+      "en": "Spin Wheel also awards Cash"
+    },
+    {
+      "key": "original.351",
+      "zh": "获得S%分钟的额外金钱",
+      "en": "Gain S% minutes of bonus Cash"
+    },
+    {
+      "key": "original.352",
+      "zh": "转转转",
+      "en": "Spin to Win"
+    },
+    {
+      "key": "original.353",
+      "zh": "大转盘广告冷却-SSS秒",
+      "en": "Spin Wheel ad cooldown -SSS sec"
+    },
+    {
+      "key": "original.354",
+      "zh": "快速睡眠",
+      "en": "Power Nap"
+    },
+    {
+      "key": "original.355",
+      "zh": "所有帮手睡觉时间大幅降低",
+      "en": "All Helpers sleep far less"
+    },
+    {
+      "key": "original.356",
+      "zh": "中流砥柱",
+      "en": "Core Team"
+    },
+    {
+      "key": "original.357",
+      "zh": "场上每个R级帮手，全局收益+SSS%",
+      "en": "Global Earnings +SSS% per R Helper"
+    },
+    {
+      "key": "original.358",
+      "zh": "咖啡因",
+      "en": "Caffeine"
+    },
+    {
+      "key": "original.359",
+      "zh": "所有帮手投掷间隔降低",
+      "en": "All Helper throw intervals reduced"
+    },
+    {
+      "key": "original.360",
+      "zh": "原始力量",
+      "en": "Primal Power"
+    },
+    {
+      "key": "original.361",
+      "zh": "场上每存在1个原始帮手，全局收益+SSS%",
+      "en": "Global Earnings +SSS% per Primal Helper"
+    },
+    {
+      "key": "original.362",
+      "zh": "高端战力",
+      "en": "Elite Power"
+    },
+    {
+      "key": "original.363",
+      "zh": "场上每个SR级帮手，全局暴击效果+SSS%",
+      "en": "Global Crit Effect +SSS% per SR Helper"
+    },
+    {
+      "key": "original.364",
+      "zh": "免费劳工",
+      "en": "Free Labor"
+    },
+    {
+      "key": "original.365",
+      "zh": "每个帮手初始数量上限提升SSS%",
+      "en": "Starting cap +SSS per Helper"
+    },
+    {
+      "key": "original.366",
+      "zh": "骰子上涨升级项的最大等级+SSS",
+      "en": "Dice Boost max level +SSS"
+    },
+    {
+      "key": "original.367",
+      "zh": "骰子+SSS%概率触发暴击收益",
+      "en": "Dice gain +SSS% Crit Chance"
+    },
+    {
+      "key": "original.368",
+      "zh": "解锁幸运回响升级项，骰子有概率重复翻转",
+      "en": "Unlock Lucky Echo: Dice may flip again"
+    },
+    {
+      "key": "original.369",
+      "zh": "啦啦队",
+      "en": "Cheer Squad"
+    },
+    {
+      "key": "original.370",
+      "zh": "鼓舞大师持续时间增加+SSS秒",
+      "en": "Cheer Master duration +SSS sec"
+    },
+    {
+      "key": "original.371",
+      "zh": "大量火药",
+      "en": "Extra Powder"
+    },
+    {
+      "key": "original.372",
+      "zh": "赌神的骰子爆炸宽度增加+SSS%",
+      "en": "Dice Bomb width +SSS%"
+    },
+    {
+      "key": "original.373",
+      "zh": "越多越好",
+      "en": "More Is Better"
+    },
+    {
+      "key": "original.374",
+      "zh": "钻石商人每次额外赠送1个钻石",
+      "en": "Diamond Dealer gives +1 Diamond each time"
+    },
+    {
+      "key": "original.375",
+      "zh": "额外收益",
+      "en": "Bonus Earnings"
+    },
+    {
+      "key": "original.376",
+      "zh": "超级666期间收益+SSS%",
+      "en": "Super 666 Earnings +SSS%"
+    },
+    {
+      "key": "original.377",
+      "zh": "广告达人",
+      "en": "Ad Expert"
+    },
+    {
+      "key": "original.378",
+      "zh": "超级666的广告时间倍率+SSS",
+      "en": "Super 666 ad duration multiplier +SSS"
+    },
+    {
+      "key": "original.379",
+      "zh": "幸运加时",
+      "en": "Lucky Overtime"
+    },
+    {
+      "key": "original.380",
+      "zh": "超级666持续时间+SSS 秒",
+      "en": "Super 666 duration +SSS sec"
+    },
+    {
+      "key": "original.381",
+      "zh": "六运蓄能",
+      "en": "Six Charge"
+    },
+    {
+      "key": "original.382",
+      "zh": "掷出 6 点时额外获得+SSS点超级666 进度",
+      "en": "Rolling 6 grants +SSS Super 666 progress"
+    },
+    {
+      "key": "original.383",
+      "zh": "硬币世界",
+      "en": "Coin World"
+    },
+    {
+      "key": "original.384",
+      "zh": "骰子世界",
+      "en": "Dice World"
+    },
+    {
+      "key": "original.385",
+      "zh": "签到SSS次",
+      "en": "Check in SSS times"
+    },
+    {
+      "key": "original.386",
+      "zh": "7日签到和世界杯签到都算",
+      "en": "7-Day and World Cup check-ins both count"
+    },
+    {
+      "key": "original.387",
+      "zh": "升级任意帮手SSS次",
+      "en": "Upgrade any Helper SSS times"
+    },
+    {
+      "key": "original.388",
+      "zh": "不分帮手种类，升级10次即可",
+      "en": "Any Helper counts; upgrade 10 times"
+    },
+    {
+      "key": "original.389",
+      "zh": "成长等级提升SSS级",
+      "en": "Raise Growth Level by SSS"
+    },
+    {
+      "key": "original.390",
+      "zh": "获得SSS次SR碎片",
+      "en": "Get SR Shards SSS times"
+    },
+    {
+      "key": "original.391",
+      "zh": "消耗SSS钻石",
+      "en": "Spend SSS Diamonds"
+    },
+    {
+      "key": "original.392",
+      "zh": "观看SSS次广告",
+      "en": "Watch SSS ads"
+    },
+    {
+      "key": "original.393",
+      "zh": "主线等级需达到{needLevel}级",
+      "en": "Reach Main Quest Lv. {needLevel}"
+    },
+    {
+      "key": "original.394",
+      "zh": "拍卖金币不足",
+      "en": "Not enough Auction Coins"
+    },
+    {
+      "key": "original.395",
+      "zh": "兑换数量无效",
+      "en": "Invalid exchange amount"
+    },
+    {
+      "key": "original.396",
+      "zh": "兑换完成",
+      "en": "Exchange complete"
+    },
+    {
+      "key": "original.397",
+      "zh": "成长等级需达到{needLevel}才能兑换钻石",
+      "en": "Reach Growth Lv. {needLevel} to exchange Diamonds"
+    },
+    {
+      "key": "original.398",
+      "zh": "门票不足,请返回",
+      "en": "Not enough Tickets. Please go back."
+    },
+    {
+      "key": "original.399",
+      "zh": "拍卖金钱不足,请返回",
+      "en": "Not enough Auction Cash. Please go back."
+    },
+    {
+      "key": "original.400",
+      "zh": "拍卖金钱不足",
+      "en": "Not enough Auction Cash"
+    },
+    {
+      "key": "original.401",
+      "zh": "我出价{ColorPrice(qipaiPrice)}",
+      "en": "I bid {ColorPrice(qipaiPrice)}"
+    },
+    {
+      "key": "original.402",
+      "zh": "我的预估价格: ???",
+      "en": "My estimate: ???"
+    },
+    {
+      "key": "original.403",
+      "zh": "我的预估价格:{0}~{1}",
+      "en": "My estimate: {0}–{1}"
+    },
+    {
+      "key": "original.404",
+      "zh": "已出价",
+      "en": "Bid placed"
+    },
+    {
+      "key": "original.405",
+      "zh": "欢迎来到拍卖场",
+      "en": "Welcome to the Auction"
+    },
+    {
+      "key": "original.406",
+      "zh": "本次拍卖物品起拍价格为{ColorPrice(qipaiPrice)}",
+      "en": "Starting bid: {ColorPrice(qipaiPrice)}"
+    },
+    {
+      "key": "original.407",
+      "zh": "请各位开始竞拍",
+      "en": "Bidding starts now!"
+    },
+    {
+      "key": "original.408",
+      "zh": "{ColorPrice(qipaiPrice)}第一次",
+      "en": "{ColorPrice(qipaiPrice)}, going once"
+    },
+    {
+      "key": "original.409",
+      "zh": "{ColorPrice(qipaiPrice)}第二次",
+      "en": "{ColorPrice(qipaiPrice)}, going twice"
+    },
+    {
+      "key": "original.410",
+      "zh": "{ColorPrice(qipaiPrice)}第三次,成交",
+      "en": "{ColorPrice(qipaiPrice)}, sold!"
+    },
+    {
+      "key": "original.411",
+      "zh": "拍卖金钱不足，需要{NumberFormatter.FormatNumber(needCoinCount)}",
+      "en": "Need {NumberFormatter.FormatNumber(needCoinCount)} more Auction Cash"
+    },
+    {
+      "key": "original.412",
+      "zh": "拍卖门票",
+      "en": "Auction Ticket"
+    },
+    {
+      "key": "original.413",
+      "zh": "此拍卖场还未解锁",
+      "en": "Auction not unlocked"
+    },
+    {
+      "key": "original.414",
+      "zh": "主线等级达到{config.ConditionLevel}级解锁",
+      "en": "Unlocks at Main Quest Lv. {config.ConditionLevel}"
+    },
+    {
+      "key": "original.415",
+      "zh": "第{0}天",
+      "en": "Day {0}"
+    },
+    {
+      "key": "original.416",
+      "zh": "签到双倍奖励",
+      "en": "Double Check-In Reward"
+    },
+    {
+      "key": "original.417",
+      "zh": "领取成功",
+      "en": "Claimed!"
+    },
+    {
+      "key": "original.418",
+      "zh": "道具不能重复领取",
+      "en": "Reward already claimed"
+    },
+    {
+      "key": "original.419",
+      "zh": "签到天数不足",
+      "en": "Not enough check-in days"
+    },
+    {
+      "key": "original.420",
+      "zh": "广告观看未完成，无法领取奖励",
+      "en": "Finish the ad to claim this reward"
+    },
+    {
+      "key": "original.421",
+      "zh": "7日签到",
+      "en": "7-Day Check-In"
+    },
+    {
+      "key": "original.422",
+      "zh": "活动将在5级开放",
+      "en": "Event unlocks at Lv. 5"
+    },
+    {
+      "key": "original.423",
+      "zh": "第{signDay}天",
+      "en": "Day {signDay}"
+    },
+    {
+      "key": "original.424",
+      "zh": "已解锁新帮手角色,快去试试吧",
+      "en": "New Helper unlocked. Try them out!"
+    },
+    {
+      "key": "original.425",
+      "zh": "*{currentSkillValue:0.0}倍",
+      "en": "x{currentSkillValue:0.0}"
+    },
+    {
+      "key": "original.426",
+      "zh": "解锁条件\n成长等级达到{deskConfig.DeskUnlockCondition}级",
+      "en": "Unlock Requirement\nReach Growth Lv. {deskConfig.DeskUnlockCondition}"
+    },
+    {
+      "key": "original.427",
+      "zh": "<color=#FFC578>解锁条件:</color>\n进入{worldName}解锁",
+      "en": "<color=#FFC578>Unlock:</color>\nEnter {worldName}"
+    },
+    {
+      "key": "original.428",
+      "zh": "<color=#FFC578>解锁条件:</color>\n在{worldName}{helperConfig.HelperUnlockCondition}级解锁",
+      "en": "<color=#FFC578>Unlock:</color>\n{worldName}: Reach Lv. {helperConfig.HelperUnlockCondition}"
+    },
+    {
+      "key": "original.429",
+      "zh": "<color=#FFC578>获取方式:</color>\n绿茵活动获取",
+      "en": "<color=#FFC578>Source:</color>\nGreen Field Event"
+    },
+    {
+      "key": "original.430",
+      "zh": "<color=#FFC578>解锁条件:</color>\n成长等级到{helperConfig.HelperUnlockCondition}级",
+      "en": "<color=#FFC578>Unlock:</color>\nReach Growth Lv. {helperConfig.HelperUnlockCondition}"
+    },
+    {
+      "key": "original.431",
+      "zh": "没有可分配的帮手了",
+      "en": "No Helpers available"
+    },
+    {
+      "key": "original.432",
+      "zh": "已达到{helperConfig.HelperName}的最大上限",
+      "en": "{helperConfig.HelperName} limit reached"
+    },
+    {
+      "key": "original.433",
+      "zh": "帮手提前解锁",
+      "en": "Unlock Helper Early"
+    },
+    {
+      "key": "original.434",
+      "zh": "可分配帮手数量",
+      "en": "Assignable Helpers"
+    },
+    {
+      "key": "original.435",
+      "zh": "{skillLevel}级解锁",
+      "en": "Unlocks at Lv. {skillLevel}"
+    },
+    {
+      "key": "original.436",
+      "zh": "Lv.{unlockLevel}解锁",
+      "en": "Unlocks at Lv. {unlockLevel}"
+    },
+    {
+      "key": "original.437",
+      "zh": "最大等级",
+      "en": "Max Level"
+    },
+    {
+      "key": "original.438",
+      "zh": "增加上限",
+      "en": "Raise Limit"
+    },
+    {
+      "key": "original.439",
+      "zh": "技能升级",
+      "en": "Upgrade Skill"
+    },
+    {
+      "key": "original.440",
+      "zh": "{helperConfig.HelperName}数量上限+1",
+      "en": "{helperConfig.HelperName} Limit +1"
+    },
+    {
+      "key": "original.441",
+      "zh": "倍",
+      "en": "x"
+    },
+    {
+      "key": "original.442",
+      "zh": "范围",
+      "en": "Range"
+    },
+    {
+      "key": "original.443",
+      "zh": "个",
+      "en": "pc."
+    },
+    {
+      "key": "original.444",
+      "zh": "颗",
+      "en": "pc."
+    },
+    {
+      "key": "original.445",
+      "zh": "{0}翻硬币收益：",
+      "en": "{0} Coin Flip Earnings:"
+    },
+    {
+      "key": "original.446",
+      "zh": "帮手翻硬币收益*",
+      "en": "Helper Coin Flip Earnings x"
+    },
+    {
+      "key": "original.447",
+      "zh": "帮手升级",
+      "en": "Upgrade Helper"
+    },
+    {
+      "key": "original.448",
+      "zh": "去商城补充一些碎片吧",
+      "en": "Get more Shards in the Shop"
+    },
+    {
+      "key": "original.449",
+      "zh": "{0}天{1}小时{2}分{3}秒",
+      "en": "{0}d {1}h {2}m {3}s"
+    },
+    {
+      "key": "original.450",
+      "zh": "{seconds:F0}秒",
+      "en": "{seconds:F0}s"
+    },
+    {
+      "key": "original.451",
+      "zh": "{minutes}分{remainingSeconds}秒",
+      "en": "{minutes}m {remainingSeconds}s"
+    },
+    {
+      "key": "original.452",
+      "zh": "{hours}小时{remainingMinutes}分",
+      "en": "{hours}h {remainingMinutes}m"
+    },
+    {
+      "key": "original.453",
+      "zh": "离线时间: {OfflineIncomeManager.Instance.FormatTime(_rewardData.offlineTime)}",
+      "en": "Offline Time: {OfflineIncomeManager.Instance.FormatTime(_rewardData.offlineTime)}"
+    },
+    {
+      "key": "original.454",
+      "zh": "离线收益:{NumberFormatter.FormatNumber(_rewardData.coin)}",
+      "en": "Offline Earnings: {NumberFormatter.FormatNumber(_rewardData.coin)}"
+    },
+    {
+      "key": "original.455",
+      "zh": "金币: {_rewardData.coin}",
+      "en": "Coins: {_rewardData.coin}"
+    },
+    {
+      "key": "original.456",
+      "zh": "离线奖励双倍",
+      "en": "Double Offline Rewards"
+    },
+    {
+      "key": "original.457",
+      "zh": "成长等级<color=#96ff00>{targetLevel}</color>级即可解锁世界",
+      "en": "Reach Growth Lv. <color=#96ff00>{targetLevel}</color> to unlock World"
+    },
+    {
+      "key": "original.458",
+      "zh": "今日次数已用完",
+      "en": "No tries left today"
+    },
+    {
+      "key": "original.459",
+      "zh": "广告观看未完成",
+      "en": "Ad not completed"
+    },
+    {
+      "key": "original.460",
+      "zh": "{count}个N级碎片",
+      "en": "{count} N Shards"
+    },
+    {
+      "key": "original.461",
+      "zh": "<color=#e4771e>{count}个R级碎片</color>",
+      "en": "<color=#e4771e>{count} R Shards</color>"
+    },
+    {
+      "key": "original.462",
+      "zh": "<color=#9227dd>{count}个SR碎片</color>",
+      "en": "<color=#9227dd>{count} SR Shards</color>"
+    },
+    {
+      "key": "original.463",
+      "zh": "重生保留等级",
+      "en": "Keep Levels on Prestige"
+    },
+    {
+      "key": "original.464",
+      "zh": "金钱未达到重生目标",
+      "en": "Prestige Cash goal not met"
+    },
+    {
+      "key": "original.465",
+      "zh": "额外+{point}",
+      "en": "Bonus +{point}"
+    },
+    {
+      "key": "original.466",
+      "zh": "全局收益*",
+      "en": "Global Earnings x"
+    },
+    {
+      "key": "original.467",
+      "zh": "未达到全局收益条件",
+      "en": "Global Earnings requirement not met"
+    },
+    {
+      "key": "original.468",
+      "zh": "广告观看未完成，无法重置天赋",
+      "en": "Finish the ad to reset Talents"
+    },
+    {
+      "key": "original.469",
+      "zh": "重置天赋点",
+      "en": "Reset Talent Points"
+    },
+    {
+      "key": "original.470",
+      "zh": "当前可回收天赋点为0,无法重置",
+      "en": "No Talent Points to refund"
+    },
+    {
+      "key": "original.471",
+      "zh": "{multiplier}倍时间",
+      "en": "{multiplier}x Time"
+    },
+    {
+      "key": "original.472",
+      "zh": "超级666,广告增加激活时长",
+      "en": "Super 666: Watch an ad for more time"
+    },
+    {
+      "key": "original.473",
+      "zh": "所有帮手获取金钱<color=#e66e17>+{Mathf.RoundToInt((float)amount * 100)}%</color>；<br>持续<color=#e66e17>{minute}min</color>",
+      "en": "All Helpers earn <color=#e66e17>+{Mathf.RoundToInt((float)amount * 100)}%</color>;<br>Duration: <color=#e66e17>{minute}min</color>"
+    },
+    {
+      "key": "original.474",
+      "zh": "所有帮手速度提高<color=#e66e17>{Mathf.RoundToInt((float)amount * 100)}%</color>；<br>持续<color=#e66e17>{minute}min</color>",
+      "en": "All Helpers gain <color=#e66e17>+{Mathf.RoundToInt((float)amount * 100)}%</color> Speed;<br>Duration: <color=#e66e17>{minute}min</color>"
+    },
+    {
+      "key": "original.475",
+      "zh": "点击下注，<color=#e66e17>{Mathf.RoundToInt(Constants.RandomEventWinRate * 100)}%</color>概率返还<color=#e66e17>2倍</color>；失败可看广告返还赌注",
+      "en": "Tap to bet. <color=#e66e17>{Mathf.RoundToInt(Constants.RandomEventWinRate * 100)}%</color> chance to get <color=#e66e17>2x</color>; watch an ad to refund a loss"
+    },
+    {
+      "key": "original.476",
+      "zh": "过{FormatTime(Mathf.RoundToInt(remainingTime))}后使用",
+      "en": "Available in {FormatTime(Mathf.RoundToInt(remainingTime))}"
+    },
+    {
+      "key": "original.477",
+      "zh": "你运气真好,双倍奖励直接奉上",
+      "en": "Lucky you! Double rewards are yours!"
+    },
+    {
+      "key": "original.478",
+      "zh": "随机事件金币返还",
+      "en": "Random Event Coin Refund"
+    },
+    {
+      "key": "original.479",
+      "zh": "随机事件钻石返还",
+      "en": "Random Event Diamond Refund"
+    },
+    {
+      "key": "original.480",
+      "zh": "金币不足",
+      "en": "Not enough Coins"
+    },
+    {
+      "key": "original.481",
+      "zh": "恭喜达成<color=#f8642a>{targetStr}</color>小目标！",
+      "en": "Goal complete: <color=#f8642a>{targetStr}</color>!"
+    },
+    {
+      "key": "original.482",
+      "zh": "现在该雇佣一个帮手，为你打工啦！",
+      "en": "Hire a Helper to work for you!"
+    },
+    {
+      "key": "original.483",
+      "zh": "赚到钱啦！接下来先赚{STEP_2_MONEY}块钱",
+      "en": "You made money! Now earn {STEP_2_MONEY}"
+    },
+    {
+      "key": "original.484",
+      "zh": "反面没有收益，正面才有钱哦",
+      "en": "Tails earns nothing. Heads pays!"
+    },
+    {
+      "key": "original.485",
+      "zh": "点击抛起铜币",
+      "en": "Tap to toss a Bronze Coin"
+    },
+    {
+      "key": "original.486",
+      "zh": "音乐开关",
+      "en": "Music"
+    },
+    {
+      "key": "original.487",
+      "zh": "音效开关",
+      "en": "SFX"
+    },
+    {
+      "key": "original.488",
+      "zh": "目前音乐大小",
+      "en": "Music Volume"
+    },
+    {
+      "key": "original.489",
+      "zh": "目前音效大小",
+      "en": "SFX Volume"
+    },
+    {
+      "key": "original.490",
+      "zh": "已解锁",
+      "en": "Unlocked"
+    },
+    {
+      "key": "original.491",
+      "zh": "天赋点系统解锁",
+      "en": "Talent System Unlocked"
+    },
+    {
+      "key": "original.492",
+      "zh": "未知条件",
+      "en": "Unknown Requirement"
+    },
+    {
+      "key": "original.493",
+      "zh": "需要拥有 {count} 个铜币",
+      "en": "Own {count} Bronze Coins"
+    },
+    {
+      "key": "original.494",
+      "zh": "需要拥有 {count} 个银币",
+      "en": "Own {count} Silver Coins"
+    },
+    {
+      "key": "original.495",
+      "zh": "需要拥有 {count} 个金币",
+      "en": "Own {count} Gold Coins"
+    },
+    {
+      "key": "original.496",
+      "zh": "需要拥有 {count} 个紫金币",
+      "en": "Own {count} Purple Coins"
+    },
+    {
+      "key": "original.497",
+      "zh": "需要拥有 {count} 个铜骰子",
+      "en": "Own {count} Bronze Dice"
+    },
+    {
+      "key": "original.498",
+      "zh": "需要拥有 {count} 个银骰子",
+      "en": "Own {count} Silver Dice"
+    },
+    {
+      "key": "original.499",
+      "zh": "需要拥有 {count} 个金骰子",
+      "en": "Own {count} Gold Dice"
+    },
+    {
+      "key": "original.500",
+      "zh": "需要拥有 {count} 个紫金骰子",
+      "en": "Own {count} Purple Dice"
+    },
+    {
+      "key": "original.501",
+      "zh": "需要 {count} 个",
+      "en": "Need {count}"
+    },
+    {
+      "key": "original.502",
+      "zh": "完成成长等级{factor}后解锁",
+      "en": "Unlocks after Growth Lv. {factor}"
+    },
+    {
+      "key": "original.503",
+      "zh": "完成成长等级{factor3}后解锁",
+      "en": "Unlocks after Growth Lv. {factor3}"
+    },
+    {
+      "key": "original.504",
+      "zh": "点击投掷骰子，根据投掷的点数获取奖励",
+      "en": "Tap to roll. Rewards match the roll."
+    },
+    {
+      "key": "original.505",
+      "zh": "投出了1点，获得了1倍奖励",
+      "en": "Rolled 1: 1x reward"
+    },
+    {
+      "key": "original.506",
+      "zh": "6点可以获得6倍奖励！",
+      "en": "Roll 6 for 6x rewards!"
+    },
+    {
+      "key": "original.507",
+      "zh": "是否确定切换至{worldName}？",
+      "en": "Switch to {worldName}?"
+    },
+    {
+      "key": "original.508",
+      "zh": "拖动设置",
+      "en": "Drag to Adjust"
+    },
+    {
+      "key": "original.509",
+      "zh": "点击进入挑战,获得等级晋升!",
+      "en": "Enter Challenge to rank up!"
+    },
+    {
+      "key": "original.510",
+      "zh": "60秒内显示搜集足够多的金钱!",
+      "en": "Collect enough Cash within 60 seconds!"
+    },
+    {
+      "key": "original.511",
+      "zh": "生效中：<color=#704137>{0}</color>秒",
+      "en": "Active: <color=#704137>{0}</color>s"
+    },
+    {
+      "key": "original.512",
+      "zh": "今日已达上限",
+      "en": "Daily limit reached"
+    },
+    {
+      "key": "original.513",
+      "zh": "剩余：",
+      "en": "Left:"
+    },
+    {
+      "key": "original.514",
+      "zh": "秒",
+      "en": "sec"
+    },
+    {
+      "key": "original.515",
+      "zh": "点击获取钻石",
+      "en": "Tap for Diamonds"
+    },
+    {
+      "key": "original.516",
+      "zh": "邪恶大蛇前来拜访",
+      "en": "Evil Orochi Appears"
+    },
+    {
+      "key": "original.517",
+      "zh": "快速发射多个触手",
+      "en": "Rapidly fires multiple tentacles"
+    },
+    {
+      "key": "original.518",
+      "zh": "持续",
+      "en": "Duration"
+    },
+    {
+      "key": "original.519",
+      "zh": "投掷6点进行充能",
+      "en": "Roll 6 to charge"
+    },
+    {
+      "key": "original.520",
+      "zh": "激活",
+      "en": "Activate"
+    },
+    {
+      "key": "original.521",
+      "zh": "全场6点",
+      "en": "Board-Wide Sixes"
+    },
+    {
+      "key": "original.522",
+      "zh": "狂欢",
+      "en": "Frenzy"
+    },
+    {
+      "key": "original.523",
+      "zh": "不定时为您免费派送<color=#e66e17>钻石</color>",
+      "en": "Delivers free <color=#e66e17>Diamonds</color> from time to time"
+    },
+    {
+      "key": "original.524",
+      "zh": "所有帮手获取金钱<color=#e66e17>+100%</color>；<br>持续<color=#e66e17>5min</color>",
+      "en": "All Helpers earn <color=#e66e17>+100%</color>;<br>Duration: <color=#e66e17>5min</color>"
+    },
+    {
+      "key": "original.525",
+      "zh": "参与投资可",
+      "en": "Invest to"
+    },
+    {
+      "key": "original.526",
+      "zh": "翻倍钻石",
+      "en": "Double Diamonds"
+    },
+    {
+      "key": "original.527",
+      "zh": "或者血本无归。",
+      "en": "or lose it all."
+    },
+    {
+      "key": "original.528",
+      "zh": "幸运之神眷顾你，投资翻倍啦！",
+      "en": "Luck is on your side. Your investment doubled!"
+    },
+    {
+      "key": "original.529",
+      "zh": "大富翁邀请你进行投资",
+      "en": "The Tycoon invites you to invest"
+    },
+    {
+      "key": "original.530",
+      "zh": "黑心资本家，我要拿回所有本钱！",
+      "en": "Greedy capitalist! Give it all back!"
+    },
+    {
+      "key": "original.531",
+      "zh": "投资奇遇：消耗xx金钱，进行投资；可翻倍金钱或者血本无归。",
+      "en": "Investment Event: Spend xx Cash to invest. Double it—or lose it all."
+    },
+    {
+      "key": "original.532",
+      "zh": "所有帮手速度提高<color=#e66e17>100%</color>；<br>持续<color=#e66e17>5min</color>",
+      "en": "All Helpers gain <color=#e66e17>100%</color> Speed;<br>Duration: <color=#e66e17>5min</color>"
+    },
+    {
+      "key": "original.533",
+      "zh": "预计获得",
+      "en": "Estimated Return"
+    },
+    {
+      "key": "original.534",
+      "zh": "投入",
+      "en": "Invest"
+    },
+    {
+      "key": "original.535",
+      "zh": "通过xxxxx解锁",
+      "en": "Unlock via xxxxx"
+    },
+    {
+      "key": "original.536",
+      "zh": "集装箱<color=#20A51A>盈利</color>:",
+      "en": "Container <color=#20A51A>Profit</color>:"
+    },
+    {
+      "key": "original.537",
+      "zh": "事件<color=#20A51A>盈利</color>:",
+      "en": "Event <color=#20A51A>Profit</color>:"
+    },
+    {
+      "key": "original.539",
+      "zh": "总盈利:",
+      "en": "Total Profit:"
+    },
+    {
+      "key": "original.540",
+      "zh": "我的估价",
+      "en": "My Estimate"
+    },
+    {
+      "key": "original.541",
+      "zh": "普通",
+      "en": "Normal"
+    },
+    {
+      "key": "original.542",
+      "zh": "激烈",
+      "en": "Intense"
+    },
+    {
+      "key": "original.543",
+      "zh": "其他<color=#20A51A>盈利</color>:",
+      "en": "Other <color=#20A51A>Profit</color>:"
+    },
+    {
+      "key": "original.544",
+      "zh": "抬价<color=#20A51A>盈利</color>:",
+      "en": "Bid-Up <color=#20A51A>Profit</color>:"
+    },
+    {
+      "key": "original.545",
+      "zh": "白热化",
+      "en": "Fever Pitch"
+    },
+    {
+      "key": "original.546",
+      "zh": "后获得  1",
+      "en": "Get 1 after"
+    },
+    {
+      "key": "original.547",
+      "zh": "匹配中:",
+      "en": "Matching:"
+    },
+    {
+      "key": "original.548",
+      "zh": "我",
+      "en": "Me"
+    },
+    {
+      "key": "original.549",
+      "zh": "等待其他玩家入场",
+      "en": "Waiting for other players"
+    },
+    {
+      "key": "original.550",
+      "zh": "已准备",
+      "en": "Ready"
+    },
+    {
+      "key": "original.551",
+      "zh": "门票:",
+      "en": "Ticket:"
+    },
+    {
+      "key": "original.552",
+      "zh": "距离入口关闭还剩 00:59",
+      "en": "Entrance closes in 00:59"
+    },
+    {
+      "key": "original.553",
+      "zh": "天赋系统提升",
+      "en": "Talent Boost"
+    },
+    {
+      "key": "original.554",
+      "zh": "获取<color=#e47716>2333</color>金币后解锁",
+      "en": "Unlock after earning <color=#e47716>2333</color> Gold Coins"
+    },
+    {
+      "key": "original.555",
+      "zh": "未解锁",
+      "en": "Locked"
+    },
+    {
+      "key": "original.556",
+      "zh": "检测到服务器有你旧的存档,是否恢复?",
+      "en": "Old cloud save found. Restore it?"
+    },
+    {
+      "key": "original.557",
+      "zh": "恭喜达成<color=#f8642a>xxxx</color>小目标！",
+      "en": "Goal complete: <color=#f8642a>xxxx</color>!"
+    },
+    {
+      "key": "original.558",
+      "zh": "xx小时xx分",
+      "en": "xxh xxm"
+    },
+    {
+      "key": "original.559",
+      "zh": "你在离线期间获得了",
+      "en": "While offline, you earned"
+    },
+    {
+      "key": "original.560",
+      "zh": "离线时间上限：6小时",
+      "en": "Max Offline Time: 6h"
+    },
+    {
+      "key": "original.561",
+      "zh": "存档并退出游戏",
+      "en": "Save & Quit"
+    },
+    {
+      "key": "original.562",
+      "zh": "音效",
+      "en": "SFX"
+    },
+    {
+      "key": "original.563",
+      "zh": "音乐",
+      "en": "Music"
+    },
+    {
+      "key": "original.564",
+      "zh": "所有桌面增益效果，可叠加生效",
+      "en": "All Table buffs can stack"
+    },
+    {
+      "key": "original.565",
+      "zh": "在场景中使用此桌面",
+      "en": "Use this Table in the scene"
+    },
+    {
+      "key": "original.566",
+      "zh": "产生的暴击收益*500产生的暴击收益*500",
+      "en": "Crit Earnings x500Crit Earnings x500"
+    },
+    {
+      "key": "original.567",
+      "zh": "所有桌面增益效果可叠加生效",
+      "en": "All Table buffs can stack"
+    },
+    {
+      "key": "original.568",
+      "zh": "解锁条件：主线任务达到12级",
+      "en": "Unlock: Reach Main Quest Lv. 12"
+    },
+    {
+      "key": "original.569",
+      "zh": "产生的暴击收益*500%产生的暴击收益*500%",
+      "en": "Crit Earnings x500%Crit Earnings x500%"
+    },
+    {
+      "key": "original.570",
+      "zh": "帮手名字",
+      "en": "Helper Name"
+    },
+    {
+      "key": "original.571",
+      "zh": "解锁条件",
+      "en": "Unlock Requirement"
+    },
+    {
+      "key": "original.572",
+      "zh": "主线任务达到12级",
+      "en": "Reach Main Quest Lv. 12"
+    },
+    {
+      "key": "original.573",
+      "zh": "特有技能提升对应等级",
+      "en": "Unique Skill reaches the matching level"
+    },
+    {
+      "key": "original.574",
+      "zh": "技能收益",
+      "en": "Skill Earnings"
+    },
+    {
+      "key": "original.575",
+      "zh": "基础金币收益",
+      "en": "Base Gold Coin Earnings"
+    },
+    {
+      "key": "original.576",
+      "zh": "包含若干：<color=#e4771e>R级碎片</color>和<color=#9227dd>SR碎片</color>",
+      "en": "Contains: <color=#e4771e>R Shards</color> and <color=#9227dd>SR Shards</color>"
+    },
+    {
+      "key": "original.577",
+      "zh": "包含若干：N级碎片和<color=#e4771e>R级碎片</color>",
+      "en": "Contains: N Shards and <color=#e4771e>R Shards</color>"
+    },
+    {
+      "key": "original.578",
+      "zh": "保底进度4/5",
+      "en": "Guaranteed Drop: 4/5"
+    },
+    {
+      "key": "original.579",
+      "zh": "重生可获取天赋点",
+      "en": "Prestige grants Talent Points"
+    },
+    {
+      "key": "original.580",
+      "zh": "天赋已到达最大等级",
+      "en": "Talent maxed"
+    },
+    {
+      "key": "original.581",
+      "zh": "获得天赋点",
+      "en": "Get Talent Points"
+    },
+    {
+      "key": "original.582",
+      "zh": "前往",
+      "en": "Go"
+    },
+    {
+      "key": "original.583",
+      "zh": "重生功能已开启；可获得大量收益和特殊加成！",
+      "en": "Prestige unlocked: Huge earnings and special bonuses await!"
+    },
+    {
+      "key": "original.584",
+      "zh": "已提升到最大等级",
+      "en": "Max Level Reached"
+    },
+    {
+      "key": "original.585",
+      "zh": "达到金钱目标后，可使用重生",
+      "en": "Reach the Cash goal to Prestige"
+    },
+    {
+      "key": "original.586",
+      "zh": "普通重生",
+      "en": "Standard Prestige"
+    },
+    {
+      "key": "original.587",
+      "zh": "重生后，所有金币和等级将清空。<br>\n但你会获得天赋点和全局收益加成！",
+      "en": "Prestige resets all Cash and Levels.<br>\nBut grants Talent Points and a Global Earnings bonus!"
+    },
+    {
+      "key": "original.588",
+      "zh": "是否保留等级？",
+      "en": "Keep Levels?"
+    },
+    {
+      "key": "original.589",
+      "zh": "进阶重生",
+      "en": "Advanced Prestige"
+    },
+    {
+      "key": "original.590",
+      "zh": "普通重生会清空所有升级项等级",
+      "en": "Standard Prestige resets all upgrade levels"
+    },
+    {
+      "key": "original.591",
+      "zh": "当前可获得天赋点：",
+      "en": "Talent Points available:"
+    },
+    {
+      "key": "original.592",
+      "zh": "额外+5",
+      "en": "Bonus +5"
+    },
+    {
+      "key": "original.593",
+      "zh": "下个目标：",
+      "en": "Next Goal:"
+    },
+    {
+      "key": "original.594",
+      "zh": "进阶重生可保留升级项等级！",
+      "en": "Advanced Prestige keeps upgrade levels!"
+    },
+    {
+      "key": "original.595",
+      "zh": "全局收益*200%",
+      "en": "Global Earnings x200%"
+    },
+    {
+      "key": "original.596",
+      "zh": "确定要重量天赋树，\n<br>回收所有已花费的天赋点吗?",
+      "en": "Reset the Talent Tree?\n<br>Refund all spent Talent Points?"
+    },
+    {
+      "key": "original.597",
+      "zh": "可回收天赋：",
+      "en": "Refundable Talent Points:"
+    },
+    {
+      "key": "original.598",
+      "zh": "白手起家，赚取你的第一桶金！",
+      "en": "Start from nothing and earn your first fortune!"
+    },
+    {
+      "key": "original.599",
+      "zh": "通过不断投资与扩张，打造全城最强的商业帝国！",
+      "en": "Invest and expand to build the city's top business empire!"
+    },
+    {
+      "key": "original.600",
+      "zh": "新道具",
+      "en": "New Item"
+    },
+    {
+      "key": "original.601",
+      "zh": "新角色",
+      "en": "New Character"
+    },
+    {
+      "key": "original.602",
+      "zh": "1.6倍",
+      "en": "1.6x"
+    },
+    {
+      "key": "original.603",
+      "zh": "12倍",
+      "en": "12x"
+    },
+    {
+      "key": "original.604",
+      "zh": "2.2倍",
+      "en": "2.2x"
+    },
+    {
+      "key": "original.605",
+      "zh": "3倍时间",
+      "en": "3x Time"
+    },
+    {
+      "key": "original.606",
+      "zh": "4天 23:52:07",
+      "en": "4 Days 23:52:07"
+    },
+    {
+      "key": "original.607",
+      "zh": "<color=#c1695d>震惊！</color>本地知名企业家再度“野蛮生长”！",
+      "en": "<color=#c1695d>Shocking!</color> Local renowned entrepreneur is \"growing wildly\" again!"
+    },
+    {
+      "key": "original.608",
+      "zh": "<color=#ffeec9>解锁条件</color>\n主线任务达到12级",
+      "en": "<color=#ffeec9>Unlock Condition</color>\nMain Quest reaches Lv.12"
+    },
+    {
+      "key": "original.609",
+      "zh": "LV.30解锁",
+      "en": "Unlocks at LV.30"
+    },
+    {
+      "key": "original.610",
+      "zh": "LV30解锁",
+      "en": "Unlocks at LV30"
+    },
+    {
+      "key": "original.611",
+      "zh": "LV50解锁",
+      "en": "Unlocks at LV50"
+    },
+    {
+      "key": "original.612",
+      "zh": "LV70解锁",
+      "en": "Unlocks at LV70"
+    },
+    {
+      "key": "original.613",
+      "zh": "【头条】夭寿啦！新晋财阀疯狂吞并，小镇格局一夜变天\n独家线报：某神秘玩家名下资产正“无性繁殖”。小镇多年市场格局宣告寿终正寝。",
+      "en": "[Headline] Oh my goodness! The new tycoon is frantically annexing, the town's landscape changed overnight.\nExclusive Tip: The assets under the name of a mysterious player are \"asexually reproducing\". The long-standing market structure of the town is declared dead."
+    },
+    {
+      "key": "original.614",
+      "zh": "一键组队",
+      "en": "Quick Team Up"
+    },
+    {
+      "key": "original.615",
+      "zh": "上报接口",
+      "en": "Report API"
+    },
+    {
+      "key": "original.616",
+      "zh": "世界",
+      "en": "World"
+    },
+    {
+      "key": "original.617",
+      "zh": "世界榜",
+      "en": "World Ranking"
+    },
+    {
+      "key": "original.618",
+      "zh": "使用中",
+      "en": "In Use"
+    },
+    {
+      "key": "original.619",
+      "zh": "侧边栏进入领奖励",
+      "en": "Enter from sidebar to claim rewards"
+    },
+    {
+      "key": "original.620",
+      "zh": "倒计时",
+      "en": "Countdown"
+    },
+    {
+      "key": "original.621",
+      "zh": "免费奖励",
+      "en": "Free Rewards"
+    },
+    {
+      "key": "original.622",
+      "zh": "兑换",
+      "en": "Exchange"
+    },
+    {
+      "key": "original.623",
+      "zh": "全新冒险即将开启!",
+      "en": "A brand new adventure is about to start!"
+    },
+    {
+      "key": "original.624",
+      "zh": "准备",
+      "en": "Ready"
+    },
+    {
+      "key": "original.625",
+      "zh": "准备好啦",
+      "en": "I'm Ready"
+    },
+    {
+      "key": "original.626",
+      "zh": "分均收入：244K",
+      "en": "Income/Min: 244K"
+    },
+    {
+      "key": "original.627",
+      "zh": "前置世界达到<color=#c30505>15</color> 级解锁",
+      "en": "Unlocks when prerequisite World reaches Lv.<color=#c30505>15</color>"
+    },
+    {
+      "key": "original.628",
+      "zh": "功夫大师",
+      "en": "Kungfu Master"
+    },
+    {
+      "key": "original.629",
+      "zh": "功夫大师前来相助",
+      "en": "Kungfu Master comes to help"
+    },
+    {
+      "key": "original.630",
+      "zh": "升级",
+      "en": "Upgrade"
+    },
+    {
+      "key": "original.631",
+      "zh": "去商城",
+      "en": "Go to Mall"
+    },
+    {
+      "key": "original.632",
+      "zh": "去订阅",
+      "en": "Go to Subscribe"
+    },
+    {
+      "key": "original.633",
+      "zh": "去邀请",
+      "en": "Go to Invite"
+    },
+    {
+      "key": "original.634",
+      "zh": "双倍获取",
+      "en": "Double Obtain"
+    },
+    {
+      "key": "original.635",
+      "zh": "发射6颗爱心光球，随机抛起路径上硬币",
+      "en": "Fires 6 heart orbs, randomly tossing coins on the path"
+    },
+    {
+      "key": "original.636",
+      "zh": "发射SSS颗爱心光球，\n随机抛起路径上硬币",
+      "en": "Fires SSS heart orbs,\nrandomly tossing coins on the path"
+    },
+    {
+      "key": "original.637",
+      "zh": "取消",
+      "en": "Cancel"
+    },
+    {
+      "key": "original.638",
+      "zh": "召唤",
+      "en": "Summon"
+    },
+    {
+      "key": "original.639",
+      "zh": "召唤大蛇",
+      "en": "Summon Orochi"
+    },
+    {
+      "key": "original.640",
+      "zh": "可分配帮手",
+      "en": "Assignable Helpers"
+    },
+    {
+      "key": "original.641",
+      "zh": "可用天赋",
+      "en": "Available Talents"
+    },
+    {
+      "key": "original.642",
+      "zh": "可解锁人物",
+      "en": "Unlockable Characters"
+    },
+    {
+      "key": "original.643",
+      "zh": "商城",
+      "en": "Mall"
+    },
+    {
+      "key": "original.644",
+      "zh": "大力士数量上限<color=#E57533>+1</color>",
+      "en": "Max Hercules Limit <color=#E57533>+1</color>"
+    },
+    {
+      "key": "original.645",
+      "zh": "大理石桌子",
+      "en": "Marble Table"
+    },
+    {
+      "key": "original.646",
+      "zh": "大理石桌面",
+      "en": "Marble Desktop"
+    },
+    {
+      "key": "original.647",
+      "zh": "天赋",
+      "en": "Talent"
+    },
+    {
+      "key": "original.648",
+      "zh": "契约未生效",
+      "en": "Contract Not Active"
+    },
+    {
+      "key": "original.649",
+      "zh": "好友榜",
+      "en": "Friend Rank"
+    },
+    {
+      "key": "original.650",
+      "zh": "完成授权即可领取奖励",
+      "en": "Complete authorization to claim rewards"
+    },
+    {
+      "key": "original.651",
+      "zh": "家电",
+      "en": "Appliance"
+    },
+    {
+      "key": "original.652",
+      "zh": "已达上限",
+      "en": "Limit Reached"
+    },
+    {
+      "key": "original.653",
+      "zh": "已邀请",
+      "en": "Invited"
+    },
+    {
+      "key": "original.654",
+      "zh": "帮手名称",
+      "en": "Helper Name"
+    },
+    {
+      "key": "original.655",
+      "zh": "帮手翻硬币收益：",
+      "en": "Helper Coin Flipping Income:"
+    },
+    {
+      "key": "original.656",
+      "zh": "广告奖励",
+      "en": "Ad Rewards"
+    },
+    {
+      "key": "original.657",
+      "zh": "广告抽取",
+      "en": "Ad Draw"
+    },
+    {
+      "key": "original.658",
+      "zh": "广告接口",
+      "en": "Ad API"
+    },
+    {
+      "key": "original.659",
+      "zh": "广告播放中：15秒",
+      "en": "Playing Ad: 15s"
+    },
+    {
+      "key": "original.660",
+      "zh": "广告获取",
+      "en": "Obtain via Ad"
+    },
+    {
+      "key": "original.661",
+      "zh": "强化",
+      "en": "Enhance"
+    },
+    {
+      "key": "original.662",
+      "zh": "当前积分",
+      "en": "Current Points"
+    },
+    {
+      "key": "original.663",
+      "zh": "快速发射多个触手\n持续<color=#e66e17>30min</color>",
+      "en": "Quickly fire multiple tentacles\nLasts <color=#e66e17>30min</color>"
+    },
+    {
+      "key": "original.664",
+      "zh": "恢复存档",
+      "en": "Restore Save"
+    },
+    {
+      "key": "original.665",
+      "zh": "成长等级",
+      "en": "Growth Level"
+    },
+    {
+      "key": "original.666",
+      "zh": "成长等级<color=#96ff00>10</color>级即可解锁世界",
+      "en": "Unlock World when Growth Level reaches <color=#96ff00>10</color>"
+    },
+    {
+      "key": "original.667",
+      "zh": "我的排名",
+      "en": "My Rank"
+    },
+    {
+      "key": "original.668",
+      "zh": "手动翻转的硬币收益*200%",
+      "en": "Manual coin flipping income *200%"
+    },
+    {
+      "key": "original.669",
+      "zh": "技能",
+      "en": "Skill"
+    },
+    {
+      "key": "original.670",
+      "zh": "技能介绍",
+      "en": "Skill Intro"
+    },
+    {
+      "key": "original.671",
+      "zh": "技能名字",
+      "en": "Skill Name"
+    },
+    {
+      "key": "original.672",
+      "zh": "投掷6点进行充能\n激活<color=#e66e17>全场6点</color>狂欢",
+      "en": "Roll a 6 to charge\nActivate <color=#e66e17>All 6s</color> carnival"
+    },
+    {
+      "key": "original.673",
+      "zh": "抬价阶段",
+      "en": "Bidding Phase"
+    },
+    {
+      "key": "original.674",
+      "zh": "拍卖",
+      "en": "Auction"
+    },
+    {
+      "key": "original.675",
+      "zh": "拍卖场",
+      "en": "Auction House"
+    },
+    {
+      "key": "original.676",
+      "zh": "挑战",
+      "en": "Challenge"
+    },
+    {
+      "key": "original.677",
+      "zh": "授权允许推荐页进程提醒",
+      "en": "Authorize recommendations process reminders"
+    },
+    {
+      "key": "original.678",
+      "zh": "排名",
+      "en": "Ranking"
+    },
+    {
+      "key": "original.679",
+      "zh": "排行榜",
+      "en": "Leaderboard"
+    },
+    {
+      "key": "original.680",
+      "zh": "排行榜有点冷清，邀请好友一起PK吧~",
+      "en": "The leaderboard is a bit quiet, invite friends to PK together~"
+    },
+    {
+      "key": "original.681",
+      "zh": "提前解锁",
+      "en": "Early Unlock"
+    },
+    {
+      "key": "original.682",
+      "zh": "提前订阅，第三天免费领取强力帮手!",
+      "en": "Subscribe early, claim a powerful helper for free on the third day!"
+    },
+    {
+      "key": "original.683",
+      "zh": "提升属性后再来挑战吧",
+      "en": "Improve your stats before challenging"
+    },
+    {
+      "key": "original.684",
+      "zh": "支付接口",
+      "en": "Payment API"
+    },
+    {
+      "key": "original.685",
+      "zh": "收起",
+      "en": "Collapse"
+    },
+    {
+      "key": "original.686",
+      "zh": "更多",
+      "en": "More"
+    },
+    {
+      "key": "original.687",
+      "zh": "未来城市",
+      "en": "Future City"
+    },
+    {
+      "key": "original.688",
+      "zh": "材料不足",
+      "en": "Insufficient Materials"
+    },
+    {
+      "key": "original.689",
+      "zh": "桌面",
+      "en": "Desktop"
+    },
+    {
+      "key": "original.690",
+      "zh": "欢迎来到拍卖长",
+      "en": "Welcome to the Auction House"
+    },
+    {
+      "key": "original.691",
+      "zh": "正在使用",
+      "en": "Currently Using"
+    },
+    {
+      "key": "original.692",
+      "zh": "每日签到",
+      "en": "Daily Sign-in"
+    },
+    {
+      "key": "original.693",
+      "zh": "活动开启",
+      "en": "Event Open"
+    },
+    {
+      "key": "original.694",
+      "zh": "消耗xx钱，进行投资；\n参与投资可<color=#E47716>翻倍钻石</color>或者血本无归。",
+      "en": "Spend xx money to invest;\nParticipate in investment to <color=#E47716>Double Diamonds</color> or lose everything."
+    },
+    {
+      "key": "original.695",
+      "zh": "添加桌面",
+      "en": "Add to Desktop"
+    },
+    {
+      "key": "original.696",
+      "zh": "清除存档",
+      "en": "Clear Save"
+    },
+    {
+      "key": "original.697",
+      "zh": "滑动可抛起铜骰",
+      "en": "Swipe to toss the copper dice"
+    },
+    {
+      "key": "original.698",
+      "zh": "满<color=#69FF4F>5</color>次必得<color=#ffa1fa>SR碎片</color>！",
+      "en": "Guaranteed <color=#ffa1fa>SR Fragment</color> within <color=#69FF4F>5</color> times!"
+    },
+    {
+      "key": "original.699",
+      "zh": "激活(20秒)",
+      "en": "Activate (20s)"
+    },
+    {
+      "key": "original.700",
+      "zh": "激活超级666,全场骰子变为6点!",
+      "en": "Activate Super 666, all dice become 6s!"
+    },
+    {
+      "key": "original.701",
+      "zh": "点击侧边栏图标",
+      "en": "Click the sidebar icon"
+    },
+    {
+      "key": "original.702",
+      "zh": "点击我的发财日记",
+      "en": "Click My Wealth Diary"
+    },
+    {
+      "key": "original.703",
+      "zh": "物品",
+      "en": "Item"
+    },
+    {
+      "key": "original.704",
+      "zh": "特殊",
+      "en": "Special"
+    },
+    {
+      "key": "original.705",
+      "zh": "特殊奇遇",
+      "en": "Special Encounter"
+    },
+    {
+      "key": "original.706",
+      "zh": "玩家信息",
+      "en": "Player Info"
+    },
+    {
+      "key": "original.707",
+      "zh": "白手起家，赚取你的第一桶金！\n\n通过不断投资与扩张，打造全城最强的商业帝国！",
+      "en": "Start from scratch and earn your first bucket of gold!\n\nThrough continuous investment and expansion, build the strongest business empire in the city!"
+    },
+    {
+      "key": "original.708",
+      "zh": "硬币城市",
+      "en": "Coin City"
+    },
+    {
+      "key": "original.709",
+      "zh": "硬币翻转有8%概率产生2倍的暴击收益硬币翻转有8%t",
+      "en": "Coin flip has an 8% chance to yield 2x critical income"
+    },
+    {
+      "key": "original.710",
+      "zh": "确定",
+      "en": "Confirm"
+    },
+    {
+      "key": "original.711",
+      "zh": "确定要重量天赋树，<br>回收所有已花费的天赋点吗?",
+      "en": "Are you sure you want to reset the talent tree,<br>and recover all spent talent points?"
+    },
+    {
+      "key": "original.712",
+      "zh": "确认",
+      "en": "OK"
+    },
+    {
+      "key": "original.713",
+      "zh": "碎片不足",
+      "en": "Insufficient Fragments"
+    },
+    {
+      "key": "original.714",
+      "zh": "离开挑战",
+      "en": "Leave Challenge"
+    },
+    {
+      "key": "original.715",
+      "zh": "离线收益",
+      "en": "Offline Income"
+    },
+    {
+      "key": "original.716",
+      "zh": "称号晋升",
+      "en": "Title Promotion"
+    },
+    {
+      "key": "original.717",
+      "zh": "第1天",
+      "en": "Day 1"
+    },
+    {
+      "key": "original.718",
+      "zh": "签到",
+      "en": "Sign In"
+    },
+    {
+      "key": "original.719",
+      "zh": "能够发射如来神掌，将硬币抛起\n持续<color=#e66e17>30min</color>",
+      "en": "Can fire Buddha's Palm to toss the coins\nLasts <color=#e66e17>30min</color>"
+    },
+    {
+      "key": "original.720",
+      "zh": "获取",
+      "en": "Obtain"
+    },
+    {
+      "key": "original.721",
+      "zh": "要回本钱",
+      "en": "Recover Principal"
+    },
+    {
+      "key": "original.722",
+      "zh": "觉醒技能",
+      "en": "Awaken Skill"
+    },
+    {
+      "key": "original.723",
+      "zh": "解锁条件：主线任务达到xx级",
+      "en": "Unlock Condition: Main Quest reaches Lv.xx"
+    },
+    {
+      "key": "original.724",
+      "zh": "订阅",
+      "en": "Subscribe"
+    },
+    {
+      "key": "original.725",
+      "zh": "订阅有奖",
+      "en": "Subscription Rewards"
+    },
+    {
+      "key": "original.726",
+      "zh": "订阅有礼",
+      "en": "Subscription Gifts"
+    },
+    {
+      "key": "original.727",
+      "zh": "订阅解锁",
+      "en": "Subscription Unlock"
+    },
+    {
+      "key": "original.728",
+      "zh": "设置",
+      "en": "Settings"
+    },
+    {
+      "key": "original.729",
+      "zh": "货币兑换",
+      "en": "Currency Exchange"
+    },
+    {
+      "key": "original.730",
+      "zh": "赚钱升级",
+      "en": "Earn Money to Upgrade"
+    },
+    {
+      "key": "original.731",
+      "zh": "赚钱大师",
+      "en": "Money Making Master"
+    },
+    {
+      "key": "original.732",
+      "zh": "边栏好礼",
+      "en": "Sidebar Gifts"
+    },
+    {
+      "key": "original.733",
+      "zh": "这是提示词",
+      "en": "This is a prompt"
+    },
+    {
+      "key": "original.734",
+      "zh": "进入侧边栏",
+      "en": "Enter Sidebar"
+    },
+    {
+      "key": "original.735",
+      "zh": "进入挑战",
+      "en": "Enter Challenge"
+    },
+    {
+      "key": "original.737",
+      "zh": "道具",
+      "en": "Props"
+    },
+    {
+      "key": "original.738",
+      "zh": "邀请协助",
+      "en": "Invite to Assist"
+    },
+    {
+      "key": "original.739",
+      "zh": "邀请好友",
+      "en": "Invite Friends"
+    },
+    {
+      "key": "original.740",
+      "zh": "邀请好友成功时，<br>时限内全局收益<color=#e66e17>+50%</color>",
+      "en": "Upon successful friend invitation,<br>global income <color=#e66e17>+50%</color> within the time limit"
+    },
+    {
+      "key": "original.741",
+      "zh": "重生",
+      "en": "Rebirth"
+    },
+    {
+      "key": "original.742",
+      "zh": "重生后，所有金币和等级将清空。<br>但你会获得天赋点和全局收益加成！",
+      "en": "After rebirth, all gold and levels will be cleared.<br>But you will gain talent points and global income bonuses!"
+    },
+    {
+      "key": "original.743",
+      "zh": "重置",
+      "en": "Reset"
+    },
+    {
+      "key": "original.744",
+      "zh": "钻石支援",
+      "en": "Diamond Support"
+    },
+    {
+      "key": "original.745",
+      "zh": "铜币上涨、银币上涨、金币上涨。升级项最大等级<color=#e66e17>+20</color>",
+      "en": "Copper Coin Up, Silver Coin Up, Gold Coin Up. Max upgrade level <color=#e66e17>+20</color>"
+    },
+    {
+      "key": "original.746",
+      "zh": "领取奖励",
+      "en": "Claim Reward"
+    },
+    {
+      "key": "original.748",
+      "zh": "骰子城市",
+      "en": "Dice City"
+    },
+    {
+      "key": "original.749",
+      "zh": "鼓舞大师",
+      "en": "Encouragement Master"
+    },
+    {
+      "key": "original.750",
+      "zh": "后续开放",
+      "en": "To Be Opened"
+    },
+    {
+      "key": "original.751",
+      "zh": "开始挣钱",
+      "en": "Start Making Money"
+    },
+    {
+      "key": "original.752",
+      "zh": "当前",
+      "en": "Current"
+    },
+    {
+      "key": "settings.language",
+      "zh": "语言",
+      "en": "Language"
+    },
+    {
+      "key": "settings.title",
+      "zh": "设置",
+      "en": "Settings"
+    },
+    {
+      "key": "settings.music",
+      "zh": "音乐",
+      "en": "Music"
+    },
+    {
+      "key": "settings.sound",
+      "zh": "音效",
+      "en": "Sound"
+    },
+    {
+      "key": "settings.reset",
+      "zh": "清除存档",
+      "en": "Clear Save"
+    },
+    {
+      "key": "settings.reset_confirm",
+      "zh": "确定要清除存档吗？\n清除后无法恢复",
+      "en": "Clear your save?\nThis cannot be undone."
+    },
+    {
+      "key": "nav.items",
+      "zh": "物品",
+      "en": "Items"
+    },
+    {
+      "key": "nav.helpers",
+      "zh": "帮手",
+      "en": "Helpers"
+    },
+    {
+      "key": "nav.talents",
+      "zh": "天赋",
+      "en": "Talents"
+    },
+    {
+      "key": "nav.shop",
+      "zh": "商城",
+      "en": "Shop"
+    },
+    {
+      "key": "nav.world",
+      "zh": "世界",
+      "en": "Worlds"
+    },
+    {
+      "key": "nav.facility",
+      "zh": "设施",
+      "en": "Facilities"
+    },
+    {
+      "key": "nav.desks",
+      "zh": "桌面",
+      "en": "Tables"
+    },
+    {
+      "key": "nav.money",
+      "zh": "金钱",
+      "en": "Coins"
+    },
+    {
+      "key": "nav.special",
+      "zh": "特殊",
+      "en": "Special"
+    },
+    {
+      "key": "nav.skills",
+      "zh": "技能",
+      "en": "Skills"
+    },
+    {
+      "key": "nav.enhance",
+      "zh": "强化",
+      "en": "Boosts"
+    },
+    {
+      "key": "action.cancel",
+      "zh": "取消",
+      "en": "Cancel"
+    },
+    {
+      "key": "action.confirm",
+      "zh": "确定",
+      "en": "Confirm"
+    },
+    {
+      "key": "action.close",
+      "zh": "关闭",
+      "en": "Close"
+    },
+    {
+      "key": "action.go",
+      "zh": "前往",
+      "en": "Go"
+    },
+    {
+      "key": "action.upgrade",
+      "zh": "升级",
+      "en": "Upgrade"
+    },
+    {
+      "key": "action.summon",
+      "zh": "召唤",
+      "en": "Summon"
+    },
+    {
+      "key": "action.use",
+      "zh": "使用",
+      "en": "Use"
+    },
+    {
+      "key": "action.using",
+      "zh": "正在使用",
+      "en": "In Use"
+    },
+    {
+      "key": "action.reset",
+      "zh": "重置",
+      "en": "Reset"
+    },
+    {
+      "key": "action.rebirth",
+      "zh": "重生",
+      "en": "Rebirth"
+    },
+    {
+      "key": "action.claim",
+      "zh": "领取奖励",
+      "en": "Claim Reward"
+    },
+    {
+      "key": "action.double",
+      "zh": "双倍获取",
+      "en": "Double Reward"
+    },
+    {
+      "key": "action.unlock",
+      "zh": "解锁",
+      "en": "Unlock"
+    },
+    {
+      "key": "action.more",
+      "zh": "更多",
+      "en": "More"
+    },
+    {
+      "key": "action.fold",
+      "zh": "收起",
+      "en": "Less"
+    },
+    {
+      "key": "status.unlocked",
+      "zh": "已解锁",
+      "en": "Unlocked"
+    },
+    {
+      "key": "status.max",
+      "zh": "已达最大等级",
+      "en": "Max Level"
+    },
+    {
+      "key": "status.capped",
+      "zh": "已达上限",
+      "en": "Max Level"
+    },
+    {
+      "key": "status.max_level",
+      "zh": "最大等级",
+      "en": "Max Level"
+    },
+    {
+      "key": "status.soon",
+      "zh": "敬请期待",
+      "en": "Coming Soon"
+    },
+    {
+      "key": "status.unavailable",
+      "zh": "该功能暂未开放",
+      "en": "This feature is not available yet."
+    },
+    {
+      "key": "status.no_gold",
+      "zh": "金币不足",
+      "en": "Not enough coins."
+    },
+    {
+      "key": "status.no_diamonds",
+      "zh": "钻石不足",
+      "en": "Not enough diamonds."
+    },
+    {
+      "key": "status.no_shards",
+      "zh": "金币或碎片不足",
+      "en": "Not enough coins or shards."
+    },
+    {
+      "key": "status.materials",
+      "zh": "材料不足",
+      "en": "Missing Materials"
+    },
+    {
+      "key": "status.today_limit",
+      "zh": "今日次数已用完",
+      "en": "No attempts left today."
+    },
+    {
+      "key": "status.purchase_limit",
+      "zh": "今日购买次数已达上限",
+      "en": "Daily purchase limit reached."
+    },
+    {
+      "key": "status.wheel_progress",
+      "zh": "转盘进度未满",
+      "en": "Fill the spin meter first."
+    },
+    {
+      "key": "status.claimed",
+      "zh": "已领取",
+      "en": "Claimed"
+    },
+    {
+      "key": "status.claim_early",
+      "zh": "还没有到领取时间",
+      "en": "This reward is not available yet."
+    },
+    {
+      "key": "status.evolved",
+      "zh": "进化完成!",
+      "en": "Evolution complete!"
+    },
+    {
+      "key": "growth.label",
+      "zh": "成长等级",
+      "en": "Growth Level"
+    },
+    {
+      "key": "growth.unlocked",
+      "zh": "完成成长等级{0}后解锁",
+      "en": "Unlocks after Growth Lv. {0}"
+    },
+    {
+      "key": "growth.goal",
+      "zh": "恭喜达成<color=#f8642a>{0}</color>小目标！",
+      "en": "Goal reached: <color=#f8642a>{0}</color>!"
+    },
+    {
+      "key": "growth.reward_notice",
+      "zh": "{0}进化！收益 ×10",
+      "en": "{0} evolved! Earnings x10"
+    },
+    {
+      "key": "growth.news_headline",
+      "zh": "<color=#c1695d>震惊！</color>本地知名企业家再度“野蛮生长”！",
+      "en": "<color=#c1695d>Breaking!</color> Local tycoon strikes again!"
+    },
+    {
+      "key": "growth.news_body",
+      "zh": "【头条】夭寿啦！新晋财阀疯狂吞并，小镇格局一夜变天\n独家线报：某神秘玩家名下资产正“无性繁殖”。小镇多年市场格局宣告寿终正寝。",
+      "en": "TOWN TIMES: A new tycoon takes over!\nOur sources report that a mysterious investor's fortune keeps multiplying. The town will never be the same."
+    },
+    {
+      "key": "check.title",
+      "zh": "7日签到",
+      "en": "7-Day Check-In"
+    },
+    {
+      "key": "check.free",
+      "zh": "免费奖励",
+      "en": "Free Rewards"
+    },
+    {
+      "key": "check.ad",
+      "zh": "广告奖励",
+      "en": "Ad Rewards"
+    },
+    {
+      "key": "check.day",
+      "zh": "第{0}天",
+      "en": "Day {0}"
+    },
+    {
+      "key": "check.acquire",
+      "zh": "获取",
+      "en": "Get"
+    },
+    {
+      "key": "check.subscribe",
+      "zh": "订阅",
+      "en": "Subscribe"
+    },
+    {
+      "key": "check.subscribe_tip",
+      "zh": "提前订阅，第三天免费领取强力帮手!",
+      "en": "Subscribe early to claim a powerful helper free on Day 3!"
+    },
+    {
+      "key": "check.ad_watch",
+      "zh": "观看广告",
+      "en": "Watch Ad"
+    },
+    {
+      "key": "check.daily_free",
+      "zh": "每日免费",
+      "en": "Daily Free"
+    },
+    {
+      "key": "world.title",
+      "zh": "选择世界",
+      "en": "Choose a World"
+    },
+    {
+      "key": "world.hint",
+      "zh": "上下滑动，点击岛屿切换世界",
+      "en": "Scroll and tap an island to switch worlds."
+    },
+    {
+      "key": "world.items",
+      "zh": "道具",
+      "en": "Items"
+    },
+    {
+      "key": "world.exclusive",
+      "zh": "专属帮手",
+      "en": "Exclusive Helper"
+    },
+    {
+      "key": "world.more",
+      "zh": "更多世界",
+      "en": "More Worlds"
+    },
+    {
+      "key": "world.more_soon",
+      "zh": "更多世界敬请期待",
+      "en": "More worlds are coming soon!"
+    },
+    {
+      "key": "world.current",
+      "zh": "当前",
+      "en": "Current"
+    },
+    {
+      "key": "world.same",
+      "zh": "当前已处于该世界",
+      "en": "You are already in this world."
+    },
+    {
+      "key": "world.locked",
+      "zh": "该世界尚未解锁",
+      "en": "This world is still locked."
+    },
+    {
+      "key": "world.confirm",
+      "zh": "是否确定切换至{0}？",
+      "en": "Switch to {0}?"
+    },
+    {
+      "key": "world.lock_goal",
+      "zh": "{0}完成<color=#c30505>{1}</color>级后解锁",
+      "en": "Unlocks after {0} reaches Lv. <color=#c30505>{1}</color>"
+    },
+    {
+      "key": "world.future",
+      "zh": "未来城市",
+      "en": "Future City"
+    },
+    {
+      "key": "world.dice",
+      "zh": "骰子世界",
+      "en": "Dice World"
+    },
+    {
+      "key": "world.guide_open",
+      "zh": "骰子世界开放,点击下方按键进入",
+      "en": "Dice World is open! Tap below to enter."
+    },
+    {
+      "key": "world.guide_switch",
+      "zh": "点击切换至骰子世界",
+      "en": "Tap to enter Dice World"
+    },
+    {
+      "key": "helper.unlock_dice",
+      "zh": "在骰子世界{0}级解锁",
+      "en": "Unlocks at Dice World Lv. {0}"
+    },
+    {
+      "key": "helper.unlock_growth",
+      "zh": "解锁条件\n成长等级达到{0}级",
+      "en": "Unlock: Reach Growth Lv. {0}"
+    },
+    {
+      "key": "helper.unlock_level",
+      "zh": "{0}级解锁",
+      "en": "Unlocks at Lv. {0}"
+    },
+    {
+      "key": "helper.level_unlock",
+      "zh": "LV{0}解锁",
+      "en": "Unlocks at Lv. {0}"
+    },
+    {
+      "key": "helper.level_unlock_dot",
+      "zh": "LV.{0}解锁",
+      "en": "Unlocks at Lv. {0}"
+    },
+    {
+      "key": "helper.limit",
+      "zh": "{0}数量上限+1",
+      "en": "{0} capacity +1"
+    },
+    {
+      "key": "helper.income",
+      "zh": "{0}翻硬币收益：",
+      "en": "{0} coin earnings:"
+    },
+    {
+      "key": "helper.range",
+      "zh": "{0}范围",
+      "en": "Range {0}"
+    },
+    {
+      "key": "helper.projectiles",
+      "zh": "{0}颗",
+      "en": "{0}"
+    },
+    {
+      "key": "helper.count",
+      "zh": "{0}个",
+      "en": "{0}"
+    },
+    {
+      "key": "helper.times",
+      "zh": "{0}倍",
+      "en": "{0}x"
+    },
+    {
+      "key": "helper.limit_up",
+      "zh": "增加上限",
+      "en": "Raise Limit"
+    },
+    {
+      "key": "helper.awake",
+      "zh": "觉醒技能",
+      "en": "Awakened Skill"
+    },
+    {
+      "key": "helper.skills",
+      "zh": "技能收益",
+      "en": "Skill Earnings"
+    },
+    {
+      "key": "helper.skill_upgrade",
+      "zh": "技能升级",
+      "en": "Skill Upgrade"
+    },
+    {
+      "key": "helper.base_income",
+      "zh": "基础金币收益",
+      "en": "Base Coin Earnings"
+    },
+    {
+      "key": "helper.name",
+      "zh": "帮手名字",
+      "en": "Helper"
+    },
+    {
+      "key": "helper.name_alt",
+      "zh": "帮手名称",
+      "en": "Helper"
+    },
+    {
+      "key": "helper.assignable",
+      "zh": "可分配帮手",
+      "en": "Available Helpers"
+    },
+    {
+      "key": "helper.coin_skill",
+      "zh": "帮手翻硬币收益：",
+      "en": "Helper coin earnings:"
+    },
+    {
+      "key": "helper.levels",
+      "zh": "特有技能提升对应等级",
+      "en": "Special skill upgrade levels"
+    },
+    {
+      "key": "helper.no_shards",
+      "zh": "去商城补充一些碎片吧",
+      "en": "Get more shards in the shop."
+    },
+    {
+      "key": "helper.shards",
+      "zh": "{0}碎片",
+      "en": "{0} Shards"
+    },
+    {
+      "key": "helper.love_orbs",
+      "zh": "发射SSS颗爱心光球，\n随机抛起路径上硬币",
+      "en": "Fire SSS heart orbs,\ntossing coins along their path."
+    },
+    {
+      "key": "helper.love_orbs_inline",
+      "zh": "发射SSS颗爱心光球，随机抛起路径上硬币",
+      "en": "Fire SSS heart orbs, tossing coins along their path."
+    },
+    {
+      "key": "talent.available",
+      "zh": "可用天赋",
+      "en": "Talent Points"
+    },
+    {
+      "key": "talent.gain",
+      "zh": "获得天赋点",
+      "en": "Get Points"
+    },
+    {
+      "key": "talent.max",
+      "zh": "天赋已到达最大等级",
+      "en": "Talent is at max level."
+    },
+    {
+      "key": "talent.max_alt",
+      "zh": "已提升到最大等级",
+      "en": "Already at max level."
+    },
+    {
+      "key": "talent.locked",
+      "zh": "天赋点系统解锁",
+      "en": "Unlock through Talents"
+    },
+    {
+      "key": "talent.rebirth_tip",
+      "zh": "重生可获取天赋点",
+      "en": "Rebirth grants Talent Points."
+    },
+    {
+      "key": "talent.no_upgrade",
+      "zh": "金钱未达到升级目标",
+      "en": "Upgrade goal not met."
+    },
+    {
+      "key": "talent.no_reset",
+      "zh": "当前可回收天赋点为0,无法重置",
+      "en": "No spent Talent Points to refund."
+    },
+    {
+      "key": "talent.no_rebirth",
+      "zh": "金钱未达到重生目标",
+      "en": "Rebirth coin goal not met."
+    },
+    {
+      "key": "talent.extra",
+      "zh": "额外+{0}",
+      "en": "Extra +{0}"
+    },
+    {
+      "key": "talent.rebirth_max",
+      "zh": "重生已达上限",
+      "en": "Rebirth limit reached"
+    },
+    {
+      "key": "talent.global",
+      "zh": "全局收益*{0}倍",
+      "en": "Global earnings x{0}"
+    },
+    {
+      "key": "talent.global_percent",
+      "zh": "全局收益*{0}%",
+      "en": "Global earnings x{0}%"
+    },
+    {
+      "key": "talent.global_locked",
+      "zh": "未达到全局收益条件",
+      "en": "Global earnings goal not met."
+    },
+    {
+      "key": "talent.rebirth_desc",
+      "zh": "重生后，所有金币和等级将清空。<br>但你会获得天赋点和全局收益加成！",
+      "en": "Rebirth resets coins and upgrade levels.<br>You gain Talent Points and a global earnings bonus!"
+    },
+    {
+      "key": "talent.rebirth_desc_break",
+      "zh": "重生后，所有金币和等级将清空。<br>\n但你会获得天赋点和全局收益加成！",
+      "en": "Rebirth resets coins and upgrade levels.<br>You gain Talent Points and a global earnings bonus!"
+    },
+    {
+      "key": "talent.next",
+      "zh": "下个目标：",
+      "en": "Next goal:"
+    },
+    {
+      "key": "talent.points_now",
+      "zh": "当前可获得天赋点：",
+      "en": "Talent Points to gain:"
+    },
+    {
+      "key": "talent.regular",
+      "zh": "普通重生",
+      "en": "Standard Rebirth"
+    },
+    {
+      "key": "talent.advanced",
+      "zh": "进阶重生",
+      "en": "Advanced Rebirth"
+    },
+    {
+      "key": "talent.regular_desc",
+      "zh": "普通重生会清空所有升级项等级",
+      "en": "Standard Rebirth resets all upgrade levels."
+    },
+    {
+      "key": "talent.advanced_desc",
+      "zh": "进阶重生可保留升级项等级！",
+      "en": "Advanced Rebirth keeps upgrade levels!"
+    },
+    {
+      "key": "talent.keep_levels",
+      "zh": "是否保留等级？",
+      "en": "Keep upgrade levels?"
+    },
+    {
+      "key": "talent.reset_confirm",
+      "zh": "确定要重量天赋树，<br>回收所有已花费的天赋点吗?",
+      "en": "Reset this talent tree<br>and refund all spent Talent Points?"
+    },
+    {
+      "key": "talent.reset_confirm_break",
+      "zh": "确定要重量天赋树，\n<br>回收所有已花费的天赋点吗?",
+      "en": "Reset this talent tree<br>and refund all spent Talent Points?"
+    },
+    {
+      "key": "talent.refund",
+      "zh": "可回收天赋：",
+      "en": "Points to refund:"
+    },
+    {
+      "key": "evolve.title",
+      "zh": "{0}进化",
+      "en": "{0} Evolution"
+    },
+    {
+      "key": "evolve.title_alt",
+      "zh": "青铜硬币进化",
+      "en": "Bronze Coin Evolution"
+    },
+    {
+      "key": "evolve.explain",
+      "zh": "进化后,所有{0}将合成为1个更强的{1},新{2}收益提升{3}倍",
+      "en": "Merge all into one stronger {0}.\nEarn {3}x as much."
+    },
+    {
+      "key": "evolve.preview",
+      "zh": "{0}收益*<color=#1a9211>{1}</color>倍",
+      "en": "{0} earnings x<color=#1a9211>{1}</color>"
+    },
+    {
+      "key": "evolve.old_explain",
+      "zh": "进化后，所有铜币将合成为1个更强的铜币。",
+      "en": "Combine all Bronze Coins into one stronger coin."
+    },
+    {
+      "key": "evolve.purple",
+      "zh": "紫币",
+      "en": "Purple Coin"
+    },
+    {
+      "key": "evolve.purple_dice",
+      "zh": "紫骰子",
+      "en": "Purple Die"
+    },
+    {
+      "key": "evolve.action",
+      "zh": "进化",
+      "en": "Evolve"
+    },
+    {
+      "key": "item.lock_level",
+      "zh": "{0}等级达到Lv{1}",
+      "en": "{0} reaches Lv. {1}"
+    },
+    {
+      "key": "item.lock_count",
+      "zh": "需要 {0} 个",
+      "en": "Requires {0}"
+    },
+    {
+      "key": "item.unknown",
+      "zh": "未知条件",
+      "en": "Unknown requirement"
+    },
+    {
+      "key": "item.shard_count",
+      "zh": "{0}个N级碎片",
+      "en": "{0} N Shards"
+    },
+    {
+      "key": "item.shard_count_r",
+      "zh": "{0}个R级碎片",
+      "en": "{0} R Shards"
+    },
+    {
+      "key": "item.shard_count_sr",
+      "zh": "{0}个SR碎片",
+      "en": "{0} SR Shards"
+    },
+    {
+      "key": "item.chest_normal",
+      "zh": "包含：{0}个N级碎片和<color=#e4771e>{1}个R级碎片</color>",
+      "en": "Contains: {0} N Shards and <color=#e4771e>{1} R Shards</color>"
+    },
+    {
+      "key": "item.chest_rare",
+      "zh": "包含：<color=#e4771e>{0}个R级碎片</color>和<color=#9227dd>{1}个SR碎片</color>",
+      "en": "Contains: <color=#e4771e>{0} R Shards</color> and <color=#9227dd>{1} SR Shards</color>"
+    },
+    {
+      "key": "item.contents",
+      "zh": "包含：{0}",
+      "en": "Contains: {0}"
+    },
+    {
+      "key": "item.and",
+      "zh": "{0}和{1}",
+      "en": "{0} and {1}"
+    },
+    {
+      "key": "item.generic_count",
+      "zh": "{0}个{1}",
+      "en": "{0} {1}"
+    },
+    {
+      "key": "item.rich_color",
+      "zh": "<color={0}>{1}</color>",
+      "en": "<color={0}>{1}</color>"
+    },
+    {
+      "key": "item.power",
+      "zh": "{0}*{1}倍",
+      "en": "{0} x{1}"
+    },
+    {
+      "key": "item.coin_power",
+      "zh": "{0}*{1}%",
+      "en": "{0} x{1}%"
+    },
+    {
+      "key": "item.lock_gold",
+      "zh": "获取<color=#e47716>{0}</color>金币后解锁",
+      "en": "Unlocks at <color=#e47716>{0}</color> coins"
+    },
+    {
+      "key": "item.talent_boost",
+      "zh": "天赋系统提升",
+      "en": "Boost through Talents"
+    },
+    {
+      "key": "item.helper_upgrade",
+      "zh": "帮手升级",
+      "en": "Helper Upgrade"
+    },
+    {
+      "key": "item.growth_label",
+      "zh": "解锁条件：主线任务达到{0}级",
+      "en": "Unlock: Reach Growth Lv. {0}"
+    },
+    {
+      "key": "item.growth_label_color",
+      "zh": "<color=#ffeec9>解锁条件</color>\n主线任务达到{0}级",
+      "en": "<color=#ffeec9>Unlock</color>\nReach Growth Lv. {0}"
+    },
+    {
+      "key": "item.dice_swipe",
+      "zh": "滑动可抛起铜骰",
+      "en": "Swipe to toss Bronze Dice"
+    },
+    {
+      "key": "item.desk_stack",
+      "zh": "所有桌面增益效果，可叠加生效",
+      "en": "All table bonuses stack."
+    },
+    {
+      "key": "item.desk_stack_alt",
+      "zh": "所有桌面增益效果可叠加生效",
+      "en": "All table bonuses stack."
+    },
+    {
+      "key": "item.desk_using",
+      "zh": "在场景中使用此桌面",
+      "en": "Use this table in the scene"
+    },
+    {
+      "key": "shop.go",
+      "zh": "去商城",
+      "en": "Go to Shop"
+    },
+    {
+      "key": "shop.claim",
+      "zh": "领取",
+      "en": "Claim"
+    },
+    {
+      "key": "shop.roll",
+      "zh": "转动",
+      "en": "Spin"
+    },
+    {
+      "key": "shop.sr",
+      "zh": "随机SR碎片",
+      "en": "Random SR Shards"
+    },
+    {
+      "key": "shop.shards",
+      "zh": "碎片不足",
+      "en": "Not Enough Shards"
+    },
+    {
+      "key": "offline.title",
+      "zh": "离线收益",
+      "en": "Offline Earnings"
+    },
+    {
+      "key": "offline.time",
+      "zh": "{0}小时{1}分",
+      "en": "{0}h {1}m"
+    },
+    {
+      "key": "offline.cap",
+      "zh": "离线时间上限：6小时",
+      "en": "Offline limit: 6 hours"
+    },
+    {
+      "key": "offline.earned",
+      "zh": "你在离线期间获得了",
+      "en": "While you were away, you earned:"
+    },
+    {
+      "key": "reward.title",
+      "zh": "恭喜获得",
+      "en": "Rewards"
+    },
+    {
+      "key": "support.money",
+      "zh": "大富翁",
+      "en": "Tycoon"
+    },
+    {
+      "key": "support.income",
+      "zh": "赚钱大师",
+      "en": "Earnings Master"
+    },
+    {
+      "key": "support.speed",
+      "zh": "鼓舞大师",
+      "en": "Cheer Master"
+    },
+    {
+      "key": "support.desc_income",
+      "zh": "所有帮手获取金钱<color=#e66e17>+{0}%</color>；<br>持续<color=#e66e17>{1}min</color>",
+      "en": "All helpers earn <color=#e66e17>+{0}%</color> coins<br>for <color=#e66e17>{1} min</color>."
+    },
+    {
+      "key": "support.desc_speed",
+      "zh": "所有帮手速度提高<color=#e66e17>{0}%</color>；<br>持续<color=#e66e17>{1}min</color>",
+      "en": "Helper speed <color=#e66e17>+{0}%</color><br>for <color=#e66e17>{1} min</color>."
+    },
+    {
+      "key": "support.cooldown",
+      "zh": "过{0}后使用",
+      "en": "Available in {0}"
+    },
+    {
+      "key": "support.cheer",
+      "zh": "加油!加油!",
+      "en": "Go! Go!"
+    },
+    {
+      "key": "support.earn",
+      "zh": "赚钱",
+      "en": "Earn!"
+    },
+    {
+      "key": "ad.intro",
+      "zh": "观看广告获得奖励\n倒计时结束后可关闭广告",
+      "en": "Watch to earn a reward.\nClose the ad when the timer ends."
+    },
+    {
+      "key": "ad.close",
+      "zh": "关闭广告",
+      "en": "Close Ad"
+    },
+    {
+      "key": "ad.complete",
+      "zh": "广告播放完成！\n点击关闭按钮获取奖励",
+      "en": "Ad complete!\nTap Close Ad to claim your reward."
+    },
+    {
+      "key": "promotion.tip",
+      "zh": "60秒内显示搜集足够多的金钱!",
+      "en": "Collect enough coins within 60 seconds!"
+    },
+    {
+      "key": "promotion.enter",
+      "zh": "点击进入挑战,获得等级晋升!",
+      "en": "Enter the challenge to earn a promotion!"
+    },
+    {
+      "key": "promotion.challenge",
+      "zh": "挑战",
+      "en": "Challenge"
+    },
+    {
+      "key": "promotion.exit",
+      "zh": "退出挑战",
+      "en": "Exit Challenge"
+    },
+    {
+      "key": "promotion.win",
+      "zh": "挑战成功",
+      "en": "Challenge Complete!"
+    },
+    {
+      "key": "promotion.lose",
+      "zh": "挑战失败",
+      "en": "Challenge Failed"
+    },
+    {
+      "key": "promotion.new",
+      "zh": "新事件",
+      "en": "New Event"
+    },
+    {
+      "key": "promotion.time",
+      "zh": "倒计时",
+      "en": "Time Left"
+    },
+    {
+      "key": "dev.refilled",
+      "zh": "调试资源已补充，签到和进度宝箱已重置",
+      "en": "Resources refilled. Check-in rewards and the spin chest have been reset."
+    },
+    {
+      "key": "dev.title",
+      "zh": "DEV · 独立调试存档",
+      "en": "DEV - Separate Test Save"
+    },
+    {
+      "key": "dev.hint",
+      "zh": "全部现有内容已解锁\nF2 补资源 · F1 打开/关闭",
+      "en": "All available content is unlocked.\nF2: Refill - F1: Open / Close"
+    },
+    {
+      "key": "dev.refill",
+      "zh": "补充资源 / 重置领取",
+      "en": "Refill / Reset Claims"
+    },
+    {
+      "key": "dev.switch",
+      "zh": "切换硬币 / 骰子世界",
+      "en": "Switch Coin / Dice World"
+    },
+    {
+      "key": "dev.reset",
+      "zh": "重置开发存档（全部解锁）",
+      "en": "Reset Test Save (All Unlocked)"
+    }
+  ]
+}

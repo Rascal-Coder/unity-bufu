@@ -74,7 +74,7 @@ namespace Bufu.Rebuild {
         static string TalentDescription(Talent t,int level) {
             var results=t.upgradeResult;
             double value=0;if(results!=null&&results.Length>0)value=results[Math.Max(0,Math.Min(Math.Min(level,t.upgradeLevelMax-1),results.Length-1))];
-            return TalentValuePattern.Replace(t.talentDesc,m=>{
+            return TalentValuePattern.Replace(L10n.Translate(t.talentDesc),m=>{
                 bool percent=m.Groups[2].Length>0;double shown=percent?value*100:value;
                 return "<color=#E57533>"+m.Groups[1].Value+shown.ToString("0.##",CultureInfo.InvariantCulture)+m.Groups[2].Value+"</color>";
             });
@@ -86,6 +86,16 @@ namespace Bufu.Rebuild {
             var tipTitle=v.Ref<TMP_Text>(cls,"skillTipTitle");var tipCost=v.Ref<TMP_Text>(cls,"skillTipCost");var tipDesc=v.Ref<TMP_Text>(cls,"skillTipDesc");
             var maxTip=v.Ref(cls,"maxLevelTip");var upButton=v.Ref<Button>(cls,"talentUpBtn");var tipIcon=v.Ref<Image>(cls,"talentSkillIcon");
             var resetButton=v.Ref<Button>(cls,"chongzhiBtn");var rebornButton=v.Ref<Button>(cls,"rebornBtn");
+            var gainGo=rebornButton.transform.parent.Find("Text (TMP) (2)");
+            if(gainGo){
+                var gain=gainGo.GetComponent<TMP_Text>();
+                refreshers.Add(()=>{
+                    // The caption is already translated when the page opens, so match the node. Sit it in the gap under Rebirth, above the unlock banners.
+                    PlaceLocalized(gain.rectTransform,new Vector2(180,48),new Vector2(-28,-86));
+                    gain.overflowMode=TextOverflowModes.Ellipsis;gain.enableWordWrapping=false;
+                    Txt(gain,"获得天赋点");
+                });
+            }
             var resetHost=v.Ref<RectTransform>(cls,"chongzhiPanel");
 
             Talent selected=null;Action refreshTip=null;
@@ -165,8 +175,9 @@ namespace Bufu.Rebuild {
             Click(n[22],()=>On(select,false));Click(n[34],()=>On(select,false));
             Click(n[20],()=>{if(Model.RebornPoints()>0)On(select,true);else ShowToast("金钱未达到重生目标");});
             Click(n[32],()=>{
-                if(!Model.Rebirth())return;
-                close();SelectTab(1);RebuildActors();SaveStore.Save(Model);PlayUpgrade();
+                if(CutscenePlaying||!Model.Rebirth())return;
+                close();SelectTab(1);RebuildActors();if(!VerificationMode)SaveStore.Save(Model);PlayUpgrade();
+                PlayCutsceneTransition();
             });
             if(Model.Data.world==2){var coin=Sp("ty_icon_coin02");var image=n[9].GetComponent<Image>();if(coin&&image)image.sprite=coin;}
             Watch(r.Root,()=>{

@@ -58,8 +58,9 @@ namespace Bufu.Rebuild {
             rect.localScale=Vector3.one;rect.localRotation=Quaternion.identity;rect.sizeDelta=size;rect.anchoredPosition=position;
         }
         static void WorldLabel(RectTransform rect,string text,float size,Color color) {
-            var label=rect.gameObject.AddComponent<TextMeshProUGUI>();label.font=UiAssets.Font();label.text=text;
+            var label=rect.gameObject.AddComponent<TextMeshProUGUI>();label.font=UiAssets.Font();
             label.fontSize=size;label.color=color;label.alignment=TextAlignmentOptions.Center;label.raycastTarget=false;
+            Txt(label,text);
         }
         static void WorldIcon(Transform parent,string name,string key,Vector2 position,Vector2 size) {
             var rect=NewRect(name,parent);rect.sizeDelta=size;rect.anchoredPosition=position;

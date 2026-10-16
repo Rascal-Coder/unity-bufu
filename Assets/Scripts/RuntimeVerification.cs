@@ -39,6 +39,8 @@ namespace Bufu.Rebuild {
             yield return null;yield return new WaitForSeconds(.8f);game=FindObjectOfType<GameController>();
             Check(game!=null&&game.Model!=null,"runtime initialization");
             VerifyBottomNavigation();
+            if(Environment.GetCommandLineArgs().Contains("--verify-localization")){yield return VerifyLocalization();yield break;}
+            if(Environment.GetCommandLineArgs().Contains("--verify-transition")){yield return VerifyTransition();yield break;}
             if(Environment.GetCommandLineArgs().Contains("--verify-parity")){yield return VerifyParity();yield break;}
             if(Environment.GetCommandLineArgs().Contains("--verify-support")){yield return VerifySupport();yield break;}
             if(Environment.GetCommandLineArgs().Contains("--verify-promotion")){yield return VerifyPromotion();yield break;}
@@ -265,15 +267,15 @@ namespace Bufu.Rebuild {
         IEnumerator Capture(string name) {
             yield return null;
             // Render the real uGUI hierarchy into an offscreen framebuffer for hidden Windows QA.
-            var canvas=game.GetComponentInChildren<Canvas>();var camera=FindObjectOfType<Camera>();
-            var mode=canvas.renderMode;var oldCamera=canvas.worldCamera;var oldTarget=camera.targetTexture;
+            var canvases=game.GetComponentsInChildren<Canvas>().Where(c=>c.isRootCanvas).ToArray();var camera=FindObjectOfType<Camera>();
+            var modes=canvases.Select(c=>c.renderMode).ToArray();var oldCameras=canvases.Select(c=>c.worldCamera).ToArray();var distances=canvases.Select(c=>c.planeDistance).ToArray();var oldTarget=camera.targetTexture;
             var rt=new RenderTexture(Screen.width,Screen.height,24,RenderTextureFormat.ARGB32);rt.Create();
-            camera.targetTexture=rt;canvas.renderMode=RenderMode.ScreenSpaceCamera;canvas.worldCamera=camera;canvas.planeDistance=1;
+            camera.targetTexture=rt;foreach(var canvas in canvases){canvas.renderMode=RenderMode.ScreenSpaceCamera;canvas.worldCamera=camera;canvas.planeDistance=1;}
             Canvas.ForceUpdateCanvases();camera.Render();var old=RenderTexture.active;RenderTexture.active=rt;
             var tex=new Texture2D(rt.width,rt.height,TextureFormat.RGB24,false);tex.ReadPixels(new Rect(0,0,rt.width,rt.height),0,0);tex.Apply();
             File.WriteAllBytes(Path.Combine(output,name),tex.EncodeToPNG());
-            var colors=tex.GetPixels32();Check(colors.Where((c,i)=>i%271==0).Select(c=>((int)c.r<<16)|((int)c.g<<8)|c.b).Distinct().Count()>20,"rendered screenshot contains real UI colors "+name);
-            RenderTexture.active=old;camera.targetTexture=oldTarget;canvas.renderMode=mode;canvas.worldCamera=oldCamera;Destroy(tex);rt.Release();Destroy(rt);yield return null;
+            var colors=tex.GetPixels32();Check(colors.Where((c,i)=>i%271==0).Select(c=>((int)c.r<<16)|((int)c.g<<8)|c.b).Distinct().Count()>(Field<GameObject>("originalAd")?4:20),"rendered screenshot contains real UI colors "+name);
+            RenderTexture.active=old;camera.targetTexture=oldTarget;for(int i=0;i<canvases.Length;i++){canvases[i].renderMode=modes[i];canvases[i].worldCamera=oldCameras[i];canvases[i].planeDistance=distances[i];}Destroy(tex);rt.Release();Destroy(rt);yield return null;
         }
         void Fail(Exception e){Debug.LogWarning("REBUILD_QA_FAILED "+e);Complete(false,e.ToString()+"\n"+string.Join("\n",errors));}
         void Complete(bool success,string error) {

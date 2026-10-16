@@ -1,0 +1,668 @@
+{
+  "assets": [
+    {
+      "sprite": "zjm_btn_wupin01",
+      "chinese": "物品",
+      "english": [
+        "Items"
+      ],
+      "note": "文字与导航图标合图，保留图标位置和尺寸。"
+    },
+    {
+      "sprite": "zjm_btn_sheshi01",
+      "chinese": "帮手",
+      "english": [
+        "Helpers"
+      ],
+      "note": "文字与导航图标合图，保留图标位置和尺寸。"
+    },
+    {
+      "sprite": "zjm_btn_tianfu01",
+      "chinese": "天赋",
+      "english": [
+        "Talents"
+      ],
+      "note": "文字与导航图标合图，保留图标位置和尺寸。"
+    },
+    {
+      "sprite": "zjm_btn_shangcheng01",
+      "chinese": "商城",
+      "english": [
+        "Shop"
+      ],
+      "note": "文字与导航图标合图，保留图标位置和尺寸。"
+    },
+    {
+      "sprite": "zjm_btn_shijie01",
+      "chinese": "世界",
+      "english": [
+        "Worlds"
+      ],
+      "note": "文字与导航图标合图，保留图标位置和尺寸。"
+    },
+    {
+      "sprite": "zjm_btn_tiaozhan01",
+      "chinese": "挑战",
+      "english": [
+        "Challenge"
+      ],
+      "note": "文字与导航图标合图，保留图标位置和尺寸。"
+    },
+    {
+      "sprite": "ty_icon_qiandao",
+      "chinese": "7日签到",
+      "english": [
+        "Check-In"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "ad_icon_dafuweng",
+      "chinese": "大富翁",
+      "english": [
+        "Tycoon"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "ad_icon_zhuanqiandashi",
+      "chinese": "赚钱大师",
+      "english": [
+        "Earn"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "ad_icon_guwudashi",
+      "chinese": "鼓舞大师",
+      "english": [
+        "Cheer"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "world_zi_dangqian",
+      "chinese": "当前",
+      "english": [
+        "NOW"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "ty_zi_cleanSave",
+      "chinese": "清除存档",
+      "english": [
+        "Clear Save"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "ty_zi_restoreSave",
+      "chinese": "恢复存档",
+      "english": [
+        "Restore Save"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "ty_zi_gengduo",
+      "chinese": "更多",
+      "english": [
+        "More"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "ty_zi_shouqi",
+      "chinese": "收起",
+      "english": [
+        "Less"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "ty_zi_upgrade",
+      "chinese": "升级",
+      "english": [
+        "Upgrade"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "zm_zi_cailiaobuzu",
+      "chinese": "材料不足",
+      "english": [
+        "Missing Materials"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "ty_zi_qushangcheng",
+      "chinese": "去商城",
+      "english": [
+        "Go to Shop"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "bs_zi_juexingjineng",
+      "chinese": "觉醒技能",
+      "english": [
+        "Awakened Skill"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "ty_pic_countdown",
+      "chinese": "倒计时",
+      "english": [
+        "Time Left"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "qd_zi_dingyue",
+      "chinese": "订阅",
+      "english": [
+        "Subscribe"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "lv8Dice_zi_jingqingqidai",
+      "chinese": "敬请期待",
+      "english": [
+        "Coming Soon"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "shop_zi_srDes",
+      "chinese": "满[次数]次必得SR碎片！",
+      "english": [
+        "Every",
+        "pulls: SR shards!"
+      ],
+      "note": "带动态次数占位，保持占位区域。"
+    },
+    {
+      "sprite": "shop_zi_ad",
+      "chinese": "广告抽取",
+      "english": [
+        "Ad Draw"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "shop_zi_everydayFree",
+      "chinese": "每日免费",
+      "english": [
+        "First Free Daily"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "ty_btn_quxiao",
+      "chinese": "取消",
+      "english": [
+        "Cancel"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "lxsy_btn_queding",
+      "chinese": "确定",
+      "english": [
+        "Confirm"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "talent_btn_reset",
+      "chinese": "重置",
+      "english": [
+        "Reset"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "talent_btn_yellow",
+      "chinese": "重生",
+      "english": [
+        "Rebirth"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "talent_btn_reborn",
+      "chinese": "重生",
+      "english": [
+        "Rebirth"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "talent_btn_reset02",
+      "chinese": "重置",
+      "english": [
+        "Reset"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "talent_btn_cancle",
+      "chinese": "取消",
+      "english": [
+        "Cancel"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "zm_btn_use",
+      "chinese": "使用",
+      "english": [
+        "Use"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "lxsy_btn_shuangbeihuoqu",
+      "chinese": "双倍获取",
+      "english": [
+        "Double Reward"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "ad_btn_summon",
+      "chinese": "召唤",
+      "english": [
+        "Summon"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "bs_btn_unlock",
+      "chinese": "提前解锁",
+      "english": [
+        "Early Unlock"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "bs_btn_subscribe",
+      "chinese": "订阅",
+      "english": [
+        "Subscribe"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "zm_btn_bs_upgrade",
+      "chinese": "升级",
+      "english": [
+        "Upgrade"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "ty_pic_title_setup",
+      "chinese": "设置",
+      "english": [
+        "Settings"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "lxsy_pic_title_lixianshouyi",
+      "chinese": "离线收益",
+      "english": [
+        "Offline Earnings"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "ad_pic_title_dafuweng",
+      "chinese": "大富翁",
+      "english": [
+        "Tycoon"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "ad_pic_title_zhuanqiandashi",
+      "chinese": "赚钱大师",
+      "english": [
+        "Earnings Master"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "ad_pic_title_guwudashi",
+      "chinese": "鼓舞大师",
+      "english": [
+        "Cheer Master"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "talent_pic_title_reborn",
+      "chinese": "重生",
+      "english": [
+        "Rebirth"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "talent_pic_title_reset",
+      "chinese": "重置",
+      "english": [
+        "Reset"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "ty_pic_title_suipianbuzu",
+      "chinese": "碎片不足",
+      "english": [
+        "Not Enough Shards"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "qd_zi_nomorl",
+      "chinese": "免费奖励",
+      "english": [
+        "Free Rewards"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "qd_zi_as",
+      "chinese": "广告奖励",
+      "english": [
+        "Ad Rewards"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "qd_lab_get",
+      "chinese": "获取",
+      "english": [
+        "Get"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "qd_pic_bg_scale2",
+      "chinese": "7日签到（与日历、面板合在整张背景中）",
+      "english": [
+        "7-Day Check-In"
+      ],
+      "note": "签到标题与整张背景合图，保留日历、面板和透明边缘。"
+    },
+    {
+      "sprite": "xsyd_yijies",
+      "chinese": "已解锁",
+      "english": [
+        "Unlocked"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "xsyd_zhuanqianshengji",
+      "chinese": "赚钱升级",
+      "english": [
+        "EARN\nUP"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "zjm_pic_chenghao1",
+      "chinese": "成长等级",
+      "english": [
+        "Growth"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "talent_pic_talentPoint",
+      "chinese": "可用天赋",
+      "english": [
+        "Talent Points"
+      ],
+      "note": "动态数字由独立文本叠加，保留数字框位置。"
+    },
+    {
+      "sprite": "talent_pic_talentPoint_dice",
+      "chinese": "可用天赋",
+      "english": [
+        "Talent Points"
+      ],
+      "note": "动态数字由独立文本叠加，保留数字框位置。"
+    },
+    {
+      "sprite": "zm_pic_bs_count",
+      "chinese": "可分配帮手",
+      "english": [
+        "Available\nHelpers"
+      ],
+      "note": "动态数字由独立文本叠加，保留数字框位置。"
+    },
+    {
+      "sprite": "zm_tags_bs",
+      "chinese": "帮手",
+      "english": [
+        "Helpers"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "zm_tags_zm",
+      "chinese": "桌面",
+      "english": [
+        "Tables"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "talent_pic_tabBG_coin",
+      "chinese": "金钱",
+      "english": [
+        "Coins"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "talent_pic_tabBG_helper",
+      "chinese": "帮手",
+      "english": [
+        "Helpers"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "talent_pic_tabBG_special",
+      "chinese": "特殊",
+      "english": [
+        "Special"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "talent_pic_tabJinqian",
+      "chinese": "金钱",
+      "english": [
+        "Coins"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "talent_pic_tabBangshou",
+      "chinese": "帮手",
+      "english": [
+        "Helpers"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "talent_pic_tabTeshu",
+      "chinese": "特殊",
+      "english": [
+        "Special"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "talent_pic_tabBG",
+      "chinese": "金钱 / 帮手 / 特殊（整条页签底图）",
+      "english": [
+        "Coins",
+        "Helpers",
+        "Special"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "zm_pic_using",
+      "chinese": "正在使用",
+      "english": [
+        "In Use"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "zm_lab_inUse",
+      "chinese": "正在使用",
+      "english": [
+        "In Use"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "sw_bac_jiayou_",
+      "chinese": "加油！加油！",
+      "english": [
+        "Go!\nGo!"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "ty_btn_challenge",
+      "chinese": "进入挑战 / 称号晋升",
+      "english": [
+        "Enter Challenge\nTitle Promotion"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "ty_btn_exitChallenge",
+      "chinese": "退出挑战",
+      "english": [
+        "Leave Challenge"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "ty_pic_challenge_successl_scale2",
+      "chinese": "挑战成功",
+      "english": [
+        "Challenge Complete!"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "ty_pic_challenge_fail_scale2",
+      "chinese": "挑战失败 / 提升属性后再来挑战吧",
+      "english": [
+        "Challenge Failed",
+        "Upgrade and try again"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "ty_title_gongxihuode 1",
+      "chinese": "恭喜获得",
+      "english": [
+        "Rewards!"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "ty_pic_dachengmubiao_scale2",
+      "chinese": "成长等级提升 / 独家深度专访，神秘线人透露 / 已验资授予身份证 / 市政厅特批，秘密基金",
+      "english": [
+        "GROWTH\nLEVEL UP!",
+        "EXCLUSIVE SCOOP:",
+        "IDENTITY VERIFIED!!",
+        "CITY HALL OK!!!",
+        "SECRET FUND"
+      ],
+      "note": "报纸多个区域有烘焙文字；不要修改外部叠加的等级、称号和奖励数值位置。"
+    },
+    {
+      "sprite": "lv8Dice_pic_title_main_x2",
+      "chinese": "世界即将开启",
+      "english": [
+        "New World Coming Soon"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "lv8Dice_pic_title_sub_x2",
+      "chinese": "全新冒险即将开启！",
+      "english": [
+        "A New Adventure Awaits!"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "lv8Dice_pic_slogn_nextStation_x2",
+      "chinese": "下一站，骰子小岛",
+      "english": [
+        "Next Stop: Dice Island"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "lv8Dice_pic_slogn_newHelper_x2",
+      "chinese": "全新帮手，闪亮登场",
+      "english": [
+        "A New Helper Arrives!"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "zm_lab_sign3",
+      "chinese": "获取 / 签到3天",
+      "english": [
+        "Get on\nDay 3"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "zm_lab_sign7",
+      "chinese": "获取 / 签到7天",
+      "english": [
+        "Get on\nDay 7"
+      ],
+      "note": ""
+    },
+    {
+      "sprite": "caidai_jiayou",
+      "chinese": "加油",
+      "english": [
+        "GO!"
+      ],
+      "note": "粒子使用的文字贴图；保持原始宽高比和透明通道。"
+    },
+    {
+      "sprite": "caidai_zhuanqian",
+      "chinese": "赚钱",
+      "english": [
+        "EARN!"
+      ],
+      "note": "粒子使用的文字贴图；保持原始宽高比和透明通道。"
+    }
+  ]
+}

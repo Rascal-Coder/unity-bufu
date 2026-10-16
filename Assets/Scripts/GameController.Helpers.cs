@@ -38,8 +38,8 @@ namespace Bufu.Rebuild {
         }
         static string SkillText(HelperRole role,float value) {
             bool range=role.id==4||role.id==9||role.id==10;
-            string number=range?value.ToString("0.0"):value.ToString("0");
-            return (role.helperDesc??"").Replace("sss",number).Replace("SSS",number);
+            string number=range?value.ToString("0.0",L10n.Culture):value.ToString("0",L10n.Culture);
+            return L10n.Translate(role.helperDesc??"").Replace("sss",number).Replace("SSS",number);
         }
 
         void BuildHelperCard(RectTransform parent,HelperRole role) {
@@ -47,7 +47,14 @@ namespace Bufu.Rebuild {
             var v=UiPrefab.Instantiate("Facility/helperItem",parent);v.Root.name="helper-"+role.id;On(v.Root,true);
             var icon=Sp(role.id>=0&&role.id<HelperIcons.Length?HelperIcons[role.id]:"");
             if(icon){var face=v.Ref<Image>(cls,"helperIcon");var face2=v.Ref<Image>(cls,"helperIcon2");face.sprite=icon;face.SetNativeSize();face2.sprite=icon;face2.SetNativeSize();}
-            Txt(v.Ref<TMP_Text>(cls,"helperNameText"),role.helperName);
+            var helperName=v.Ref<TMP_Text>(cls,"helperNameText");
+            var helperDesc=v.Ref<TMP_Text>(cls,"helperDescText");
+            var helperUnlock=v.Ref<TMP_Text>(cls,"unlockConditionText");
+            helperName.enableWordWrapping=false;helperName.overflowMode=TextOverflowModes.Ellipsis;
+            helperName.enableAutoSizing=true;helperName.fontSizeMax=helperName.fontSize;helperName.fontSizeMin=28;
+            helperDesc.enableWordWrapping=true;helperDesc.overflowMode=TextOverflowModes.Ellipsis;
+            helperUnlock.enableWordWrapping=true;helperUnlock.overflowMode=TextOverflowModes.Ellipsis;
+            Txt(helperName,role.helperName);
             ApplyHelperCardFrame(v,role.Rare);
             On(v.Ref(cls,"thirstDayTip"),false);On(v.Ref(cls,"sevenDayTip"),false);On(v.Ref(cls,"halandeTip"),false);
             On(v.Ref(cls,"subscribeUnlockBtn"),false);
@@ -60,7 +67,11 @@ namespace Bufu.Rebuild {
                 On(v.Ref(cls,"lockIcon"),!owned);On(v.Ref(cls,"upgradeBtn1"),owned);On(v.Ref(cls,"redDot"),Model.CanUpgradeHelper(role.id));
                 On(v.Ref(cls,"adUnlockBtn"),Model.CanAdUnlock(role));
                 string unlock=role.UnlockLevel==2?"在骰子世界"+role.helperUnlockCondition+"级解锁":"解锁条件\n成长等级达到"+role.helperUnlockCondition+"级";
-                Txt(v.Ref<TMP_Text>(cls,"unlockConditionText"),owned?"":unlock);
+                // Name stays on the portrait's right. Description stays above the count, and the unlock line stays inside the frame.
+                PlaceLocalized(helperName.rectTransform,new Vector2(230,70),new Vector2(175,132));
+                PlaceLocalized(helperDesc.rectTransform,new Vector2(560,132),new Vector2(0,20));
+                PlaceLocalized(helperUnlock.rectTransform,new Vector2(560,160),new Vector2(0,-70));
+                Txt(helperUnlock,owned?"":unlock);
                 On(v.Ref(cls,"helperLevelText"),false);
                 Txt(v.Ref<TMP_Text>(cls,"helperDescText"),SkillText(role,Model.HelperSkillValue(role.id)));
                 Txt(v.Ref<TMP_Text>(cls,"countText"),(state==null?0:state.count)+"/"+(state==null?1:state.max));
@@ -150,7 +161,7 @@ namespace Bufu.Rebuild {
             });
         }
 
-        static string Sig(float value){if(value>=100f)return GameModel.Format(value);if(value>=10f)return value.ToString("0.0");return value.ToString("0.00");}
+        static string Sig(float value){if(value>=100f)return GameModel.Format(value);if(value>=10f)return value.ToString("0.0",L10n.Culture);return value.ToString("0.00",L10n.Culture);}
 
         /// <summary>UseHelperUI loads the role prefab under helperIcon, plays idle_front, flips X and sits 50px below the icon pivot.</summary>
         void MountHelperPortrait(Transform parent,HelperRole role) {
