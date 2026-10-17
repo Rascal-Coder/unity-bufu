@@ -22,7 +22,7 @@ namespace Bufu.Rebuild {
             yield return Capture("01-promotion-entry.png");
             Click(node("challengeBtn").GetComponent<Button>(),"enter native promotion challenge");yield return null;
             var run=model.Promotion;Check(run!=null&&model.PromotionRunning&&Time.timeScale==0,"first entry opens native guide and pauses scaled time");
-            var dialog=Field<UiView>("promotionDialog");Check(dialog.Ref<TMP_Text>("DialogPanel","dialogText").text=="60秒内显示搜集足够多的金钱!","original first-entry dialog text retained");
+            var dialog=Field<UiView>("promotionDialog");Check(dialog.Ref<TMP_Text>("DialogPanel","dialogText").text==L10n.Translate("60秒内显示搜集足够多的金钱!"),"first-entry dialog text translated to English");
             yield return Capture("02-promotion-guide.png");
             Click(dialog.Ref<Button>("DialogPanel","bgButton"),"dismiss native first-use guide");yield return null;
             Check(Time.timeScale==1&&hud.Root.activeInHierarchy&&!Field<GameObject>("levelBadge").activeSelf,"guide resumes countdown; running HUD hides growth badge");

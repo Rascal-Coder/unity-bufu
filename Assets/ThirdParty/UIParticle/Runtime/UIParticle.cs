@@ -726,6 +726,7 @@ namespace Coffee.UIExtensions
             if (_bakeCamera != null)
             {
                 _bakeCamera.orthographicSize = viewSizeForBaking;
+                _bakeCamera.aspect = 1f;
                 return _bakeCamera;
             }
 
@@ -753,6 +754,7 @@ namespace Coffee.UIExtensions
             // Setup baking camera.
             _bakeCamera.enabled = false;
             _bakeCamera.orthographicSize = viewSizeForBaking;
+            _bakeCamera.aspect = 1f;
             _bakeCamera.transform.SetPositionAndRotation(new Vector3(0, 0, -1000), Quaternion.identity);
             _bakeCamera.orthographic = true;
             _bakeCamera.farClipPlane = 2000f;

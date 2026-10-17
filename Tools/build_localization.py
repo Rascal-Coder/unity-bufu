@@ -65,6 +65,32 @@ growth.goal|恭喜达成<color=#f8642a>{0}</color>小目标！|Goal reached: <co
 growth.reward_notice|{0}进化！收益 ×10|{0} evolved! Earnings x10
 growth.news_headline|<color=#c1695d>震惊！</color>本地知名企业家再度“野蛮生长”！|<color=#c1695d>Breaking!</color> Local tycoon strikes again!
 growth.news_body|【头条】夭寿啦！新晋财阀疯狂吞并，小镇格局一夜变天\n独家线报：某神秘玩家名下资产正“无性繁殖”。小镇多年市场格局宣告寿终正寝。|TOWN TIMES: A new tycoon takes over!\nOur sources report that a mysterious investor's fortune keeps multiplying. The town will never be the same.
+honor.01|街头穷光蛋|Street Rookie
+honor.03|小镇暴发户|Town Tycoon
+honor.04|职场老油条|Office Pro
+honor.06|百万新贵族|Rich Elite
+honor.08|跨国大财团|Global Tycoon
+honor.09a|华尔街巨鳄 I|Market Shark I
+honor.09b|华尔街巨鳄 II|Market Shark II
+honor.09c|华尔街巨鳄 III|Market Shark III
+honor.10a|蓝星掌控者 I|World Ruler I
+honor.10b|蓝星掌控者 II|World Ruler II
+honor.10c|蓝星掌控者 III|World Ruler III
+honor.11a|太阳系矿主 I|Solar Baron I
+honor.11b|太阳系矿主 II|Solar Baron II
+honor.11c|太阳系矿主 III|Solar Baron III
+honor.12a|银河大买办 I|Star Magnate I
+honor.12b|银河大买办 II|Star Magnate II
+honor.12c|银河大买办 III|Star Magnate III
+honor.13a|宇宙大财阀 I|Cosmic Mogul I
+honor.13b|宇宙大财阀 II|Cosmic Mogul II
+honor.13c|宇宙大财阀 III|Cosmic Mogul III
+honor.14a|维度收割者 I|Realm Reaper I
+honor.14b|维度收割者 II|Realm Reaper II
+honor.14c|维度收割者 III|Realm Reaper III
+honor.16a|奇点印钞机 I|Apex Minter I
+honor.16b|奇点印钞机 II|Apex Minter II
+honor.16c|奇点印钞机 III|Apex Minter III
 check.title|7日签到|7-Day Check-In
 check.free|免费奖励|Free Rewards
 check.ad|广告奖励|Ad Rewards
@@ -236,7 +262,7 @@ def build():
             entry['en'] = re.sub(r'[sS]{3}', spelling, entry['en'])
     target = ROOT / 'Assets/Resources/Localization/catalog.json'
     target.parent.mkdir(parents=True, exist_ok=True)
-    target.write_text(json.dumps(dict(languages=['zh-CN', 'en'], entries=entries), ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    target.write_text(json.dumps(dict(languages=['en'], entries=entries), ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print(f'Wrote {len(entries)} entries to {target}')
 
 

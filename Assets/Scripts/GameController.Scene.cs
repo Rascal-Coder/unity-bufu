@@ -23,7 +23,13 @@ namespace Bufu.Rebuild {
         }
 
         // ------------------------------------------------------------ bounds (MainSceneVat.ClampToSceneBounds / GetSafeWorldPadding)
-        Vector2 SceneHalf=>Field?Field.rect.size*.5f:new Vector2(720,640);
+        Vector2 SceneHalf {
+            get {
+                if(!Field)return new Vector2(640,570);
+                var size=Field.rect.size;
+                return new Vector2(Mathf.Max(size.x*.5f,560f),Mathf.Max(size.y*.5f,440f));
+            }
+        }
         public Vector2 ClampScene(Vector2 p,float padding) {
             var half=SceneHalf;float safe=Mathf.Min(padding,Mathf.Min(half.x,half.y)*2f*.49f);
             return new Vector2(Mathf.Clamp(p.x,-half.x+safe,half.x-safe),Mathf.Clamp(p.y,-half.y+safe,half.y-safe));

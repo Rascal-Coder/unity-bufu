@@ -41,13 +41,13 @@ namespace Bufu.Rebuild {
             var world=Field<UiView>("worldView");var scroll=world.Ref<ScrollRect>("WorldSelectionPanel","worldScrollView");
             var available=RootBounds(scroll.viewport);
             Check(available.yMin>=BottomNavigationTop()&&available.yMax<RootBounds(Field<TMP_Text>("goldTmp").rectTransform).yMin,"world viewport clears currency HUD and bottom navigation");
-            var current=scroll.content.Cast<RectTransform>().First(node=>node.GetComponentsInChildren<TMP_Text>(true).Any(text=>text.text==game.Model.WorldName(game.Model.Data.world)));
+            var current=scroll.content.Cast<RectTransform>().First(node=>node.GetComponentsInChildren<TMP_Text>(true).Any(text=>text.text==L10n.Translate(game.Model.WorldName(game.Model.Data.world))));
             VerifyWorldCard(current,available,"initial current world");
             yield return Capture("07-world-current.png");
             yield return VerifyScroll(scroll,"world selection list",64);
             yield return Capture("08-world-bottom.png");
             foreach(int id in new[]{1,2}) {
-                var node=scroll.content.Cast<RectTransform>().First(child=>child.GetComponentsInChildren<TMP_Text>(true).Any(text=>text.text==game.Model.WorldName(id)));
+                var node=scroll.content.Cast<RectTransform>().First(child=>child.GetComponentsInChildren<TMP_Text>(true).Any(text=>text.text==L10n.Translate(game.Model.WorldName(id))));
                 CenterInScroll(scroll,node);yield return null;
                 VerifyWorldCard(node,RootBounds(scroll.viewport),"world "+id);
                 Check(node.Find("UnlockPanel")?node.Find("UnlockPanel").GetComponentsInChildren<Image>().All(image=>!image.enabled||image.sprite):node.GetComponentsInChildren<Image>().Any(image=>image.name=="World Item 0"&&image.sprite),"world "+id+" summary icons have real sprites");

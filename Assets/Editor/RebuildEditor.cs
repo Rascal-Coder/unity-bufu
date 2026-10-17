@@ -133,6 +133,11 @@ public static class RebuildEditor {
             Assert(Bufu.Rebuild.UI.UiAssets.Sprite("wupin_btn_shengji01")&&Bufu.Rebuild.UI.UiAssets.SpriteAt("Assets/GameRes/honor/1.png"),"original sprites resolve by key and asset path");
         } finally {UnityEngine.Object.DestroyImmediate(host);}
     }
+    public static void PlayWakeCheck() {
+        PlayModeWindow.SetCustomRenderingResolution(540,960,"Wake tip");
+        Debug.Log("WAKE_QA_ENTER_PLAY");
+        EditorApplication.delayCall+=()=>EditorApplication.EnterPlaymode();
+    }
     static void VerifyVAT() {
         var files=Directory.GetFiles("Assets/Resources/Art/Vat","*.json");Assert(files.Length==61,"all 61 original VAT assets imported");
         Assert(Resources.Load<AudioClip>("Audio/coinup")!=null,"original coin sound imported as WAV");

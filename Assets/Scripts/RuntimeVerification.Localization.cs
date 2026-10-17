@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using Bufu.Rebuild.UI;
 using TMPro;
 using UnityEngine;
@@ -9,15 +11,13 @@ using UnityEngine.UI;
 
 namespace Bufu.Rebuild {
     public sealed partial class RuntimeVerification {
-        static bool SameArtwork(Sprite current,Sprite original,bool english) {
-            if(!current&&!original)return true;
-            if(!current||!original||current.name!=original.name)return false;
-            bool remade=UiAssets.HasEnglishArt(original.name);
-            return remade&&english?current!=original:current==original;
+        static bool UsesEnglishArtwork(Sprite current) {
+            if(!current)return true;
+            return !UiAssets.HasEnglishArt(current.name)||current==UiAssets.Sprite(current.name);
         }
         void CheckEnglish(Transform root,string name) {
             var texts=root.GetComponentsInChildren<TMP_Text>().Where(t=>t.isActiveAndEnabled).ToArray();
-            var untranslated=texts.Where(t=>L10n.HasChinese(t.text)&&!Hierarchy(t.gameObject).Contains("Language zh-CN")).Select(t=>Hierarchy(t.gameObject)+" = "+t.text).ToArray();
+            var untranslated=texts.Where(t=>L10n.HasChinese(t.text)).Select(t=>Hierarchy(t.gameObject)+" = "+t.text).ToArray();
             Check(untranslated.Length==0,name+" has no untranslated Chinese: "+string.Join("; ",untranslated));
             foreach(var text in texts) {
                 text.ForceMeshUpdate();
@@ -40,24 +40,18 @@ namespace Bufu.Rebuild {
             return new UiView(resource,objects,components);
         }
         IEnumerator VerifyLocalization() {
-            var model=game.Model;Check(L10n.Language=="zh-CN","verification starts in Chinese independently of player preferences");
+            var model=game.Model;Check(L10n.Language=="en"&&L10n.IsEnglish,"game starts in English only");
+            L10n.SetLanguage("zh-CN",false);
+            Check(L10n.Language=="en"&&L10n.IsEnglish,"Chinese language is disabled and only English remains active");
             model.State.mission=90;model.State.pendingGoals.Clear();model.State.gold=1e30;model.State.points=100;model.Data.diamonds=100000;Refresh();
-            string savedLanguage=PlayerPrefs.GetString("bufu.language","<unset>");
-            yield return Capture("00-chinese-main.png");
-            var top=Field<UiView>("top");Click(top.Ref<Button>("TopPanel","setupBtn"),"open language settings");yield return null;
+            var top=Field<UiView>("top");Click(top.Ref<Button>("TopPanel","setupBtn"),"open settings");yield return null;
             var setup=LatestPopup("Popup/setupPanel");
-            var english=setup.Root.transform.Find("Language Settings/Language en").GetComponent<Button>();
-            var originalSprites=game.GetComponentsInChildren<Image>(true).ToDictionary(image=>image,image=>image.sprite);
-            var particleSprites=game.GetComponentsInChildren<ParticleSystem>(true).Where(p=>p.textureSheetAnimation.mode==ParticleSystemAnimationMode.Sprites).SelectMany(p=>Enumerable.Range(0,p.textureSheetAnimation.spriteCount).Select(i=>new {system=p,index=i,sprite=p.textureSheetAnimation.GetSprite(i)})).ToArray();
-            string progress=JsonUtility.ToJson(model.Data);Click(english,"select English");yield return null;
-            Check(L10n.Language=="en"&&JsonUtility.ToJson(model.Data)==progress,"language switch preserves every saved progress value");
-            Check(PlayerPrefs.GetString("bufu.language","<unset>")==savedLanguage,"verification never changes the player's saved language");
-            Check(originalSprites.All(pair=>SameArtwork(pair.Key?pair.Key.sprite:null,pair.Value,true)),"English replaces remade image artwork and keeps every other sprite, including its name");
-            Check(particleSprites.All(x=>SameArtwork(x.system?x.system.textureSheetAnimation.GetSprite(x.index):null,x.sprite,true)),"English replaces remade particle words and keeps every other particle sprite");
+            Check(setup.Root.transform.Find("Language Settings")==null,"settings panel has no Chinese language selector");
+            Check(setup.Nodes[4].GetComponent<TMP_Text>().text=="Music"&&setup.Nodes[5].GetComponent<TMP_Text>().text=="Sound","settings labels are in English");
+            Check( game.GetComponentsInChildren<Image>(true).All(image=>UsesEnglishArtwork(image.sprite)),"English replaces remade image artwork and keeps every other sprite, including its name");
+            var particleSprites=game.GetComponentsInChildren<ParticleSystem>(true).Where(p=>p.textureSheetAnimation.mode==ParticleSystemAnimationMode.Sprites).SelectMany(p=>Enumerable.Range(0,p.textureSheetAnimation.spriteCount).Select(i=>p.textureSheetAnimation.GetSprite(i))).ToArray();
+            Check(particleSprites.All(UsesEnglishArtwork),"English replaces remade particle words and keeps every other particle sprite");
             yield return LocaleScreenshot("01-english-settings",setup.Root.transform);
-            var chinese=setup.Root.transform.Find("Language Settings/Language zh-CN").GetComponent<Button>();Click(chinese,"switch back to Chinese");yield return null;
-            Check(setup.Nodes[4].GetComponent<TMP_Text>().text=="音乐","already-open settings immediately return to Chinese");
-            yield return Capture("02-chinese-settings.png");Click(english,"switch to English again");yield return null;
             Click(setup.Ref<Button>("SetUpPanel","backBtn"),"close settings");yield return null;
             yield return LocaleScreenshot("03-english-items",game.Root);
             var promotion=Field<UiView>("promotionView");Click(promotion.Ref<Button>("DownItem","openBtn"),"expand English support shortcuts");yield return null;
@@ -112,11 +106,46 @@ namespace Bufu.Rebuild {
             model.State.pendingGoals.Add(model.WorldMissions[0].id);yield return new WaitForSecondsRealtime(.7f);
             var goal=Field<UiView>("goalView");yield return LocaleScreenshot("18-english-growth-news",goal.Root.transform);
             Click(goal.Ref<Button>("GoalReachPanel","confirmBtn"),"claim English growth reward");yield return new WaitForSecondsRealtime(.6f);
-            L10n.SetLanguage("zh-CN");yield return null;
-            Check(originalSprites.Where(pair=>pair.Key).All(pair=>pair.Key.sprite==pair.Value),"returning to Chinese restores the original image sprites");
-            Check(particleSprites.All(x=>x.system&&x.system.textureSheetAnimation.GetSprite(x.index)==x.sprite),"returning to Chinese restores the original particle sprites");
-            yield return Capture("19-return-to-chinese.png");
-            Check(errors.Count==0,"Chinese and English UI have no runtime errors");Complete(true,null);
+            Check(errors.Count==0,"English UI has no runtime errors");Complete(true,null);
+        }
+
+        IEnumerator VerifyWakeTip() {
+            game.Model.State.gold=1000;
+            Check(game.Model.Buy(1,false)&&game.Model.Helpers==1,"test save owns one helper");
+            game.SyncActors();yield return null;
+            var helper=game.HelperActors.FirstOrDefault(actor=>actor);
+            Check(helper!=null,"helper stands on the field");
+            helper.Rect.anchoredPosition=new Vector2(0,180);
+            typeof(HelperActor).GetMethod("EnterSleeping",BindingFlags.Instance|BindingFlags.NonPublic).Invoke(helper,null);
+            yield return null;yield return null;Canvas.ForceUpdateCanvases();
+            var tip=game.TipPool.Find("SleepTip");
+            Check(tip!=null&&helper.Sleeping,"sleeping helper shows the wake bubble");
+            var image=tip.GetComponent<Image>();
+            var english=Resources.Load<Texture2D>("UI/Sprites/en/xsyd_huanxing");
+            var chinese=Resources.Load<Texture2D>("UI/Sprites/xsyd_huanxing");
+            Check(image.sprite&&image.sprite.name=="xsyd_huanxing"&&image.sprite==UiAssets.Sprite("xsyd_huanxing"),"bubble uses the English wake sprite");
+            Check(english!=null&&english.width==230&&english.height==189,"English wake texture imported at 230x189, actual "+(english?english.width+"x"+english.height:"missing"));
+            Check(chinese!=null&&chinese.width==230&&chinese.height==189,"Chinese wake texture stays 230x189, actual "+(chinese?chinese.width+"x"+chinese.height:"missing"));
+            var shown=CopyTexture(image.sprite.texture);var englishCopy=CopyTexture(english);var chineseCopy=CopyTexture(chinese);
+            float englishDelta=MeanDelta(shown,englishCopy),chineseDelta=MeanDelta(shown,chineseCopy);
+            File.WriteAllBytes(Path.Combine(output,"wake-sprite.png"),shown.EncodeToPNG());
+            Destroy(shown);Destroy(englishCopy);Destroy(chineseCopy);
+            Check(englishDelta<2f&&chineseDelta>8f,"shown bubble matches English art (delta "+englishDelta.ToString("0.0")+") and not the Chinese original (delta "+chineseDelta.ToString("0.0")+")");
+            yield return Capture("wake-tip.png");
+            Check(errors.Count==0,"wake bubble has no runtime errors");Complete(true,null);
+        }
+
+        static Texture2D CopyTexture(Texture source) {
+            var rt=RenderTexture.GetTemporary(source.width,source.height,0,RenderTextureFormat.ARGB32);
+            Graphics.Blit(source,rt);var previous=RenderTexture.active;RenderTexture.active=rt;
+            var copy=new Texture2D(source.width,source.height,TextureFormat.RGBA32,false);
+            copy.ReadPixels(new Rect(0,0,source.width,source.height),0,0);copy.Apply();
+            RenderTexture.active=previous;RenderTexture.ReleaseTemporary(rt);return copy;
+        }
+        static float MeanDelta(Texture2D left,Texture2D right) {
+            var a=left.GetPixels32();var b=right.GetPixels32();int count=Math.Min(a.Length,b.Length);long sum=0;
+            for(int i=0;i<count;i++)sum+=Math.Abs(a[i].r-b[i].r)+Math.Abs(a[i].g-b[i].g)+Math.Abs(a[i].b-b[i].b);
+            return sum/(count*3f);
         }
     }
 }

@@ -39,6 +39,7 @@ namespace Bufu.Rebuild {
             yield return null;yield return new WaitForSeconds(.8f);game=FindObjectOfType<GameController>();
             Check(game!=null&&game.Model!=null,"runtime initialization");
             VerifyBottomNavigation();
+            if(Environment.GetCommandLineArgs().Contains("--verify-wake")){yield return VerifyWakeTip();yield break;}
             if(Environment.GetCommandLineArgs().Contains("--verify-localization")){yield return VerifyLocalization();yield break;}
             if(Environment.GetCommandLineArgs().Contains("--verify-transition")){yield return VerifyTransition();yield break;}
             if(Environment.GetCommandLineArgs().Contains("--verify-parity")){yield return VerifyParity();yield break;}
@@ -114,7 +115,7 @@ namespace Bufu.Rebuild {
             Click(upgrade.Ref<Button>("UpgradePanel","button6"),"open world selection");yield return null;yield return null;
             CheckGrowthBadge(false,"world selection tab");
             var worlds=Field<UiView>("worldView");var worldScroll=worlds.Ref<ScrollRect>("WorldSelectionPanel","worldScrollView");
-            var dice=worldScroll.content.Cast<Transform>().First(t=>t.GetComponentsInChildren<TMP_Text>(true).Any(x=>x.text==game.Model.WorldName(2))).gameObject;
+            var dice=worldScroll.content.Cast<Transform>().First(t=>t.GetComponentsInChildren<TMP_Text>(true).Any(x=>x.text==L10n.Translate(game.Model.WorldName(2)))).gameObject;
             var island=PrefabRef<Button>(dice,"world/WorldNode 1","WorldNode","islandButton");
             CenterInScroll(worldScroll,(RectTransform)island.transform);yield return null;
             Click(island,"select dice world");yield return null;
@@ -181,7 +182,7 @@ namespace Bufu.Rebuild {
             var level=Field<TMP_Text>("levelTmp");level.ForceMeshUpdate();Canvas.ForceUpdateCanvases();
             Check(level.text==expected.ToString(),"growth label shows "+expected);
             Check(level.textInfo.characterCount==expected.ToString().Length&&level.textInfo.lineCount==1&&!level.isTextOverflowing&&level.textInfo.meshInfo.Any(m=>m.vertexCount>0),"growth "+expected+" renders all digits on one visible line");
-            var title=game.Model.TitleMission(expected);Check(title!=null&&Field<TMP_Text>("honorTxt").text==title.titleName,"growth "+expected+" uses the configured title");
+            var title=game.Model.TitleMission(expected);Check(title!=null&&Field<TMP_Text>("honorTxt").text==L10n.Translate(title.titleName),"growth "+expected+" uses the configured title");
         }
 
         IEnumerator DismissGoals() {
@@ -283,6 +284,9 @@ namespace Bufu.Rebuild {
             var result=new Result{passed=success,error=error,editor=Application.unityVersion,width=Screen.width,height=Screen.height,checks=checks.Count,messages=checks.ToArray()};
             File.WriteAllText(Path.Combine(output,"runtime-check.json"),JsonUtility.ToJson(result,true));
             Debug.Log("REBUILD_RUNTIME_QA "+success+" checks="+checks.Count);Application.Quit(success?0:2);
+#if UNITY_EDITOR
+            if(Environment.GetCommandLineArgs().Contains("--verify-wake"))UnityEditor.EditorApplication.Exit(success?0:2);
+#endif
         }
     }
 }

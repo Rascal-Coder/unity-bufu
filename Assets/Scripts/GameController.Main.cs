@@ -25,7 +25,10 @@ namespace Bufu.Rebuild {
             levelTmp.enableWordWrapping=false;levelTmp.enableAutoSizing=true;
             levelTmp.fontSizeMax=levelTmp.fontSize;levelTmp.fontSizeMin=Mathf.Min(48,levelTmp.fontSize);
             taskTmp=top.Ref<TMP_Text>(cls,"taskTmp");honorTxt=top.Ref<TMP_Text>(cls,"honorTxt");taskFill=top.Ref<Image>(cls,"taskProgress");honorImage=top.Ref<Image>(cls,"honor");
+            if(honorImage){var hr=honorImage.rectTransform;hr.localScale=new Vector3(1.06f,1.06f,1f);hr.anchoredPosition=new Vector2(-195f,1192f);}
+            FitHonorText(honorTxt);
             coinIcons=top.Refs(cls,"goldCoinIcons");rewardIcons=top.Refs(cls,"rewardTypeImgs");
+            foreach(var icon in rewardIcons)On(icon,false);
             topMain=top.Ref(cls,"main");permanentPanel=top.Ref(cls,"permanentPanel");checkInButton=top.Ref(cls,"checkInBtn");checkRedPoint=top.Ref(cls,"checkRepoint");
             levelBadge=top.Ref(cls,"mainLevelBg");
             // Not part of the offline rebuild: ranking, invite, recovery, income tip, guide arrow.
@@ -49,8 +52,15 @@ namespace Bufu.Rebuild {
             var next=Model.NextMission;
             Txt(taskTmp,next==null?"":GameModel.Format(Model.State.gold)+"/"+GameModel.Format(next.mainMissionNum));
             taskFill.fillAmount=next==null?0:(float)Math.Min(1,Model.State.gold/Math.Max(double.Epsilon,next.mainMissionNum));
-            for(int i=0;i<rewardIcons.Length;i++)On(rewardIcons[i],next!=null&&next.rewardType==i+1);
             On(checkInButton,Model.LevelAbove(28));On(checkRedPoint,Model.AnyCheckInClaimable());
+        }
+
+        static void FitHonorText(TMP_Text text) {
+            if(!text)return;
+            text.enableWordWrapping=false;text.overflowMode=TextOverflowModes.Ellipsis;
+            text.enableAutoSizing=true;text.fontSize=36;text.fontSizeMax=36;text.fontSizeMin=18;
+            text.horizontalAlignment=HorizontalAlignmentOptions.Center;text.verticalAlignment=VerticalAlignmentOptions.Middle;
+            text.rectTransform.anchoredPosition=new Vector2(18,2);text.rectTransform.sizeDelta=new Vector2(204,48);
         }
 
         void ShowTopMain(bool main){On(topMain,main&&!Model.PromotionReady);On(permanentPanel,main&&!Model.PromotionRunning);On(levelBadge,main&&!Model.PromotionRunning&&!Model.PromotionWonPending);}
@@ -80,6 +90,7 @@ namespace Bufu.Rebuild {
             for(int n=1;n<=3;n++){int index=n;Click(subButtons[n-1],()=>OnSubTab(index));}
             subWorldBack=upgrade.Refs(sub,"worldbackImage");subWorldButton=upgrade.Refs(sub,"worldbutton1");subWorldSelected=upgrade.Refs(sub,"worldbutton1Image");
             sub2Selected=upgrade.Ref(sub,"button2Image");sub3Selected=upgrade.Ref(sub,"button3Image");sub3Hint=upgrade.Ref(sub,"yijiesuoImg3");talentRedDot=upgrade.Node("talentRedDot");
+            FitSubTabLabels();
             subPanels[0]=upgrade.Ref<RectTransform>(sub,"panel1");subPanels[1]=upgrade.Ref<RectTransform>(sub,"panel2");subPanels[2]=upgrade.Ref<RectTransform>(sub,"panel3");
             subContents[0]=(RectTransform)upgrade.Find("ItemPanel/panel1/Scroll View/Viewport/Content").transform;
             subContents[1]=(RectTransform)upgrade.Find("ItemPanel/panel2/Scroll View/Viewport/Content").transform;
@@ -90,9 +101,24 @@ namespace Bufu.Rebuild {
             }
             // item tip popup
             itemTip=upgrade.Ref<RectTransform>(cls,"itemTip");itemTipText=upgrade.Ref<TMP_Text>("SkillTip","tipText");itemTipMask=upgrade.Ref(cls,"itemTipMask");
+            itemTipText.fontSizeMax=38;itemTipText.fontSizeMin=22;itemTipText.horizontalAlignment=HorizontalAlignmentOptions.Center;
             Click(itemTipMask,HideItemTip);HideItemTip();
             BuildItemCards();
             Canvas.ForceUpdateCanvases();
+        }
+
+        void FitSubTabLabels() {
+            var groups=new List<GameObject>();
+            groups.AddRange(subButtons.Select(b=>b.gameObject));
+            groups.AddRange(subWorldSelected);groups.Add(sub2Selected);groups.Add(sub3Selected);
+            foreach(var root in groups.Where(x=>x))foreach(var text in root.GetComponentsInChildren<TMP_Text>(true)) {
+                text.enableWordWrapping=false;text.enableAutoSizing=true;
+                text.fontSize=46;text.fontSizeMax=46;text.fontSizeMin=26;
+                text.horizontalAlignment=HorizontalAlignmentOptions.Center;text.verticalAlignment=VerticalAlignmentOptions.Middle;
+                float parentOffset=text.transform.parent&&text.transform.parent.name.StartsWith("worldbutton")?25.7f:0f;
+                text.rectTransform.anchoredPosition=new Vector2(62f-parentOffset,1f);
+                text.rectTransform.sizeDelta=new Vector2(164f,70f);
+            }
         }
 
         void LayoutBottomNavigation() {
@@ -273,7 +299,9 @@ namespace Bufu.Rebuild {
                 normalDiamond=Sp(v.SpriteField(cls,"normalDiamondBtnSprite")),disabledDiamond=Sp(v.SpriteField(cls,"disabledDiamondBtnSprite")),ad=Sp(v.SpriteField(cls,"adBtnSprite"));
             int baseId=Model.BaseId;bool isHelper=kind==0&&c.id==baseId+1;int quality=c.id-baseId-1;bool currency=kind==0&&quality>=1&&quality<=4;
             var iconSprite=ItemIcon(kind,c.id);if(iconSprite)icon.sprite=iconSprite;
-            Txt(nameTmp,c.itemName);On(tips,false);var tipsRect=(RectTransform)tips.transform;Vector2 tipsHome=tipsRect.anchoredPosition;var tipCard=tipsRect.parent;Coroutine tipRoutine=null;
+            Txt(nameTmp,c.itemName);
+            FitUpgradeCardLayout(v,nameTmp,lvTmp,lvImage,tipButton,levelMax,maxTip,tipsTmp);
+            On(tips,false);var tipsRect=(RectTransform)tips.transform;Vector2 tipsHome=tipsRect.anchoredPosition;var tipCard=tipsRect.parent;Coroutine tipRoutine=null;
             var cardRect=v.Rect;
 
             Func<bool> affordable=()=>{
@@ -297,14 +325,13 @@ namespace Bufu.Rebuild {
                 bool unlocked=Model.Unlocked(c);int lv=Model.LevelKind(c.id,kind);int max=Model.MaxLevel(c);bool maxed=lv>=max;
                 On(unlockImage,!unlocked);On(lockTmp.gameObject,!unlocked);
                 if(!unlocked){
-                    // The English requirement is wider than the card. Keep it inside the icon and the card edge.
-                    PlaceLocalized(lockTmp.rectTransform,new Vector2(400,92),new Vector2(68,-50));
+                    // Center the English unlock requirement directly beneath the padlock icon on the right half of the card.
+                    PlaceLocalized(lockTmp.rectTransform,new Vector2(400,86),new Vector2(104,-48));
                     Txt(lockTmp,Model.LockText(c));
-                    if(L10n.IsEnglish){
-                        lockTmp.enableWordWrapping=true;lockTmp.overflowMode=TextOverflowModes.Ellipsis;
-                        lockTmp.enableAutoSizing=true;lockTmp.fontSizeMax=32;lockTmp.fontSizeMin=20;
-                        lockTmp.horizontalAlignment=HorizontalAlignmentOptions.Left;
-                    }
+                    lockTmp.enableWordWrapping=true;lockTmp.overflowMode=TextOverflowModes.Ellipsis;
+                    lockTmp.enableAutoSizing=true;lockTmp.fontSize=36;lockTmp.fontSizeMax=36;lockTmp.fontSizeMin=22;
+                    lockTmp.horizontalAlignment=HorizontalAlignmentOptions.Center;
+                    lockTmp.verticalAlignment=VerticalAlignmentOptions.Middle;
                     On(upgradeBtn.gameObject,false);On(lvImage,false);On(lvTmp.gameObject,false);On(evolveBtn.gameObject,false);On(levelMax,false);On(maxTip,false);
                     return;
                 }
@@ -317,7 +344,12 @@ namespace Bufu.Rebuild {
                 Txt(lvTmp,lvText);
                 On(levelMax,maxed);
                 bool tip=maxed&&(kind==0&&(c.id==1||c.id==101)||kind==1&&Array.IndexOf(MaxTipBoostsCoin,c.id)>=0);On(maxTip,tip);
-                if(maxed){On(upgradeBtn.gameObject,false);On(evolveBtn.gameObject,false);return;}
+                if(maxed){
+                    var maxRect=(RectTransform)levelMax.transform;
+                    maxRect.anchoredPosition=new Vector2(113,tip?6:0);
+                    maxRect.sizeDelta=new Vector2(360,tip?124:142);
+                    On(upgradeBtn.gameObject,false);On(evolveBtn.gameObject,false);return;
+                }
                 On(evolveBtn.gameObject,canEvolve);On(upgradeBtn.gameObject,!canEvolve);
                 if(canEvolve)return;
                 bool gated=isHelper&&Model.HelperGated,free=c.costType==3,diamond=c.costType==2,afford=affordable();
@@ -325,6 +357,58 @@ namespace Bufu.Rebuild {
                 On(moneyTmp.gameObject,!(gated||free));if(!(gated||free))Txt(moneyTmp,GameModel.Format(Model.PriceKind(c.id,kind)));
                 On(arrow,afford);
             });
+        }
+
+        static void FitUpgradeCardLayout(UiView v,TMP_Text nameTmp,TMP_Text lvTmp,GameObject lvImage,Button tipButton,GameObject levelMax,GameObject maxTip,TMP_Text tipsTmp) {
+            if(nameTmp&&tipButton) {
+                var groupRect=(RectTransform)tipButton.transform;
+                var hlg=tipButton.GetComponent<HorizontalLayoutGroup>();
+                if(hlg){hlg.childAlignment=TextAnchor.MiddleCenter;hlg.spacing=6;hlg.childControlWidth=true;hlg.childControlHeight=true;hlg.childForceExpandWidth=false;hlg.childForceExpandHeight=false;}
+                var infoIcon=tipButton.transform.Find("GameObject/informationIcon") as RectTransform;
+                if(infoIcon) {
+                    var holder=infoIcon.parent as RectTransform;
+                    var le=holder.GetComponent<LayoutElement>()??holder.gameObject.AddComponent<LayoutElement>();
+                    le.minWidth=le.preferredWidth=38;le.minHeight=le.preferredHeight=38;
+                    infoIcon.anchorMin=infoIcon.anchorMax=infoIcon.pivot=new Vector2(.5f,.5f);
+                    infoIcon.anchoredPosition=Vector2.zero;infoIcon.sizeDelta=new Vector2(38,35);
+                }
+                nameTmp.enableAutoSizing=false;nameTmp.enableWordWrapping=false;nameTmp.overflowMode=TextOverflowModes.Overflow;
+                nameTmp.verticalAlignment=VerticalAlignmentOptions.Middle;
+                nameTmp.fontSize=36;
+                float prefW=nameTmp.GetPreferredValues(nameTmp.text,1000,100).x;
+                if(prefW>232f){nameTmp.fontSize=Mathf.Max(23f,Mathf.Floor(36f*232f/prefW));prefW=nameTmp.GetPreferredValues(nameTmp.text,1000,100).x;}
+                float totalW=prefW+6f+38f;
+                float centerX=Mathf.Max(-200f,-302f+totalW*.5f);
+                groupRect.anchoredPosition=new Vector2(centerX,86f);
+                groupRect.sizeDelta=new Vector2(totalW,56f);
+            }
+            if(lvTmp&&lvImage) {
+                var lvLayout=lvTmp.transform.parent as RectTransform;
+                if(lvLayout)lvLayout.anchoredPosition=new Vector2(118f,86f);
+                lvTmp.enableAutoSizing=false;lvTmp.enableWordWrapping=false;lvTmp.fontSize=44;
+                lvTmp.verticalAlignment=VerticalAlignmentOptions.Middle;
+            }
+            if(levelMax) {
+                var maxLabel=levelMax.GetComponentInChildren<TMP_Text>(true);
+                if(maxLabel){
+                    maxLabel.enableWordWrapping=false;maxLabel.fontSize=44;maxLabel.fontSizeMax=44;maxLabel.fontSizeMin=26;
+                    maxLabel.rectTransform.sizeDelta=new Vector2(316,74);
+                }
+            }
+            if(maxTip) {
+                var tipLabel=maxTip.GetComponent<TMP_Text>();
+                if(tipLabel){
+                    tipLabel.enableWordWrapping=false;tipLabel.overflowMode=TextOverflowModes.Ellipsis;
+                    tipLabel.fontSize=32;tipLabel.fontSizeMax=32;tipLabel.fontSizeMin=20;
+                    tipLabel.horizontalAlignment=HorizontalAlignmentOptions.Center;
+                    tipLabel.rectTransform.anchoredPosition=new Vector2(113,-86);
+                    tipLabel.rectTransform.sizeDelta=new Vector2(390,52);
+                }
+            }
+            if(tipsTmp) {
+                tipsTmp.enableWordWrapping=false;tipsTmp.overflowMode=TextOverflowModes.Ellipsis;
+                tipsTmp.fontSize=36;tipsTmp.fontSizeMax=36;tipsTmp.fontSizeMin=20;
+            }
         }
 
         /// <summary>UpgradeItem.PlayUpgradeFeedback: the hint rises 30px and stays 2s. It is moved onto the panel so the scroll mask does not cut off the top row.</summary>

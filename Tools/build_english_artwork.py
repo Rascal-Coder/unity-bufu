@@ -20,6 +20,7 @@ WHITE = ((255, 255, 255, 255), (18, 12, 10, 255), 0.13, FONT)
 CREAM = ((255, 248, 214, 255), (32, 20, 12, 255), 0.14, FONT)
 BROWN = ((96, 68, 46, 255), (255, 255, 255, 0), 0.0, FONT)
 INK = ((42, 40, 38, 255), (255, 255, 255, 0), 0.0, FONT)
+NAVY = ((22, 43, 53, 255), (255, 255, 255, 0), 0.0, FONT)
 PAPER = ((48, 46, 44, 255), (255, 255, 255, 0), 0.0, FONT_BODY)
 GOLD = ((255, 228, 90, 255), (150, 72, 16, 255), 0.08, FONT)
 DARK = ((55, 58, 62, 255), (255, 255, 255, 0), 0.0, FONT)
@@ -407,6 +408,7 @@ JOBS = {
     "ty_zi_upgrade": [{"box": LABEL, "text": "Upgrade", "mode": "clear"}],
     "ty_zi_restoreSave": [{"box": LABEL, "text": "Restore Save", "mode": "clear"}],
     "world_zi_dangqian": [{"box": (0.16, 0.12, 0.68, 0.74), "text": "NOW", "style": WHITE, "mode": "lights", "angle": 22}],
+    "xsyd_huanxing": [{"box": (0.08, 0.14, 0.84, 0.48), "text": "Tap to\nWake!", "style": NAVY, "mode": "dark", "thresh": 160}],
     "xsyd_yijies": [{"box": (0.12, 0.08, 0.76, 0.42), "text": "Unlocked", "style": INK, "mode": "dark"}],
     "xsyd_zhuanqianshengji": [{"box": (0.40, 0.06, 0.52, 0.88), "text": "EARN\nUP", "style": INK}],
     "zm_btn_bs_upgrade": [{"box": BUTTON, "text": "Upgrade", "style": WHITE}],

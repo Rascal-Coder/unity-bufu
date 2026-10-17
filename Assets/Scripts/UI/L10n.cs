@@ -13,18 +13,17 @@ namespace Bufu.Rebuild.UI {
         static readonly List<Pattern> patterns=new List<Pattern>();
         static readonly Regex variables=new Regex(@"\{([^{}]+)\}|[sS]{3}");
         static bool loaded;static string pref="bufu.language";
-        public static string Language {get;private set;}="zh-CN";
-        public static bool IsEnglish=>Language=="en";
-        public static CultureInfo Culture=>CultureInfo.GetCultureInfo(IsEnglish?"en-US":"zh-CN");
+        public static string Language {get;private set;}="en";
+        public static bool IsEnglish=>true;
+        public static CultureInfo Culture=>CultureInfo.GetCultureInfo("en-US");
         public static event Action Changed;
 
         public static void Initialize(bool developer,bool verification) {
             pref=(developer?"dev.":"")+"bufu.language";
-            var args=Environment.GetCommandLineArgs();int at=Array.IndexOf(args,"--language");
-            Language=NormalizeLanguage(at>=0&&at+1<args.Length?args[at+1]:verification?"zh-CN":PlayerPrefs.GetString(pref,"zh-CN"));
+            Language="en";
             Load();cache.Clear();
         }
-        static string NormalizeLanguage(string value)=>string.Equals(value,"en",StringComparison.OrdinalIgnoreCase)||string.Equals(value,"en-US",StringComparison.OrdinalIgnoreCase)?"en":"zh-CN";
+        static string NormalizeLanguage(string value)=>"en";
         public static void SetLanguage(string value,bool persist=true) {
             value=NormalizeLanguage(value);if(value==Language)return;
             Language=value;cache.Clear();

@@ -61,9 +61,15 @@ namespace Bufu.Rebuild {
             var deskName=v.Ref<TMP_Text>(cls,"deskNameText");
             var deskDesc=v.Ref<TMP_Text>(cls,"deskDescText");
             var deskUnlock=v.Ref<TMP_Text>(cls,"unlockConditionText");
+            Txt(deskName,d.deskName);
             deskName.enableWordWrapping=false;deskDesc.enableWordWrapping=true;deskUnlock.enableWordWrapping=true;
             deskName.overflowMode=deskDesc.overflowMode=deskUnlock.overflowMode=TextOverflowModes.Ellipsis;
-            Txt(deskName,d.deskName);
+            deskName.fontSize=40;deskName.fontSizeMax=40;deskName.fontSizeMin=22;
+            deskName.horizontalAlignment=HorizontalAlignmentOptions.Center;deskName.verticalAlignment=VerticalAlignmentOptions.Middle;
+            deskDesc.fontSize=38;deskDesc.fontSizeMax=38;deskDesc.fontSizeMin=22;
+            deskDesc.horizontalAlignment=HorizontalAlignmentOptions.Center;deskDesc.verticalAlignment=VerticalAlignmentOptions.Middle;
+            deskUnlock.fontSize=38;deskUnlock.fontSizeMax=38;deskUnlock.fontSizeMin=22;
+            deskUnlock.horizontalAlignment=HorizontalAlignmentOptions.Center;deskUnlock.verticalAlignment=VerticalAlignmentOptions.Middle;
             var usingBg=v.Ref(cls,"usingImage");var usingLabel=v.Node("usingLabelImp");var red=v.Ref(cls,"reddotGo");var lockRoot=v.Ref(cls,"lockIcon");
             Action open=()=>{if(Model.DeskUnlocked(d))ShowUseDesk(d);};
             Click(v.Ref<Button>(cls,"itemButton"),open);Click(usingBg,open);
@@ -71,9 +77,9 @@ namespace Bufu.Rebuild {
                 bool unlocked=Model.DeskUnlocked(d),using_=Model.UsingDesk==d.id;
                 On(lockRoot,!unlocked);
                 // The yellow Upgrade pill is baked into the lower card. Keep the longer English lines above it, and keep the name clear of the level badge.
-                PlaceLocalized(deskName.rectTransform,new Vector2(248,70),new Vector2(-52,268));
+                PlaceLocalized(deskName.rectTransform,new Vector2(252,68),new Vector2(-48,268));
                 PlaceLocalized(deskDesc.rectTransform,new Vector2(390,120),new Vector2(0,-112));
-                PlaceLocalized(deskUnlock.rectTransform,new Vector2(390,160),new Vector2(0,-150));
+                PlaceLocalized(deskUnlock.rectTransform,new Vector2(390,150),new Vector2(0,-145));
                 Txt(deskUnlock,"解锁条件\n成长等级达到"+d.deskUnlockCondition+"级");
                 Txt(deskDesc,d.deskDesc+"*"+Model.DeskPower(d).ToString("0.0",L10n.Culture)+"倍");
                 Txt(v.Ref<TMP_Text>(cls,"levelText"),Model.DeskLevel(d).ToString());
@@ -85,7 +91,13 @@ namespace Bufu.Rebuild {
             const string cls="UseDeskUI";
             var v=OpenPopup("Facility/deskUpgrade");
             var sprite=DeskIcon(d);if(sprite)v.Ref<Image>(cls,"deskIcon").sprite=sprite;
-            Txt(v.Ref<TMP_Text>(cls,"deskNameText"),d.deskName);Txt(v.Ref<TMP_Text>(cls,"skillUpgradeText"),d.deskDesc);
+            var titleTmp=v.Ref<TMP_Text>(cls,"deskNameText");var descTmp=v.Ref<TMP_Text>(cls,"skillUpgradeText");
+            Txt(titleTmp,d.deskName);Txt(descTmp,d.deskDesc);
+            titleTmp.enableWordWrapping=false;titleTmp.fontSizeMax=50;titleTmp.fontSizeMin=24;titleTmp.rectTransform.sizeDelta=new Vector2(470,90);
+            descTmp.fontSizeMax=42;descTmp.fontSizeMin=22;
+            foreach(string field in new[]{"currentSkillText","nextSkillText"}) {
+                var valTmp=v.Ref<TMP_Text>(cls,field);valTmp.enableWordWrapping=false;valTmp.fontSizeMax=48;
+            }
             var useButton=v.Ref<Button>(cls,"useButton");var usingImage=v.Ref(cls,"useButtonText");
             var buy=v.Ref<Button>(cls,"buyButton");var moneyBuy=v.Ref<Button>(cls,"moneyBuyButton");var maxLevel=v.Ref(cls,"maxLevel");
             Click(v.Ref<Button>(cls,"closeButton"),()=>ClosePopup(v));Click(v.Ref<Button>(cls,"bgButton"),()=>ClosePopup(v));

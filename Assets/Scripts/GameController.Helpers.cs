@@ -50,11 +50,15 @@ namespace Bufu.Rebuild {
             var helperName=v.Ref<TMP_Text>(cls,"helperNameText");
             var helperDesc=v.Ref<TMP_Text>(cls,"helperDescText");
             var helperUnlock=v.Ref<TMP_Text>(cls,"unlockConditionText");
-            helperName.enableWordWrapping=false;helperName.overflowMode=TextOverflowModes.Ellipsis;
-            helperName.enableAutoSizing=true;helperName.fontSizeMax=helperName.fontSize;helperName.fontSizeMin=28;
-            helperDesc.enableWordWrapping=true;helperDesc.overflowMode=TextOverflowModes.Ellipsis;
-            helperUnlock.enableWordWrapping=true;helperUnlock.overflowMode=TextOverflowModes.Ellipsis;
             Txt(helperName,role.helperName);
+            helperName.enableWordWrapping=false;helperName.overflowMode=TextOverflowModes.Ellipsis;
+            helperName.enableAutoSizing=true;helperName.fontSize=42;helperName.fontSizeMax=42;helperName.fontSizeMin=24;
+            helperDesc.enableWordWrapping=true;helperDesc.overflowMode=TextOverflowModes.Ellipsis;
+            helperDesc.fontSize=38;helperDesc.fontSizeMax=38;helperDesc.fontSizeMin=22;
+            helperDesc.horizontalAlignment=HorizontalAlignmentOptions.Center;helperDesc.verticalAlignment=VerticalAlignmentOptions.Middle;
+            helperUnlock.enableWordWrapping=true;helperUnlock.overflowMode=TextOverflowModes.Ellipsis;
+            helperUnlock.fontSize=38;helperUnlock.fontSizeMax=38;helperUnlock.fontSizeMin=22;helperUnlock.lineSpacing=0;
+            helperUnlock.horizontalAlignment=HorizontalAlignmentOptions.Center;helperUnlock.verticalAlignment=VerticalAlignmentOptions.Middle;
             ApplyHelperCardFrame(v,role.Rare);
             On(v.Ref(cls,"thirstDayTip"),false);On(v.Ref(cls,"sevenDayTip"),false);On(v.Ref(cls,"halandeTip"),false);
             On(v.Ref(cls,"subscribeUnlockBtn"),false);
@@ -67,10 +71,10 @@ namespace Bufu.Rebuild {
                 On(v.Ref(cls,"lockIcon"),!owned);On(v.Ref(cls,"upgradeBtn1"),owned);On(v.Ref(cls,"redDot"),Model.CanUpgradeHelper(role.id));
                 On(v.Ref(cls,"adUnlockBtn"),Model.CanAdUnlock(role));
                 string unlock=role.UnlockLevel==2?"在骰子世界"+role.helperUnlockCondition+"级解锁":"解锁条件\n成长等级达到"+role.helperUnlockCondition+"级";
-                // Name stays on the portrait's right. Description stays above the count, and the unlock line stays inside the frame.
-                PlaceLocalized(helperName.rectTransform,new Vector2(230,70),new Vector2(175,132));
-                PlaceLocalized(helperDesc.rectTransform,new Vector2(560,132),new Vector2(0,20));
-                PlaceLocalized(helperUnlock.rectTransform,new Vector2(560,160),new Vector2(0,-70));
+                // Name stays on the portrait's right. Description stays above the count, and the unlock line stays clear of the left padlock icon.
+                PlaceLocalized(helperName.rectTransform,new Vector2(240,70),new Vector2(175,132));
+                PlaceLocalized(helperDesc.rectTransform,new Vector2(580,128),new Vector2(0,18));
+                PlaceLocalized(helperUnlock.rectTransform,new Vector2(410,140),new Vector2(85,-85));
                 Txt(helperUnlock,owned?"":unlock);
                 On(v.Ref(cls,"helperLevelText"),false);
                 Txt(v.Ref<TMP_Text>(cls,"helperDescText"),SkillText(role,Model.HelperSkillValue(role.id)));
@@ -100,8 +104,7 @@ namespace Bufu.Rebuild {
             var v=OpenPopup("Facility/helperUpgrade");
             On(v.Ref(cls,"upgradeTip1"),false);On(v.Ref(cls,"upgradeTip2"),false);On(v.Ref(cls,"maxObject"),false);
             var portrait=v.Ref<Image>(cls,"helperIcon");portrait.enabled=false;MountHelperPortrait(portrait.transform,role);
-            Txt(v.Ref<TMP_Text>(cls,"helperNameText"),role.helperName);
-            Txt(v.Ref<TMP_Text>(cls,"limitInfoText"),role.helperName+"数量上限+1");
+            FitHelperUpgradePopup(v,role);
             On(v.Ref(cls,"addhelperAdsBtn"),false);
             var frames=v.Refs(cls,"NSRbg");var marks=v.Refs(cls,"NSR");int rareIndex=Mathf.Clamp(role.Rare,1,3)-1;
             for(int i=0;i<frames.Length;i++)On(frames[i],i==rareIndex);
@@ -154,11 +157,88 @@ namespace Bufu.Rebuild {
                     bool show=role.awakeSkillNum!=null&&i<role.awakeSkillNum.Length&&body[i]!="0";
                     On(v.Nodes[awakeNodes[i]],show);if(!show)continue;
                     var data=v.Script("HelperSkill",awakeNodes[i]);bool on=level>=role.awakeSkillNum[i];
-                    Txt(v.Nodes[data.Obj("skillunLockText").I("node")].GetComponent<TMP_Text>(),on?names[i]:role.awakeSkillNum[i]+"级解锁");
+                    var unlockTmp=v.Nodes[data.Obj("skillunLockText").I("node")].GetComponent<TMP_Text>();
+                    Txt(unlockTmp,on?names[i]:role.awakeSkillNum[i]+"级解锁");
+                    unlockTmp.enableWordWrapping=false;unlockTmp.fontSizeMax=34;unlockTmp.fontSizeMin=20;
+                    unlockTmp.rectTransform.sizeDelta=new Vector2(280,56);
                     On(v.Nodes[data.Obj("skillLock").I("node")],!on);
                     var sprite=Sp(SkillIconName(role.id,i+1));var image=v.Nodes[data.Obj("skillIcon").I("node")].GetComponent<Image>();if(sprite&&image)image.sprite=sprite;
                 }
             });
+        }
+
+        static void FitHelperUpgradePopup(UiView v,HelperRole role) {
+            const string cls="UseHelperUI";
+            var popupName=v.Ref<TMP_Text>(cls,"helperNameText");
+            Txt(popupName,role.helperName);
+            popupName.margin=Vector4.zero;popupName.enableWordWrapping=false;
+            popupName.fontSize=46;popupName.fontSizeMax=46;popupName.fontSizeMin=24;
+            popupName.horizontalAlignment=HorizontalAlignmentOptions.Center;popupName.verticalAlignment=VerticalAlignmentOptions.Middle;
+            popupName.rectTransform.anchoredPosition=new Vector2(-92,378);popupName.rectTransform.sizeDelta=new Vector2(330,84);
+
+            var limitTitle=v.Nodes[39].GetComponent<TMP_Text>();
+            if(limitTitle){limitTitle.enableWordWrapping=false;limitTitle.fontSize=38;limitTitle.fontSizeMax=38;limitTitle.fontSizeMin=22;}
+            var limitInfo=v.Ref<TMP_Text>(cls,"limitInfoText");
+            Txt(limitInfo,role.helperName+"数量上限+1");
+            limitInfo.enableWordWrapping=false;limitInfo.fontSize=40;limitInfo.fontSizeMax=40;limitInfo.fontSizeMin=22;
+            limitInfo.horizontalAlignment=HorizontalAlignmentOptions.Left;limitInfo.verticalAlignment=VerticalAlignmentOptions.Middle;
+            limitInfo.rectTransform.anchoredPosition=new Vector2(-175,32);limitInfo.rectTransform.sizeDelta=new Vector2(520,100);
+
+            var skillTitle=v.Nodes[73].GetComponent<TMP_Text>();
+            if(skillTitle){skillTitle.enableWordWrapping=false;skillTitle.fontSize=38;skillTitle.fontSizeMax=38;skillTitle.fontSizeMin=22;}
+
+            var innerCard=(RectTransform)v.Nodes[53].transform;
+            innerCard.anchoredPosition=new Vector2(0.57f,-118f);
+            innerCard.sizeDelta=new Vector2(942.5f,392f);
+
+            var item2=(RectTransform)v.Nodes[60].transform;item2.anchoredPosition=new Vector2(505f,58f);
+            var desc2=v.Ref<TMP_Text>(cls,"skillDescText2");
+            desc2.margin=Vector4.zero;desc2.enableWordWrapping=false;desc2.overflowMode=TextOverflowModes.Ellipsis;
+            desc2.fontSize=38;desc2.fontSizeMax=38;desc2.fontSizeMin=22;
+            desc2.horizontalAlignment=HorizontalAlignmentOptions.Left;desc2.verticalAlignment=VerticalAlignmentOptions.Middle;
+            desc2.rectTransform.anchoredPosition=new Vector2(-190,8);desc2.rectTransform.sizeDelta=new Vector2(490,72);
+            var cur2=v.Ref<TMP_Text>(cls,"currentSkillText2");
+            cur2.margin=Vector4.zero;cur2.enableWordWrapping=false;cur2.fontSize=44;cur2.fontSizeMax=44;cur2.fontSizeMin=24;
+            cur2.horizontalAlignment=HorizontalAlignmentOptions.Right;cur2.verticalAlignment=VerticalAlignmentOptions.Middle;
+            cur2.rectTransform.anchoredPosition=new Vector2(138,8);cur2.rectTransform.sizeDelta=new Vector2(160,72);
+            var arrow2=(RectTransform)v.Nodes[61].transform;arrow2.anchoredPosition=new Vector2(246,8);
+            var next2=v.Ref<TMP_Text>(cls,"nextSkillText2");
+            next2.margin=Vector4.zero;next2.enableWordWrapping=false;next2.fontSize=44;next2.fontSizeMax=44;next2.fontSizeMin=24;
+            next2.horizontalAlignment=HorizontalAlignmentOptions.Left;next2.verticalAlignment=VerticalAlignmentOptions.Middle;
+            next2.rectTransform.anchoredPosition=new Vector2(354,8);next2.rectTransform.sizeDelta=new Vector2(160,72);
+
+            var item1=(RectTransform)v.Nodes[65].transform;item1.anchoredPosition=new Vector2(505f,-24f);
+            var desc1=v.Ref<TMP_Text>(cls,"skillDescText");
+            desc1.margin=Vector4.zero;desc1.enableWordWrapping=false;desc1.overflowMode=TextOverflowModes.Ellipsis;
+            desc1.fontSize=38;desc1.fontSizeMax=38;desc1.fontSizeMin=20;
+            desc1.horizontalAlignment=HorizontalAlignmentOptions.Center;desc1.verticalAlignment=VerticalAlignmentOptions.Middle;
+            desc1.rectTransform.anchoredPosition=new Vector2(0,12);desc1.rectTransform.sizeDelta=new Vector2(880,68);
+            var cur1=v.Ref<TMP_Text>(cls,"currentSkillText");
+            cur1.margin=Vector4.zero;cur1.enableWordWrapping=false;cur1.fontSize=42;cur1.fontSizeMax=42;cur1.fontSizeMin=22;
+            cur1.horizontalAlignment=HorizontalAlignmentOptions.Right;cur1.verticalAlignment=VerticalAlignmentOptions.Middle;
+            cur1.rectTransform.anchoredPosition=new Vector2(-128,-54);cur1.rectTransform.sizeDelta=new Vector2(210,64);
+            var arrow1=(RectTransform)v.Nodes[66].transform;arrow1.anchoredPosition=new Vector2(0,-54);
+            var next1=v.Ref<TMP_Text>(cls,"nextSkillText");
+            next1.margin=Vector4.zero;next1.enableWordWrapping=false;next1.fontSize=42;next1.fontSizeMax=42;next1.fontSizeMin=22;
+            next1.horizontalAlignment=HorizontalAlignmentOptions.Left;next1.verticalAlignment=VerticalAlignmentOptions.Middle;
+            next1.rectTransform.anchoredPosition=new Vector2(128,-54);next1.rectTransform.sizeDelta=new Vector2(210,64);
+
+            var levelHeader=v.Nodes[55].GetComponent<TMP_Text>();
+            if(levelHeader){
+                levelHeader.margin=Vector4.zero;levelHeader.enableWordWrapping=false;
+                levelHeader.fontSize=32;levelHeader.fontSizeMax=32;levelHeader.fontSizeMin=20;
+                levelHeader.horizontalAlignment=HorizontalAlignmentOptions.Center;levelHeader.verticalAlignment=VerticalAlignmentOptions.Middle;
+                levelHeader.rectTransform.anchoredPosition=new Vector2(505f,-192f);levelHeader.rectTransform.sizeDelta=new Vector2(440f,48f);
+            }
+            var lineSet=(RectTransform)v.Nodes[57].transform;
+            lineSet.anchoredPosition=new Vector2(-332.5f,-192f);
+            var hlg=lineSet.GetComponent<HorizontalLayoutGroup>();if(hlg)hlg.spacing=520f;
+
+            var levelDesc=v.Ref<TMP_Text>(cls,"upgradeLevelDescText");
+            levelDesc.margin=Vector4.zero;levelDesc.fontSize=44;levelDesc.fontSizeMax=44;levelDesc.fontSizeMin=24;
+            levelDesc.rectTransform.anchoredPosition=new Vector2(-5f,-254f);
+            var marker=v.Ref<RectTransform>(cls,"upgradeLevelbg");
+            marker.anchoredPosition=new Vector2(marker.anchoredPosition.x,-254f);
         }
 
         static string Sig(float value){if(value>=100f)return GameModel.Format(value);if(value>=10f)return value.ToString("0.0",L10n.Culture);return value.ToString("0.00",L10n.Culture);}

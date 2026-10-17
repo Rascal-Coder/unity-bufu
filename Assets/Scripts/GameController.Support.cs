@@ -20,8 +20,14 @@ namespace Bufu.Rebuild {
         void BuildSupport() {
             On(PromotionNode("worldCup"),false);On(PromotionNode("gongfuButton"),false);On(PromotionNode("dasheButton"),false);
             for(int i=0;i<3;i++) {
-                var kind=(SupportKind)i;Click(PromotionNode(supportButtons[i]),()=>ShowSupport(kind));
-                On(PromotionNode(supportTimers[i]),false);
+                var kind=(SupportKind)i;var button=PromotionNode(supportButtons[i]);
+                Click(button,()=>ShowSupport(kind));
+                var btnRect=(RectTransform)button.transform;btnRect.sizeDelta=new Vector2(200,200);btnRect.localScale=Vector3.one;
+                var btnImg=button.GetComponent<Image>();if(btnImg)btnImg.preserveAspect=true;
+                var timer=PromotionNode(supportTimers[i]);On(timer,false);
+                var timerRect=(RectTransform)timer.transform;timerRect.anchoredPosition=new Vector2(0,-110.6f);timerRect.sizeDelta=new Vector2(158,31);
+                var timerTxt=PromotionNode(supportTexts[i]).GetComponent<TMP_Text>();
+                if(timerTxt){timerTxt.enableAutoSizing=false;timerTxt.enableWordWrapping=false;timerTxt.fontSize=34;timerTxt.alignment=TextAlignmentOptions.Center;}
                 string effect=i==0?"Ads_coinrain":i==1?"Ads_zuanqian":"Ads_jiayou";
                 var v=UiPrefab.Instantiate("Role/"+effect,promotionView.Root.transform);v.Rect.anchoredPosition=new Vector2(0,1300);
                 var emitter=v.Root.transform.GetChild(0).GetComponentInChildren<ParticleSystem>(true);
@@ -70,7 +76,7 @@ namespace Bufu.Rebuild {
             float y=-235;
             if(supportExpanded&&count>0) {
                 LayoutRebuilder.ForceRebuildLayoutImmediate(content);
-                mask.sizeDelta=new Vector2(mask.sizeDelta.x,count>=4?760:content.rect.height-215);
+                mask.sizeDelta=new Vector2(mask.sizeDelta.x,count>=4?795:content.rect.height-180);
                 y=mask.anchoredPosition.y-mask.rect.height-50;
                 bg.sizeDelta=new Vector2(bg.sizeDelta.x,mask.rect.height+120);
                 promotionView.Ref<ScrollRect>("DownItem","scrollFrame").verticalNormalizedPosition=1;

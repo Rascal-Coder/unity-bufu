@@ -41,7 +41,7 @@ namespace Bufu.Rebuild {
             // A slow frame can resume this iterator before the exit tween's callback.
             float exitDeadline=Time.realtimeSinceStartup+2;
             while(Field<UiView>("goalView")!=null&&Time.realtimeSinceStartup<exitDeadline)yield return null;
-            Check(Field<UiView>("goalView")==null&&top.Ref<TMP_Text>("TopPanel","honorTxt").text==model.TitleMission(2).titleName,"honor updates when native newspaper finishes closing");
+            Check(Field<UiView>("goalView")==null&&top.Ref<TMP_Text>("TopPanel","honorTxt").text==L10n.Translate(model.TitleMission(2).titleName),"honor updates when native newspaper finishes closing");
 
             GameObject node(string field)=>down.Ref("DownItem",field);
             model.State.mission=3;model.State.gold=0;model.State.pendingGoals.Clear();Refresh();yield return null;yield return null;
@@ -86,7 +86,7 @@ namespace Bufu.Rebuild {
             yield return Capture("07-inspire-native-effect-and-timer.png");
             Check(ParticleMeshVertices(effects[2])>0,"inspire effect has actual generated uGUI mesh vertices");
             Click(node("inspireButton").GetComponent<Button>(),"reopen cooling inspire entry");yield return null;dialog=Field<UiView>("supportDialog");
-            Check(!dialog.Ref<Button>("CoinSlotSupportDialog","getButton").interactable&&dialog.Ref<TMP_Text>("CoinSlotSupportDialog","bianlanText").text.StartsWith("过"),"cooling popup disables claim and displays original wait message");
+            Check(!dialog.Ref<Button>("CoinSlotSupportDialog","getButton").interactable&&!L10n.HasChinese(dialog.Ref<TMP_Text>("CoinSlotSupportDialog","bianlanText").text)&&dialog.Ref<TMP_Text>("CoinSlotSupportDialog","bianlanText").text.StartsWith("Available in "),"cooling popup disables claim and displays wait message");
             Click(dialog.Ref<Button>("CoinSlotSupportDialog","closeButton"),"close cooling popup");yield return null;
             yield return new WaitForSeconds(3.1f);Check(!Field<ParticleSystem[]>("supportEmitters")[2].gameObject.activeSelf,"original support effect hides after three scaled seconds");
             foreach(var kind in new[]{SupportKind.Money,SupportKind.Income}) {

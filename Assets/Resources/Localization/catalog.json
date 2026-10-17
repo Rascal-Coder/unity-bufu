@@ -1,6 +1,5 @@
 {
   "languages": [
-    "zh-CN",
     "en"
   ],
   "entries": [
@@ -1222,7 +1221,7 @@
     {
       "key": "original.244",
       "zh": "街头穷光蛋",
-      "en": "Broke on the Block"
+      "en": "Street Rookie"
     },
     {
       "key": "original.245",
@@ -1232,12 +1231,12 @@
     {
       "key": "original.246",
       "zh": "小镇暴发户",
-      "en": "Small-Town Tycoon"
+      "en": "Town Tycoon"
     },
     {
       "key": "original.247",
       "zh": "职场老油条",
-      "en": "Office Veteran"
+      "en": "Office Pro"
     },
     {
       "key": "original.248",
@@ -1247,7 +1246,7 @@
     {
       "key": "original.249",
       "zh": "百万新贵族",
-      "en": "Millionaire Elite"
+      "en": "Rich Elite"
     },
     {
       "key": "original.250",
@@ -1257,97 +1256,97 @@
     {
       "key": "original.251",
       "zh": "跨国大财团",
-      "en": "Global Conglomerate"
+      "en": "Global Tycoon"
     },
     {
       "key": "original.252",
       "zh": "华尔街巨鳄 I",
-      "en": "Wall Street Shark I"
+      "en": "Market Shark I"
     },
     {
       "key": "original.253",
       "zh": "华尔街巨鳄 II",
-      "en": "Wall Street Shark II"
+      "en": "Market Shark II"
     },
     {
       "key": "original.254",
       "zh": "华尔街巨鳄 III",
-      "en": "Wall Street Shark III"
+      "en": "Market Shark III"
     },
     {
       "key": "original.255",
       "zh": "蓝星掌控者 I",
-      "en": "Planet Ruler I"
+      "en": "World Ruler I"
     },
     {
       "key": "original.256",
       "zh": "蓝星掌控者 II",
-      "en": "Planet Ruler II"
+      "en": "World Ruler II"
     },
     {
       "key": "original.257",
       "zh": "蓝星掌控者 III",
-      "en": "Planet Ruler III"
+      "en": "World Ruler III"
     },
     {
       "key": "original.258",
       "zh": "太阳系矿主 I",
-      "en": "Solar Mine Lord I"
+      "en": "Solar Baron I"
     },
     {
       "key": "original.259",
       "zh": "太阳系矿主 II",
-      "en": "Solar Mine Lord II"
+      "en": "Solar Baron II"
     },
     {
       "key": "original.260",
       "zh": "太阳系矿主 III",
-      "en": "Solar Mine Lord III"
+      "en": "Solar Baron III"
     },
     {
       "key": "original.261",
       "zh": "银河大买办 I",
-      "en": "Galactic Magnate I"
+      "en": "Star Magnate I"
     },
     {
       "key": "original.262",
       "zh": "银河大买办 II",
-      "en": "Galactic Magnate II"
+      "en": "Star Magnate II"
     },
     {
       "key": "original.263",
       "zh": "银河大买办 III",
-      "en": "Galactic Magnate III"
+      "en": "Star Magnate III"
     },
     {
       "key": "original.264",
       "zh": "宇宙大财阀 I",
-      "en": "Cosmic Tycoon I"
+      "en": "Cosmic Mogul I"
     },
     {
       "key": "original.265",
       "zh": "宇宙大财阀 II",
-      "en": "Cosmic Tycoon II"
+      "en": "Cosmic Mogul II"
     },
     {
       "key": "original.266",
       "zh": "宇宙大财阀 III",
-      "en": "Cosmic Tycoon III"
+      "en": "Cosmic Mogul III"
     },
     {
       "key": "original.267",
       "zh": "维度收割者 I",
-      "en": "Dimension Reaper I"
+      "en": "Realm Reaper I"
     },
     {
       "key": "original.268",
       "zh": "维度收割者 II",
-      "en": "Dimension Reaper II"
+      "en": "Realm Reaper II"
     },
     {
       "key": "original.269",
       "zh": "维度收割者 III",
-      "en": "Dimension Reaper III"
+      "en": "Realm Reaper III"
     },
     {
       "key": "original.270",
@@ -1367,17 +1366,17 @@
     {
       "key": "original.273",
       "zh": "奇点印钞机 I",
-      "en": "Singularity Mint I"
+      "en": "Apex Minter I"
     },
     {
       "key": "original.274",
       "zh": "奇点印钞机 II",
-      "en": "Singularity Mint II"
+      "en": "Apex Minter II"
     },
     {
       "key": "original.275",
       "zh": "奇点印钞机 III",
-      "en": "Singularity Mint III"
+      "en": "Apex Minter III"
     },
     {
       "key": "original.276",

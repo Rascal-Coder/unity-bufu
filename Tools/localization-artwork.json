@@ -402,6 +402,14 @@
       "note": "签到标题与整张背景合图，保留日历、面板和透明边缘。"
     },
     {
+      "sprite": "xsyd_huanxing",
+      "chinese": "点击唤醒！",
+      "english": [
+        "Tap to\nWake!"
+      ],
+      "note": "睡觉帮手头顶的唤醒气泡，保留绿色底板和向下箭头。"
+    },
+    {
       "sprite": "xsyd_yijies",
       "chinese": "已解锁",
       "english": [

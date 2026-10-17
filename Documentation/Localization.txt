@@ -1,31 +1,13 @@
-简体中文 / English 国际化
+English 语言包（已移除中文切换，仅保留英文）
 
-使用：打开左上角设置，在「语言 / Language」一行选择简体中文或 English。
-默认保持简体中文；选择会写入 PlayerPrefs 并在重启后恢复。开发模式使用独立 dev.bufu.language 设置。
-语言只影响显示，不改配置数值、世界编号、领取状态或存档进度；已经打开的界面立即更新。
+说明：
+游戏全局固定使用英文语言包（L10n.Language = "en"，L10n.IsEnglish = true），设置界面不再提供中文语言切换项。
+语言层只影响文案和英文美术字贴图的显示，不改变配置数值、世界编号、领取状态或存档进度。
 
 词表：
-Assets/Resources/Localization/catalog.json：原版词表 + 人工校正，key 为 original.NNN 或功能前缀。
+Assets/Resources/Localization/catalog.json：仅保留 languages: ["en"]，将原版配置与预制体源文案映射为英文。
 修改 Tools/build_localization.py 的 OVERRIDES 后运行该脚本重新生成词表。
-没有调用外部翻译服务。原版 tblanguage 尾部错位的记录没有导入；对重生、提示等文案单独校正。
-
-显示绑定：
-UiPrefab 的静态 TMP 文本与 GameController.Txt 的动态文本保留中文源文案，按词表查找英文。
-整句模板保留数字、颜色标签和参数，支持帮手、升级、解锁条件、宝箱碎片、重生、支援倒计时等动态内容。
-帮手/天赋说明在替换技能数值前翻译，保证数值与文字对应。
-原版 K/M/B/T/AA 等大数规则保持一致；小数值使用所选语言的文化设置。
-原字体覆盖中英文字符；英文使用 ASCII x 表示倍数，避免原字体不包含的乘号显示为方框。
 
 图片文字：
-英文素材在 Assets/Resources/UI/Sprites/en/，文件名与中文图一致，画布尺寸相同。
-英文模式优先加载这批图；没有英文文件的图继续用中文原图。Sprite 名字保持原 key。
-切回中文时，界面和粒子上的图恢复切换前的原 Sprite。
-「加油 / 赚钱」礼花在英文模式换成 GO! / EARN!，碎彩纸仍用原贴图。
-清单见 LocalizationArtwork.csv / 英文素材重制清单.txt。画面上的英文以生成的 PNG 为准。
-
-验证：
---verify-rebuild <输出目录> --verify-localization 使用独立存档，验证切换、往返、存档不变、完整词表、动态文案、字体覆盖和主要界面。
---language en 可用于英文启动验证，例如与 --verify-transition 一起核对英文重生转场。
-测试模式不写语言偏好；正常设置按钮会保存语言选择。
-
-2026-10-16 验证完成：360×640 与 360×751 纯文本国际化各 1215 项；默认中文完整流程 189 项；英文文本模式双世界压路机转场 58 项。图片、粒子 Sprite 身份不变检查通过。Windows 可运行版本已更新。
+英文素材在 Assets/Resources/UI/Sprites/en/，文件名与原图一致，画布尺寸相同。
+运行时优先加载英文贴图；「加油 / 赚钱」礼花使用 GO! / EARN! 粒子贴图。

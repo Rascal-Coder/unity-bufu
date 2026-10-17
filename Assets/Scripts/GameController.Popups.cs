@@ -42,7 +42,9 @@ namespace Bufu.Rebuild {
             Txt(v.Ref<TMP_Text>(cls,"countTmp"),GameModel.Format(m.rewardNum));
             if(honorMission!=null) {
                 var s=SpAt("Assets/GameRes/honor/"+honorMission.picId+".png");var honor=v.Ref<Image>(cls,"honor");if(s)honor.sprite=s;
-                Txt(v.Node("honorTxt").GetComponent<TMP_Text>(),honorMission.titleName);
+                var honorLabel=v.Node("honorTxt").GetComponent<TMP_Text>();
+                Txt(honorLabel,honorMission.titleName);
+                FitHonorText(honorLabel);
             }
             var icon=RewardIcon(m.rewardType);if(icon){var image=v.Ref<Image>(cls,"itemIcon");image.sprite=icon;image.SetNativeSize();}
             Txt(v.Ref<TMP_Text>(cls,"goalTmp"),"恭喜达成<color=#f8642a>"+GameModel.Format(m.mainMissionNum)+"</color>小目标！");
@@ -125,7 +127,6 @@ namespace Bufu.Rebuild {
             // Server features of the original (restore archive, exit, version, GM) are not part of the offline rebuild.
             foreach(var field in new[]{"restoreButton","exitButton","gameVersion"})On(v.Ref(cls,field),false);
             var gm=v.Ref<Button>(cls,"gmBtn");if(gm)gm.onClick.RemoveAllListeners();
-            BuildLanguageSettings(v);
         }
 
         // ------------------------------------------------------------ CheckIn

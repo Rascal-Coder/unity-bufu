@@ -53,6 +53,8 @@ namespace Bufu.Rebuild.UI {
                 // movement must not generate thousands of distance-based particles.
                 // The original time-based rates, bursts, lifetime and atlas remain intact.
                 var emission=system.emission;emission.rateOverDistanceMultiplier=0;
+                var main=system.main;
+                if(main.startSize.constantMax>20f)main.startSize=new ParticleSystem.MinMaxCurve(main.startSize.constantMin*.2f,main.startSize.constantMax*.2f);
                 systems.Add(system);
             }
             // Coffee's documented RefreshParticles API preserves hierarchy, curves, subemitters and native simulation.

@@ -170,7 +170,7 @@ namespace Bufu.Rebuild {
             var n=r.Nodes;
             Action close=()=>{if(r.Root)Destroy(r.Root);};
             var select=n[21];On(select,false);On(n[29],false); // the ad (advanced) reborn is not part of the rebuild
-            var normal=(RectTransform)n[32].transform;normal.anchoredPosition=new Vector2(0,normal.anchoredPosition.y);
+            FitTalentRebornLayout(n);
             Click(n[1],close);Click(n[5],close);
             Click(n[22],()=>On(select,false));Click(n[34],()=>On(select,false));
             Click(n[20],()=>{if(Model.RebornPoints()>0)On(select,true);else ShowToast("金钱未达到重生目标");});
@@ -192,6 +192,47 @@ namespace Bufu.Rebuild {
                 Txt(n[13].GetComponent<TMP_Text>(),limit?"重生已达上限":can?"全局收益*"+Model.RebornGainAt(Model.RebornReachedLevel()).ToString("0.##",CultureInfo.InvariantCulture)+"倍":"未达到全局收益条件");
                 var button=n[20].GetComponent<Image>();if(button)button.color=can?Color.white:new Color(.6f,.6f,.6f,1);
             });
+        }
+        static void FitTalentRebornLayout(GameObject[] n) {
+            var nextLabel=n[10].GetComponent<TMP_Text>();
+            if(nextLabel){nextLabel.enableWordWrapping=false;nextLabel.fontSize=44;nextLabel.fontSizeMax=44;nextLabel.rectTransform.anchoredPosition=new Vector2(-210,126);}
+            var progTxt=n[8].GetComponent<TMP_Text>();
+            if(progTxt){progTxt.enableWordWrapping=false;progTxt.fontSize=46;progTxt.fontSizeMax=46;}
+            var pointsLabel=n[15].GetComponent<TMP_Text>();
+            if(pointsLabel){pointsLabel.enableWordWrapping=false;pointsLabel.fontSize=38;pointsLabel.fontSizeMax=38;pointsLabel.fontSizeMin=22;pointsLabel.rectTransform.anchoredPosition=new Vector2(-395,1);pointsLabel.rectTransform.sizeDelta=new Vector2(540,70);}
+            var gainTxt=n[13].GetComponent<TMP_Text>();
+            if(gainTxt){gainTxt.enableWordWrapping=false;gainTxt.fontSize=46;gainTxt.fontSizeMax=46;}
+            foreach(int idx in new[]{18,19}) {
+                var desc=n[idx].GetComponent<TMP_Text>();
+                if(desc){desc.fontSize=38;desc.fontSizeMax=38;desc.fontSizeMin=22;desc.lineSpacing=0;desc.rectTransform.sizeDelta=new Vector2(840,160);}
+            }
+            var txt1=n[26].GetComponent<TMP_Text>();
+            if(txt1){
+                txt1.fontSize=38;txt1.fontSizeMax=38;txt1.fontSizeMin=22;
+                txt1.horizontalAlignment=HorizontalAlignmentOptions.Center;txt1.verticalAlignment=VerticalAlignmentOptions.Middle;
+                txt1.rectTransform.anchoredPosition=new Vector2(0,400);txt1.rectTransform.sizeDelta=new Vector2(840,86);
+            }
+            var txt1b=n[27].GetComponent<TMP_Text>();
+            if(txt1b){
+                txt1b.fontSize=38;txt1b.fontSizeMax=38;txt1b.fontSizeMin=22;
+                txt1b.horizontalAlignment=HorizontalAlignmentOptions.Center;txt1b.verticalAlignment=VerticalAlignmentOptions.Middle;
+                txt1b.rectTransform.anchoredPosition=new Vector2(0,305);txt1b.rectTransform.sizeDelta=new Vector2(840,86);
+            }
+            var txt2=n[28].GetComponent<TMP_Text>();
+            if(txt2){
+                txt2.enableWordWrapping=false;txt2.fontSize=50;txt2.fontSizeMax=50;txt2.fontSizeMin=28;
+                txt2.horizontalAlignment=HorizontalAlignmentOptions.Center;txt2.verticalAlignment=VerticalAlignmentOptions.Middle;
+                txt2.rectTransform.anchoredPosition=new Vector2(0,95);txt2.rectTransform.sizeDelta=new Vector2(840,110);
+            }
+            var normal=(RectTransform)n[32].transform;
+            normal.anchoredPosition=new Vector2(0,normal.anchoredPosition.y);normal.sizeDelta=new Vector2(380,120);
+            var normalImg=n[32].GetComponent<Image>();if(normalImg)normalImg.type=Image.Type.Sliced;
+            var normalTxt=n[33].GetComponent<TMP_Text>();
+            if(normalTxt){
+                normalTxt.enableWordWrapping=false;normalTxt.fontSize=38;normalTxt.fontSizeMax=38;normalTxt.fontSizeMin=22;
+                normalTxt.horizontalAlignment=HorizontalAlignmentOptions.Center;normalTxt.verticalAlignment=VerticalAlignmentOptions.Middle;
+                normalTxt.rectTransform.anchoredPosition=Vector2.zero;normalTxt.rectTransform.sizeDelta=new Vector2(340,100);
+            }
         }
     }
 }
