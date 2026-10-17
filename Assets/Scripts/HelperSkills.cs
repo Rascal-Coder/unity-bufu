@@ -98,7 +98,7 @@ namespace Bufu.Rebuild {
                 SkillDelay.After(game,.7f,()=>{
                     TossAround(game,hit,200f,10,role,false,0,scale,1,false);
                     foreach(var dir in new[]{Vector2.up,Vector2.down,Vector2.left,Vector2.right})
-                        Shot(game,hit,dir,700f,1600f,80f,0,role,0,scale,1,false,null,-1,null,"zgygy_roleskill_dushen_1");
+                        Shot(game,hit+dir*90f,dir,520f,1400f,80f,0,role,0,scale,1,false,null,-1,null,"zgygy_roleskill_dushen_1");
                 });
             }
         }
@@ -147,7 +147,7 @@ namespace Bufu.Rebuild {
             this.game=game;dir=direction.sqrMagnitude<.001f?Vector2.right:direction.normalized;this.speed=speed;remain=distance;hitRadius=hit;this.bounces=bounces;this.role=role;this.critAdd=critAdd;this.reward=reward;this.tossSpeed=tossSpeed;this.instant=instant;this.done=done;
             origin=((RectTransform)transform).anchoredPosition;
             if(!string.IsNullOrEmpty(vatAsset)) {
-                var visual=VatGraphic.AddTo(gameObject);visual.raycastTarget=false;visual.PixelsPerUnit=64;
+                var visual=VatGraphic.AddTo(gameObject);visual.raycastTarget=false;visual.PixelsPerUnit=vatAsset=="zgygy_roleskill_dushen_1"?36:64;
                 visual.Load(vatAsset);visual.Play("effect",true);
                 transform.localEulerAngles=new Vector3(0,0,Mathf.Atan2(dir.y,dir.x)*Mathf.Rad2Deg);
                 return;

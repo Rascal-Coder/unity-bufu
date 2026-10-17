@@ -132,7 +132,7 @@ public static class NativeParticleBuilder {
         var complete=MergeNativeSchema(schema,converted,target.GetType().Name);
         EditorJsonUtility.FromJsonOverwrite(NativeParticleJson.Stringify(complete),target);
         // Engine JSON restores native module values but does not resolve persistent
-        // object instance IDs in this Tuanjie version. Restore each original PPtr
+        // object instance IDs. Restore each original PPtr
         // through the engine's serialized object-reference property instead.
         var serialized=new SerializedObject(target);serialized.Update();
         BindObjectReferences(serialized,source,"",context);

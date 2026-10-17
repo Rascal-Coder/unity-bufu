@@ -20,6 +20,56 @@ namespace Bufu.Rebuild.UI {
         }
 
         /// <summary>Create the actual UiView node, before applying its original transform/parent/active state.</summary>
+        public static void RestorePresentation(GameObject go,Data particle,Data renderer) {
+            var system=go.GetComponent<ParticleSystem>();
+            var sheetModule=particle.Obj("UVModule");
+            // Only an authored sprite sheet may replace the module. The cash flipbook is grid
+            // data plus one unused sprite; that sprite is a blank quad, so it is not applied here.
+            if(system&&sheetModule!=null&&sheetModule.I("mode")==1) {
+                var sprites=(sheetModule.Arr("sprites")??new List<object>()).OfType<Data>()
+                    .Select(entry=>UiAssets.Sprite(entry.Obj("sprite")?.Str("sprite"))).Where(sprite=>sprite).ToArray();
+                if(sprites.Length>0) {
+                    var sheet=system.textureSheetAnimation;sheet.mode=ParticleSystemAnimationMode.Sprites;
+                    while(sheet.spriteCount>0)sheet.RemoveSprite(0);
+                    foreach(var sprite in sprites)sheet.AddSprite(sprite);
+                }
+            }
+            var particleRenderer=go.GetComponent<ParticleSystemRenderer>();
+            var materials=renderer?.Arr("m_Materials");
+            if(particleRenderer&&materials!=null&&materials.Count>0&&materials[0] is Data material) {
+                var loaded=Resources.Load<Material>("UI/NativeParticles/Materials/"+material.Str("material"));
+                if(loaded) {
+                    bool cash=material.Str("material")=="cash@73694825";
+                    var atlas=cash?CashAtlas():null;
+                    if(cash&&atlas&&loaded.mainTexture!=atlas){loaded=new Material(loaded);loaded.mainTexture=atlas;}
+                    particleRenderer.sharedMaterial=loaded;
+                    // Coffee only copies sprite-sheet UVs. A grid atlas otherwise bakes as one tinted quad.
+                    if(cash&&system&&sheetModule!=null&&sheetModule.I("mode")==0&&sheetModule.I("tilesX")==3&&sheetModule.I("tilesY")==3)ApplyCashFrames(system);
+                }
+            }
+        }
+
+        static Texture2D cashAtlas;
+        static Sprite[] cashFrames;
+        static Texture2D CashAtlas() {
+            if(!cashAtlas)cashAtlas=Resources.Load<Texture2D>("UI/Textures/zgygy_cash@88101757");
+            return cashAtlas;
+        }
+        static void ApplyCashFrames(ParticleSystem system) {
+            var tex=CashAtlas();if(!tex||tex.width<3||tex.height<3)return;
+            if(cashFrames==null) {
+                int cols=3,rows=3,w=tex.width/cols,h=tex.height/rows;cashFrames=new Sprite[cols*rows];
+                for(int i=0;i<cashFrames.Length;i++) {
+                    int col=i%cols,row=i/cols;
+                    cashFrames[i]=Sprite.Create(tex,new Rect(col*w,row*h,w,h),new Vector2(.5f,.5f),100,0,SpriteMeshType.FullRect);
+                    cashFrames[i].name="cash_"+i;
+                }
+            }
+            var sheet=system.textureSheetAnimation;sheet.mode=ParticleSystemAnimationMode.Sprites;
+            while(sheet.spriteCount>0)sheet.RemoveSprite(0);
+            foreach(var sprite in cashFrames)sheet.AddSprite(sprite);
+        }
+
         public static GameObject Create(string resource,int node,Transform parent) {
             var path=ResourcePath(resource,node);
             var prefab=Resources.Load<GameObject>(path);
@@ -54,7 +104,13 @@ namespace Bufu.Rebuild.UI {
                 // The original time-based rates, bursts, lifetime and atlas remain intact.
                 var emission=system.emission;emission.rateOverDistanceMultiplier=0;
                 var main=system.main;
-                if(main.startSize.constantMax>20f)main.startSize=new ParticleSystem.MinMaxCurve(main.startSize.constantMin*.2f,main.startSize.constantMax*.2f);
+                var size=main.startSize;
+                bool pair=size.mode==ParticleSystemCurveMode.TwoConstants;
+                float max=pair?Mathf.Max(size.constant,size.constantMin):size.constantMax;
+                float min=pair?Mathf.Min(size.constant,size.constantMin):size.constant;
+                // UIParticle.scale is 10. TwoConstants stores the range in constant/constantMin;
+                // constantMax reads the unused curve and skipped this shrink, so bills filled the screen.
+                if(max>20f)main.startSize=new ParticleSystem.MinMaxCurve(min*.2f,max*.2f);
                 systems.Add(system);
             }
             // Coffee's documented RefreshParticles API preserves hierarchy, curves, subemitters and native simulation.

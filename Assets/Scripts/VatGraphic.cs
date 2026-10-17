@@ -21,7 +21,7 @@ namespace Bufu.Rebuild {
         VatSegment segment; Texture2D texture; float elapsed,localFrame; bool loop,playing;
         public float PixelsPerUnit=95; public Action Finished;
         public override Texture mainTexture=>texture?texture:Texture2D.whiteTexture;
-        // Tuanjie's editor play mode skips Graphic's [RequireComponent(CanvasRenderer)] for project scripts.
+        // Some editor play-mode restores skip Graphic's [RequireComponent(CanvasRenderer)] for project scripts.
         public static VatGraphic AddTo(GameObject go){if(!go.GetComponent<CanvasRenderer>())go.AddComponent<CanvasRenderer>();return go.AddComponent<VatGraphic>();}
         public void Load(string name) {
             if(!Cache.TryGetValue(name,out var data)) {
@@ -56,6 +56,11 @@ namespace Bufu.Rebuild {
             vh.Clear();if(Data==null||segment==null)return;
             int frame=Mathf.FloorToInt(localFrame),next=Mathf.Min(frame+1,segment.frames-1);float blend=localFrame-frame;
             Vector3 size=Data.max-Data.min;
+            float AlphaAt(int index) {
+                int a=((segment.slice*Data.height+index)*Data.width+frame)*4;
+                int b=((segment.slice*Data.height+index)*Data.width+next)*4;
+                return Mathf.Lerp(Data.positions[a+3],Data.positions[b+3],blend);
+            }
             for(int i=0;i<segment.vertices;i++) {
                 int a=((segment.slice*Data.height+i)*Data.width+frame)*4;
                 int b=((segment.slice*Data.height+i)*Data.width+next)*4;
@@ -66,7 +71,11 @@ namespace Bufu.Rebuild {
                 if(!Data.rgbNeedsAlpha&&alpha>.00001f){c.r/=alpha;c.g/=alpha;c.b/=alpha;}
                 vh.AddVert(new Vector3(xyz.x*PixelsPerUnit,xyz.y*PixelsPerUnit,0),c,new Vector2(segment.uv[i*2],segment.uv[i*2+1]));
             }
-            for(int i=0;i<segment.triangles.Length;i+=3)vh.AddTriangle(segment.triangles[i],segment.triangles[i+1],segment.triangles[i+2]);
+            for(int i=0;i<segment.triangles.Length;i+=3) {
+                int t0=segment.triangles[i],t1=segment.triangles[i+1],t2=segment.triangles[i+2];
+                if(AlphaAt(t0)<.02f&&AlphaAt(t1)<.02f&&AlphaAt(t2)<.02f)continue;
+                vh.AddTriangle(t0,t1,t2);
+            }
         }
     }
 }

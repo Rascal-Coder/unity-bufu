@@ -34,8 +34,22 @@ namespace Bufu.Rebuild {
 
         // ------------------------------------------------------------ goalReachPanel
         void ShowGoal() {
-            const string cls="GoalReachPanel";
             var m=Model.PendingGoal;if(m==null)return;
+            PresentGoal(m,false);
+        }
+
+        void PreviewGrowthNewspaper() {
+            if(goalView!=null)return;
+            var missions=Model.WorldMissions;
+            var sample=Model.PendingGoal??Model.NextMission??(missions.Length==0?null:missions[Mathf.Clamp(Model.MainLevel-1,0,missions.Length-1)]);
+            if(sample==null){ShowToast("没有可预览的升级报纸");return;}
+            if(developerPanel){popups.Remove(developerPanel);Destroy(developerPanel);}
+            PresentGoal(sample,true);
+        }
+
+        void PresentGoal(Mission mission,bool preview) {
+            const string cls="GoalReachPanel";
+            var m=mission;if(m==null)return;
             var v=OpenPopup("Popup/goalReachPanel");goalView=v;
             int level=Model.MissionLevel(m);var honorMission=Model.TitleMission(level+1);
             Txt(v.Ref<TMP_Text>(cls,"currentLevel"),level.ToString());Txt(v.Ref<TMP_Text>(cls,"nextLevel"),(level+1).ToString());
@@ -48,6 +62,7 @@ namespace Bufu.Rebuild {
             }
             var icon=RewardIcon(m.rewardType);if(icon){var image=v.Ref<Image>(cls,"itemIcon");image.sprite=icon;image.SetNativeSize();}
             Txt(v.Ref<TMP_Text>(cls,"goalTmp"),"恭喜达成<color=#f8642a>"+GameModel.Format(m.mainMissionNum)+"</color>小目标！");
+            FitGrowthNewspaper(v);
             var root=v.Rect;var script=v.Script(cls);
             float fall=script.F("fallDuration",.5f),exit=script.F("exitDuration",.4f),startScale=script.F("startScale",1.3f),startRotation=script.F("startRotation",15),startY=script.F("startYOffset",1200),exitScale=script.F("exitScale",.3f),exitRotation=script.F("exitRotation",-10);
             root.anchoredPosition=Vector2.up*startY;root.localScale=Vector3.one*startScale;root.localEulerAngles=new Vector3(0,0,startRotation);
@@ -58,7 +73,8 @@ namespace Bufu.Rebuild {
                 root.anchoredPosition=Vector2.up*startY*(1-e);root.localScale=Vector3.one*Mathf.LerpUnclamped(startScale,1,e);root.localEulerAngles=new Vector3(0,0,startRotation*(1-e));
             },()=>{ready=true;if(rain){rain.gameObject.SetActive(true);rain.Play();}}));
             Action<int> claim=multiplier=>{
-                if(!ready||closing)return;closing=true;ready=false;Model.ClaimGoal(multiplier);if(multiplier>1)PlayClick();
+                if(!ready||closing)return;closing=true;ready=false;
+                if(!preview){Model.ClaimGoal(multiplier);if(multiplier>1)PlayClick();}
                 if(rain){rain.Stop();rain.gameObject.SetActive(false);}
                 StartCoroutine(PromotionTween(exit,t=>{
                     if(!root)return;float e=InBack(t);
@@ -66,7 +82,29 @@ namespace Bufu.Rebuild {
                 },()=>{ClosePopup(v);goalView=null;shownMainLevel=Model.MainLevel;RefreshAll();}));
             };
             Click(v.Ref<Button>(cls,"confirmBtn"),()=>claim(1));
-            Click(v.Ref<Button>(cls,"adBtn"),()=>{if(ready&&!closing)ShowOriginalAd(()=>claim(2));});
+            Click(v.Ref<Button>(cls,"adBtn"),()=>{if(ready&&!closing){if(preview)claim(1);else ShowOriginalAd(()=>claim(2));}});
+        }
+
+        // English newspaper art already contains the headline and article. Only the changing slots are overlaid.
+        static void FitGrowthNewspaper(UiView v) {
+            v.Node("newspaperDes").SetActive(false);
+            v.Node("newspaperDes (1)").SetActive(false);
+            FitSlot(v.Ref<TMP_Text>("GoalReachPanel","currentLevel"),new Vector2(13f,172f),new Vector2(78f,64f),36f,false);
+            FitSlot(v.Ref<TMP_Text>("GoalReachPanel","nextLevel"),new Vector2(308f,228f),new Vector2(220f,150f),100f,false);
+            var icon=v.Ref<Image>("GoalReachPanel","itemIcon");var iconRect=icon.rectTransform;
+            iconRect.anchoredPosition=new Vector2(312f,-190f);iconRect.sizeDelta=new Vector2(130f,100f);icon.preserveAspect=true;
+            var count=v.Ref<TMP_Text>("GoalReachPanel","countTmp");
+            FitSlot(count,new Vector2(314f,-334f),new Vector2(180f,32f),24f,false);count.color=Color.white;
+            var honor=v.Ref<RectTransform>("GoalReachPanel","honor");
+            honor.anchoredPosition=new Vector2(-170f,-190f);honor.sizeDelta=new Vector2(440f,72f);honor.localScale=Vector3.one;
+            var honorText=v.Node("honorTxt").GetComponent<TMP_Text>();
+            honorText.rectTransform.anchoredPosition=Vector2.zero;honorText.rectTransform.sizeDelta=new Vector2(260f,48f);
+            honorText.enableWordWrapping=false;honorText.enableAutoSizing=true;honorText.fontSizeMin=16f;honorText.fontSizeMax=30f;honorText.alignment=TextAlignmentOptions.Center;
+        }
+        static void FitSlot(TMP_Text text,Vector2 position,Vector2 size,float maxSize,bool wrap) {
+            var rect=text.rectTransform;rect.anchoredPosition=position;rect.sizeDelta=size;
+            text.enableWordWrapping=wrap;text.overflowMode=wrap?TextOverflowModes.Truncate:TextOverflowModes.Overflow;
+            text.enableAutoSizing=true;text.fontSizeMin=14f;text.fontSizeMax=maxSize;text.alignment=TextAlignmentOptions.Center;
         }
 
         // ------------------------------------------------------------ OfflineReward
@@ -163,7 +201,7 @@ namespace Bufu.Rebuild {
                 });
                 Watch(item.Root,()=>{
                     bool claimed=Model.CheckInClaimed(d,special),canClaim=Model.CanClaimCheckIn(d,special);
-                    On(item.Node("mask"),!Model.DeveloperMode&&d>Model.State.checkDay);On(item.Node("allredpoint"),canClaim);
+                    On(item.Node("mask"),!Model.OpenAccess&&d>Model.State.checkDay);On(item.Node("allredpoint"),canClaim);
                     for(int s=0;s<2;s++) {
                         var slot=slots[s].transform;int id=reward[s*2];
                         bool unlock=special&&s==1&&(d==3||d==7)&&id>=101&&id<=110&&!Model.HelperOwned(id-100);

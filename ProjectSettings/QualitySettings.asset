@@ -1,5 +1,5 @@
 %YAML 1.1
-%TAG !u! tag:yousandi.cn,2023:
+%TAG !u! tag:unity3d.com,2011:
 --- !u!47 &1
 QualitySettings:
   m_ObjectHideFlags: 0
@@ -54,14 +54,6 @@ QualitySettings:
     terrainBillboardStart: 50
     terrainFadeLength: 5
     terrainMaxTrees: 50
-    vgPersistentBufferSize: 256
-    vgStreamingBufferSize: 512
-    vgPageUploadBufferSize: 64
-    vgPixelsPerEdge: 1
-    vgVertexCacheActive: 0
-    vgVertexCacheAutoVertexAnim: 0
-    vgVertexCacheMaxEntries: 32768
-    vgVertexCacheLoadFactor: 0.67
     excludedTargetPlatforms: []
   - serializedVersion: 3
     name: Low
@@ -111,14 +103,6 @@ QualitySettings:
     terrainBillboardStart: 50
     terrainFadeLength: 5
     terrainMaxTrees: 50
-    vgPersistentBufferSize: 256
-    vgStreamingBufferSize: 512
-    vgPageUploadBufferSize: 64
-    vgPixelsPerEdge: 1
-    vgVertexCacheActive: 0
-    vgVertexCacheAutoVertexAnim: 0
-    vgVertexCacheMaxEntries: 32768
-    vgVertexCacheLoadFactor: 0.67
     excludedTargetPlatforms: []
   - serializedVersion: 3
     name: Medium
@@ -168,14 +152,6 @@ QualitySettings:
     terrainBillboardStart: 50
     terrainFadeLength: 5
     terrainMaxTrees: 50
-    vgPersistentBufferSize: 256
-    vgStreamingBufferSize: 512
-    vgPageUploadBufferSize: 64
-    vgPixelsPerEdge: 1
-    vgVertexCacheActive: 0
-    vgVertexCacheAutoVertexAnim: 0
-    vgVertexCacheMaxEntries: 32768
-    vgVertexCacheLoadFactor: 0.67
     excludedTargetPlatforms: []
   - serializedVersion: 3
     name: High
@@ -225,14 +201,6 @@ QualitySettings:
     terrainBillboardStart: 50
     terrainFadeLength: 5
     terrainMaxTrees: 50
-    vgPersistentBufferSize: 256
-    vgStreamingBufferSize: 512
-    vgPageUploadBufferSize: 64
-    vgPixelsPerEdge: 1
-    vgVertexCacheActive: 0
-    vgVertexCacheAutoVertexAnim: 0
-    vgVertexCacheMaxEntries: 32768
-    vgVertexCacheLoadFactor: 0.67
     excludedTargetPlatforms: []
   - serializedVersion: 3
     name: Very High
@@ -282,14 +250,6 @@ QualitySettings:
     terrainBillboardStart: 50
     terrainFadeLength: 5
     terrainMaxTrees: 50
-    vgPersistentBufferSize: 256
-    vgStreamingBufferSize: 512
-    vgPageUploadBufferSize: 64
-    vgPixelsPerEdge: 1
-    vgVertexCacheActive: 0
-    vgVertexCacheAutoVertexAnim: 0
-    vgVertexCacheMaxEntries: 32768
-    vgVertexCacheLoadFactor: 0.67
     excludedTargetPlatforms: []
   - serializedVersion: 3
     name: Ultra
@@ -339,38 +299,23 @@ QualitySettings:
     terrainBillboardStart: 50
     terrainFadeLength: 5
     terrainMaxTrees: 50
-    vgPersistentBufferSize: 256
-    vgStreamingBufferSize: 512
-    vgPageUploadBufferSize: 64
-    vgPixelsPerEdge: 1
-    vgVertexCacheActive: 0
-    vgVertexCacheAutoVertexAnim: 0
-    vgVertexCacheMaxEntries: 32768
-    vgVertexCacheLoadFactor: 0.67
     excludedTargetPlatforms: []
   m_TextureMipmapLimitGroupNames: []
   m_PerPlatformDefaultQuality:
     Android: 2
-    ArmLinux: 5
-    ArmLinuxServer: 5
     EmbeddedLinux: 5
     GameCoreScarlett: 5
     GameCoreXboxOne: 5
-    HMIAndroid: 2
     LinuxHeadlessSimulation: 5
     Nintendo Switch: 5
     Nintendo Switch 2: 5
-    OpenHarmony: 2
     PS4: 5
     PS5: 5
-    PlayableAds: 2
-    QNX: 5
     Server: 5
     Stadia: 5
     Standalone: 5
     VisionOS: 5
     WebGL: 3
-    WeixinMiniGame: 2
     Windows Store Apps: 5
     XboxOne: 5
     iPhone: 2

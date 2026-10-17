@@ -7,6 +7,7 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Bufu.Rebuild {
@@ -23,8 +24,8 @@ namespace Bufu.Rebuild {
         public RectTransform Root,Field;
         public bool ModalOpen {get{popups.RemoveAll(x=>!x);return CutscenePlaying||popups.Count>0;}}
         public static bool VerificationMode=>Environment.GetCommandLineArgs().Contains("--verify-rebuild");
-        static bool developerSession;
-        static string PrefKey(string key)=>(developerSession?"dev.":"")+key;
+        static bool developerSession,maxedSession;
+        static string PrefKey(string key)=>(maxedSession?"max.":developerSession?"dev.":"")+key;
 
         readonly List<GameObject> popups=new List<GameObject>();
         readonly List<KeyValuePair<GameObject,Action>> watchers=new List<KeyValuePair<GameObject,Action>>();
@@ -37,17 +38,20 @@ namespace Bufu.Rebuild {
         bool soundOn=true,musicOn=true;float soundVolume=1,musicVolume=1;
         readonly double[] awaySeconds=new double[2];
 
-        // Not serialized into Main.unity: Tuanjie drops scene script references when restoring the play-mode scene backup.
-        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
-        static void Boot(){if(FindObjectOfType<GameController>())return;(GameObject.Find("Game")??new GameObject("Game")).AddComponent<GameController>();}
+        // Not serialized into Main.unity: play-mode scene restore can drop scene script references.
+        // AfterSceneLoad runs only for the first scene, so a later load of Main would otherwise stay empty.
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        static void ListenForScenes(){SceneManager.sceneLoaded-=OnSceneLoaded;SceneManager.sceneLoaded+=OnSceneLoaded;}
+        static void OnSceneLoaded(Scene scene,LoadSceneMode mode){if(scene.name==IntroScene.SceneName||FindObjectOfType<GameController>())return;(GameObject.Find("Game")??new GameObject("Game")).AddComponent<GameController>();}
 
         void Start() {
             Application.targetFrameRate=60;
-            bool dev=developerSession=DevMode.Enabled;
+            maxedSession=SceneManager.GetActiveScene().name==MaxedMode.SceneName;
+            bool dev=developerSession=!maxedSession&&DevMode.Enabled;
             L10n.Initialize(dev,VerificationMode);
             soundOn=PlayerPrefs.GetInt(PrefKey("bufu.sound.on"),1)==1;musicOn=PlayerPrefs.GetInt(PrefKey("bufu.music.on"),1)==1;
             soundVolume=PlayerPrefs.GetFloat(PrefKey("bufu.sound.volume"),1);musicVolume=PlayerPrefs.GetFloat(PrefKey("bufu.music.volume"),1);
-            Model=new GameModel(VerificationMode?new SaveData():SaveStore.Load(dev),dev);
+            Model=new GameModel(maxedSession||VerificationMode?new SaveData():SaveStore.Load(dev),dev,maxedSession);
             long now=DateTimeOffset.UtcNow.ToUnixTimeSeconds();
             for(int i=0;i<2;i++){var s=Model.Data.worlds[i];awaySeconds[i]=s.lastExit>0?Math.Min(Math.Max(0,now-s.lastExit),21600):0;}
             Model.AccumulateOffline(now);Model.Changed+=OnChanged;
@@ -67,7 +71,7 @@ namespace Bufu.Rebuild {
             ApplyScreen();saveTimer+=Time.unscaledDeltaTime;
             if(dirty&&saveTimer>10&&!VerificationMode){SaveStore.Save(Model);dirty=false;saveTimer=0;}
             if(Input.GetKeyDown(KeyCode.Escape)&&ModalOpen)CloseTopPopup();
-            if(Input.GetKeyDown(KeyCode.Space)&&!ModalOpen)FlipAll();
+            else if(Input.GetKeyDown(KeyCode.Space)&&!ModalOpen)FlipAll();
             if(Model!=null&&!CutscenePlaying&&!Model.PromotionRunning&&!Model.PromotionWonPending&&goalView==null&&offlineView==null&&Model.PendingGoal!=null)ShowGoal();
             UpdatePromotion();
             ApplyAudio();
@@ -295,8 +299,8 @@ namespace Bufu.Rebuild {
 
         // ---------------------------------------------------------------- restart after "clear save"
         void ResetGame() {
-            bool dev=Model.DeveloperMode;
-            Model.Changed-=OnChanged;Model=new GameModel(null,dev);Model.Changed+=OnChanged;SaveStore.Save(Model);
+            bool dev=Model.DeveloperMode,maxed=Model.Maxed;
+            Model.Changed-=OnChanged;Model=new GameModel(null,dev,maxed);Model.Changed+=OnChanged;SaveStore.Save(Model);
             watchers.Clear();popups.Clear();goalView=null;offlineView=null;facilityView=null;shopView=null;worldView=null;talentView=null;
             helperWorld=-1;promotionView=null;promotionHud=null;promotionDialog=null;shownPromotion=null;Time.timeScale=1;
             foreach(var layer in new[]{bgLayer,mainLayer,popupLayer})foreach(Transform child in layer)Destroy(child.gameObject);

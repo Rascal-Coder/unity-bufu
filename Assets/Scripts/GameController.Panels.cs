@@ -178,7 +178,7 @@ namespace Bufu.Rebuild {
                     hideInfo();
                     if(spinning)return;
                     int used=Model.Data.shopDate==GameModel.TodayNumber()?(id==202?Model.Data.chestNormal:Model.Data.chestRare):0;
-                    if(!Model.DeveloperMode&&item.todayLimit>0&&used>=item.todayLimit){PlayCantBuy();ShowToast("今日购买次数已达上限");return;}
+                    if(!Model.OpenAccess&&item.todayLimit>0&&used>=item.todayLimit){PlayCantBuy();ShowToast("今日购买次数已达上限");return;}
                     if(Model.Data.diamonds<item.cost){PlayCantBuy();ShowToast("钻石不足");return;}
                     if(Model.BuyChest(id,out var rewards)){PlayUpgrade();ShowRewardBox(rewards);}else PlayCantBuy();
                 });
@@ -360,9 +360,13 @@ namespace Bufu.Rebuild {
             if(Model.Data.world==config.id){ShowWorldStatus("当前已处于该世界");return;}
             if(!Model.WorldUnlocked(config.id)){ShowWorldStatus("该世界尚未解锁");return;}
             ShowDialog("是否确定切换至"+config.worldName+"？",()=>{
-                if(!Model.SwitchWorld(config.id))return;
-                RebuildActors();SelectTab(1);SaveStore.Save(Model);
-                if(Model.State.pendingOffline>0)ShowOffline();
+                if(CutscenePlaying)return;
+                int worldId=config.id;
+                PlayWorldCutscene(()=>{
+                    if(!Model.SwitchWorld(worldId))return;
+                    RebuildActors();SelectTab(1);if(!VerificationMode)SaveStore.Save(Model);
+                    if(Model.State.pendingOffline>0)ShowOffline();
+                });
             });
         }
     }

@@ -105,6 +105,47 @@ namespace Bufu.Rebuild {
             Click(itemTipMask,HideItemTip);HideItemTip();
             BuildItemCards();
             Canvas.ForceUpdateCanvases();
+            AlignPanelCaps();
+        }
+
+        // The flat border and the cat/teeth cap share one edge. Keep both, with the same center and right edge.
+        void AlignPanelCaps() {
+            foreach(var image in upgrade.Root.GetComponentsInChildren<Image>(true)) {
+                if(!image.sprite||image.sprite.name.IndexOf("ty_pic_panel_",StringComparison.Ordinal)<0||image.sprite.name.IndexOf("x2",StringComparison.Ordinal)<0)continue;
+                var cap=image.rectTransform;Image tile=null;
+                foreach(Transform child in cap.parent) {
+                    var other=child.GetComponent<Image>();
+                    if(other&&other!=image&&other.sprite&&other.sprite.name.IndexOf("_tile",StringComparison.Ordinal)>=0){tile=other;break;}
+                }
+                if(!tile)continue;
+                var parent=(RectTransform)cap.parent;var corners=new Vector3[4];tile.rectTransform.GetWorldCorners(corners);
+                Vector3 right=(parent.InverseTransformPoint(corners[2])+parent.InverseTransformPoint(corners[3]))*.5f;
+                Vector3 center=Vector3.zero;for(int i=0;i<4;i++)center+=parent.InverseTransformPoint(corners[i]);center*=.25f;
+                float halfW=cap.sizeDelta.x*Mathf.Abs(cap.localScale.x)*.5f;
+                var anchor=new Vector2(Mathf.Lerp(parent.rect.xMin,parent.rect.xMax,cap.anchorMin.x),Mathf.Lerp(parent.rect.yMin,parent.rect.yMax,cap.anchorMin.y));
+                float tileH=tile.rectTransform.rect.height*Mathf.Abs(tile.rectTransform.localScale.y);
+                float capH=cap.rect.height*Mathf.Abs(cap.localScale.y);
+                BarInsets(image.sprite.name,out float capTop,out float capBottom);
+                BarInsets(tile.sprite.name,out float tileTop,out float tileBottom);
+                float lift=capTop*capH-tileTop*tileH;
+                float capCenter=center.y+lift;
+                cap.anchoredPosition=new Vector2(right.x-halfW-anchor.x,capCenter-anchor.y);
+                float paintTop=capCenter+capH*(.5f-capTop);
+                float paintBottom=capCenter-capH*(.5f-capBottom);
+                float newTileH=(paintTop-paintBottom)/Mathf.Max(.01f,1f-tileTop-tileBottom);
+                var tileRt=tile.rectTransform;
+                tileRt.sizeDelta=new Vector2(tileRt.sizeDelta.x,newTileH/Mathf.Abs(tileRt.localScale.y));
+                float tileAnchorY=Mathf.Lerp(parent.rect.yMin,parent.rect.yMax,tileRt.anchorMin.y);
+                tileRt.anchoredPosition=new Vector2(tileRt.anchoredPosition.x,(paintTop+paintBottom)*.5f-tileAnchorY);
+                cap.SetAsLastSibling();
+            }
+        }
+
+        static void BarInsets(string name,out float top,out float bottom) {
+            if(name.IndexOf("03x2",StringComparison.Ordinal)>=0){top=26f/55f;bottom=8f/55f;return;}
+            if(name.IndexOf("x2",StringComparison.Ordinal)>=0){top=18f/53f;bottom=8f/53f;return;}
+            if(name.IndexOf("03_tile",StringComparison.Ordinal)>=0){top=2f/47f;bottom=3f/47f;return;}
+            top=3f/60f;bottom=2f/60f;
         }
 
         void FitSubTabLabels() {

@@ -4,7 +4,8 @@ using System.Text;
 using UnityEngine;
 namespace Bufu.Rebuild {
     public static class SaveStore {
-        public static string PathForMode(bool developerMode)=>Path.Combine(Application.persistentDataPath,developerMode?"bufu-local-dev-v1.json":"bufu-local-v1.json");
+        public static string PathFor(bool developerMode,bool maxed)=>Path.Combine(Application.persistentDataPath,maxed?"bufu-local-max-v1.json":developerMode?"bufu-local-dev-v1.json":"bufu-local-v1.json");
+        public static string PathForMode(bool developerMode)=>PathFor(developerMode,false);
         public static string PathName=>PathForMode(DevMode.Enabled);
         public static SaveData Load(bool developerMode=false) {
             string path=PathForMode(developerMode);
@@ -17,7 +18,7 @@ namespace Bufu.Rebuild {
         }
         public static void Save(GameModel game) {
             if(GameController.VerificationMode)return;
-            string p=PathForMode(game.DeveloperMode);Directory.CreateDirectory(Path.GetDirectoryName(p));
+            string p=PathFor(game.DeveloperMode,game.Maxed);Directory.CreateDirectory(Path.GetDirectoryName(p));
             foreach(var state in game.Data.worlds)state.lastExit=DateTimeOffset.UtcNow.ToUnixTimeSeconds();
             File.WriteAllText(p+".tmp",JsonUtility.ToJson(game.Data,true),new UTF8Encoding(false));
             if(File.Exists(p))File.Replace(p+".tmp",p,p+".bak");else File.Move(p+".tmp",p);

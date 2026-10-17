@@ -15,17 +15,18 @@ public static class RebuildEditor {
     public static void Setup() {
         passed.Clear();
         Directory.CreateDirectory("Assets/Scenes");Directory.CreateDirectory("Documentation");
-        PlayerSettings.companyName="REA Local";PlayerSettings.productName="不服开一局 本地复刻";
+        PlayerSettings.companyName="REA Local";PlayerSettings.productName="TYCOON RUSH";
         PlayerSettings.defaultScreenWidth=540;PlayerSettings.defaultScreenHeight=960;PlayerSettings.fullScreenMode=FullScreenMode.Windowed;
         PlayerSettings.resizableWindow=true;PlayerSettings.runInBackground=true;PlayerSettings.colorSpace=ColorSpace.Gamma;
         PlayerSettings.SetScriptingBackend(BuildTargetGroup.Standalone,ScriptingImplementation.Mono2x);
+        AppLogoSetup.Apply();
         EditorSettings.serializationMode=SerializationMode.ForceText;
         var scene=EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);
         var camera=new GameObject("Camera",typeof(Camera),typeof(AudioListener));camera.GetComponent<Camera>().backgroundColor=new Color(.09f,.11f,.15f);
         camera.GetComponent<Camera>().clearFlags=CameraClearFlags.SolidColor;camera.GetComponent<Camera>().orthographic=true;
         new GameObject("Game");
         EditorSceneManager.SaveScene(scene,"Assets/Scenes/Main.unity");
-        EditorBuildSettings.scenes=new[]{new EditorBuildSettingsScene("Assets/Scenes/Main.unity",true)};
+        EditorBuildSettings.scenes=new[]{new EditorBuildSettingsScene("Assets/Scenes/Intro.unity",true),new EditorBuildSettingsScene("Assets/Scenes/Main.unity",true)};
         UiAssetBuilder.BuildFonts();UiAssetBuilder.BuildSpriteAssets();
         AssetDatabase.SaveAssets();NativeParticleBuilder.Build();VerifyCore();VerifyVAT();VerifyUi();
         File.WriteAllText("Documentation/validation.json",JsonUtility.ToJson(new Checks{editor=Application.unityVersion,checks=passed.ToArray(),passed=true},true));
@@ -44,7 +45,7 @@ public static class RebuildEditor {
     }
     static void BuildPlayer() {
         Directory.CreateDirectory("Build/Windows");
-        var report=BuildPipeline.BuildPlayer(new BuildPlayerOptions{scenes=new[]{"Assets/Scenes/Main.unity"},locationPathName="Build/Windows/BufuRebuild.exe",target=BuildTarget.StandaloneWindows64,options=BuildOptions.Development});
+        var report=BuildPipeline.BuildPlayer(new BuildPlayerOptions{scenes=new[]{"Assets/Scenes/Intro.unity","Assets/Scenes/Main.unity"},locationPathName="Build/Windows/BufuRebuild.exe",target=BuildTarget.StandaloneWindows64,options=BuildOptions.Development});
         File.WriteAllText("Documentation/build-result.json",JsonUtility.ToJson(new BuildResult{result=report.summary.result.ToString(),errors=report.summary.totalErrors,warnings=report.summary.totalWarnings,bytes=(long)report.summary.totalSize,editor=Application.unityVersion},true));
         if(report.summary.result!=BuildResultType())throw new Exception("Build failed: "+report.summary.result);
         Debug.Log("REBUILD_BUILD_OK "+report.summary.totalSize);

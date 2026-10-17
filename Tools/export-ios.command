@@ -2,7 +2,7 @@
 set -euo pipefail
 project_path="$(cd "$(dirname "$0")/.." && pwd)"
 if [[ -z "${UNITY_EDITOR:-}" || ! -x "$UNITY_EDITOR" ]]; then
-  echo "请先设置 UNITY_EDITOR 为安装了 iOS Build Support 的团结编辑器可执行文件路径。"
+  echo "请先设置 UNITY_EDITOR 为安装了 iOS Build Support 的 Unity 编辑器可执行文件路径。"
   exit 1
 fi
 mkdir -p "$project_path/Logs"

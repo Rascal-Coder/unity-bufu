@@ -8,7 +8,7 @@ namespace Bufu.Rebuild {
         sealed class SupportBuff {public SupportKind Kind;public float End;public int Stacks=1;}
         readonly List<SupportBuff> supportBuffs=new List<SupportBuff>();
         public static long SupportNow=>(long)(DateTime.Now-new DateTime(1970,1,1)).TotalMilliseconds;
-        public bool SupportUnlocked(SupportKind kind)=>DeveloperMode||MainLevel>Factor(kind==SupportKind.Money?58:19);
+        public bool SupportUnlocked(SupportKind kind)=>OpenAccess||MainLevel>Factor(kind==SupportKind.Money?58:19);
         public float SupportMinutes(SupportKind kind) {
             if(kind==SupportKind.Money)return Mathf.Max(1,(float)Factor(24));
             float minutes=(float)Factor(kind==SupportKind.Income?12:9);

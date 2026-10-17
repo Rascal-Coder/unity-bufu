@@ -285,7 +285,8 @@ namespace Bufu.Rebuild {
             File.WriteAllText(Path.Combine(output,"runtime-check.json"),JsonUtility.ToJson(result,true));
             Debug.Log("REBUILD_RUNTIME_QA "+success+" checks="+checks.Count);Application.Quit(success?0:2);
 #if UNITY_EDITOR
-            if(Environment.GetCommandLineArgs().Contains("--verify-wake"))UnityEditor.EditorApplication.Exit(success?0:2);
+            var args=Environment.GetCommandLineArgs();
+            if(args.Contains("--verify-wake")||args.Contains("--verify-support"))UnityEditor.EditorApplication.Exit(success?0:2);
 #endif
         }
     }

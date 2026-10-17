@@ -4722,6 +4722,51 @@
       "key": "dev.reset",
       "zh": "重置开发存档（全部解锁）",
       "en": "Reset Test Save (All Unlocked)"
+    },
+    {
+      "key": "intro.grid.title",
+      "zh": "从一枚金币开始",
+      "en": "It starts with one coin"
+    },
+    {
+      "key": "intro.grid.skip",
+      "zh": "跳过",
+      "en": "Skip"
+    },
+    {
+      "key": "intro.grid.start",
+      "zh": "开始翻盘",
+      "en": "Start the climb"
+    },
+    {
+      "key": "intro.grid.1",
+      "zh": "雨夜，他被一脚踢出了家门。",
+      "en": "Thrown out into the rain."
+    },
+    {
+      "key": "intro.grid.2",
+      "zh": "家当散了一地。",
+      "en": "Everything he owned, left in the street."
+    },
+    {
+      "key": "intro.grid.3",
+      "zh": "账户余额：0。",
+      "en": "Account balance: 0."
+    },
+    {
+      "key": "intro.grid.4",
+      "zh": "手里只剩下一枚金币。",
+      "en": "One coin. That was all."
+    },
+    {
+      "key": "intro.grid.5",
+      "zh": "一枚金币，开始翻倍。",
+      "en": "One coin, then another."
+    },
+    {
+      "key": "intro.grid.6",
+      "zh": "破产少年，卷土重来。",
+      "en": "The bankrupt lad fights back."
     }
   ]
 }

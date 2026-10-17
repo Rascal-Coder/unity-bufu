@@ -193,7 +193,14 @@ namespace Bufu.Rebuild.UI {
             var view=new UiView(resource,nodes,comps);
             for(int i=0;i<count;i++)foreach(var c in comps[i].Where(IsGraphic))AddComponent(view,nodes[i],c);
             for(int i=0;i<count;i++)foreach(var c in comps[i].Where(c=>!IsGraphic(c)))AddComponent(view,nodes[i],c);
-            if(nativeParticles)for(int i=0;i<count;i++)foreach(var c in comps[i].Where(c=>c.Str("t")=="UIParticle"))NativeParticles.Bind(view,i,c);
+            if(nativeParticles) {
+                for(int i=0;i<count;i++) {
+                    var particle=comps[i].FirstOrDefault(c=>c.Str("t")=="ParticleSystem");
+                    var renderer=comps[i].FirstOrDefault(c=>c.Str("t")=="ParticleSystemRenderer");
+                    if(particle!=null)NativeParticles.RestorePresentation(nodes[i],particle,renderer);
+                }
+                for(int i=0;i<count;i++)foreach(var c in comps[i].Where(c=>c.Str("t")=="UIParticle"))NativeParticles.Bind(view,i,c);
+            }
             // The original list scripts resized their grids after populating them. Their exported
             // content rects are only placeholders; ScrollRect needs the populated layout's size.
             foreach(var node in nodes) {

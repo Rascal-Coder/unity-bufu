@@ -1,6 +1,6 @@
-不服开一局 · 团结引擎本地复刻
+不服开一局 · Unity 本地复刻
 
-编辑器：本机团结 2022.3.62t16（2022.3 系列）。
+编辑器：Unity 2022.3.62f3c1（2022.3 LTS，与原团结 2022.3.62 同一代）。工程已从团结引擎切换到 Unity。
 打开此目录为项目，打开 Assets/Scenes/Main.unity，点击 Play。
 主场景由菜单「不服开一局/生成主场景与验证」生成；完成构建后可直接运行 Build/Windows/BufuRebuild.exe。
 
@@ -8,7 +8,7 @@
 原始 3 枚铜币，初始金币为 0；雇佣帮手后自动赚钱。成长达到 10 级可进入骰子世界。
 天赋点通过转生获得；转生会清空当前世界物品和金币，保留天赋。
 每 10 秒自动保存，退出时保存。设置里可手动保存或重开。
-存档路径：Windows %USERPROFILE%/AppData/LocalLow/REA Local/不服开一局 本地复刻/bufu-local-v1.json（以实际 Application.persistentDataPath 为准）。
+存档路径：Windows %USERPROFILE%/AppData/LocalLow/REA Local/TYCOON RUSH/bufu-local-v1.json（以实际 Application.persistentDataPath 为准）。
 
 实现范围：离线可玩重构，使用恢复的数值表和 61 组原始 VAT 动画，含原始美术界面。可运行代码为新编写代码。
 Reference/DecompiledCSharp 是只读实现参考，不进入 Unity 编译。
@@ -24,7 +24,7 @@ Documentation/validation.json 为数值与资源验证结果；build-result.json
 称号报纸、右侧三个入口及粒子在360×640、1280×720各通过72项运行检查；原版称号晋升限时挑战通过58项检查。
 普通模式189项、开发模式134项历史回归通过，涵盖帮手默认子页、等级显隐、滚动末行留白、商城、技能、世界切换、存档隔离及开发面板。回归所用构建信息记录在Documentation/HonorSupportRegressionBuild.json；最新入口栏默认状态专项在360×640与1280×720各通过84项，报告位于Documentation/SupportDefaultQA-Compact与SupportDefaultQA-Landscape。
 检查使用独立测试数据，未改正式玩家存档。最新截图与运行报告位于Documentation/HonorSupportQA-Compact、HonorSupportQA-Landscape、HonorSupportPromotionQA-Compact、HonorSupportNormalQA-Compact及HonorSupportDevQA-Landscape。此前报告保留供历史核对。
-双击 启动游戏.cmd 试玩；双击 打开工程.cmd 进入团结编辑器。
+双击 启动游戏.cmd 试玩；双击 打开工程.cmd 进入 Unity 编辑器。
 
 2026-10-15 原版逻辑补齐：
 开局最多三枚铜币/铜骰子使用原版相对背景坐标(-95,295)、(-87,-200)、(213,-150)，后续新增使用随机位置及100设计单位的最小间隔。

@@ -29,9 +29,14 @@ namespace Bufu.Rebuild {
                 var timerTxt=PromotionNode(supportTexts[i]).GetComponent<TMP_Text>();
                 if(timerTxt){timerTxt.enableAutoSizing=false;timerTxt.enableWordWrapping=false;timerTxt.fontSize=34;timerTxt.alignment=TextAlignmentOptions.Center;}
                 string effect=i==0?"Ads_coinrain":i==1?"Ads_zuanqian":"Ads_jiayou";
-                var v=UiPrefab.Instantiate("Role/"+effect,promotionView.Root.transform);v.Rect.anchoredPosition=new Vector2(0,1300);
-                var emitter=v.Root.transform.GetChild(0).GetComponentInChildren<ParticleSystem>(true);
-                emitter.Stop();emitter.Play();emitter.gameObject.SetActive(false);
+                var v=UiPrefab.Instantiate("Role/"+effect,popupLayer);
+                var effectRect=v.Rect;effectRect.anchorMin=effectRect.anchorMax=new Vector2(.5f,.5f);effectRect.pivot=new Vector2(.5f,.5f);effectRect.anchoredPosition=Vector2.zero;
+                var uiParticle=v.Root.GetComponent<Coffee.UIExtensions.UIParticle>();
+                if(uiParticle)uiParticle.raycastTarget=false;
+                float uiScale=uiParticle?Mathf.Max(1f,uiParticle.scale):1f;
+                foreach(var system in v.Root.GetComponentsInChildren<ParticleSystem>(true))FitSupportRain(system,uiScale);
+                var emitter=v.Root.transform.GetChild(0).GetComponent<ParticleSystem>();
+                foreach(var system in v.Root.GetComponentsInChildren<ParticleSystem>(true))system.gameObject.SetActive(false);
                 supportEffects[i]=v;supportEmitters[i]=emitter;supportEffectTime[i]=0;
             }
             Click(PromotionNode("openBtn"),()=>{supportExpanded=true;LayoutSupport();});
@@ -48,7 +53,7 @@ namespace Bufu.Rebuild {
             On(PromotionNode("adSummonPanel"),!Model.PromotionRunning);
             bool changed=false;
             for(int i=0;i<3;i++) {
-                var button=PromotionNode(supportButtons[i]);bool unlocked=Model.DeveloperMode||shownMainLevel>Model.Factor(i==0?58:19);
+                var button=PromotionNode(supportButtons[i]);bool unlocked=Model.OpenAccess||shownMainLevel>Model.Factor(i==0?58:19);
                 changed|=button.activeSelf!=unlocked;On(button,unlocked);
                 long stamp=Model.State.supportLastTime[2-i];
                 if(resumed||stamp!=supportTimerStamp[i]) {supportTimerStamp[i]=stamp;supportTimerLeft[i]=Model.SupportRemaining((SupportKind)i);supportTimerNextTick[i]=Time.unscaledTime+1;}
@@ -68,7 +73,7 @@ namespace Bufu.Rebuild {
             var bg=promotionView.Ref<RectTransform>("DownItem","adSummonBg");
             var mask=promotionView.Ref<RectTransform>("DownItem","adMask");
             int count=content.Cast<Transform>().Count(x=>x.gameObject.activeSelf);
-            bool moneyUnlocked=Model.DeveloperMode||shownMainLevel>Model.Factor(58);
+            bool moneyUnlocked=Model.OpenAccess||shownMainLevel>Model.Factor(58);
             bool anyUnlocked=moneyUnlocked||count>0;
             On(PromotionNode("instantMoneyButton"),moneyUnlocked);
             On(content.gameObject,supportExpanded&&count>0);On(bg.gameObject,count>0);
@@ -83,6 +88,29 @@ namespace Bufu.Rebuild {
             } else bg.sizeDelta=new Vector2(bg.sizeDelta.x,85);
             foreach(string field in new[]{"openBtn","foldBtn"})promotionView.Ref<RectTransform>("DownItem",field).anchoredPosition=new Vector2(0,y);
         }
+        static void FitSupportRain(ParticleSystem system,float uiScale) {
+            var shape=system.shape;shape.shapeType=ParticleSystemShapeType.Box;
+            shape.scale=new Vector3(DesignWidth/uiScale,DesignHeight/uiScale,1f);
+            var main=system.main;main.gravityModifier=0f;main.startLifetime=4.5f;
+            float fall=(DesignHeight*.35f)/uiScale;
+            var velocity=system.velocityOverLifetime;velocity.enabled=true;velocity.space=ParticleSystemSimulationSpace.Local;
+            var still=new ParticleSystem.MinMaxCurve(0f);var down=new ParticleSystem.MinMaxCurve(-fall);
+            velocity.x=still;velocity.y=down;velocity.z=still;
+            var emission=system.emission;if(!emission.enabled)return;
+            float rate=Mathf.Max(emission.rateOverTime.constant,emission.rateOverTime.constantMax);if(rate<1f)rate=12f;
+            emission.rateOverTime=new ParticleSystem.MinMaxCurve(rate*3f);
+        }
+        void PlaySupportEffect(int index) {
+            var root=supportEffects[index].Root;root.SetActive(true);
+            foreach(var system in root.GetComponentsInChildren<ParticleSystem>(true)) {
+                system.gameObject.SetActive(true);
+                system.Stop(true,ParticleSystemStopBehavior.StopEmittingAndClear);
+                system.Play(true);
+            }
+            var particle=root.GetComponent<Coffee.UIExtensions.UIParticle>();if(particle)particle.RefreshParticles();
+            supportEffectTime[index]=0;
+        }
+
         void UpdateSupport() {
             if(promotionView==null||!promotionView.Root)return;
             RefreshSupport();
@@ -90,7 +118,7 @@ namespace Bufu.Rebuild {
             if(!promotionView.Root.activeInHierarchy)return;
             for(int i=0;i<3;i++)if(supportEmitters[i]&&supportEmitters[i].gameObject.activeSelf) {
                 supportEffectTime[i]+=Time.deltaTime;
-                if(supportEffectTime[i]>=3)supportEmitters[i].gameObject.SetActive(false);
+                if(supportEffectTime[i]>=4.5f)supportEmitters[i].gameObject.SetActive(false);
             }
         }
         void ShowSupport(SupportKind kind) {
@@ -111,8 +139,7 @@ namespace Bufu.Rebuild {
                 double money=kind==SupportKind.Money?Model.SupportMoney(Time.unscaledTime):0;
                 ShowOriginalAd(()=>{
                     if(Model.ClaimSupport(kind,money)) {
-                        int index=(int)kind;var emitter=supportEmitters[index];emitter.Stop();emitter.Play();emitter.gameObject.SetActive(true);
-                        supportEffectTime[index]=0;if(!VerificationMode)SaveStore.Save(Model);
+                        PlaySupportEffect((int)kind);if(!VerificationMode)SaveStore.Save(Model);
                     }
                     close();
                 });

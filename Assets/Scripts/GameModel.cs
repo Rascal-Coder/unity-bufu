@@ -40,19 +40,22 @@ namespace Bufu.Rebuild {
     [Serializable] public sealed class SaveData { public int schema=1,world=1,shopDate,chestNormal,chestRare,spinCount,spinProgress,diamondClaims; public long spinReadyAt,diamondReadyAt; public bool diceUnlocked,worldEntry; public double diamonds=20; public int[] shards=new int[128]; public WorldState[] worlds={new WorldState(),new WorldState()}; }
     public sealed partial class GameModel {
         public bool DeveloperMode {get;private set;}
+        public bool Maxed {get;private set;}
+        public bool OpenAccess=>DeveloperMode||Maxed;
         public readonly Common[] common; public readonly Upgrade[] quantities, boosts, skills;
         public readonly Mission[] missions; public readonly Talent[] coinTalents,diceTalents; public readonly PointReward[] coinPoints,dicePoints;
         public readonly Desk[] desks; public readonly SignReward[] signs; public readonly ShopItem[] shop; public readonly World[] worlds; public readonly HelperRole[] helperRoles;
         public SaveData Data {get;private set;} public WorldState State => Data.worlds[Data.world-1];
         public event Action Changed; public event Action<string> Notice;
         readonly Queue<KeyValuePair<double,double>> income=new Queue<KeyValuePair<double,double>>();
-        public GameModel(SaveData data=null,bool developerMode=false) {
-            DeveloperMode=developerMode;
+        public GameModel(SaveData data=null,bool developerMode=false,bool maxed=false) {
+            DeveloperMode=developerMode;Maxed=maxed;
             common=Read<Common>("tbcommon"); quantities=Read<Upgrade>("tbitemupgrade1"); boosts=Read<Upgrade>("tbitemupgrade2"); skills=Read<Upgrade>("tbitemupgrade3"); missions=Read<Mission>("tbmainmission");
             coinTalents=Read<Talent>("tbtalent"); diceTalents=Read<Talent>("tbtalent2"); coinPoints=Read<PointReward>("tbtalentpoint");dicePoints=Read<PointReward>("tbtalentpoint2");
             desks=Read<Desk>("tbdesk"); signs=Read<SignReward>("tbsignreward"); shop=Read<ShopItem>("tbshop"); worlds=Read<World>("tbworld"); helperRoles=Read<HelperRole>("tbhelperrole");
             Data=data??new SaveData(); Validate();InitializeIncome(Time.unscaledTime);
-            if(DeveloperMode)PrepareDeveloperSave();
+            if(Maxed)PrepareMaxedSave();
+            else if(DeveloperMode)PrepareDeveloperSave();
         }
         static T[] Read<T>(string name) {var asset=Resources.Load<TextAsset>("Config/"+name); if(!asset) throw new InvalidOperationException("Missing config "+name); return JsonUtility.FromJson<Table<T>>(asset.text).rows;}
         public void Validate() {
@@ -98,7 +101,7 @@ namespace Bufu.Rebuild {
         public int BaseId=>Data.world==1?0:100;
         /// <summary>The original "main mission level": the 1-based index of the goal currently being worked on.</summary>
         public int MainLevel=>State.mission+1;
-        public bool LevelAbove(int factorId)=>DeveloperMode||MainLevel>(int)Factor(factorId);
+        public bool LevelAbove(int factorId)=>OpenAccess||MainLevel>(int)Factor(factorId);
         public Mission[] WorldMissions=>missions.Where(x=>x.worldId==Data.world).OrderBy(x=>x.id).ToArray();
         public Mission TitleMission(int level){var all=WorldMissions;return all.Length==0?null:all[Math.Max(1,Math.Min(level,all.Length))-1];}
         public int KindOf(Upgrade c){if(skills!=null&&Array.IndexOf(skills,c)>=0)return 2;if(Array.IndexOf(boosts,c)>=0)return 1;return 0;}
@@ -138,7 +141,7 @@ namespace Bufu.Rebuild {
             return t==null?0:t.upgradeResult[Math.Min(lv-1,t.upgradeResult.Length-1)];
         }
         public bool Unlocked(Upgrade c) {
-            if(DeveloperMode)return true;
+            if(OpenAccess)return true;
             if(c.unLockCondition==-1)return true;
             if(c.unLockCondition==-2) {
                 if(c.id==BaseId+5)return TalentValue(102)>0;
@@ -167,14 +170,14 @@ namespace Bufu.Rebuild {
         }
         public int NextEvolutionLevel(int id){var c=Config(id,false);int lv=State.quantity[id];foreach(int t in c.evolutionLevel)if(t>=lv&&t>0)return t;return -1;}
         public bool CanHelperFlip(int quality) {
-            if(DeveloperMode)return quality>=1&&quality<=4;
+            if(OpenAccess)return quality>=1&&quality<=4;
             if(quality<=1)return true;
             if(quality==2)return Level(Data.world==1?4:104,true)>0;
             if(quality==3)return Level(Data.world==1?5:105,true)>0;
             if(quality==4)return TalentValue(Data.world==1?107:104)>0;
             return false;
         }
-        public bool CanSwipe(int quality){if(quality<1||quality>3)return false;return DeveloperMode||Level(Data.world==1?5+quality:105+quality,true)>0;}
+        public bool CanSwipe(int quality){if(quality<1||quality>3)return false;return OpenAccess||Level(Data.world==1?5+quality:105+quality,true)>0;}
         public float FrontChance(){float weight=.65f;if(Data.world==1)weight*=1f+(float)TalentValue(108);return Math.Min(.95f,Math.Max(.05f,weight));}
         public float FlightSeconds(){float scale=Data.world==1?1f-(float)TalentValue(106):(State.talents[107]>0?1f-(float)TalentValue(107):1f);return .8f*Math.Max(.2f,scale);}
         /// <summary>RoleVat.RefreshSleepProbability: 30% every 5 s; the talent "失眠" (201 coin / 202 dice) scales it.</summary>
@@ -198,7 +201,7 @@ namespace Bufu.Rebuild {
         public float EchoChance(){if(Data.world==1)return State.boosts[12]*(float)(Config(12,true).upgradeResult-1);return State.skills[103]*(float)(ConfigKind(103,2).upgradeResult-1);}
         public float CritChance(){float rate=(float)Factor(16);if(Data.world==1)rate+=(float)TalentValue(303);else if(State.talents[302]>0)rate+=(float)TalentValue(302);if(HelperCount(7)>0&&HelperAwake(7)>=3)rate+=.5f;return Math.Min(1f,Math.Max(0,rate));}
         /// <summary>DeskItem: a desk is owned at level 1 once the main mission level reaches its condition.</summary>
-        public bool DeskUnlocked(Desk d)=>DeveloperMode||d.deskUnlockCondition==-1||MainLevel>=d.deskUnlockCondition;
+        public bool DeskUnlocked(Desk d)=>OpenAccess||d.deskUnlockCondition==-1||MainLevel>=d.deskUnlockCondition;
         public int DeskLevel(Desk d)=>DeskUnlocked(d)?Math.Max(1,State.deskLevel[d.id]):0;
         public double DeskPower(Desk d){int lv=DeskLevel(d);return lv<=0?1:d.skillNum*Math.Pow(d.skillUpgradeBuff,lv-1);}
         public double DeskPowerAt(Desk d,int lv)=>d.skillNum*Math.Pow(d.skillUpgradeBuff,Math.Max(0,lv-1));
@@ -229,7 +232,7 @@ namespace Bufu.Rebuild {
         public SignReward SignFor(int day)=>signs.Where(x=>x.worldId==Data.world).OrderBy(x=>x.id).Skip(day-1).FirstOrDefault();
         public SignReward TodaySign()=>SignFor(State.checkDay);
         public bool CheckInClaimed(int day,bool special=false)=>((special?State.checkAdMask:State.checkMask)&(1<<day))!=0;
-        public bool CanClaimCheckIn(int day,bool special=false)=>day>=1&&day<=(DeveloperMode?7:State.checkDay)&&!CheckInClaimed(day,special)&&CheckInRewards(day,special)?.Length>=4;
+        public bool CanClaimCheckIn(int day,bool special=false)=>day>=1&&day<=(OpenAccess?7:State.checkDay)&&!CheckInClaimed(day,special)&&CheckInRewards(day,special)?.Length>=4;
         public int[] CheckInRewards(int day,bool special=false){var sign=SignFor(day);return special?sign?.AdReward:sign?.normalReward;}
         public bool AnyCheckInClaimable(){for(int d=1;d<=7;d++)if(CanClaimCheckIn(d)||CanClaimCheckIn(d,true))return true;return false;}
         /// <summary>Gold rewards scale with the recent per-minute income, like CheckInRewardItem.realCounts.</summary>
@@ -269,7 +272,7 @@ namespace Bufu.Rebuild {
             rewards=null;
             var item=shop.FirstOrDefault(x=>x.id==id);if(item==null||item.cost<=0)return false;
             ResetShopDay();
-            int used=id==202?Data.chestNormal:Data.chestRare;if(!DeveloperMode&&item.todayLimit>0&&used>=item.todayLimit)return false;
+            int used=id==202?Data.chestNormal:Data.chestRare;if(!OpenAccess&&item.todayLimit>0&&used>=item.todayLimit)return false;
             if(Data.diamonds<item.cost)return false;
             rewards=BuildShopRewards(item);Data.diamonds-=item.cost;
             foreach(var reward in rewards)GrantAmount(reward.Key,reward.Value);
@@ -289,7 +292,7 @@ namespace Bufu.Rebuild {
         }
         /// <summary>Helper hiring stops every 5 levels (from 10) until the ad step is taken; ads are free here.</summary>
         public int HelperCap() {
-            if(DeveloperMode)return MaxLevel(Config(BaseId+1,false));
+            if(OpenAccess)return MaxLevel(Config(BaseId+1,false));
             int lv=Helpers,max=MaxLevel(Config(BaseId+1,false));
             int need=Math.Max(10,(int)Math.Ceiling(lv/5.0)*5);
             return Math.Min(Math.Max(State.helperAdCap,need),max);
@@ -403,7 +406,8 @@ namespace Bufu.Rebuild {
             State.gold=Finite(kept)&&kept>0?kept:0;State.averagePerMinute=1;
             Array.Clear(State.quantity,0,128);Array.Clear(State.boosts,0,128);Array.Clear(State.skills,0,128);Array.Clear(State.evolution,0,128);Array.Clear(State.evolvedAt,0,128);income.Clear();
             State.helperAdCap=0;
-            if(DeveloperMode)PrepareDeveloperSave();
+            if(Maxed)PrepareMaxedSave();
+            else if(DeveloperMode)PrepareDeveloperSave();
             Changed?.Invoke();return true;
         }
         public Talent[] Talents=>Data.world==1?coinTalents:diceTalents;
@@ -412,7 +416,7 @@ namespace Bufu.Rebuild {
         /// <summary>TalentCardItem.SetItemInfo: the card at sibling index i needs the card at index Parent[i]-1 upgraded once.</summary>
         static readonly int[] TalentParent={-1,1,1,2,3,4,4,5,5,6,7,8,9};
         public bool TalentUnlocked(Talent t) {
-            if(DeveloperMode)return true;
+            if(OpenAccess)return true;
             var page=TalentPage(t.talentType);int i=Array.IndexOf(page,t);if(i<0)return false;
             if(Data.world==1&&(t.id==1||t.id==7||t.id==14))return true;
             int parent=i<TalentParent.Length?TalentParent[i]:-1;
@@ -437,11 +441,11 @@ namespace Bufu.Rebuild {
         /// <summary>ShopTurntablePanel wheel limit is the first wedge's todayLimit (10). The first spin each day is free; later ones wait out common factor 35.</summary>
         public int WheelLimit{get{ResetShopDay();var w=WheelItems;return w.Length==0?0:Math.Max(0,w[0].todayLimit);}}
         public bool SpinIsFree{get{ResetShopDay();return Data.spinCount==0;}}
-        public bool SpinCooling=>!DeveloperMode&&UnixNow()<Data.spinReadyAt;
-        public int SpinCooldownLeft{get{long s=Data.spinReadyAt-UnixNow();return DeveloperMode||s<=0?0:(int)s;}}
-        public bool CanSpin{get{ResetShopDay();return DeveloperMode||Data.spinCount<WheelLimit&&!SpinCooling;}}
-        public bool DiamondCooling=>!DeveloperMode&&UnixNow()<Data.diamondReadyAt;
-        public int DiamondCooldownLeft{get{long s=Data.diamondReadyAt-UnixNow();return DeveloperMode||s<=0?0:(int)s;}}
+        public bool SpinCooling=>!OpenAccess&&UnixNow()<Data.spinReadyAt;
+        public int SpinCooldownLeft{get{long s=Data.spinReadyAt-UnixNow();return OpenAccess||s<=0?0:(int)s;}}
+        public bool CanSpin{get{ResetShopDay();return OpenAccess||Data.spinCount<WheelLimit&&!SpinCooling;}}
+        public bool DiamondCooling=>!OpenAccess&&UnixNow()<Data.diamondReadyAt;
+        public int DiamondCooldownLeft{get{long s=Data.diamondReadyAt-UnixNow();return OpenAccess||s<=0?0:(int)s;}}
         public int SpinProgress=>Data.spinProgress;
         public const int SpinProgressMax=5;
         public ShopItem Spin(float roll) {
@@ -457,7 +461,7 @@ namespace Bufu.Rebuild {
         public bool ClaimDiamondAd() {
             ResetShopDay();var item=shop.FirstOrDefault(x=>x.id==201);
             if(item==null||DiamondCooling)return false;
-            if(!DeveloperMode&&item.todayLimit>0&&Data.diamondClaims>=item.todayLimit)return false;
+            if(!OpenAccess&&item.todayLimit>0&&Data.diamondClaims>=item.todayLimit)return false;
             if(item.count==null||item.count.Length==0)return false;
             GrantItem(item.rewardType[0],item.count[0]);
             Data.diamondClaims++;Data.diamondReadyAt=UnixNow()+(long)(Factor(36)*60);
