@@ -31,6 +31,11 @@ namespace Bufu.Rebuild {
             }
             Data=data;Play(data.segments[0].animation,true);
         }
+        /// <summary>Loads the textures of every clip of the VATs in use. Otherwise the first flip loads its texture mid-throw.</summary>
+        public static void WarmTextures() {
+            foreach(var data in Cache.Values)foreach(var s in data.segments)
+                if(!Textures.ContainsKey(s.texture))Textures[s.texture]=Resources.Load<Texture2D>("Art/Textures/"+s.texture);
+        }
         public bool Has(string animation)=>Data!=null&&Data.segments.Any(x=>x.animation==animation);
         public void Play(string name,bool repeat,Action done=null) {
             if(Data==null)return;

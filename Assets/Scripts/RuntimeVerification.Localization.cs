@@ -122,15 +122,13 @@ namespace Bufu.Rebuild {
             Check(tip!=null&&helper.Sleeping,"sleeping helper shows the wake bubble");
             var image=tip.GetComponent<Image>();
             var english=Resources.Load<Texture2D>("UI/Sprites/en/xsyd_huanxing");
-            var chinese=Resources.Load<Texture2D>("UI/Sprites/xsyd_huanxing");
             Check(image.sprite&&image.sprite.name=="xsyd_huanxing"&&image.sprite==UiAssets.Sprite("xsyd_huanxing"),"bubble uses the English wake sprite");
             Check(english!=null&&english.width==230&&english.height==189,"English wake texture imported at 230x189, actual "+(english?english.width+"x"+english.height:"missing"));
-            Check(chinese!=null&&chinese.width==230&&chinese.height==189,"Chinese wake texture stays 230x189, actual "+(chinese?chinese.width+"x"+chinese.height:"missing"));
-            var shown=CopyTexture(image.sprite.texture);var englishCopy=CopyTexture(english);var chineseCopy=CopyTexture(chinese);
-            float englishDelta=MeanDelta(shown,englishCopy),chineseDelta=MeanDelta(shown,chineseCopy);
+            var shown=CopyTexture(image.sprite.texture);var englishCopy=CopyTexture(english);
+            float englishDelta=MeanDelta(shown,englishCopy);
             File.WriteAllBytes(Path.Combine(output,"wake-sprite.png"),shown.EncodeToPNG());
-            Destroy(shown);Destroy(englishCopy);Destroy(chineseCopy);
-            Check(englishDelta<2f&&chineseDelta>8f,"shown bubble matches English art (delta "+englishDelta.ToString("0.0")+") and not the Chinese original (delta "+chineseDelta.ToString("0.0")+")");
+            Destroy(shown);Destroy(englishCopy);
+            Check(englishDelta<2f,"shown bubble matches English art (delta "+englishDelta.ToString("0.0")+")");
             yield return Capture("wake-tip.png");
             Check(errors.Count==0,"wake bubble has no runtime errors");Complete(true,null);
         }

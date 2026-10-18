@@ -52,6 +52,7 @@ namespace Bufu.Rebuild {
                 Game.PlayCoinSound();
                 ShowFace(frontShowing?1:0);
                 if(delay<=0){flipStarted=true;PlayFlip();}
+                if(byHand)Game.GuideCoinTossed(this);
             } else {
                 delay=DiceThrowDelay;
                 Game.PlayDiceUp();
@@ -63,6 +64,7 @@ namespace Bufu.Rebuild {
             float chance=Game.Model.CritChance()+critAdd;if(throwRole==1)chance=1f;
             critical=UnityEngine.Random.value<Mathf.Clamp01(chance);
             face=World==1?(UnityEngine.Random.value<Game.Model.FrontChance()?1:0):UnityEngine.Random.Range(1,7);
+            if(manual&&World==1&&Game.GuideForcedFace(this,out int guided))face=guided;
         }
 
         void PlayFlip(){Visual.Play(Visual.Has("flip")?"flip":Visual.Data.segments[0].animation,true);}
@@ -110,6 +112,7 @@ namespace Bufu.Rebuild {
             flying=false;Rect.anchoredPosition=Game.ClampScene(target,40);
             ShowFace(face);Settle();Game.PlayHit();
             Game.ChainReaction(this);
+            Game.GuideCoinLanded(this);
             if(!luckyEcho){if(UnityEngine.Random.value<Game.Model.EchoChance()){echoIn=.3f;luckyEcho=true;}}else luckyEcho=false;
             PlaySmoke(1.3f);
         }
@@ -141,9 +144,13 @@ namespace Bufu.Rebuild {
             rt.gameObject.SetActive(false);return effect;
         }
         public void Play(Vector2 position,float scale) {
-            if(frames==null){frames=new Sprite[Frames];for(int i=0;i<Frames;i++)frames[i]=Bufu.Rebuild.UI.UiAssets.Sprite("zgygy_coins_smoke_"+(i+1).ToString("00"));}
+            Preload();
             var rt=(RectTransform)transform;rt.anchoredPosition=position;rt.localScale=Vector3.one*scale;
             timer=0;index=0;gameObject.SetActive(true);Apply();
+        }
+        // Each frame is padded on the GPU and read back. Twelve of them on the first landing stall a phone.
+        public static void Preload() {
+            if(frames==null){frames=new Sprite[Frames];for(int i=0;i<Frames;i++)frames[i]=Bufu.Rebuild.UI.UiAssets.Sprite("zgygy_coins_smoke_"+(i+1).ToString("00"));}
         }
         void Apply(){var sprite=frames[Math.Min(index,Frames-1)];if(!sprite){gameObject.SetActive(false);return;}image.sprite=sprite;image.SetNativeSize();}
         void Update() {

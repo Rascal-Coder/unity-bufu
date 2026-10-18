@@ -9,3 +9,10 @@ Build/
 *.log
 __pycache__/
 *.py[cod]
+
+# Local check output and source media. Not imported by the Unity project.
+/Documentation/EffectCheck/
+/Documentation/IntroCheck/
+/logo_dark.png
+/logo_light.png
+/*.mp4

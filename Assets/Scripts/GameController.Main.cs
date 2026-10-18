@@ -217,6 +217,9 @@ namespace Bufu.Rebuild {
             if(n==2)EnsureFacility();if(n==3)EnsureTalent();if(n==5)EnsureShop();if(n==6)EnsureWorld();
             Show(facilityView,n==2);Show(talentView,n==3);Show(shopView,n==5);Show(worldView,n==6);
             ShowTopMain(n==1);
+            // Facility, shop and world pages cover the whole screen, yet both layer canvases sort at 0, so tossed coins
+            // could draw over them. Stop drawing the field there; coins and helpers keep running underneath.
+            var field=bgLayer.GetComponent<Canvas>();if(field)field.enabled=n!=2&&n!=5&&n!=6;
             // Keep currency controls above the full-screen pages.
             if(top!=null&&top.Root)top.Root.transform.SetAsLastSibling();
             RefreshAll();

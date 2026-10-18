@@ -34,8 +34,11 @@ namespace Bufu.Rebuild {
         float saveTimer;bool dirty;AudioSource musicSource;readonly AudioSource[] sfxSources=new AudioSource[5];
         readonly Dictionary<string,AudioClip> clips=new Dictionary<string,AudioClip>();
         readonly Dictionary<string,List<float>> sfxEnds=new Dictionary<string,List<float>>();
-        string musicName="";
-        bool soundOn=true,musicOn=true;float soundVolume=1,musicVolume=1;
+        string musicName="",loadingMusic;
+        readonly HashSet<string> musicTried=new HashSet<string>();
+        bool soundOn=true,musicOn=true,interfaceReady;float soundVolume=1,musicVolume=1;
+        public static GameController Active {get;private set;}
+        public bool BootFinished {get;private set;}
         readonly double[] awaySeconds=new double[2];
 
         // Not serialized into Main.unity: play-mode scene restore can drop scene script references.
@@ -44,21 +47,27 @@ namespace Bufu.Rebuild {
         static void ListenForScenes(){SceneManager.sceneLoaded-=OnSceneLoaded;SceneManager.sceneLoaded+=OnSceneLoaded;}
         static void OnSceneLoaded(Scene scene,LoadSceneMode mode){if(scene.name==IntroScene.SceneName||FindObjectOfType<GameController>())return;(GameObject.Find("Game")??new GameObject("Game")).AddComponent<GameController>();}
 
+        void Awake(){Active=this;}
         void Start() {
+            if(!AdManager.Instance)new GameObject("Ad Manager").AddComponent<AdManager>();
             Application.targetFrameRate=60;
-            maxedSession=SceneManager.GetActiveScene().name==MaxedMode.SceneName;
-            bool dev=developerSession=!maxedSession&&DevMode.Enabled;
-            L10n.Initialize(dev,VerificationMode);
-            soundOn=PlayerPrefs.GetInt(PrefKey("bufu.sound.on"),1)==1;musicOn=PlayerPrefs.GetInt(PrefKey("bufu.music.on"),1)==1;
-            soundVolume=PlayerPrefs.GetFloat(PrefKey("bufu.sound.volume"),1);musicVolume=PlayerPrefs.GetFloat(PrefKey("bufu.music.volume"),1);
-            Model=new GameModel(maxedSession||VerificationMode?new SaveData():SaveStore.Load(dev),dev,maxedSession);
-            long now=DateTimeOffset.UtcNow.ToUnixTimeSeconds();
-            for(int i=0;i<2;i++){var s=Model.Data.worlds[i];awaySeconds[i]=s.lastExit>0?Math.Min(Math.Max(0,now-s.lastExit),21600):0;}
-            Model.AccumulateOffline(now);Model.Changed+=OnChanged;
-            LoadAudio();
-            BuildCanvas();BuildAll();BuildDeveloperControls();
-            L10n.Changed+=RefreshLanguage;
-            if(Model.State.pendingOffline>0)ShowOffline();
+            LaunchScreen.Show();
+            StartCoroutine(BootGame());
+        }
+        CanvasGroup gameGroup;
+        /// <summary>Shows the built game under the loading page, so the page can fade out over it.</summary>
+        void RevealGame() {
+            if(!canvasRect)return;
+            ApplyScreen();Canvas.ForceUpdateCanvases();
+            if(gameGroup){gameGroup.alpha=1f;gameGroup.blocksRaycasts=true;gameGroup.interactable=true;}
+        }
+        public void PresentAfterIntro(){if(!interfaceReady)StartCoroutine(RevealAfterLoading());}
+        IEnumerator RevealAfterLoading() {
+            LaunchScreen.HoldForIntro=false;
+            RevealGame();
+            interfaceReady=true;
+            if(Model!=null&&Model.State.pendingOffline>0)ShowOffline();
+            yield return LaunchScreen.FadeAndHide(.5f);
         }
 
         void BuildAll() {
@@ -68,12 +77,14 @@ namespace Bufu.Rebuild {
         }
 
         void Update() {
+            if(!interfaceReady)return;
             ApplyScreen();saveTimer+=Time.unscaledDeltaTime;
             if(dirty&&saveTimer>10&&!VerificationMode){SaveStore.Save(Model);dirty=false;saveTimer=0;}
             if(Input.GetKeyDown(KeyCode.Escape)&&ModalOpen)CloseTopPopup();
             else if(Input.GetKeyDown(KeyCode.Space)&&!ModalOpen)FlipAll();
             if(Model!=null&&!CutscenePlaying&&!Model.PromotionRunning&&!Model.PromotionWonPending&&goalView==null&&offlineView==null&&Model.PendingGoal!=null)ShowGoal();
             UpdatePromotion();
+            UpdateGuide();
             ApplyAudio();
             if(Model!=null&&Model.DeveloperMode) {
                 if(Input.GetKeyDown(KeyCode.F1))ToggleDeveloperPanel();
@@ -89,6 +100,9 @@ namespace Bufu.Rebuild {
             if(!FindObjectOfType<EventSystem>())new GameObject("EventSystem",typeof(EventSystem),typeof(StandaloneInputModule));
             var canvas=new GameObject("Game Canvas",typeof(Canvas),typeof(CanvasScaler),typeof(GraphicRaycaster));canvas.transform.SetParent(transform,false);
             canvas.GetComponent<Canvas>().renderMode=RenderMode.ScreenSpaceOverlay;
+            // Built under the loading page but kept invisible and untouchable until the reveal.
+            // Sorting order alone is not enough: on device the game canvas drew over the order 99 loading canvas.
+            gameGroup=canvas.AddComponent<CanvasGroup>();gameGroup.alpha=0f;gameGroup.blocksRaycasts=false;gameGroup.interactable=false;
             scaler=canvas.GetComponent<CanvasScaler>();scaler.uiScaleMode=CanvasScaler.ScaleMode.ScaleWithScreenSize;scaler.referenceResolution=new Vector2(DesignWidth,DesignHeight);
             canvasRect=(RectTransform)canvas.transform;
             var outer=NewRect("Outer",canvasRect);Stretch(outer);var outerImage=outer.gameObject.AddComponent<Image>();outerImage.color=Color.black;
@@ -174,16 +188,19 @@ namespace Bufu.Rebuild {
         }
 
         // ---------------------------------------------------------------- audio
-        /// <summary>SoundManager: at most three copies of one effect, button clicks, upgrades, coin and dice impacts, and the world BGM.</summary>
-        void LoadAudio() {
+        /// <summary>SoundManager: at most three copies of one effect. Only the click is loaded with the first screen; other effects load on use. BGM streams.</summary>
+        void PrepareAudio() {
+            if(musicSource)return;
             musicSource=gameObject.AddComponent<AudioSource>();musicSource.loop=true;musicSource.playOnAwake=false;
             for(int i=0;i<sfxSources.Length;i++){sfxSources[i]=gameObject.AddComponent<AudioSource>();sfxSources[i].playOnAwake=false;}
-            foreach(var name in new[]{"BGM","diceBGM","btnclick","cantbuy","coinup","diceHitGround","diceUp","hitground","maintaskreward","revive","upgrade"})
-                clips[name]=Resources.Load<AudioClip>("Audio/"+name);
+        }
+        AudioClip LoadClip(string name) {
+            AudioClip clip;if(clips.TryGetValue(name,out clip)&&clip)return clip;
+            clip=Resources.Load<AudioClip>("Audio/"+name);if(clip)clips[name]=clip;return clip;
         }
         public void PlaySfx(string name) {
-            if(!soundOn||string.IsNullOrEmpty(name))return;
-            AudioClip clip;if(!clips.TryGetValue(name,out clip)||!clip)return;
+            if(!soundOn||string.IsNullOrEmpty(name)||name=="BGM"||name=="diceBGM")return;
+            var clip=LoadClip(name);if(!clip)return;
             List<float> ends;if(!sfxEnds.TryGetValue(name,out ends))sfxEnds[name]=ends=new List<float>();
             float now=Time.unscaledTime;ends.RemoveAll(t=>t<=now);if(ends.Count>=3)return;
             AudioSource source=null;foreach(var s in sfxSources)if(!s.isPlaying){source=s;break;}
@@ -203,9 +220,19 @@ namespace Bufu.Rebuild {
             if(!musicSource||Model==null)return;
             if(!musicOn){if(musicSource.isPlaying)musicSource.Stop();musicName="";return;}
             string want=Model.Data.world==2?"diceBGM":"BGM";
-            AudioClip clip;if(!clips.TryGetValue(want,out clip)||!clip)return;
+            AudioClip clip;if(!clips.TryGetValue(want,out clip)||!clip){RequestMusic(want);return;}
             musicSource.volume=musicVolume*.5f;
             if(musicName!=want||!musicSource.isPlaying){musicSource.clip=clip;musicSource.Play();musicName=want;}
+        }
+        void RequestMusic(string name) {
+            if(loadingMusic==name||musicTried.Contains(name))return;
+            loadingMusic=name;StartCoroutine(StreamMusic(name));
+        }
+        // Streaming clips decode during playback. Loading the asset must not call LoadAudioData, which would expand the whole bed into PCM.
+        IEnumerator StreamMusic(string name) {
+            var request=Resources.LoadAsync<AudioClip>("Audio/"+name);yield return request;
+            musicTried.Add(name);var clip=request.asset as AudioClip;if(clip)clips[name]=clip;
+            if(loadingMusic==name)loadingMusic=null;
         }
         void SavePrefs(){if(VerificationMode)return;PlayerPrefs.SetInt(PrefKey("bufu.sound.on"),soundOn?1:0);PlayerPrefs.SetInt(PrefKey("bufu.music.on"),musicOn?1:0);PlayerPrefs.SetFloat(PrefKey("bufu.sound.volume"),soundVolume);PlayerPrefs.SetFloat(PrefKey("bufu.music.volume"),musicVolume);PlayerPrefs.Save();}
 
@@ -304,7 +331,7 @@ namespace Bufu.Rebuild {
             watchers.Clear();popups.Clear();goalView=null;offlineView=null;facilityView=null;shopView=null;worldView=null;talentView=null;
             helperWorld=-1;promotionView=null;promotionHud=null;promotionDialog=null;shownPromotion=null;Time.timeScale=1;
             foreach(var layer in new[]{bgLayer,mainLayer,popupLayer})foreach(Transform child in layer)Destroy(child.gameObject);
-            Coins.Clear();BuildAll();
+            Coins.Clear();BuildAll();ResetGuide();
         }
     }
 }

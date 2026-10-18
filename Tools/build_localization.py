@@ -232,6 +232,10 @@ dev.hint|全部现有内容已解锁\nF2 补资源 · F1 打开/关闭|All avail
 dev.refill|补充资源 / 重置领取|Refill / Reset Claims
 dev.switch|切换硬币 / 骰子世界|Switch Coin / Dice World
 dev.reset|重置开发存档（全部解锁）|Reset Test Save (All Unlocked)
+guide.fortune.title|开始致富！|Your Fortune\nBegins!
+guide.fortune.body|恭喜赚到第一笔钱，还雇到了第一个帮手！\n你的致富之路，从现在开始！|Congrats! You earned your first coins\nand hired your first Helper.\nYour road to riches starts now!
+guide.fortune.gift|新手礼|Starter Gift
+guide.fortune.start|开始致富|Start Getting Rich
 """
 
 

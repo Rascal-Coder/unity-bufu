@@ -4767,6 +4767,26 @@
       "key": "intro.grid.6",
       "zh": "破产少年，卷土重来。",
       "en": "The bankrupt lad fights back."
+    },
+    {
+      "key": "guide.fortune.title",
+      "zh": "开始致富！",
+      "en": "Your Fortune\nBegins!"
+    },
+    {
+      "key": "guide.fortune.body",
+      "zh": "恭喜赚到第一笔钱，还雇到了第一个帮手！\n你的致富之路，从现在开始！",
+      "en": "Congrats! You earned your first coins\nand hired your first Helper.\nYour road to riches starts now!"
+    },
+    {
+      "key": "guide.fortune.gift",
+      "zh": "新手礼",
+      "en": "Starter Gift"
+    },
+    {
+      "key": "guide.fortune.start",
+      "zh": "开始致富",
+      "en": "Start Getting Rich"
     }
   ]
 }

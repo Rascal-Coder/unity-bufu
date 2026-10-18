@@ -28,21 +28,27 @@ namespace Bufu.Rebuild {
                 var timerRect=(RectTransform)timer.transform;timerRect.anchoredPosition=new Vector2(0,-110.6f);timerRect.sizeDelta=new Vector2(158,31);
                 var timerTxt=PromotionNode(supportTexts[i]).GetComponent<TMP_Text>();
                 if(timerTxt){timerTxt.enableAutoSizing=false;timerTxt.enableWordWrapping=false;timerTxt.fontSize=34;timerTxt.alignment=TextAlignmentOptions.Center;}
-                string effect=i==0?"Ads_coinrain":i==1?"Ads_zuanqian":"Ads_jiayou";
-                var v=UiPrefab.Instantiate("Role/"+effect,popupLayer);
-                var effectRect=v.Rect;effectRect.anchorMin=effectRect.anchorMax=new Vector2(.5f,.5f);effectRect.pivot=new Vector2(.5f,.5f);effectRect.anchoredPosition=Vector2.zero;
-                var uiParticle=v.Root.GetComponent<Coffee.UIExtensions.UIParticle>();
-                if(uiParticle)uiParticle.raycastTarget=false;
-                float uiScale=uiParticle?Mathf.Max(1f,uiParticle.scale):1f;
-                foreach(var system in v.Root.GetComponentsInChildren<ParticleSystem>(true))FitSupportRain(system,uiScale);
-                var emitter=v.Root.transform.GetChild(0).GetComponent<ParticleSystem>();
-                foreach(var system in v.Root.GetComponentsInChildren<ParticleSystem>(true))system.gameObject.SetActive(false);
-                supportEffects[i]=v;supportEmitters[i]=emitter;supportEffectTime[i]=0;
+                supportEffectTime[i]=0;
             }
             Click(PromotionNode("openBtn"),()=>{supportExpanded=true;LayoutSupport();});
             Click(PromotionNode("foldBtn"),()=>{supportExpanded=false;LayoutSupport();});
             supportExpanded=false;supportShown=false;supportWorld=Model.Data.world;sceneAvoidRects.Clear();
             LayoutSupport();
+        }
+        /// <summary>Support rains are not part of the first screen. Build one the first time it is needed.</summary>
+        void EnsureSupportParticle(int index) {
+            if(index<0||index>2||promotionView==null||!popupLayer)return;
+            if(supportEffects[index]!=null&&supportEffects[index].Root)return;
+            string effect=index==0?"Ads_coinrain":index==1?"Ads_zuanqian":"Ads_jiayou";
+            var v=UiPrefab.Instantiate("Role/"+effect,popupLayer);
+            var effectRect=v.Rect;effectRect.anchorMin=effectRect.anchorMax=new Vector2(.5f,.5f);effectRect.pivot=new Vector2(.5f,.5f);effectRect.anchoredPosition=Vector2.zero;
+            var uiParticle=v.Root.GetComponent<Coffee.UIExtensions.UIParticle>();
+            if(uiParticle)uiParticle.raycastTarget=false;
+            float uiScale=uiParticle?Mathf.Max(1f,uiParticle.scale):1f;
+            foreach(var system in v.Root.GetComponentsInChildren<ParticleSystem>(true))FitSupportRain(system,uiScale);
+            var emitter=v.Root.transform.GetChild(0).GetComponent<ParticleSystem>();
+            foreach(var system in v.Root.GetComponentsInChildren<ParticleSystem>(true))system.gameObject.SetActive(false);
+            supportEffects[index]=v;supportEmitters[index]=emitter;supportEffectTime[index]=0;
         }
         void RefreshSupport() {
             if(promotionView==null||!promotionView.Root)return;
@@ -101,6 +107,7 @@ namespace Bufu.Rebuild {
             emission.rateOverTime=new ParticleSystem.MinMaxCurve(rate*3f);
         }
         void PlaySupportEffect(int index) {
+            EnsureSupportParticle(index);if(supportEffects[index]==null||!supportEffects[index].Root)return;
             var root=supportEffects[index].Root;root.SetActive(true);
             foreach(var system in root.GetComponentsInChildren<ParticleSystem>(true)) {
                 system.gameObject.SetActive(true);
@@ -153,8 +160,15 @@ namespace Bufu.Rebuild {
         }
 
         // Exact offline FakeAdUI flow: two unscaled seconds, then an explicit close awards the callback.
+        // In production, replaced by AdManager.ShowRewarded which loads a real Google AdMob rewarded video.
         GameObject originalAd;bool originalAdFinished;
         void ShowOriginalAd(Action awarded) {
+            // Google AdMob rewarded video: when ready, show it; otherwise fall back to the placeholder for testing.
+            if(AdManager.Instance!=null) {
+                AdManager.Instance.ShowRewarded(watched=>{if(watched)StartCoroutine(OriginalAdAward(awarded));});
+                return;
+            }
+            // Placeholder ad remains as a fallback when AdMob is not initialized.
             if(originalAd)return;
             var go=new GameObject("Original Fake Ad",typeof(RectTransform),typeof(Canvas),typeof(CanvasScaler),typeof(GraphicRaycaster));
             go.transform.SetParent(transform,false);originalAd=go;popups.Add(go);
