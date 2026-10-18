@@ -178,7 +178,8 @@ namespace Bufu.Rebuild {
             Click(v.Ref<Button>(cls,"closeButton"),()=>ClosePopup(v));Click(v.Ref<Button>(cls,"maskButton"),()=>ClosePopup(v));
             var icons=v.Script(cls).Arr("itemIcons");
             Func<int,Sprite> iconFor=id=>{
-                if(id==1&&Model.Data.world==2)return RewardIcon(id);
+                // Basic resources (1-6) always use RewardIcon; only special rewards (101+) use itemIcons mapping
+                if(id<=6)return RewardIcon(id);
                 int index=CheckInIconIndex(id);
                 if(icons!=null&&index>=0&&index<icons.Count&&icons[index] is Data d&&!string.IsNullOrEmpty(d.Str("sprite")))return Sp(d.Str("sprite"));
                 return RewardIcon(id);
