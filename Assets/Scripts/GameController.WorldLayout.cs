@@ -19,6 +19,7 @@ namespace Bufu.Rebuild {
             var heading=NewRect("World Heading",view.Rect);
             WorldPlace(heading,view.Rect,new Vector2(0,-278),new Vector2(1040,90));
             WorldLabel(heading,"选择世界",64,new Color(.13f,.27f,.39f));
+            WordArtLabel(heading.GetComponent<TMP_Text>(),"choose-world",88);
             WorldPlace(worldStatus.rectTransform,view.Rect,new Vector2(0,-350),new Vector2(1180,64));
             worldStatus.fontSize=36;worldStatus.fontSizeMax=36;worldStatus.color=new Color(.16f,.33f,.48f);
             Txt(worldStatus,WorldHint);On(view.Ref("WorldSelectionPanel","closeButton"),false);

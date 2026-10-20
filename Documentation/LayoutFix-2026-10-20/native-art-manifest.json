@@ -1,0 +1,260 @@
+{
+  "tool": "Built-in image_gen.imagegen",
+  "art_direction": "Existing game: dark comic outlines, angular few-tone shading, cyan diamonds, purple wood, warm gold trim, native green actions. Referenced original shop bag, chest, spin button, native word art and screenshot. Gold page word art and white outlined side labels are baked images; prices remain live.",
+  "normalization": "Transparent trim, proportional resize and alpha-preserving padding only.",
+  "assets": [
+    {
+      "asset": "Assets\\Resources\\CommerceArt\\diamond-vault-native-v2.png",
+      "source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-58d87b8e-b55d-4536-87eb-8ce2bd508521.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "source_alpha_bounds": [
+        68,
+        53,
+        1251,
+        1181
+      ],
+      "sha256": "385d2790202f060423bf8174230ccd88ac17d01363fd42b974e0baa838664d0d"
+    },
+    {
+      "asset": "Assets\\Resources\\CommerceArt\\no-ads-pass-native-v2.png",
+      "source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-d0e05dfe-35f2-4936-ab6c-f60a61134b3a.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "source_alpha_bounds": [
+        0,
+        47,
+        1292,
+        1128
+      ],
+      "sha256": "7fd765da87d8ecdc504b7825fcccc60bd80a279bdd125afa2e7250f024e76edb"
+    },
+    {
+      "asset": "Assets/SourceArt/SpriteSheetSources/CommerceArt/shop-buy-native-v2.png",
+      "source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-bd463136-32c2-494e-a774-5350a4aa9478.png",
+      "size": [
+        720,
+        216
+      ],
+      "source_alpha_bounds": [
+        6,
+        94,
+        1975,
+        666
+      ],
+      "sha256": "4e881dcdc5ddbcb23fe98fa2b3b343f239d746cf6b8a5ffd39c8b77f977c06aa",
+      "sprite_resource_key": "CommerceArt/shop-buy-native-v2",
+      "packed_asset": "Assets/Resources/PackedUI/commerce-controls-00.png",
+      "packed_rect": [
+        4,
+        452,
+        720,
+        216
+      ]
+    },
+    {
+      "asset": "Assets/SourceArt/SpriteSheetSources/CommerceArt/shop-disabled-native-v2.png",
+      "source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-6ca7ff58-a6fe-4b8b-ab90-d5fa50e98229.png",
+      "size": [
+        720,
+        216
+      ],
+      "source_alpha_bounds": [
+        5,
+        93,
+        1977,
+        668
+      ],
+      "sha256": "9ab52c6437f25e3efb3e96e7fa63be2ce64fb1a7a7a146ac2ea098e3fa97117a",
+      "sprite_resource_key": "CommerceArt/shop-disabled-native-v2",
+      "packed_asset": "Assets/Resources/PackedUI/commerce-controls-00.png",
+      "packed_rect": [
+        4,
+        228,
+        720,
+        216
+      ]
+    },
+    {
+      "asset": "Assets/SourceArt/SpriteSheetSources/CommerceArt/shop-tab-native-v2.png",
+      "source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-ebd5c342-90c6-460f-af24-28df07c82b67.png",
+      "size": [
+        720,
+        216
+      ],
+      "source_alpha_bounds": [
+        6,
+        94,
+        1977,
+        667
+      ],
+      "sha256": "884916aeffee16023b36f0cfdf98269a520b50073eec89e861fcd4cdc7fef38b",
+      "sprite_resource_key": "CommerceArt/shop-tab-native-v2",
+      "packed_asset": "Assets/Resources/PackedUI/commerce-controls-00.png",
+      "packed_rect": [
+        4,
+        4,
+        720,
+        216
+      ]
+    },
+    {
+      "asset": "Assets\\Resources\\CommerceArt\\fragment-pack-native-v2.png",
+      "source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-6a2c24b2-daa7-4917-8a48-59254ea9b88e.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "source_alpha_bounds": [
+        0,
+        19,
+        1522,
+        1024
+      ],
+      "sha256": "c630abeed4a68e80c3a75dc2a9624dc93efdb9e976086f61ef8bd0dcd8600d9f"
+    },
+    {
+      "asset": "Assets/SourceArt/SpriteSheetSources/CommerceArt/title-diamonds-native-v3.png",
+      "source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-93f8411e-60ec-475d-9961-00225d9c8771.png",
+      "size": [
+        1024,
+        180
+      ],
+      "source_alpha_bounds": [
+        44,
+        224,
+        2140,
+        491
+      ],
+      "sha256": "d483694110bc16dbd038488e2b011d46d591b2171fef5e282c8d7e26635157b0",
+      "sprite_resource_key": "CommerceArt/title-diamonds-native-v3",
+      "packed_asset": "Assets/Resources/PackedUI/word-art-01.png",
+      "packed_rect": [
+        4,
+        4,
+        1024,
+        180
+      ]
+    },
+    {
+      "asset": "Assets/SourceArt/SpriteSheetSources/CommerceArt/title-no-ads-native-v3.png",
+      "source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-ffe5ac70-c311-4688-8d18-ecda429c1055.png",
+      "size": [
+        1024,
+        180
+      ],
+      "source_alpha_bounds": [
+        75,
+        197,
+        2098,
+        521
+      ],
+      "sha256": "6fe1283025c09874d1447f95deb0acc9d5f2f55743eb77c5e114abd6a1afca37",
+      "sprite_resource_key": "CommerceArt/title-no-ads-native-v3",
+      "packed_asset": "Assets/Resources/PackedUI/word-art-02.png",
+      "packed_rect": [
+        4,
+        120,
+        1024,
+        180
+      ]
+    },
+    {
+      "asset": "Assets/SourceArt/SpriteSheetSources/CommerceArt/title-fragments-native-v3.png",
+      "source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-26c49968-2f93-4d70-a7fe-2e9905f58b4c.png",
+      "size": [
+        1024,
+        180
+      ],
+      "source_alpha_bounds": [
+        42,
+        217,
+        2142,
+        479
+      ],
+      "sha256": "ad716c2a9491e077f102eb2d7acb8cec6a4db4fb842e7349a0a3f95cab5e1540",
+      "sprite_resource_key": "CommerceArt/title-fragments-native-v3",
+      "packed_asset": "Assets/Resources/PackedUI/word-art-02.png",
+      "packed_rect": [
+        4,
+        308,
+        1024,
+        180
+      ]
+    },
+    {
+      "asset": "Assets/SourceArt/SpriteSheetSources/CommerceArt/label-no-ads-native-v3.png",
+      "source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-316db7fb-448a-4daf-99ff-f8000c821767.png",
+      "size": [
+        768,
+        160
+      ],
+      "source_alpha_bounds": [
+        322,
+        199,
+        1849,
+        573
+      ],
+      "sha256": "fd17e731067e3361e6abda8fa12d2fefb817ce551077605018bbe60d13394b83",
+      "sprite_resource_key": "CommerceArt/label-no-ads-native-v3",
+      "packed_asset": "Assets/Resources/PackedUI/word-art-02.png",
+      "packed_rect": [
+        1036,
+        4,
+        768,
+        160
+      ]
+    },
+    {
+      "asset": "Assets/SourceArt/SpriteSheetSources/CommerceArt/label-diamonds-native-v3.png",
+      "source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-9e29b0a2-1032-4a6a-b0c7-a1479af711ad.png",
+      "size": [
+        768,
+        160
+      ],
+      "source_alpha_bounds": [
+        127,
+        203,
+        2049,
+        544
+      ],
+      "sha256": "c3aa0a2652a7f5b65fd59d511565d1082ab745669ff953b5dd4185864c98f5c7",
+      "sprite_resource_key": "CommerceArt/label-diamonds-native-v3",
+      "packed_asset": "Assets/Resources/PackedUI/word-art-01.png",
+      "packed_rect": [
+        1036,
+        24,
+        768,
+        160
+      ]
+    },
+    {
+      "asset": "Assets/SourceArt/SpriteSheetSources/CommerceArt/label-fragments-native-v3.png",
+      "source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-0034b2c2-cfe5-4b45-b931-50984988dc42.png",
+      "size": [
+        768,
+        160
+      ],
+      "source_alpha_bounds": [
+        186,
+        208,
+        2002,
+        566
+      ],
+      "sha256": "e773fb50c7bdc5a2635a6ef0733181429d8051c8a4ffb3af86bc38a89d5ced63",
+      "sprite_resource_key": "CommerceArt/label-fragments-native-v3",
+      "packed_asset": "Assets/Resources/PackedUI/word-art-01.png",
+      "packed_rect": [
+        1196,
+        348,
+        768,
+        160
+      ]
+    }
+  ],
+  "packing_record": "Documentation/SpriteSheetAudit-2026-10-20/migration-manifest.json"
+}

@@ -1,0 +1,7 @@
+{
+    "sprites": 1251,
+    "pages": 66,
+    "looseTextures": 0,
+    "textureBytes": 95034032,
+    "scope": "QA loads every migrated sprite for validation; these bytes are not a normal gameplay peak. Pages load on demand during normal play."
+}

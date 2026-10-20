@@ -1,0 +1,142 @@
+UI／引导／广告／世界／进化／输入复核
+日期：2026-10-20
+范围：本轮当前 Assets/Scripts 源码与 Reference/DecompiledCSharp；对应原审计 D18-D35。
+方法：只读代码审计，未运行 Unity，未改游戏源码。主线程正在执行的 Unity 检查／构建结果不纳入本报告结论。
+明确例外：保留英文；英文标题、译文、相应文字排版不作为待回退项。
+“代码缺口已关闭”只指所列机制已存在且静态绑定对应，不等于经过原版实机或逐像素验收。
+
+一、仍有的具体差异
+
+R-UI-01 [P2，高置信] D27：骰子滑动仍会一次抛出圈内全部骰子，原版只抛最近一个。
+当前：Assets/Scripts/GameController.Input.cs:44-52，对两个世界统一 foreach(Coins)，50 canvas 半径内所有符合 CanSwipe 的对象均 Throw(true)。
+原版：Reference/DecompiledCSharp/MainSceneVat.cs:3070-3087，硬币圈内遍历是全抛；但其调用的 DiceWorldController.cs:250-258 仅 FindNearestIdleDice(worldPosition,radius,requireSwipeUnlock:true) 然后 TryThrowDice 一次。
+影响：world2 多骰子靠近或重叠时，同一滑动采样点的投掷数量、收入和 Super 666 充能速度不同。
+不能用 world1 全圈投掷正确来证明 world2 等价。RuntimeVerification.Alignment.cs:39-63 仅在硬币世界测此项，world2 检查 :92 起没有滑动断言，当前 QA 暴露不了这一差异。
+
+R-UI-02 [P2，高置信] D25：进化中心结果数量固定为一个，未保留原版多币进化过程。
+当前：Assets/Scripts/GameController.Evolution.cs:26-28 固定创建一个 result；全部旧币合并、删除，直到 :54 末尾 SyncActors 才按模型补齐剩余币。
+原版：Reference/DecompiledCSharp/MainSceneVat.cs:1016-1021 将 GetCurrencyFieldCount 的 desiredCount 传入 PlayCoinEvolutionMerge；:1107-1133 根据 desiredCount 复用／创建多个中心币并逐个 StartEvolutionShake；:1157-1183 移除旧币并结束所有中心币抖动。DiceWorldController.cs:549-647 有相应 desiredCount 中心骰子流程。
+影响：如果延迟进化或高数量存档使进化后的保留数量大于 1，当前先压成一个，结束后突然补出余下对象；原版的保留对象参与中心动画。
+QA 盲点：RuntimeVerification.Alignment.cs:79 把 quantity 直接设成第一进化阈值，最终只需要一个币，因此 :88-90 的数量／皮肤断言不会揭示多币保留差异。
+
+R-UI-03 [P3，高置信] D25：动作阶段已补上，但曲线和二维抖动不完全一致。
+当前：GameController.Evolution.cs:32 合并为 OutQuad；:33 只有 sin(elapsed*52)*12 的 X 抖动；:50 缩回为 Linear。
+原版：Module/Role/CoinVat.cs:1593-1595 合并为 SmoothStep t²(3−2t)；:1605-1607 为 X sin(52t)*0.12、Y cos(67.6t)*0.066 世界单位；:1613-1615 缩回为 OutQuad。以每世界单位 100 canvas 的对应关系，原抖动约 X 12、Y 6.6 canvas。
+影响：开始聚拢的速度、上下抖动和缩回手感仍有差异。当前已使用原 Uieff_coin_upgrade 资源，不能再描述为“完全没有进化动作”。
+
+R-UI-04 [P2，高置信] D23：Guide4 已接回，但只支持第一升级子页。
+当前：GameController.Guide.cs:97 仅 tab==1 && subTab==1 找 quantities；:120 限制 subTab==1 && kind==0 才累计。切强化子页不提示、不计数。
+原版：UpgradePanel.cs:1019-1026 在子页刷新／切换时 ShowGuide4Finger(panelIndex)；:1262-1284 取对应页全部 isUpgradeable 卡并订阅 onUpgradeButtonClick；:1327-1337 任一被订阅升级成功后累计一次。
+影响：新手改在强化子页投资时，原版可继续 Guide4，当前阶段可能停留，直到返回第一子页完成指定升级。
+新增 20 钻石礼包已移除；GameController.Fortune.cs 只保留共享画刷／按钮帮助方法，没有赠送逻辑。这部分已关闭。
+
+R-UI-05 [P2，高置信] D20/D19：广告门槛已修，转盘奖励与进度结算时点仍提前。
+当前：GameController.Panels.cs:218-222 在转盘开始就 Spin、BuildShopRewards、GrantShop、Save；GameModel.cs:558-562 随 GrantShop 增加转盘进度。
+原版：Module/Shop/ShopTurntablePanel.cs:611-629 在转盘／特效完成后 IncrementProgress、BuildRewardList、展示 receipt；Module/UI/RewardBoxUI.cs:106-149 在普通确认或广告双倍回调中真正 GrantReward。
+影响：当前在转盘／领奖展示期间就已经拥有奖励和进度；立即退出重开会保留，原版对应阶段尚未发放。收入相关奖励取样时点也前移了整个动画时长。
+这与“非首免转盘未看广告”是两个问题；广告门槛本身当前已经接入。补发双倍沿用“基础已发、只补同一 receipt 一份”的既有实现约束，不应再额外发一遍基础奖。
+
+R-UI-06 [P3，高置信] D35：版本号显示已恢复，但显示的是不同版本源。
+当前：GameController.Popups.cs:178 显示 Application.version。
+原版：SetUpPanel.cs:143-146 显示 ResManager.Version；ResManager.cs:427、489-495 由资源版本响应设置。
+影响：能看到重建应用版本，但不是原版资源包版本。没有原版资源更新／版本服务时，不能宣称该内容也完全还原。
+
+二、D27 坐标与输入 QA 的证据边界
+
+已经关闭的旧问题：
+1. SceneActors.cs:11 已移除 CoinActor 的 pointerDown/enter/move 接口；点击不再由矩形 OnPointerDown 立即抛投。
+2. GameController.cs:82 轮询 UpdateSceneInput；Input.cs:19-41 有鼠标／单触点 begin/move/end/cancel 分支。
+3. Input.cs:7、59-78 使用 50 canvas 最近 idle、90 canvas 最近 sleeper，20 屏幕像素区分点击与移动；跨 UI 起点整手势被阻断。
+4. Input.cs:83-98 已按 raycast 前后顺序识别场景，忽略重建 Outer 底图；不会再因底层 Outer 存在就必然阻断全部场景点击。
+
+仍需真实运行／原版对照的内容：
+A. 坐标不是仅凭同样写了“50”就已证明等价。
+原版 MainSceneVat.cs:456-465 把 UI 距离乘 UiToWorldScale；:3100-3139 用 Camera.ScreenPointToRay 与 vatWorldZ 平面求交；:608-639 支持 FixedDesignHeight／FixedDesignWidth／MatchCanvasScaler 相机缩放。
+当前 Input.cs:45、49、60、64、71 把屏幕点和 actor.position 都转为 Field 本地坐标后测距。其当前 Field 默认 scale 为 1，代码内部同一坐标系是自洽的；但不同宽高比、相机／canvas 缩放及原版屏幕投影等价尚未校准。
+
+B. 当前 QA 不能替代物理鼠标／触摸采样测试。
+RuntimeVerification.Alignment.cs:43-63 直接调用 public BeginScenePointer／MoveScenePointer／EndScenePointer，并未通过 Input.GetMouseButton 或 Input.GetTouch 驱动 Input.cs:19-41。它能检查下层状态机，却不能暴露丢 touch-end、多触点接管、模拟鼠标重复、真实 UI 与场景脚本执行顺序问题。
+其 SceneScreenPoint(:15) 与场景转换共用 Field.TransformPoint/InverseTransformPoint，属于同一映射内的检查；不能校准原版 Camera 的映射。
+其 FreeScenePoint(:22-27) 主动寻找实现判为不阻挡的位置，可能绕开特定 UI 遮挡区域缺陷。
+
+C. 20 像素阈值、引导孔和快速轨迹需要单独实点。
+现 QA 仅用一次 80 屏幕像素移动；没有 19/20/21 边界、多帧路径、跨回起点、实际 touch cancel、引导孔中心／边缘点击。
+VerificationMode 会在 GameController.Guide.cs:28、WorldGuide.cs:11、Dice.cs 的初次引导分支跳过真实新手／解锁引导；普通 alignment 通过不代表这些指引可点击。
+原 MainSceneVat.cs:3040-3062 主要检查起点阻挡，当前 Input.cs:44/57 还检查当前位置／松手位置的 UI；跨过 UI 的行为额外更严格。这个代码差异已确认，但具体手感影响待有场景币处于对应区域时运行复现。
+
+D. 不把“只在当前采样点测圈”误报为漏掉原版线段扫描。
+原 MainSceneVat.MovePointer:3042-3043 也是把当前点交给 TrySwipeCoinAt，并无两帧间轨迹线段插值。当前同样按采样点测圈；快速移动跳过两点之间目标的可能性不能仅归因重建版。
+
+三、逐项状态（代码层面）
+
+D18：旧的“离线双倍按钮隐藏”已关闭。
+当前 Popups.cs:124-133 显示双倍并走成功／失败分支；GameModel.cs:435-440 支持 world 与 doubled。
+对照原 OfflineIncomeUI.cs:115-126、OfflineIncomeManager.cs:377-394。移动端失败／提前关闭回普通领取的实机链路待运行。
+
+D19：旧的“所有通用奖励不提供广告双倍”已关闭，仍有 R-UI-05 的发奖时点差异。
+当前 Popups.cs:233-266 显示 doubleButton，waiting/finished 防重，成功 GrantRewardReceipt 只补一份；Panels.cs:187 对 202/203 传 noDouble:true，Popups.cs:257 还在逻辑上阻止该按钮。
+对照 RewardBoxUI.cs:122-154、ShopTurntablePanel.cs:629/655/681/691、CheckInRewardItem.cs:308/429。
+
+D20：广告前置条件已关闭；剩余顺序语义见 R-UI-05。
+当前 Panels.cs:171、235；原 ShopTurntablePanel.cs:423-454、646-663。
+
+D21：旧的“未加载发奖／关闭即成功”代码问题已关闭，生产平台接入未关闭。
+当前 AdManager.cs:36 使用 earnedReward，:50-57 未 ready 为 false，reward 回调才置位；Support.cs:165-197 非移动端用原 FakeVideoPanel、两秒倒计时、显式关闭、单次回调门禁。
+原 FakeVideoManager.cs:260-314、FakeAdUI.cs:173-203。
+当前 AdManager.cs:12 仍固定 AdMob 测试 ID，:16 判断原生移动平台；原版是 P8SDK/TTSDK 小游戏平台广告。无生产帐号、正式广告位、原平台成功/close/fail实测，不能标生产广告完成；定时插屏、广告次数／埋点也尚未恢复。
+
+D22：免费重置缺口已关闭。
+当前 Talent.cs:156-170 显示广告图标，重置在 ShowOriginalAd 成功回调；原 TalentResetTip.cs:57-79。未宣称生产广告通过。
+
+D23：新增礼包移除已关闭，Guide4 子页范围仍有 R-UI-04。
+
+D24：三步解锁、世界页手势和骰子 1/6 教学已有代码，真实引导交互待运行。
+当前 WorldGuide.cs:10-80 使用原 diceWorldGuide、首访滚到骰子、两次 shangxiatuodong；Dice.cs:24-38、197-231 实现目标骰子与强制1/6流程。
+原 DownItem.cs:2855-2874、DiceWolrdGuide.cs:73-174、WorldSelectionPanel.cs:183-239、DiceWorldController.cs:854 起。
+不能仅以“Resources 存在”和 VerificationMode 截图证明解锁手势／引导孔可点击。
+
+D25：旧的“直接 RebuildActors、完全没有动作”已关闭；多币结果与曲线仍见 R-UI-02/03。
+助手未再由进化路径整体重建，Evolution.cs:54 走 SyncActors。
+QA :68 禁用了所有助手，:87 只比较 identity/position；这能暴露被重建，但不能证明进行中的 Throwing／Sleeping／SkillCd 状态在进化期间正常继续。
+
+D26：顺序和停靠机制缺口已关闭；滚动实手感与布局待运行。
+当前 Panels.cs:339/346 使用降序与 ComingSoon 首位；UI/WorldPageSnap.cs:11-40 有 drag-end、40速度门槛、最近页和0.14 SmoothDamp。
+原 WorldSelectionPanel.cs:81-88、251-281、304-310、480-601。
+剩余细节：当前以 anchoredPosition 像素平滑、0.5像素停靠；原以 verticalNormalizedPosition 平滑，并同时要求误差<=0.001与速度<=0.01。当前固定节点pivot=0.5时目标中心公式对应，但未证明各种布局变换通用等价。
+QA Alignment.cs:156-160 直接 ScrollToIndex，绕过 OnBeginDrag/OnEndDrag、惯性速度等待、最近页选择；无法验收这些交互。WorldLayout.cs:11-54 仍重排标题、岛屿、说明区，保留英文不是全部几何变更的证明；需同分辨率原版截图确认。
+
+D27：旧的 PointerDown/矩形命中已关闭；world2 最近一个、实际输入／坐标边界仍未关闭，见上。
+
+D28：每次强制播放开关已关闭。
+当前 IntroScene.cs:34 读 IntroVideoPlayed，:106 确认写标记；:87 用精确导出的 gameTargetPanel。
+对照 MainEntry.cs:606-613、651-659、UIManager.cs:1434-1457。
+第一次播放、跳过、背景取消不写标记、下次启动已确认跳过及prepare失败分支仍需双启动运行验证；英文文字替换属明确例外。
+
+D29：普通领奖飞资源缺口已关闭。
+当前 Popups.cs:251-254 关闭走 FlyPromotionRewards；:17-20 与 GameController.cs:170 使 Back 也走正常领取关闭。原 RewardBoxUI.cs:60-119、UIManager.cs:1558 起。视觉动画位置、遮挡和最后落点待截图；不凭色彩数量断言宣称逐像素一致。
+
+D30：分段转盘曲线已关闭。
+当前 Panels.cs:225-230/294-300 采用4248附近整圈、5-8过冲、0.8/2.5/4.2/4.5分段。
+原 ShopTurntablePanel.cs:470-496、525-566。当前函数边界自检可覆盖数值，不替代真实帧节奏／指针与中奖格对齐的视觉检查。
+
+D31：保留英文为明确例外，不列为本轮未还原缺陷。
+
+D32：未实现原版排行／邀请助力／登录及云存档等网络系统，仍属范围缺口。
+当前 Main.cs:35 永久隐藏 rankBtn/inviteBtn；SaveStore.cs:10-24 仅本地JSON。
+原 TopPanel.cs:271/302/462-478，InviteUI.cs:94-118/148-151，UpgradeManager.cs:871-908，MainEntry.cs:228-285/355/386。
+不得把原界面素材或配置存在解释为真实服务器可用。
+
+D33：独立挑战／拍卖仍未实现。
+当前 Main.cs:70 MainTabs={1,2,3,5,6}，:79 移除button4。
+原 UpgradePanel.cs:695-707、Module/ChallengeNew/ChallengePanel.cs:26-34。
+当前已有的称号晋升限时挑战是另一个系统。原版该入口的活动时效／服务器可用性仍无新实机证据。
+
+D34：平台订阅领取仍未实现。
+当前 Popups.cs:189 隐藏subscribeRect，:213 特殊签到仍统一广告。
+原 DailyCheckIn.cs:227-251/353-364、CheckInRewardItem.cs:374-395 功夫大师条件下走TT订阅分支。
+不制造假订阅成功回调来声称还原。
+
+D35：版本号显隐关闭，版本源不同见 R-UI-06。
+
+四、有限范围结论
+本轮没有修改游戏脚本，也没有运行Unity。确认上一轮已实际补回多处缺失的入口／机制，同时明确保留六项具体剩余差异与输入／QA边界；本报告不把自写QA存在、静态编译通过、资源导出成功等同于原版实机等价。主线程的真实Unity结果应单独附录，依据其实际输出更新运行状态。

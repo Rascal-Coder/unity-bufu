@@ -1,0 +1,73 @@
+{
+  "audit_date": "2026-10-20",
+  "scope": "E:/rea-games/unity-bufu; current source vs local decompiled reference; static only",
+  "baseline_manifest": "Reference/package-manifest.json",
+  "baseline_package_version": "2026-10-14-626",
+  "baseline_manifest_sha256": "0fe06cab5c43c2d43f2e333224b4b64f46872fe89a23f9eb20b6385132a0dab5",
+  "build_identity": {
+    "evidence_id": "ev_6c9af4d398d8c14af30947afe2c82da43046e6d182f1459eea60fbfa7dad44ac",
+    "artifact": {
+      "path": "E:\\rea-games\\unity-bufu\\Build\\Windows\\BufuRebuild_Data\\Managed\\Assembly-CSharp.dll",
+      "sha256": "b3b757f8fd8932624d90cea5906f0d41491229eece675d069e1a01007ed6e2c8",
+      "byte_length": 450560,
+      "format": "pe"
+    },
+    "module": {
+      "name": "Assembly-CSharp.dll",
+      "generation": 0,
+      "mvid": "4f4bacf0-feaf-461d-aa61-636cec17e2f6",
+      "enc_id": null,
+      "enc_base_id": null,
+      "token": "0x00000001",
+      "row_offset": 242372
+    },
+    "classification": {
+      "status": "managed",
+      "container": "pe",
+      "runtime_family": "unity-mono",
+      "implementation": "cil",
+      "managed_architecture": "anycpu",
+      "evidence": [
+        {
+          "code": "cli-header-observed",
+          "detail": "A file-backed PE CLI header and metadata root were admitted.",
+          "file_offset": 520
+        },
+        {
+          "code": "unity-reference-observed",
+          "detail": "The admitted AssemblyRef table contains a UnityEngine reference.",
+          "file_offset": 304430
+        },
+        {
+          "code": "managed-architecture-derived",
+          "detail": "Managed architecture anycpu is derived from PE machine and CLI flags.",
+          "file_offset": 536
+        }
+      ]
+    }
+  },
+  "build_member_inspection": {
+    "evidence_id": "ev_f371b6cf7777d8f233e282ccb64c6f8dfaa6bc67ef8c02cf17556e35cc7d9fbf",
+    "coverage": {
+      "state": "unavailable",
+      "issues": [
+        {
+          "code": "resource-limit",
+          "scope": "metadata.representation",
+          "offset": null,
+          "detail": "Managed metadata exceeds the 67108864 byte representation budget"
+        }
+      ]
+    },
+    "limitations": [
+      "The CLI metadata could not be admitted; managed member inspection is unavailable."
+    ]
+  },
+  "limits": [
+    "No execution of original game or rebuild performed for this audit",
+    "No pixel-by-pixel or same-save yield benchmark performed",
+    "Current build correspondence to source remains unproven; timestamps alone do not establish mismatch",
+    "Reference package is not established as identical to user's phone version",
+    "Snapshot hashes inventory files; inventory does not claim each reference file was individually reviewed"
+  ]
+}

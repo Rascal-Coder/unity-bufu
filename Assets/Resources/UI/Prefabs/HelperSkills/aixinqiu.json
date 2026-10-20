@@ -1,0 +1,122 @@
+{
+  "path": "Assets/GameRes/Role/aixinqiu.prefab",
+  "nodes": [
+    {
+      "n": "aixinqiu",
+      "p": -1,
+      "a": true,
+      "c": [],
+      "rt": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.0,
+        0.0,
+        100.0,
+        100.0,
+        0.5,
+        0.5,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "n": "Image",
+      "p": 0,
+      "a": true,
+      "c": [
+        {
+          "m_Enabled": 1,
+          "m_Color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "m_RaycastTarget": 1,
+          "m_Sprite": {
+            "sprite": "bullet_jiuwei_00"
+          },
+          "m_Type": 0,
+          "m_PreserveAspect": 0,
+          "m_FillCenter": 1,
+          "m_FillMethod": 4,
+          "m_FillAmount": 1.0,
+          "m_FillClockwise": 1,
+          "m_FillOrigin": 0,
+          "m_UseSpriteMesh": 0,
+          "m_PixelsPerUnitMultiplier": 1.0,
+          "t": "Image"
+        },
+        {
+          "m_Enabled": 1,
+          "spriteFrames": [
+            {
+              "sprite": "bullet_jiuwei_00"
+            },
+            {
+              "sprite": "bullet_jiuwei_01"
+            },
+            {
+              "sprite": "bullet_jiuwei_02"
+            },
+            {
+              "sprite": "bullet_jiuwei_03"
+            },
+            {
+              "sprite": "bullet_jiuwei_04"
+            },
+            {
+              "sprite": "bullet_jiuwei_05"
+            },
+            {
+              "sprite": "bullet_jiuwei_06"
+            },
+            {
+              "sprite": "bullet_jiuwei_07"
+            },
+            {
+              "sprite": "bullet_jiuwei_08"
+            },
+            {
+              "sprite": "bullet_jiuwei_09"
+            },
+            {
+              "sprite": "bullet_jiuwei_10"
+            },
+            {
+              "sprite": "bullet_jiuwei_11"
+            }
+          ],
+          "frameInterval": 0.03999999910593033,
+          "isLooping": 1,
+          "autoPlay": 1,
+          "isPlaying": 0,
+          "currentFrameIndex": 0,
+          "t": "UISpriteAnimationSequence"
+        }
+      ],
+      "rt": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.0,
+        0.0,
+        182.0,
+        162.0,
+        0.5,
+        0.5,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    }
+  ]
+}

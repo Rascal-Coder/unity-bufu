@@ -1,0 +1,16 @@
+{"rows":[
+  {"id":"diamonds_100","category":0,"rewardId":2,"amount":100},
+  {"id":"diamonds_550","category":0,"rewardId":2,"amount":550},
+  {"id":"diamonds_1200","category":0,"rewardId":2,"amount":1200},
+  {"id":"permanent_no_ads","category":1,"rewardId":0,"amount":0},
+  {"id":"helper_01_fragments_20","category":2,"rewardId":101,"amount":20},
+  {"id":"helper_02_fragments_20","category":2,"rewardId":102,"amount":20},
+  {"id":"helper_03_fragments_20","category":2,"rewardId":103,"amount":20},
+  {"id":"helper_04_fragments_20","category":2,"rewardId":104,"amount":20},
+  {"id":"helper_05_fragments_20","category":2,"rewardId":105,"amount":20},
+  {"id":"helper_06_fragments_20","category":2,"rewardId":106,"amount":20},
+  {"id":"helper_07_fragments_20","category":2,"rewardId":107,"amount":20},
+  {"id":"helper_08_fragments_20","category":2,"rewardId":108,"amount":20},
+  {"id":"helper_09_fragments_20","category":2,"rewardId":109,"amount":20},
+  {"id":"helper_10_fragments_20","category":2,"rewardId":110,"amount":20}
+]}

@@ -1,0 +1,30 @@
+{
+  "path": "Assets/GameRes/Role/dushen_DiceMove.prefab",
+  "nodes": [
+    {
+      "n": "dushen_DiceMove",
+      "p": -1,
+      "a": true,
+      "c": [
+        {
+          "m_Enabled": 1,
+          "moveSpeed": 600.0,
+          "baseMoveDistance": 400.0,
+          "sourceScale": 0.4000000059604645,
+          "sourceDetectRadius": 100.0,
+          "checkInterval": 0.019999999552965164,
+          "t": "DuShenDiceMove"
+        }
+      ],
+      "tr": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        1.0,
+        0.0
+      ]
+    }
+  ]
+}

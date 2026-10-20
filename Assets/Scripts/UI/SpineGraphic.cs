@@ -21,6 +21,8 @@ namespace Bufu.Rebuild.UI {
         }
         sealed class Anim {
             public float duration;
+            public float[] drawTimes;
+            public int[][] drawOrders;
             public readonly Dictionary<int,Track> rotate=new Dictionary<int,Track>(),translate=new Dictionary<int,Track>(),scale=new Dictionary<int,Track>();
             public readonly Dictionary<int,Track> slotColor=new Dictionary<int,Track>(),slotAttach=new Dictionary<int,Track>();
         }
@@ -92,7 +94,11 @@ namespace Bufu.Rebuild.UI {
         protected override void OnPopulateMesh(VertexHelper vh) {
             vh.Clear(); if(clip==null||anim==null)return;
             float time=anim==null?0:Mathf.Min(elapsed,anim.duration);
-            for(int s=0;s<clip.setupAttach.Length;s++) {
+            Apply(time);
+            int[] drawOrder=null;
+            if(anim.drawTimes!=null)for(int i=0;i<anim.drawTimes.Length&&anim.drawTimes[i]<=time;i++)drawOrder=anim.drawOrders[i];
+            for(int drawIndex=0;drawIndex<clip.setupAttach.Length;drawIndex++) {
+                int s=drawOrder==null?drawIndex:drawOrder[drawIndex];
                 string attachment=clip.setupAttach[s]; var tintSlot=clip.setupColor[s];
                 if(anim.slotAttach.TryGetValue(s,out var at)){if(!SampleAttach(at,time,ref attachment))continue;}
                 if(string.IsNullOrEmpty(attachment))continue;
@@ -252,6 +258,25 @@ namespace Bufu.Rebuild.UI {
                 if(timelines.Arr("attachment")!=null){var t=Keys(timelines.Arr("attachment"),false,true);anim.slotAttach[index]=t;anim.duration=Mathf.Max(anim.duration,t.time[t.Count-1]);}
                 if(timelines.Arr("color")!=null){var t=Keys(timelines.Arr("color"),false,false);anim.slotColor[index]=t;anim.duration=Mathf.Max(anim.duration,t.time[t.Count-1]);}
             }
+            var drawFrames=data.Arr("drawOrder")??data.Arr("draworder");
+            if(drawFrames!=null&&drawFrames.Count>0) {
+                anim.drawTimes=new float[drawFrames.Count];anim.drawOrders=new int[drawFrames.Count][];
+                for(int frame=0;frame<drawFrames.Count;frame++) {
+                    var entry=(Dictionary<string,object>)drawFrames[frame];anim.drawTimes[frame]=entry.F("time");anim.duration=Mathf.Max(anim.duration,anim.drawTimes[frame]);
+                    int count=slots.Count;var order=new int[count];for(int i=0;i<count;i++)order[i]=-1;
+                    var unchanged=new List<int>();int original=0;
+                    foreach(Dictionary<string,object> offset in entry.Arr("offsets")??new List<object>()) {
+                        if(!slots.TryGetValue(offset.Str("slot"),out int index))continue;
+                        while(original<index)unchanged.Add(original++);
+                        int target=original+offset.I("offset");if(target>=0&&target<count)order[target]=original;
+                        original++;
+                    }
+                    while(original<count)unchanged.Add(original++);
+                    int unused=unchanged.Count;
+                    for(int i=count-1;i>=0;i--)if(order[i]<0)order[i]=unchanged[--unused];
+                    anim.drawOrders[frame]=order;
+                }
+            }
             return anim;
         }
 
@@ -267,6 +292,9 @@ namespace Bufu.Rebuild.UI {
                 if(k.TryGetValue("color",out var hex)&&hex is string s)t.color[i]=Hex(s); else t.color[i]=Color.white;
                 if(!k.TryGetValue("curve",out var curve)||curve==null)continue;
                 if(curve is string){t.step[i]=true;continue;}
+                if(curve is double||curve is long) {
+                    t.bezier[i]=true;t.cx1[i]=Convert.ToSingle(curve);t.cy1[i]=k.F("c2");t.cx2[i]=k.F("c3",1);t.cy2[i]=k.F("c4",1);continue;
+                }
                 var arr=curve as List<object>; if(arr==null||arr.Count<4)continue;
                 t.bezier[i]=true; t.cx1[i]=Num(arr[0]); t.cy1[i]=Num(arr[1]); t.cx2[i]=Num(arr[2]); t.cy2[i]=Num(arr[3]);
             }

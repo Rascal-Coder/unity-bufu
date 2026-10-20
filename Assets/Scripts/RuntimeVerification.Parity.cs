@@ -55,7 +55,7 @@ namespace Bufu.Rebuild {
             Click(special.GetChild(0).Find("allRewardBtn").GetComponent<Button>(),"start special sign-in reward ad");yield return null;
             Check(!model.CheckInClaimed(1,true),"special reward is not granted before the offline ad completes");
             yield return new WaitForSecondsRealtime(2.2f);
-            var ad=Field<GameObject>("originalAd");Click(ad.transform.Find("CloseButton").GetComponent<Button>(),"finish special sign-in reward ad");yield return null;yield return null;
+            var ad=Field<GameObject>("originalAd");Click(AdCloseButton(ad),"finish special sign-in reward ad");yield return null;yield return null;
             Check(model.CheckInClaimed(1,true)&&!special.GetChild(0).Find("allredpoint").gameObject.activeSelf,"completed special reward clears its independent red dot");
             receipt=RewardPopup();Click(receipt.Ref<Button>("RewardBoxUI","GetButton"),"close special sign-in receipt");yield return null;
             yield return Capture("03-sign-in-after-both-claims.png");
@@ -71,7 +71,7 @@ namespace Bufu.Rebuild {
             int shards=model.Fragments(4);
             Click(special.GetChild(2).Find("allRewardBtn").GetComponent<Button>(),"claim day-three kungfu master");yield return null;
             yield return new WaitForSecondsRealtime(2.2f);
-            ad=Field<GameObject>("originalAd");Click(ad.transform.Find("CloseButton").GetComponent<Button>(),"finish day-three special reward ad");yield return null;yield return null;
+            ad=Field<GameObject>("originalAd");Click(AdCloseButton(ad),"finish day-three special reward ad");yield return null;yield return null;
             Check(model.HelperOwned(4)&&model.HelperOf(4).ad==1&&model.Fragments(4)==shards&&model.CheckInClaimed(3,true),
                 "actual day-three special reward unlocks kungfu master without granting duplicate shards");
             receipt=RewardPopup();Click(receipt.Ref<Button>("RewardBoxUI","GetButton"),"close helper unlock receipt");yield return null;

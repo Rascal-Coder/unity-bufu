@@ -1,0 +1,123 @@
+帮手与成长有限范围复核（2026-10-20）
+
+范围：原审计 D10-D15；followup-review 的首次拥有等级、普通重生跨世界清空、重生收益统计三项；上一轮 HelperSkills 新实现。
+约束：保留英文；只读检查游戏源码，不运行 Unity。本报告唯一写入物为本文档。
+状态定义：“已关闭”仅指所列旧差异在当前代码已消失；“仍有”是当前源码可确认的残余；“待运行”留给主线程隔离 Unity 验证。以本文复核时快照为准，后续主线程修复不在本文自动更新。
+下列当前路径以项目根目录 E:/rea-games/unity-bufu/ 为起点；原版路径以 Reference/DecompiledCSharp/ 为起点。
+
+一、先前 D10-D15 的当前状态
+
+D10：已关闭（源码高置信；动作运行待主线程）。
+当前 Assets/Scripts/SceneActors.cs:281-292：普通 coin.Launch 成功后才调用 HelperSkills.Cast，等待时间为 coin.RoleThrowDuration+0.5；已无 RoleId>1 提前 return、固定0.8秒分支。
+原版 Module/Role/RoleVat.cs:854-870 同样先 TryThrowByRole 再 PlayExtra。
+
+D11-a 赌神十字弹射的固定行程：已关闭（高置信）。
+当前 Assets/Scripts/HelperSkills.cs:25-28 按 SkillRank 计算成长射程，157-164 从爆心原点发射，速度600、检测半径100×宽度天赋、大小0.4×天赋；无旧90像素初始偏移。
+原版 Module/UI/DuShenDiceMove.cs:75-92 为相同档位成长公式；实际 prefab 覆盖脚本默认：Assets/Resources/UI/Prefabs/HelperSkills/dushen_DiceMove.json:11-15 是600/400/0.4/100/0.02。
+原脚本300/400默认不能覆盖真实 prefab 值；1/5/70级对应400/480/1360射程。此处前次审计的默认值猜测已被真实 serialized 证据替代。
+残余：赌神点数的实际到账倍率仍不同，见第二部分 R2；完整第二轮弹射、宽度、视觉比例待运行。
+
+D11-b 九尾来回吸引：主要机制已关闭（高置信），仍有视觉角度残差。
+当前 HelperSkills.cs:47 使用500×factor行程，299-310 实现远端停0.5秒、清命中集合后回程，333-339 把硬币物理移动到40-100距离而非直接抛8个。
+原版 Module/Role/RoleVat.cs:2000-2006、2042；Module/UI/DajiAnimation.cs:491-499、562-597、626-646。
+残余：当前 HelperSkills.cs:297 对 Heart 也写 atan2 的 localEulerAngles；原 DajiAnimation.cs:130-137 的 UpdateRotation 只调用 Mathf.Atan2，未赋值给 transform.rotation。当前爱心会沿飞行角度旋转，原版保持 prefab 初始朝向。这是P2视觉差异，源码高置信，实际画面对照待运行。
+
+D11-c 篮球提前按1000距离销毁：已关闭（高置信）。
+当前 HelperSkills.cs:313-324，Basketball 不按 remaining 销毁，只按边界反弹预算结束；0/1/2/3觉醒反弹数、速度1000、半径60均与原版对应。
+原版 Module/Role/RoleVat.cs:1912-1917；Module/UI/LanqiuAnimation.cs:159-201。
+残余：原版 InitVat 传 maxHitCount=999，LanqiuAnimation.cs:213-215/287-290 达999后停止命中；当前 SkillShot.Hit 没有999命中上限。P3，只有极大币数才明显，源码高置信。
+
+D11-d 大蛇触手：伸长形态、100以内排除、原地抛掷已关闭（高置信）；动画完成时点仍有差异。
+当前 HelperSkills.cs:77-96 已逐目标创建原始 dashehandani 层级、从帮手上方100伸向硬币、排除100以内目标、Toss角色6原地落下。
+原版 Module/Role/RoleVat.cs:1935-1979、1683-1692；Module/Role/DaSheHand.cs:64-99。
+残余见第二部分 R4：按名义总时长触发而非实际动画完成回调。
+
+D11-e 钢铁导弹/核弹轨迹：旧“只有Burst”差异已关闭（高置信）。
+当前 HelperSkills.cs:98-126 已实现0.1-0.3随机延迟、0.5秒上飞1500、0.4秒从目标上空落下、核弹1秒下降、原序列爆炸。
+原版 Module/Role/RoleVat.cs:2105-2133、2223、2270。
+残余见 R1：爆炸后的硬币仍额外触发原版抑制掉的连锁与回响。
+密集目标网格：父任务补查已关闭序列化证据缺口。Assets/Resources/UI/Prefabs/Common/MainSceneVat.json根MainSceneVat组件明确spatialIndexCellSize=120、uiToWorldScale约0.01；不是仅凭脚本默认值。当前 HelperSkills.cs:132-134按100 canvas网格划分；原 MainSceneVat.cs:1842用UiToWorldDistance(spatialIndexCellSize)重建，2072-2093实际GetMostDenseCoinPosition不使用其gridSize=100默认参数。因此网格尺度仍有P2静态确认差异；具体靶点偏移和其余坐标差异待运行对照。
+
+D11-f 赌神顺序双炸弹/点数动画：已关闭旧同刻双爆差异（高置信）。
+当前 HelperSkills.cs:144-165 第一枚0.5秒下降，0.3秒后第二枚生成再下降，落地num_N，十字弹射另延迟0.3秒。未觉醒为单枚0.7秒，三觉醒固定6点。
+原版 Module/Role/RoleVat.cs:2444-2469、2620-2669。
+原始 prefab 参数和点数动画可用性已核对；实际帧时序和显示仍待运行。
+重要：真实到账点数倍率旧结论需要更正，见 R2。
+
+D11-g 功夫/大蛇清翻转延迟：已关闭（高置信）。
+当前 HelperSkills.cs:189-190 仅硬币世界角色4/6调用 SetThrowDelayTimer(0)；大蛇觉醒双速/即时结算为硬币世界行为。
+原版 Module/Role/RoleVat.cs:1683-1697；CoinVat.cs:1064-1076。
+哈大壮再投现在有一次性取消订阅回调，但错误扩展到骰子世界，见 R3。
+
+D12：部分关闭，仍有首次拥有时机漏洞（高置信）。
+已关闭：新拥有使用 GlobalHelperLevel，升级保存 globalHelperLevels；当前 GameModel.Parity.cs:19，GameModel.cs:582、593、634。
+仍有：GameModel.cs:93 新档对两个世界提前 RefreshHelperUnlocks，world2大力士在从未访问时已按1级拥有。随后world1升30，首次进入world2因 HelperOwned 存在跳过创建，仍1级。GameModel.cs:574-582 的 exists guard 与自动创建能确定复现此路径。
+原 FacilityData.cs:11 helperOwned 初始为空；Module/Facility/HelperItem.cs:141 实际解锁时调用 SetHelperOwned；GameDataManager.cs:4463-4471 实际首次拥有时取全局最高等级。
+建议：明确记录世界是否实际访问，避免提前拥有；不要直接同步所有既有帮手，以免改变原版独立世界已拥有等级。动态复现交主线程。
+
+D13：已关闭旧100币/40帮手硬上限（高置信）。
+当前 GameController.cs:269 visible=Math.Max(0,Model.Count)，279 slots=Math.Max(0,Model.Helpers)，使用实际值创建；原 MainSceneVat.cs:1200-1224、2420-2430 与 DiceWorldController.cs:480-520 按实际count创建。
+数量大时的运行/性能与999命中上限是不同事项，不能把移除100/40上限等同于所有大数量边界均已验证。
+
+D14：入口和保留升级已关闭旧裁剪，但运行场景仍错误重建（高置信）。
+当前 GameController.Talent.cs:177 显示高级按钮，189广告回调走rebirth(false)；GameModel.cs:470仅normal时清强化。原 TalentRebornTip.cs:112-116/344-346 同理。
+仍有：当前 GameController.Talent.cs:183-185 两路径都 RebuildActors；GameController.cs:254-259 清全部在飞币/帮手/技能池。原高级重生不进入 RestUpgradeData，只有普通重生在 TalentRebornTip.cs:400 调 ClearRuntimeContent。
+影响：高级重生虽然保留购买等级，仍丢弃飞行中投掷、帮手位置/睡眠/冷却与技能过程。P2，源码高置信，连续技能与投掷场景待运行。
+
+D15：已关闭当前世界重生派遣未归零（高置信）。
+当前 GameModel.cs:472 对 normal 路径 foreach helper.count=0，广告重生不清。
+原 TalentRebornTip.cs:406 → GameDataManager.cs:4352-4363 清当前facility.helperCount。
+注意：当前派遣归零正确，与“所有世界购买升级是否清空”是两个独立问题，后者仍有，见下。
+
+二、实际新增/更正的高置信残余
+
+R1 [P1] 钢铁/赌神爆炸抑制标志未抑制连锁和回响。
+当前调用链：HelperSkills.TossAround:193-199 → HelperTossQueue.Tick:272-275 → Toss(...suppressLandingEffects=true) → CoinActor.Launch 保存标记；但 SceneActors.cs:120 无条件 Game.ChainReaction，122 无条件幸运回响抽取。
+原版调用链：RoleVat.PlayIronBoom:2181 / PlayGlobalIronBoom:2270 / 赌神落地:2464、2640，均以 queueTosses=true、suppressLandingEffects=true 进入 TossCoinsInRadius:2697 → MainSceneVat.EnqueueSkillCoinToss:1568-1582 → TickQueuedSkillCoinTosses:1607 调 JumpToTarget 并保留标记；CoinVat.FinishThrowAnimation:1105-1109 / Land:1137-1158 抑制烟/声音/飘字；MainSceneVat.OnCoinLanded:3386-3389 还会清 isLuckyEcho 并直接 return，因此跳过3391连锁和3394幸运回响。
+影响：当前爆炸批量抛银币/金币会比原版多产生连锁、回响和收入。应让这些联动也服从标记，suppressed时清luckyEcho。
+
+R2 [P1，更正前次结论] 赌神点数在原 VAT 结算路径只影响飘字，不影响实际入账；当前仍乘到实际金币。
+当前：HelperSkills.cs:152 reward=point，154传TossAround；189传入CoinActor.rewardScale；SceneActors.cs:112 把rewardScale交GameModel.Settle，GameModel.cs:376实际reward乘rewardScale。当前只在HelperSkills.cs:184对骰子世界强制reward=1，硬币世界仍实际倍增。
+原版精确双路径：
+  A. 显示：RoleVat.TossCoinsInRadius:2713-2715 或 DuShenDiceMove:196-198 对 CoinVat.DicePoint 赋点数；CoinVat.ShowIncomeText:1186/1193 调自己的 GetCoinValue；CoinVat.GetCoinValue:1240-1242 将结果乘dicePoint。因此可见飘字带点数倍率（爆炸抑制飘字时也没有这项显示）。
+  B. 入账：CoinVat.Land:1160 发 OnFlipComplete；MainSceneVat.OnCoinFlipComplete:3354-3366 建 WorldSettlementEntry，3364 调 MainSceneVat 私有 GetCoinValue(coin.coinType,coin.roleType)；MainSceneVat.GetCoinValue:3497-3510 根据类型重新调用 UpgradeManager.Get*CoinValue，并未接收 CoinVat 对象或DicePoint。CoinSettlementCalculator.cs:10-15 直接支付该 entry.Reward。付款链没有点数倍率。
+骰子链也无DicePoint：DiceVat.Roll/FinishThrow → DiceWorldController.HandleDiceLanded:842 GetDiceFinalValue(rollResult.Value,sourceRoleType)。
+更正：前一轮只追到CoinVat显示用GetCoinValue，错误得出“硬币世界实际到账也乘点数”的结论；本轮完整追到世界结算入口后修正。若原版确实运行这条VAT路径，1:1应将显示倍率与payout倍率拆开，实际payoutScale=1，而不是照文案把倍率补进账。
+置信度：VAT源码调用链高；主线程应以原VAT原版行为模型/运行跟踪最后确认当前启用的场景路径，避免拿旧非VAT场景概括全包。
+
+R3 [P2] 哈大壮额外再投错误作用于骰子。
+当前 SceneActors.cs:292 未限定World；HelperSkills.cs:168-178 对通用CoinActor.Landed挂一次性再投。
+原 RoleVat.cs:872-873 先 throwable as CoinVat，仅其非null且role9/觉醒>=1时，才在875-896挂 CoinVat.OnFlipComplete；DiceVat不属于CoinVat。
+建议：只在硬币对象/世界1挂此觉醒回调。正常硬币再投及取消订阅已实现，属于旧缺失部分关闭后新增的跨世界扩展差异。
+
+R4 [P2] 大蛇触手的名义时长计时早于真实序列完成。
+当前 HelperSkills.cs:93-95 按 anim.Duration=frames.Length×Interval 等待后抛币并销毁，FrameAnim.cs实位于同文件347/360，每次超过interval后timer=0且只前进一帧；真实播放时间为逐帧量化后的时长。原prefab dashehandani.json:46为0.03秒、11帧、47 isLooping=0。
+例：60fps时每两帧前进一次，11次帧推进约0.3667秒，当前墙钟名义0.33秒就到期，可能最后一帧未完整展示即抛币/销毁；低帧率差距更大。
+原 DaSheHand.cs:87-89 将 OnAnimationComplete 接到 OnAnimComplete；120-126由真实完成回调触发抓取结束。原 UISpriteAnimationSequence.cs:169-185 同样是timer归零推进，无法用frames×interval替代完成时点。
+建议：FrameAnim提供非循环完成回调，触手由其完成触发Toss；不要用估算时长代替。确切屏幕帧数待主线程运行。
+
+低优先残余（不扩展修复范围，仅记录）
+R5 [P3] 旋风最后一帧的检测顺序不同：当前 HelperSkills.cs:320-324 先Hit再判remaining<=0；原TornadoAnimation.cs:108-112到达最大距离立即停用return，不再执行116-120检测。边缘末帧可能多抛一枚。源码高置信，具体实际影响依帧率/检测周期。
+R6 [P3] 上述篮球999命中上限未实现；九尾朝向与密集网格事项已列在各D11项，不重复计数。
+
+三、followup-review三项再次核对
+
+F1 全局首次拥有继承：仍有（高置信），证据与复现路径见D12；不是旧“固定level=1”结论的简单复述，当前新建确实已GlobalHelperLevel，问题在提前拥有时机。
+
+F2 普通重生跨世界清空：仍有（高置信，原版反直觉副作用）。
+当前 GameModel.cs:470-473 只清当前 State.quantity/boosts/skills/evolution/evolvedAt/helperAdCap。
+原 TalentRebornTip.cs:402 → UpgradeManager.ResetData:563 → GameDataManager.ResetUpgradeData:4131-4154，遍历 _worldDataCollection.worlds，在4139-4142清每个世界升级/解锁/进化并helperADLevel=5。
+同时原ResetFacilityData仅当前world，故不能顺带误清其他世界helper.count或gold。若严格还原原版实际副作用，购买升级清全部世界、派遣只清当前世界；主线程动态模型复现后决策。
+
+F3 重生收益统计：仍有（高置信）。
+当前 GameModel.cs:469 两类重生均 averagePerMinute=1，475均 income.Clear。
+原高级重生跳过TalentRebornTip.cs:346 RestUpgradeData，统计保持；普通重生RestUpgradeData:402-403 ResetData/LoadData；UpgradeManager.LoadData:705 调 InitializeGoldIncomeFromSavedData:795-809，按gameData.averageCoin×0.5播5个样本。TalentRebornTip:374调用SetGold，UpgradeManager.SetGold:1122-1128仅改钱包/保存/通知，不主动清收益队列。
+影响：重生后的应援金币、晋升目标、后续离线基数下降到1，与原版不同。高级应保留窗口，普通应按原保存均值播种。具体原版保存回调先后对均值的影响由主线程动态探针确认，但强制清1不存在原版依据。
+
+四、真实资源核对与待运行边界
+
+已做纯文件核对：Assets/Resources/UI/Prefabs/HelperSkills/下12份JSON与 Build/HelperParityEvidence/serialized-prefabs.json 对应对象逐项结构完全相等，12/12一致。
+已确认serialized：赌神600/400/.4/100/.02；触手11帧/.03、根高210；篮球/足球ball位置+49、100×100与203×131拖尾；其他序列帧间隔.04。命中脚本除DuShenDiceMove外由RoleVat运行时AddComponent，因此篮球60、足球60、旋风150、九尾80脚本默认没有被这些技能prefab覆盖。
+未运行Unity；未改游戏源码/玩家存档/Reference。仅查看了现有 runtime 验证脚本，不能把其存在当作已执行：RuntimeVerification.VisualFixes.cs:16-26现已按两轮四枚检查双炸弹，但尚需主线程提供实际结果。
+待主线程：高级/普通重生中途投掷与技能、哈大壮两世界、钢铁/赌神抑制联动、赌神飘字与钱包分开取证、触手低帧率完成时点、九尾远端/回程画面、原主场景网格serialized。
+本有限范围复核结束，不继续扩展到其他模块。

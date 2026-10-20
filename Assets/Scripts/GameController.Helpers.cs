@@ -65,7 +65,7 @@ namespace Bufu.Rebuild {
             Click(v.Ref<Button>(cls,"upgradeBtn1"),()=>{if(Model.HelperOwned(role.id))ShowHelperUpgrade(role);});
             Click(v.Ref<Button>(cls,"plusBtn"),()=>{if(!Model.AdjustHelperCount(role.id,1))PlayCantBuy();else SyncActors();});
             Click(v.Ref<Button>(cls,"minusBtn"),()=>{if(Model.AdjustHelperCount(role.id,-1))SyncActors();});
-            Click(v.Ref<Button>(cls,"adUnlockBtn"),()=>{if(Model.AdUnlockHelper(role.id)){PlayUpgrade();helperWorld=-1;EnsureHelperList();}});
+            Click(v.Ref<Button>(cls,"adUnlockBtn"),()=>ShowOriginalAd(()=>{if(Model.AdUnlockHelper(role.id)){PlayUpgrade();helperWorld=-1;EnsureHelperList();}}));
             Watch(v.Root,()=>{
                 bool owned=Model.HelperOwned(role.id);var state=Model.HelperOf(role.id);int level=state==null?1:state.level;
                 On(v.Ref(cls,"lockIcon"),!owned);On(v.Ref(cls,"upgradeBtn1"),owned);On(v.Ref(cls,"redDot"),Model.CanUpgradeHelper(role.id));
@@ -78,7 +78,7 @@ namespace Bufu.Rebuild {
                 Txt(helperUnlock,owned?"":unlock);
                 On(v.Ref(cls,"helperLevelText"),false);
                 Txt(v.Ref<TMP_Text>(cls,"helperDescText"),SkillText(role,Model.HelperSkillValue(role.id)));
-                Txt(v.Ref<TMP_Text>(cls,"countText"),(state==null?0:state.count)+"/"+(state==null?1:state.max));
+                Txt(v.Ref<TMP_Text>(cls,"countText"),(state==null?0:state.count)+"/"+(state==null?1:Model.HelperCapacity(role.id)));
             });
         }
 
@@ -122,7 +122,7 @@ namespace Bufu.Rebuild {
                 string unit=role.id==1?"倍":(role.id==4||role.id==9||role.id==10)?"范围":(role.id==7||role.id==8)?"颗":"个";
                 string num=role.id==4||role.id==9||role.id==10?"0.0":"0";
                 Txt(v.Ref<TMP_Text>(cls,"skillLevelText"),level.ToString());
-                Txt(v.Ref<TMP_Text>(cls,"currentCountText"),state.count+"/"+state.max);
+                Txt(v.Ref<TMP_Text>(cls,"currentCountText"),state.count+"/"+Model.HelperCapacity(role.id));
                 Txt(v.Ref<TMP_Text>(cls,"skillDescText"),SkillText(role,now));
                 Txt(v.Ref<TMP_Text>(cls,"currentSkillText"),now.ToString(num)+unit);
                 Txt(v.Ref<TMP_Text>(cls,"nextSkillText"),next.ToString(num)+unit);

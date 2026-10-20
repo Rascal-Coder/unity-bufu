@@ -18,13 +18,10 @@ namespace Bufu.Rebuild {
         public const string SceneName="Intro";
         const string GameScene="Main";
         const string PlayedKey="IntroVideoPlayed";
-        // Temporary for testing: play the film on every launch. Set false to restore play-once.
-        const bool AlwaysPlayFilm=true;
         const float FilmSeconds=15.083f;
-        static readonly Color Ink=new Color(0.09f,0.09f,0.09f,1f);
 
         VideoPlayer player;RawImage filmImage;RenderTexture filmTexture;GameObject filmRoot,skipRoot;
-        bool playbackStarted,filmFailed,videoDone;
+        bool playbackStarted,filmFailed,videoDone,confirmDone;
         float played;
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
@@ -34,7 +31,7 @@ namespace Bufu.Rebuild {
         }
 
         IEnumerator Start() {
-            bool film=!GameController.VerificationMode&&(AlwaysPlayFilm||PlayerPrefs.GetInt(PlayedKey,0)!=1);
+            bool film=!GameController.VerificationMode&&PlayerPrefs.GetInt(PlayedKey,0)!=1;
             // Loading page first, as MainEntry.Awake does, then the main scene loads behind it.
             LaunchScreen.Show();
             DontDestroyOnLoad(gameObject);
@@ -48,7 +45,7 @@ namespace Bufu.Rebuild {
             while(player&&!player.isPrepared&&!filmFailed&&waited<8f){waited+=Time.unscaledDeltaTime;yield return null;}
             if(!player||!player.isPrepared||filmFailed) {
                 Debug.LogWarning("Intro video did not prepare");
-                videoDone=true;
+                videoDone=true;ShowConfirm();
             } else {
                 if(filmRoot)filmRoot.SetActive(true);
                 if(filmImage)filmImage.gameObject.SetActive(true);
@@ -64,6 +61,7 @@ namespace Bufu.Rebuild {
             }
             float guard=45f;
             while((GameController.Active==null||!GameController.Active.BootFinished)&&guard>0f){guard-=Time.unscaledDeltaTime;yield return null;}
+            while(!confirmDone)yield return null;
             if(GameController.Active)GameController.Active.PresentAfterIntro();
             else LaunchScreen.Hide();
             Destroy(gameObject);
@@ -79,29 +77,33 @@ namespace Bufu.Rebuild {
             if(videoDone)return;
             videoDone=true;
             if(player&&player.isPlaying)player.Stop();
-            PlayerPrefs.SetInt(PlayedKey,1);PlayerPrefs.Save();
             if(filmRoot)filmRoot.SetActive(false);
             if(skipRoot)skipRoot.SetActive(false);
             ShowConfirm();
         }
         void ShowConfirm() {
             var parent=LaunchScreen.Current!=null?LaunchScreen.Current.PageRoot:transform;
-            var panel=NewRect("Intro Confirm",parent);Stretch(panel);panel.SetAsLastSibling();
-            var dim=panel.gameObject.AddComponent<Image>();dim.color=new Color(0f,0f,0f,.55f);dim.raycastTarget=true;
-            var card=NewRect("Card",panel);card.anchorMin=card.anchorMax=new Vector2(.5f,.5f);card.sizeDelta=new Vector2(880f,520f);
-            var cardImage=card.gameObject.AddComponent<Image>();cardImage.color=new Color(.98f,.95f,.88f,1f);
-            var body=NewRect("Body",card);body.anchorMin=new Vector2(0f,0.28f);body.anchorMax=new Vector2(1f,1f);body.offsetMin=new Vector2(36f,12f);body.offsetMax=new Vector2(-36f,-28f);
-            var message=body.gameObject.AddComponent<TextMeshProUGUI>();
-            var font=UiAssets.Font();if(font)message.font=font;
-            message.text="已看完片头，点击确定开始你的财富之旅！";message.fontSize=42;message.alignment=TextAlignmentOptions.Center;message.color=Ink;message.raycastTarget=false;
-            var ok=NewRect("开始游戏",card);ok.anchorMin=ok.anchorMax=new Vector2(.5f,0f);ok.pivot=new Vector2(.5f,0f);ok.sizeDelta=new Vector2(420f,96f);ok.anchoredPosition=new Vector2(0f,36f);
-            var okImage=ok.gameObject.AddComponent<Image>();okImage.color=new Color(.96f,.75f,.16f,1f);
-            var okButton=ok.gameObject.AddComponent<Button>();okButton.targetGraphic=okImage;okButton.onClick.AddListener(ConfirmIntro);
-            var okLabel=NewRect("Label",ok);Stretch(okLabel);
-            var okText=okLabel.gameObject.AddComponent<TextMeshProUGUI>();if(font)okText.font=font;
-            okText.text="开始游戏";okText.fontSize=40;okText.alignment=TextAlignmentOptions.Center;okText.color=Ink;okText.raycastTarget=false;
+            // UIManager.ShowGameTargetDialog uses this exact panel after the film.
+            var view=UiPrefab.Instantiate("video/gameTargetPanel",parent);Stretch(view.Rect);view.Rect.SetAsLastSibling();
+            var confirm=view.Ref<Button>("CommonDialog","confirmButton");
+            confirm.onClick.RemoveAllListeners();confirm.onClick.AddListener(()=>{ConfirmIntro();view.Root.SetActive(false);});
+            var background=view.Ref<Button>("CommonDialog","bgButton");
+            background.onClick.RemoveAllListeners();background.onClick.AddListener(()=>{confirmDone=true;view.Root.SetActive(false);});
+            if(L10n.IsEnglish) {
+                // The original title and button are baked Chinese lettering. Keep their
+                // original rects and illustrations, replacing only that lettering in English.
+                EnglishPanelLabel(view.Node("titleImg"),"GAME GOAL",54,new Color(.8f,1f,.3f));
+                EnglishPanelLabel(view.Node("earnImg"),"EARN",54,Color.white);
+            }
         }
-        void ConfirmIntro(){PlayerPrefs.SetInt(PlayedKey,1);PlayerPrefs.Save();}
+        static void EnglishPanelLabel(GameObject image,string label,float size,Color color) {
+            image.GetComponent<Image>().enabled=false;
+            var rect=NewRect("English Label",image.transform);Stretch(rect);
+            var text=rect.gameObject.AddComponent<TextMeshProUGUI>();text.font=UiAssets.Font();text.text=label;
+            text.enableWordWrapping=false;text.enableAutoSizing=true;text.fontSizeMin=30;text.fontSizeMax=size;
+            text.fontStyle=FontStyles.Bold;text.alignment=TextAlignmentOptions.Center;text.color=color;text.raycastTarget=false;
+        }
+        void ConfirmIntro(){if(confirmDone)return;confirmDone=true;PlayerPrefs.SetInt(PlayedKey,1);PlayerPrefs.Save();}
 
         void BuildFilm(string path) {
             if(!FindObjectOfType<EventSystem>())new GameObject("EventSystem",typeof(EventSystem),typeof(StandaloneInputModule));
@@ -152,8 +154,8 @@ namespace Bufu.Rebuild {
         }
 
         IEnumerator LoadMainScene() {
-            const string path="Assets/Scenes/Main.unity";
 #if UNITY_EDITOR
+            const string path="Assets/Scenes/Main.unity";
             var operation=UnityEditor.SceneManagement.EditorSceneManager.LoadSceneAsyncInPlayMode(path,new LoadSceneParameters(LoadSceneMode.Single));
             if(operation==null){SceneManager.LoadScene(GameScene);yield break;}
             while(!operation.isDone)yield return null;

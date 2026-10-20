@@ -1,4 +1,6 @@
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using Bufu.Rebuild.UI;
 using TMPro;
 using UnityEngine;
@@ -7,14 +9,16 @@ using UnityEngine.UI;
 namespace Bufu.Rebuild {
     /// <summary>
     /// First-session guide in the original order (MainSceneVat / UpgradePanel guide_step_1..3): toss a coin and see
-    /// tails, toss again and see heads, then hire the first helper once 25 gold is in hand. Not in the original:
-    /// a "Your Fortune Begins!" popup with a starter gift closes the guide.
+    /// tails, toss again and see heads, then hire the first helper once 25 gold is in hand.
+    /// The fourth stage points to affordable upgrades until common factor 34 is reached.
     /// Uses the original finger Spine and Tycoon dialog card. A dim cover with a hole keeps the tap on the target.
     /// </summary>
     public sealed partial class GameController {
         const string GuideStepKey="guide_step";
-        const int GuideToss=1,GuideTossAgain=2,GuideHire=3,GuideCelebrate=4,GuideDone=5;
-        const double GuideHelperGold=25;const int GuideStarterDiamonds=20;
+        const int GuideToss=1,GuideTossAgain=2,GuideHire=3,GuideUpgrade=4,GuideDone=5;
+        const double GuideHelperGold=25;
+        int guideUpgradeCount,guideUpgradePage=-1;bool guideUpgradeListening;
+        readonly HashSet<int> guideUpgradeCandidates=new HashSet<int>();
         int guideStep=GuideDone;CoinActor guideCoin;Coroutine guideRoutine,guideFollow;
         RectTransform guideLayer,guideHole,guideGlow,guideFinger;UiView guideDialog;readonly Image[] guideShades=new Image[4];
         Image guideHoleImage,guideGlowImage;static Sprite guideRoundCut,guideRoundRing,guideBoxCut,guideBoxRing;
@@ -24,15 +28,16 @@ namespace Bufu.Rebuild {
 
         void StartGuide() {
             int saved=Mathf.Clamp(PlayerPrefs.GetInt(PrefKey(GuideStepKey),GuideToss),GuideToss,GuideDone);
-            // The celebration is owed after the hire, so a restart before it still shows it.
-            bool fresh=Model.Data.world==1&&!VerificationMode&&!Model.OpenAccess&&Model.MainLevel<=3&&(Model.Helpers==0||saved==GuideCelebrate);
+            bool fresh=Model.Data.world==1&&!VerificationMode&&!Model.OpenAccess&&(saved==GuideUpgrade||Model.MainLevel<=3&&Model.Helpers==0);
             guideStep=fresh?saved:GuideDone;
+            guideUpgradeCount=PlayerPrefs.GetInt(PrefKey("guide_step_4_progress"),0);
+            Model.UpgradePurchased-=OnGuideUpgradePurchased;Model.UpgradePurchased+=OnGuideUpgradePurchased;
             if(GuideActive)guideRoutine=StartCoroutine(GuideStepRoutine());
         }
         void ResetGuide() {
             if(guideRoutine!=null)StopCoroutine(guideRoutine);
             HideGuide();guideCoin=null;
-            if(!VerificationMode){PlayerPrefs.DeleteKey(PrefKey(GuideStepKey));PlayerPrefs.Save();}
+            if(!VerificationMode){PlayerPrefs.DeleteKey(PrefKey(GuideStepKey));PlayerPrefs.DeleteKey(PrefKey("guide_step_4_progress"));PlayerPrefs.Save();}
             StartGuide();
         }
         void SaveGuideStep(int step) {
@@ -66,7 +71,7 @@ namespace Bufu.Rebuild {
                 PointGuideAtCoin(coin,"点击抛起铜币");
                 guideRoutine=null;yield break;
             }
-            if(guideStep==GuideCelebrate){yield return CelebrateGuide();yield break;}
+            if(guideStep==GuideUpgrade){yield return GuideUpgradeRoutine();yield break;}
             while(Model.State.gold<GuideHelperGold||ModalOpen)yield return null;
             if(Model.Helpers==0) {
                 if(tab!=1)SelectTab(1);
@@ -83,14 +88,48 @@ namespace Bufu.Rebuild {
                     yield return null;
                 }
             }
-            SaveGuideStep(GuideCelebrate);HideGuide();
-            // Let the new helper walk in and make its first toss before the popup covers the field.
-            yield return new WaitForSecondsRealtime(1.5f);
-            yield return CelebrateGuide();
+            SaveGuideStep(GuideUpgrade);HideGuide();
+            yield return GuideUpgradeRoutine();
         }
-        IEnumerator CelebrateGuide() {
-            while(!interfaceReady||ModalOpen||Model.Data.world!=1)yield return null;
-            ShowFortunePopup();guideRoutine=null;
+        IEnumerator GuideUpgradeRoutine() {
+            int required=Mathf.Max(0,(int)Model.Factor(34));
+            while(guideUpgradeCount<required) {
+                RefreshGuideUpgradeTargets();
+                yield return new WaitForSeconds(5f);
+            }
+            guideUpgradeListening=false;SaveGuideStep(GuideDone);HideGuide();guideRoutine=null;
+        }
+        bool GuideUpgradeEligible(Upgrade config,int kind) {
+            if(config.worldId!=1||!Model.Unlocked(config)||Model.LevelKind(config.id,kind)>=Model.MaxLevel(config))return false;
+            int quality=config.id-Model.BaseId-1;
+            if(kind==0&&quality>=1&&quality<=4&&Model.CanEvolve(quality))return false;
+            if(config.costType==3||kind==0&&config.id==Model.BaseId+1&&Model.HelperGated)return true;
+            double price=Model.PriceKind(config.id,kind);
+            return config.costType==2?Model.Data.diamonds>=System.Math.Ceiling(price):Model.State.gold>=price;
+        }
+        void RefreshGuideUpgradeTargets() {
+            guideUpgradeListening=false;guideUpgradeCandidates.Clear();HideGuide();
+            guideUpgradePage=tab==1?subTab:0;
+            if(!interfaceReady||ModalOpen||Model.Data.world!=1||tab!=1||subTab<1||subTab>2)return;
+            int kind=subTab-1;
+            var configs=(kind==0?Model.quantities:Model.boosts).Where(c=>GuideUpgradeEligible(c,kind)).ToArray();
+            foreach(var config in configs)guideUpgradeCandidates.Add(config.id);
+            var first=configs.FirstOrDefault();if(first==null)return;
+            var item=subContents[kind].Find("item"+kind+"_"+first.id);
+            var button=item?item.GetComponentsInChildren<Button>(true).FirstOrDefault(b=>b.name=="upgradeBtn"):null;
+            if(!button)return;
+            EnsureGuideLayer();guideUpgradeListening=true;guideFinger.gameObject.SetActive(true);
+            guideFollow=StartCoroutine(FollowGuideUpgrade((RectTransform)button.transform));
+        }
+        IEnumerator FollowGuideUpgrade(RectTransform target) {
+            while(target&&guideStep==GuideUpgrade&&guideUpgradeListening) {
+                guideFinger.position=target.position;yield return null;
+            }
+        }
+        void OnGuideUpgradePurchased(int id,int kind) {
+            if(guideStep!=GuideUpgrade||!guideUpgradeListening||Model.Data.world!=1||tab!=1||subTab<1||subTab>2||kind!=subTab-1||guideUpgradePage!=subTab||!guideUpgradeCandidates.Contains(id))return;
+            guideUpgradeListening=false;guideUpgradeCount++;HideGuide();
+            if(!VerificationMode){PlayerPrefs.SetInt(PrefKey("guide_step_4_progress"),guideUpgradeCount);PlayerPrefs.Save();}
         }
         Button HelperUpgradeButton() {
             var item=subContents[0].Find("item0_"+(Model.BaseId+1));if(!item)return null;
@@ -99,7 +138,7 @@ namespace Bufu.Rebuild {
         }
 
         /// <summary>Hidden while a popup (goal, offline, settings) is open, so the cover never sits on top of it.</summary>
-        void UpdateGuide(){if(guideLayer)guideLayer.gameObject.SetActive(GuideActive&&!ModalOpen&&Model.Data.world==1);}
+        void UpdateGuide(){if(guideStep==GuideUpgrade&&guideUpgradePage!=(tab==1?subTab:0))RefreshGuideUpgradeTargets();if(guideLayer)guideLayer.gameObject.SetActive(GuideActive&&!ModalOpen&&Model.Data.world==1);UpdateWorldUnlockGuide();}
 
         void PointGuideAtCoin(CoinActor coin,string message) {
             PointGuideAt(coin.Rect,true);

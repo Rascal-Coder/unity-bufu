@@ -1,0 +1,736 @@
+[
+  {
+    "resource": "UI/Prefabs/Challenge/ChallengePanel",
+    "nodes": 58,
+    "sprite_count": 30,
+    "missing_sprites": [],
+    "refs": {
+      "ChallengePanel@0": {
+        "LevelGrid": {
+          "node": 5
+        },
+        "helperSelect": {
+          "node": 44
+        },
+        "title": {
+          "node": 11,
+          "comp": "TextMeshProUGUI"
+        },
+        "rewardIcon": {
+          "node": 17,
+          "comp": "Image"
+        },
+        "needCoin": {
+          "node": 23,
+          "comp": "TextMeshProUGUI"
+        },
+        "challengeBtn": {
+          "node": 19,
+          "comp": "Button"
+        },
+        "helperCont": {
+          "node": 49,
+          "comp": "RectTransform"
+        },
+        "playBtn": {
+          "node": 55,
+          "comp": "Button"
+        },
+        "rewardTxt": {
+          "node": 18,
+          "comp": "TextMeshProUGUI"
+        },
+        "playCount": {
+          "node": 52,
+          "comp": "TextMeshProUGUI"
+        },
+        "zuduiBtn": {
+          "node": 53,
+          "comp": "Button"
+        },
+        "selectBackBtn": {
+          "node": 57,
+          "comp": "Button"
+        },
+        "auctionEnter": {
+          "node": 24
+        },
+        "auctionLeveImg": {
+          "node": 26,
+          "comp": "Image"
+        },
+        "auctionrewardTxt": {
+          "node": 32,
+          "comp": "TextMeshProUGUI"
+        },
+        "auctionEnterBtn": {
+          "node": 33,
+          "comp": "Button"
+        },
+        "ticketTxt": {
+          "node": 40,
+          "comp": "TextMeshProUGUI"
+        },
+        "coinTxt": {
+          "node": 43,
+          "comp": "TextMeshProUGUI"
+        }
+      },
+      "Button@19": {
+        "m_TargetGraphic": {
+          "node": 19,
+          "comp": "Image"
+        }
+      },
+      "Button@33": {
+        "m_TargetGraphic": {
+          "node": 33,
+          "comp": "Image"
+        }
+      },
+      "Button@53": {
+        "m_TargetGraphic": {
+          "node": 53,
+          "comp": "Image"
+        }
+      },
+      "Button@55": {
+        "m_TargetGraphic": {
+          "node": 55,
+          "comp": "Image"
+        }
+      },
+      "Button@57": {
+        "m_TargetGraphic": {
+          "node": 57,
+          "comp": "Image"
+        }
+      }
+    }
+  },
+  {
+    "resource": "UI/Prefabs/Challenge/ChallengeMain",
+    "nodes": 44,
+    "sprite_count": 17,
+    "missing_sprites": [],
+    "refs": {
+      "ChallengeMain@0": {
+        "bgImage": {
+          "node": 2,
+          "comp": "Image"
+        },
+        "sceneBoxUI": {
+          "node": 3,
+          "comp": "RectTransform"
+        },
+        "sceneBox": {
+          "node": 3,
+          "comp": "BoxCollider2D"
+        },
+        "rolePool": {
+          "node": 9,
+          "comp": "RectTransform"
+        },
+        "coinPool": {
+          "node": 7,
+          "comp": "RectTransform"
+        },
+        "effectPool": {
+          "node": 8,
+          "comp": "RectTransform"
+        },
+        "textPool": {
+          "node": 12,
+          "comp": "RectTransform"
+        },
+        "victoryBtn": {
+          "node": 36,
+          "comp": "Button"
+        },
+        "victoryAd": {
+          "node": 37,
+          "comp": "Button"
+        },
+        "failBtn": {
+          "node": 41,
+          "comp": "Button"
+        },
+        "adFailBtn": {
+          "node": 42,
+          "comp": "Button"
+        },
+        "victoryPanel": {
+          "node": 33
+        },
+        "victoryGrid": {
+          "node": 35,
+          "comp": "RectTransform"
+        },
+        "failPanel": {
+          "node": 38
+        },
+        "backBtn": {
+          "node": 27,
+          "comp": "Button"
+        },
+        "progress": {
+          "node": 24,
+          "comp": "Image"
+        },
+        "follow": {
+          "node": 25,
+          "comp": "RectTransform"
+        },
+        "sum": {
+          "node": 22,
+          "comp": "TextMeshProUGUI"
+        },
+        "time": {
+          "node": 20,
+          "comp": "TextMeshProUGUI"
+        },
+        "upgradeCont": {
+          "node": 17,
+          "comp": "RectTransform"
+        },
+        "selectSkillPanel": {
+          "node": 28
+        },
+        "skillCont": {
+          "node": 32,
+          "comp": "RectTransform"
+        }
+      },
+      "Button@5": {
+        "m_TargetGraphic": {
+          "node": 5,
+          "comp": "Image"
+        }
+      },
+      "ScrollRect@15": {
+        "m_Content": {
+          "node": 17,
+          "comp": "RectTransform"
+        },
+        "m_Viewport": {
+          "node": 16,
+          "comp": "RectTransform"
+        }
+      },
+      "Button@27": {
+        "m_TargetGraphic": {
+          "node": 27,
+          "comp": "Image"
+        }
+      },
+      "Button@36": {
+        "m_TargetGraphic": {
+          "node": 36,
+          "comp": "Image"
+        }
+      },
+      "Button@37": {
+        "m_TargetGraphic": {
+          "node": 37,
+          "comp": "Image"
+        }
+      },
+      "Button@41": {
+        "m_TargetGraphic": {
+          "node": 41,
+          "comp": "Image"
+        }
+      },
+      "Button@42": {
+        "m_TargetGraphic": {
+          "node": 42,
+          "comp": "Image"
+        }
+      }
+    }
+  },
+  {
+    "resource": "UI/Prefabs/Challenge/helperSelectInfo",
+    "nodes": 16,
+    "sprite_count": 9,
+    "missing_sprites": [],
+    "refs": {
+      "ChallengeHelperInfo@0": {
+        "helperNameText": {
+          "node": 7,
+          "comp": "TextMeshProUGUI"
+        },
+        "levelText": {
+          "node": 6,
+          "comp": "TextMeshProUGUI"
+        },
+        "helperIcon": {
+          "node": 3,
+          "comp": "Image"
+        },
+        "lockMask": {
+          "node": 12
+        },
+        "xianshi": {
+          "node": 5
+        },
+        "sumTxt": {
+          "node": 9,
+          "comp": "TextMeshProUGUI"
+        },
+        "addBtn": {
+          "node": 10,
+          "comp": "Button"
+        },
+        "reduceBtn": {
+          "node": 11,
+          "comp": "Button"
+        },
+        "kuang": {
+          "node": 1,
+          "comp": "Image"
+        },
+        "kuangBg": {
+          "node": 2,
+          "comp": "Image"
+        },
+        "power": {
+          "node": 4,
+          "comp": "Image"
+        }
+      },
+      "Button@10": {
+        "m_TargetGraphic": {
+          "node": 10,
+          "comp": "Image"
+        }
+      },
+      "Button@11": {
+        "m_TargetGraphic": {
+          "node": 11,
+          "comp": "Image"
+        }
+      }
+    }
+  },
+  {
+    "resource": "UI/Prefabs/Auction/auctionSeclect",
+    "nodes": 84,
+    "sprite_count": 34,
+    "missing_sprites": [],
+    "refs": {
+      "AuctionSeclect@0": {
+        "cont": {
+          "node": 21,
+          "comp": "RectTransform"
+        },
+        "grid": {
+          "node": 19,
+          "comp": "AuctionGrid"
+        },
+        "enterBtn": {
+          "node": 24,
+          "comp": "Button"
+        },
+        "nameImg": {
+          "node": 10,
+          "comp": "Image"
+        },
+        "backBtn": {
+          "node": 28,
+          "comp": "Button"
+        },
+        "auctionCoinTxt": {
+          "node": 5,
+          "comp": "TextMeshProUGUI"
+        },
+        "ticketTxt": {
+          "node": 8,
+          "comp": "TextMeshProUGUI"
+        },
+        "setupBtn": {
+          "node": 29,
+          "comp": "Button"
+        },
+        "needCoin": {
+          "node": 14,
+          "comp": "TextMeshProUGUI"
+        },
+        "shijianTxt": {
+          "node": 16,
+          "comp": "TextMeshProUGUI"
+        },
+        "shijian": {
+          "node": 15
+        },
+        "enterExchangeBtn": {
+          "node": 30,
+          "comp": "Button"
+        },
+        "exchangeBackBtn": {
+          "node": 71,
+          "comp": "Button"
+        },
+        "auctionExchangeObj": {
+          "node": 32
+        },
+        "adEnterExchangeBtn": {
+          "node": 31,
+          "comp": "Button"
+        },
+        "adImg": {
+          "node": 25,
+          "comp": "Image"
+        }
+      },
+      "ScrollRect@19": {
+        "m_Content": {
+          "node": 21,
+          "comp": "RectTransform"
+        },
+        "m_Viewport": {
+          "node": 20,
+          "comp": "RectTransform"
+        }
+      },
+      "AuctionGrid@19": {
+        "cont": {
+          "node": 21,
+          "comp": "RectTransform"
+        },
+        "layout": {
+          "node": 21,
+          "comp": "HorizontalLayoutGroup"
+        },
+        "viewport": {
+          "node": 20,
+          "comp": "RectTransform"
+        },
+        "leftBtn": {
+          "node": 22,
+          "comp": "Button"
+        },
+        "rightBtn": {
+          "node": 23,
+          "comp": "Button"
+        }
+      },
+      "Button@22": {
+        "m_TargetGraphic": {
+          "node": 22,
+          "comp": "Image"
+        }
+      },
+      "Button@23": {
+        "m_TargetGraphic": {
+          "node": 23,
+          "comp": "Image"
+        }
+      },
+      "Button@24": {
+        "m_TargetGraphic": {
+          "node": 24,
+          "comp": "Image"
+        }
+      },
+      "Button@28": {
+        "m_TargetGraphic": {
+          "node": 28,
+          "comp": "Image"
+        }
+      },
+      "Button@29": {
+        "m_TargetGraphic": {
+          "node": 29,
+          "comp": "Image"
+        }
+      },
+      "Button@30": {
+        "m_TargetGraphic": {
+          "node": 30,
+          "comp": "Image"
+        }
+      },
+      "Button@31": {
+        "m_TargetGraphic": {
+          "node": 31,
+          "comp": "Image"
+        }
+      },
+      "AuctionExchange@32": {
+        "coinTxt": {
+          "node": 75,
+          "comp": "TextMeshProUGUI"
+        },
+        "coinCostTxt": {
+          "node": 40,
+          "comp": "TextMeshProUGUI"
+        },
+        "exchangebtn1": {
+          "node": 50,
+          "comp": "Button"
+        },
+        "GetCoinTxt": {
+          "node": 46,
+          "comp": "TextMeshProUGUI"
+        },
+        "diamondCostTxt": {
+          "node": 56,
+          "comp": "TextMeshProUGUI"
+        },
+        "exchangebtn2": {
+          "node": 66,
+          "comp": "Button"
+        },
+        "GetDiamondTxt": {
+          "node": 62,
+          "comp": "TextMeshProUGUI"
+        },
+        "missionCoinNumTmp": {
+          "node": 83,
+          "comp": "TextMeshProUGUI"
+        },
+        "diamondNumTmp": {
+          "node": 79,
+          "comp": "TextMeshProUGUI"
+        },
+        "mask": {
+          "node": 68
+        },
+        "duihuanTip": {
+          "node": 70,
+          "comp": "TextMeshProUGUI"
+        },
+        "backBtn": {
+          "node": 71,
+          "comp": "Button"
+        }
+      },
+      "Button@50": {
+        "m_TargetGraphic": {
+          "node": 50,
+          "comp": "Image"
+        }
+      },
+      "Button@66": {
+        "m_TargetGraphic": {
+          "node": 66,
+          "comp": "Image"
+        }
+      },
+      "Button@71": {
+        "m_TargetGraphic": {
+          "node": 71,
+          "comp": "Image"
+        }
+      }
+    }
+  },
+  {
+    "resource": "UI/Prefabs/Auction/auctionPlayPanel",
+    "nodes": 132,
+    "sprite_count": 50,
+    "missing_sprites": [],
+    "refs": {
+      "AuctionPlayPanel@0": {
+        "itemBoxList": {
+          "node": 80,
+          "comp": "RectTransform"
+        },
+        "jizhuangxiang": {
+          "node": 2,
+          "comp": "RectTransform"
+        },
+        "jizhuangxiangImg": {
+          "node": 2,
+          "comp": "Image"
+        },
+        "banshanImg": {
+          "node": 6,
+          "comp": "Image"
+        },
+        "jzxOpenImg": {
+          "node": 7,
+          "comp": "Image"
+        },
+        "yuguTxt": {
+          "node": 51,
+          "comp": "TextMeshProUGUI"
+        },
+        "auctionCalculatPanel": {
+          "node": 74
+        },
+        "zongjiaTxt": {
+          "node": 78,
+          "comp": "TextMeshProUGUI"
+        },
+        "yingliImg": {
+          "node": 77,
+          "comp": "Image"
+        },
+        "yingliTxt": {
+          "node": 79,
+          "comp": "TextMeshProUGUI"
+        },
+        "auctionEndPanel": {
+          "node": 89
+        },
+        "freeSoldBtn": {
+          "node": 90,
+          "comp": "Button"
+        },
+        "adSoldBtn": {
+          "node": 92,
+          "comp": "Button"
+        },
+        "auctionCoinTxt": {
+          "node": 127,
+          "comp": "TextMeshProUGUI"
+        },
+        "ticketTxt": {
+          "node": 130,
+          "comp": "TextMeshProUGUI"
+        },
+        "setupBtn": {
+          "node": 131,
+          "comp": "Button"
+        },
+        "hostImg": {
+          "node": 16,
+          "comp": "RectTransform"
+        },
+        "auctionPlayer": {
+          "node": 13,
+          "comp": "Image"
+        },
+        "curtain": {
+          "node": 97
+        },
+        "mubuAni": {
+          "node": 98,
+          "comp": "SkeletonGraphic"
+        },
+        "jzxOpen": {
+          "node": 7
+        },
+        "EndPanel": {
+          "node": 99
+        },
+        "daoImg": {
+          "node": 104,
+          "comp": "Image"
+        },
+        "selectImg": {
+          "node": 105,
+          "comp": "Image"
+        },
+        "paimai_yingli": {
+          "node": 111,
+          "comp": "TextMeshProUGUI"
+        },
+        "taijia_yingli": {
+          "node": 112,
+          "comp": "TextMeshProUGUI"
+        },
+        "shijian_yingli": {
+          "node": 113,
+          "comp": "TextMeshProUGUI"
+        },
+        "qita_yingli": {
+          "node": 114,
+          "comp": "TextMeshProUGUI"
+        },
+        "zong_yingli": {
+          "node": 115,
+          "comp": "TextMeshProUGUI"
+        },
+        "backBtn": {
+          "node": 121,
+          "comp": "Button"
+        },
+        "continueBtn": {
+          "node": 123,
+          "comp": "Button"
+        },
+        "downpanel": {
+          "node": 50
+        },
+        "enterEndBtn": {
+          "node": 95,
+          "comp": "Button"
+        },
+        "bidding": {
+          "node": 62
+        },
+        "processing": {
+          "node": 66,
+          "comp": "Image"
+        },
+        "biaoshi": {
+          "node": 14
+        },
+        "fingerGuide": {
+          "node": 81,
+          "comp": "SkeletonGraphic"
+        },
+        "dengguang": {
+          "node": 8
+        }
+      },
+      "Button@52": {
+        "m_TargetGraphic": {
+          "node": 52,
+          "comp": "Image"
+        }
+      },
+      "Button@55": {
+        "m_TargetGraphic": {
+          "node": 55,
+          "comp": "Image"
+        }
+      },
+      "Button@58": {
+        "m_TargetGraphic": {
+          "node": 58,
+          "comp": "Image"
+        }
+      },
+      "Button@90": {
+        "m_TargetGraphic": {
+          "node": 90,
+          "comp": "Image"
+        }
+      },
+      "Button@92": {
+        "m_TargetGraphic": {
+          "node": 92,
+          "comp": "Image"
+        }
+      },
+      "Button@95": {
+        "m_TargetGraphic": {
+          "node": 95,
+          "comp": "Image"
+        }
+      },
+      "Button@121": {
+        "m_TargetGraphic": {
+          "node": 121,
+          "comp": "Image"
+        }
+      },
+      "Button@123": {
+        "m_TargetGraphic": {
+          "node": 123,
+          "comp": "Image"
+        }
+      },
+      "Button@131": {
+        "m_TargetGraphic": {
+          "node": 131,
+          "comp": "Image"
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,90 @@
+
+zgygy_666.png
+size: 490,276
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body_1
+  rotate: true
+  xy: 295, 136
+  size: 138, 131
+  orig: 139, 131
+  offset: 1, 0
+  index: -1
+eye_1
+  rotate: true
+  xy: 428, 137
+  size: 49, 30
+  orig: 50, 31
+  offset: 0, 1
+  index: -1
+eye_3
+  rotate: false
+  xy: 270, 9
+  size: 63, 25
+  orig: 64, 26
+  offset: 0, 0
+  index: -1
+hand_l_1
+  rotate: false
+  xy: 212, 25
+  size: 56, 101
+  orig: 56, 110
+  offset: 0, 3
+  index: -1
+hand_r_1
+  rotate: false
+  xy: 270, 36
+  size: 60, 90
+  orig: 60, 100
+  offset: 0, 8
+  index: -1
+head_1
+  rotate: true
+  xy: 162, 128
+  size: 146, 131
+  orig: 146, 131
+  offset: 0, 0
+  index: -1
+laba
+  rotate: false
+  xy: 2, 105
+  size: 158, 169
+  orig: 158, 169
+  offset: 0, 0
+  index: -1
+leg_l_1
+  rotate: false
+  xy: 140, 2
+  size: 70, 101
+  orig: 74, 104
+  offset: 2, 2
+  index: -1
+leg_r_1
+  rotate: false
+  xy: 428, 188
+  size: 60, 86
+  orig: 64, 100
+  offset: 1, 7
+  index: -1
+maozi
+  rotate: false
+  xy: 335, 8
+  size: 138, 126
+  orig: 138, 126
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 2, 7
+  size: 136, 96
+  orig: 136, 96
+  offset: 0, 0
+  index: -1
+zuiba
+  rotate: true
+  xy: 460, 149
+  size: 37, 25
+  orig: 37, 25
+  offset: 0, 0
+  index: -1

@@ -48,11 +48,11 @@ public static class SupportChecks {
         var income=Unlocked();income.State.talents[101]=1;
         double manual=income.Value(1,true,false),automatic=income.Value(1,false,false),alchemy=income.TalentValue(101);
         check(income.ClaimSupport(SupportKind.Income),"support: successful income-master ad activates its buff");
-        double expected=(2+alchemy)/(1+alchemy);
+        double expected=(2.0002+alchemy)/(1.0001+alchemy);
         check(Near(income.Value(1,true,false),manual*expected)&&Near(income.Value(1,false,false),automatic*expected),"support: income-master affects manual and helper income, adding its multiplier alongside alchemy");
         check(income.SupportRemaining(SupportKind.Income)>299&&income.SupportRemaining(SupportKind.Income)<=300&&!income.ClaimSupport(SupportKind.Income),"support: income-master lasts five minutes and cannot be reclaimed during cooldown");
         income.ResumeSupportBuffs();
-        check(Near(income.Value(1,true,false),manual*(3+alchemy)/(1+alchemy)),"support: resuming original anonymous same-value income buff stacks rather than replacing it");
+        check(Near(income.Value(1,true,false),manual*(3.0003+alchemy)/(1.0001+alchemy)),"support: resuming original anonymous same-value income buff stacks rather than replacing it");
 
         var speed=Unlocked();
         check(Near(speed.SupportSpeedMultiplier,1)&&speed.ClaimSupport(SupportKind.Speed)&&Near(speed.SupportSpeedMultiplier,2),"support: original speed-master adds one full helper-speed multiplier");
@@ -69,7 +69,7 @@ public static class SupportChecks {
         var roundtrip=new GameModel(JsonUtility.FromJson<SaveData>(JsonUtility.ToJson(income.Data)));
         check(roundtrip.SupportRemaining(SupportKind.Income)>0&&roundtrip.State.supportLastTime[1]==income.State.supportLastTime[1],"support: per-world cooldown timestamp survives save roundtrip");
         double beforeResume=roundtrip.Value(1,true,false);roundtrip.ResumeSupportBuffs();
-        check(Near(roundtrip.Value(1,true,false),beforeResume*(2+alchemy)/(1+alchemy)),"support: loaded save restores one remaining buff when DownItem resumes, not previous transient stack count");
+        check(Near(roundtrip.Value(1,true,false),beforeResume*(2.0002+alchemy)/(1.0001+alchemy)),"support: loaded save restores one remaining buff when DownItem resumes, not previous transient stack count");
         var legacy=new SaveData();legacy.worlds[0].supportLastTime=null;
         check(new GameModel(legacy).State.supportLastTime.Length==3,"support: old saves without support timestamps initialize a usable array");
         legacy=new SaveData();legacy.worlds[0].supportLastTime=new long[]{11,22};

@@ -154,7 +154,7 @@ namespace Bufu.Rebuild {
         void RepayEncounter() {
             if(encounterPhase!=EncounterPhase.Fail||encounterAd)return;
             encounterAd=true;
-            if(AdManager.Instance!=null) {
+            if(AdManager.Instance!=null&&AdManager.Instance.SupportsRewardedAds) {
                 AdManager.Instance.ShowRewarded(watched=>{
                     if(watched)StartCoroutine(OriginalAdAward(PayEncounterRefund));
                     else {encounterAd=false;DismissEncounter();}

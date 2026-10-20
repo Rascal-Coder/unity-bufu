@@ -39,8 +39,10 @@ namespace Bufu.Rebuild {
             var film=GameObject.Find("IntroVideoContainer");
             var skipButton=GameObject.Find("Skip");
             if(!shotFilm&&film&&film.activeInHierarchy&&skipButton&&skipButton.activeInHierarchy){shotFilm=true;StartCoroutine(Grab("02-film.png"));}
+            var target=GameObject.Find("gameTargetPanel");
+            if(target){var earn=target.GetComponentsInChildren<Button>().FirstOrDefault(b=>b.name=="earnBtn");if(earn){Note("confirm original game target");earn.onClick.Invoke();}}
             if(!shotGame&&GameController.Active!=null&&GameController.Active.BootFinished&&LaunchScreen.Current==null&&elapsed>2f){shotGame=true;StartCoroutine(Grab("03-game.png",true));}
-            if(elapsed>70f)Quit(3,"timed out");
+            if(elapsed>(guide?110f:70f))Quit(3,"timed out");
         }
         /// <summary>Raycast-catching guide graphics at an offset (canvas units) from the hole centre. Same-canvas geometry, so the window size does not matter.</summary>
         static string GuideBlockers(float dx,float dy) {
@@ -113,14 +115,22 @@ namespace Bufu.Rebuild {
             yield return new WaitForSecondsRealtime(.5f);
             Note("helpers="+game.Model.Helpers+" gold="+game.Model.State.gold+" guide visible="+(GameObject.Find("Finger")!=null));
             double diamonds=game.Model.Data.diamonds;
-            yield return WaitFor(()=>GameObject.Find("fortunePanel"),8);
-            yield return new WaitForSecondsRealtime(.5f);yield return Grab("08-fortune-pop.png");
-            yield return new WaitForSecondsRealtime(1.6f);yield return Grab("09-fortune.png");
-            Note("fortune "+(GameObject.Find("fortunePanel")?"shown":"missing")+" diamonds "+diamonds+" -> "+game.Model.Data.diamonds);
-            var start=GameObject.Find("fortunePanel")?.GetComponentsInChildren<UnityEngine.UI.Button>().FirstOrDefault(b=>b.name=="normalGetBtn");
-            start?.onClick.Invoke();yield return null;
-            Note("after start: panel "+(GameObject.Find("fortunePanel")?"still open":"closed")+" modal="+game.ModalOpen);
-            Quit(0,"guide");
+            var listening=typeof(GameController).GetField("guideUpgradeListening",BindingFlags.NonPublic|BindingFlags.Instance);
+            var step=typeof(GameController).GetField("guideStep",BindingFlags.NonPublic|BindingFlags.Instance);
+            int required=Math.Max(0,(int)game.Model.Factor(34));
+            for(int i=0;i<required;i++) {
+                game.Model.State.gold=1e10;
+                yield return WaitFor(()=>(bool)listening.GetValue(game),8);
+                if(!(bool)listening.GetValue(game)){Quit(6,"Guide4 did not point to an upgrade");yield break;}
+                if(i==0)yield return Grab("08-guide4-upgrade.png");
+                var config=game.Model.quantities.FirstOrDefault(c=>c.worldId==1&&game.Model.Unlocked(c)&&game.Model.LevelKind(c.id,0)<game.Model.MaxLevel(c));
+                if(config==null||!game.Model.BuyKind(config.id,0)){Quit(6,"Guide4 upgrade failed");yield break;}
+                yield return null;
+            }
+            yield return WaitFor(()=>(int)step.GetValue(game)==5,8);yield return Grab("09-guide4-complete.png");
+            bool complete=(int)step.GetValue(game)==5&&game.Model.Data.diamonds==diamonds&&!GameObject.Find("fortunePanel");
+            Note("Guide4 complete="+complete+" upgrades="+required+" diamonds "+diamonds+" -> "+game.Model.Data.diamonds);
+            Quit(complete?0:6,"guide4");
         }
         void Quit(int code,string why){if(quitting)return;quitting=true;Note("exit "+code+" "+why);
 #if UNITY_EDITOR

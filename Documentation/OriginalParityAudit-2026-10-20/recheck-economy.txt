@@ -1,0 +1,66 @@
+经济 / 骰子 / 奇遇 / 离线只读复核，2026-10-20
+
+范围：当前 Assets/Scripts 与 Reference/DecompiledCSharp 的静态对照；复查旧 D01-D09、followup-review 的骰子快照/暴击时点/离线门槛/未领奖追加，并检查本轮接入的边界。没有编辑游戏源码、玩家存档，没有运行 Unity。下面“已关闭”仅表示旧报告描述的缺失已不成立，不代表所有相关边界均通过实机测试。英文是用户明确保留的例外。
+
+仍有差异（均为静态确认；用户流程仍需父线程实机验证）
+
+E01 [P1，高置信，followup #1 未关闭] 骰子只快照了独立倍率，未快照完整基础值。
+当前 SceneActors.cs:66-70 起飞保存 dicePayoutScale；:111-112 落地调用 Settle；GameModel.cs:348-360、371-376 此时重新读品质升级、进化和点数价格。原版 Module/Role/DiceVat.cs:650-656 在 Roll 时把 GetDiceBaseValue 和独立倍率写入 DiceRollResult；UpgradeManager.cs:1715-1763、1804-1806 的基础值已经包括升级/进化/点数；DiceWorldController.cs:835-843 落地只在 rollResult.Value 上加最终帮手/Buff。
+影响：骰子在空中时升级或进化，会把已经掷出的骰子按新基础价结算。此前“666临落地到期丢倍率”这一部分已修复，但完整快照问题仍存在；不应把最终动态 Buff 也一并提前冻结。
+
+E02 [P2，高置信，followup #2 未关闭] 骰子暴击在起飞时抽取。
+当前 SceneActors.cs:67-68 在 RollOutcome 读取暴率并随机，落地沿用 critical。原版 DiceWorldController.cs:842 -> UpgradeManager.cs:1842 -> BuffManager.cs:157-160 在落地最终收入计算时抽取。
+影响：飞行中暴率升级、应援到期等，当前采用起飞暴率，原版采用落地暴率；浮字也跟随提前的结果。
+
+E03 [P1，高置信，旧103已接入但来源丢失] 骰子幸运回响不保留手动/帮手来源。
+当前 SceneActors.cs:135-138 Echo 重新 Launch(...,false)，Launch :43、48-49 默认 role=0。原版 Module/Role/DiceVat.cs:825-835 用 pendingSource、sourceRoleType 再投；TryThrow :502 默认 roleType=-1；UpgradeManager.cs:1838-1842 按该 roleType 应用帮手倍率、role1必暴及手动收益。
+影响：手点产生的回响失去点击加成，帮手产生的回响失去该帮手收入/额外暴伤及 role1 必暴等。这里只确认骰子回响，没有把硬币回响未经核对地归为同一个原版规则。
+
+E04 [P1，高置信，D02主要缺失已关闭后的边界] 共鸣再投少了原版实际获得的点击收益。
+当前 GameController.Dice.cs:36-49 对共鸣目标 Launch(...,false)，因默认 role=0 而 manual=false。原版 DiceWorldController.cs:1128-1129 使用 System 来源，:821-830 不传 roleType；DiceVat.cs:502 默认 -1；UpgradeManager.cs:1840 仅依 roleType==-1 判断 isManual，与 System 来源无关。
+影响：即使是系统共鸣再投，原版也会吃点击桌台/天赋103，当前不吃。这是原版代码的实际行为，不能因直觉认为“系统投掷理应无点击加成”而忽略。
+
+E05 [P2，高置信，D04新接入的状态边界] 切世界立即丢弃正在生效的超级666。
+当前 GameModel.cs:441-446 每次 SwitchWorld 调用 ResetDiceRuntime；GameModel.Dice.cs:69 清空剩余时间，且 :63-65 只在骰子世界计时。原版 DownItem.cs:1885-1907 换世界只控制超级666/商人节点显隐；:1173-1185 在同一个 DownItem.Update 中持续按 deltaTime 计时，不按世界提前终止；:2480-2492 保留激活字段。UIManager.cs:1013-1022 重用 DownItem 实例，而非每次重建。
+影响：激活后短暂去金币世界再返回，当前剩余效果直接消失，原版剩余时间足够时仍生效。原版切世界期间时间是否消耗还受 UI 临时禁用时段影响，应在实机比较，但“立即清零”已可确认不符。
+
+E06 [P2，高置信，D05新接入的计时边界] 商人在线等待直接用墙钟代替原版的运行计时。
+当前 GameModel.Dice.cs:78-82 每次以当前本地毫秒减保存的起点求剩余。原版 DownItem.cs:2630-2640 只在恢复等待状态时用墙钟初始化；正常在线 :2674-2683 仅在骰子世界并按 Time.deltaTime 增加 shangRenTimer。
+影响：同一运行实例中 Time.timeScale=0 的停顿期间，当前商人等待仍消耗，原版在线计时暂停。不要笼统声称“原版完全不计离线等待”：其恢复等待状态确实补算墙钟时间。跨世界/后台的恢复入口也须在实机分场景验证。
+
+E07 [P2，高置信，followup #5 未关闭] 离线收益门槛多挡了主线等级1。
+当前 GameModel.Parity.cs:51 要求 state.mission>=1，而 GameModel.cs:111 MainLevel=mission+1。原版 OfflineIncomeManager.cs:305 仅 mainMissionLevel<1 禁止；Module/Mission/MissionManager.cs:123 初始有效任务编号=1，GameDataManager.cs:4699-4705 返回当前主线等级。
+影响：仍在第一关时离线满120秒，当前不给收益，原版已允许。
+
+E08 [P1，高置信，followup #6 未关闭] 已生成但未领取的离线奖励继续叠加新一笔。
+当前 GameModel.Parity.cs:48-57 无 pendingOffline 保护，:55 用 +=；ResumeFromBackground :61-62 再次调用。GameModel.cs:434 启动时还会预先给全部世界计算。SaveStore.cs:22 无条件更新当前世界退出时间。
+原版 OfflineIncomeManager.cs:99-110 有未领奖只重开弹窗并 return；:154-163 已恢复持久化奖励则不重算；GameDataManager.cs:340-350 及 :2366、2486、3424 有退出时间保护（该保护有进入状态和启动600秒条件，不应表述成永久无条件保护）。
+影响：不领奖而反复切后台/重新进入，当前 pending 可一笔笔追加，绕过原版一笔奖励的时长上限和领取节奏。需用独立测试存档验证，不动真实玩家数据。
+
+E09 [P2，高置信，新离线入口的显示边界] 离线时长文本未跟随最新收益更新，也忽略延长上限。
+当前 GameController.Boot.cs:58 唯一一次写 awaySeconds，并固定截断21600秒；GameController.Popups.cs:122-123 总读这个数组。GameController.Lifecycle.cs:21-22 后台恢复、GameModel.cs:445 世界切换会产生新收益，却没有刷新时长。原版 OfflineIncomeManager.cs:339-354 用含延长天赋的有效时长生成 rewardData.offlineTime，OfflineIncomeUI.cs:84-86 显示这笔数据，:443/477 还持久化/恢复它。
+影响：同次会话后续离线弹窗可显示启动时的旧时间或0；有延长离线天赋时收益可超过6小时，文字仍最多6小时。当前金额本身在 GameModel.Parity.cs:52-54 已含正确的延长天赋，此项是时长状态/显示问题。
+
+旧 D01-D09 状态及已核对正确项
+
+D01 已关闭“101/102购买无效果”：GameModel.Dice.cs:13-37 的线性权重、低三面等权、六点权重及实际 Roll 路径，对应 UpgradeManager.cs:2218-2241、DiceWorldController.cs:1083-1095。分布/边界实机仍待跑。
+D02 已关闭“104完全无效果”：GameController.Dice.cs:36-49 已做同面、空闲、平方距离30000（原版3世界单位平方）、防共鸣连锁；对应 DiceWorldController.cs:1104-1129、DiceVat.cs:800-810。仍有 E04 来源结算差异。
+D03 已关闭“105无效果”：GameModel.Dice.cs:21、40-44 六点乘幂并与308/106在独立倍率上相加，对应 DiceVat.cs:637-656。飞行中的完整基础值仍见 E01。
+D04 已关闭“整条666玩法缺失”：GameModel.Dice.cs:46-67 已有落地六点充能、313、目标73/74、激活、强制六点、75/76/312/309时长公式；GameController.Dice.cs:110-134 已用原AdLaoHuJi资源及2秒按钮延迟。对应 DownItem.cs:2334-2405、AdLaoHuJi.cs:71-108、DiceVat.cs:625-635。仍有 E05，动画/首次提示/按钮交互待实机。
+D05 已关闭“商人整条玩法缺失”：GameModel.Dice.cs:71-95 的日期重置、base随机1..6+306、每日限额只统计base、末次可跨过上限、等待状态持久化；GameController.Dice.cs:142-145 使用统一RewardBox。对应 DownItem.cs:2500-2640、2777-2803。仍有 E06，真实计时/双倍回执待实机。
+D06 已关闭“所列帮手天赋不进入收益”：GameModel.Parity.cs:27-41 收入阵容项、GameModel.cs:354-355 九尾/钢铁的实际天赋等级、:367 骰子211乘SR派遣人数；对应 BuffManager.cs:129-154、186-194，TalentDataManager.cs:256-271、618-628及684起的分组。勿把九尾/钢铁等级读数误改成升级表buff。
+D07 已关闭旧桌台/点击/暴伤组合公式差异：GameModel.cs:214-220 的DeskPower确为原始skillNum*升级幂次；IncomeMultiplier在 GameModel.Parity.cs:28-41 用(1+原始桌台值)连乘再加天赋；手动 GameModel.cs:366 原始手动桌台连乘+103；暴伤 :367 为Common17+桌台值总和+帮手extraBuff，再max1，最后加骰子211。对应 BuffManager.cs:107-197。0.0001f常驻匿名收入Buff确为原版，不应删除。结算时点另见 E02。
+D08 已关闭106放错位置：GameModel.Dice.cs:40-44 在骰子独立倍率加入106，而 GameModel.cs:353 仅金币109加入品质强化项；对应 DiceVat.cs:652-656。
+D09 已关闭单帮手派遣容量缺失：GameModel.Parity.cs:20-22 及 GameModel.cs:649-651 的实际派遣校验已加骰子212一级即+1；对应 Module/Facility/HelperItem.cs:275、UseHelperUI.cs:377、TalentDataManager.cs:627-628。派遣UI操作待实机。
+
+奇遇：GameModel.cs:398-421、GameController.Encounter.cs:124-216 当前仍对应 MissionManager.cs:264-379、CoinSlotSupportDialog.cs:463-561/630-641、Constants.cs:182-196 的common37-40等级/百分比触发、每世界一次标记、金币赌注、钻石min(60,floor(持有*.6))、42胜率/55%回退、中奖双倍、失败广告返本金及中奖返回自动领。未找到本轮新增的确定数值差异；未做逐像素/广告运行验证。
+
+离线：GameModel.Parity.cs:51-54 的120秒、21600秒基础cap、金币104/105和骰子108/109倍率/时长天赋，与 OfflineIncomeManager.cs:46-48/330-367 相符。SaveStore.cs:22 已只写当前世界退出时间，旧“保存覆盖所有世界时间”的成因关闭；GameModel.SwitchWorld和GameController.Lifecycle已有离开世界及后台恢复结算，旧D16/D17所述完全缺少入口已不成立。GameController.Popups.cs:124-133 普通/双倍及广告失败回普通领取与 OfflineIncomeUI.cs:115-125 对应。剩余 E07-E09，时序及多次回前台需实机。
+
+Support：只复查与收入组合有关的SupportModel及BuffManager路径。原版同类型匿名同值Buff全局堆层并延长到最大结束时间的行为已有对应，不应改成每世界隔离或每层独立到期。
+
+限制 / 后续验证建议
+没有在本轮声称编译、PlayMode或实机通过；现有DiceParityChecks覆盖权重/倍率/充能/商人保存重建和资源加载，但不能证明 E01-E09 的跨时点流程正确。父线程应优先覆盖：飞行中升级进化/暴率变化；手点和帮手回响的结算来源；系统共鸣点击加成；666激活后短暂切世界；商人在线暂停与重载恢复；第一关离线；未领奖多次切后台/重开；离线延长天赋和时长文本。
+未扩展重生/帮手跨世界审计：followup #3/#4/#7由父线程及其他代理负责。本报告没有把这些项当成已关闭。未检查在线服务/商业广告投放/全视觉资产，英文也不列为差异。
+
+父线程随后提供的运行证据（本人未运行Unity）：171项模型/资源检查中164通过，新增7个原版对照用例失败；其中本报告范围内 E01 复现“飞行中强化收益6.90069，而原版预期6.0006”，E07复现“第一关离线0，而预期600”，E08复现“未领奖累计1200，而预期保持600”。其余四项属帮手继承/重生范围，请以父线程报告为准。E02-E06及E09仍只有本次静态证据，不能当作已实机复现。

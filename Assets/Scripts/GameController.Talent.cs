@@ -159,26 +159,34 @@ namespace Bufu.Rebuild {
             var r=UiPrefab.Instantiate("Talent/talentResetTipsItem",host);Stretch(r.Rect);On(r.Root,true);
             var n=r.Nodes;
             Txt(n[9].GetComponent<TMP_Text>(),refund.ToString());
-            On(n[12],false); // the ad icon: resetting is free in the rebuild
+            On(n[12],true);
             Action close=()=>{if(r.Root)Destroy(r.Root);};
             Click(n[1],close);Click(n[4],close);Click(n[13],close);
-            Click(n[11],()=>{close();if(Model.ResetTalents(type+1))PlayUpgrade();});
+            int world=Model.Data.world;
+            Click(n[11],()=>ShowOriginalAd(()=>{
+                if(Model.Data.world!=world)return;
+                if(Model.ResetTalents(type+1))PlayUpgrade();
+                if(r.Root){Txt(n[9].GetComponent<TMP_Text>(),Model.TalentSpent(type+1).ToString());n[11].GetComponent<Button>().interactable=Model.TalentSpent(type+1)>0;}
+            },()=>ShowToast("广告观看未完成，无法重置天赋")));
         }
 
         void ShowTalentReborn(RectTransform host) {
             var r=UiPrefab.Instantiate("Talent/talentRebornTipsItem",host);Stretch(r.Rect);On(r.Root,true);
             var n=r.Nodes;
             Action close=()=>{if(r.Root)Destroy(r.Root);};
-            var select=n[21];On(select,false);On(n[29],false); // the ad (advanced) reborn is not part of the rebuild
+            var select=n[21];On(select,false);On(n[29],true);
             FitTalentRebornLayout(n);
             Click(n[1],close);Click(n[5],close);
             Click(n[22],()=>On(select,false));Click(n[34],()=>On(select,false));
             Click(n[20],()=>{if(Model.RebornPoints()>0)On(select,true);else ShowToast("金钱未达到重生目标");});
-            Click(n[32],()=>{
-                if(CutscenePlaying||!Model.Rebirth())return;
-                close();SelectTab(1);RebuildActors();if(!VerificationMode)SaveStore.Save(Model);PlayUpgrade();
+            int world=Model.Data.world;
+            Action<bool> rebirth=normal=>{
+                if(CutscenePlaying||Model.Data.world!=world||!Model.Rebirth(normal))return;
+                close();SelectTab(1);if(normal)RebuildActors();else SyncActors();if(!VerificationMode)SaveStore.Save(Model);PlayUpgrade();
                 PlayCutsceneTransition();
-            });
+            };
+            Click(n[32],()=>rebirth(true));
+            Click(n[29],()=>ShowOriginalAd(()=>rebirth(false)));
             if(Model.Data.world==2){var coin=Sp("ty_icon_coin02");var image=n[9].GetComponent<Image>();if(coin&&image)image.sprite=coin;}
             Watch(r.Root,()=>{
                 int target=Model.RebornTargetIndex();double goal=Model.RebornTable[target].talentName,gold=Model.State.gold;
@@ -225,7 +233,9 @@ namespace Bufu.Rebuild {
                 txt2.rectTransform.anchoredPosition=new Vector2(0,95);txt2.rectTransform.sizeDelta=new Vector2(840,110);
             }
             var normal=(RectTransform)n[32].transform;
-            normal.anchoredPosition=new Vector2(0,normal.anchoredPosition.y);normal.sizeDelta=new Vector2(380,120);
+            normal.anchoredPosition=new Vector2(-225,normal.anchoredPosition.y);normal.sizeDelta=new Vector2(380,120);
+            var advanced=(RectTransform)n[29].transform;advanced.anchoredPosition=new Vector2(225,advanced.anchoredPosition.y);advanced.sizeDelta=new Vector2(380,120);
+            var advancedText=n[30].GetComponent<TMP_Text>();if(advancedText){advancedText.enableWordWrapping=false;advancedText.enableAutoSizing=true;advancedText.fontSizeMax=38;advancedText.fontSizeMin=22;advancedText.rectTransform.sizeDelta=new Vector2(340,100);}
             var normalImg=n[32].GetComponent<Image>();if(normalImg)normalImg.type=Image.Type.Sliced;
             var normalTxt=n[33].GetComponent<TMP_Text>();
             if(normalTxt){

@@ -16,3 +16,20 @@ __pycache__/
 /logo_dark.png
 /logo_light.png
 /*.mp4
+
+# Local nested checkout and editor installation downloads.
+/unity-bufu/
+/Tools/UnityInstaller/
+# Empty local art placeholder; Unity recreates this metadata when the folder is used.
+/Assets/Resources/CareerArt.meta
+
+# Keep final reports and current runtime evidence; historical runs remain local.
+/Documentation/LocalizationLayoutAudit-2026-10-20/*
+!/Documentation/LocalizationLayoutAudit-2026-10-20/*.json
+!/Documentation/LocalizationLayoutAudit-2026-10-20/*.txt
+!/Documentation/LocalizationLayoutAudit-2026-10-20/*.md
+!/Documentation/LocalizationLayoutAudit-2026-10-20/*.png
+/Documentation/LayoutFix-2026-10-20/*
+!/Documentation/LayoutFix-2026-10-20/*.json
+!/Documentation/LayoutFix-2026-10-20/*.txt
+!/Documentation/LayoutFix-2026-10-20/SpriteSheets*/

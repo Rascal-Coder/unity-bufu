@@ -1,0 +1,322 @@
+{
+  "assets": [
+    {
+      "ordinal": 413,
+      "Address": "",
+      "AssetPath": "Assets/GameRes/NewUI/Auction/prefabs/auctionPlayPanel.prefab",
+      "AssetGUID": "",
+      "AssetTags": [
+        "NewUI"
+      ],
+      "BundleID": 71,
+      "DependBundleIDs": [
+        0,
+        7,
+        8,
+        9,
+        19,
+        20,
+        24,
+        43,
+        45,
+        46,
+        75,
+        211,
+        212,
+        214
+      ],
+      "classification": "prefab",
+      "record_offset": 30887,
+      "record_end": 31024,
+      "bundle_file": "82bf3d6576974ba1fbe0d076bee45822.bundle",
+      "bundle_name": "gameres_assets_gameres_newui_auction.bundle",
+      "dependent_files": [
+        "e6eb6f495aaccdaa257b27b89cb085c0.bundle",
+        "7ad5e96bd70cbcf4d56338985719b22c.bundle",
+        "dd915558480bd795cc48e57cd6a18764.bundle",
+        "145d5ef06bfe64807918e167bc622c5c.bundle",
+        "b57251301069f578f45b0ce77fed4a0e.bundle",
+        "27ff1f6ff4c7eb9a0bc197e9c27cc391.bundle",
+        "1a5cfbfeb47584991ba7f74e94333037.bundle",
+        "9cf1e1567f629fd03fb048c36efb2558.bundle",
+        "eb3497541c62895eca675114a460286e.bundle",
+        "66518f01b111f625b05f94a75245326e.bundle",
+        "ce9d68a9f606e661f79aba3b900375e9.bundle",
+        "818b72b91204789375e1538e33710670.bundle",
+        "66b01bb9d483a881362aec66915c4eb8.bundle",
+        "4cac0588bfa397c0a6d0ea1103b18b17.bundle"
+      ],
+      "bundle_url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/82bf3d6576974ba1fbe0d076bee45822.bundle"
+    },
+    {
+      "ordinal": 414,
+      "Address": "",
+      "AssetPath": "Assets/GameRes/NewUI/Auction/prefabs/auctionSeclect.prefab",
+      "AssetGUID": "",
+      "AssetTags": [
+        "NewUI"
+      ],
+      "BundleID": 71,
+      "DependBundleIDs": [
+        24,
+        46,
+        75,
+        214
+      ],
+      "classification": "prefab",
+      "record_offset": 31024,
+      "record_end": 31119,
+      "bundle_file": "82bf3d6576974ba1fbe0d076bee45822.bundle",
+      "bundle_name": "gameres_assets_gameres_newui_auction.bundle",
+      "dependent_files": [
+        "1a5cfbfeb47584991ba7f74e94333037.bundle",
+        "66518f01b111f625b05f94a75245326e.bundle",
+        "ce9d68a9f606e661f79aba3b900375e9.bundle",
+        "4cac0588bfa397c0a6d0ea1103b18b17.bundle"
+      ],
+      "bundle_url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/82bf3d6576974ba1fbe0d076bee45822.bundle"
+    },
+    {
+      "ordinal": 459,
+      "Address": "",
+      "AssetPath": "Assets/GameRes/NewUI/Challenge/prefabs/ChallengeMain.prefab",
+      "AssetGUID": "",
+      "AssetTags": [
+        "NewUI"
+      ],
+      "BundleID": 72,
+      "DependBundleIDs": [
+        24,
+        54,
+        75,
+        82,
+        99,
+        102,
+        104,
+        109,
+        214
+      ],
+      "classification": "prefab",
+      "record_offset": 35016,
+      "record_end": 35132,
+      "bundle_file": "eae0a856c24d80a0f8dadadbae8b1545.bundle",
+      "bundle_name": "gameres_assets_gameres_newui_challenge.bundle",
+      "dependent_files": [
+        "1a5cfbfeb47584991ba7f74e94333037.bundle",
+        "7abeb1e289f57537143a35f892ab91e1.bundle",
+        "ce9d68a9f606e661f79aba3b900375e9.bundle",
+        "bb3a0f7da06350c24484024a79f51aa0.bundle",
+        "f682ecb10ba1ca9fdd575e607611e55f.bundle",
+        "c6ddb1a8ae8437726c78fc0426edb45a.bundle",
+        "ac2aa09aae2ca0a07b344633403d315a.bundle",
+        "464734b42109bc09baedc6a588a117df.bundle",
+        "4cac0588bfa397c0a6d0ea1103b18b17.bundle"
+      ],
+      "bundle_url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/eae0a856c24d80a0f8dadadbae8b1545.bundle"
+    },
+    {
+      "ordinal": 460,
+      "Address": "",
+      "AssetPath": "Assets/GameRes/NewUI/Challenge/prefabs/ChallengePanel.prefab",
+      "AssetGUID": "",
+      "AssetTags": [
+        "NewUI"
+      ],
+      "BundleID": 72,
+      "DependBundleIDs": [
+        24,
+        71,
+        75,
+        214
+      ],
+      "classification": "prefab",
+      "record_offset": 35132,
+      "record_end": 35229,
+      "bundle_file": "eae0a856c24d80a0f8dadadbae8b1545.bundle",
+      "bundle_name": "gameres_assets_gameres_newui_challenge.bundle",
+      "dependent_files": [
+        "1a5cfbfeb47584991ba7f74e94333037.bundle",
+        "82bf3d6576974ba1fbe0d076bee45822.bundle",
+        "ce9d68a9f606e661f79aba3b900375e9.bundle",
+        "4cac0588bfa397c0a6d0ea1103b18b17.bundle"
+      ],
+      "bundle_url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/eae0a856c24d80a0f8dadadbae8b1545.bundle"
+    },
+    {
+      "ordinal": 463,
+      "Address": "",
+      "AssetPath": "Assets/GameRes/NewUI/Challenge/prefabs/helperSelectInfo.prefab",
+      "AssetGUID": "",
+      "AssetTags": [
+        "NewUI"
+      ],
+      "BundleID": 72,
+      "DependBundleIDs": [
+        24,
+        48,
+        75,
+        77,
+        214
+      ],
+      "classification": "prefab",
+      "record_offset": 35422,
+      "record_end": 35525,
+      "bundle_file": "eae0a856c24d80a0f8dadadbae8b1545.bundle",
+      "bundle_name": "gameres_assets_gameres_newui_challenge.bundle",
+      "dependent_files": [
+        "1a5cfbfeb47584991ba7f74e94333037.bundle",
+        "0337d62b218b73203b7ec02204490a79.bundle",
+        "ce9d68a9f606e661f79aba3b900375e9.bundle",
+        "26199144fec83d84e5c78d3550b83c2d.bundle",
+        "4cac0588bfa397c0a6d0ea1103b18b17.bundle"
+      ],
+      "bundle_url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/eae0a856c24d80a0f8dadadbae8b1545.bundle"
+    }
+  ],
+  "downloads": [
+    {
+      "file": "0337d62b218b73203b7ec02204490a79.bundle",
+      "url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/0337d62b218b73203b7ec02204490a79.bundle",
+      "bytes": 120004,
+      "sha256": "d6d771bf9ddc18c274885956129324375e53dc2bc8a5cd9567ed932faf8e5649"
+    },
+    {
+      "file": "145d5ef06bfe64807918e167bc622c5c.bundle",
+      "url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/145d5ef06bfe64807918e167bc622c5c.bundle",
+      "bytes": 85584,
+      "sha256": "c5c402fc860363efede9025ba583cd089444c76f13d8148a06b98e201d7d79fa"
+    },
+    {
+      "file": "1a5cfbfeb47584991ba7f74e94333037.bundle",
+      "url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/1a5cfbfeb47584991ba7f74e94333037.bundle",
+      "bytes": 2832197,
+      "sha256": "eaead7f20516424a022785ca5936f4c81b292d562ef0dcd889c46ad4b71c075a"
+    },
+    {
+      "file": "26199144fec83d84e5c78d3550b83c2d.bundle",
+      "url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/26199144fec83d84e5c78d3550b83c2d.bundle",
+      "bytes": 634466,
+      "sha256": "6a1c78597e9e38ab813271df277fa6a54892958b98e7c4b6df8a96267a58cb69"
+    },
+    {
+      "file": "27ff1f6ff4c7eb9a0bc197e9c27cc391.bundle",
+      "url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/27ff1f6ff4c7eb9a0bc197e9c27cc391.bundle",
+      "bytes": 31070,
+      "sha256": "e9c3594a853e3252c3f6e4ed2e04952e1accb8d47f589e64fd81f8a3dd464fad"
+    },
+    {
+      "file": "464734b42109bc09baedc6a588a117df.bundle",
+      "url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/464734b42109bc09baedc6a588a117df.bundle",
+      "bytes": 7411,
+      "sha256": "6f0f754cf7bbd562c0932915399752133e43dc7c3ce4c7841d999a345ce98b4f"
+    },
+    {
+      "file": "4cac0588bfa397c0a6d0ea1103b18b17.bundle",
+      "url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/4cac0588bfa397c0a6d0ea1103b18b17.bundle",
+      "bytes": 63555,
+      "sha256": "c727cfa81a6fa5d79803309e973f0a318ce8a0777b45d4800144fd076227cd6f"
+    },
+    {
+      "file": "66518f01b111f625b05f94a75245326e.bundle",
+      "url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/66518f01b111f625b05f94a75245326e.bundle",
+      "bytes": 454852,
+      "sha256": "181b83dace70b6bb1cc495aef69cae8846f84c6359f6191a8146fa30bb20a9a2"
+    },
+    {
+      "file": "66b01bb9d483a881362aec66915c4eb8.bundle",
+      "url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/66b01bb9d483a881362aec66915c4eb8.bundle",
+      "bytes": 2740,
+      "sha256": "717d990b71c26aa7aef2053c892249096d4731ac3deaabd800c154931cf36819"
+    },
+    {
+      "file": "7abeb1e289f57537143a35f892ab91e1.bundle",
+      "url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/7abeb1e289f57537143a35f892ab91e1.bundle",
+      "bytes": 123895,
+      "sha256": "3e335500b080a46c47251c9381a8e5db70834821f2967c698543d6cbd3be778e"
+    },
+    {
+      "file": "7ad5e96bd70cbcf4d56338985719b22c.bundle",
+      "url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/7ad5e96bd70cbcf4d56338985719b22c.bundle",
+      "bytes": 90660,
+      "sha256": "1d73db72c41480b45f4d4c1f8f69f42e5b8ac8d927a44f3b73f8dadeb51120f3"
+    },
+    {
+      "file": "818b72b91204789375e1538e33710670.bundle",
+      "url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/818b72b91204789375e1538e33710670.bundle",
+      "bytes": 2919,
+      "sha256": "ca1fb5d552a61990340e5da2390f9c0683e12412113a2d36f7a46ed164ce1c9d"
+    },
+    {
+      "file": "82bf3d6576974ba1fbe0d076bee45822.bundle",
+      "url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/82bf3d6576974ba1fbe0d076bee45822.bundle",
+      "bytes": 3111078,
+      "sha256": "adeec494fca15807b62c071af9140b7a1927a5ad7e62ed09b698b3c89d97df08"
+    },
+    {
+      "file": "9cf1e1567f629fd03fb048c36efb2558.bundle",
+      "url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/9cf1e1567f629fd03fb048c36efb2558.bundle",
+      "bytes": 380977,
+      "sha256": "a5c81bcc61e3d594e127055ec5e80cd6a1e55ce6bfbea30830ec1b40bcdf14af"
+    },
+    {
+      "file": "ac2aa09aae2ca0a07b344633403d315a.bundle",
+      "url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/ac2aa09aae2ca0a07b344633403d315a.bundle",
+      "bytes": 7341,
+      "sha256": "b293250f921c1558acf175000d74006ae819c9f025dcbb6fc34f3d6e398af704"
+    },
+    {
+      "file": "b57251301069f578f45b0ce77fed4a0e.bundle",
+      "url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/b57251301069f578f45b0ce77fed4a0e.bundle",
+      "bytes": 30970,
+      "sha256": "312f1ded4ba0ec991c7e259c61f5f14a824039e619547975ca258a303aabdbd5"
+    },
+    {
+      "file": "bb3a0f7da06350c24484024a79f51aa0.bundle",
+      "url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/bb3a0f7da06350c24484024a79f51aa0.bundle",
+      "bytes": 585483,
+      "sha256": "13592cd1e5de696f77fd255a6c3c05a00a37c3154f8d238d8ce877a533df60ae"
+    },
+    {
+      "file": "c6ddb1a8ae8437726c78fc0426edb45a.bundle",
+      "url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/c6ddb1a8ae8437726c78fc0426edb45a.bundle",
+      "bytes": 7401,
+      "sha256": "5d4a84c3473313e275986677e7f836c73e5b8558629fe8ce31e7d082a07d57cd"
+    },
+    {
+      "file": "ce9d68a9f606e661f79aba3b900375e9.bundle",
+      "url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/ce9d68a9f606e661f79aba3b900375e9.bundle",
+      "bytes": 1679996,
+      "sha256": "f6c63ec1f2868033acd7fbfbe566a0d054aa514c1ada259fe0dd233581235554"
+    },
+    {
+      "file": "dd915558480bd795cc48e57cd6a18764.bundle",
+      "url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/dd915558480bd795cc48e57cd6a18764.bundle",
+      "bytes": 41977,
+      "sha256": "7b78e220018cfc3e25c370ec3379f2c295073f099749cda0bfba15c3281d12ed"
+    },
+    {
+      "file": "e6eb6f495aaccdaa257b27b89cb085c0.bundle",
+      "url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/e6eb6f495aaccdaa257b27b89cb085c0.bundle",
+      "bytes": 199334,
+      "sha256": "f64cf41e9cc63f399026cd942f56674c1ce921919710e91bcb77a6921ba87afe"
+    },
+    {
+      "file": "eae0a856c24d80a0f8dadadbae8b1545.bundle",
+      "url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/eae0a856c24d80a0f8dadadbae8b1545.bundle",
+      "bytes": 644512,
+      "sha256": "10a77a54c56bb2a851e8ade3b1585c6e81318a655c23e5f59d086ec50a25ed20"
+    },
+    {
+      "file": "eb3497541c62895eca675114a460286e.bundle",
+      "url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/eb3497541c62895eca675114a460286e.bundle",
+      "bytes": 477331,
+      "sha256": "d6380c76b299589c88be200dafe7318a14d24f7b6c447815fc99dd14184a7466"
+    },
+    {
+      "file": "f682ecb10ba1ca9fdd575e607611e55f.bundle",
+      "url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/f682ecb10ba1ca9fdd575e607611e55f.bundle",
+      "bytes": 5326,
+      "sha256": "3a91888bc01086479b3ab72875ba85261dba75748858b72bb74e49b3cf2d6e0b"
+    }
+  ]
+}

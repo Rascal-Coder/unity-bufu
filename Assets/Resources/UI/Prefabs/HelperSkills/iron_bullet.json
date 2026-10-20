@@ -1,0 +1,87 @@
+{
+  "path": "Assets/GameRes/Role/iron_bullet.prefab",
+  "nodes": [
+    {
+      "n": "iron_bullet",
+      "p": -1,
+      "a": true,
+      "c": [
+        {
+          "m_Enabled": 1,
+          "spriteFrames": [
+            {
+              "sprite": "bullet_gangtieren_1_00"
+            },
+            {
+              "sprite": "bullet_gangtieren_1_01"
+            },
+            {
+              "sprite": "bullet_gangtieren_1_02"
+            },
+            {
+              "sprite": "bullet_gangtieren_1_03"
+            },
+            {
+              "sprite": "bullet_gangtieren_1_04"
+            },
+            {
+              "sprite": "bullet_gangtieren_1_05"
+            },
+            {
+              "sprite": "bullet_gangtieren_1_06"
+            },
+            {
+              "sprite": "bullet_gangtieren_1_07"
+            }
+          ],
+          "frameInterval": 0.03999999910593033,
+          "isLooping": 1,
+          "autoPlay": 1,
+          "isPlaying": 1,
+          "currentFrameIndex": 0,
+          "t": "UISpriteAnimationSequence"
+        },
+        {
+          "m_Enabled": 1,
+          "m_Color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "m_RaycastTarget": 1,
+          "m_Sprite": {
+            "sprite": "bullet_gangtieren_1_00"
+          },
+          "m_Type": 0,
+          "m_PreserveAspect": 0,
+          "m_FillCenter": 1,
+          "m_FillMethod": 4,
+          "m_FillAmount": 1.0,
+          "m_FillClockwise": 1,
+          "m_FillOrigin": 0,
+          "m_UseSpriteMesh": 0,
+          "m_PixelsPerUnitMultiplier": 1.0,
+          "t": "Image"
+        }
+      ],
+      "rt": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.0,
+        0.0,
+        95.0,
+        158.0,
+        0.5,
+        0.5,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    }
+  ]
+}

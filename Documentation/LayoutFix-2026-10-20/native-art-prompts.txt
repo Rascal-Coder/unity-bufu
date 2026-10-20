@@ -1,0 +1,45 @@
+素材生成工具：内置 image_gen.imagegen。原始输出保留在 native-art-manifest.json 记录的路径。
+工程文件：Assets/Resources/CommerceArt/*-native-v2.png。
+
+统一风格约束
+以原游戏 shop_icon_adDiamond、shop_icon_chest_purple、shop_btn_roll、101、103 及原商城实机图作为图片参考。
+保留深色卡通描边、少量硬边阴影、青蓝钻石、紫色木板、暖黄金边；低细节密度，小尺寸可辨认。
+透明背景。文字与价格由 Unity 实时绘制。避免写实材质、复杂装饰、老虎机风格和大面积光效。
+
+diamond-vault-native-v2
+单个打开的紫色木宝箱装满青蓝钻石；原箱体徽章、方形铆钉、原钻石色块和白色硬边高光。
+三分之四视角、紧凑轮廓，少量钻石散落前景，完整物体留边，无文字或粒子。
+
+no-ads-pass-native-v2
+紫色金边免广告票券，左右半圆缺口，中间电影播放图案加红色划线，右下绿色勾章。
+原游戏二维卡通线条与色块，不增加文字、皇冠或华丽宝石。
+
+shop-buy-native-v2
+参考原绿色转盘按钮，制作空白横向购买按钮：切角、深棕轮廓、简单厚金框、绿色中心。
+边角集中于左右端，中部无图案，适合九宫格缩放；无顶部装饰、图标、文字。
+
+shop-disabled-native-v2
+以上按钮的不可用状态。锁定轮廓、边框、比例、描边与透明背景，只改变颜色：
+绿色中心改暖灰，金色边框改低饱和古铜色。保留供乳白动态文字使用的对比度。
+
+shop-tab-native-v2
+同一按钮家族的次级按钮。锁定外形，只把中心改暖浅黄，框体为蜂蜜棕金色。
+中央保持空白，适合深棕实时文字。
+（文件名保留 tab 作为素材版本名；最终交互没有分类 Tab。）
+
+fragment-pack-native-v2
+原角色拼图碎片三件一组：前景金色巫师碎片、后方银色强壮角色碎片、紫色空碎片。
+保留原 101 和 103 的圆头角色与帽子；拼图轮廓清楚，50px 仍可辨认，无文字、数字或背景。
+
+title-diamonds-native-v3 / title-no-ads-native-v3 / title-fragments-native-v3
+分别只绘制 DIAMOND PACKS / NO ADS PASS / FRAGMENT PACKS 一行。
+以项目 REWARDS! 标题图为参考：粗壮圆润的卡通大写字、柠檬金色填充、少量浅奶油高光、深红棕描边和浅底部投影。
+无横幅、图标、背景、其他文字。统一字形家族，透明背景，小屏可读。
+
+label-no-ads-native-v3 / label-diamonds-native-v3 / label-fragments-native-v3
+分别只绘制 No Ads / Diamonds / Fragments 一行，保留指定大小写。
+参考项目 Helpers / Tables 原文字图：纯白填充、粗深棕近黑描边、极少底部暗影、粗圆卡通字形。
+无底板、横幅、按钮框、渐变、图标或其他文字，60px 宽度仍须可读。
+
+标准化只裁切透明留白、等比缩放和补透明边。插画 1024x1024；按钮 720x216；顶部字图 1024x180；侧边白字图 768x160。
+最终应用前须检查实机图，不以生成结果代替排版验证。

@@ -1,0 +1,113 @@
+{
+  "checked_utc": "2026-10-20T05:29:45.482881+00:00",
+  "reference_package": "2026-10-14-626",
+  "keep_english": true,
+  "runtime_original_package_observed": false,
+  "source_snapshot": "fix-snapshot.json",
+  "source_match_count": 84,
+  "source_mismatches": [],
+  "model_checks": {
+    "editor": "2022.3.62f3c1",
+    "passed": 300,
+    "failed": 0,
+    "result": "FixRun/model-checks.json"
+  },
+  "build": {
+    "result": "Succeeded",
+    "editor": "2022.3.62f3c1",
+    "path": "E:\\rea-games\\unity-bufu\\Build\\ParityProject\\Build\\ParityAuditPlayer\\BufuRebuild.exe",
+    "errors": 0,
+    "warnings": 0
+  },
+  "ui_checks": {
+    "passed": true,
+    "checks": 349,
+    "width": 540,
+    "height": 960,
+    "result": "FixRun/runtime-540x960/runtime-check.json"
+  },
+  "audit_player_sha256": "eaf65f7f26255e1ca20ea3c103db112ca494bd2aff38765885e2648887d769b2",
+  "probe_source_sha256": "76d6e5c93566cb62b6569d396a03d50dfd62046f1d58ea19c0598f82d1648ec3",
+  "screenshots": [
+    {
+      "path": "FixRun/runtime-540x960/01-aligned-scene-input.png",
+      "sha256": "0f572a77b8a7934beba0c88ad6aed905ee797ee73a923babf5e8efbd22b0eac7"
+    },
+    {
+      "path": "FixRun/runtime-540x960/02-65-helpers-123-coins.png",
+      "sha256": "645f51141609be99ec0078f36e0f370873ccfe2b247d2b5196085fe52d48c893"
+    },
+    {
+      "path": "FixRun/runtime-540x960/03-evolution-aggregate.png",
+      "sha256": "77f31dfbf42e06b93b59d6434768ca557ea8fd720322637057ecdda1e62313fd"
+    },
+    {
+      "path": "FixRun/runtime-540x960/04-evolution-result-preserved-helpers.png",
+      "sha256": "2fa59f7eb01268ddc9ca5c8cff4277f309788abf0afccad45228d6894d62b76b"
+    },
+    {
+      "path": "FixRun/runtime-540x960/05-original-super666-activation.png",
+      "sha256": "1f37f514b63951fb752ba336caa2ea8b7b691b00bbe66a97cfa14aef57e6eb0d"
+    },
+    {
+      "path": "FixRun/runtime-540x960/06-real-super666-and-merchant-hud.png",
+      "sha256": "dc762c92a2e7de7b92e035362de4b36ea5f89c3b1f8e2762e76f1f6ddd3b9e4f"
+    },
+    {
+      "path": "FixRun/runtime-540x960/07-merchant-real-cooldown.png",
+      "sha256": "d55affc471532532017740437cf19ae7618655a7e968c2ba493127883d8c2dc4"
+    },
+    {
+      "path": "FixRun/runtime-540x960/08-original-pc-ad-complete.png",
+      "sha256": "11eb77bd29be120f5c47e74726a73f9c6db33a4ddeaa41cb9c1f3abbaba13dc6"
+    },
+    {
+      "path": "FixRun/runtime-540x960/09-original-shop-double-reward.png",
+      "sha256": "abc22f14ff488600517bb6fd3881f365d075a66e60964bdc371e9238b25d733f"
+    },
+    {
+      "path": "FixRun/runtime-540x960/10-original-world-coin-island.png",
+      "sha256": "25c34c85135569fd3ed6649afaae1c34f20a60faf538224a621250c03cc4796a"
+    },
+    {
+      "path": "FixRun/runtime-540x960/11-original-world-dice-island.png",
+      "sha256": "de24585f5ffcc8f3929b8deb668e8bfa6cefb960eddbf9a7d7662fccd65a283d"
+    },
+    {
+      "path": "FixRun/runtime-540x960/12-fixed-settlement-paths.png",
+      "sha256": "bf6a20ab3469afd05bd7d34d24362e0304d6647d4e1a498e2ffc3f3e0b75cf9f"
+    },
+    {
+      "path": "FixRun/runtime-540x960/13-advanced-rebirth-preserved-scene.png",
+      "sha256": "ed8baa369f82e3761634063f30ae31b1c9b89271b4a86d59b904981f76057757"
+    },
+    {
+      "path": "FixRun/runtime-540x960/14-placeholder-settings.png",
+      "sha256": "39316ff280f59e6c3a0d32875e2e4eb851bac3692fd3ad02e09db70bc71e1656"
+    },
+    {
+      "path": "FixRun/runtime-540x960/15-local-challenge-arena.png",
+      "sha256": "deb4bc55a52bc1c73453befa163a05b51430ff4f4a487e85567a2bb6e1ac83aa"
+    },
+    {
+      "path": "FixRun/runtime-540x960/15a-local-activities-overview.png",
+      "sha256": "b0ecfe63331eff20dc2a613566c13aa67e32cf28ef23d35fe18b3483104563a4"
+    },
+    {
+      "path": "FixRun/runtime-540x960/16-local-challenge-victory.png",
+      "sha256": "0f255916377c14effa327a6173b386a2ada90ee3bbe2a0a38006fab7bfbd87c6"
+    },
+    {
+      "path": "FixRun/runtime-540x960/17-local-auction-bidding.png",
+      "sha256": "005491d6a3ec3dac1899cfd67d95f0a32447d418e9ddcb91474074896a9caace"
+    },
+    {
+      "path": "FixRun/runtime-540x960/18-local-auction-result.png",
+      "sha256": "407617c342f7daf783d3f7e8f1cdc1d7e0eb6717a2bd39c3c94cb931a601415b"
+    },
+    {
+      "path": "FixRun/runtime-540x960/19-local-auction-settled.png",
+      "sha256": "21ea2dc62c11028adb94f3a1c3d533f944d56d09d45741a7677103a87d55b15d"
+    }
+  ]
+}

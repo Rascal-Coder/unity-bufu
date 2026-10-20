@@ -1,0 +1,97 @@
+Sprite sheet 与包体评估（2026-10-20）
+
+检查对象
+Assets/Resources 下全部 1,564 张 PNG；当前源图尺寸、透明边界、像素重复、导入设置、动态加载代码，以及最近一次成功交付的 Unity 构建日志。
+此次为只读评估：没有修改图片、导入设置、加载器或 Windows 游戏包。新增文件仅为分析脚本、清单和本报告。
+
+先说结论
+可以合图，但不能把“减少图片文件数量”直接等同于“减少游戏包体”。
+当前纹理在 Unity 构建日志中约为 445.5 MiB，占用户资源 96.0%；完整开发构建约 559.0 MiB。
+PNG 磁盘大小、Unity 构建日志里的资源大小、GPU 内存和下载包体分别是不同指标。
+以下当前体积均来自最近构建日志的逐资源近似值，单位 MiB；图集大小为离线矩形装箱模拟，未经重新构建验证。
+
+最值得先处理的资源
+
+1. 新增固定字图：21 张，当前约 25.02 MiB。
+位置：Assets/Resources/CommerceArt/word-*-native-v4.png（15 张）、title-*-native-v3.png（3 张）、label-*-native-v3.png（3 张）。
+包括 Back、Evolve、Challenge、Auction、世界名、商城商品名、三个商城页标题与侧边入口标签。
+适合同一文字图集，也可以按商城/通用文字拆成两个图集。
+新字图原始高度多达 300 像素，实际按钮/小标题渲染高度明显更小，有尺寸优化空间；建议先以半尺寸作为验证候选，检查描边与缩小后的笔画再决定最终分辨率。
+不降尺寸直接合图：模拟为 3 页（2048x2048、2048x2048、2048x512）；RGBA32 约 36 MiB，大于当前散图。
+因此这一组的包体收益主要来自尺寸与合适压缩，图集负责统一加载和批次。
+
+2. 商城按钮：3 张，当前约 1.78 MiB。
+位置：shop-buy-native-v2.png、shop-disabled-native-v2.png、shop-tab-native-v2.png。
+适合按钮图集，可与同加载周期的小型 UI 合并；绿色、禁用、次级按钮保留同一家族。
+当前每张 720x216，建议评估 360x108 后合图；九宫格 border 要同比缩放，点击区域与布局不缩小。
+不降尺寸单独做一张 POT 图集，模拟约 4 MiB，反而大于散图。
+
+3. 道具/货币/碎片图标：129 张，当前约 18.10 MiB。
+筛选：UI/Sprites 中纯数字名称，以及 world_icon_*、ty_icon_*、zgygy_coin_*、zgygy_dice_*、shop_icon_*。
+包含 56 张纯数字名称图，具体是角色碎片、拍卖物品还是其他道具，最终按使用页面再拆分。
+模拟可装入 2048x2048 与 1024x2048 两页；按实际共现拆分“货币与常驻图标”“道具与碎片”更适合按需加载。
+保留每张图的原逻辑尺寸、pivot 和透明边界偏移，防止图标在切换后跳动。
+
+4. 常用 HUD/按钮/小标题：256 张，当前约 17.49 MiB。
+筛选：ty_*、zdjm_*、zm_*，已单独分离道具图标、英文替代图和大背景。
+适合常驻 HUD 与公共弹窗两个逻辑图集；应继续剔除不同时出现的大面板，不能直接按文件名前缀全部塞到一个常驻图集。
+模拟为两页（2048x2048 与 2048x1024）；不压缩时约 24 MiB，高于当前散图。
+
+5. 特效序列帧：114 张，当前约 31.69 MiB。
+筛选：UI/Sprites/bullet_*、zgygy_roleskill_*。
+适合按同一特效、同一角色的播放周期组成动画图集。全部混合装箱模拟为 3 页，但建议实施时按动画族拆分，不因显示一个特效加载全部序列。
+保留帧名、播放顺序、帧间对齐、混合方式；UISpriteAnimationSequence 继续通过名称取得子 Sprite。
+
+6. 已有英文 UI 图：91 张，当前约 35.71 MiB。
+位置：Assets/Resources/UI/Sprites/en。
+可把按钮文字和卷轴标题纳入英文 UI 图集；含大图/岛屿等，不能直接把 91 张都当小文字图处理。
+原尺寸模拟中有 1 张无法在 2048 页中连同四周 padding 放入，应单独保留。
+
+7. 商城/活动 UI：商城 48 张约 25.71 MiB，活动 148 张约 50.85 MiB。
+可按页面进一步拆成“转盘与抽奖”“挑战概览”“拍卖流程”等图集。
+这一层放在公共图标与新增字图之后实施；先筛掉大面板，再依据共同出现的内容合图。
+不要把整个商城、活动、世界选择全部放在同一个大图集中。
+
+比合图更优先的去重
+发现 214 组像素完全一致的重复图，理论重复构建资源合计约 32.38 MiB。
+其中 Assets/Resources/Art/UI 的 212 张图，均在重复组中，并且在当前构建中约占 31.76 MiB。
+例：fight_bg_1.png、zjm_pnl_btnBG01.png、ty_pic_dialogBg_scale2.png，同时存在于 Art/UI 与 UI/Sprites。
+当前脚本中没有 Art/UI 的加载路径；对这 212 张图 GUID 搜索 Assets 内的 unity/prefab/mat/asset 也未发现引用。
+它们是高置信的去重候选。正式移出 Resources 前仍应运行启动、主要页面和特效回归，并核对加载器是否存在拼接路径。
+没有在本次检查中删除或移动任何资源。
+
+建议继续独立的资源
+三张 1024x1024 商城插画：diamond-vault-native-v2、no-ads-pass-native-v2、fragment-pack-native-v2，当前合计 12 MiB。
+三张图都在实际代码中引用，不能当未使用资源移除。它们先独立评估缩至 512，再做平台压缩；单纯原尺寸带 padding 合入 2048 图集会造成明显浪费。
+大背景、完整场景图和大面板：单独按分辨率、是否需要 alpha 和平台压缩优化。
+Spine：已有自己的 atlas.txt，重新合并会涉及 atlas 及 UV，不作为第一批。
+Art/Textures 中 60 张 VAT 纹理：运行时按 UV 与片段读取，保持现有结构。
+UI/Textures 中字体与粒子等现有图集：保留专用结构，避免与普通 UI 混用。
+
+当前加载方式需要配套处理
+UI/UiPrefab.cs 中 UiAssets.LoadSprite 使用 Resources.Load<Texture2D> 再 Sprite.Create；其中 580 张 UI 图片的 PNG 尺寸与逻辑 SpriteMeta 尺寸不同，运行时 Pad 会创建恢复原尺寸的新纹理。
+GameController.Purchases.cs 的 StoreIllustration 也直接按 CommerceArt 的 Texture2D 路径加载；按钮、商品卡片和底栏还会创建带 border 或局部区域的 Sprite。
+只新增 SpriteAtlas 文件，无法自动替换这些 Texture2D 路径。
+实施时应先增加 key -> atlas/subsprite 的统一查找，再保留原 pivot、逻辑大小、边界偏移、九宫格 border 与 Sprite.name；否则会失去原布局或合批收益。
+成功迁移后，原散图应移到 Resources 外作为源素材，并解除其他构建依赖；不能让散图和图集一起保留在交付资源中。
+Canvas UI 图集关闭旋转，预留至少 4px 间距与必要的边缘扩展；压缩后重点检查白字描边、金色边框与透明边缘。
+可评估 Windows BC7；移动端另选支持的 ASTC 等格式。压缩体积与画质需要目标平台构建实测，不能套用同一组结果。
+
+建议执行顺序
+第一步：清理已证实重复的 Art/UI 构建资源。
+第二步：用新字图与商城按钮做小范围图集加载验证，同时测试合适分辨率；这批素材独立、引用集中、回归路径清楚。
+第三步：迁移道具与货币、常用 HUD 图标。
+第四步：按动画族和页面逐批迁移特效与活动资源。
+每步以同一构建模式比较完整交付体积与纹理体积，检查启动/切页/购包/拍卖/特效，并验证原有 UI 留白与点击区域。
+
+清单与复现
+inventory.json：全量图片、尺寸、构建近似体积、重复组、原尺寸装箱方案、半尺寸实验、运行时 Pad 资源。
+images.csv：便于筛选的全量图片表。
+scan-summary.json：按用途汇总。
+Tools/LayoutFix/audit_sprite_sheets.py：只读扫描与离线装箱脚本。
+体积来源：Documentation/LayoutFix-2026-10-20/unity-word-expansion.log 的 Used Assets 与构建统计段。
+
+Unity 2022.3 官方资料
+按共同使用方式拆图集，减少空白：https://docs.unity3d.com/2022.3/Documentation/Manual/SpriteAtlasWorkflow.html
+Canvas 不旋转、padding 与图集导入设置：https://docs.unity3d.com/2022.3/Documentation/Manual/class-SpriteAtlas.html
+Resources 中资源会进入构建：https://docs.unity3d.com/2022.3/Documentation/Manual/LoadingResourcesatRuntime.html

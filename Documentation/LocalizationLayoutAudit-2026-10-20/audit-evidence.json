@@ -1,0 +1,437 @@
+{
+  "checked_utc": "2026-10-20T06:17:26.597273+00:00",
+  "current_render_status": "partial: six confirmed visual defects; Windows sampled journeys only",
+  "delivery_status": "matched",
+  "delivery_files_compared": 211,
+  "delivery_file_mismatches": [],
+  "source_identity": {
+    "production_assembly_sha256": "b4cbf65d5167062c0a06959d8301e8b1b39a671d2daedf5abc7104fee11e82c9",
+    "diagnostic_assembly_sha256": "1a680b064fa9475a6be97034adf8352bdb18f79d2c8661bfa4a2db5ab84d468e",
+    "production_source_changes_since_build": [],
+    "diagnostic_changes": [
+      "QA startup waits for BootFinished and launch screen dismissal",
+      "Capture writes active text and TMP overflow diagnostics"
+    ],
+    "production_modified": false
+  },
+  "runs": {
+    "Activities540": {
+      "passed": true,
+      "width": 540,
+      "height": 960,
+      "checks": 168
+    },
+    "Store390": {
+      "passed": true,
+      "width": 390,
+      "height": 844,
+      "checks": 129
+    },
+    "DiagnosticLocale390": {
+      "passed": true,
+      "width": 390,
+      "height": 844,
+      "checks": 1259
+    },
+    "DiagnosticLocale540": {
+      "passed": true,
+      "width": 540,
+      "height": 960,
+      "checks": 1259
+    },
+    "DiagnosticLocaleLandscape": {
+      "passed": true,
+      "width": 960,
+      "height": 540,
+      "checks": 1259
+    },
+    "DiagnosticActivities390": {
+      "passed": true,
+      "width": 390,
+      "height": 844,
+      "checks": 164
+    },
+    "DiagnosticAlignment540": {
+      "passed": true,
+      "width": 540,
+      "height": 960,
+      "checks": 342
+    }
+  },
+  "successful_assertions": 4580,
+  "screenshots": [
+    {
+      "path": "Activities540\\15-local-challenge-arena.png",
+      "sha256": "ef1d01e470616a2b0de881ee79bb01a097f0633c42dda518b5969c69a36906c9"
+    },
+    {
+      "path": "Activities540\\15a-local-activities-overview.png",
+      "sha256": "a81fc556ec2b6f51d1f988baf95aec40cab4ef7ca032f339d6535339f32f7293"
+    },
+    {
+      "path": "Activities540\\16-local-challenge-victory.png",
+      "sha256": "f91a48c14dffe1634b645a5a926c6766a5a1d243167b6f15c418649d87374dc6"
+    },
+    {
+      "path": "Activities540\\17-local-auction-bidding.png",
+      "sha256": "024f41daf116bc13b57847bc5fd265e3e25cd4970de995ea18a637057af09a26"
+    },
+    {
+      "path": "Activities540\\18-local-auction-result.png",
+      "sha256": "71ca40bcaa28adb978f45e86673018c5db57251cee3cd99af1c2abd665810149"
+    },
+    {
+      "path": "Activities540\\19-local-auction-settled.png",
+      "sha256": "e8118351b371ab7924586f42cbb793948cac6657cf31297d0300dabf26166344"
+    },
+    {
+      "path": "Store390\\01-store-diamonds.png",
+      "sha256": "5ec0868b778d26b9da1455f1b2bbc447f2cd51af4c38428f5b0272972f718acc"
+    },
+    {
+      "path": "Store390\\02-store-no-ads.png",
+      "sha256": "2159c871cc167ea8870803035d87ebdc0a55e3fcdf6168b681908eb0f33a3b18"
+    },
+    {
+      "path": "Store390\\03-store-fragments-bottom.png",
+      "sha256": "e6d88408f928cfa57046de8b3857ba974c2ee2f3b7f2ca7acd7819f807ebee98"
+    },
+    {
+      "path": "Store390\\04-store-owned-qa-only.png",
+      "sha256": "0cdcfb69ed4f546d004a4c8c730e3170503a08d77d7c21d7fc0623f4008931b7"
+    },
+    {
+      "path": "DiagnosticLocale390\\01-english-settings.png",
+      "sha256": "8e8ceda02ea6984a1efdb4c558cd3e9a7a28d3a80d80c03c2c11cbead81cea67"
+    },
+    {
+      "path": "DiagnosticLocale390\\03-english-items.png",
+      "sha256": "33d7476aebdac3b4bc844baf5eea9f18f6801d60489e6b30236516924db39c07"
+    },
+    {
+      "path": "DiagnosticLocale390\\04-english-helpers.png",
+      "sha256": "7a02236190da04d183dfb46a1ebf7306bad551816d20b3e2c87e510518629a8f"
+    },
+    {
+      "path": "DiagnosticLocale390\\04b-english-tables.png",
+      "sha256": "c5949f7d0e7403eab25a52aff66ed11bd91f187592310b7693d05e676375b541"
+    },
+    {
+      "path": "DiagnosticLocale390\\05-english-helper-upgrade.png",
+      "sha256": "bc05d12cd971ba74d9e3acdff6e784a46ceab8d6e212999d4fdf60ff76edc274"
+    },
+    {
+      "path": "DiagnosticLocale390\\06-english-table-upgrade.png",
+      "sha256": "bd985f32de70ee3b5ef27a5a1f6f29e9bb89e70b8a37a03ca8dec95f8aa0b4cd"
+    },
+    {
+      "path": "DiagnosticLocale390\\07-english-talents.png",
+      "sha256": "1e691331bd56a55e49a1a3045eb1fd23b4a8541aee213f7a07b2fbb676788749"
+    },
+    {
+      "path": "DiagnosticLocale390\\08-english-rebirth.png",
+      "sha256": "f66ac2680769f9fcc0723eec09de74384d43d9c111cd27d950670b91a8438f04"
+    },
+    {
+      "path": "DiagnosticLocale390\\09-english-check-in.png",
+      "sha256": "c7d16798819bc3cf23a90128e5c36086daf568b666eb177b6311d65de7354e47"
+    },
+    {
+      "path": "DiagnosticLocale390\\10-english-shop.png",
+      "sha256": "5c564775a014f42dbc0e0320031d643ebc79705bf4e65bd744d72150e60e7c9c"
+    },
+    {
+      "path": "DiagnosticLocale390\\11-english-worlds.png",
+      "sha256": "83ab9b18483f8cfd3152919b287c6edf7cadfb11aa848d22610da5ceab245e8a"
+    },
+    {
+      "path": "DiagnosticLocale390\\12-english-support.png",
+      "sha256": "faace3e6ca537571a571bad78813a7bdbac598de98a70e14f033e881b870073c"
+    },
+    {
+      "path": "DiagnosticLocale390\\13-english-ad.png",
+      "sha256": "aae6ba24e09f3878a98678fb9436da29d86948507e643c485dd20bc41b36fefc"
+    },
+    {
+      "path": "DiagnosticLocale390\\14-english-ad-complete.png",
+      "sha256": "f8cdf3f4a2afb5b7226947c26b9d48b16c3e48366a7762ac712fe467b2e94762"
+    },
+    {
+      "path": "DiagnosticLocale390\\15-english-evolution.png",
+      "sha256": "65dc105fd4cbdfad69ce6e42dbfc2f8946031ded8404aa26c9aa013034305fa0"
+    },
+    {
+      "path": "DiagnosticLocale390\\16-english-offline.png",
+      "sha256": "d2cba4a5f239c08c68d924a4977d1d84c78f5c38458398569ea5f30f2faf19ef"
+    },
+    {
+      "path": "DiagnosticLocale390\\17-english-reward.png",
+      "sha256": "7cc91b5f99856387b8ee9cc6344f0638243c9f704f575bec00391a59548d0046"
+    },
+    {
+      "path": "DiagnosticLocale390\\18-english-growth-news.png",
+      "sha256": "543e103227b17f311389d8ec97d5cf1d497ce9db09369a596ba801490bd4a2be"
+    },
+    {
+      "path": "DiagnosticLocale540\\01-english-settings.png",
+      "sha256": "0f90cb2518b6432d5617dac5139147b5fd784d8f786b71ee93367d8f8bc1d602"
+    },
+    {
+      "path": "DiagnosticLocale540\\03-english-items.png",
+      "sha256": "3efff09baf020594d710456b1f65177679ec043b5ddd1eb140c96f454dcc7c11"
+    },
+    {
+      "path": "DiagnosticLocale540\\04-english-helpers.png",
+      "sha256": "2e4da6f5e9cac54b45c2827479cddfb702de4b6e95d8d449959e7b3e09d81809"
+    },
+    {
+      "path": "DiagnosticLocale540\\04b-english-tables.png",
+      "sha256": "f13c9472563d8a7407884b05b776c251f5977ca31a58f1f2abe72fc7da896b11"
+    },
+    {
+      "path": "DiagnosticLocale540\\05-english-helper-upgrade.png",
+      "sha256": "9c13ccfbcfd4ce4b7c4d01db63c76ec4e974d4ddebc4f665bf880c777b6be8b9"
+    },
+    {
+      "path": "DiagnosticLocale540\\06-english-table-upgrade.png",
+      "sha256": "2f2dea26495df8e5876a8edf92d9b8f757471fb54e8671fcf897646917a294c5"
+    },
+    {
+      "path": "DiagnosticLocale540\\07-english-talents.png",
+      "sha256": "15a96cadc25f0657a91de03acabde1103478ed6616a5597522ab28c34d87bf0d"
+    },
+    {
+      "path": "DiagnosticLocale540\\08-english-rebirth.png",
+      "sha256": "fa8cd611d9672a7560905bd8b40be56cc44fb3d9fec1691a78c4d8e66d1df625"
+    },
+    {
+      "path": "DiagnosticLocale540\\09-english-check-in.png",
+      "sha256": "1d5cac6c1a87e6ce057f4e389faf99976b90b623da26337d4ffbf53452abeb04"
+    },
+    {
+      "path": "DiagnosticLocale540\\10-english-shop.png",
+      "sha256": "008a85481f729a648c2ce0a3370850a5a0d4a1820d7fdd80be3c767aef3c3cb1"
+    },
+    {
+      "path": "DiagnosticLocale540\\11-english-worlds.png",
+      "sha256": "4d3e5db1576cd186a3f35439769d4c2a68c222ab5a10a51692109e2bafb21f21"
+    },
+    {
+      "path": "DiagnosticLocale540\\12-english-support.png",
+      "sha256": "efb9f39c1bbfaa53aca9f26fd8f7df21d86013caa67b586641c572f7172fdb9d"
+    },
+    {
+      "path": "DiagnosticLocale540\\13-english-ad.png",
+      "sha256": "74beefc5673c76493adbb394664b9b52f56e8d70ca69c8db3ce16bf6ba5ba538"
+    },
+    {
+      "path": "DiagnosticLocale540\\14-english-ad-complete.png",
+      "sha256": "8dde5cce21752298cd6b6177b445de990109682af0f97e1baa94422ede6f96da"
+    },
+    {
+      "path": "DiagnosticLocale540\\15-english-evolution.png",
+      "sha256": "9a89454e2879efe76fd107b3478094790d6e4b4456724c1856922aa8d51a3825"
+    },
+    {
+      "path": "DiagnosticLocale540\\16-english-offline.png",
+      "sha256": "90d868cefd396bcd77b0d4248ddcc5e690a259d90593c982720b16ed8de40baa"
+    },
+    {
+      "path": "DiagnosticLocale540\\17-english-reward.png",
+      "sha256": "8cd022c0ee556eb723226cad49846b9637aa7c374250f0be83b08aafe981f0f2"
+    },
+    {
+      "path": "DiagnosticLocale540\\18-english-growth-news.png",
+      "sha256": "1cae180cf8506cd74a7e02a3040405195030d31af1abdb9a66701ae9c1d7c73b"
+    },
+    {
+      "path": "DiagnosticLocaleLandscape\\01-english-settings.png",
+      "sha256": "3ba6709e5a04d345a54b40e6fbed6c86fa5a9fb133aed518a96ae0412f62ae60"
+    },
+    {
+      "path": "DiagnosticLocaleLandscape\\03-english-items.png",
+      "sha256": "f900d94552e0d8b1651bae266034192e369dd26861cbf26c8427a6bb2e0a7eb7"
+    },
+    {
+      "path": "DiagnosticLocaleLandscape\\04-english-helpers.png",
+      "sha256": "0610fdf400bd1ac8d2c33cce338915a526d7e239859f16b173016af53d5f8c9c"
+    },
+    {
+      "path": "DiagnosticLocaleLandscape\\04b-english-tables.png",
+      "sha256": "541383bd6fb97b521e29b1633c4abafa0fd93c61b93b2c8285c9ad40aededb89"
+    },
+    {
+      "path": "DiagnosticLocaleLandscape\\05-english-helper-upgrade.png",
+      "sha256": "c8a5e5b20f9b745ddcb76193ed00362360efc69d5856ee51f5fda2e870eebdee"
+    },
+    {
+      "path": "DiagnosticLocaleLandscape\\06-english-table-upgrade.png",
+      "sha256": "b29e1bc70dddfc675c015512a51f78dee0257c451809ba45fbad5cfb51e7c8de"
+    },
+    {
+      "path": "DiagnosticLocaleLandscape\\07-english-talents.png",
+      "sha256": "cf256df09add6967e630bcfa17eb363ef95b48c118beac919d7d127442691229"
+    },
+    {
+      "path": "DiagnosticLocaleLandscape\\08-english-rebirth.png",
+      "sha256": "ec60503fbdcbaa9589e0b3d3647933732c61e082bcf930b1a9d0383658464292"
+    },
+    {
+      "path": "DiagnosticLocaleLandscape\\09-english-check-in.png",
+      "sha256": "efe49bd2f652544792ba152b54d10915c4f75eade4551931fb069d0906369876"
+    },
+    {
+      "path": "DiagnosticLocaleLandscape\\10-english-shop.png",
+      "sha256": "2cdc3ed9d85b556bf5f59b4defa7611809ccdefacdc90668c3eb8bbf03cfaca3"
+    },
+    {
+      "path": "DiagnosticLocaleLandscape\\11-english-worlds.png",
+      "sha256": "086ae4c579e52796f5de4ae973ef9450ac07bec1348cb3d55198e78deb109aa2"
+    },
+    {
+      "path": "DiagnosticLocaleLandscape\\12-english-support.png",
+      "sha256": "3c851ca2a912efeb6e56e7aed3b71697afd9a1e1c803167e3433432dd66acfd3"
+    },
+    {
+      "path": "DiagnosticLocaleLandscape\\13-english-ad.png",
+      "sha256": "9470d939fb1e2aa0acd9a371d9e141eb508faa9fa11d31dc123a3a2bce9d0acb"
+    },
+    {
+      "path": "DiagnosticLocaleLandscape\\14-english-ad-complete.png",
+      "sha256": "20854630bc31df94fb717310b707ed8dbc363e0e4513e2e4318f87394c550422"
+    },
+    {
+      "path": "DiagnosticLocaleLandscape\\15-english-evolution.png",
+      "sha256": "6facf2089392516b23d56c9348a51664c4ea40e314ac7f5fc62f680aa536204f"
+    },
+    {
+      "path": "DiagnosticLocaleLandscape\\16-english-offline.png",
+      "sha256": "6948be62d23df631a9799b182224c00390fe48bdc0993d9060be0d0754061c8f"
+    },
+    {
+      "path": "DiagnosticLocaleLandscape\\17-english-reward.png",
+      "sha256": "06ad99809c6a750e9c256fcb8e312ae1df9b8cfe728a1e7d2b3411052abcc26a"
+    },
+    {
+      "path": "DiagnosticLocaleLandscape\\18-english-growth-news.png",
+      "sha256": "46b6968c8bd3e898f01b88e716acf27fbb8eb22b97d8aaac200c6d02d273edda"
+    },
+    {
+      "path": "DiagnosticActivities390\\15-local-challenge-arena.png",
+      "sha256": "a07c118348ad6ac6c2729f1e883cb67bf759af4f4df8306630958cefe383ba3f"
+    },
+    {
+      "path": "DiagnosticActivities390\\15a-local-activities-overview.png",
+      "sha256": "0d695fec75f680a2e67bad4d9f95306ac6d4b96389d1dae95c592e12cc3c873d"
+    },
+    {
+      "path": "DiagnosticActivities390\\16-local-challenge-victory.png",
+      "sha256": "810ebe100cdec54a04df01e631bc38cba0ead41d835aac6cdaf3b74b32580d1d"
+    },
+    {
+      "path": "DiagnosticActivities390\\17-local-auction-bidding.png",
+      "sha256": "707f690b4c62587f26fc26bee0f5dbc9ea464d127b484aad1de7e9bb189ea0b3"
+    },
+    {
+      "path": "DiagnosticActivities390\\18-local-auction-result.png",
+      "sha256": "4a029246c80fc20386effc5115244105d3faeaf32ccfc9aa02087188586dfeb9"
+    },
+    {
+      "path": "DiagnosticActivities390\\19-local-auction-settled.png",
+      "sha256": "2dce981704f31417c4d4452396c55c27344401015603c34c19c40df187968a88"
+    },
+    {
+      "path": "DiagnosticAlignment540\\01-aligned-scene-input.png",
+      "sha256": "a7eb1b923b997eac593991169f8c3ae92d8b674026a76b3458ace90bdf014f48"
+    },
+    {
+      "path": "DiagnosticAlignment540\\02-65-helpers-123-coins.png",
+      "sha256": "c1640b22c2752b6220473228f17239e0662bf80b120b477e0242415970d5f905"
+    },
+    {
+      "path": "DiagnosticAlignment540\\03-evolution-aggregate.png",
+      "sha256": "061fc274f42a4d41f3d3bce934ad325a915ee28a8723500d3ab9c63a65235306"
+    },
+    {
+      "path": "DiagnosticAlignment540\\04-evolution-result-preserved-helpers.png",
+      "sha256": "ecc6c759dd3afa9c8244bdd5a23f94e3c706b9cfb04d5df5d705eb59d7875b2e"
+    },
+    {
+      "path": "DiagnosticAlignment540\\05-original-super666-activation.png",
+      "sha256": "7d34ce16829fff00aae59774a8a936aafb2f934372d69423d0143ef848d073b4"
+    },
+    {
+      "path": "DiagnosticAlignment540\\06-real-super666-and-merchant-hud.png",
+      "sha256": "3905a51857738f92bad1eb1503a78ededdbad9f577fb0ad5b48224cb2c3d3c20"
+    },
+    {
+      "path": "DiagnosticAlignment540\\07-merchant-real-cooldown.png",
+      "sha256": "b358eb369a6b74a28ff6af993d7c5533cba05f1e6ea993f0a72910c161de4518"
+    },
+    {
+      "path": "DiagnosticAlignment540\\08-original-pc-ad-complete.png",
+      "sha256": "11eb77bd29be120f5c47e74726a73f9c6db33a4ddeaa41cb9c1f3abbaba13dc6"
+    },
+    {
+      "path": "DiagnosticAlignment540\\09-original-shop-double-reward.png",
+      "sha256": "d2de087f3ac506d2a3c3b8a069d9cecf3bf01ff2b590c855d2d069b62dee8eb3"
+    },
+    {
+      "path": "DiagnosticAlignment540\\10-original-world-coin-island.png",
+      "sha256": "920c3d04e7ac5d276b8c15fdf683ac127ea0cb937b6ef70cf7779087dc306e79"
+    },
+    {
+      "path": "DiagnosticAlignment540\\11-original-world-dice-island.png",
+      "sha256": "48730d029cdb1920a9a2639992f39fc079f0993de3b38cab3b627555a27cdbd8"
+    },
+    {
+      "path": "DiagnosticAlignment540\\12-fixed-settlement-paths.png",
+      "sha256": "d121171cd8a291ba9a67735ca5ce841a08745ac08e7d904beca9121e9219afd8"
+    },
+    {
+      "path": "DiagnosticAlignment540\\13-advanced-rebirth-preserved-scene.png",
+      "sha256": "214a3fcf47991b056f8a1e7af560e0cb6aa91ed625a9d769d7de270fe65d89dc"
+    },
+    {
+      "path": "DiagnosticAlignment540\\14-placeholder-settings.png",
+      "sha256": "87a763884a138de2329e60031154d0b9784a8087ad706a165930b3e33b85249c"
+    },
+    {
+      "path": "DiagnosticAlignment540\\15-local-challenge-arena.png",
+      "sha256": "3e941eeb06662aae1f916571615556d45ed730a78812dd32365d42b485c3a508"
+    },
+    {
+      "path": "DiagnosticAlignment540\\15a-local-activities-overview.png",
+      "sha256": "89c6e1dd5f0165f1090e03f39430afc434ab1b3e0abdc0e4b9b01498420110ac"
+    },
+    {
+      "path": "DiagnosticAlignment540\\16-local-challenge-victory.png",
+      "sha256": "287af698f7f62e3e4aab55ce640a07d0b26abcc00f2d942f431d25cb25530de6"
+    },
+    {
+      "path": "DiagnosticAlignment540\\17-local-auction-bidding.png",
+      "sha256": "005491d6a3ec3dac1899cfd67d95f0a32447d418e9ddcb91474074896a9caace"
+    },
+    {
+      "path": "DiagnosticAlignment540\\18-local-auction-result.png",
+      "sha256": "407617c342f7daf783d3f7e8f1cdc1d7e0eb6717a2bd39c3c94cb931a601415b"
+    },
+    {
+      "path": "DiagnosticAlignment540\\19-local-auction-settled.png",
+      "sha256": "21ea2dc62c11028adb94f3a1c3d533f944d56d09d45741a7677103a87d55b15d"
+    }
+  ],
+  "text_observations": 2136,
+  "chinese_observations": [],
+  "tmp_overflow_observations": [],
+  "confirmed_visual_findings": 6,
+  "production_modified": false,
+  "formal_save_modified": false,
+  "render_evidence": "Unity uGUI offscreen camera renders, all successful screenshots visually inspected; no real-device/native-window pass claimed",
+  "unverified": [
+    "Android/iOS",
+    "opening video and first-session full tutorial",
+    "all random encounters and rare reward branches",
+    "every scroll position and all helper-specific popup variants"
+  ]
+}

@@ -13,6 +13,11 @@ namespace Bufu.Rebuild {
     /// <summary>Dialogs and popups: commonDialog, goalReachPanel, OfflineReward, EvolvePanel, setupPanel, CheckIn, congratulationPanel.</summary>
     public sealed partial class GameController {
         UiView goalView,offlineView,checkInView,rewardBoxView;
+        readonly Dictionary<GameObject,Action> rewardPopupClosers=new Dictionary<GameObject,Action>();
+        bool TryDismissRewardPopup(GameObject root) {
+            if(!rewardPopupClosers.TryGetValue(root,out var close))return false;
+            close();return true;
+        }
 
         // ------------------------------------------------------------ commonDialog
         public void ShowDialog(string message,Action onConfirm,Action onCancel=null) {
@@ -114,12 +119,18 @@ namespace Bufu.Rebuild {
             var v=OpenPopup("Popup/OfflineReward");offlineView=v;
             int world=Model.Data.world;On(v.Node("AdBgImg"),world!=2);On(v.Node("DiceBgImg"),world==2);
             Txt(v.Ref<TMP_Text>(cls,"rewardText"),"+"+GameModel.Format(Model.State.pendingOffline));
-            double seconds=awaySeconds[world-1];int hours=(int)(seconds/3600),minutes=(int)(seconds%3600/60);
-            Txt(v.Ref<TMP_Text>(cls,"offlineTimeText"),hours+"小时"+minutes+"分");
-            On(v.Ref(cls,"doubleClaimButton"),false);
-            var normal=v.Ref<Button>(cls,"normalClaimButton");var rect=(RectTransform)normal.transform;rect.anchoredPosition=new Vector2(0,rect.anchoredPosition.y);
-            Action claim=()=>{Model.ClaimOffline();PlayReward();ClosePopup(v);offlineView=null;};
-            Click(normal,claim);Click(v.Ref<Button>(cls,"closeButton"),claim);Click(v.Ref<Button>(cls,"bgButton"),claim);
+            double seconds=Model.State.pendingOfflineSeconds;int hours=(int)(seconds/3600),minutes=(int)(seconds%3600/60);
+            Txt(v.Ref<TMP_Text>(cls,"offlineTimeText"),seconds>0?hours+"小时"+minutes+"分":"Saved offline reward");
+            var normal=v.Ref<Button>(cls,"normalClaimButton");var doubled=v.Ref<Button>(cls,"doubleClaimButton");
+            On(doubled.gameObject,true);bool claimed=false;
+            Action<bool> claim=doubleReward=>{
+                if(claimed)return;claimed=true;
+                Model.ClaimOffline(world,doubleReward);PlayReward();rewardPopupClosers.Remove(v.Root);ClosePopup(v);offlineView=null;
+                FlyPromotionRewards(new List<int>{1});
+            };
+            Click(normal,()=>claim(false));Click(v.Ref<Button>(cls,"closeButton"),()=>claim(false));Click(v.Ref<Button>(cls,"bgButton"),()=>claim(false));
+            rewardPopupClosers[v.Root]=()=>claim(false);
+            Click(doubled,()=>ShowOriginalAd(()=>claim(true),()=>claim(false)));
         }
 
         // ------------------------------------------------------------ EvolvePanel
@@ -135,6 +146,9 @@ namespace Bufu.Rebuild {
             string title=(world==1?EvolveTitles:DiceEvolveTitles)[Mathf.Clamp(quality-1,0,3)];Txt(v.Ref<TMP_Text>(cls,"titleTxt"),title);
             var titleImage=v.Ref<RectTransform>(cls,"titleImage");titleImage.sizeDelta=new Vector2(title.Length==4?500:title.Length==5?580:660,166);
             var titleText=v.Ref<TMP_Text>(cls,"titleTxt");var titleSize=titleText.rectTransform.sizeDelta;bool titleWrap=titleText.enableWordWrapping;
+            WordArtLabel(titleText,"evolution",100,12);
+            var evolveButton=v.Ref<Button>(cls,"evolveBtn");
+            foreach(var label in evolveButton.GetComponentsInChildren<TMP_Text>(true))WordArtLabel(label,"evolve",88,20);
             Watch(v.Root,()=>{
                 titleText.rectTransform.sizeDelta=L10n.IsEnglish?new Vector2((titleImage.rect.width-135)*titleImage.lossyScale.x/titleText.rectTransform.lossyScale.x,titleSize.y):titleSize;
                 titleText.enableWordWrapping=L10n.IsEnglish?false:titleWrap;
@@ -163,7 +177,8 @@ namespace Bufu.Rebuild {
             Click(v.Ref<Button>(cls,"backBtn"),()=>ClosePopup(v));Click(v.Ref<Button>(cls,"mask"),()=>ClosePopup(v));
             Click(v.Ref<Button>(cls,"resetButton"),()=>ShowDialog("确定要清除存档吗？\n清除后无法恢复",()=>{ClosePopup(v);ResetGame();}));
             // Server features of the original (restore archive, exit, version, GM) are not part of the offline rebuild.
-            foreach(var field in new[]{"restoreButton","exitButton","gameVersion"})On(v.Ref(cls,field),false);
+            On(v.Ref(cls,"exitButton"),false);BindSettingsIntegrations(v);
+            var version=v.Ref<TMP_Text>(cls,"gameVersion");On(version.gameObject,true);Txt(version,ResourcePackageVersion);
             var gm=v.Ref<Button>(cls,"gmBtn");if(gm)gm.onClick.RemoveAllListeners();
         }
 
@@ -174,7 +189,7 @@ namespace Bufu.Rebuild {
             Model.AdvanceCheckIn(GameModel.TodayNumber());
             var v=OpenPopup("CheckIn/CheckIn");
             checkInView=v;
-            On(v.Ref(cls,"subscribeRect"),false);
+            BindSubscriptionPlaceholder(v);
             Click(v.Ref<Button>(cls,"closeButton"),()=>ClosePopup(v));Click(v.Ref<Button>(cls,"maskButton"),()=>ClosePopup(v));
             var icons=v.Script(cls).Arr("itemIcons");
             Func<int,Sprite> iconFor=id=>{
@@ -218,21 +233,42 @@ namespace Bufu.Rebuild {
         }
 
         // ------------------------------------------------------------ congratulationPanel
-        public void ShowRewardBox(List<KeyValuePair<int,double>> rewards) {
+        public void ShowRewardBox(List<KeyValuePair<int,double>> rewards,bool noDouble=false,int world=0,bool deferGrant=false) {
             const string cls="RewardBoxUI";
             var v=OpenPopup("Popup/congratulationPanel");
             rewardBoxView=v;
-            On(v.Ref(cls,"doubleButton"),false);
+            int rewardWorld=world==0?Model.Data.world:world;
+            // Existing callers have settled the base prize. Wheel receipts defer their base
+            // until confirmation; both paths retain the same already resolved shard receipt.
+            var receipt=new List<KeyValuePair<int,double>>(rewards);
+            On(v.Ref(cls,"doubleButton"),!noDouble);
             var template=v.Ref(cls,"item1");var container=v.Ref<RectTransform>(cls,"con");
-            foreach(var r in rewards) {
+            foreach(var r in receipt) {
                 var copy=Instantiate(template,container,false);copy.name="reward"+r.Key;
                 var rt=(RectTransform)copy.transform;rt.anchorMin=rt.anchorMax=new Vector2(.5f,.5f);rt.localScale=template.transform.localScale;
                 var icon=copy.transform.Find("Icon").GetComponent<Image>();var s=RewardIcon(r.Key);if(s){icon.sprite=s;icon.SetNativeSize();}
                 Txt(copy.transform.Find("countTmp").GetComponent<TMP_Text>(),GameModel.Format(r.Value));copy.SetActive(true);
             }
             On(template,false);
-            Action close=()=>ClosePopup(v);
+            bool finished=false,waiting=false;
+            Action close=()=>{
+                if(finished||waiting)return;finished=true;rewardPopupClosers.Remove(v.Root);ClosePopup(v);
+                if(deferGrant){Model.GrantRewardReceipt(rewardWorld,receipt);if(!VerificationMode)SaveStore.Save(Model);}
+                var ids=receipt.Select(r=>RewardFlyType(r.Key)).Where(id=>id>0).ToList();
+                if(ids.Count>0)FlyPromotionRewards(ids);
+            };
+            Click(v.Ref<Button>(cls,"doubleButton"),()=>{
+                if(noDouble||finished||waiting)return;waiting=true;
+                ShowOriginalAd(()=>{
+                    if(finished)return;
+                    Model.GrantRewardReceipt(rewardWorld,receipt);
+                    if(!VerificationMode)SaveStore.Save(Model);
+                    waiting=false;close();
+                },()=>{waiting=false;close();});
+            });
+            rewardPopupClosers[v.Root]=close;
             Click(v.Ref<Button>(cls,"GetButton"),close);Click(v.Ref<Button>(cls,"closeButton"),close);
         }
+        static int RewardFlyType(int id)=>id>=1&&id<=5?id:id==101?3:id>=102&&id<=104?4:id>=105&&id<=109?5:0;
     }
 }

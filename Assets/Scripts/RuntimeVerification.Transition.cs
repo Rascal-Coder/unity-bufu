@@ -5,7 +5,12 @@ using UnityEngine.UI;
 
 namespace Bufu.Rebuild {
     public sealed partial class RuntimeVerification {
-        void Call(string name,params object[] args)=>typeof(GameController).GetMethod(name,System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.NonPublic).Invoke(game,args);
+        void Call(string name,params object[] args) {
+            var method=typeof(GameController).GetMethod(name,System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.NonPublic);
+            var parameters=method.GetParameters();var supplied=new object[parameters.Length];
+            for(int i=0;i<supplied.Length;i++)supplied[i]=i<args.Length?args[i]:parameters[i].DefaultValue;
+            method.Invoke(game,supplied);
+        }
         Transform RebirthNode(Transform root,int index) {
             var nodes=UiPrefab.Load("UI/Prefabs/Talent/talentRebornTipsItem").Arr("nodes");string path="";
             while(index>0){var node=(System.Collections.Generic.Dictionary<string,object>)nodes[index];path=node.Str("n")+(path.Length==0?"":"/"+path);index=node.I("p");}

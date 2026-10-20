@@ -1,0 +1,30 @@
+{
+  "prefabs": [
+    {
+      "path": "Assets/GameRes/NewUI/Ad/perfabs/AdLaoHuJi.prefab",
+      "resource": "UI/Prefabs/Ad/AdLaoHuJi",
+      "nodes": 9,
+      "object_sha256": "4863b8f8b165c15aecb9847a260e38beb0ddf099421f9f1f88232b40efe1656e"
+    },
+    {
+      "path": "Assets/GameRes/NewUI/Ad/perfabs/AdDiamondMerchant.prefab",
+      "resource": "UI/Prefabs/Ad/AdDiamondMerchant",
+      "nodes": 21,
+      "object_sha256": "1b7879da6121b7df25c97f8aa52ab7d9d76940aae73fc9841ad71ff5ee78a834"
+    },
+    {
+      "path": "Assets/GameRes/NewUI/video/gameTargetPanel.prefab",
+      "resource": "UI/Prefabs/video/gameTargetPanel",
+      "nodes": 10,
+      "object_sha256": "d403bebacd9a2732b6eb4c6258c80178b524e46e01134a86775076871f213305"
+    },
+    {
+      "path": "Assets/GameRes/NewUI/fakevideo/prefabs/FakeVideoPanel.prefab",
+      "resource": "UI/Prefabs/fakevideo/FakeVideoPanel",
+      "nodes": 3,
+      "object_sha256": "88a658e236db9caf0fda41a47fb8b3d481ca317c4eed0daab642c9df7aef4577"
+    }
+  ],
+  "new_sprite_count": 0,
+  "new_sprites": []
+}

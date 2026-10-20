@@ -1,0 +1,515 @@
+{
+  "total_png": 1564,
+  "groups": [
+    {
+      "group": "Art/Textures",
+      "count": 60,
+      "png_mib": 12.047,
+      "raw_rgba_mib": 52.0,
+      "build_mib": 17.347,
+      "size_max": 2048,
+      "alpha_border_pixels_saved": 142562
+    },
+    {
+      "group": "Art/UI",
+      "count": 212,
+      "png_mib": 5.578,
+      "raw_rgba_mib": 32.467,
+      "build_mib": 31.761,
+      "size_max": 1440,
+      "alpha_border_pixels_saved": 95210
+    },
+    {
+      "group": "Spine/Uieff_coin_upgrade",
+      "count": 1,
+      "png_mib": 0.4,
+      "raw_rgba_mib": 1.396,
+      "build_mib": 1.4,
+      "size_max": 1096,
+      "alpha_border_pixels_saved": 2856
+    },
+    {
+      "group": "Spine/Uieff_common_guide",
+      "count": 1,
+      "png_mib": 0.12,
+      "raw_rgba_mib": 0.937,
+      "build_mib": 0.937,
+      "size_max": 650,
+      "alpha_border_pixels_saved": 1027
+    },
+    {
+      "group": "Spine/Uieff_laohuji",
+      "count": 1,
+      "png_mib": 0.442,
+      "raw_rgba_mib": 5.571,
+      "build_mib": 5.6,
+      "size_max": 1671,
+      "alpha_border_pixels_saved": 5086
+    },
+    {
+      "group": "Spine/Uieff_ty_btn_challenge",
+      "count": 1,
+      "png_mib": 0.061,
+      "raw_rgba_mib": 1.21,
+      "build_mib": 1.2,
+      "size_max": 654,
+      "alpha_border_pixels_saved": 2274
+    },
+    {
+      "group": "Spine/Uieff_zhuanpan_light",
+      "count": 1,
+      "png_mib": 0.09,
+      "raw_rgba_mib": 0.692,
+      "build_mib": 0.167,
+      "size_max": 540,
+      "alpha_border_pixels_saved": 1545
+    },
+    {
+      "group": "Spine/Uieff_zhuanpan_light_1",
+      "count": 1,
+      "png_mib": 0.351,
+      "raw_rgba_mib": 1.964,
+      "build_mib": 0.333,
+      "size_max": 766,
+      "alpha_border_pixels_saved": 2872
+    },
+    {
+      "group": "Spine/Uieff_zhuanpan_light_2",
+      "count": 1,
+      "png_mib": 0.024,
+      "raw_rgba_mib": 0.082,
+      "build_mib": 0.021,
+      "size_max": 188,
+      "alpha_border_pixels_saved": 301
+    },
+    {
+      "group": "Spine/zgygy_666",
+      "count": 1,
+      "png_mib": 0.097,
+      "raw_rgba_mib": 0.516,
+      "build_mib": 0.516,
+      "size_max": 490,
+      "alpha_border_pixels_saved": 3048
+    },
+    {
+      "group": "Spine/zgygy_cutscene",
+      "count": 1,
+      "png_mib": 0.489,
+      "raw_rgba_mib": 3.357,
+      "build_mib": 3.4,
+      "size_max": 1050,
+      "alpha_border_pixels_saved": 1676
+    },
+    {
+      "group": "Spine/zgygy_zuanshishangren",
+      "count": 1,
+      "png_mib": 0.14,
+      "raw_rgba_mib": 0.86,
+      "build_mib": 0.86,
+      "size_max": 534,
+      "alpha_border_pixels_saved": 1688
+    },
+    {
+      "group": "UI/Textures",
+      "count": 4,
+      "png_mib": 3.16,
+      "raw_rgba_mib": 18.791,
+      "build_mib": 18.784,
+      "size_max": 2048,
+      "alpha_border_pixels_saved": 32135
+    },
+    {
+      "group": "activity_ui",
+      "count": 148,
+      "png_mib": 8.427,
+      "raw_rgba_mib": 51.446,
+      "build_mib": 50.85,
+      "size_max": 1440,
+      "alpha_border_pixels_saved": 54117
+    },
+    {
+      "group": "commerce_buttons",
+      "count": 3,
+      "png_mib": 0.408,
+      "raw_rgba_mib": 1.78,
+      "build_mib": 1.78,
+      "size_max": 720,
+      "alpha_border_pixels_saved": 19060
+    },
+    {
+      "group": "commerce_illustrations",
+      "count": 3,
+      "png_mib": 1.985,
+      "raw_rgba_mib": 12.0,
+      "build_mib": 12.0,
+      "size_max": 1024,
+      "alpha_border_pixels_saved": 694728
+    },
+    {
+      "group": "commerce_words",
+      "count": 21,
+      "png_mib": 5.557,
+      "raw_rgba_mib": 25.09,
+      "build_mib": 25.017,
+      "size_max": 1516,
+      "alpha_border_pixels_saved": 693324
+    },
+    {
+      "group": "effect_frames",
+      "count": 114,
+      "png_mib": 7.302,
+      "raw_rgba_mib": 31.668,
+      "build_mib": 31.685,
+      "size_max": 535,
+      "alpha_border_pixels_saved": 95493
+    },
+    {
+      "group": "english_ui_art",
+      "count": 91,
+      "png_mib": 8.441,
+      "raw_rgba_mib": 37.624,
+      "build_mib": 35.711,
+      "size_max": 2048,
+      "alpha_border_pixels_saved": 955341
+    },
+    {
+      "group": "item_currency_icons",
+      "count": 129,
+      "png_mib": 4.776,
+      "raw_rgba_mib": 18.084,
+      "build_mib": 18.103,
+      "size_max": 528,
+      "alpha_border_pixels_saved": 87321
+    },
+    {
+      "group": "large_backgrounds",
+      "count": 35,
+      "png_mib": 2.538,
+      "raw_rgba_mib": 33.206,
+      "build_mib": 32.603,
+      "size_max": 1440,
+      "alpha_border_pixels_saved": 11231
+    },
+    {
+      "group": "other_ui_large",
+      "count": 35,
+      "png_mib": 1.426,
+      "raw_rgba_mib": 24.321,
+      "build_mib": 24.261,
+      "size_max": 1162,
+      "alpha_border_pixels_saved": 23824
+    },
+    {
+      "group": "other_ui_small",
+      "count": 379,
+      "png_mib": 7.586,
+      "raw_rgba_mib": 51.826,
+      "build_mib": 49.076,
+      "size_max": 512,
+      "alpha_border_pixels_saved": 193996
+    },
+    {
+      "group": "replaced_chinese_originals",
+      "count": 6,
+      "png_mib": 0.667,
+      "raw_rgba_mib": 3.535,
+      "build_mib": 3.531,
+      "size_max": 730,
+      "alpha_border_pixels_saved": 0
+    },
+    {
+      "group": "shared_hud_ui",
+      "count": 256,
+      "png_mib": 1.18,
+      "raw_rgba_mib": 17.432,
+      "build_mib": 17.488,
+      "size_max": 1158,
+      "alpha_border_pixels_saved": 48928
+    },
+    {
+      "group": "shop_native_ui",
+      "count": 48,
+      "png_mib": 2.902,
+      "raw_rgba_mib": 25.623,
+      "build_mib": 25.714,
+      "size_max": 1307,
+      "alpha_border_pixels_saved": 9978
+    },
+    {
+      "group": "world_ui",
+      "count": 10,
+      "png_mib": 0.394,
+      "raw_rgba_mib": 2.494,
+      "build_mib": 2.495,
+      "size_max": 499,
+      "alpha_border_pixels_saved": 3034
+    }
+  ],
+  "duplicates": 214,
+  "top_duplicates": [
+    {
+      "paths": [
+        "Assets/Resources/Art/UI/fight_bg_1.png",
+        "Assets/Resources/UI/Sprites/fight_bg_1.png"
+      ],
+      "width": 737,
+      "height": 1024,
+      "possible_build_bytes_saved": 2306867.2
+    },
+    {
+      "paths": [
+        "Assets/Resources/Art/UI/zjm_pnl_btnBG01.png",
+        "Assets/Resources/UI/Sprites/zjm_pnl_btnBG01.png"
+      ],
+      "width": 1440,
+      "height": 224,
+      "possible_build_bytes_saved": 1258291.2
+    },
+    {
+      "paths": [
+        "Assets/Resources/Art/UI/ty_pic_dialogBg_scale2.png",
+        "Assets/Resources/UI/Sprites/ty_pic_dialogBg_scale2.png"
+      ],
+      "width": 544,
+      "height": 420,
+      "possible_build_bytes_saved": 914124.8
+    },
+    {
+      "paths": [
+        "Assets/Resources/Art/UI/lxsy_pic_title_lixianshouyiBg_dice_x2.png",
+        "Assets/Resources/UI/Sprites/lxsy_pic_title_lixianshouyiBg_dice_x2.png"
+      ],
+      "width": 613,
+      "height": 334,
+      "possible_build_bytes_saved": 819097.6
+    },
+    {
+      "paths": [
+        "Assets/Resources/Art/UI/lxsy_pic_title_lixianshouyiBg_x2.png",
+        "Assets/Resources/UI/Sprites/lxsy_pic_title_lixianshouyiBg_x2.png"
+      ],
+      "width": 613,
+      "height": 334,
+      "possible_build_bytes_saved": 819097.6
+    },
+    {
+      "paths": [
+        "Assets/Resources/Art/UI/wupin_pic_BG01_scale2.png",
+        "Assets/Resources/UI/Sprites/wupin_pic_BG01_scale2.png"
+      ],
+      "width": 512,
+      "height": 370,
+      "possible_build_bytes_saved": 757964.8
+    },
+    {
+      "paths": [
+        "Assets/Resources/Art/UI/wupin_pnl_dice_lvUp01.png",
+        "Assets/Resources/UI/Sprites/wupin_pnl_dice_lvUp01.png"
+      ],
+      "width": 674,
+      "height": 255,
+      "possible_build_bytes_saved": 687616.0
+    },
+    {
+      "paths": [
+        "Assets/Resources/Art/UI/wupin_pnl_lvUp01.png",
+        "Assets/Resources/UI/Sprites/wupin_pnl_lvUp01.png"
+      ],
+      "width": 674,
+      "height": 255,
+      "possible_build_bytes_saved": 687616.0
+    }
+  ],
+  "plans": {
+    "activity_ui": {
+      "pages": [
+        [
+          2048,
+          2048,
+          31
+        ],
+        [
+          2048,
+          2048,
+          34
+        ],
+        [
+          2048,
+          2048,
+          44
+        ],
+        [
+          2048,
+          2048,
+          39
+        ]
+      ],
+      "oversized": 0,
+      "rgba_mib": 64.0,
+      "bc7_mib": 16.0
+    },
+    "commerce_buttons": {
+      "pages": [
+        [
+          2048,
+          512,
+          3
+        ]
+      ],
+      "oversized": 0,
+      "rgba_mib": 4.0,
+      "bc7_mib": 1.0
+    },
+    "commerce_illustrations": {
+      "pages": [
+        [
+          2048,
+          2048,
+          1
+        ],
+        [
+          2048,
+          2048,
+          1
+        ],
+        [
+          2048,
+          2048,
+          1
+        ]
+      ],
+      "oversized": 0,
+      "rgba_mib": 48.0,
+      "bc7_mib": 12.0
+    },
+    "commerce_words": {
+      "pages": [
+        [
+          2048,
+          2048,
+          7
+        ],
+        [
+          2048,
+          2048,
+          10
+        ],
+        [
+          2048,
+          512,
+          4
+        ]
+      ],
+      "oversized": 0,
+      "rgba_mib": 36.0,
+      "bc7_mib": 9.0
+    },
+    "effect_frames": {
+      "pages": [
+        [
+          2048,
+          2048,
+          37
+        ],
+        [
+          2048,
+          2048,
+          53
+        ],
+        [
+          2048,
+          1024,
+          24
+        ]
+      ],
+      "oversized": 0,
+      "rgba_mib": 40.0,
+      "bc7_mib": 10.0
+    },
+    "english_ui_art": {
+      "pages": [
+        [
+          2048,
+          2048,
+          23
+        ],
+        [
+          2048,
+          2048,
+          53
+        ],
+        [
+          2048,
+          512,
+          14
+        ]
+      ],
+      "oversized": 1,
+      "rgba_mib": 36.0,
+      "bc7_mib": 9.0
+    },
+    "item_currency_icons": {
+      "pages": [
+        [
+          2048,
+          2048,
+          82
+        ],
+        [
+          1024,
+          2048,
+          47
+        ]
+      ],
+      "oversized": 0,
+      "rgba_mib": 24.0,
+      "bc7_mib": 6.0
+    },
+    "shared_hud_ui": {
+      "pages": [
+        [
+          2048,
+          2048,
+          79
+        ],
+        [
+          2048,
+          1024,
+          177
+        ]
+      ],
+      "oversized": 0,
+      "rgba_mib": 24.0,
+      "bc7_mib": 6.0
+    },
+    "shop_native_ui": {
+      "pages": [
+        [
+          2048,
+          2048,
+          23
+        ],
+        [
+          2048,
+          2048,
+          25
+        ]
+      ],
+      "oversized": 0,
+      "rgba_mib": 32.0,
+      "bc7_mib": 8.0
+    },
+    "world_ui": {
+      "pages": [
+        [
+          1024,
+          2048,
+          10
+        ]
+      ],
+      "oversized": 0,
+      "rgba_mib": 8.0,
+      "bc7_mib": 2.0
+    }
+  }
+}

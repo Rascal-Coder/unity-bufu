@@ -31,11 +31,13 @@ namespace Bufu.Rebuild {
             foreach(var icon in rewardIcons)On(icon,false);
             topMain=top.Ref(cls,"main");permanentPanel=top.Ref(cls,"permanentPanel");checkInButton=top.Ref(cls,"checkInBtn");checkRedPoint=top.Ref(cls,"checkRepoint");
             levelBadge=top.Ref(cls,"mainLevelBg");
-            // Not part of the offline rebuild: ranking, invite, recovery, income tip, guide arrow.
+            // Optional online entries are bound to explicit availability dialogs below.
             foreach(var field in new[]{"averageIncome","tipRect","recoveryBtn","rankBtn","inviteBtn","yindaotu"})On(top.Ref(cls,field),false);
             Click(top.Ref<Button>(cls,"setupBtn"),ShowSetup);
             Click(checkInButton,ShowCheckIn);
             var gm=top.Ref<Button>(cls,"gmBtn");if(gm)gm.onClick.RemoveAllListeners();
+            BindIntegrationPlaceholders();
+            BindPurchaseEntry();
         }
 
         void RefreshTop() {
@@ -67,7 +69,7 @@ namespace Bufu.Rebuild {
 
         // ------------------------------------------------------------ upgrade panel
         UiView upgrade;int tab=1,subTab=1,builtWorld;
-        static readonly int[] MainTabs={1,2,3,5,6};
+        static readonly int[] MainTabs={1,2,3,4,5,6};
         GameObject[] chooseImages,lockImages,unlockedHints,subWorldBack,subWorldButton,subWorldSelected;GameObject[] panelRoots=new GameObject[7];
         Image[] tabImages;Button[] subButtons;GameObject sub2Selected,sub3Selected,sub3Hint,itemPanelRoot,talentMount,talentRedDot;
         RectTransform[] subPanels=new RectTransform[3],subContents=new RectTransform[3];RectTransform itemTip;TMP_Text itemTipText;GameObject itemTipMask;
@@ -76,7 +78,7 @@ namespace Bufu.Rebuild {
             const string cls="UpgradePanel",sub="UpgradeItemPanel";
             upgrade=UiPrefab.Instantiate("Common/upgradePanel",mainLayer);
             foreach(int n in MainTabs){int index=n;Click(upgrade.Ref<Button>(cls,"button"+n),()=>OnTabClicked(index));}
-            var removed=upgrade.Ref<Button>(cls,"button4");removed.onClick.RemoveAllListeners();On(removed.gameObject,false);
+            On(upgrade.Ref(cls,"button4"),true);
             LayoutBottomNavigation();
             chooseImages=Enumerable.Range(1,6).Select(n=>upgrade.Ref(cls,"chooseImg"+n)).ToArray();
             lockImages=upgrade.Refs(cls,"lockImgs");unlockedHints=upgrade.Refs(cls,"yijiesuoImgs");
@@ -186,7 +188,7 @@ namespace Bufu.Rebuild {
                 case 1:return true;
                 case 2:return Model.LevelAbove(20);
                 case 3:return Model.LevelAbove(21);
-                case 4:return false;
+                case 4:return Model.Factor(48)>=0&&Model.LevelAbove(48);
                 case 5:return Model.LevelAbove(27);
                 default:return Model.WorldEntryUnlocked;
             }
@@ -195,7 +197,7 @@ namespace Bufu.Rebuild {
             switch(n) {
                 case 2:return "完成成长等级"+(int)Model.Factor(20)+"后解锁";
                 case 3:return "完成成长等级"+(int)Model.Factor(21)+"后解锁";
-                case 4:return "该功能暂未开放";
+                case 4:return Model.Factor(48)<0?"该功能暂未开放":"完成成长等级"+(int)Model.Factor(48)+"后解锁";
                 case 5:return "完成成长等级"+(int)Model.Factor(27)+"后解锁";
                 default:return "完成成长等级"+(int)Model.Factor(59)+"后解锁";
             }
@@ -211,15 +213,16 @@ namespace Bufu.Rebuild {
         static void Show(UiView view,bool on){if(view!=null&&view.Root)On(view.Root,on);}
 
         void SelectTab(int n) {
+            if(n!=5&&purchaseView)ClosePurchaseStore();
             tab=n;HideItemTip();HideUpgradeFeedback();
             for(int i=0;i<chooseImages.Length;i++)On(chooseImages[i],i==n-1);
             On(itemPanelRoot,n==1);On(talentMount,n==3);
-            if(n==2)EnsureFacility();if(n==3)EnsureTalent();if(n==5)EnsureShop();if(n==6)EnsureWorld();
-            Show(facilityView,n==2);Show(talentView,n==3);Show(shopView,n==5);Show(worldView,n==6);
+            if(n==2)EnsureFacility();if(n==3)EnsureTalent();if(n==4)EnsureActivities();if(n==5)EnsureShop();if(n==6)EnsureWorld();
+            Show(facilityView,n==2);Show(talentView,n==3);Show(activityView,n==4);Show(shopView,n==5);Show(worldView,n==6);
             ShowTopMain(n==1);
             // Facility, shop and world pages cover the whole screen, yet both layer canvases sort at 0, so tossed coins
             // could draw over them. Stop drawing the field there; coins and helpers keep running underneath.
-            var field=bgLayer.GetComponent<Canvas>();if(field)field.enabled=n!=2&&n!=5&&n!=6;
+            var field=bgLayer.GetComponent<Canvas>();if(field)field.enabled=n!=2&&n!=4&&n!=5&&n!=6;
             // Keep currency controls above the full-screen pages.
             if(top!=null&&top.Root)top.Root.transform.SetAsLastSibling();
             RefreshAll();
@@ -359,11 +362,12 @@ namespace Bufu.Rebuild {
             };
             Click(tipButton,()=>ShowItemTip(cardRect,kind==0?c.itemDesc:string.IsNullOrEmpty(c.itemDescUI)?c.itemDesc:c.itemDescUI));
             Click(upgradeBtn,()=>{
-                if(isHelper&&Model.HelperGated){if(Model.UnlockHelperCap()){PlayUpgrade();SyncActors();feedback(c.itemDesc);}return;}
+                if(isHelper&&Model.HelperGated){ShowOriginalAd(()=>{if(Model.UnlockHelperCap()){PlayUpgrade();SyncActors();feedback(c.itemDesc);}});return;}
                 if(!affordable()){PlayCantBuy();ShowToast(c.costType==2?"钻石不足":"金币不足");return;}
-                if(Model.BuyKind(c.id,kind)){PlayUpgrade();if(kind==0)SyncActors();feedback(c.itemDesc);}
+                Action buy=()=>{if(Model.BuyKind(c.id,kind)){PlayUpgrade();if(kind==0)SyncActors();feedback(c.itemDesc);}};
+                if(c.costType==3)ShowOriginalAd(buy);else buy();
             });
-            Click(evolveBtn,()=>ShowEvolve(quality,()=>{if(Model.Evolve(quality)){RebuildActors();feedback("进化完成!");}}));
+            Click(evolveBtn,()=>ShowEvolve(quality,()=>{if(StartCoinEvolution(quality))feedback("进化完成!");}));
 
             Watch(v.Root,()=>{
                 bool unlocked=Model.Unlocked(c);int lv=Model.LevelKind(c.id,kind);int max=Model.MaxLevel(c);bool maxed=lv>=max;

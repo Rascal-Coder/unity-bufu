@@ -161,33 +161,37 @@ namespace Bufu.Rebuild {
 
         // Exact offline FakeAdUI flow: two unscaled seconds, then an explicit close awards the callback.
         // In production, replaced by AdManager.ShowRewarded which loads a real Google AdMob rewarded video.
-        GameObject originalAd;bool originalAdFinished;
-        void ShowOriginalAd(Action awarded) {
-            // Google AdMob rewarded video: when ready, show it; otherwise fall back to the placeholder for testing.
-            if(AdManager.Instance!=null) {
-                AdManager.Instance.ShowRewarded(watched=>{if(watched)StartCoroutine(OriginalAdAward(awarded));});
+        GameObject originalAd;bool originalAdFinished,rewardedAdPending;
+        void ShowOriginalAd(Action awarded,Action failed=null) {
+            if(originalAd||rewardedAdPending)return;
+            if(Model.HasNoAds) {
+                rewardedAdPending=true;StartCoroutine(NoAdsAward(awarded));return;
+            }
+            // Native mobile ads must report an earned reward. PC follows the original FakeAdUI.
+            if(AdManager.Instance!=null&&AdManager.Instance.SupportsRewardedAds) {
+                rewardedAdPending=true;
+                AdManager.Instance.ShowRewarded(watched=>{
+                    rewardedAdPending=false;
+                    if(watched)StartCoroutine(OriginalAdAward(awarded));
+                    else if(failed!=null)failed();else ShowToast("广告观看未完成");
+                });
                 return;
             }
-            // Placeholder ad remains as a fallback when AdMob is not initialized.
-            if(originalAd)return;
-            var go=new GameObject("Original Fake Ad",typeof(RectTransform),typeof(Canvas),typeof(CanvasScaler),typeof(GraphicRaycaster));
-            go.transform.SetParent(transform,false);originalAd=go;popups.Add(go);
-            var canvas=go.GetComponent<Canvas>();canvas.renderMode=RenderMode.ScreenSpaceOverlay;canvas.sortingOrder=9999;
-            var root=(RectTransform)go.transform;Stretch(root);
-            var background=NewRect("Background",root);Stretch(background);background.gameObject.AddComponent<Image>().color=Color.black;
-            TMP_Text label(string name,float font,Vector2 size,Vector2 anchor,string value) {
-                var r=NewRect(name,root);r.anchorMin=r.anchorMax=anchor;r.sizeDelta=size;
-                var t=r.gameObject.AddComponent<TextMeshProUGUI>();t.font=UiAssets.Font();t.color=Color.white;t.fontSize=font;t.alignment=TextAlignmentOptions.Center;Txt(t,value);return t;
-            }
-            var countdown=label("CountdownText",48,new Vector2(200,100),new Vector2(.5f,.32f),"0:02");
-            var content=label("AdContentText",Mathf.Clamp(Screen.width*.055f,18,42),new Vector2(1000,500),new Vector2(.5f,.6f),"观看广告获得奖励\n倒计时结束后可关闭广告");
-            var contentRect=content.rectTransform;contentRect.anchorMin=new Vector2(.08f,.5f);contentRect.anchorMax=new Vector2(.92f,.76f);contentRect.offsetMin=contentRect.offsetMax=Vector2.zero;
-            var rect=NewRect("CloseButton",root);rect.anchorMin=rect.anchorMax=rect.pivot=Vector2.one;rect.anchoredPosition=new Vector2(-50,-50);rect.sizeDelta=new Vector2(120,50);
-            var image=rect.gameObject.AddComponent<Image>();image.color=new Color(1,.3f,.3f,1);var button=rect.gameObject.AddComponent<Button>();button.targetGraphic=image;
-            var text=NewRect("ButtonText",rect);Stretch(text);var tmp=text.gameObject.AddComponent<TextMeshProUGUI>();tmp.font=UiAssets.Font();tmp.fontSize=24;tmp.alignment=TextAlignmentOptions.Center;Txt(tmp,"关闭广告");
-            On(rect.gameObject,false);originalAdFinished=false;
-            Click(button,()=>{if(!originalAdFinished)return;popups.Remove(go);Destroy(go);originalAd=null;StartCoroutine(OriginalAdAward(awarded));});
-            StartCoroutine(OriginalAdCountdown(countdown,content,rect.gameObject));
+            // The original desktop prefab supplies its countdown, close button and background.
+            // FakeAdUI creates only adContentText at runtime because that field is absent in the prefab.
+            var view=UiPrefab.Instantiate("fakevideo/FakeVideoPanel",systemLayer);
+            var go=view.Root;originalAd=go;popups.Add(go);Stretch(view.Rect);
+            var canvas=go.AddComponent<Canvas>();canvas.overrideSorting=true;canvas.sortingOrder=9999;
+            go.AddComponent<GraphicRaycaster>();
+            view.Ref<Image>("FakeAdUI","backgroundImage").color=Color.black;
+            var countdown=view.Ref<TMP_Text>("FakeAdUI","countdownText");Txt(countdown,"0:02");
+            var button=view.Ref<Button>("FakeAdUI","closeButton");
+            var contentRect=NewRect("AdContentText",go.transform);contentRect.anchorMin=contentRect.anchorMax=new Vector2(.5f,.6f);contentRect.sizeDelta=new Vector2(1000,500);
+            var content=contentRect.gameObject.AddComponent<TextMeshProUGUI>();content.font=UiAssets.Font();content.fontSize=80;content.alignment=TextAlignmentOptions.Center;content.color=Color.white;content.raycastTarget=false;
+            Txt(content,"观看广告获得奖励\n倒计时结束后可关闭广告");
+            On(button.gameObject,false);originalAdFinished=false;
+            Click(button,()=>{if(!originalAdFinished||originalAd!=go)return;originalAdFinished=false;popups.Remove(go);Destroy(go);originalAd=null;StartCoroutine(OriginalAdAward(awarded));});
+            StartCoroutine(OriginalAdCountdown(countdown,content,button.gameObject));
         }
         IEnumerator OriginalAdCountdown(TMP_Text timer,TMP_Text content,GameObject close) {
             float left=2;
@@ -195,5 +199,6 @@ namespace Bufu.Rebuild {
             if(!originalAd)yield break;originalAdFinished=true;close.SetActive(true);timer.text="0:00";Txt(content,"广告播放完成！\n点击关闭按钮获取奖励");
         }
         static IEnumerator OriginalAdAward(Action action){yield return null;action?.Invoke();}
+        IEnumerator NoAdsAward(Action action){yield return null;rewardedAdPending=false;action?.Invoke();}
     }
 }

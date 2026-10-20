@@ -1,0 +1,143 @@
+[
+  {
+    "resource": "UI/Prefabs/Challenge/challengeUpgradeItem",
+    "nodes": 21,
+    "missing_sprites": [],
+    "refs": {
+      "ChallengeUpgradeItem@0": {
+        "itemIcon": {
+          "node": 4,
+          "comp": "Image"
+        },
+        "nameTmp": {
+          "node": 8,
+          "comp": "TextMeshProUGUI"
+        },
+        "upgradeMoneyTmp": {
+          "node": 11,
+          "comp": "TextMeshProUGUI"
+        },
+        "canUpgrade": {
+          "node": 12,
+          "comp": "Image"
+        },
+        "lvTmp": {
+          "node": 14,
+          "comp": "TextMeshProUGUI"
+        },
+        "btn": {
+          "node": 10,
+          "comp": "Button"
+        },
+        "button_upgrade1": {
+          "node": 20,
+          "comp": "SkeletonGraphic"
+        }
+      },
+      "Button@5": {
+        "m_TargetGraphic": {
+          "node": 5,
+          "comp": "Image"
+        }
+      },
+      "Button@10": {
+        "m_TargetGraphic": {
+          "node": 10,
+          "comp": "Image"
+        }
+      }
+    }
+  },
+  {
+    "resource": "UI/Prefabs/Challenge/selectSkill",
+    "nodes": 5,
+    "missing_sprites": [],
+    "refs": {
+      "SelectSkill@0": {
+        "name": {
+          "node": 2,
+          "comp": "TextMeshProUGUI"
+        },
+        "introduce": {
+          "node": 3,
+          "comp": "TextMeshProUGUI"
+        },
+        "selectBtn": {
+          "node": 4,
+          "comp": "Button"
+        },
+        "skillIcon": {
+          "node": 1,
+          "comp": "Image"
+        }
+      },
+      "Button@4": {
+        "m_TargetGraphic": {
+          "node": 4,
+          "comp": "Image"
+        }
+      }
+    }
+  },
+  {
+    "resource": "UI/Prefabs/Auction/selectSelectItem",
+    "nodes": 3,
+    "missing_sprites": [],
+    "refs": {
+      "Button@0": {
+        "m_TargetGraphic": {
+          "node": 0,
+          "comp": "Image"
+        }
+      },
+      "AuctionSelectItem@0": {
+        "icon": {
+          "node": 0,
+          "comp": "Image"
+        },
+        "tip": {
+          "node": 1,
+          "comp": "TextMeshProUGUI"
+        },
+        "suo": {
+          "node": 2,
+          "comp": "Image"
+        }
+      }
+    }
+  },
+  {
+    "resource": "UI/Prefabs/Auction/auctionItem",
+    "nodes": 4,
+    "missing_sprites": [],
+    "refs": {
+      "AuctionItem@0": {
+        "icon": {
+          "node": 0,
+          "comp": "Image"
+        },
+        "nameTxt": {
+          "node": 1,
+          "comp": "TextMeshProUGUI"
+        },
+        "priceTxt": {
+          "node": 2,
+          "comp": "TextMeshProUGUI"
+        }
+      }
+    }
+  },
+  {
+    "resource": "UI/Prefabs/Auction/auctionItemBox",
+    "nodes": 1,
+    "missing_sprites": [],
+    "refs": {
+      "Button@0": {
+        "m_TargetGraphic": {
+          "node": 0,
+          "comp": "Image"
+        }
+      }
+    }
+  }
+]

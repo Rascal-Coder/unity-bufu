@@ -15,10 +15,14 @@ namespace Bufu.Rebuild {
             var dice=actors.First(x=>x.RoleId==10);HelperSkills.Cast(dice,game.Coins.First());
             yield return new WaitForSeconds(.85f);Canvas.ForceUpdateCanvases();
             var shots=game.SmokePool.GetComponentsInChildren<SkillShot>();
-            Check(shots.Length==8,"awakened dice helper emits eight real directional skill projectiles");
+            Check(shots.Length==4,"awakened dice helper emits the first four directional projectiles after its first timed landing");
             Check(shots.All(shot=>shot.GetComponent<VatGraphic>()&&shot.GetComponent<VatGraphic>().Data.name=="zgygy_roleskill_dushen_1"&&shot.GetComponent<VatGraphic>().AnimationName=="effect"&&!shot.GetComponent<Image>()),"dice projectiles use the matching VAT animation instead of sprite-less white Image quads");
             Check(shots.All(shot=>shot.GetComponent<CanvasRenderer>().GetMesh().vertexCount>0),"each dice projectile produces actual textured VAT geometry");
+            var firstWave=shots.Select(shot=>shot.GetInstanceID()).ToArray();
             yield return Capture("06-dice-skill-fixed.png");
+            yield return new WaitForSeconds(.8f);Canvas.ForceUpdateCanvases();
+            shots=game.SmokePool.GetComponentsInChildren<SkillShot>();
+            Check(shots.Count(shot=>!firstWave.Contains(shot.GetInstanceID()))==4,"awakened dice helper emits the second four directions after the next timed landing, rather than eight at once");
             foreach(var actor in actors.Where(x=>x.RoleId>1))HelperSkills.Cast(actor,game.Coins.First());
             for(int frame=0;frame<90;frame++) {
                 CheckNoWhiteSkillImages();yield return null;

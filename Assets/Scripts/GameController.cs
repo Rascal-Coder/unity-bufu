@@ -14,7 +14,7 @@ namespace Bufu.Rebuild {
     /// <summary>
     /// Runtime controller. Every screen is instantiated from the prefabs exported from the original game
     /// (UiPrefab) and bound through the serialized script fields of those prefabs (UiView.Ref), so layout,
-    /// sprites, fonts and colours are the original ones. Ads, purchases and server features are left out.
+    /// sprites, fonts and colours are the original ones. Billing and online services use explicit integration boundaries.
     /// Partial files: Core (this), Main (top bar, upgrade panel), Popups, Panels (facility/shop/world), Talent.
     /// </summary>
     public sealed partial class GameController:MonoBehaviour {
@@ -23,7 +23,7 @@ namespace Bufu.Rebuild {
         public readonly List<CoinActor> Coins=new List<CoinActor>();
         public RectTransform Root,Field;
         public bool ModalOpen {get{popups.RemoveAll(x=>!x);return CutscenePlaying||popups.Count>0;}}
-        public static bool VerificationMode=>Environment.GetCommandLineArgs().Contains("--verify-rebuild");
+        public static bool VerificationMode=>Environment.GetCommandLineArgs().Contains("--verify-rebuild")||Environment.GetCommandLineArgs().Contains("--verify-alignment");
         static bool developerSession,maxedSession;
         static string PrefKey(string key)=>(maxedSession?"max.":developerSession?"dev.":"")+key;
 
@@ -77,8 +77,9 @@ namespace Bufu.Rebuild {
         }
 
         void Update() {
-            if(!interfaceReady)return;
+            if(!interfaceReady||IsBackgrounded)return;
             ApplyScreen();saveTimer+=Time.unscaledDeltaTime;
+            UpdateSceneInput();
             if(dirty&&saveTimer>10&&!VerificationMode){SaveStore.Save(Model);dirty=false;saveTimer=0;}
             if(Input.GetKeyDown(KeyCode.Escape)&&ModalOpen)CloseTopPopup();
             else if(Input.GetKeyDown(KeyCode.Space)&&!ModalOpen)FlipAll();
@@ -86,6 +87,8 @@ namespace Bufu.Rebuild {
             if(Model!=null&&!CutscenePlaying&&!Model.PromotionRunning&&!Model.PromotionWonPending&&goalView==null&&offlineView==null&&encounterRoot==null&&Model.PendingEncounter==null&&Model.PendingGoal!=null)ShowGoal();
             UpdatePromotion();
             UpdateGuide();
+            TickDiceSystems();
+            UpdateActivities(Time.deltaTime);
             ApplyAudio();
             if(Model!=null&&Model.DeveloperMode) {
                 if(Input.GetKeyDown(KeyCode.F1))ToggleDeveloperPanel();
@@ -94,7 +97,8 @@ namespace Bufu.Rebuild {
         }
         void LateUpdate(){SortActors();}
         void OnApplicationQuit(){if(Model!=null&&!VerificationMode){Model.CancelPromotion();SaveStore.Save(Model);}}
-        void OnApplicationPause(bool pause){if(pause&&Model!=null&&!VerificationMode)SaveStore.Save(Model);}
+        void OnApplicationPause(bool pause){applicationPaused=pause;RefreshApplicationActivity();}
+        void OnApplicationFocus(bool focused){applicationFocused=focused;RefreshApplicationActivity();}
 
         // ---------------------------------------------------------------- canvas
         void BuildCanvas() {
@@ -164,7 +168,16 @@ namespace Bufu.Rebuild {
         // ---------------------------------------------------------------- popups
         public UiView OpenPopup(string resource) {var v=UiPrefab.Instantiate(resource,popupLayer);popups.Add(v.Root);return v;}
         public void ClosePopup(UiView v){if(v==null||!v.Root)return;popups.Remove(v.Root);Destroy(v.Root);}
-        void CloseTopPopup(){if(CutscenePlaying||originalAd||encounterAd)return;if(promotionDialog!=null&&promotionDialog.Root&&popups.LastOrDefault()==promotionDialog.Root){promotionDialog.Ref<Button>("DialogPanel","bgButton").onClick.Invoke();return;}popups.RemoveAll(x=>!x);if(popups.Count==0)return;if(encounterRoot&&popups[popups.Count-1]==encounterRoot){CloseEncounterFromBack();return;}var go=popups[popups.Count-1];popups.RemoveAt(popups.Count-1);Destroy(go);}
+        void CloseTopPopup() {
+            if(CutscenePlaying||originalAd||encounterAd||rewardedAdPending||(worldUnlockGuide!=null&&worldUnlockGuide.Root))return;
+            if(promotionDialog!=null&&promotionDialog.Root&&popups.LastOrDefault()==promotionDialog.Root){promotionDialog.Ref<Button>("DialogPanel","bgButton").onClick.Invoke();return;}
+            popups.RemoveAll(x=>!x);if(popups.Count==0)return;
+            var go=popups[popups.Count-1];
+            if(go==purchaseView){ClosePurchaseStore();return;}
+            if(encounterRoot&&go==encounterRoot){CloseEncounterFromBack();return;}
+            if(TryDismissRewardPopup(go)||TryHandleActivityPopup(go))return;
+            popups.RemoveAt(popups.Count-1);Destroy(go);
+        }
 
         GameObject toastObject;
         /// <summary>BroadcastManager.ShowPopUpTip: fades in, holds 2s, then fades out while rising.</summary>
@@ -249,9 +262,12 @@ namespace Bufu.Rebuild {
         }
 
         public void RebuildActors() {
+            actorGeneration++;evolvingQualities.Clear();
             foreach(var coin in Coins)if(coin)Destroy(coin.gameObject);Coins.Clear();
             foreach(var helper in HelperActors)if(helper)Destroy(helper.gameObject);HelperActors.Clear();SleepTipActive=false;
+            if(SmokePool)foreach(Transform effect in SmokePool)Destroy(effect.gameObject);
             SyncActors(true);
+            ResetDiceWorldPresentation();
         }
         static readonly string[] CoinKinds={"copper","silver","gold","purple"};
         /// <summary>Adds the coins and helpers the model says should exist without moving the ones already on the field.</summary>
@@ -259,7 +275,8 @@ namespace Bufu.Rebuild {
             if(!Field)return;Canvas.ForceUpdateCanvases();
             int world=Model.Data.world;
             for(int quality=1;quality<=4;quality++) {
-                int visible=Math.Min(Model.Count(quality),100);
+                if(evolvingQualities.Contains(quality))continue;
+                int visible=Math.Max(0,Model.Count(quality));
                 var list=Coins.Where(x=>x&&x.Quality==quality).ToList();
                 for(int i=list.Count-1;i>=visible;i--){Coins.Remove(list[i]);Destroy(list[i].gameObject);}
                 int tier=Model.State.evolution[Model.BaseId+quality+1];string asset=(world==1?"coin_":"dice_")+CoinKinds[quality-1]+(tier==0?"":"_"+(tier+1));
@@ -269,7 +286,7 @@ namespace Bufu.Rebuild {
                     var coin=rt.gameObject.AddComponent<CoinActor>();coin.Init(this,quality,world,asset);Coins.Add(coin);
                 }
             }
-            int slots=Math.Min(40,Model.Helpers);var want=Model.HelperLineup(slots);
+            int slots=Math.Max(0,Model.Helpers);var want=Model.HelperLineup(slots);
             var need=new int[11];foreach(var id in want)if(id>=0&&id<need.Length)need[id]++;
             var got=new int[11];HelperActors.RemoveAll(x=>!x);foreach(var h in HelperActors)if(h.RoleId>=0&&h.RoleId<got.Length)got[h.RoleId]++;
             for(int id=0;id<need.Length;id++)while(got[id]>need[id]) {
@@ -327,10 +344,12 @@ namespace Bufu.Rebuild {
 
         // ---------------------------------------------------------------- restart after "clear save"
         void ResetGame() {
+            if(purchases!=null&&purchases.Busy){ShowToast("Please wait for the purchase check to finish.");return;}
             bool dev=Model.DeveloperMode,maxed=Model.Maxed;
             encounterRoot=null;encounterPhase=EncounterPhase.None;encounterAd=false;
-            Model.Encounter-=OnEncounterOffered;Model.Changed-=OnChanged;Model=new GameModel(null,dev,maxed);Model.Changed+=OnChanged;Model.Encounter+=OnEncounterOffered;SaveStore.Save(Model);
-            watchers.Clear();popups.Clear();goalView=null;offlineView=null;facilityView=null;shopView=null;worldView=null;talentView=null;
+            var paid=Model.Data.purchases;ClosePurchaseStore();
+            Model.Encounter-=OnEncounterOffered;Model.Changed-=OnChanged;Model=new GameModel(new SaveData{purchases=paid},dev,maxed);Model.Changed+=OnChanged;Model.Encounter+=OnEncounterOffered;InitializePurchases();SaveStore.Save(Model);
+            watchers.Clear();popups.Clear();rewardPopupClosers.Clear();goalView=null;offlineView=null;facilityView=null;shopView=null;worldView=null;talentView=null;activityView=null;
             helperWorld=-1;promotionView=null;promotionHud=null;promotionDialog=null;shownPromotion=null;Time.timeScale=1;
             foreach(var layer in new[]{bgLayer,mainLayer,popupLayer})foreach(Transform child in layer)Destroy(child.gameObject);
             Coins.Clear();BuildAll();ResetGuide();

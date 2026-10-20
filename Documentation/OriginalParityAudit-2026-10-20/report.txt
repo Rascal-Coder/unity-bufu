@@ -1,0 +1,255 @@
+不服开一局：原版还原差异审计
+审计日期：2026-10-20（Asia/Shanghai）
+工程根目录：E:/rea-games/unity-bufu
+
+一、结论与证据边界
+
+当前版本具备硬币/骰子世界的基础循环、配置驱动升级、奇遇、晋升、签到与商城等主框架，但距离完整还原仍有实质玩法缺口。尤其“有强化卡片、能够购买”不代表强化效果已接入：骰子七个技能升级中，实际找到运行效果的是103幸运回响，其余六项存在缺失。
+
+本报告对照当前 Assets/Scripts、Assets/Resources/Config 与已有 Reference/DecompiledCSharp，追踪主要系统的入口、状态与效果计算。snapshot.json 固定了49个运行脚本、26个配置JSON和324个原版参考脚本的文件指纹；指纹清单不表示对每个参考文件逐行审阅。
+原始资源索引 Reference/package-manifest.json 标注热更新版本2026-10-14-626。这一基准尚未证明与用户手机上的原版版本完全一致。
+本轮是静态代码/配置审计；没有启动游戏、没有修改游戏逻辑、没有改玩家存档，没有进行同存档产出统计、逐像素截图或原版录屏对照。
+以下文件行号均相对上述工程根目录；“原版”指本地已有的反编译参考，不将反编译结果等同完整原始源码。
+P1：明显影响功能、收益或成长；P2：流程、状态、操作或动作还原差异；P3：表现细节。已知改版/平台裁剪另标注，不能自动当作需要恢复的缺陷。
+
+二、玩法与数值差异
+
+D01 [P1，高置信] 厄运消除101、好运常在102没有实际效果
+现状：升级后仅记录技能等级，骰子仍以 Random.Range(1,7) 均匀抽取。小点数概率与六点概率不会随强化变化。
+当前：Assets/Scripts/SceneActors.cs:63-67；Assets/Scripts/GameModel.cs:333。
+原版：Reference/DecompiledCSharp/Module/Role/DiceVat.cs:606-624；DiceWorldController.cs:1083-1095；UpgradeManager.cs:2232-2235。
+
+D02 [P1，高置信] 共鸣104没有实际效果
+现状：落地只结算、播放特效和判断幸运回响；不会概率抛起周围相同点数的骰子。
+当前：Assets/Scripts/SceneActors.cs:121-124。
+原版：Reference/DecompiledCSharp/Module/Role/DiceVat.cs:803-809；DiceWorldController.cs:1104-1129。
+
+D03 [P1，高置信] 六点加注105没有实际效果
+现状：六点只有基础点数倍率，没有叠加强化的 Pow(1.15,等级)。
+当前：Assets/Scripts/GameModel.cs:357-361。
+原版：Reference/DecompiledCSharp/Module/Role/DiceVat.cs:637-642；UpgradeManager.cs:2240-2241。
+
+D04 [P1，高置信] 超级666只有购买项，缺少整条玩法
+现状：没有六点累计进度、激活、持续时间及全场固定六点机制；相关骰子天赋308/309/312/313缺少作用对象。
+当前：Assets/Scripts/GameModel.cs:34-41、333；Assets/Scripts/SceneActors.cs:63-67、121-124。搜索全部运行脚本后未找到对应进度/计时/状态转换。
+原版：Reference/DecompiledCSharp/DownItem.cs:2334-2395；Module/Role/DiceVat.cs:626-648。
+
+D05 [P1，高置信] 钻石商人只有购买项，缺少计时与领取
+现状：没有商人定时赠钻石、随机奖励及领取链路；骰子天赋306也无对应效果。
+当前：Assets/Scripts/GameModel.cs:34-41、333；运行脚本无商人业务状态。
+原版：Reference/DecompiledCSharp/DownItem.cs:2526、2674、2783-2793。
+
+D06 [P1，高置信] 大量帮手天赋未参与收益
+金币天赋202/203/204/205的按帮手加成、208九尾妖狐、209钢铁洪流未进入计算；骰子203/205/206/208/209/210的收益加成、211的SR帮手暴伤加成也缺失。
+当前：Assets/Scripts/GameModel.cs:341-355完整收益路径；其他运行脚本未找到这些天赋的实际效果读取。
+原版：Reference/DecompiledCSharp/TalentDataManager.cs:213-271、601-625；BuffManager.cs:135-151、189-192。
+影响：天赋点能花出去，但相关阵容与培养策略没有原版的收益回报。
+
+D07 [P1，高置信] 桌台、点击天赋、暴击的叠加公式偏离
+当前 DeskPower 与原版添加到 Buff 的原始值相同，但后续合成规则不同。以下例子仅比较对应一段加成，其他共同乘数省略：
+  a. 手动桌台倍率2、点击大师一级值1：原版该段是2+1=3，当前是2*(1+1)=4。
+  b. 原版基础暴伤2与暴伤桌台相加；当前有暴伤桌台便只返回桌台之和，丢掉基础2。一级暴伤桌台值2时，原版该段4倍，当前2倍。帮手暴击又直接使用HelperSkillValue，绕过桌台。
+  c. 全局收益桌台原版使用1+Buff值，当前直接乘DeskPower；值1.5时贡献原版2.5倍、当前1.5倍，与炼金术等天赋的组合方式也不同。
+当前：Assets/Scripts/GameModel.cs:207-213、349-353。
+原版：Reference/DecompiledCSharp/UpgradeManager.cs:638-644、757-787、2193-2213；BuffManager.cs:108-154、166-194。
+
+D08 [P2，高置信] 骰子强者恒强106放错乘数位置
+当前把天赋值加到上涨强化指数乘数里；原版在已有基础价值之外的独立valueMultiplier里相加。上涨强化越高，当前天赋的相对增益越小。
+当前：Assets/Scripts/GameModel.cs:344-347。
+原版：Reference/DecompiledCSharp/UpgradeManager.cs:1749-1759；Module/Role/DiceVat.cs:650-656。
+
+D09 [P2，高置信] 骰子免费劳工212不提高单个帮手派遣上限
+当前只按state.max限制人数，没有追加天赋给的上限。
+当前：Assets/Scripts/GameModel.cs:564、575、631-634。
+原版：Reference/DecompiledCSharp/Module/Facility/HelperItem.cs:269-275。
+
+三、帮手与成长差异
+
+D10 [P1，高置信] 2至10号帮手省掉施法前普通抛掷，节奏也不同
+当前RoleId>1直接Cast并return，固定等待0.8秒。原版先投掷目标，再触发附加技能，等待RoleThrowDuration+0.5。会少一次基础抛掷，同时改变目标占用及整轮产出。
+当前：Assets/Scripts/SceneActors.cs:274-284。
+原版：Reference/DecompiledCSharp/Module/Role/RoleVat.cs:854-870。
+
+D11 [P1/P2，多项高置信] 专属技能为简化实现，仍有以下具体差异
+  a. 赌神十字弹射：当前固定1400行程，不随技能档位成长。原版基础距离300并按SkillRank、UpgradeSkillNum/BaseSkillNum扩展。当前速度、初始偏移也采用固定值。行程成长缺失确定；默认速度/半径还需原prefab参数核对。
+     当前 HelperSkills.cs:108-111；原版 Module/UI/DuShenDiceMove.cs:16-32、75-92；Module/Role/RoleVat.cs:2522、2530。
+  b. 九尾狐：当前行程至少800，去回共用命中集合，回程不再命中同一硬币；魅惑在整个往返结束才执行，变成最多抛8个身边硬币。原版远端停0.5秒、吸引150范围硬币到40-100距离，清命中集合后回程再命中。
+     当前 HelperSkills.cs:70、75-76、167-176；原版 Module/Role/RoleVat.cs:2000-2006、2042；Module/UI/DajiAnimation.cs:491-499、562-597、626-646。
+  c. 练习生篮球：当前额外受1000总行程限制，可能未完成应有边界反弹就消失；原版主要按超过反弹次数结束。
+     当前 HelperSkills.cs:43、62-65、162-170；原版 Module/Role/RoleVat.cs:1912-1917；Module/UI/LanqiuAnimation.cs:159-201。
+  d. 大蛇：当前只有范围抛掷和一团特效，硬币随机移动；原版逐目标伸长触手，动画完成才原地抛掷，并排除100以内目标。
+     当前 HelperSkills.cs:44、128；原版 Module/Role/RoleVat.cs:1683-1692、1935-1979；Module/Role/DaSheHand.cs:64-99。
+  e. 钢铁人：当前起点Burst后0.7秒直接爆炸，缺少导弹先上飞再落向目标的轨迹；核弹也省掉下降阶段。
+     当前 HelperSkills.cs:81-92；原版 Module/Role/RoleVat.cs:2105-2133、2223。
+  f. 赌神双炸弹：当前同在0.7秒结算；原版第二枚延迟0.3秒生成，第一枚0.5秒下降，落地还播放对应点数动画。
+     当前 HelperSkills.cs:97-112；原版 Module/Role/RoleVat.cs:2620-2669。
+  g. 功夫大师/大蛇：当前统一Launch仍带普通翻币延迟，原版对角色4/6清掉延迟；哈大壮觉醒投掷后再翻一次的回调也没实现（普通模式获取路径还需结合活动开放核对）。
+     当前 HelperSkills.cs:41-47、128；SceneActors.cs:51；原版 Module/Role/RoleVat.cs:873-896、1683-1697。
+上述当前路径均为 Assets/Scripts/；原版路径均为 Reference/DecompiledCSharp/。
+
+D12 [P2，高置信] 跨世界首次解锁帮手不继承已培养等级
+原版保存全局最高帮手等级，新世界拥有同一帮手时继承；当前各世界新建帮手固定1级。
+当前：Assets/Scripts/GameModel.cs:41、564、575、610-616。
+原版：Reference/DecompiledCSharp/GameDataManager.cs:4463-4471、4562-4585、4597-4599。
+
+D13 [P1，高置信] 场上真实数量被额外截断，后期购买不全部产生收益
+当前每种币/骰最多创建100个，帮手最多创建40个。原版按实际数量创建。
+帮手配置基础上限15，精英教育五级每级+10，合法可达65；当前超过40的25个位置不创建角色。币/骰最终进化后还能继续购买，实际数量超过100也被截断。没有找到以虚拟产出补偿未生成对象的机制。
+当前：Assets/Scripts/GameController.cs:262-278（visible=Math.Min(...,100)、slots=Math.Min(40,...)）；GameModel.cs:301-305。
+原版：Reference/DecompiledCSharp/MainSceneVat.cs:1016、1200-1224、2420-2430；DiceWorldController.cs:480-520。
+配置：Assets/Resources/Config/tbitemupgrade1.json；tbtalent.json金币207；tbtalent2.json骰子201。
+
+D14 [P1，高置信；广告功能裁剪] 缺少高级广告重生
+原版普通重生清强化，广告重生可保留强化；当前隐藏广告选项，只有始终清强化的Rebirth。
+当前：Assets/Scripts/GameController.Talent.cs:172；GameModel.cs:451-460。
+原版：Reference/DecompiledCSharp/TalentRebornTip.cs:112-116、327-346。
+
+D15 [P2，高置信] 普通重生后专属帮手派遣人数没有归零
+当前保留helpers[*].count，重新买帮手人数会恢复上次阵容；原版重生会清helperCount。
+当前：Assets/Scripts/GameModel.cs:451-460、638-643。
+原版：Reference/DecompiledCSharp/TalentRebornTip.cs:406；GameDataManager.cs:4352-4363。
+
+四、离线、领取与广告差异
+
+D16 [P1，高置信] 游玩另一世界期间，离开的世界漏算离线收益
+当前只启动时AccumulateOffline；每次保存还同时覆盖两个世界lastExit。硬币世界离开后玩骰子十分钟，再切回，没有这十分钟离线结算。
+当前：Assets/Scripts/SaveStore.cs:22；GameModel.cs:429-432；GameController.Boot.cs:59；GameController.Panels.cs:366-368。
+原版：Reference/DecompiledCSharp/GameDataManager.cs:592-614、760-805。
+
+D17 [P2，高置信] 切后台再返回没有原版离线补算
+当前暂停只保存，恢复时没有补算/弹离线收益。
+当前：Assets/Scripts/GameController.cs:96-97；全部运行脚本未见前台恢复补算。
+原版：Reference/DecompiledCSharp/OfflineIncomeManager.cs:87、99-120。
+
+D18 [P2，高置信；广告功能裁剪] 离线双倍领取被隐藏
+当前隐藏doubleClaimButton且所有领取只走普通领取，模型也无倍率参数。
+当前：Assets/Scripts/GameController.Popups.cs:119-122；GameModel.cs:428。
+原版：Reference/DecompiledCSharp/OfflineIncomeUI.cs:115-126；OfflineIncomeManager.cs:377-394。
+
+D19 [P1，高置信；广告功能裁剪] 通用奖励广告双倍缺失
+签到、转盘、广告钻石、转盘满进度箱的原版双倍领奖入口全被隐藏。注意：钻石购买202/203宝箱原版就设noDouble=true，不属于缺失。
+当前：Assets/Scripts/GameController.Popups.cs:225、237-238。
+原版：Reference/DecompiledCSharp/Module/UI/RewardBoxUI.cs:122-154；Module/Shop/ShopTurntablePanel.cs:629、655、681、691；CheckInRewardItem.cs:308、429。
+
+D20 [P1，高置信；广告流程改版] 商城广告钻石、非首免转盘直接领取/开转
+当前相关入口直接调用ClaimDiamondAd/Spin，不经过广告成功条件；原版仅首次转盘免费，其余须广告成功。
+当前：Assets/Scripts/GameController.Panels.cs:164-171、210-223。
+原版：Reference/DecompiledCSharp/Module/Shop/ShopTurntablePanel.cs:423-454、646-663。
+
+D21 [P1，高置信] 现有AdMob仍是测试流程，关闭即成功
+当前固定测试广告ID；未加载直接回成功；OnRewardedClosed无条件成功，而真正reward回调只打日志，提前关闭也可能发奖。原版小游戏close/fail返回false，完整观看才发奖；非小游戏的2秒假广告也有等待与关闭流程。
+当前：Assets/Scripts/AdManager.cs:12、36、50-55；GameController.cs:52。
+原版：Reference/DecompiledCSharp/FakeVideoManager.cs:260-314。
+说明：不能继续照README笼统说“未接广告”，当前确实有AdMob代码，但并非完成的原版平台广告语义。
+
+D22 [P2，高置信；广告流程改版] 天赋重置直接免费
+当前隐藏广告图标，直接执行ResetTalents；原版在相关重置分支须广告成功。
+当前：Assets/Scripts/GameController.Talent.cs:155-165。
+原版：Reference/DecompiledCSharp/TalentResetTip.cs:57-79。
+
+五、引导、动作与界面流程差异
+
+D23 [P2，高置信；含新增内容] 引导后续阶段缺失，另加了20钻石礼包
+当前雇佣首个帮手后直接ShowFortunePopup并结束引导；原版还有第4阶段持续指引升级，按common34累计次数、每5秒提示可升级卡。
+当前初始20钻石与原版一致；新增庆祝礼包再发20，实际新手奖励比原版多20。庆祝窗口本身也属新增内容。
+当前：Assets/Scripts/GameController.Guide.cs:9-17、86-93；GameController.Fortune.cs:20。
+原版：Reference/DecompiledCSharp/UpgradePanel.cs:1206-1253、1336-1342；GameDataManager.cs:3503-3520（初始钻石）。
+
+D24 [P2，高置信] 骰子世界解锁与首次体验引导缺失
+没有入口→骰子岛→切换确认的三步引导；首次世界页手势/自动滚到骰子岛缺失。原版首次骰子投掷还有固定1点、固定6点教学；当前引导代码只处理world1，骰子仍均匀随机。
+当前：Assets/Scripts/GameController.Guide.cs:28、102；GameController.Panels.cs:304、350-353；SceneActors.cs:63-67。
+原版：Reference/DecompiledCSharp/DownItem.cs:2855-2874；DiceWolrdGuide.cs:73-90、104-174；WorldSelectionPanel.cs:183-208；DiceWorldController.cs:17-31、854起。
+
+D25 [P2，高置信] 进化缺少聚合、抖动、变身动作
+当前进化确认后RebuildActors，场上币/骰与帮手直接重建；原版先移动聚合到中心、抖动、揭示新皮肤并缩回，且不必重置所有帮手的动作状态。
+当前：Assets/Scripts/GameController.Main.cs:366；GameController.cs:251-255；SceneActors.cs无对应进化状态。
+原版：Reference/DecompiledCSharp/MainSceneVat.cs:1098-1186；DiceWorldController.cs:575-647；Module/Role/CoinVat.cs:570-620。
+
+D26 [P2，高置信] 世界页排序、停靠行为与原版不同
+当前按sort升序排列并把“更多世界”放最后，即硬币→骰子→更多；原版先放ComingSoon、其余sort降序，即更多→骰子→硬币。原版滚动减速后平滑吸附最近岛屿，当前只普通ScrollRect并在打开时定位，没有该吸附状态机。
+当前：Assets/Scripts/GameController.Panels.cs:319-353；GameController.WorldLayout.cs:11-54。
+原版：Reference/DecompiledCSharp/WorldSelectionPanel.cs:81-88、251-281、304-310、484-601。
+另：当前世界页标题、岛屿和说明区域有明确重新排版，是否偏移/遮挡不能仅凭改坐标判断，需同分辨率截图对照。
+
+D27 [P2，机制高置信、实际手感待运行] 点击/滑动命中机制不同
+当前是各个CoinActor的uGUI矩形射线命中，PointerDown立即投掷；原版主场景按点击位置找50半径内最近空闲币，并有统一点击/滑动轨迹与UI阻挡判断。重叠币、快速划动、按下后取消、币边缘点击的反馈可能不同。
+当前：Assets/Scripts/SceneActors.cs:11、26、31-34；GameController.cs:267。
+原版：Reference/DecompiledCSharp/MainSceneVat.cs:136、2164-2217、2952-3079。
+这里只确认输入机制不一致，不声称已经复现误触或漏触。
+
+D28 [P2，高置信；临时测试开关] 片头每次启动都播放
+当前AlwaysPlayFilm=true，忽略已看标记；原版已观看后跳过。
+当前：Assets/Scripts/IntroScene.cs:22、37。
+原版：Reference/DecompiledCSharp/MainEntry.cs:606-613。
+片头确认窗口当前是手工构建；原版由IntroVideoPlayer复用原目标对话框。是否有像素差异待截图对照，不把当前能确认进入的流程说成整体缺失。
+
+D29 [P3，高置信] 普通领奖后资源飞入动画缺失
+当前通用奖励关闭只ClosePopup；原版还把金币、钻石、碎片飞向对应计数。挑战领奖虽有FlyPromotionRewards，但没复用到签到/商城等普通领奖。
+当前：Assets/Scripts/GameController.Popups.cs:237-238；GameController.Promotion.cs:125、130。
+原版：Reference/DecompiledCSharp/Module/UI/RewardBoxUI.cs:60-119。
+
+D30 [P3，高置信] 转盘只持续减速，没有原版分段起步与回弹
+同为4.5秒，当前三次ease-out；原版0.8/2.5/4.2/4.5秒分段加速、匀速、减速、过冲回弹。
+当前：Assets/Scripts/GameController.Panels.cs:223。
+原版：Reference/DecompiledCSharp/Module/Shop/ShopTurntablePanel.cs:525-566。
+
+六、明确的改版/平台范围差异
+
+这些确实不同于原版，但可能是此前有意决定的产品范围。未经确定还原目标，不应自动恢复。
+
+D31 [改版，高置信] 强制英文界面及重绘文字美术
+L10n.IsEnglish恒true，Initialize/NormalizeLanguage恒en，无法切回原版中文。英文图片、卡片排版与新手窗口也有重绘/适配。来源 Assets/Scripts/UI/L10n.cs:17-30；UI/UiPrefab.cs:34-45；GameController.Fortune.cs:35-61。
+这是明确的语言/美术改版，不把英文适配本身当作实现错误。所有界面是否逐像素一致尚未验证。
+
+D32 [范围裁剪，高置信] 排行榜、邀请助力与云存档未还原
+当前永久隐藏排行/邀请按钮；原版按成长等级开放，邀请还有24小时收益Buff。当前存档只本地JSON，与原版登录/服务器上传不同。
+当前：Assets/Scripts/GameController.Main.cs:34-35；SaveStore.cs:7-24。
+原版：Reference/DecompiledCSharp/TopPanel.cs:271、302、462-478；Module/Invite/InviteUI.cs:94-118、148-151；UpgradeManager.cs:871-908；MainEntry.cs:228-285、355、386。
+定时插屏、平台广告次数统计/埋点也没有对应流程，原版 FakeVideoManager.cs:338-421、456-479。
+
+D33 [范围裁剪，高置信] 原版第4个主标签的挑战/拍卖分支缺失
+当前MainTabs仅1/2/3/5/6，button4移除。原版case4会打开ChallengeDataManager的ChallengePanel；该面板还有拍卖入口。这和已实现的“称号晋升限时挑战”是不同系统，不能用晋升挑战已接入来替代。
+当前：Assets/Scripts/GameController.Main.cs:70、79、182-190。
+原版：Reference/DecompiledCSharp/UpgradePanel.cs:695-707；Module/ChallengeNew/ChallengePanel.cs:26-34。
+原版这一系统的完整开放条件、服务器可用性、活动时效尚未实机核实，不能保证用户手机当下可进入。仅确认参考实现有该分支、当前没有对应实现。
+
+D34 [平台分支，高置信] 特殊签到的订阅领取被广告替代
+原版功夫大师等条件满足会走平台订阅领取；当前隐藏subscribeRect，特殊签到统一广告。
+当前：Assets/Scripts/GameController.Popups.cs:177、200-201。
+原版：Reference/DecompiledCSharp/DailyCheckIn.cs:227-251、353-364；CheckInRewardItem.cs:374-395。
+
+D35 [P3，高置信] 设置版本号隐藏
+当前隐藏gameVersion，原版展示资源版本。
+当前：Assets/Scripts/GameController.Popups.cs:166。
+原版：Reference/DecompiledCSharp/SetUpPanel.cs:143-146。
+
+七、已核对基本对应的内容，避免误报
+
+1. 奇遇主数值流程：common37-40的等级/进度触发、一次机会、金币赌注、钻石Min(60,Floor(持有*.6))、common42胜率/55%回退、中奖双倍和失败返本金，基本对应。当前 GameModel.cs:383-406、GameController.Encounter.cs:118-173；原版 Module/Mission/MissionManager.cs:264-379、CoinSlotSupportDialog.cs:463-561、630-641、Constants.cs:182-196。广告本身仍有D21差异，界面是重建版，不能据此声称奇遇全部逐像素还原。
+2. 幸运回响103确实进入运行：GameModel.cs:202、SceneActors.cs:124。骰子基础品质价值、2-6点倍率及上涨强化指数也已有计算；缺口是后续技能与叠加规则。
+3. 晋升限时挑战的目标、时空扭曲、奖励双倍概率、倒计时和成长门控，未发现新的高置信主问题。它不等于D33的独立挑战/拍卖系统。
+4. 应援金币最低500、平均收益倍率、三种冷却、两世界大富翁加成及骰子304时长单位转换基本对应。
+5. 桌台解锁、等级1自动拥有、金币等比/钻石等差升级费用及DeskPower幂次基本对应；D07指出的是这些值进入Buff后的组合公式。
+6. 商城宝箱次数、免费首转、五次转盘进度、签到基础/特殊领取状态已实现，不能笼统说“商城/转盘/签到没接”。缺失的是广告条件、双倍分支等。
+7. 当前本地存档有.tmp原子替换和.bak回退，没有证据说存档整体不可保存。D16/D17是离开时间与离线触发问题，D32是云端能力范围差异。
+8. 不把恢复/退出按钮隐藏当作原版可见入口缺失：原版SetUpPanel.cs:170-176同样隐藏。TopPanel.cs:402-404的恢复点击本身为空，至多外观差异。
+9. 没找到足够证据确认原版可用的真钱内购流程，本报告不泛称“内购功能缺失”。
+
+八、尚未闭环的核验项
+
+- 原版同版本、同分辨率、同存档的逐屏截图/录屏对照；界面尺寸、字体、裁切、遮挡、图层和动效节奏仍需实测。
+- 帮手弹道的默认速度、半径等可能被prefab序列化覆盖；已确认的固定行程/生命周期/时序差异可以修，具体参数应先取原prefab或运行证据。
+- 相同阵容在两世界60秒/10分钟产出、暴击率、六点概率和技能命中统计。
+- 世界切换、后台恢复、应用重启、普通/高级重生、领奖过程退出的完整状态组合。
+- 本次没有重跑历史QA。旧报告通过只能说明其覆盖的旧版本/断言，不能证明本轮列出的原版一致性。
+- Windows现有程序集的身份已固定，SHA256=b3b757f8fd8932624d90cea5906f0d41491229eece675d069e1a01007ed6e2c8，MVID=4f4bacf0-feaf-461d-aa61-636cec17e2f6。REA元数据身份检查成功；进一步成员检查受64MiB表示预算限制不可用。尚未证明现有包与当前源码一致，也不单靠时间戳断言现有包缺哪项。详情见evidence.json。
+- 未审计未跟踪的嵌套副本 E:/rea-games/unity-bufu/unity-bufu。根目录“打开工程.cmd”打开的是当前根工程，嵌套副本启动脚本仍指向团结引擎；应避免把两份工程/构建混作同一对象。
+
+九、建议修复次序
+
+第一批：D01-D07骰子技能与收益公式，D10专属帮手基础投掷，D13真实人数上限，D16/D17离线触发。
+第二批：D08/D09天赋、D11技能行为、D12/D15帮手跨世界与重生状态；确定保留广告功能后补D14、D18-D22。
+第三批：D23-D30引导、进化、操作、世界页和领奖表现。
+单独决策：D31-D35语言、美术、联网、独立挑战/拍卖及平台订阅范围，避免回退已经接受的改版。
+
+本报告仅建立修复清单，未实施修复。附件：snapshot.json（文件指纹）、evidence.json（基准与构建证据边界）。

@@ -19,7 +19,7 @@ namespace Bufu.Rebuild {
         public static void Save(GameModel game) {
             if(GameController.VerificationMode)return;
             string p=PathFor(game.DeveloperMode,game.Maxed);Directory.CreateDirectory(Path.GetDirectoryName(p));
-            foreach(var state in game.Data.worlds)state.lastExit=DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+            game.MarkActiveWorldExit();
             File.WriteAllText(p+".tmp",JsonUtility.ToJson(game.Data,true),new UTF8Encoding(false));
             if(File.Exists(p))File.Replace(p+".tmp",p,p+".bak");else File.Move(p+".tmp",p);
         }

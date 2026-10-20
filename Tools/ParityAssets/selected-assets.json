@@ -1,0 +1,324 @@
+[
+  {
+    "ordinal": 329,
+    "Address": "",
+    "AssetPath": "Assets/GameRes/NewUI/Ad/perfabs/AdDiamondMerchant.prefab",
+    "AssetGUID": "",
+    "AssetTags": [
+      "NewUI"
+    ],
+    "BundleID": 70,
+    "DependBundleIDs": [
+      24,
+      75,
+      214
+    ],
+    "classification": "prefab",
+    "record_offset": 23330,
+    "record_end": 23419,
+    "bundle_file": "177fa928117348fbb92c15400aa806ba.bundle",
+    "bundle_name": "gameres_assets_gameres_newui_ad.bundle",
+    "dependent_files": [
+      "1a5cfbfeb47584991ba7f74e94333037.bundle",
+      "ce9d68a9f606e661f79aba3b900375e9.bundle",
+      "4cac0588bfa397c0a6d0ea1103b18b17.bundle"
+    ],
+    "bundle_url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/177fa928117348fbb92c15400aa806ba.bundle"
+  },
+  {
+    "ordinal": 336,
+    "Address": "",
+    "AssetPath": "Assets/GameRes/NewUI/Ad/perfabs/AdLaoHuJi.prefab",
+    "AssetGUID": "",
+    "AssetTags": [
+      "NewUI"
+    ],
+    "BundleID": 70,
+    "DependBundleIDs": [
+      24,
+      75,
+      211,
+      212,
+      214
+    ],
+    "classification": "prefab",
+    "record_offset": 23919,
+    "record_end": 24008,
+    "bundle_file": "177fa928117348fbb92c15400aa806ba.bundle",
+    "bundle_name": "gameres_assets_gameres_newui_ad.bundle",
+    "dependent_files": [
+      "1a5cfbfeb47584991ba7f74e94333037.bundle",
+      "ce9d68a9f606e661f79aba3b900375e9.bundle",
+      "818b72b91204789375e1538e33710670.bundle",
+      "66b01bb9d483a881362aec66915c4eb8.bundle",
+      "4cac0588bfa397c0a6d0ea1103b18b17.bundle"
+    ],
+    "bundle_url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/177fa928117348fbb92c15400aa806ba.bundle"
+  },
+  {
+    "ordinal": 783,
+    "Address": "",
+    "AssetPath": "Assets/GameRes/NewUI/fakevideo/prefabs/FakeVideoPanel.prefab",
+    "AssetGUID": "",
+    "AssetTags": [
+      "NewUI"
+    ],
+    "BundleID": 78,
+    "DependBundleIDs": [
+      24,
+      214
+    ],
+    "classification": "prefab",
+    "record_offset": 61855,
+    "record_end": 61944,
+    "bundle_file": "1e9dc0aef51e83b0e599471bd3acf006.bundle",
+    "bundle_name": "gameres_assets_gameres_newui_fakevideo.bundle",
+    "dependent_files": [
+      "1a5cfbfeb47584991ba7f74e94333037.bundle",
+      "4cac0588bfa397c0a6d0ea1103b18b17.bundle"
+    ],
+    "bundle_url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/1e9dc0aef51e83b0e599471bd3acf006.bundle"
+  },
+  {
+    "ordinal": 1056,
+    "Address": "",
+    "AssetPath": "Assets/GameRes/NewUI/video/gameTargetPanel.prefab",
+    "AssetGUID": "",
+    "AssetTags": [
+      "NewUI"
+    ],
+    "BundleID": 89,
+    "DependBundleIDs": [
+      24,
+      75,
+      214
+    ],
+    "classification": "prefab",
+    "record_offset": 83992,
+    "record_end": 84074,
+    "bundle_file": "140959ed1c990a1dad18e67c0afbca19.bundle",
+    "bundle_name": "gameres_assets_gameres_newui_video.bundle",
+    "dependent_files": [
+      "1a5cfbfeb47584991ba7f74e94333037.bundle",
+      "ce9d68a9f606e661f79aba3b900375e9.bundle",
+      "4cac0588bfa397c0a6d0ea1103b18b17.bundle"
+    ],
+    "bundle_url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/140959ed1c990a1dad18e67c0afbca19.bundle"
+  },
+  {
+    "ordinal": 1082,
+    "Address": "",
+    "AssetPath": "Assets/GameRes/Role/aixinqiu.prefab",
+    "AssetGUID": "",
+    "AssetTags": [
+      "role"
+    ],
+    "BundleID": 94,
+    "DependBundleIDs": [],
+    "classification": "prefab",
+    "record_offset": 86168,
+    "record_end": 86223,
+    "bundle_file": "6571b9bd25737bcfef3fc8a71247596b.bundle",
+    "bundle_name": "gameres_assets_gameres_role_aixinqiu.bundle",
+    "dependent_files": [],
+    "bundle_url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/6571b9bd25737bcfef3fc8a71247596b.bundle"
+  },
+  {
+    "ordinal": 1095,
+    "Address": "",
+    "AssetPath": "Assets/GameRes/Role/coins_tornado.prefab",
+    "AssetGUID": "",
+    "AssetTags": [
+      "role"
+    ],
+    "BundleID": 107,
+    "DependBundleIDs": [],
+    "classification": "prefab",
+    "record_offset": 87036,
+    "record_end": 87096,
+    "bundle_file": "d57e44272e4aa80e4e5ecddb285ecf5e.bundle",
+    "bundle_name": "gameres_assets_gameres_role_coins_tornado.bundle",
+    "dependent_files": [],
+    "bundle_url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/d57e44272e4aa80e4e5ecddb285ecf5e.bundle"
+  },
+  {
+    "ordinal": 1096,
+    "Address": "",
+    "AssetPath": "Assets/GameRes/Role/coins_tornado2.prefab",
+    "AssetGUID": "",
+    "AssetTags": [
+      "role"
+    ],
+    "BundleID": 108,
+    "DependBundleIDs": [],
+    "classification": "prefab",
+    "record_offset": 87096,
+    "record_end": 87157,
+    "bundle_file": "b1eba4e263e2447c4b4ae14cfd77134e.bundle",
+    "bundle_name": "gameres_assets_gameres_role_coins_tornado2.bundle",
+    "dependent_files": [],
+    "bundle_url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/b1eba4e263e2447c4b4ae14cfd77134e.bundle"
+  },
+  {
+    "ordinal": 1100,
+    "Address": "",
+    "AssetPath": "Assets/GameRes/Role/dashehandani.prefab",
+    "AssetGUID": "",
+    "AssetTags": [
+      "role"
+    ],
+    "BundleID": 112,
+    "DependBundleIDs": [],
+    "classification": "prefab",
+    "record_offset": 87349,
+    "record_end": 87408,
+    "bundle_file": "52106649390cd50d5fe2dbd3d5cda492.bundle",
+    "bundle_name": "gameres_assets_gameres_role_dashehandani.bundle",
+    "dependent_files": [],
+    "bundle_url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/52106649390cd50d5fe2dbd3d5cda492.bundle"
+  },
+  {
+    "ordinal": 1102,
+    "Address": "",
+    "AssetPath": "Assets/GameRes/Role/dushen_DiceMove.prefab",
+    "AssetGUID": "",
+    "AssetTags": [
+      "role"
+    ],
+    "BundleID": 114,
+    "DependBundleIDs": [],
+    "classification": "prefab",
+    "record_offset": 87481,
+    "record_end": 87543,
+    "bundle_file": "d540424584f8e7dabfeacb8a1a4c9a6e.bundle",
+    "bundle_name": "gameres_assets_gameres_role_dushen_dicemove.bundle",
+    "dependent_files": [],
+    "bundle_url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/d540424584f8e7dabfeacb8a1a4c9a6e.bundle"
+  },
+  {
+    "ordinal": 1106,
+    "Address": "",
+    "AssetPath": "Assets/GameRes/Role/iron_boom.prefab",
+    "AssetGUID": "",
+    "AssetTags": [
+      "role"
+    ],
+    "BundleID": 118,
+    "DependBundleIDs": [],
+    "classification": "prefab",
+    "record_offset": 87754,
+    "record_end": 87810,
+    "bundle_file": "93f79a3a0c100194b4778ddc095fab8b.bundle",
+    "bundle_name": "gameres_assets_gameres_role_iron_boom.bundle",
+    "dependent_files": [],
+    "bundle_url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/93f79a3a0c100194b4778ddc095fab8b.bundle"
+  },
+  {
+    "ordinal": 1107,
+    "Address": "",
+    "AssetPath": "Assets/GameRes/Role/iron_boom2.prefab",
+    "AssetGUID": "",
+    "AssetTags": [
+      "role"
+    ],
+    "BundleID": 119,
+    "DependBundleIDs": [],
+    "classification": "prefab",
+    "record_offset": 87810,
+    "record_end": 87867,
+    "bundle_file": "f6dbb0577e3e99090a542d747b29a32c.bundle",
+    "bundle_name": "gameres_assets_gameres_role_iron_boom2.bundle",
+    "dependent_files": [],
+    "bundle_url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/f6dbb0577e3e99090a542d747b29a32c.bundle"
+  },
+  {
+    "ordinal": 1108,
+    "Address": "",
+    "AssetPath": "Assets/GameRes/Role/iron_bullet.prefab",
+    "AssetGUID": "",
+    "AssetTags": [
+      "role"
+    ],
+    "BundleID": 120,
+    "DependBundleIDs": [],
+    "classification": "prefab",
+    "record_offset": 87867,
+    "record_end": 87925,
+    "bundle_file": "8ba48255745b410827e823b44ebc885d.bundle",
+    "bundle_name": "gameres_assets_gameres_role_iron_bullet.bundle",
+    "dependent_files": [],
+    "bundle_url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/8ba48255745b410827e823b44ebc885d.bundle"
+  },
+  {
+    "ordinal": 1109,
+    "Address": "",
+    "AssetPath": "Assets/GameRes/Role/iron_bullet2.prefab",
+    "AssetGUID": "",
+    "AssetTags": [
+      "role"
+    ],
+    "BundleID": 121,
+    "DependBundleIDs": [],
+    "classification": "prefab",
+    "record_offset": 87925,
+    "record_end": 87984,
+    "bundle_file": "b65eb4122d28b8378ddec6de59c832d9.bundle",
+    "bundle_name": "gameres_assets_gameres_role_iron_bullet2.bundle",
+    "dependent_files": [],
+    "bundle_url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/b65eb4122d28b8378ddec6de59c832d9.bundle"
+  },
+  {
+    "ordinal": 1111,
+    "Address": "",
+    "AssetPath": "Assets/GameRes/Role/lanqiu.prefab",
+    "AssetGUID": "",
+    "AssetTags": [
+      "role"
+    ],
+    "BundleID": 123,
+    "DependBundleIDs": [],
+    "classification": "prefab",
+    "record_offset": 88042,
+    "record_end": 88095,
+    "bundle_file": "4b952a8c19410a3e5c1fbe722ef997b5.bundle",
+    "bundle_name": "gameres_assets_gameres_role_lanqiu.bundle",
+    "dependent_files": [],
+    "bundle_url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/4b952a8c19410a3e5c1fbe722ef997b5.bundle"
+  },
+  {
+    "ordinal": 1112,
+    "Address": "",
+    "AssetPath": "Assets/GameRes/Role/magic_ani.prefab",
+    "AssetGUID": "",
+    "AssetTags": [
+      "role"
+    ],
+    "BundleID": 124,
+    "DependBundleIDs": [],
+    "classification": "prefab",
+    "record_offset": 88095,
+    "record_end": 88151,
+    "bundle_file": "e7acf733f518a664ab51c17a9916ecb2.bundle",
+    "bundle_name": "gameres_assets_gameres_role_magic_ani.bundle",
+    "dependent_files": [],
+    "bundle_url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/e7acf733f518a664ab51c17a9916ecb2.bundle"
+  },
+  {
+    "ordinal": 1118,
+    "Address": "",
+    "AssetPath": "Assets/GameRes/Role/zuqiu.prefab",
+    "AssetGUID": "",
+    "AssetTags": [
+      "role"
+    ],
+    "BundleID": 130,
+    "DependBundleIDs": [],
+    "classification": "prefab",
+    "record_offset": 88536,
+    "record_end": 88588,
+    "bundle_file": "7960efad57d5ab8b95971641156b2b94.bundle",
+    "bundle_name": "gameres_assets_gameres_role_zuqiu.bundle",
+    "dependent_files": [],
+    "bundle_url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/7960efad57d5ab8b95971641156b2b94.bundle"
+  }
+]

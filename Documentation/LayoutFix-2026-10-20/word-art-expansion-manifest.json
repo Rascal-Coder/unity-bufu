@@ -1,0 +1,412 @@
+{
+  "tool": "Built-in image_gen.imagegen",
+  "normalization": "Alpha trim, proportional resize and transparent padding only. No repainting.",
+  "assets": [
+    {
+      "id": "timed-challenge",
+      "caption": "Timed Challenge",
+      "tone": "cream",
+      "prompt": "Create ONE transparent bitmap word-art asset for a portrait 2D cartoon fantasy mobile game. Exact text, one horizontal line only: \"Timed Challenge\". No other text. Use the attached images ONLY as letterform and native game-style references. Match their bold rounded slightly condensed cartoon lettering, thick dark chocolate-brown outer outline, compact letter spacing, readable small scale. Warm pale cream fill (#fff1c6), simple flat shading, dark brown outline, matching Offline EARNINGS lettering but WITHOUT its parchment ribbon. Isolated glyphs only, no banner, no button, no border, no particles, no props, no glossy 3D bevel. Generous transparent padding on all sides, all letters fully visible. Consistent stroke and cap height.",
+      "source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-af34c5da-64ce-4b7e-abfd-ea20d5b6a0c6.png",
+      "asset": "Assets/SourceArt/SpriteSheetSources/CommerceArt/word-timed-challenge-native-v4.png",
+      "size": [
+        1516,
+        239
+      ],
+      "alpha_bounds": [
+        34,
+        211,
+        2132,
+        523
+      ],
+      "sha256": "57c8061a2b6186cb9ce83f8f6c8a681c3cf674c294d12ec08ab6dbd77f9f2cdb",
+      "sprite_resource_key": "CommerceArt/word-timed-challenge-native-v4",
+      "packed_asset": "Assets/Resources/PackedUI/word-art-00.png",
+      "packed_rect": [
+        4,
+        7,
+        1516,
+        239
+      ]
+    },
+    {
+      "id": "auction-house",
+      "caption": "Auction House",
+      "tone": "cream",
+      "prompt": "Create ONE transparent bitmap word-art asset for a portrait 2D cartoon fantasy mobile game. Exact text, one horizontal line only: \"Auction House\". No other text. Use the attached images ONLY as letterform and native game-style references. Match their bold rounded slightly condensed cartoon lettering, thick dark chocolate-brown outer outline, compact letter spacing, readable small scale. Warm pale cream fill (#fff1c6), simple flat shading, dark brown outline, matching Offline EARNINGS lettering but WITHOUT its parchment ribbon. Isolated glyphs only, no banner, no button, no border, no particles, no props, no glossy 3D bevel. Generous transparent padding on all sides, all letters fully visible. Consistent stroke and cap height.",
+      "source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-5385ed19-abad-4557-b809-188f00c9a47c.png",
+      "asset": "Assets/SourceArt/SpriteSheetSources/CommerceArt/word-auction-house-native-v4.png",
+      "size": [
+        1516,
+        224
+      ],
+      "alpha_bounds": [
+        54,
+        208,
+        2122,
+        495
+      ],
+      "sha256": "b60cd64335e8cc33bb13c7d656a452df32e04f9c45a3fe93810b2b0da4f60313",
+      "sprite_resource_key": "CommerceArt/word-auction-house-native-v4",
+      "packed_asset": "Assets/Resources/PackedUI/word-art-01.png",
+      "packed_rect": [
+        4,
+        1587,
+        1516,
+        224
+      ]
+    },
+    {
+      "id": "challenge",
+      "caption": "Challenge",
+      "tone": "white",
+      "prompt": "Create ONE transparent bitmap word-art asset for a portrait 2D cartoon fantasy mobile game. Exact text, one horizontal line only: \"Challenge\". No other text. Use the attached images ONLY as letterform and native game-style references. Match their bold rounded slightly condensed cartoon lettering, thick dark chocolate-brown outer outline, compact letter spacing, readable small scale. White fill (#fffaf2), very subtle warm shadow, matching the white Diamonds reference. Isolated glyphs only, no banner, no button, no border, no particles, no props, no glossy 3D bevel. Generous transparent padding on all sides, all letters fully visible. Consistent stroke and cap height.",
+      "source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-908bd0fa-cc6a-4f07-8e53-4c8f1c0d6b39.png",
+      "asset": "Assets/SourceArt/SpriteSheetSources/CommerceArt/word-challenge-native-v4.png",
+      "size": [
+        1474,
+        316
+      ],
+      "alpha_bounds": [
+        66,
+        150,
+        2112,
+        571
+      ],
+      "sha256": "ef5aaedecd273c51b883997e1913712d6e4322877e065914def4f8dc527b30ec",
+      "sprite_resource_key": "CommerceArt/word-challenge-native-v4",
+      "packed_asset": "Assets/Resources/PackedUI/word-art-01.png",
+      "packed_rect": [
+        4,
+        840,
+        1474,
+        316
+      ]
+    },
+    {
+      "id": "auction",
+      "caption": "Auction",
+      "tone": "white",
+      "prompt": "Create ONE transparent bitmap word-art asset for a portrait 2D cartoon fantasy mobile game. Exact text, one horizontal line only: \"Auction\". No other text. Use the attached images ONLY as letterform and native game-style references. Match their bold rounded slightly condensed cartoon lettering, thick dark chocolate-brown outer outline, compact letter spacing, readable small scale. White fill (#fffaf2), very subtle warm shadow, matching the white Diamonds reference. Isolated glyphs only, no banner, no button, no border, no particles, no props, no glossy 3D bevel. Generous transparent padding on all sides, all letters fully visible. Consistent stroke and cap height.",
+      "source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-eea98315-dd4c-4088-b65b-bb9bdb0a90f8.png",
+      "asset": "Assets/SourceArt/SpriteSheetSources/CommerceArt/word-auction-native-v4.png",
+      "size": [
+        1358,
+        316
+      ],
+      "alpha_bounds": [
+        285,
+        196,
+        1878,
+        552
+      ],
+      "sha256": "b69f5d09fb10454b4d4e77f2900070a4fed3b6baf2e59034eed61bcf336db49b",
+      "sprite_resource_key": "CommerceArt/word-auction-native-v4",
+      "packed_asset": "Assets/Resources/PackedUI/word-art-01.png",
+      "packed_rect": [
+        4,
+        516,
+        1358,
+        316
+      ]
+    },
+    {
+      "id": "choose-world",
+      "caption": "Choose a World",
+      "tone": "gold",
+      "prompt": "Create ONE transparent bitmap word-art asset for a portrait 2D cartoon fantasy mobile game. Exact text, one horizontal line only: \"Choose a World\". No other text. Use the attached images ONLY as letterform and native game-style references. Match their bold rounded slightly condensed cartoon lettering, thick dark chocolate-brown outer outline, compact letter spacing, readable small scale. Bright yellow-gold fill and simple ochre lower edge, a tiny cream highlight, matching DIAMOND PACKS reference. Isolated glyphs only, no banner, no button, no border, no particles, no props, no glossy 3D bevel. Generous transparent padding on all sides, all letters fully visible. Consistent stroke and cap height.",
+      "source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-2b5f9fa7-b660-4fc8-afa9-bce93a8a41cd.png",
+      "asset": "Assets/SourceArt/SpriteSheetSources/CommerceArt/word-choose-world-native-v4.png",
+      "size": [
+        1516,
+        225
+      ],
+      "alpha_bounds": [
+        28,
+        189,
+        2140,
+        483
+      ],
+      "sha256": "938e5c6d6520d2ea7910b9ff88edc4055d282d1f71e8d535b9a705161189cee4",
+      "sprite_resource_key": "CommerceArt/word-choose-world-native-v4",
+      "packed_asset": "Assets/Resources/PackedUI/word-art-01.png",
+      "packed_rect": [
+        4,
+        1819,
+        1516,
+        225
+      ]
+    },
+    {
+      "id": "coin-world",
+      "caption": "Coin World",
+      "tone": "cream",
+      "prompt": "Create ONE transparent bitmap word-art asset for a portrait 2D cartoon fantasy mobile game. Exact text on one horizontal line: \"Coin World\". No other text. Use attached images as letterform and native game-style references. Match bold rounded slightly condensed cartoon lettering, thick dark chocolate-brown outline, balanced spacing, readable small scale. Warm pale cream fill (#fff1c6), flat shading matching Offline EARNINGS letters WITHOUT ribbon. Isolated glyphs only, no banner, button, props, border, particles or glossy 3D bevel. Generous fully transparent padding, all letters fully visible. Match reference stroke and native cartoon game style.",
+      "source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-eb08593c-d10e-4fb8-a642-6d1518595866.png",
+      "asset": "Assets/SourceArt/SpriteSheetSources/CommerceArt/word-coin-world-native-v4.png",
+      "size": [
+        1516,
+        271
+      ],
+      "alpha_bounds": [
+        68,
+        186,
+        2104,
+        532
+      ],
+      "sha256": "c50f882bbc780b5af48d341a7dd75011fa6e1954f052a0c4186fc2bc3565f7bf",
+      "sprite_resource_key": "CommerceArt/word-coin-world-native-v4",
+      "packed_asset": "Assets/Resources/PackedUI/word-art-00.png",
+      "packed_rect": [
+        4,
+        1050,
+        1516,
+        271
+      ]
+    },
+    {
+      "id": "dice-world",
+      "caption": "Dice World",
+      "tone": "cream",
+      "prompt": "Create ONE transparent bitmap word-art asset for a portrait 2D cartoon fantasy mobile game. Exact text on one horizontal line: \"Dice World\". No other text. Use attached images as letterform and native game-style references. Match bold rounded slightly condensed cartoon lettering, thick dark chocolate-brown outline, balanced spacing, readable small scale. Warm pale cream fill (#fff1c6), flat shading matching Offline EARNINGS letters WITHOUT ribbon. Isolated glyphs only, no banner, button, props, border, particles or glossy 3D bevel. Generous fully transparent padding, all letters fully visible. Match reference stroke and native cartoon game style.",
+      "source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-b180b7c1-8f32-4a19-8c13-4f39efd21689.png",
+      "asset": "Assets/SourceArt/SpriteSheetSources/CommerceArt/word-dice-world-native-v4.png",
+      "size": [
+        1516,
+        268
+      ],
+      "alpha_bounds": [
+        84,
+        182,
+        2090,
+        519
+      ],
+      "sha256": "c1f3346760b3919337dc8376c40662465cfcfd3c44f33f02f342b4cbe2e77b0e",
+      "sprite_resource_key": "CommerceArt/word-dice-world-native-v4",
+      "packed_asset": "Assets/Resources/PackedUI/word-art-00.png",
+      "packed_rect": [
+        4,
+        774,
+        1516,
+        268
+      ]
+    },
+    {
+      "id": "evolution",
+      "caption": "EVOLUTION",
+      "tone": "cream",
+      "prompt": "Create ONE transparent bitmap word-art asset for a portrait 2D cartoon fantasy mobile game. Exact text on one horizontal line: \"EVOLUTION\". No other text. Use attached images as letterform and native game-style references. Match bold rounded slightly condensed cartoon lettering, thick dark chocolate-brown outline, balanced spacing, readable small scale. Warm pale cream fill (#fff1c6), flat shading matching Offline EARNINGS letters WITHOUT ribbon. Isolated glyphs only, no banner, button, props, border, particles or glossy 3D bevel. Generous fully transparent padding, all letters fully visible. Match reference stroke and native cartoon game style.",
+      "source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-2396a259-a003-4b0b-90d7-ceaed5a81d22.png",
+      "asset": "Assets/SourceArt/SpriteSheetSources/CommerceArt/word-evolution-native-v4.png",
+      "size": [
+        1516,
+        261
+      ],
+      "alpha_bounds": [
+        141,
+        202,
+        2031,
+        511
+      ],
+      "sha256": "77a871c90df489c75c76771d6d44cb67c62b4636429f51d794cf36c0aba03d03",
+      "sprite_resource_key": "CommerceArt/word-evolution-native-v4",
+      "packed_asset": "Assets/Resources/PackedUI/word-art-00.png",
+      "packed_rect": [
+        4,
+        505,
+        1516,
+        261
+      ]
+    },
+    {
+      "id": "evolve",
+      "caption": "Evolve",
+      "tone": "white",
+      "prompt": "Create ONE transparent bitmap word-art asset for a portrait 2D cartoon fantasy mobile game. Exact text on one horizontal line: \"Evolve\". No other text. Use attached images as letterform and native game-style references. Match bold rounded slightly condensed cartoon lettering, thick dark chocolate-brown outline, balanced spacing, readable small scale. Pure warm white fill, subtle warm shadow matching Diamonds reference. Isolated glyphs only, no banner, button, props, border, particles or glossy 3D bevel. Generous fully transparent padding, all letters fully visible. Match reference stroke and native cartoon game style.",
+      "source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-f4a95c2a-b3fd-4314-a094-443a29305f28.png",
+      "asset": "Assets/SourceArt/SpriteSheetSources/CommerceArt/word-evolve-native-v4.png",
+      "size": [
+        1184,
+        316
+      ],
+      "alpha_bounds": [
+        321,
+        174,
+        1855,
+        568
+      ],
+      "sha256": "0afacf0cb72e3bcac03a18155e006e09f91ef7790e0144bd1c5299153c802e60",
+      "sprite_resource_key": "CommerceArt/word-evolve-native-v4",
+      "packed_asset": "Assets/Resources/PackedUI/word-art-01.png",
+      "packed_rect": [
+        4,
+        192,
+        1184,
+        316
+      ]
+    },
+    {
+      "id": "back",
+      "caption": "Back",
+      "tone": "white",
+      "prompt": "Create ONE transparent bitmap word-art asset for a portrait 2D cartoon fantasy mobile game. Exact text on one horizontal line: \"Back\". No other text. Use attached images as letterform and native game-style references. Match bold rounded slightly condensed cartoon lettering, thick dark chocolate-brown outline, balanced spacing, readable small scale. Pure warm white fill, subtle warm shadow matching Diamonds reference. Isolated glyphs only, no banner, button, props, border, particles or glossy 3D bevel. Generous fully transparent padding, all letters fully visible. Match reference stroke and native cartoon game style.",
+      "source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-f922383b-ca63-4873-be3d-c54b4608fd27.png",
+      "asset": "Assets/SourceArt/SpriteSheetSources/CommerceArt/word-back-native-v4.png",
+      "size": [
+        866,
+        316
+      ],
+      "alpha_bounds": [
+        367,
+        201,
+        1526,
+        610
+      ],
+      "sha256": "ea8914ddc9bcaae03e19c7b982367e035d827bceba6c9cf18dacc1862b714e80",
+      "sprite_resource_key": "CommerceArt/word-back-native-v4",
+      "packed_asset": "Assets/Resources/PackedUI/word-art-02.png",
+      "packed_rect": [
+        1036,
+        172,
+        866,
+        316
+      ]
+    },
+    {
+      "id": "diamond-vault",
+      "caption": "DIAMOND VAULT",
+      "tone": "cream",
+      "prompt": "Create ONE transparent bitmap word-art asset for a portrait 2D cartoon fantasy mobile game. Exact text on ONE horizontal line with clear word spacing: \"DIAMOND VAULT\". No other text. Attached images are style references only. Match their bold rounded slightly condensed cartoon letters and thick dark chocolate-brown outer outline. Pale warm cream fill #fff1c6, simple flat shading matching Offline EARNINGS letters without parchment. Clean compact readable small-scale lettering, no panel, no ribbon, no button, no particles, no illustrations, no extra decoration or glossy 3D bevel. Fully transparent background with safe padding, all letters visible.",
+      "source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-5d0177e6-39c9-44bd-b38a-46b2423ad8c1.png",
+      "asset": "Assets/SourceArt/SpriteSheetSources/CommerceArt/word-diamond-vault-native-v4.png",
+      "size": [
+        1516,
+        210
+      ],
+      "alpha_bounds": [
+        56,
+        224,
+        2114,
+        490
+      ],
+      "sha256": "72429edb0bcfc9e8c145f6528a46bdd8458bb8e0090d27ba9d959c5149bda68e",
+      "sprite_resource_key": "CommerceArt/word-diamond-vault-native-v4",
+      "packed_asset": "Assets/Resources/PackedUI/word-art-01.png",
+      "packed_rect": [
+        4,
+        1369,
+        1516,
+        210
+      ]
+    },
+    {
+      "id": "pocket-pack",
+      "caption": "POCKET PACK",
+      "tone": "cream",
+      "prompt": "Create ONE transparent bitmap word-art asset for a portrait 2D cartoon fantasy mobile game. Exact text on ONE horizontal line with clear word spacing: \"POCKET PACK\". No other text. Attached images are style references only. Match their bold rounded slightly condensed cartoon letters and thick dark chocolate-brown outer outline. Pale warm cream fill #fff1c6, simple flat shading matching Offline EARNINGS letters without parchment. Clean compact readable small-scale lettering, no panel, no ribbon, no button, no particles, no illustrations, no extra decoration or glossy 3D bevel. Fully transparent background with safe padding, all letters visible.",
+      "source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-344d190b-5d3e-4dc7-865c-23d67509b70c.png",
+      "asset": "Assets/SourceArt/SpriteSheetSources/CommerceArt/word-pocket-pack-native-v4.png",
+      "size": [
+        1516,
+        243
+      ],
+      "alpha_bounds": [
+        57,
+        201,
+        2124,
+        514
+      ],
+      "sha256": "fd67a0920b99debb8fba9a5290362ba7431ddf409b3d382977faad65a630af47",
+      "sprite_resource_key": "CommerceArt/word-pocket-pack-native-v4",
+      "packed_asset": "Assets/Resources/PackedUI/word-art-00.png",
+      "packed_rect": [
+        4,
+        254,
+        1516,
+        243
+      ]
+    },
+    {
+      "id": "diamond-stash",
+      "caption": "DIAMOND STASH",
+      "tone": "cream",
+      "prompt": "Create ONE transparent bitmap word-art asset for a portrait 2D cartoon fantasy mobile game. Exact text on ONE horizontal line with clear word spacing: \"DIAMOND STASH\". No other text. Attached images are style references only. Match their bold rounded slightly condensed cartoon letters and thick dark chocolate-brown outer outline. Pale warm cream fill #fff1c6, simple flat shading matching Offline EARNINGS letters without parchment. Clean compact readable small-scale lettering, no panel, no ribbon, no button, no particles, no illustrations, no extra decoration or glossy 3D bevel. Fully transparent background with safe padding, all letters visible.",
+      "source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-783c2e1f-72f4-4174-8c1a-90310bc240a9.png",
+      "asset": "Assets/SourceArt/SpriteSheetSources/CommerceArt/word-diamond-stash-native-v4.png",
+      "size": [
+        1516,
+        197
+      ],
+      "alpha_bounds": [
+        36,
+        245,
+        2134,
+        498
+      ],
+      "sha256": "c0958265ebd68f23d57a0a7d500582994fa8a549c76f427d2199793064a67fb3",
+      "sprite_resource_key": "CommerceArt/word-diamond-stash-native-v4",
+      "packed_asset": "Assets/Resources/PackedUI/word-art-01.png",
+      "packed_rect": [
+        4,
+        1164,
+        1516,
+        197
+      ]
+    },
+    {
+      "id": "gift-packs",
+      "caption": "Gift Packs",
+      "tone": "white",
+      "prompt": "Create ONE transparent bitmap word-art asset for a portrait 2D cartoon fantasy mobile game. Exact text on ONE horizontal line with clear word spacing: \"Gift Packs\". No other text. Attached images are style references only. Match their bold rounded slightly condensed cartoon letters and thick dark chocolate-brown outer outline. White fill with barely visible warm shadow, matching Diamonds reference. Clean compact readable small-scale lettering, no panel, no ribbon, no button, no particles, no illustrations, no extra decoration or glossy 3D bevel. Fully transparent background with safe padding, all letters visible.",
+      "source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-c2b0a05d-d33b-4d80-9c5d-fb2943ed5037.png",
+      "asset": "Assets/SourceArt/SpriteSheetSources/CommerceArt/word-gift-packs-native-v4.png",
+      "size": [
+        1516,
+        297
+      ],
+      "alpha_bounds": [
+        102,
+        177,
+        2069,
+        545
+      ],
+      "sha256": "24677a81f004fbbb5068d78c6ea50047cadde3ef4444320b1b80061787227128",
+      "sprite_resource_key": "CommerceArt/word-gift-packs-native-v4",
+      "packed_asset": "Assets/Resources/PackedUI/word-art-00.png",
+      "packed_rect": [
+        4,
+        1615,
+        1516,
+        297
+      ]
+    },
+    {
+      "id": "cloud-save",
+      "caption": "Cloud save",
+      "tone": "white",
+      "prompt": "Create ONE transparent bitmap word-art asset for a portrait 2D cartoon fantasy mobile game. Exact text on ONE horizontal line with clear word spacing: \"Cloud save\". No other text. Attached images are style references only. Match their bold rounded slightly condensed cartoon letters and thick dark chocolate-brown outer outline. White fill with barely visible warm shadow, matching Diamonds reference. Clean compact readable small-scale lettering, no panel, no ribbon, no button, no particles, no illustrations, no extra decoration or glossy 3D bevel. Fully transparent background with safe padding, all letters visible.",
+      "source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-a6d2ae6b-727d-4270-b00a-038c1e7b398e.png",
+      "asset": "Assets/SourceArt/SpriteSheetSources/CommerceArt/word-cloud-save-native-v4.png",
+      "size": [
+        1516,
+        278
+      ],
+      "alpha_bounds": [
+        79,
+        190,
+        2091,
+        541
+      ],
+      "sha256": "ff1ddf90b21c03af266fa8743f1829a1da088fff64c808fb51b25a0935ec9d6e",
+      "sprite_resource_key": "CommerceArt/word-cloud-save-native-v4",
+      "packed_asset": "Assets/Resources/PackedUI/word-art-00.png",
+      "packed_rect": [
+        4,
+        1329,
+        1516,
+        278
+      ]
+    }
+  ],
+  "packing_record": "Documentation/SpriteSheetAudit-2026-10-20/migration-manifest.json"
+}

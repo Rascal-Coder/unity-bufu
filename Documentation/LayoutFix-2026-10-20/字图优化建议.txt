@@ -1,0 +1,61 @@
+字图优化检查（2026-10-20）
+
+检查范围：当前商城三个商品页，以及设置、天赋、重生、收益加成、进化、奖励、世界选择、活动、签到、离线收益、成长新闻的实机图。
+当前布局、居中和按钮留白维持已确认版本。本次只形成替换清单，没有改动运行包。
+
+优先级 1：固定的大标题和主要操作
+
+1. 活动入口
+Timed Challenge / Auction House：原画上覆盖的普通棕色文字偏弱，建议改为奶油白填色、深棕描边的卡通标题字图。
+Challenge / Auction：与 Summon、Rebirth 等原生操作按钮的字图规范统一，使用白字深色描边的独立文字图片。
+证据：WordArtAlignment540/15a-local-activities-overview.png。
+位置：Assets/Scripts/GameController.Activities.cs 的 ActivityArtLabels、ActivityImageCaption、ActivityButton。
+
+2. 世界选择
+Choose a World：改为场景级标题字图，与地图、岛屿的卡通画风统一。
+Coin World / Dice World：保留现有卷轴底板，将其上的普通字体换成奶油白或浅金填色、深棕描边的字图。
+下方滚动提示和 Items 小分类继续使用清晰字体。
+证据：CompactButtonsLocale390/11-english-worlds.png。
+
+3. 进化弹窗
+当前 Bronze Coin Evolution 标题较细且挤，建议使用统一 EVOLUTION 字图；具体币种已有正文和图标说明，继续由动态内容提供。
+Evolve 主按钮改用白字深色描边字图，与现有 Summon / Rebirth / Confirm 保持同一套视觉。
+证据：CompactButtonsLocale390/15-english-evolution.png。
+
+优先级 2：当前商城及通用入口的细节统一
+
+4. 商城商品名
+DIAMOND VAULT / POCKET PACK / DIAMOND STASH 可制作尺寸克制的次级标题字图，提高商品辨识度。
+层级必须低于页面的大标题；建议奶油白填色、较细深棕描边，不能再使用同样醒目的大金字。
+ONE-TIME PURCHASE 作为属性说明可以保留字体，或做成小型标签；优先级低。
+Back 可以制作一张白字深棕描边字图，供商城及其他返回按钮复用；按钮宽度与内边距保持不变。
+证据：FinalPaddedStore390/01-store-diamonds.png、02-store-no-ads.png。
+
+5. 设置入口
+Gift Packs / Cloud save 目前比相邻 Clear Save 字图细小，适合替换为同风格白字描边图片。
+主界面的 Rankings 可随后统一，优先级低于核心页面与主要操作。
+证据：CompactButtonsLocale390/01-english-settings.png。
+位置：Assets/Scripts/GameController.Integrations.cs 的 IntegrationButtonLabel / IntegrationIconCaption。
+
+6. 商城转盘保底说明
+Every 5 pulls: SR shards! 可制作完整的一张白字深棕描边图，SR 保留紫色。整句统一字号、字重和基线。
+5 是当前固定保底次数；真正动态的 0/5 进度继续使用字体，防止数据和图案脱节。
+
+继续保留字体
+金币与钻石数量、购买价格、等级、倒计时、持有数量、技能倍率、概率、角色名、说明句。
+Unavailable / Owned / Payment pending / Please wait... 等购买状态有动态切换，继续保留字体。
+免广告的冷却、每日限制和恢复购买说明优先保证清晰阅读。
+
+已有字图，保持统一
+商城三个主标题、右侧三项白字、底部六个导航、REWARDS!、签到主标题、离线收益主标题、Rebirth / Reset / Summon 等现有原生字图无需重复制作。
+新闻页的报纸字体是该场景的独立风格，应保留；其中不一致的 Confirm 按钮可复用通用确认字图。
+
+建议顺序
+活动标题与入口按钮 → 世界标题 → 进化标题和主按钮 → 商城次级标题与 Back → 设置入口及保底说明。
+只增加文字图片，不调整已确认的布局、交互、按钮留白和动效。
+用户明确排除的桌子卡片 Upgrade 箭头和模拟广告问题不纳入此清单。
+
+参考资源
+现有原生字图：Assets/Resources/UI/Sprites/en。
+当前商城新增字图和图标：Assets/Resources/CommerceArt。
+已完成素材的内置 image_gen.imagegen 提示词与路径：native-art-prompts.txt、native-art-manifest.json。

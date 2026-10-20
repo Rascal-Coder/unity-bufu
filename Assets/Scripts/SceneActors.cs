@@ -8,18 +8,24 @@ namespace Bufu.Rebuild {
     /// CoinVat (coin world) and DiceVat (dice world) of the original game.
     /// All distances are canvas pixels of the 1440 wide design canvas (the original VAT scene uses 100 pixels per world unit).
     /// </summary>
-    public sealed class CoinActor:MonoBehaviour,IPointerDownHandler,IPointerEnterHandler,IPointerMoveHandler {
+    public sealed class CoinActor:MonoBehaviour {
         public const float S=2f;                 // visual scale of the VAT graphics on the 1440 canvas
         public const float JumpHeight=500f;      // CoinConfig.JumpHeight
         public const float DiceJumpHeight=360f;  // DiceVat.jumpHeight 3.6 world units
         public const float CoinFlipDelay=.3f;    // CoinVat.JumpToTarget: the flip animation starts 0.3 s after take-off
         public const float DiceThrowDelay=.15f;  // DiceVat.throwDelay
         public int Quality,World; public VatGraphic Visual; public GameController Game;
-        public bool Busy {get{return flying;}}
+        public bool Busy {get{return flying||Evolving;}}
+        public bool Evolving {get;set;}
+        public int CurrentFace=>face;
+        public event Action<CoinActor> Landed;
         public bool Flying {get{return flying&&delay<=0;}}
         public RectTransform Rect=>(RectTransform)transform;
 
         bool flying,flipStarted,manual,critical,frontShowing=true,luckyEcho;
+        bool suppressLandingEffects;
+        double dicePayoutSnapshot=double.NaN;
+        int guidedCoinFace=-1;
         Vector2 start,target;float elapsed,delay,echoIn,speedScale=1,rewardScale=1,critAdd;int face=1,throwRole;SmokeEffect smoke;
 
         public void Init(GameController game,int quality,int world,string asset) {
@@ -28,11 +34,6 @@ namespace Bufu.Rebuild {
             ShowFace(1);
         }
 
-        public void OnPointerDown(PointerEventData eventData){Throw(true);}
-        public void OnPointerEnter(PointerEventData eventData){if(Input.GetMouseButton(0))Swipe();}
-        public void OnPointerMove(PointerEventData eventData){Swipe();}
-        void Swipe(){if(Game&&Game.Model.CanSwipe(Quality))Throw(true);}
-
         /// <summary>CoinVat.SetCoinClick / DiceWorldController click: a throw by the player at a random landing spot.</summary>
         public bool Throw(bool byHand) {
             if(flying)return false;
@@ -40,12 +41,15 @@ namespace Bufu.Rebuild {
         }
 
         /// <summary>JumpToTarget / TryThrow. A manual throw has no flip delay in the coin world (SetCoinClick sets throwDelayTimer=0).</summary>
-        public bool Launch(Vector2 landing,bool byHand,int role=0,float extraCrit=0,float rewardMul=1,float speed=1,bool instant=false) {
-            if(flying)return false;
+        public bool Launch(Vector2 landing,bool byHand,int role=0,float extraCrit=0,float rewardMul=1,float speed=1,bool instant=false,bool suppressLandingEffects=false) {
+            if(Busy||Game.IsBackgrounded)return false;
+            if(!Game.PrepareDiceThrow(this,byHand))return false;
+            if(World==1&&role==6){if(Game.Model.HelperAwake(6)>0)speed=Mathf.Max(speed,2);if(Game.Model.HelperAwake(6)>1)instant=true;}
+            this.suppressLandingEffects=suppressLandingEffects;
             throwRole=role;critAdd=extraCrit;rewardScale=Mathf.Max(0,rewardMul);speedScale=Mathf.Max(.2f,speed);
             manual=byHand;start=Rect.anchoredPosition;target=landing;elapsed=0;flipStarted=false;
             RollOutcome();
-            if(instant){Settle();if(World==1)Game.PlayHit();else Game.PlayDiceLand();return true;}
+            if(instant){if(World==1)LandCoin();else LandDice();return true;}
             flying=true;
             if(World==1) {
                 delay=byHand?0:CoinFlipDelay;
@@ -61,13 +65,18 @@ namespace Bufu.Rebuild {
             return true;
         }
         void RollOutcome() {
-            float chance=Game.Model.CritChance()+critAdd;if(throwRole==1)chance=1f;
-            critical=UnityEngine.Random.value<Mathf.Clamp01(chance);
-            face=World==1?(UnityEngine.Random.value<Game.Model.FrontChance()?1:0):UnityEngine.Random.Range(1,7);
-            if(manual&&World==1&&Game.GuideForcedFace(this,out int guided))face=guided;
+            guidedCoinFace=-1;
+            if(World==1) {
+                if(manual&&Game.GuideForcedFace(this,out int guided))guidedCoinFace=guided;
+            } else {
+                face=Game.RollDiceFace(this);
+                dicePayoutSnapshot=Game.Model.SnapshotDiceValue(Quality,face);
+            }
         }
+        bool RollCritical()=>UnityEngine.Random.value<Mathf.Clamp01(throwRole==1?1f:Game.Model.CritChance()+critAdd);
 
         void PlayFlip(){Visual.Play(Visual.Has("flip")?"flip":Visual.Data.segments[0].animation,true);}
+        public void SetThrowDelayTimer(float seconds){delay=Mathf.Max(0,seconds);if(flying&&World==1&&!flipStarted&&delay<=0){flipStarted=true;PlayFlip();}}
 
         /// <summary>The idle pose: coins freeze the "flip" clip on its last (front) or first (back) frame, dice show the clip of the face.</summary>
         void ShowFace(int value) {
@@ -83,6 +92,7 @@ namespace Bufu.Rebuild {
         }
 
         void Update() {
+            if(Game.IsBackgrounded||Evolving)return;
             float dt=Time.deltaTime;
             if(echoIn>0&&!flying){echoIn-=dt;if(echoIn<=0)Echo();}
             if(!flying)return;
@@ -103,31 +113,47 @@ namespace Bufu.Rebuild {
         public float RoleThrowDuration=>World==1?.8f:DiceThrowDelay+Math.Max(.01f,Game.Model.FlightSeconds());
 
         void Settle() {
-            double reward=Game.Model.Settle(World,Quality,World==1?(frontShowing?1:0):face,manual,critical,Time.unscaledTime,throwRole,rewardScale);
-            Game.FloatReward(Rect.anchoredPosition,reward,critical,face);
+            // The default VAT coin path calculates floating text separately before wallet settlement.
+            if(World==1&&!suppressLandingEffects&&(face==1||Game.Model.TalentValue(309)>0)) {
+                bool displayCritical=RollCritical();
+                double display=Game.Model.SettlementValue(Quality,face,manual,displayCritical,throwRole,rewardScale);
+                Game.FloatReward(Rect.anchoredPosition,display,displayCritical,face);
+            }
+            critical=RollCritical();
+            double reward=Game.Model.Settle(World,Quality,face,manual,critical,Time.unscaledTime,throwRole,World==1?1:rewardScale,dicePayoutSnapshot);
+            if(World==2&&!suppressLandingEffects)Game.FloatReward(Rect.anchoredPosition,reward,critical,face);
         }
 
         // CoinVat.FinishThrowAnimation + Land
         void LandCoin() {
             flying=false;Rect.anchoredPosition=Game.ClampScene(target,40);
-            ShowFace(face);Settle();Game.PlayHit();
-            Game.ChainReaction(this);
-            Game.GuideCoinLanded(this);
-            if(!luckyEcho){if(UnityEngine.Random.value<Game.Model.EchoChance()){echoIn=.3f;luckyEcho=true;}}else luckyEcho=false;
-            PlaySmoke(1.3f);
+            face=UnityEngine.Random.value<Game.Model.FrontChance()?1:0;
+            if(guidedCoinFace>=0)face=guidedCoinFace;
+            ShowFace(face);Settle();if(!suppressLandingEffects)Game.PlayHit();
+            if(suppressLandingEffects){luckyEcho=false;echoIn=0;}
+            else {
+                Game.ChainReaction(this);
+                Game.GuideCoinLanded(this);
+                if(!luckyEcho){if(UnityEngine.Random.value<Game.Model.EchoChance()){echoIn=.3f;luckyEcho=true;}}else luckyEcho=false;
+                PlaySmoke(1.3f);
+            }
+            Landed?.Invoke(this);
+            // CoinVat.ResetToIdle runs after its callbacks, including Haaland's attempted rethrow.
+            flying=false;throwRole=0;rewardScale=1;critAdd=0;suppressLandingEffects=false;
         }
 
         // DiceVat.FinishThrow
         void LandDice() {
             flying=false;Rect.anchoredPosition=Game.ClampScene(target,40);
-            ShowFace(face);Settle();Game.PlayDiceLand();PlaySmoke(2f);
+            ShowFace(face);Settle();if(!suppressLandingEffects){Game.PlayDiceLand();PlaySmoke(2f);}Game.DiceLanded(this);
             if(!luckyEcho){if(UnityEngine.Random.value<Game.Model.EchoChance()){echoIn=.3f;luckyEcho=true;}}else luckyEcho=false;
+            Landed?.Invoke(this);
         }
 
         void Echo() {
             if(flying)return;
             if(World==1)Launch(Game.RandomLanding(Rect.anchoredPosition),false);
-            else Launch(Game.ClampScene(target+new Vector2(UnityEngine.Random.Range(-30f,30f),UnityEngine.Random.Range(-30f,30f)),40),false);
+            else Launch(Game.ClampScene(target+new Vector2(UnityEngine.Random.Range(-30f,30f),UnityEngine.Random.Range(-30f,30f)),40),manual,throwRole);
         }
 
         void PlaySmoke(float scale){if(!smoke)smoke=SmokeEffect.Create(Game.SmokePool);smoke.Play(Rect.anchoredPosition,scale);}
@@ -210,7 +236,7 @@ namespace Bufu.Rebuild {
             if(effect){Game.PlayRevive();Game.PlayVatEffect(Game.TipPool,"zgygy_hammer_wakeup","hit",100,Rect.anchoredPosition+new Vector2(0,80),true);}
             PlayIdle();
         }
-        public void OnPointerClick(PointerEventData eventData){if(step==Step.Sleeping)WakeUp(true);}
+        public void OnPointerClick(PointerEventData eventData){if(eventData==null&&step==Step.Sleeping)WakeUp(true);}
 
         // "Role_huanxing": the bubble above the sleeping helper, shown for the first three sleepers of a session.
         void ShowSleepTip() {
@@ -273,15 +299,15 @@ namespace Bufu.Rebuild {
         void EnterThrowing(CoinActor coin) {
             if(!Available(coin)){step=Step.IdleWait;stepTimer=.2f;return;}
             step=Step.Throwing;facingFront=coin.Rect.anchoredPosition.y<=Rect.anchoredPosition.y;
-            if(RoleId>1) {
-                stepTimer=.8f;
-                string skill=facingFront?"skill_front":"skill_back";
-                Play(Visual.Has(skill)?skill:(facingFront?"throw_front":"throw_back"),false);
-                HelperSkills.Cast(this,coin);target=null;return;
-            }
             stepTimer=coin.RoleThrowDuration+.5f;
             Play(facingFront?"throw_front":"throw_back",false);
             if(!coin.Launch(Game.RandomLanding(coin.Rect.anchoredPosition),false,RoleId)){step=Step.IdleWait;stepTimer=.2f;target=null;return;}
+            if(RoleId>1) {
+                string skill=facingFront?"skill_front":"skill_back";
+                if(Visual.Has(skill))Play(skill,false);
+                HelperSkills.Cast(this,coin);
+            }
+            if(RoleId==9&&coin.World==1&&Game.Model.HelperAwake(9)>=1)HelperSkills.RepeatHaalandThrow(Game,coin);
             target=null;
         }
 

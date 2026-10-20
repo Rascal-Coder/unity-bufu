@@ -21,12 +21,7 @@ public static class AndroidBuild {
         PlayerSettings.Android.targetSdkVersion=AndroidSdkVersions.AndroidApiLevelAuto;
         PlayerSettings.defaultInterfaceOrientation=UIOrientation.Portrait;
         PlayerSettings.Android.useCustomKeystore=false;
-        var sdk=@"C:\Users\Admin\Unity\android-sdk";
-        var jdk=@"C:\Users\Admin\Unity\android-jdk";
-        var ndk=@"C:\Users\Admin\Unity\android-ndk-r23b";
-        UnityEditor.Android.AndroidExternalToolsSettings.sdkRootPath=sdk;
-        UnityEditor.Android.AndroidExternalToolsSettings.jdkRootPath=jdk;
-        UnityEditor.Android.AndroidExternalToolsSettings.ndkRootPath=ndk;
+        // Use this editor's External Tools settings; Android support is optional.
         AppLogoSetup.Apply();
         const string output="Build/Android/TYCOON-RUSH-test.apk";
         Directory.CreateDirectory("Build/Android");

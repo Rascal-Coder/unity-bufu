@@ -1,0 +1,163 @@
+{
+  "path": "Assets/GameRes/Role/lanqiu.prefab",
+  "nodes": [
+    {
+      "n": "lanqiu",
+      "p": -1,
+      "a": true,
+      "c": [],
+      "rt": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.0,
+        0.0,
+        100.0,
+        100.0,
+        0.5,
+        0.5,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "n": "ball",
+      "p": 0,
+      "a": true,
+      "c": [
+        {
+          "m_Enabled": 1,
+          "m_Color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "m_RaycastTarget": 1,
+          "m_Sprite": {
+            "sprite": "bullet_jikun"
+          },
+          "m_Type": 0,
+          "m_PreserveAspect": 0,
+          "m_FillCenter": 1,
+          "m_FillMethod": 4,
+          "m_FillAmount": 1.0,
+          "m_FillClockwise": 1,
+          "m_FillOrigin": 0,
+          "m_UseSpriteMesh": 0,
+          "m_PixelsPerUnitMultiplier": 1.0,
+          "t": "Image"
+        }
+      ],
+      "rt": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        49.0,
+        0.0,
+        100.0,
+        100.0,
+        0.5,
+        0.5,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "n": "lanqiuwei",
+      "p": 0,
+      "a": true,
+      "c": [
+        {
+          "m_Enabled": 1,
+          "spriteFrames": [
+            {
+              "sprite": "trial_bullet_jikun_00"
+            },
+            {
+              "sprite": "trial_bullet_jikun_01"
+            },
+            {
+              "sprite": "trial_bullet_jikun_02"
+            },
+            {
+              "sprite": "trial_bullet_jikun_03"
+            },
+            {
+              "sprite": "trial_bullet_jikun_04"
+            },
+            {
+              "sprite": "trial_bullet_jikun_05"
+            },
+            {
+              "sprite": "trial_bullet_jikun_06"
+            },
+            {
+              "sprite": "trial_bullet_jikun_07"
+            },
+            {
+              "sprite": "trial_bullet_jikun_08"
+            },
+            {
+              "sprite": "trial_bullet_jikun_09"
+            }
+          ],
+          "frameInterval": 0.03999999910593033,
+          "isLooping": 1,
+          "autoPlay": 1,
+          "isPlaying": 1,
+          "currentFrameIndex": 0,
+          "t": "UISpriteAnimationSequence"
+        },
+        {
+          "m_Enabled": 1,
+          "m_Color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "m_RaycastTarget": 1,
+          "m_Sprite": {
+            "sprite": "trial_bullet_jikun_00"
+          },
+          "m_Type": 0,
+          "m_PreserveAspect": 0,
+          "m_FillCenter": 1,
+          "m_FillMethod": 4,
+          "m_FillAmount": 1.0,
+          "m_FillClockwise": 1,
+          "m_FillOrigin": 0,
+          "m_UseSpriteMesh": 0,
+          "m_PixelsPerUnitMultiplier": 1.0,
+          "t": "Image"
+        }
+      ],
+      "rt": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        -45.599998474121094,
+        2.431900065857917e-05,
+        203.0,
+        131.0,
+        0.5,
+        0.5,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    }
+  ]
+}

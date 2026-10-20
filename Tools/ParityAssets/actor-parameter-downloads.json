@@ -1,0 +1,495 @@
+{
+  "assets": [
+    {
+      "ordinal": 1087,
+      "Address": "",
+      "AssetPath": "Assets/GameRes/Role/coinCopper.prefab",
+      "AssetGUID": "",
+      "AssetTags": [
+        "role"
+      ],
+      "BundleID": 99,
+      "DependBundleIDs": [
+        82
+      ],
+      "classification": "prefab",
+      "record_offset": 86516,
+      "record_end": 86577,
+      "bundle_file": "f682ecb10ba1ca9fdd575e607611e55f.bundle",
+      "bundle_name": "gameres_assets_gameres_role_coincopper.bundle",
+      "dependent_files": [
+        "bb3a0f7da06350c24484024a79f51aa0.bundle"
+      ],
+      "bundle_url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/f682ecb10ba1ca9fdd575e607611e55f.bundle"
+    },
+    {
+      "ordinal": 1090,
+      "Address": "",
+      "AssetPath": "Assets/GameRes/Role/coinGold.prefab",
+      "AssetGUID": "",
+      "AssetTags": [
+        "role"
+      ],
+      "BundleID": 102,
+      "DependBundleIDs": [
+        24,
+        82,
+        214
+      ],
+      "classification": "prefab",
+      "record_offset": 86714,
+      "record_end": 86781,
+      "bundle_file": "c6ddb1a8ae8437726c78fc0426edb45a.bundle",
+      "bundle_name": "gameres_assets_gameres_role_coingold.bundle",
+      "dependent_files": [
+        "1a5cfbfeb47584991ba7f74e94333037.bundle",
+        "bb3a0f7da06350c24484024a79f51aa0.bundle",
+        "4cac0588bfa397c0a6d0ea1103b18b17.bundle"
+      ],
+      "bundle_url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/c6ddb1a8ae8437726c78fc0426edb45a.bundle"
+    },
+    {
+      "ordinal": 1092,
+      "Address": "",
+      "AssetPath": "Assets/GameRes/Role/coinPurple.prefab",
+      "AssetGUID": "",
+      "AssetTags": [
+        "role"
+      ],
+      "BundleID": 104,
+      "DependBundleIDs": [
+        24,
+        214
+      ],
+      "classification": "prefab",
+      "record_offset": 86850,
+      "record_end": 86915,
+      "bundle_file": "ac2aa09aae2ca0a07b344633403d315a.bundle",
+      "bundle_name": "gameres_assets_gameres_role_coinpurple.bundle",
+      "dependent_files": [
+        "1a5cfbfeb47584991ba7f74e94333037.bundle",
+        "4cac0588bfa397c0a6d0ea1103b18b17.bundle"
+      ],
+      "bundle_url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/ac2aa09aae2ca0a07b344633403d315a.bundle"
+    },
+    {
+      "ordinal": 1097,
+      "Address": "",
+      "AssetPath": "Assets/GameRes/Role/coinsilver.prefab",
+      "AssetGUID": "",
+      "AssetTags": [
+        "role"
+      ],
+      "BundleID": 109,
+      "DependBundleIDs": [
+        24,
+        82,
+        214
+      ],
+      "classification": "prefab",
+      "record_offset": 87157,
+      "record_end": 87226,
+      "bundle_file": "464734b42109bc09baedc6a588a117df.bundle",
+      "bundle_name": "gameres_assets_gameres_role_coinsilver.bundle",
+      "dependent_files": [
+        "1a5cfbfeb47584991ba7f74e94333037.bundle",
+        "bb3a0f7da06350c24484024a79f51aa0.bundle",
+        "4cac0588bfa397c0a6d0ea1103b18b17.bundle"
+      ],
+      "bundle_url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/464734b42109bc09baedc6a588a117df.bundle"
+    },
+    {
+      "ordinal": 1119,
+      "Address": "",
+      "AssetPath": "Assets/GameRes/RoleSpine/role.prefab",
+      "AssetGUID": "",
+      "AssetTags": [
+        "RoleSpine"
+      ],
+      "BundleID": 131,
+      "DependBundleIDs": [
+        211,
+        212,
+        214
+      ],
+      "classification": "prefab",
+      "record_offset": 88588,
+      "record_end": 88661,
+      "bundle_file": "baa15129aa9d98df68c268127a20a053.bundle",
+      "bundle_name": "gameres_assets_gameres_rolespine_role.bundle",
+      "dependent_files": [
+        "818b72b91204789375e1538e33710670.bundle",
+        "66b01bb9d483a881362aec66915c4eb8.bundle",
+        "4cac0588bfa397c0a6d0ea1103b18b17.bundle"
+      ],
+      "bundle_url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/baa15129aa9d98df68c268127a20a053.bundle"
+    },
+    {
+      "ordinal": 1120,
+      "Address": "",
+      "AssetPath": "Assets/GameRes/RoleSpine/Role_cxk.prefab",
+      "AssetGUID": "",
+      "AssetTags": [
+        "RoleSpine"
+      ],
+      "BundleID": 132,
+      "DependBundleIDs": [
+        211,
+        212,
+        214
+      ],
+      "classification": "prefab",
+      "record_offset": 88661,
+      "record_end": 88738,
+      "bundle_file": "614efc4fc2a1541ae837e9cb963a3b99.bundle",
+      "bundle_name": "gameres_assets_gameres_rolespine_role_cxk.bundle",
+      "dependent_files": [
+        "818b72b91204789375e1538e33710670.bundle",
+        "66b01bb9d483a881362aec66915c4eb8.bundle",
+        "4cac0588bfa397c0a6d0ea1103b18b17.bundle"
+      ],
+      "bundle_url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/614efc4fc2a1541ae837e9cb963a3b99.bundle"
+    },
+    {
+      "ordinal": 1121,
+      "Address": "",
+      "AssetPath": "Assets/GameRes/RoleSpine/Role_daji.prefab",
+      "AssetGUID": "",
+      "AssetTags": [
+        "RoleSpine"
+      ],
+      "BundleID": 133,
+      "DependBundleIDs": [
+        211,
+        212,
+        214
+      ],
+      "classification": "prefab",
+      "record_offset": 88738,
+      "record_end": 88816,
+      "bundle_file": "a04b7b361fd3f01fcf8ad7cdbeb60132.bundle",
+      "bundle_name": "gameres_assets_gameres_rolespine_role_daji.bundle",
+      "dependent_files": [
+        "818b72b91204789375e1538e33710670.bundle",
+        "66b01bb9d483a881362aec66915c4eb8.bundle",
+        "4cac0588bfa397c0a6d0ea1103b18b17.bundle"
+      ],
+      "bundle_url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/a04b7b361fd3f01fcf8ad7cdbeb60132.bundle"
+    },
+    {
+      "ordinal": 1122,
+      "Address": "",
+      "AssetPath": "Assets/GameRes/RoleSpine/Role_dashe.prefab",
+      "AssetGUID": "",
+      "AssetTags": [
+        "RoleSpine"
+      ],
+      "BundleID": 134,
+      "DependBundleIDs": [
+        211,
+        212,
+        214
+      ],
+      "classification": "prefab",
+      "record_offset": 88816,
+      "record_end": 88895,
+      "bundle_file": "15405b84f90dca484e70f6369abcb187.bundle",
+      "bundle_name": "gameres_assets_gameres_rolespine_role_dashe.bundle",
+      "dependent_files": [
+        "818b72b91204789375e1538e33710670.bundle",
+        "66b01bb9d483a881362aec66915c4eb8.bundle",
+        "4cac0588bfa397c0a6d0ea1103b18b17.bundle"
+      ],
+      "bundle_url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/15405b84f90dca484e70f6369abcb187.bundle"
+    },
+    {
+      "ordinal": 1123,
+      "Address": "",
+      "AssetPath": "Assets/GameRes/RoleSpine/Role_dushen.prefab",
+      "AssetGUID": "",
+      "AssetTags": [
+        "RoleSpine"
+      ],
+      "BundleID": 135,
+      "DependBundleIDs": [
+        211,
+        212,
+        214
+      ],
+      "classification": "prefab",
+      "record_offset": 88895,
+      "record_end": 88975,
+      "bundle_file": "8a24045b206608deca4e4d6648228f67.bundle",
+      "bundle_name": "gameres_assets_gameres_rolespine_role_dushen.bundle",
+      "dependent_files": [
+        "818b72b91204789375e1538e33710670.bundle",
+        "66b01bb9d483a881362aec66915c4eb8.bundle",
+        "4cac0588bfa397c0a6d0ea1103b18b17.bundle"
+      ],
+      "bundle_url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/8a24045b206608deca4e4d6648228f67.bundle"
+    },
+    {
+      "ordinal": 1124,
+      "Address": "",
+      "AssetPath": "Assets/GameRes/RoleSpine/Role_gongfu.prefab",
+      "AssetGUID": "",
+      "AssetTags": [
+        "RoleSpine"
+      ],
+      "BundleID": 136,
+      "DependBundleIDs": [
+        211,
+        212,
+        214
+      ],
+      "classification": "prefab",
+      "record_offset": 88975,
+      "record_end": 89055,
+      "bundle_file": "6f0fc63c80b368ec03b34bf57b10329f.bundle",
+      "bundle_name": "gameres_assets_gameres_rolespine_role_gongfu.bundle",
+      "dependent_files": [
+        "818b72b91204789375e1538e33710670.bundle",
+        "66b01bb9d483a881362aec66915c4eb8.bundle",
+        "4cac0588bfa397c0a6d0ea1103b18b17.bundle"
+      ],
+      "bundle_url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/6f0fc63c80b368ec03b34bf57b10329f.bundle"
+    },
+    {
+      "ordinal": 1125,
+      "Address": "",
+      "AssetPath": "Assets/GameRes/RoleSpine/Role_halande.prefab",
+      "AssetGUID": "",
+      "AssetTags": [
+        "RoleSpine"
+      ],
+      "BundleID": 137,
+      "DependBundleIDs": [
+        211,
+        212,
+        214
+      ],
+      "classification": "prefab",
+      "record_offset": 89055,
+      "record_end": 89136,
+      "bundle_file": "318e4e6c4fbf91b0be9d90534ba4795a.bundle",
+      "bundle_name": "gameres_assets_gameres_rolespine_role_halande.bundle",
+      "dependent_files": [
+        "818b72b91204789375e1538e33710670.bundle",
+        "66b01bb9d483a881362aec66915c4eb8.bundle",
+        "4cac0588bfa397c0a6d0ea1103b18b17.bundle"
+      ],
+      "bundle_url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/318e4e6c4fbf91b0be9d90534ba4795a.bundle"
+    },
+    {
+      "ordinal": 1126,
+      "Address": "",
+      "AssetPath": "Assets/GameRes/RoleSpine/Role_iron.prefab",
+      "AssetGUID": "",
+      "AssetTags": [
+        "RoleSpine"
+      ],
+      "BundleID": 138,
+      "DependBundleIDs": [
+        211,
+        212,
+        214
+      ],
+      "classification": "prefab",
+      "record_offset": 89136,
+      "record_end": 89214,
+      "bundle_file": "36cb5cf4be835daf2b2fce31f9f313d2.bundle",
+      "bundle_name": "gameres_assets_gameres_rolespine_role_iron.bundle",
+      "dependent_files": [
+        "818b72b91204789375e1538e33710670.bundle",
+        "66b01bb9d483a881362aec66915c4eb8.bundle",
+        "4cac0588bfa397c0a6d0ea1103b18b17.bundle"
+      ],
+      "bundle_url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/36cb5cf4be835daf2b2fce31f9f313d2.bundle"
+    },
+    {
+      "ordinal": 1127,
+      "Address": "",
+      "AssetPath": "Assets/GameRes/RoleSpine/Role_magician.prefab",
+      "AssetGUID": "",
+      "AssetTags": [
+        "RoleSpine"
+      ],
+      "BundleID": 139,
+      "DependBundleIDs": [
+        211,
+        212,
+        214
+      ],
+      "classification": "prefab",
+      "record_offset": 89214,
+      "record_end": 89296,
+      "bundle_file": "7970b45e40bd48bb62bb909789cd6db0.bundle",
+      "bundle_name": "gameres_assets_gameres_rolespine_role_magician.bundle",
+      "dependent_files": [
+        "818b72b91204789375e1538e33710670.bundle",
+        "66b01bb9d483a881362aec66915c4eb8.bundle",
+        "4cac0588bfa397c0a6d0ea1103b18b17.bundle"
+      ],
+      "bundle_url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/7970b45e40bd48bb62bb909789cd6db0.bundle"
+    },
+    {
+      "ordinal": 1128,
+      "Address": "",
+      "AssetPath": "Assets/GameRes/RoleSpine/Role_miracle.prefab",
+      "AssetGUID": "",
+      "AssetTags": [
+        "RoleSpine"
+      ],
+      "BundleID": 140,
+      "DependBundleIDs": [
+        211,
+        212,
+        214
+      ],
+      "classification": "prefab",
+      "record_offset": 89296,
+      "record_end": 89377,
+      "bundle_file": "7da7da481c442985029f24a85d801355.bundle",
+      "bundle_name": "gameres_assets_gameres_rolespine_role_miracle.bundle",
+      "dependent_files": [
+        "818b72b91204789375e1538e33710670.bundle",
+        "66b01bb9d483a881362aec66915c4eb8.bundle",
+        "4cac0588bfa397c0a6d0ea1103b18b17.bundle"
+      ],
+      "bundle_url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/7da7da481c442985029f24a85d801355.bundle"
+    },
+    {
+      "ordinal": 1129,
+      "Address": "",
+      "AssetPath": "Assets/GameRes/RoleSpine/Role_toughguy.prefab",
+      "AssetGUID": "",
+      "AssetTags": [
+        "RoleSpine"
+      ],
+      "BundleID": 141,
+      "DependBundleIDs": [
+        211,
+        212,
+        214
+      ],
+      "classification": "prefab",
+      "record_offset": 89377,
+      "record_end": 89459,
+      "bundle_file": "f0d0e7bcbc890fa7e91e77d77e531361.bundle",
+      "bundle_name": "gameres_assets_gameres_rolespine_role_toughguy.bundle",
+      "dependent_files": [
+        "818b72b91204789375e1538e33710670.bundle",
+        "66b01bb9d483a881362aec66915c4eb8.bundle",
+        "4cac0588bfa397c0a6d0ea1103b18b17.bundle"
+      ],
+      "bundle_url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/f0d0e7bcbc890fa7e91e77d77e531361.bundle"
+    }
+  ],
+  "downloads": [
+    {
+      "file": "15405b84f90dca484e70f6369abcb187.bundle",
+      "url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/15405b84f90dca484e70f6369abcb187.bundle",
+      "bytes": 263562,
+      "sha256": "d311a91f5be5bd6fc9f4fdafb07c07574d699cc7e05d36209fecbfb52f1acfac",
+      "cached": true
+    },
+    {
+      "file": "318e4e6c4fbf91b0be9d90534ba4795a.bundle",
+      "url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/318e4e6c4fbf91b0be9d90534ba4795a.bundle",
+      "bytes": 254404,
+      "sha256": "d73b24e3eb74790e395d671c9fe16202c5099db19d8e62ad68580bd3b99cb927",
+      "cached": true
+    },
+    {
+      "file": "36cb5cf4be835daf2b2fce31f9f313d2.bundle",
+      "url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/36cb5cf4be835daf2b2fce31f9f313d2.bundle",
+      "bytes": 456876,
+      "sha256": "bfa3295a409583e26d8f82a7de0d0e10dfcc68e09d3d73cb3d879633aef71590",
+      "cached": true
+    },
+    {
+      "file": "464734b42109bc09baedc6a588a117df.bundle",
+      "url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/464734b42109bc09baedc6a588a117df.bundle",
+      "bytes": 7411,
+      "sha256": "6f0f754cf7bbd562c0932915399752133e43dc7c3ce4c7841d999a345ce98b4f",
+      "cached": true
+    },
+    {
+      "file": "614efc4fc2a1541ae837e9cb963a3b99.bundle",
+      "url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/614efc4fc2a1541ae837e9cb963a3b99.bundle",
+      "bytes": 226145,
+      "sha256": "c8ee9ecb5270ac43e2dc43e72b04288867441d54f6ed738032127396f29e7672",
+      "cached": true
+    },
+    {
+      "file": "6f0fc63c80b368ec03b34bf57b10329f.bundle",
+      "url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/6f0fc63c80b368ec03b34bf57b10329f.bundle",
+      "bytes": 252758,
+      "sha256": "cd5babe42eafda5f699ffbebd720ce8dc125735f1cbaecfceb61abd4d1d9f95d",
+      "cached": true
+    },
+    {
+      "file": "7970b45e40bd48bb62bb909789cd6db0.bundle",
+      "url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/7970b45e40bd48bb62bb909789cd6db0.bundle",
+      "bytes": 307369,
+      "sha256": "7a829b65b960c48b45b431e9258a0023db6e3627058f551692c77ef7978cce00",
+      "cached": true
+    },
+    {
+      "file": "7da7da481c442985029f24a85d801355.bundle",
+      "url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/7da7da481c442985029f24a85d801355.bundle",
+      "bytes": 338096,
+      "sha256": "26dad839fc78cada9814525787dd60d775f163e90eb949fe593bfc0987a088a4",
+      "cached": true
+    },
+    {
+      "file": "8a24045b206608deca4e4d6648228f67.bundle",
+      "url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/8a24045b206608deca4e4d6648228f67.bundle",
+      "bytes": 292757,
+      "sha256": "5193ce6b2a34bb0cb45edf02a34580b15e10f9da16fe5a83ea861aa3dc420285",
+      "cached": true
+    },
+    {
+      "file": "a04b7b361fd3f01fcf8ad7cdbeb60132.bundle",
+      "url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/a04b7b361fd3f01fcf8ad7cdbeb60132.bundle",
+      "bytes": 439187,
+      "sha256": "d4749da3d1e11cd839ab3f53d1524dfa8c119a0feb8e63d07cfd4ac445f9e7c1",
+      "cached": true
+    },
+    {
+      "file": "ac2aa09aae2ca0a07b344633403d315a.bundle",
+      "url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/ac2aa09aae2ca0a07b344633403d315a.bundle",
+      "bytes": 7341,
+      "sha256": "b293250f921c1558acf175000d74006ae819c9f025dcbb6fc34f3d6e398af704",
+      "cached": true
+    },
+    {
+      "file": "baa15129aa9d98df68c268127a20a053.bundle",
+      "url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/baa15129aa9d98df68c268127a20a053.bundle",
+      "bytes": 154166,
+      "sha256": "278a9ad29b81e10946612af6cede93b6a0ab3e1f62874b8c65060c0337f55362",
+      "cached": true
+    },
+    {
+      "file": "c6ddb1a8ae8437726c78fc0426edb45a.bundle",
+      "url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/c6ddb1a8ae8437726c78fc0426edb45a.bundle",
+      "bytes": 7401,
+      "sha256": "5d4a84c3473313e275986677e7f836c73e5b8558629fe8ce31e7d082a07d57cd",
+      "cached": true
+    },
+    {
+      "file": "f0d0e7bcbc890fa7e91e77d77e531361.bundle",
+      "url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/f0d0e7bcbc890fa7e91e77d77e531361.bundle",
+      "bytes": 290747,
+      "sha256": "a44155e4177a802738dd58d39bab4dafb2f91643114f546cbe405a2970790158",
+      "cached": true
+    },
+    {
+      "file": "f682ecb10ba1ca9fdd575e607611e55f.bundle",
+      "url": "https://bsls-cdn.jvplay.cn/m1b/v2/release/douyin/webgl/StreamingAssets/stonehunter/gameres/f682ecb10ba1ca9fdd575e607611e55f.bundle",
+      "bytes": 5326,
+      "sha256": "3a91888bc01086479b3ab72875ba85261dba75748858b72bb74e49b3cf2d6e0b",
+      "cached": true
+    }
+  ]
+}

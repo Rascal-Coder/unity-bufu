@@ -1,0 +1,61 @@
+内购商店 / Google Billing 接入说明
+
+当前完成
+英文商店从顶部钻石旁的 +、原商店页和设置进入。
+三类商品：钻石包、永久免广告、现有帮手定向碎片。
+永久免广告：点击奖励按钮后直接走原奖励流程；不自动领取，不跳过冷却或每日次数。
+帮手碎片写入现有 shards[101..110]，继续用于现有帮手升级，不代替成长解锁条件。
+清除游戏进度保留永久免广告和交易历史，避免重新发放已领取的订单。
+
+暂定商品目录（上架前可调整；没有写死货币价格）
+Assets/Resources/Commerce/products.json
+diamonds_100              100 钻石，可重复购买
+diamonds_550              550 钻石，可重复购买
+diamonds_1200             1200 钻石，可重复购买
+permanent_no_ads          永久免广告，非消耗型
+helper_01_fragments_20 到 helper_10_fragments_20
+                         对应帮手 1..10，每包 20 片，可重复购买
+价格只显示 Billing 返回的 localizedPrice；无价格或连接不可用时禁用购买。
+商品正式售卖后，变更奖励数量请创建新商品 ID，保留旧 ID 的奖励定义供未完成订单结算。
+
+后续接入位置
+Assets/Scripts/GameController.Purchases.cs / InitializePurchases
+将 UnavailableBillingGateway 替换成实际 Google Billing 或 Unity IAP 适配器；
+将 RejectPurchaseVerifier 替换成实际购买凭证验证器。
+当前没有 Billing SDK、真实商品价格、付款入口或生产验证服务。
+普通游戏构建不会模拟支付成功，也没有测试购买按钮。
+
+接口约定
+1. IBillingGateway.Connect 加载真实商品信息，并刷新价格；失败要回调 false。
+2. Purchase(productId) 只打开相应商品的商店付款流程；回传 Pending / Purchased /
+   Cancelled / Failed。每次发起应有明确结果；适配器负责连接和请求超时。
+3. PurchaseUpdated、所有完成回调必须调度到 Unity 主线程。
+4. BillingPurchase.transactionId 使用稳定的购买 token 哈希，不能用每次生成的随机 ID。
+   本地存档不存储或记录原始 token；原始 SDK 凭证放在 receipt，交给验证器。
+5. 验证器必须核对应用、商品、购买状态、数量与购买凭证；联网验证暂不可用返回 RetryLater，
+   不可信的凭证返回 Rejected。不要仅根据客户端自报的 Purchased 返回 Verified。
+6. 验证通过后先将奖励与去重交易记录一起保存，再 Complete。
+   消耗型商品 Complete 执行 consume；永久免广告执行 acknowledge。
+   保存失败不会发货或确认；确认失败由下一次查询重试，不重复发货。
+7. QueryPurchases 必须在成功回调前重放全部拥有的非消耗型、未完成消耗型和 PENDING 订单。
+   部分结果、断网或查询失败必须返回 false。完整成功查询还用于解除已过期/取消的待付款商品。
+8. 初始化、回到前台、Check Purchases 都会触发检查。不从历史已消耗订单重新发放钻石或碎片。
+   Pending 不发货；订单在商店窗口关闭后完成仍可到账。
+9. 本地交易历史提供同一份存档内的去重。生产服务还需按 Google 账号/游戏账号验证归属、
+   处理退款与撤销、实现跨安装的交易去重；云存档和排行榜仍单独待接。
+
+Google Play 后续需要
+开发者账号和应用条目、确认最终包名/签名、建立上述一次性商品、设置各地区价格、
+接入 Billing SDK 与验证服务，并用内部测试轨道和许可测试账号验证真实支付及恢复。
+数量大于 1 的消耗型订单当前接受 1..100；未在 Play 配置多数量购买时按 1 处理。
+Android 真机的真实付款、恢复和退款测试不包含在当前本地验证范围中。
+
+官方流程参考
+https://developer.android.com/google/play/billing/integrate
+包括 PENDING/PURCHASED、queryPurchasesAsync、验证、consume 与 acknowledge。
+
+本地验证入口
+Assets/Editor/PurchaseChecks.cs
+Tools/ParityAudit/IapStoreProbe.cs（复制到隔离工程 Editor 目录执行 CheckAndBuild）
+运行构建：--verify-alignment <输出目录> --purchases-only
+测试适配器仅能在显式验证模式实例化；验证模式使用独立模型，不写入玩家存档。

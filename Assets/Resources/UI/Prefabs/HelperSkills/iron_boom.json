@@ -1,0 +1,105 @@
+{
+  "path": "Assets/GameRes/Role/iron_boom.prefab",
+  "nodes": [
+    {
+      "n": "iron_boom",
+      "p": -1,
+      "a": true,
+      "c": [
+        {
+          "m_Enabled": 1,
+          "spriteFrames": [
+            {
+              "sprite": "zgygy_roleskill_gangtieren_1_01"
+            },
+            {
+              "sprite": "zgygy_roleskill_gangtieren_1_02"
+            },
+            {
+              "sprite": "zgygy_roleskill_gangtieren_1_03"
+            },
+            {
+              "sprite": "zgygy_roleskill_gangtieren_1_04"
+            },
+            {
+              "sprite": "zgygy_roleskill_gangtieren_1_05"
+            },
+            {
+              "sprite": "zgygy_roleskill_gangtieren_1_06"
+            },
+            {
+              "sprite": "zgygy_roleskill_gangtieren_1_07"
+            },
+            {
+              "sprite": "zgygy_roleskill_gangtieren_1_08"
+            },
+            {
+              "sprite": "zgygy_roleskill_gangtieren_1_09"
+            },
+            {
+              "sprite": "zgygy_roleskill_gangtieren_1_10"
+            },
+            {
+              "sprite": "zgygy_roleskill_gangtieren_1_11"
+            },
+            {
+              "sprite": "zgygy_roleskill_gangtieren_1_12"
+            },
+            {
+              "sprite": "zgygy_roleskill_gangtieren_1_13"
+            },
+            {
+              "sprite": "zgygy_roleskill_gangtieren_1_14"
+            }
+          ],
+          "frameInterval": 0.03999999910593033,
+          "isLooping": 0,
+          "autoPlay": 1,
+          "isPlaying": 1,
+          "currentFrameIndex": 0,
+          "t": "UISpriteAnimationSequence"
+        },
+        {
+          "m_Enabled": 1,
+          "m_Color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "m_RaycastTarget": 1,
+          "m_Sprite": {
+            "sprite": "zgygy_roleskill_gangtieren_1_01"
+          },
+          "m_Type": 0,
+          "m_PreserveAspect": 0,
+          "m_FillCenter": 1,
+          "m_FillMethod": 4,
+          "m_FillAmount": 1.0,
+          "m_FillClockwise": 1,
+          "m_FillOrigin": 0,
+          "m_UseSpriteMesh": 0,
+          "m_PixelsPerUnitMultiplier": 1.0,
+          "t": "Image"
+        }
+      ],
+      "rt": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.0,
+        0.0,
+        239.0,
+        219.0,
+        0.5,
+        0.5,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    }
+  ]
+}

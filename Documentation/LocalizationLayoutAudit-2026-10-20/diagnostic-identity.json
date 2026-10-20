@@ -1,0 +1,10 @@
+{
+  "production_assembly_sha256": "b4cbf65d5167062c0a06959d8301e8b1b39a671d2daedf5abc7104fee11e82c9",
+  "diagnostic_assembly_sha256": "1a680b064fa9475a6be97034adf8352bdb18f79d2c8661bfa4a2db5ab84d468e",
+  "production_source_changes_since_build": [],
+  "diagnostic_changes": [
+    "QA startup waits for BootFinished and launch screen dismissal",
+    "Capture writes active text and TMP overflow diagnostics"
+  ],
+  "production_modified": false
+}

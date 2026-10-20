@@ -1,0 +1,2614 @@
+{
+  "baseline": "snapshot.json",
+  "workspace": "E:\\rea-games\\unity-bufu",
+  "reference_package": "2026-10-14-626",
+  "keep_english": true,
+  "config_count": 26,
+  "unchanged_configs": 26,
+  "files": [
+    {
+      "path": "Assets/Scripts/AdManager.cs",
+      "sha256": "238630a63f633c676cd14156df3eccdc1c0ef030afc1c73c46791de797acd302",
+      "bytes": 2941,
+      "baseline": "changed"
+    },
+    {
+      "path": "Assets/Scripts/DevMode.cs",
+      "sha256": "99f7d6c46d4d4d1860971c574e1e1c46dc9eed908d1159d8db1f761a72f03c5d",
+      "bytes": 2504,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Scripts/GameController.Activities.cs",
+      "sha256": "0f67d17ed977c869a6b98d52ee699f6bbc02f7f0fceaa8c329111ef65c457e8f",
+      "bytes": 41738,
+      "baseline": "new"
+    },
+    {
+      "path": "Assets/Scripts/GameController.ActivitySkills.cs",
+      "sha256": "7acbf9ff9e4bb91769126e8fb3d0eb35afefbe60b0cd389a8016892fd7e74060",
+      "bytes": 24866,
+      "baseline": "new"
+    },
+    {
+      "path": "Assets/Scripts/GameController.Boot.cs",
+      "sha256": "8228bad1cccea039dbdecc2c22257cfde11235507fc0e0cc60fb97108196a4fe",
+      "bytes": 5255,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Scripts/GameController.CoinAvoidance.cs",
+      "sha256": "a0a599c506406d54f093d9f8507c8fa2371a77fc1599d0f835448a0ff6119f28",
+      "bytes": 2206,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Scripts/GameController.cs",
+      "sha256": "d5961c03aad32db4edd44efab074bc68884fde8f251b69f52a384fac5e2169f4",
+      "bytes": 25063,
+      "baseline": "changed"
+    },
+    {
+      "path": "Assets/Scripts/GameController.Dev.cs",
+      "sha256": "8327dc59c67f6fd8d13d20a701687bc9dd2b1e20508f310940ed165b1e27c442",
+      "bytes": 4060,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Scripts/GameController.Dice.cs",
+      "sha256": "2fc393d2820deb995d05f0a9a1a89467490f1356b32a542ff72c7bd698c748b3",
+      "bytes": 15248,
+      "baseline": "new"
+    },
+    {
+      "path": "Assets/Scripts/GameController.Encounter.cs",
+      "sha256": "c3900467408fbc892081b273c43e02bdfacc5798b28d5c20b976d73182d507f5",
+      "bytes": 11696,
+      "baseline": "changed"
+    },
+    {
+      "path": "Assets/Scripts/GameController.Evolution.cs",
+      "sha256": "1c7bdd6b5413251a28583fb10d4ad0483fc5f357cb8201765e298fa20f0f1b6d",
+      "bytes": 4446,
+      "baseline": "new"
+    },
+    {
+      "path": "Assets/Scripts/GameController.Fortune.cs",
+      "sha256": "77a653bdadd03b3b69b8906b52675300ded44ce9526e37d4e9907a52d1640d1c",
+      "bytes": 711,
+      "baseline": "changed"
+    },
+    {
+      "path": "Assets/Scripts/GameController.Guide.cs",
+      "sha256": "2d8e61f4c97d0abf5810438d71608488ae03c4e8aa9075d812e0b15e2f021f6e",
+      "bytes": 17200,
+      "baseline": "changed"
+    },
+    {
+      "path": "Assets/Scripts/GameController.Helpers.cs",
+      "sha256": "47d86312e0c6b8727020b68ae3788b3f87af0d4ab5bcc1efe611ba00376707f0",
+      "bytes": 21119,
+      "baseline": "changed"
+    },
+    {
+      "path": "Assets/Scripts/GameController.Input.cs",
+      "sha256": "947872ffd94652e628bdf1267b89a0c6965fae267e6003bd0f2d95c2f0bb5cc6",
+      "bytes": 6583,
+      "baseline": "new"
+    },
+    {
+      "path": "Assets/Scripts/GameController.Integrations.cs",
+      "sha256": "f34efd581c5ad709709ca0cd3c474226b81172db5e7d4ff2fe1f140205bfb0e8",
+      "bytes": 5031,
+      "baseline": "new"
+    },
+    {
+      "path": "Assets/Scripts/GameController.Lifecycle.cs",
+      "sha256": "1e67e8558975949576b016b25d17993cbf1b869054c15f8fad2260a45627fd8a",
+      "bytes": 947,
+      "baseline": "new"
+    },
+    {
+      "path": "Assets/Scripts/GameController.Localization.cs",
+      "sha256": "5ad1b5153938365a445146c771c84ab9a1dc8b6efb123384c2f11d4396d4d17c",
+      "bytes": 348,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Scripts/GameController.Main.cs",
+      "sha256": "b6abea69c9923155a87247306888696cb22ce011b136e0a8519fd9a6de236cf2",
+      "bytes": 34758,
+      "baseline": "changed"
+    },
+    {
+      "path": "Assets/Scripts/GameController.Notifications.cs",
+      "sha256": "5756a6e5e3a629bbfed8379331732c2c783a34c5bcce333b52595613ee824ad7",
+      "bytes": 1096,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Scripts/GameController.Panels.cs",
+      "sha256": "50a4e209d43d1269e91b083566d841d2978742cb8bf5edb2050fb33b7d65afa7",
+      "bytes": 28407,
+      "baseline": "changed"
+    },
+    {
+      "path": "Assets/Scripts/GameController.Popups.cs",
+      "sha256": "ffd44d17ff6332a5b211fc2bef4b084cb788eeff07bb71a6aea2fe48d2dd5293",
+      "bytes": 19628,
+      "baseline": "changed"
+    },
+    {
+      "path": "Assets/Scripts/GameController.Promotion.cs",
+      "sha256": "4797e73eaf69d17106bd1eabc944c976ccb793dcb6ec3cbabcfb66312652f2cb",
+      "bytes": 11545,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Scripts/GameController.Scene.cs",
+      "sha256": "fb9e8f5c5462cc06157b7a28168b09fa318699adcba19793466e4c54bd131e8c",
+      "bytes": 8758,
+      "baseline": "changed"
+    },
+    {
+      "path": "Assets/Scripts/GameController.Support.cs",
+      "sha256": "75f07c153262d5c101b345a6908ddfeef4db0ee96728a8c5eaf77f5b6b80f1aa",
+      "bytes": 14427,
+      "baseline": "changed"
+    },
+    {
+      "path": "Assets/Scripts/GameController.Talent.cs",
+      "sha256": "fea0265540e6c831490b3dbc0efb139f2f6ed740e3911d8541b71456ae8648f9",
+      "bytes": 17015,
+      "baseline": "changed"
+    },
+    {
+      "path": "Assets/Scripts/GameController.Transition.cs",
+      "sha256": "5fb4aa4b125442df71b5b6063b98f252d8752fd8c4662b1b1100027268aeb7b6",
+      "bytes": 1907,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Scripts/GameController.WorldGuide.cs",
+      "sha256": "ead19163d28b155f263803c1fb2223f9c9431e9866dd20fb261cec983104aa96",
+      "bytes": 4882,
+      "baseline": "new"
+    },
+    {
+      "path": "Assets/Scripts/GameController.WorldLayout.cs",
+      "sha256": "3324439eadbd74fa394eda1357b109975770024f0056d5218013e6ed8700b5ad",
+      "bytes": 5050,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Scripts/GameModel.Activities.cs",
+      "sha256": "9f1b90bc8fd126b5f03f42b3e6af5cb1be3e56b2728d96ae9ea7161373d4e682",
+      "bytes": 19063,
+      "baseline": "new"
+    },
+    {
+      "path": "Assets/Scripts/GameModel.cs",
+      "sha256": "0ecee50df1a38395f1f3af6513ea1f674255049cf9a48b09395287eca2bfad2e",
+      "bytes": 55183,
+      "baseline": "changed"
+    },
+    {
+      "path": "Assets/Scripts/GameModel.Dice.cs",
+      "sha256": "cfdb16d284e8d55407051c67d7d66d84e70857522c2131ffd9128b7163eab959",
+      "bytes": 7165,
+      "baseline": "new"
+    },
+    {
+      "path": "Assets/Scripts/GameModel.Parity.cs",
+      "sha256": "ed5876b9448675d6cdd311f2cfd575397687b107f9acb7dbe89375d3db92e2bb",
+      "bytes": 4795,
+      "baseline": "new"
+    },
+    {
+      "path": "Assets/Scripts/HelperSkills.cs",
+      "sha256": "d743abbb440cb1c6bf4da315a4edf8f50fab010177c477733bc30ca638de03a6",
+      "bytes": 27070,
+      "baseline": "changed"
+    },
+    {
+      "path": "Assets/Scripts/IntroScene.cs",
+      "sha256": "3024af715c109a553fc8f8fbe7cecfcf3e98310f2e00ffe4750de31fc4adfdb7",
+      "bytes": 11526,
+      "baseline": "changed"
+    },
+    {
+      "path": "Assets/Scripts/LaunchScreen.cs",
+      "sha256": "f7e0fb5e46cf7a9004f2a4d6eee7b9907c710a921f3c7d480e157f31b832226a",
+      "bytes": 5144,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Scripts/LoadingFlowShot.cs",
+      "sha256": "d785942efbac1284e9448a8df1ffae3ee2aea4d2ccc21a1f23847ef00566646d",
+      "bytes": 11488,
+      "baseline": "changed"
+    },
+    {
+      "path": "Assets/Scripts/MaxedMode.cs",
+      "sha256": "52513d4f90a86f2bd6f8b30f796879ed4f19d43a2b16c6295ec9b7d71ece50fe",
+      "bytes": 3357,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Scripts/NotificationModel.cs",
+      "sha256": "326c60801a873d59c344a4efb0500a9e148917d387b379a40ec33552e62d380f",
+      "bytes": 859,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Scripts/PromotionModel.cs",
+      "sha256": "1cecd8a56664df1337fde1fd6e6cf5cb9fca60761ba099ec415a8062ca8bb927",
+      "bytes": 5321,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Scripts/RuntimeVerification.Activities.cs",
+      "sha256": "9227dc95701d97fa6c1e320e5ff4a81239be654cf580c6b26dbf61594d35a97c",
+      "bytes": 7355,
+      "baseline": "new"
+    },
+    {
+      "path": "Assets/Scripts/RuntimeVerification.Alignment.cs",
+      "sha256": "5bef14893c69124a80547852e529cbab937da2000dea53986f85e69034e9967d",
+      "bytes": 17563,
+      "baseline": "new"
+    },
+    {
+      "path": "Assets/Scripts/RuntimeVerification.cs",
+      "sha256": "65f1206436406c8dcf98e138ce8805f92cdb17201baf7f55178c431f0c79c1fe",
+      "bytes": 26742,
+      "baseline": "changed"
+    },
+    {
+      "path": "Assets/Scripts/RuntimeVerification.Dev.cs",
+      "sha256": "18d511149d3781b6675324ded2ecf586aeb386302a6cf98a4eac221e59e2727b",
+      "bytes": 4698,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Scripts/RuntimeVerification.Fixes.cs",
+      "sha256": "e10db77ae93b5cdb71d171d6aec71e37f2461088d2738dc9bd187aa96ff2a1cf",
+      "bytes": 5583,
+      "baseline": "new"
+    },
+    {
+      "path": "Assets/Scripts/RuntimeVerification.IntegrationPlaceholders.cs",
+      "sha256": "41d9594764a98e3e0813cfcdd4a06c63ed6fa62200a91493e89eb824a98bcd8e",
+      "bytes": 5221,
+      "baseline": "new"
+    },
+    {
+      "path": "Assets/Scripts/RuntimeVerification.Localization.cs",
+      "sha256": "331ab33fd3a95b8dfd2fa75653397e99d60fee921d40624bdf1feff101741a35",
+      "bytes": 12910,
+      "baseline": "changed"
+    },
+    {
+      "path": "Assets/Scripts/RuntimeVerification.Parity.cs",
+      "sha256": "348def70be381eb6c9d097ec35a7c7463550735ab56e846640c0fccd09cbd188",
+      "bytes": 9378,
+      "baseline": "changed"
+    },
+    {
+      "path": "Assets/Scripts/RuntimeVerification.Promotion.cs",
+      "sha256": "14c492c6ce2d8bf252e2c27713ef54476b3b9435a61125eb213f6abb7abc3801",
+      "bytes": 7077,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Scripts/RuntimeVerification.RebirthFix.cs",
+      "sha256": "6d33fb5b9d8a48fff8f8da319182862864768a9fa144e4a5d42ce1e69f31bcab",
+      "bytes": 7471,
+      "baseline": "new"
+    },
+    {
+      "path": "Assets/Scripts/RuntimeVerification.Shop.cs",
+      "sha256": "a5c08f58e717fade21205fcc6bd2df533f00bd7308c208a32997fee009d9d676",
+      "bytes": 6640,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Scripts/RuntimeVerification.Support.cs",
+      "sha256": "1bd4a21a32fe22cb9e5016943aaac3bfb66311de3b26fa3da9b60c7faa4cef71",
+      "bytes": 13482,
+      "baseline": "changed"
+    },
+    {
+      "path": "Assets/Scripts/RuntimeVerification.Transition.cs",
+      "sha256": "5b4e0e574666d627e747c65b9d1f30e802ed28d65333647647411e3509dec3ce",
+      "bytes": 4478,
+      "baseline": "changed"
+    },
+    {
+      "path": "Assets/Scripts/RuntimeVerification.VisualFixes.cs",
+      "sha256": "70c7025aa4de497458a5edc07958983b10c4a153b1cb977e831cb3b1f0f43a67",
+      "bytes": 5815,
+      "baseline": "changed"
+    },
+    {
+      "path": "Assets/Scripts/SaveStore.cs",
+      "sha256": "22cad2c3946d9509add7ef8737c9e6c380a14219e179fcc0eef2b18e349ebb87",
+      "bytes": 1501,
+      "baseline": "changed"
+    },
+    {
+      "path": "Assets/Scripts/SceneActors.cs",
+      "sha256": "45170f9ec727e5a61e4c117404b7f76d2f30f9842a42cb6eb0529077f020379f",
+      "bytes": 19209,
+      "baseline": "changed"
+    },
+    {
+      "path": "Assets/Scripts/SupportModel.cs",
+      "sha256": "dc5fb0e8bf32f0cd604af38055fad824bdae1d28bc8acf3b8eef7eb02325e76a",
+      "bytes": 3062,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Scripts/UI/L10n.cs",
+      "sha256": "72308af501e0fb9d2071162c8eb2d0b8631f6b7e7fdce43b567e4ed78177e7c9",
+      "bytes": 4613,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Scripts/UI/LocalizedText.cs",
+      "sha256": "f697e2eb784256bdc29fdfce6b08d756a694ac1b02988144db11b2738499325e",
+      "bytes": 1809,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Scripts/UI/MiniJson.cs",
+      "sha256": "6831bb1f6d1ffa48201b681b340e00f86f659eb75d3f7c74950bd6daf29a96ea",
+      "bytes": 5404,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Scripts/UI/NativeParticles.cs",
+      "sha256": "8a0ed2ef091ce35d1b807caf85daf681db63d571738f044119058056bf6d88bb",
+      "bytes": 9682,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Scripts/UI/SpineGraphic.cs",
+      "sha256": "fadef37aa838a70e0a59e38ce226d62854bbbb00b0d89c68119d2d398b9e3eaa",
+      "bytes": 22307,
+      "baseline": "changed"
+    },
+    {
+      "path": "Assets/Scripts/UI/UiAnimators.cs",
+      "sha256": "951844707a355c052651be076b47b0b45f8a4bbf40d11161981165011915715d",
+      "bytes": 3395,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Scripts/UI/UiPrefab.cs",
+      "sha256": "117c8807149298d118477c6c036fb0753f9b3d975e5d3363edb5f9f932c35888",
+      "bytes": 26246,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Scripts/UI/WorldPageSnap.cs",
+      "sha256": "6f5176ecfff7a955a850a9ac008979a20b1b92b7bcb891d35ab1436fc41e0038",
+      "bytes": 2432,
+      "baseline": "new"
+    },
+    {
+      "path": "Assets/Scripts/VatGraphic.cs",
+      "sha256": "39067a7da06b14c3c40c845d3ff62b99f695fe406e20ef7a54df3d53456b4093",
+      "bytes": 6011,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Editor/ActivityChecks.cs",
+      "sha256": "a82bcbde68f0d46839c7abbecfe42d97faef488fbdf0abce01977169134683d7",
+      "bytes": 19791,
+      "baseline": "new"
+    },
+    {
+      "path": "Assets/Editor/AndroidBuild.cs",
+      "sha256": "36ddcd62b07f91a6461898355e2d74b92106b559aef6f2d1f16d10d3bac980ef",
+      "bytes": 2524,
+      "baseline": "new"
+    },
+    {
+      "path": "Assets/Editor/AppLogoSetup.cs",
+      "sha256": "b4e72d9e1b0f64b3f609d909cf4746c0c452f5dca437c62d7e43b74d39d60b95",
+      "bytes": 4775,
+      "baseline": "new"
+    },
+    {
+      "path": "Assets/Editor/DevModeChecks.cs",
+      "sha256": "379b997260d98c1148e022e3acb6fd3c49ce654eeebcb7bcea20c2f6dd78a6df",
+      "bytes": 3182,
+      "baseline": "new"
+    },
+    {
+      "path": "Assets/Editor/DevModeEditor.cs",
+      "sha256": "4847f0f3bed436a370f3598a2bae301c5c6275fb3519664c6bf5787fc19b3c83",
+      "bytes": 643,
+      "baseline": "new"
+    },
+    {
+      "path": "Assets/Editor/DiceParityChecks.cs",
+      "sha256": "0ed366ea683e399b8e490154d6873699c3918be39cb1dada825e18b73120f0fe",
+      "bytes": 9812,
+      "baseline": "new"
+    },
+    {
+      "path": "Assets/Editor/HelperParityChecks.cs",
+      "sha256": "30fd7927da9616d9aa2234f02a2744e31e672b19a9b8dc243d3f8eac6cc37742",
+      "bytes": 10261,
+      "baseline": "new"
+    },
+    {
+      "path": "Assets/Editor/IntroScenePlayMode.cs",
+      "sha256": "8aa24182b80498c588d7da2ba040361027bdf2bf9c5f960da1835b9ea01bf7c5",
+      "bytes": 823,
+      "baseline": "new"
+    },
+    {
+      "path": "Assets/Editor/IosBuild.cs",
+      "sha256": "2b7f67fdeaa24f75c95e27fc7c146e5b224ce824d05bdfe481c5ec9bb09eb250",
+      "bytes": 2695,
+      "baseline": "new"
+    },
+    {
+      "path": "Assets/Editor/LoadingFlowShotEditor.cs",
+      "sha256": "1ee9ea20714e92e9711d3c7e7335bd3a2788bca0edf7d382fdd66964f6291102",
+      "bytes": 256,
+      "baseline": "new"
+    },
+    {
+      "path": "Assets/Editor/NativeParticleBuilder.cs",
+      "sha256": "74edf50fffd97249ed4364b7e333a4e9fbe95a81b341247ffc2a33bd4f41fc85",
+      "bytes": 21358,
+      "baseline": "new"
+    },
+    {
+      "path": "Assets/Editor/OriginalParityChecks.cs",
+      "sha256": "7798cb92e4f6d7e9b49dae2883b0ef5f3a4d79299d86eb5b1f4d1477c0e28ab4",
+      "bytes": 8045,
+      "baseline": "new"
+    },
+    {
+      "path": "Assets/Editor/ParityChecks.cs",
+      "sha256": "5f5a0e6cd7d64a31b640e102ee87f2a3ffa3a3ffcc177c46b5487b32e86a6218",
+      "bytes": 3756,
+      "baseline": "new"
+    },
+    {
+      "path": "Assets/Editor/PromotionChecks.cs",
+      "sha256": "b5018d7bd2fffcc1d73e8032e4e39433c1a519be76b8cb0e36a8cf9d5e7dfbe9",
+      "bytes": 5467,
+      "baseline": "new"
+    },
+    {
+      "path": "Assets/Editor/RebuildEditor.cs",
+      "sha256": "65f1e82007483b37399a47c176e7fba08845df2206f2615a99028adf31e92715",
+      "bytes": 14699,
+      "baseline": "new"
+    },
+    {
+      "path": "Assets/Editor/SupportChecks.cs",
+      "sha256": "60a7a51077ccb0c208ef165111255973732249e410f4ac8dc972904c087013a5",
+      "bytes": 8461,
+      "baseline": "new"
+    },
+    {
+      "path": "Assets/Editor/UiAssetBuilder.cs",
+      "sha256": "9b6bfa423465260f0aa9527b603de285d9cbde0f4218dcf73e9528e18ac50d97",
+      "bytes": 6207,
+      "baseline": "new"
+    },
+    {
+      "path": "Assets/Editor/UiParityChecks.cs",
+      "sha256": "fc93610124c434f3bd33d9e7554b57284f0b7f97db2b03bdbe27a74571100d03",
+      "bytes": 6442,
+      "baseline": "new"
+    },
+    {
+      "path": "Assets/Resources/Config/tbauction.json",
+      "sha256": "7417df66e23de2f6ac0b6e1ae609456bb9dc282dc6d435b63f3460c726289684",
+      "bytes": 4770,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Resources/Config/tbauctionitem.json",
+      "sha256": "bed7068272c6b7f215f1cdfcee8ba833bb1d51a960bb229a4347dde8256b3bb6",
+      "bytes": 2044,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Resources/Config/tbchallenge.json",
+      "sha256": "954d29cf6e35c337ac32d4c788154e427aa461a91f6dee058d5396ea8e0cc229",
+      "bytes": 18322,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Resources/Config/tbcommon.json",
+      "sha256": "b5314016fc18135a9aa96f9451c9b71fae299215cb11ae1b43287bef0be6c620",
+      "bytes": 5607,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Resources/Config/tbdesk.json",
+      "sha256": "5743c1956fa061a3d37a55f057265b309e0806b8372bc914187ad19aaa856118",
+      "bytes": 3252,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Resources/Config/tbhelperrole.json",
+      "sha256": "6873f149ac9c79ff329bc9e86abc91d6ab2b5f9e32c7b96c01c17fb0d6a27de5",
+      "bytes": 8108,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Resources/Config/tbitem.json",
+      "sha256": "aad08b2d5ab0925eb42491f40f5c0520660ab4fc0ac42dbd5401c0f12b2ffe6e",
+      "bytes": 1218,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Resources/Config/tbitemupgrade1.json",
+      "sha256": "6541bf23282f89b1a46ce223fd11bc2a61ba83e4c9339c05d66b6bcb1d7b4504",
+      "bytes": 3267,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Resources/Config/tbitemupgrade2.json",
+      "sha256": "738e393d95dd1530e62d5f26f580949a8e3f51956a83d52c2eaad9ce94132186",
+      "bytes": 7371,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Resources/Config/tbitemupgrade3.json",
+      "sha256": "6f4e38fa8536786e7dba2db58a151502169008de7653b79eb2b9dfdca5c3b960",
+      "bytes": 2404,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Resources/Config/tblanguage.json",
+      "sha256": "f51fdfd85e984d097be35774e73d3e64004cdae875f0f04ea0ac4d8dd312a5bd",
+      "bytes": 64931,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Resources/Config/tblimitmission.json",
+      "sha256": "1c38d47e27ec62e085d1e153691acdd5f6eb038ee5b7ae014415f9bdf895bdc7",
+      "bytes": 4079,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Resources/Config/tblimitmission2.json",
+      "sha256": "764710041f0f0f04964ab9171e7faa60a9e2feb4a8886b5ed73cd1da7b94dff4",
+      "bytes": 4081,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Resources/Config/tbmainmission.json",
+      "sha256": "442fab9abfe0b7022c2e27d950c4d4a25d0770476cff0d847e0daded6318208a",
+      "bytes": 23105,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Resources/Config/tbshop.json",
+      "sha256": "d31cd2b0758c710c483a2e62e88b757a3cb142bc7d81af4f88b71803f6bfd00a",
+      "bytes": 1595,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Resources/Config/tbsignreward.json",
+      "sha256": "c31e649d1cf1a05003521d2aa30b9051a204b26a404ce1246fb8cc04472fd832",
+      "bytes": 980,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Resources/Config/tbsignworldcup.json",
+      "sha256": "cd81e56401a9babf682fd191c072af03d7b50e75038d29d20405ac1fa88c9653",
+      "bytes": 403,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Resources/Config/tbtalent.json",
+      "sha256": "87270de3a548a845225bf0c4391dfca783d7661b3c39eef4c8532167c168114e",
+      "bytes": 5818,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Resources/Config/tbtalent2.json",
+      "sha256": "1ea860f9ec9df3dfac5b14f9e0422c5519f1eb6b5e294705d8b5f875a3a4eee4",
+      "bytes": 8332,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Resources/Config/tbtalent3.json",
+      "sha256": "d71a65e6f0ff611024a659673fc2d695dc9c83a82bc0d76a5190e4e2f7b80b23",
+      "bytes": 1567,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Resources/Config/tbtalent4.json",
+      "sha256": "f3d43d4dd64b0bc21fea07663286da7b51bc27113a17b4013382740a14658ef6",
+      "bytes": 1691,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Resources/Config/tbtalentpoint.json",
+      "sha256": "8d2dac2b9ffe941d5f9ce4e744451a0800155c72e4eaec76f62f359e8dc5c233",
+      "bytes": 5896,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Resources/Config/tbtalentpoint2.json",
+      "sha256": "8d2dac2b9ffe941d5f9ce4e744451a0800155c72e4eaec76f62f359e8dc5c233",
+      "bytes": 5896,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Resources/Config/tbworld.json",
+      "sha256": "452e7d76939dafc77d5bf41ca4b9ca72d764132c95be6d0aeeef7ef72ba20979",
+      "bytes": 503,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Resources/Config/tbworldcupmisson.json",
+      "sha256": "b79e80892596b3304eeea91c28d49d78651d72269075310148f9fd4f1fece852",
+      "bytes": 486,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Assets/Resources/Config/tbworldupscorereward.json",
+      "sha256": "cf493c07543cebeeb8f42105a2e416fafc2ea4e386340e93300c4e0213ad210a",
+      "bytes": 269,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/AdDiamondMerchant.cs",
+      "sha256": "efec5f3d7ba5bdc9c034f39df7decb65bb2f3b84057396539d895b0bece59931",
+      "bytes": 3389,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/AdLaoHuJi.cs",
+      "sha256": "13b3307b5548ba5006da9a851876b9c9b58345401603b9b3af49cdcf489d4826",
+      "bytes": 4027,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/AppConst.cs",
+      "sha256": "966969776c6b58743da2913639570df51335b0d6c2b9622bf84cdf42bb3db559",
+      "bytes": 529,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/AuctionDataManager.cs",
+      "sha256": "ce8709f698b6ca123a2b5aba64002d7a1d43d55f3633ca141ed22e758f33f24f",
+      "bytes": 7957,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/AuctionExchange.cs",
+      "sha256": "3f1713fffd19a751802c6cc8814fc33e96e790eec83e4234ae12b95e7ffc4dc2",
+      "bytes": 7960,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/AuctionGrid.cs",
+      "sha256": "8803cb842a30c37f09375eea9c81cd41da6468e659cec24a33aa3f4d9aa7bbcf",
+      "bytes": 6529,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/AuctionItem.cs",
+      "sha256": "f63176ed10b3717adef779f62e48b4c2e2168d79acdf41ff2ab89bf9e4a044d1",
+      "bytes": 1387,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/AuctionMatchPanel.cs",
+      "sha256": "2324305fd97b258c37b0a7c2706b4a08d1b58941dce47b9a357e11126b7d8985",
+      "bytes": 11203,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/AuctionPlayPanel.cs",
+      "sha256": "6794cef6d5313617268042ca586d326caabe05ceabb56dd35846e3a07f8111c7",
+      "bytes": 74350,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/AuctionSeclect.cs",
+      "sha256": "4d92dec21fc08742c5ddecc9bd6404d1e4f8efb036978c752aa0f51ea30cd348",
+      "bytes": 15283,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/AuctionSelectItem.cs",
+      "sha256": "07408158507dce5c95a19f668cc5e9da044dad7522bb365e24ee450855063cc2",
+      "bytes": 1659,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/BiliFileSystem.cs",
+      "sha256": "b38684ef1a7599ff41ea1c4efc4871e64cbdcae068a7f91af9cd22bdd58730ad",
+      "bytes": 1510,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/BroadcastManager.cs",
+      "sha256": "e33001e235f1cfcdade29427a934b5cf20124268432bb49e150a4213c77047ae",
+      "bytes": 18576,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/BuffData.cs",
+      "sha256": "0c2d6f5d0a19ef0337e2e62e399b3254188efc75154cdec232667ba116e8d869",
+      "bytes": 181,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/BuffManager.cs",
+      "sha256": "cb11300d3215420ebc7624477ad5363cfd05ef7415a53415c717ac33be003d36",
+      "bytes": 7931,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/BuffType.cs",
+      "sha256": "e5f6d20c9f02f972cb8d673f2cbc4f46b072e9cb87bef9721f3881a97013b8de",
+      "bytes": 149,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/ButtonCD.cs",
+      "sha256": "8452898f7573756a0dc80356bbb7f7e314e4596e9bc8e8ed4dd99f783524d848",
+      "bytes": 1036,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/ButtonClickAnimation.cs",
+      "sha256": "714c75666460e407c0e7079c9768744fda4d598e615cbac9e55c70fc2bca4abb",
+      "bytes": 5833,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/auction.cs",
+      "sha256": "a71ceb8f73ef4e3d8d64ac490617498ed01b39c5b5ffcd8e139c93f697e18c1c",
+      "bytes": 17907,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/auctionItem.cs",
+      "sha256": "abe38b9a205d7db0f654d6540dbdfbe7fb937cdfad4c9c41dab92a8f3d6c544e",
+      "bytes": 1972,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/challenge.cs",
+      "sha256": "f51320c44d3ab6621831cc5b2ff6d6b8dba53f6db968c18a4fa6917028b9d610",
+      "bytes": 9386,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/Common.cs",
+      "sha256": "842d2cb6c42408ffa45481013e39ae80573a0152497d2075cf06336a5a4fe761",
+      "bytes": 1261,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/desk.cs",
+      "sha256": "a7fb4fa8d440a9f8c997402fbe9a803c5e6995ffd8b8095acc0408caa86d651b",
+      "bytes": 3695,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/helperRole.cs",
+      "sha256": "d6a9636daeb0a312ce812e7b789d91db6e009501bf4e65f9c0d43bc98ae2084d",
+      "bytes": 11885,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/item.cs",
+      "sha256": "9fbfdf2066df907a9e5fdf490347f9fe0b896860ed1e80c77288fb5ac4090d73",
+      "bytes": 1476,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/itemUpgrade1.cs",
+      "sha256": "beaed3eba10244a803a1cdaab4ed725a127b000528e009962798756415eaab9c",
+      "bytes": 6582,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/itemUpgrade2.cs",
+      "sha256": "8ad261fbe5c10beb2e9bfabc409113837ce8fedc4bc1e878549927b3efb72137",
+      "bytes": 5801,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/itemUpgrade3.cs",
+      "sha256": "24d22afac3a04322db26594fe237d6597c2868828dda6b110a8df536c0ef3a8c",
+      "bytes": 5811,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/language.cs",
+      "sha256": "b3133a6ab3043952244ed1e9e8d5d396477beda7e55efbcaf7b7cbdb44120a7d",
+      "bytes": 1274,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/limitMission.cs",
+      "sha256": "9d250f52a481ff11318e822c87d0879efeadfe990419c67d5031f29b294bc926",
+      "bytes": 2302,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/limitMission2.cs",
+      "sha256": "6942191af85fa0c08383bddb2bfe68ae00412114b071c9cf7623e93d9fcb3af4",
+      "bytes": 2307,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/mainMission.cs",
+      "sha256": "b259c24a5ebced0ab14b24c76d13cae1cbad432d6179e067489848d0fda541aa",
+      "bytes": 2472,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/shop.cs",
+      "sha256": "6e0516cabe3e302a46714402831031d798cf3b093b4f911b2b26b143d3e03d93",
+      "bytes": 3336,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/signReward.cs",
+      "sha256": "7cac6b4668998a37b71a8efc3464cbed76ffd8e818608c247d19122cb1db4607",
+      "bytes": 2338,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/signWorldCup.cs",
+      "sha256": "30ee6dc7e10092c3c7d22ddb71a6c6d1d6ec8f2c945f9de9eb67be2f6506bcc9",
+      "bytes": 2070,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/Tables.cs",
+      "sha256": "100892e7cf4ea97a66dcc5f5a839b2135678a3d2238b1260b6a21ccc48299d32",
+      "bytes": 4241,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/talent.cs",
+      "sha256": "67e78414fc59a4c8b0764ac1876f1cac4e62274d83aaa422aa11ee04a596653f",
+      "bytes": 3548,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/talent2.cs",
+      "sha256": "9c596e7b6b4f18c53036b556f4ccf36c86e4a06ef360cacb277695da36f74046",
+      "bytes": 3555,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/talent3.cs",
+      "sha256": "4c4c27fc86d8a8fad70f40843258b93f1eeb03c4dabcde5f95c7aab367ad4910",
+      "bytes": 3259,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/talent4.cs",
+      "sha256": "858111ed2c10975c429f13c517395f58402de5f1787d5603408cab872d76d48e",
+      "bytes": 3259,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/talentPoint.cs",
+      "sha256": "69f90928ef90672ae67155d0590ab69cebedd2fcbaf91c8738a02f956f1e9344",
+      "bytes": 1619,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/talentPoint2.cs",
+      "sha256": "c0dd6cd1556e44e2f3d159cefaa757387ac6fa4c46c26f9bd055265bcb4a84a6",
+      "bytes": 1628,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/Tbauction.cs",
+      "sha256": "054aced115ce069fc73a2f98b2c56801c2514b15ac2fbf27bd06f4c2f6f0d1ea",
+      "bytes": 1231,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/TbauctionItem.cs",
+      "sha256": "a767ea3a4726b44edcef7b18b8ed07ce81845e703f5eaad942776427c373acde",
+      "bytes": 1295,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/Tbchallenge.cs",
+      "sha256": "787ac93648fb4d4c806d85d08f0dfb7267e1d886673037cc342f60aa4c721602",
+      "bytes": 1257,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/TbCommon.cs",
+      "sha256": "662ea4b745966a7b491ffe16cd2b3e871a6071bb207ebc0d9334bc31ad1c21bb",
+      "bytes": 1196,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/Tbdesk.cs",
+      "sha256": "e6d29b40b39a7e5191ff2199bc9db813a86f2f6a07bd60eaedaf3124f8df677f",
+      "bytes": 1162,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/TbhelperRole.cs",
+      "sha256": "d9c233a5cd84e45c3a40c887fc70e8f7702956b8130c4b9a74f0f12bc625cd97",
+      "bytes": 1276,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/Tbitem.cs",
+      "sha256": "8036dc3905a48cb7c7237413ef51fdefbd64d0069ad3f558a58d948059f9c07e",
+      "bytes": 1162,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/TbitemUpgrade1.cs",
+      "sha256": "4d69ad21cc9673bbe336f682ad1a1c4cbf64397a375fa6eac5530e45d65d6b98",
+      "bytes": 1310,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/TbitemUpgrade2.cs",
+      "sha256": "75a438f0bfd9db004f589d05c6c562502a99c560bb50f60103ca1b4b765fd9ee",
+      "bytes": 1310,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/TbitemUpgrade3.cs",
+      "sha256": "e75cf24e8dbb6cbade7c2c40deccd14b6d28c182a9d36302e0b4fada4cebc8ea",
+      "bytes": 1310,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/Tblanguage.cs",
+      "sha256": "ea804e3a71eb02b8762bd35a15814f780caafc71a8d25f5fcf4ed603842798a9",
+      "bytes": 1238,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/TblimitMission.cs",
+      "sha256": "72fd01a065f594b9ed105cd2ff602290d16478d7dd963ae3ce5d60ae70397321",
+      "bytes": 1314,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/TblimitMission2.cs",
+      "sha256": "64eff40cf73e48dfc422ff5203fae231288089fb0497a56934523099c293a4dc",
+      "bytes": 1329,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/TbmainMission.cs",
+      "sha256": "df495a8bb6a31a383242d570090c574a3f908b06d84772f3f8cc5b2b06649c12",
+      "bytes": 1295,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/Tbshop.cs",
+      "sha256": "479bd059334b0c5ccad0b97a8db2c772c8430a91edc04f4f87f34a65ebbfdba7",
+      "bytes": 1162,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/TbsignReward.cs",
+      "sha256": "7bfd45dbae3e7516635e526428a29a3425f643c754e77f02fd597d0b04cf0d42",
+      "bytes": 1276,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/TbsignWorldCup.cs",
+      "sha256": "df4f2f358281d6a55dc6d65d901f24be13a634e8d1f16501d782ef6179f55e78",
+      "bytes": 1314,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/Tbtalent.cs",
+      "sha256": "40371940ba4f8dbac4d25b74d87e1db675537538b3306f45aaac6fefe6ae6ec2",
+      "bytes": 1200,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/Tbtalent2.cs",
+      "sha256": "3002dd4db92696da572655c3c5a3b786cd1f578d9e1deb38e6988cc614113269",
+      "bytes": 1215,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/Tbtalent3.cs",
+      "sha256": "aa9e8fea32d77e9fa9c21badb8d0eb48bb9d3f2dc3885588edf46bb89116c05c",
+      "bytes": 1215,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/Tbtalent4.cs",
+      "sha256": "bc7c8f86adf8a5c6129fb70783866f5c45f3eb78ac0ec941d99a8164e02aba9d",
+      "bytes": 1215,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/TbtalentPoint.cs",
+      "sha256": "0e4bdda173cbe57322c3df558179b8792aa268f922a66219a2266acc4515b908",
+      "bytes": 1295,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/TbtalentPoint2.cs",
+      "sha256": "4e5cec4d1feae64525277b62cfaf7da0cf98048c73b9780cfb8102fe9a66eccc",
+      "bytes": 1310,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/Tbworld.cs",
+      "sha256": "62b20a2a7ac200b49cadfdcab217812bfa1b7775fe35e37ba2c5cb15b933e826",
+      "bytes": 1181,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/TbWorldCupMisson.cs",
+      "sha256": "b7e12874d0c908078df86bf2e1ba2d800f7504e18eeb801808130292ffb47960",
+      "bytes": 1348,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/TbWorldUpScoreReward.cs",
+      "sha256": "5a02c83f6891666e3b3202e228670358880c282bae9c2dc8ea64afd00f57122c",
+      "bytes": 1424,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/vector2.cs",
+      "sha256": "e53527e5792f368d99c68b91b48aac6020fe200fe273a3d8bcf4549bc82a119b",
+      "bytes": 820,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/vector3.cs",
+      "sha256": "265bf47f7cc4e6538fe14f56792c76375dc03ff2f92d35ca2bebe79810aa42db",
+      "bytes": 1064,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/vector4.cs",
+      "sha256": "4ef08811b0431803df46b2325349a6e0f9a8ed2f8065376bf2ba7bcc477d07e3",
+      "bytes": 1308,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/world.cs",
+      "sha256": "920353eb3b74fc5338702fc8f773340b15fc1a7f57525cf2ec65ee609e640728",
+      "bytes": 4471,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/WorldCupMisson.cs",
+      "sha256": "c7936b3df1f300b0769fcd5533919fff9a60d47ed25c74cf81c735875736f9a0",
+      "bytes": 1655,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/cfg/WorldUpScoreReward.cs",
+      "sha256": "7b43ef92948ee09ec3a1f553886ecf72f343871160f7932ef09d13b49ea8ab82",
+      "bytes": 1695,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/ChallengeDataManager.cs",
+      "sha256": "450a069ccc2544cc7584b7e8fb11d03789bda27132e9f6479edcb426fc2b6c72",
+      "bytes": 1633,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/ChallengeMain.cs",
+      "sha256": "ac266eb72f520d3405786190b626caee3394e3b5e4d3f2bed7ba61c4e8d45ce3",
+      "bytes": 57690,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/ChallengeManager.cs",
+      "sha256": "5c6fcec58163bb9b4da7ecc74da59589aed17ff68bf50e824d34f7b7373087b4",
+      "bytes": 8146,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/ChallengeUpgradeItem.cs",
+      "sha256": "a413bda4eb1eb7591f4abd073c0e74002461b522a857ed5e83608c36f99ac5fe",
+      "bytes": 4745,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/ChallengeUpgradeType.cs",
+      "sha256": "a3a97c0752ff8180ff7440082b36f900526dc61e6cadc7aafe06c4a5cc5cd962",
+      "bytes": 95,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/CheckInRewardItem.cs",
+      "sha256": "2bdab731d410ee0b6eb771751aa8984d4eff8fe37479595edc980750cc8e05a2",
+      "bytes": 15525,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/ChestShakeReminder.cs",
+      "sha256": "310476db599d6281fb0196d373fc669070cc7896ae6aa85565c174c8a5d29f26",
+      "bytes": 2045,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/CoinSettlementCalculator.cs",
+      "sha256": "8577985a1dfe6b3b8296fb70417307671bfc7c795d0db3d2bf73492d6f55a798",
+      "bytes": 570,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/CoinSlotSupportDialog.cs",
+      "sha256": "bbb1f813d6162e13848685634842c13a9f0dddd44da97fdfd341d469edcc2644",
+      "bytes": 26993,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/CoinType.cs",
+      "sha256": "f4e634fc8cc37a4af72abac67abac22d84cbe6b24d5e7b30e878d304a6ba842a",
+      "bytes": 65,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/CoinWorldController.cs",
+      "sha256": "204aa52f32d34d89d0230d4ab96b81402b3095fcb237be38f439573304f1c460",
+      "bytes": 2882,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/ColorChangeSchedule.cs",
+      "sha256": "fb0037bfb6c6e3b98b5e6f9b1fa1b991eeb3a4b12ce94c3ffea4e2fb02f6f051",
+      "bytes": 2270,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/ConfigManager.cs",
+      "sha256": "7e89a70b8a1c7428aff14847e47f1981ff9392b959358389a19bb686a4bc66c2",
+      "bytes": 11166,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Constants.cs",
+      "sha256": "b0c642a0fdbd3707dd4f36026be5967ccd29d3bd293aa1c6cf25f6cdebd1b2cf",
+      "bytes": 15379,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/CurrencyEvolutionData.cs",
+      "sha256": "8d8e18f295107ef9fc9405e754cf90c2b8f8f3b55079c96cd785943826d91ad1",
+      "bytes": 150,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/DailyCheckIn.cs",
+      "sha256": "60efeb547a91f507f767b50ec136876823b2a19f44f1470f22d5998289cded5c",
+      "bytes": 12651,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/DeskInfo.cs",
+      "sha256": "f956ff5b222ff7718c2a5bcadf23b5e1be8b1629a8f2cc52cb71844b661aca41",
+      "bytes": 109,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/DG/Tweening/DOTweenCYInstruction.cs",
+      "sha256": "0914e8aef902158271b4b6aff91b6ec4ffbf81bc154d5b5d2573b0b1224c478c",
+      "bytes": 2245,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/DG/Tweening/DOTweenModuleAudio.cs",
+      "sha256": "94e24ac92f44cae531e93a5319478e39607103f5a7a22c856be8ecbe37eadcbe",
+      "bytes": 3150,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/DG/Tweening/DOTweenModulePhysics.cs",
+      "sha256": "9a07cc2a284b21950811b20a753bada70caeb8d5b095f83efc12387ff479ab0e",
+      "bytes": 12534,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/DG/Tweening/DOTweenModulePhysics2D.cs",
+      "sha256": "0367d1318f4958ea07736a9ae1bb382752cfa91560b505a91c2f9614c1c96e19",
+      "bytes": 11937,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/DG/Tweening/DOTweenModuleSprite.cs",
+      "sha256": "7467b51e42b8b0d07a16f2f8114f54fa8ec8ee97aee824047b50cbd21ae6e12e",
+      "bytes": 4832,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/DG/Tweening/DOTweenModuleUI.cs",
+      "sha256": "2364d24140721066ff03eeaca2ad07b918c71d0de737d2f47693756c1e766be3",
+      "bytes": 39961,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/DG/Tweening/DOTweenModuleUnityVersion.cs",
+      "sha256": "6954574b8cb8cf322272f821d77ee06ff425b851af0b0a163d4c9c9f730e8ecc",
+      "bytes": 9035,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/DG/Tweening/DOTweenModuleUtils.cs",
+      "sha256": "150f8b900fba928df802196f2c600e7e814d770af9c3726f41612a171254edcb",
+      "bytes": 3257,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/DialogType.cs",
+      "sha256": "e631eb9f19b72afb4395f686486810357a0d6f8b8b6e6e05e98efb05d77a6869",
+      "bytes": 178,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/DiceSettlementCalculator.cs",
+      "sha256": "fd9fe29d2e39f8433d1be93479d5d9449ded0706c7f1f25a1a3d40a4626ea42d",
+      "bytes": 615,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/DiceWolrdGuide.cs",
+      "sha256": "23ed74e94811d41e9e586a0f499efbb40b0c4476d9c4953c7ee379906a15c117",
+      "bytes": 5707,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/DiceWorldController.cs",
+      "sha256": "0680f415c3e2330aaf24ce755736ad1434413058f774b81f2eaa98e81fcd1286",
+      "bytes": 38108,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/DiceWorldProgressData.cs",
+      "sha256": "80a1a680ec84051fbd78783a8fbf01768a0cecc61204b5001580dd4843346d1f",
+      "bytes": 779,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/DownItem.cs",
+      "sha256": "a0c7a1690adedb85df6ec30f17de840199ad47e9a514341459e1349f781d0566",
+      "bytes": 90088,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/DraggableImage.cs",
+      "sha256": "92cf5d6ef625c541357332d24d325077e0c2d0ebe45ef946564c71c9e487701b",
+      "bytes": 8394,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/EvolvePanel.cs",
+      "sha256": "9c3c7ecf0a5aa1d10c6bf926730987e56b5d9dd2ecda45583dce4f71b2fe8b92",
+      "bytes": 5666,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/ExtendedMono.cs",
+      "sha256": "d3742c4de35f69fb48168e1eac182d11572fe99314bbe758fd3f78b7cef249db",
+      "bytes": 17244,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/FacilityData.cs",
+      "sha256": "ef7df0835632f8e1cf83f3849b843d3f03a54fab7d57217da51393df2371dbc8",
+      "bytes": 283,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/FacilityDataSave.cs",
+      "sha256": "a832ccac0677d4cd7e6a93f0755f3492444ea619a72462edc21992f6edf3e33b",
+      "bytes": 171,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/FakeAdUI.cs",
+      "sha256": "ca598bfa7a496ed27dc464292c89eb07627cb9f8f2174dac5588f8a7dbbb0d30",
+      "bytes": 9235,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/FakeVideoManager.cs",
+      "sha256": "f4654c0a9f3b92f6ce77ddba47d2da8337115191399486498429dbe7ff5b82df",
+      "bytes": 16430,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Game/Module/Facility/HelperUpgradeAttributePopup.cs",
+      "sha256": "161c9e19b6df02b6ac93bc608158007e7ab4e1bb88b7c6febdd08d375566a39b",
+      "bytes": 5659,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/GameData.cs",
+      "sha256": "d7c92195557f36e220a6a633c50522c92dabd7b96b38f04878cc348d11908a75",
+      "bytes": 1860,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/GameDataManager.cs",
+      "sha256": "1d3e712076a4c133b13d760f2dcd38353260a91e71b8a80e389f97cceea5a7b6",
+      "bytes": 142665,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/GameDataSave.cs",
+      "sha256": "cbf988df58f87308d989130f15bc6a8c112e6581a3254589c5d363d2aa7d1f0b",
+      "bytes": 259,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/GameItem.cs",
+      "sha256": "2622eed23c94c39295817973ad963a1e7b8f8176f2e50fe6d68874cd56fc66af",
+      "bytes": 106,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/GameObjectClickListener.cs",
+      "sha256": "5860d097143d84dc76c45d1965763d17a4a4da8746c54ecda3fc8d136d33f357",
+      "bytes": 2268,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/GlobalHelperSkillData.cs",
+      "sha256": "d645337ff3833a62dad53689d7ba541f360ed3ad9785298dce9180e63c453cc0",
+      "bytes": 132,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/GlobalProfileData.cs",
+      "sha256": "49f9c93b78030ca17e1d410ceee2f2143a87b0d5c3f51756183201650fdf87b9",
+      "bytes": 752,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/GlobalProfileDataSave.cs",
+      "sha256": "16613726ead6921cb81079299b894d5e2af3c15d172d38d598c8d66f14cfdddc",
+      "bytes": 193,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/GM.cs",
+      "sha256": "9aa01572b4d3d4f53184dff03c0a8961d735809c05f16841db349de6a2004946",
+      "bytes": 62684,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/GuideEventForward.cs",
+      "sha256": "95bde1b5df0b69b07ade38a8deddb18767db6117b54927d4cf5ebe2ddc26ce55",
+      "bytes": 4809,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/GuideTarget.cs",
+      "sha256": "18756272f90d4e363021369cc6481aff17fe90346c0490c64a0b0308ccd9dbe8",
+      "bytes": 1442,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/HelperInfo.cs",
+      "sha256": "27a9b7a648007d67780d7e305f77eeec837f02cabd94bb8c5bbc1abcabb13b18",
+      "bytes": 222,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/HttpTestButton.cs",
+      "sha256": "6bb09c1abe1d36605eb9c74737cdbfa079491558b24f0c4362249e129df45e99",
+      "bytes": 747,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/IMainSceneView.cs",
+      "sha256": "fc9545e2a5ccce80f2c5c56aa7c95ff2ed266212020a08c7b0d81cf304ca23c0",
+      "bytes": 1062,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/IManager.cs",
+      "sha256": "d6734f3933fe0d1c5f4ea1b25f6f0be4c5235d75ce11918704d3c1fbbf6a90d7",
+      "bytes": 33,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Int256.cs",
+      "sha256": "5417c124d7c3d9a63fca4a36c1c286b2408271a5b0e0a611d4f8d5f2953264d0",
+      "bytes": 1337,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/IntroVideoPlayer.cs",
+      "sha256": "595692539eb54647c808ee4bd903d39ec4b119041143c1e00091bccbc101afd0",
+      "bytes": 17819,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/ISchedule.cs",
+      "sha256": "ab1274bcd3d380f157a1ec6a75b412bb1ef8cdf36ca3b3a51b53308ceb26b495",
+      "bytes": 130,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/IWorldGameplayController.cs",
+      "sha256": "8399284c4ee69a0af5772dfaf164132a1b4fea2bb18da2a87535a956ad78ed67",
+      "bytes": 388,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/IWorldSettlementCalculator.cs",
+      "sha256": "6147772c3257e267ea50291739b17533749a4094cac307b423c00f8905b2df0b",
+      "bytes": 181,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/KeyboardInputManager.cs",
+      "sha256": "7ddc61d67a0dc3987c481afd86ce1d18465cb9f24e0002729f228fdf423546c0",
+      "bytes": 3942,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/LeftRightAnimator.cs",
+      "sha256": "747072db46e695347a45a5e5a7d90445364207dfe5520dcb3d49baa6da812aff",
+      "bytes": 1367,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/LocalUserId.cs",
+      "sha256": "6c1931fa67cc759fda31566ec8677dc8e16e6b47027b8baccdec9ee2f4e23d83",
+      "bytes": 710,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/MainEntry.cs",
+      "sha256": "03107ebbbbd776a1efeba548ff3d9ec08b30002145d392e20f1c5ddb000334b5",
+      "bytes": 31188,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/MainScene.cs",
+      "sha256": "6883be5cb442a1555af8c4f791d32a4f3b7548df769a1897b455bb1c185823fb",
+      "bytes": 50292,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/MainSceneVat.cs",
+      "sha256": "75a7a3381746663dddb1db6413780fba5f7584339aa62fd961a009f03c2837bc",
+      "bytes": 133661,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Manager.cs",
+      "sha256": "f56e73244c98565a098f4fcdde1e854f688a930c4de8521f1c19076d89fd5c03",
+      "bytes": 141,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/ChallengeNew/ChallengeHelperInfo.cs",
+      "sha256": "45aecc5c0aa10b19e9e8a3c4c4cb99bf5a254f3d69cde33e037e40d3b4f72f1c",
+      "bytes": 8521,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/ChallengeNew/ChallengePanel.cs",
+      "sha256": "147a74f79d27ea7f84ae7c51b7d1010a1374681e0bf81dbf3584dfa7b7a06ae5",
+      "bytes": 15995,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Facility/DeskItem.cs",
+      "sha256": "c6af3af29541dded9f231b658d4e2d68c80862beff9c98c44ed72583e0d16b48",
+      "bytes": 6171,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Facility/DeskPanel.cs",
+      "sha256": "840daac3f5e5068553ba947056f3c9e49fbb2ae5e5f11abd973bf6b8d659bf7f",
+      "bytes": 2455,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Facility/FacilityPanel.cs",
+      "sha256": "4af80a02387a5e26c931db2f8067dd32211da2e124a375d45d9b80d29e1b152c",
+      "bytes": 10499,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Facility/FacilityRedDot.cs",
+      "sha256": "453e4929011f9d124fc18438c9c1bcdb052b458f75b74b0194bf57561ae6ca1e",
+      "bytes": 4335,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Facility/HelperItem.cs",
+      "sha256": "27124c9d931733054532be3ca299299e4d4950c22547ef688f69527359a766fc",
+      "bytes": 19476,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Facility/HelperPanel.cs",
+      "sha256": "9b6821f18dfa89ee177806bc1eae2ce3e331417e6d8b71f4620cfa68e93129ee",
+      "bytes": 4344,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Facility/HelperSkill.cs",
+      "sha256": "33cc8e5228b4cee4b1de55b9c870522f26769de45719d4766da7dc6e2eff2c35",
+      "bytes": 2735,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Facility/SkillTips.cs",
+      "sha256": "d0a85b1ed4d649ec62b10424c427582c71f2c8836b795494fe32ceebda80bd8f",
+      "bytes": 2816,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Facility/UseDeskUI.cs",
+      "sha256": "66030c1f134c8f9ed26ab2469cdeb09576de8cac5989e3ed37829bed3d0e8da7",
+      "bytes": 11395,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Facility/UseHelperUI.cs",
+      "sha256": "08c5ad169718f21a1863b3fede510a8dc0b6a68013c06b0d6be1e16b6513a450",
+      "bytes": 34024,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Guide/GuideUI.cs",
+      "sha256": "6f0c8611254522930b8d82bd27c3a729ac93e9d45988e9733122b280b0cb7530",
+      "bytes": 16840,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Http/HttpManager.cs",
+      "sha256": "bae3a00f8b2dbc59f957e9e49c83be133ccd489504eadbd7d35b6bb96911bb66",
+      "bytes": 22175,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Http/HttpTestUI.cs",
+      "sha256": "50215d193208422164145fa8f32ff89d8796fa1714ecb51b237841c591de9e4c",
+      "bytes": 8019,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Http/HttpTestUIPrefabSetup.cs",
+      "sha256": "fd72994794d4453de751bfd326e0e83106fdb7b808799a582a4ef2cf465800fd",
+      "bytes": 1111,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Invite/InviteUI.cs",
+      "sha256": "9bdd3d8505f94d7b91f9f475484dd50f6fff6e472cafd1b40b03181d4bd44b1b",
+      "bytes": 8409,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Loading/LoadingUI.cs",
+      "sha256": "29e1e79093aff2c17bdb82ea06048c4bce01a3ca5188518abd4f7d700457d331",
+      "bytes": 5641,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Loading/LoadingUITest.cs",
+      "sha256": "e773c9c78c554c535bb52325e206277d6065b7757376a9ea69e303a3f6cce5d3",
+      "bytes": 1530,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Mission/MissionManager.cs",
+      "sha256": "2688e23f57fe52aee33dc2d1adb1a0986ef888e12f1420a28dbc64797309df3b",
+      "bytes": 17216,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/OfflineIncome/OfflineRewardItem.cs",
+      "sha256": "d14b061b6f65a537bf9731d2cf42d4ddae606215bb1026a1b5e07ed9affdaead",
+      "bytes": 2073,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Preview/WorldPreviewUI.cs",
+      "sha256": "a45d65b886d95c8db45ffa09dea04d5545d14f394735c354598aeb497ded898c",
+      "bytes": 1279,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Rank/RankItem.cs",
+      "sha256": "5fd6588e0583ac8bab6baec54d3f80c96455e84ee16c57480ae7cf2cd34eaade",
+      "bytes": 2610,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Rank/RankType.cs",
+      "sha256": "b21e971dc41bb2d78864a2c9533ff554880556fdfa5bad10c483f688b6d003c3",
+      "bytes": 72,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Rank/RankUI.cs",
+      "sha256": "82de9dffe11c3b4b5bb8ebbb78ce26e6632b6d73d95714eeb5c3e6a4667b4055",
+      "bytes": 23757,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Rank/RankWorldType.cs",
+      "sha256": "57ecd4baa22bda1449612c621f0878939eb9527c6a0f099264f7a2c511235357",
+      "bytes": 74,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Role/CoinBase.cs",
+      "sha256": "b7459f85e02a63d72769cd749a87116a9d19f77f04e06c7cf8ccd401b5181c7a",
+      "bytes": 25188,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Role/CoinConfig.cs",
+      "sha256": "c390b83d665a4c501d9c4224875c6a9434851b862b840da88a8af4bf9f5d86df",
+      "bytes": 271,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Role/CoinCopper.cs",
+      "sha256": "20bfdd818a782f56d55ebb1034ceb6a09e691eb4aecb05b627287a3ae5d8fb8c",
+      "bytes": 158,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Role/CoinGold.cs",
+      "sha256": "e58e674e04800dbfa5ebcb5d08387ba1caa3545dbd3003cdb57b583cfa539281",
+      "bytes": 154,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Role/CoinPurple.cs",
+      "sha256": "024d7086485ed39afc6f1437f42da768578874b8370e659be302a3275c8b3e9d",
+      "bytes": 158,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Role/CoinSilver.cs",
+      "sha256": "df9bfecbe2173cae0accfb38b617871b587f79b38004df38a36143d12bbba474",
+      "bytes": 158,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Role/CoinState.cs",
+      "sha256": "aef1f4881bcb5f2db04141d7d55d1ec9989b1473d81443950acb888e2fe23336",
+      "bytes": 94,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Role/CoinVat.cs",
+      "sha256": "da7405dd8312879cdb57eef85f6e1ffc0853bd3b8f5df441161f23ff8043aafa",
+      "bytes": 54517,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Role/DaSheHand.cs",
+      "sha256": "2b83001c6c4dfb070b409a255160be25f9953ec155e4d38e454f598d3ffe3a75",
+      "bytes": 5309,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Role/DiceRollResult.cs",
+      "sha256": "dfd60031aa23767314234050e3c4a770e885639f4c7320c2f00ae75f295bbc48",
+      "bytes": 475,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Role/DiceVat.cs",
+      "sha256": "ff0ccdd4ca3371e93326d7b740a4c2195ecce006b1963da3069d7172320d1932",
+      "bytes": 36080,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Role/DiceVatState.cs",
+      "sha256": "fa5024532dec4158af9968f38725e39c1ebd3d22f55fee82ef354ead0bb2a4f4",
+      "bytes": 116,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Role/IRoleThrowableVat.cs",
+      "sha256": "e36caf229ad3cb8a600f82e7b236587a7d1e42ea48d02cfe1f7ec08d1fdb3d35",
+      "bytes": 279,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Role/IRoleThrowableWorld.cs",
+      "sha256": "f21abf0b4bfb6b6a2a84aca8f875d5fd5efc14fcaafb18d9499259c4222e4aa8",
+      "bytes": 414,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Role/Role.cs",
+      "sha256": "4f1ebb6ce0ddf747efbe0dfb9c49be1dd0eb90dc46adf7ae01569ca7b3b4e1e4",
+      "bytes": 96824,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Role/RoleManager.cs",
+      "sha256": "65f2ae652974c33804b48833889095404289575bafd6b035cf95a31f33003690",
+      "bytes": 11289,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Role/RoleState.cs",
+      "sha256": "651e50b62fba6d7af0c59799e9b77cf08462804a2df3c742fcd9c9d8e93819f1",
+      "bytes": 97,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Role/RoleVat.cs",
+      "sha256": "60249c35f24dffa5e3715d6b48392243a16078cdc9cae7b515b03d3f3294958c",
+      "bytes": 131247,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/SceneUI/BulletUI.cs",
+      "sha256": "5f6ad353b68aa9b838bd8eed15b3b19bd5785c698e0cca14d6a435907c619e80",
+      "bytes": 24308,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/SceneUI/CombatEntityUI.cs",
+      "sha256": "423591c117794d4a04de45406abce643b972596a664d235485764d6fa3d64f32",
+      "bytes": 4713,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/SceneUI/EntityUI.cs",
+      "sha256": "e24d56afba3155ac94c24c9eb483911f163cf5aafec40828cd01bde8b3fd7b38",
+      "bytes": 7541,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/SceneUI/MovableEntityUI.cs",
+      "sha256": "0d0ab98ead5618f7a3bb4dcab18d5b1dcdd2b36040395c7f4430676331cb2dae",
+      "bytes": 428,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/SceneUI/SceneUIFactory.cs",
+      "sha256": "06ab6a2ca1ed61d5e2d6c276b3faba9b1dd9ac77c058561e8bd4fefd1bced117",
+      "bytes": 3714,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Shop/ShopDailyLimit.cs",
+      "sha256": "9c68c9d5795aa28a29c119b35d59cad94ba9c9f6bab0b37ef2a353c547fee11e",
+      "bytes": 1394,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Shop/ShopRewardCalculator.cs",
+      "sha256": "dbaf6727b6b928efc86b44d501ed0dbc2b504c37027b4755b58a7f70eb50f58b",
+      "bytes": 1939,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Shop/ShopRewardItemView.cs",
+      "sha256": "0759eb839e22a328c46f6485e27e2a34a17241a474fd8f47339a07a28545648f",
+      "bytes": 2625,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Shop/ShopTurntablePanel.cs",
+      "sha256": "95d2004e0ff3b20e7f56a2b020321c97ff8b9f280857a10aa6a829b258d2e99b",
+      "bytes": 23651,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/UI/AddDeskUI.cs",
+      "sha256": "ed7026db065b2eb003e68b9f8609820d0e84c1bb60b794305edb4f4611f52a8e",
+      "bytes": 5733,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/UI/CommonDialog.cs",
+      "sha256": "6c7d563ad7e2c6aeb3a1bb2b6920cbb3695f2b4f8284c0c97aaea12339c1f90a",
+      "bytes": 3041,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/UI/Component/TextMeshProOutline.cs",
+      "sha256": "93eb4a7271b958108a4fe9185de7a777329b7c033e7f535478ddc7103b39d9a1",
+      "bytes": 3460,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/UI/DajiAnimation.cs",
+      "sha256": "943aa2d9c344a1519e2e4b07f66bc892d2877d13e96a6ff2c318ea78ad98920c",
+      "bytes": 31629,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/UI/DialogPanel.cs",
+      "sha256": "9cff4c50d2f91dca0060d3c3a44bc203750e84a7fcf34d606703a6986dc149f0",
+      "bytes": 3525,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/UI/DialogPosition.cs",
+      "sha256": "b23ea4bcd1888271d778ab5d4b78429cf088881fe834953c567df73e9d743aa7",
+      "bytes": 84,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/UI/DuShenDiceMove.cs",
+      "sha256": "cbb120b58c7dad05542e2e417b57b7b5320d00921e235da0e927ec4f04b65ac0",
+      "bytes": 10175,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/UI/GoalReachPanel.cs",
+      "sha256": "0196608d612d4f4ff99c5ad5032cfe0fc40a439a86da0b878f4e7bc6e74d3c9f",
+      "bytes": 14315,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/UI/IronBulletAnimation.cs",
+      "sha256": "b591d68780274cb3cb8c3e16a8563e065866f74682b5c83563b79652b0e27414",
+      "bytes": 6621,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/UI/LanqiuAnimation.cs",
+      "sha256": "9dfceb3cd3fcc324b77cf6d57d3bc34878a90952aa8bd885a7f571b09c25b866",
+      "bytes": 11315,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/UI/PauseUI.cs",
+      "sha256": "2755a76d29cb834b12b5fcaa05b9198bb28ef218546cc6f262ed3dc64c118c77",
+      "bytes": 1276,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/UI/RewardBoxUI.cs",
+      "sha256": "a619debdea9434ca7fabc1ff3d21b8ee111dda7f047997dce6d6e670b46f7850",
+      "bytes": 6016,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/UI/ShardNotEnoughDialog.cs",
+      "sha256": "0710263f19479ed6d0de55e197fdbfc258ec86ab5e2b4fee3292e23791743db3",
+      "bytes": 2332,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/UI/SideBarUI.cs",
+      "sha256": "5bd4733767da5d44ff1ac4683025ace69b39b830e65615ef167150f4cf130f23",
+      "bytes": 4891,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/UI/SubscribeUI.cs",
+      "sha256": "7b59b5b27c3390d3e9db093a20340409a7b472f387a4723726558d003d221260",
+      "bytes": 6995,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/UI/TornadoAnimation.cs",
+      "sha256": "6a9b811f384dfbbed073add57cfc9dd168a088c7cebc5b78a0b10004e50261f0",
+      "bytes": 9833,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/UI/UISpriteAnimationSequence.cs",
+      "sha256": "b79555ccdb33f7744c936f2bc95ba05ae1670610e1bc9e60b898ba4c5a2d6c4d",
+      "bytes": 4399,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/UI/VatEffectVisualCache.cs",
+      "sha256": "cb07079870068e912840f16941864d71e504cfa7b3b723805ede385fa9c174a8",
+      "bytes": 1920,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/UI/ZuqiuAnimation.cs",
+      "sha256": "b316dcff7320089c9afc1168dfe3c7dfee830187c027d2053b74734c171313ed",
+      "bytes": 10546,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Vat/CoinVatBatchRenderer.cs",
+      "sha256": "ce5950ad519dd75d5ceed7cd064ae1a2c95e152cfd6b942a4d537efd85348c6a",
+      "bytes": 12966,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Vat/SpineVat.cs",
+      "sha256": "e32994bb8a9007f591f8eae0846f0533134bc1371de946a0de7f1a2c29468a20",
+      "bytes": 44754,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Vat/SpineVatAnimationClip.cs",
+      "sha256": "8487773ff04bfaea9d8e8574f058aec2dc5b3d490fcc0d2fccd91eb0c3363b24",
+      "bytes": 503,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Vat/SpineVatAsset.cs",
+      "sha256": "56d8fc9d4be9571676fa2f9bd2dd1b4f093ebdbc0d7ab3a08415b8b0d27b05f1",
+      "bytes": 2791,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Vat/SpineVatIndirectManager.cs",
+      "sha256": "b3c3d1d44c1285801189317dfaa5442bcecdc05d42a58e26f8b6ff42495c789d",
+      "bytes": 49178,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Vat/SpineVatStressTester.cs",
+      "sha256": "274302a29a47f8b85ac1c1e5de0d038e6d5faec414f78d562e1b8e1a78be5fa3",
+      "bytes": 16259,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Vat/SpriteVatAnimationSequence.cs",
+      "sha256": "c8fe40b7eaae2248328d641cd7d11ec3f77f4557204bfef80d2f746e5b38e19e",
+      "bytes": 24522,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Vat/SpriteVatAsset.cs",
+      "sha256": "4c2b2b0a32fdb3068036c145d5e4b42cdd7fa543cfcdc315cabb2383ddd8a145",
+      "bytes": 6621,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Vat/SpriteVatFrame.cs",
+      "sha256": "00fe1e7a7d53c8c9116e8c238802ccfa65fe6de491dca1c51bc809a829dbdad1",
+      "bytes": 305,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Module/Vat/VatDebugSettings.cs",
+      "sha256": "79675d61e621668765944c14fc02a57c1f14b80926893ddda51a3649bb6a6365",
+      "bytes": 1442,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/NumberFormatter.cs",
+      "sha256": "cbf6ec858260ab0951842421ff4e01b1cf03909281eb21d7ef122364494d8c91",
+      "bytes": 3360,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/NumberFormatterTest.cs",
+      "sha256": "de00fad9f2174ef21d6b9e3894de7e49185be76b3cd2e90e341f12c13efedc1a",
+      "bytes": 639,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/OfflineIncomeManager.cs",
+      "sha256": "990b6a94270d325432fffecd937879aca8db72ef143ec7d0c02be515a7375b85",
+      "bytes": 14703,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/OfflineIncomeUI.cs",
+      "sha256": "63595786e403cf64ef96057690c14c2deb2685852f03d60242ce717f28aa985a",
+      "bytes": 4593,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/PlayerHelpStatusData.cs",
+      "sha256": "ffd55c6b4e994f4b985d56194901fb41c2cd23814605cdfd32939074e6a01e9b",
+      "bytes": 310,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/PlayerPrefsData.cs",
+      "sha256": "e4a02fa246306cd564834f5515acc0551f2447204227f4c608bcc6da5ab17038",
+      "bytes": 852,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/PlayerPrefsDataSave.cs",
+      "sha256": "d9967c6c7d989f23ee9105898821320d9da6454c551e55386134d59878966c6e",
+      "bytes": 180,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/PrefsUtil.cs",
+      "sha256": "2172cc8b270278c4943a34766aabf1d984f80c61fbc31e07d35a5eb53ed8f42c",
+      "bytes": 1647,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/PreloadManager.cs",
+      "sha256": "6b75995565f4e4f673fd7b13dc6790a5070aef302f7385fe3664242a77e1dd66",
+      "bytes": 5674,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Properties/AssemblyInfo.cs",
+      "sha256": "6a8e9bbd8e41cdb647344e7026b1c43286356e6f057d51041f5b36bb17f42ef2",
+      "bytes": 195,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/ResManager.cs",
+      "sha256": "d1bcc33ee6c6ddb13dcc23f5dd74f0ef0f7e5e72c1bdb26ae9e39ebfd4e53e95",
+      "bytes": 45798,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/ResourceLog.cs",
+      "sha256": "294f8c7ab517fb27b91a5f7e1c345bf1ba9762093dad325af699769b54625c58",
+      "bytes": 359,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/RewardBoxItem.cs",
+      "sha256": "8313974fa76bb0396b5252899d0813833f4b2784190f791f660cc5a18f61c100",
+      "bytes": 1150,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/RoleAD.cs",
+      "sha256": "4b8fbc1e122193db1a4edcb07ca41c708c2f13acd5ac30c9d549e33eb74c0d21",
+      "bytes": 3180,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/ScaledNumber.cs",
+      "sha256": "0db3aa6a66031a638990494b6cc8a48816b79fc12d88e37c62dba89e02d56f37",
+      "bytes": 3557,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/ScaleSchedule.cs",
+      "sha256": "06522dabb02a42eb6b764d27ebee271692d2f6366021a86bb1b62dd72aa51d45",
+      "bytes": 1367,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/ScheduleBase.cs",
+      "sha256": "2b222e0d55f09f46badbf97436c6265c3655bc5d1355cc5dbb0ffc771a9fa921",
+      "bytes": 610,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/ScheduleManager.cs",
+      "sha256": "f16138aff1deed03bc591d27f771d222a1ade45e26fa1d4fb3a7ec921f457d23",
+      "bytes": 1689,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/SelectSkill.cs",
+      "sha256": "587edac6262f77d160d7d215f18f542e34c73f495d65a9cac8aef8fec44c5e83",
+      "bytes": 2218,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/ServerData.cs",
+      "sha256": "7e73375837a7091c369e68ba169861e18c5137ed5473b280e7034d92315ff328",
+      "bytes": 457,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/SetUpPanel.cs",
+      "sha256": "9b1cdd14e3652aa7e8990dd2206dd5ccc4d98bf9c4d85ea9f2c7b430f7175c9a",
+      "bytes": 11716,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/SingletonBase.cs",
+      "sha256": "6eef9de01eea8224ee702a7a08a5db04db6fd303a6584b633adf60cffff69d84",
+      "bytes": 565,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/SingletonMono.cs",
+      "sha256": "5ad81f77b8c3855639cda3fef918b93039d835bf5037d8f4779e9bc660539e98",
+      "bytes": 1526,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/SkillFunction.cs",
+      "sha256": "4261ab2bdcef225a8725bb1f9970a09dd123ffdd92704f450dd3e2f3a644f7a5",
+      "bytes": 74,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/SkillTip.cs",
+      "sha256": "e53112e1d27efe4e0716d6bce3910bbc5d3d7f0c54ce7cb499008dd66cd74b51",
+      "bytes": 705,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/SoundManager.cs",
+      "sha256": "6bdcfb60773afc2fc6a1f115d5037670a0a8d794a0614687c88e2bd26feadf89",
+      "bytes": 9579,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/SoundNames.cs",
+      "sha256": "d665c4b7b98f82917bf9faba969580b3f43a61492e3f9fedab97d7ccd79aff24",
+      "bytes": 886,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/SpineSkinHelper.cs",
+      "sha256": "e81d1e39f6bac8e6bdbbc96fc78282f2234d38c5c1d98570ca72cd2bd0f7cbcc",
+      "bytes": 4135,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/SpriteAnimationSequence.cs",
+      "sha256": "f204b01c9ff369820d0c3f92540d136544de9ec14ba5ae8a9deb93b0ae52dc2a",
+      "bytes": 5459,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/StoneHunter/Module/Setting/SettingManager.cs",
+      "sha256": "711213ad5afdda15bea8f8b7297662e70384420eb085c350ec266143ab77e2f7",
+      "bytes": 3988,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/StoneHunter/Module/Setting/SettingUI.cs",
+      "sha256": "b5fdd05e3a910f6a94daff505223495e7471be198861351364e538709cee4e79",
+      "bytes": 8261,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/TalentCardItem.cs",
+      "sha256": "e9d8eb7790ea27591ce5b1ab5bcc43f583e86221203e954bb6e47b292d06c2d4",
+      "bytes": 12964,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/TalentCoin.cs",
+      "sha256": "ecc5fa1d99d0449255cc9d740efebfbde1f57225ab0899fa2d2c8533fb879867",
+      "bytes": 2768,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/TalentData.cs",
+      "sha256": "81655cfffcbb4f96f0764094cfaacab9503e727ce2432f6f82deacebcfa7861d",
+      "bytes": 859,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/TalentDataManager.cs",
+      "sha256": "319062e1562d8e6fd8825f86e7184e65f7b77d2ed2e39a221c7a9149971d6654",
+      "bytes": 20157,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/TalentDataSave.cs",
+      "sha256": "c3154b7944a711c759d1495f55fb5d0609dd7a69948b8a1bc205b40d0ecc9b80",
+      "bytes": 205,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/TalentFramework.cs",
+      "sha256": "15b95e3710f0485214268a2dcca6aaeabe44eb4f25ef087b88776bc42cb7cae1",
+      "bytes": 21157,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/TalentHelper.cs",
+      "sha256": "4fa24aa341ec5129dfbb3195454dec55a69a73eb0959559803adc72598098c22",
+      "bytes": 549,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/TalentManager.cs",
+      "sha256": "f6437abd4f9c7f32e3299e9ff9c39bc3a366ae4107f4bf77a218ce9160e140e2",
+      "bytes": 13329,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/TalentRebornTip.cs",
+      "sha256": "f547410c783e74da30e05c39d01f3883fba3a7868fad9050f5b2dc7411a42d75",
+      "bytes": 14084,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/TalentResetTip.cs",
+      "sha256": "125f85ad7216d1289bc5a448f7ee39f0bedc03060cbb34b922f15a3c313e74de",
+      "bytes": 4330,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/TalentSceneType.cs",
+      "sha256": "37736de3afdbd80321945a30d8580ab6ebab9397fe7bf2d578b50dec8df9eab8",
+      "bytes": 72,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/TalentSpecial.cs",
+      "sha256": "75f78a38dbcd361c1030f86529b1d605fd5bb7a0e8a51140ab2a9c25612a0bb2",
+      "bytes": 1017,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/TalentType.cs",
+      "sha256": "144604df8bfa1dee4d9385e9a9558c991b84da6ca6d0a6391ac4ea30c15fe72a",
+      "bytes": 76,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/TimeInfoSave.cs",
+      "sha256": "a0d3c673c43d94c9c3406571b2e3c86643ee4ff213816b09ee9bd9b5d48884fd",
+      "bytes": 188,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/TimerSchedule.cs",
+      "sha256": "383bd6d560c5fe556fa1a3bc2693f621ae225c9b485432007bceded119bf4352",
+      "bytes": 890,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/TipPrefabType.cs",
+      "sha256": "d219b4eb47b07f0e2271cc73bff10735a922aa18568612051d3edd6b1b0fd7d8",
+      "bytes": 50,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/TopPanel.cs",
+      "sha256": "8787fe0db084b0d68e9756e018dce9a972ecdfe2213ccf226c653209f0391163",
+      "bytes": 23043,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/TTFeedDirectPlayManager.cs",
+      "sha256": "4112df9745a4aa5aa63738d691f0f7f7a309eca95ffa3736e49ab176c7b2850d",
+      "bytes": 17356,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/UI/Component/CountdownTimer.cs",
+      "sha256": "86a40c7b29edf5783b369cbf523d9ed7733be984820b11f26ea098a2c16dc28c",
+      "bytes": 2878,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/UIAnimatorElite.cs",
+      "sha256": "352c3ad38096784048c026a8e2b76f51d9d398ab2644f08cd2ed2f5660ffbf99",
+      "bytes": 8817,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/UIAnimPreset.cs",
+      "sha256": "2b814dfd5bdac68b80181fbd638a1371a57693611f0d5187bd9671b61f2d5e6c",
+      "bytes": 1126,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/UIFocusController.cs",
+      "sha256": "0ffd2c2cf5313e3d54726f5593979fe30abb3ce568899a532b837ef181432b30",
+      "bytes": 4617,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/UIHelp.cs",
+      "sha256": "a3a1d13d297739ee263d76d2d7b48a62a714a892ab1e9ee5d55ac0534c901dfc",
+      "bytes": 31926,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/UILayer.cs",
+      "sha256": "540c11cc2a8112f992f0f037e75ff4e75d6813b30630fda6181b50b82b435dc4",
+      "bytes": 86,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/UIManager.cs",
+      "sha256": "fd25596214175256913d15aad619b492eebe56a57fe5a92ed48cc5f2a2cd395b",
+      "bytes": 52997,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/UInt256.cs",
+      "sha256": "f3df1121bdfd9c9a6cad83ad88ad4644a83037a2e09dc45750ae7f3399fee64c",
+      "bytes": 3417,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/UIStaggerGroup.cs",
+      "sha256": "3cf522e270a811dc4b2af7648f89b8afc36a7251e111f29bceae1a9da96ad85f",
+      "bytes": 1886,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/UnitySourceGeneratedAssemblyMonoScriptTypes_v1.cs",
+      "sha256": "8ff1efb259a5076f419396e26c82af883dc938051d1b032d37f8da5140b1fcb2",
+      "bytes": 108759,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/UpDownAnimator.cs",
+      "sha256": "4dd51fcd11f2837027dc463767a8affb9c69d762cf2c04f75d1fd64077d09468",
+      "bytes": 1966,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/UpgradeData.cs",
+      "sha256": "588d81632ed363640d0e5397aa58dc1fb5ba40cc7a86833bc2c9ebb2ecf6cf45",
+      "bytes": 472,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/UpgradeDataSave.cs",
+      "sha256": "83f97a5069d114f2942597604962d2cde984a46f572d9c85d47c3c888143db95",
+      "bytes": 168,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/UpgradeItem.cs",
+      "sha256": "3106cf16a2eadac1682104d5cdae711c20f27f5791782835901f22ee081bb3ff",
+      "bytes": 39492,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/UpgradeItemPanel.cs",
+      "sha256": "c8732e41e2d530c39476da8efb18cff9e1b204e383db127bc55fbb1ebcaa0d07",
+      "bytes": 12776,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/UpgradeLevelData.cs",
+      "sha256": "9f5ff3c1ca68e4a092642b6ad5f4fe80e867e7dbb1c06b44710b854413bc9c2e",
+      "bytes": 113,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/UpgradeManager.cs",
+      "sha256": "d578744b5f6df8290ad0bd624b3e91a73cbcf5d64ebd1dd1c27130afb8770ff4",
+      "bytes": 62793,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/UpgradePanel.cs",
+      "sha256": "c92b08d2492dd5a7ad2f29a620c0c3e1b0650036db95ad90c20886af6fa0e3ee",
+      "bytes": 47916,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Util.cs",
+      "sha256": "82e3eb5d6a63f07e71f0b58ac6de8b7198eca8768933e4c54f8c755c18529480",
+      "bytes": 8876,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/Utility/SpawnUtility.cs",
+      "sha256": "8050a562ceebe7d1c1cbeaaab7cbc52dc935be0d6cebdf0a95cfe85f744442a4",
+      "bytes": 1144,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/VatFloatingTextPool.cs",
+      "sha256": "f4de6ee6a8661d535397af7a61cbb6e787f5ae483c9ea4bb0107b24cd9d03133",
+      "bytes": 7222,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/VatPerformanceMode.cs",
+      "sha256": "7194fe0e309757ca40c28f4ebd3392c5df3d96c7915f9eb8c77c21dcdd0d601e",
+      "bytes": 81,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/VatRuntimeAssets.cs",
+      "sha256": "982e33850e4fbe1d183e6df40031c9b398429faf0daaca5c9d53238953f21d50",
+      "bytes": 17102,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/VatSpatialIndex.cs",
+      "sha256": "31ae44eda89007939d1c667e7bcbc58469078e1e85b616323a79d8e80df41fdf",
+      "bytes": 9447,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/VibrationController.cs",
+      "sha256": "2c6baca4f327d84006b51886fff54b658be74b791bece846f650afd1859f6339",
+      "bytes": 5502,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/VibrationManager.cs",
+      "sha256": "8b4bc0a8c6e17b5196ab29373e430893ad4084ef38700d77e4b48aeabee64af8",
+      "bytes": 3418,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/WorldArchiveSave.cs",
+      "sha256": "e9f9db385adc090e945221aa8c90086ce9535fb5d72fed3c732a16ec00feca2a",
+      "bytes": 305,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/WorldCupCompactData.cs",
+      "sha256": "ee3fbb5cc09d7a8a782e8f386492184191716f0195ed7c33a81ebf90ccb4ca19",
+      "bytes": 3737,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/WorldCupData.cs",
+      "sha256": "23134cb9505a641a4c72fd55edb2791d66c2a3141ef59b744f4f98eb13a47802",
+      "bytes": 350,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/WorldCupDataManager.cs",
+      "sha256": "edc41fd16cd0a8af99aaa46fd7a290be0f753a8a42bc6186b2de81d5b075fd9b",
+      "bytes": 15598,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/WorldCupDataSave.cs",
+      "sha256": "20123d783bf077b3d1fa996c99f112e93c5a0d9ccc3a82f002857c929dbd72d2",
+      "bytes": 171,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/WorldCupItemInfo.cs",
+      "sha256": "5b44807d9e2a9754d26426314c1f42e18101781469776bcfd4699089e58a5735",
+      "bytes": 9252,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/WorldCupPanel.cs",
+      "sha256": "975e166325acd8355022f7e32cffb282ee947a1c3b0307bcad4d11e50f9f9783",
+      "bytes": 11728,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/WorldData.cs",
+      "sha256": "2f3ef431beb2c87fe0999b2f5efea058985780f08c6e110f42683b8f88d6e4b3",
+      "bytes": 476,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/WorldDataCollection.cs",
+      "sha256": "c577b2984b54ca80258707f541a5a3c81ef5b5ebcc5eaab89250fc44780d9e6b",
+      "bytes": 245,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/WorldDataCollectionSave.cs",
+      "sha256": "b9328d53e1de03f5e1b76b86977cf496a9cad4be7d345737431ee6518c7e81d1",
+      "bytes": 199,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/WorldDataSave.cs",
+      "sha256": "ec8d9729435743fb0676b6ca858093341c8116c0477a9152cf0534e872c291f5",
+      "bytes": 169,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/WorldGameplayContext.cs",
+      "sha256": "149d0d8681eca4975eaef5f2c0e7cc5b9971f71a1c279460d5397bf01012b6a8",
+      "bytes": 383,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/WorldGameplayControllerFactory.cs",
+      "sha256": "79bf3b616925fa18d828d009f6238c50e95f895bc35bdab3ed0cfcae6dba1b93",
+      "bytes": 145,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/WorldGameplayManager.cs",
+      "sha256": "4b8612f8e9da5755be9423c0920e85d1a6b806e5f802985653f05c3ca5461fe0",
+      "bytes": 3066,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/WorldGameplayTypes.cs",
+      "sha256": "739e43a4e6dc04d7982bee54c7d52ecb0c06ab8c3165a853fd3485ced2d08017",
+      "bytes": 106,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/WorldMissionItem.cs",
+      "sha256": "f50e2c079655ff4166a597d452660c3aaccd0f8f730cf138dde8484cdb272b57",
+      "bytes": 3926,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/WorldNode.cs",
+      "sha256": "430cf72d40b885041a1dca2b9e195a64604798edb87318cd233e0953abe0feed",
+      "bytes": 485,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/WorldRankUtility.cs",
+      "sha256": "7c9de4d5047c54daecef4473b5b379cd2b78e16ba818a7045c28c19a182c85b4",
+      "bytes": 277,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/WorldSelectionPanel.cs",
+      "sha256": "110d12374cc5297ec1ab8a28211f2b0f4b42fb28b85cea915250fc38315cf404",
+      "bytes": 27747,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/WorldSelectionScrollDragRelay.cs",
+      "sha256": "37ce8efae5e8485f6aff14bae00af0608e1eff92019433320b30b4da67dff17b",
+      "bytes": 553,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/WorldServerData.cs",
+      "sha256": "93c8489e347ca3cb65e1a78435990a68628527adae9e2e914f43d29d3ad9289c",
+      "bytes": 458,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/WorldSettlementEntry.cs",
+      "sha256": "b862c9e60e1e57a85e46f1d2c8b44b01ff516329ae42b3b4c3b004ce2cec3e90",
+      "bytes": 575,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/WorldSettlementRequest.cs",
+      "sha256": "acc89c7bbf2fb7520f1d9f86e2e7de161c244f344005748a16ceee4f3e46a624",
+      "bytes": 1247,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/WorldSettlementResult.cs",
+      "sha256": "6a755d4eaa24cc01aa95fe9d14a8279b4c48cad5593cef9133c3770b81141a5b",
+      "bytes": 512,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/WorldSettlementService.cs",
+      "sha256": "b246dcbf939ca6cf1dcd96ab5113b3d8c1b48316c0d47a67fa8a9e4068fe6d6b",
+      "bytes": 2047,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/WorldSettlementSource.cs",
+      "sha256": "66a8f10b6c30d9371885e1386447a6b93d3cf129b49b4772a01e924019ec93bb",
+      "bytes": 92,
+      "baseline": "unchanged"
+    },
+    {
+      "path": "Reference/DecompiledCSharp/WorldSignType.cs",
+      "sha256": "a28ed9e7f3b64926d491e861f66eb6acd7aa2869f3e82ae88ca6abd6500eb666",
+      "bytes": 46,
+      "baseline": "unchanged"
+    }
+  ]
+}

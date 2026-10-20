@@ -1,0 +1,1204 @@
+{
+    "editor": "2022.3.62f3c1",
+    "passed": 164,
+    "failed": 7,
+    "checks": [
+        {
+            "suite": "developer",
+            "name": "dev: normal model retains progression and cannot refill",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "developer",
+            "name": "dev: normal and developer save paths are isolated",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "developer",
+            "name": "dev: world unlocked without queued growth popups 1",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "developer",
+            "name": "dev: every item and skill unlocked 1",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "developer",
+            "name": "dev: every talent and desk unlocked 1",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "developer",
+            "name": "dev: all helpers including event helper owned, awakened and deployed 1",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "developer",
+            "name": "dev: all currency qualities available with bounded actors and finite income 1",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "developer",
+            "name": "dev: day seven and talent purchase immediately available 1",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "developer",
+            "name": "dev: hiring past initial ad gate works 1",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "developer",
+            "name": "dev: world unlocked without queued growth popups 2",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "developer",
+            "name": "dev: every item and skill unlocked 2",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "developer",
+            "name": "dev: every talent and desk unlocked 2",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "developer",
+            "name": "dev: all helpers including event helper owned, awakened and deployed 2",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "developer",
+            "name": "dev: all currency qualities available with bounded actors and finite income 2",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "developer",
+            "name": "dev: day seven and talent purchase immediately available 2",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "developer",
+            "name": "dev: hiring past initial ad gate works 2",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "developer",
+            "name": "dev: wheel bypasses daily cap and cooldown",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "developer",
+            "name": "dev: diamond claims and chests bypass daily cap and cooldown",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "developer",
+            "name": "dev: refill replenishes all resource types including event fragments",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "developer",
+            "name": "dev: independent save roundtrip preserves unlocks",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "developer",
+            "name": "dev: rebirth retains full debug access",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "promotion",
+            "name": "promotion: all forty original tblimitmission rows",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "promotion",
+            "name": "promotion: entry requires original growth condition",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "promotion",
+            "name": "promotion: growth stops exactly at first pending promotion",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "promotion",
+            "name": "promotion: target uses float config times rolling income; duration sixty seconds",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "promotion",
+            "name": "promotion: cannot initialize duplicate active HUD",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "promotion",
+            "name": "promotion: internal gold rewards do not count",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "promotion",
+            "name": "promotion: eligible income counts while growth remains blocked",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "promotion",
+            "name": "promotion: exit costs nothing and retains entry/growth gate",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "promotion",
+            "name": "promotion: retry resets collection and duration",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "promotion",
+            "name": "promotion: original timeout checks before decrement",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "promotion",
+            "name": "promotion: next frame timeout preserves stage",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "promotion",
+            "name": "promotion: exact target completes and clamps collection",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "promotion",
+            "name": "promotion: success-time average sets prize; no early reward",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "promotion",
+            "name": "promotion: original mission scan skips stages using current wallet without advancing growth",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "promotion",
+            "name": "promotion: confirmation grants prepared reward",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "promotion",
+            "name": "promotion: duplicate confirmation grants nothing",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "promotion",
+            "name": "promotion: per-world ID persists; transient round does not resume",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "promotion",
+            "name": "promotion: extra duration does not multiply target",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "promotion",
+            "name": "promotion: switching worlds cancels live round and uses independent ID",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "promotion",
+            "name": "promotion: dice world uses original shared table, not unused tblimitmission2",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "promotion",
+            "name": "promotion: last stage completes to minus one and original diamond prize",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "promotion",
+            "name": "promotion: last victory confirmation removes entry",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "promotion",
+            "name": "promotion: legacy saves initialize stage one",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "promotion",
+            "name": "promotion: restored sample queue uses saved average times one half before original factor",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "promotion",
+            "name": "promotion: actual coin settlement completes the live promotion",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "promotion",
+            "name": "promotion: world change retains prepared result without locking the new world",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "promotion",
+            "name": "promotion: original result pays the world active at confirmation",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "support",
+            "name": "support: fresh game hides all three original entries",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "support",
+            "name": "support: title level three does not unlock millionaire",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "support",
+            "name": "support: millionaire unlocks at level four; masters remain locked",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "support",
+            "name": "support: both masters unlock at level five",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "support",
+            "name": "support: millionaire preview has original five-hundred floor and no claim side effects",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "support",
+            "name": "support: amount can be recalculated immediately before the ad after income changes",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "support",
+            "name": "support: invalid prepared reward neither pays nor starts cooldown",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "support",
+            "name": "support: millionaire pays the exact prepared amount once after successful ad",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "support",
+            "name": "support: millionaire internal payout counts toward neither challenge collection nor rolling earned income",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "support",
+            "name": "support: successful millionaire claim starts sixty-second cooldown and blocks repeat payout",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "support",
+            "name": "support: original timestamp slots map speed zero, income one, money two",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "support",
+            "name": "support: second world has an independent millionaire cooldown",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "support",
+            "name": "support: returning world retains its previous cooldown",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "support",
+            "name": "support: wall-clock cooldown expires exactly at its configured deadline",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "support",
+            "name": "support: coin-world millionaire multiplier adds one to original talent result",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "support",
+            "name": "support: dice-world millionaire multiplier uses talent result directly",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "support",
+            "name": "support: successful income-master ad activates its buff",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "support",
+            "name": "support: income-master affects manual and helper income, adding its multiplier alongside alchemy",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "support",
+            "name": "support: income-master lasts five minutes and cannot be reclaimed during cooldown",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "support",
+            "name": "support: resuming original anonymous same-value income buff stacks rather than replacing it",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "support",
+            "name": "support: original speed-master adds one full helper-speed multiplier",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "support",
+            "name": "support: runtime speed buff remains global while world cooldown is independent",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "support",
+            "name": "support: another world's same-value speed buff stacks with the surviving global buff",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "support",
+            "name": "support: reopening DownItem reapplies and stacks remaining same-value speed buff",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "support",
+            "name": "support: original dice cheerleader rounds fifteen seconds to point-two minutes",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "support",
+            "name": "support: dice cheerleader thirty seconds extends speed cooldown by half a minute",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "support",
+            "name": "support: per-world cooldown timestamp survives save roundtrip",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "support",
+            "name": "support: loaded save restores one remaining buff when DownItem resumes, not previous transient stack count",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "support",
+            "name": "support: old saves without support timestamps initialize a usable array",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "support",
+            "name": "support: timestamp-array expansion preserves existing cooldown slots like original EnsureSupportArraySize",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "support",
+            "name": "support: importing original longer support array preserves all three implemented cooldowns",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "legacy-parity",
+            "name": "sign-in: both columns respect the current day",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "legacy-parity",
+            "name": "sign-in: old free claims preserve the independent special reward and red dot",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "legacy-parity",
+            "name": "sign-in: day-three special reward unlocks kungfu master once instead of granting its shards",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "legacy-parity",
+            "name": "sign-in: helper unlock receipt and duplicate protection match the actual reward",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "legacy-parity",
+            "name": "sign-in: owned day-seven helper receives the configured two shards",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "legacy-parity",
+            "name": "sign-in: random rarity shards resolve once and the receipt names concrete helpers",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "legacy-parity",
+            "name": "sign-in: both reward columns survive a save roundtrip",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "legacy-parity",
+            "name": "sign-in: each world has independent claim states",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "legacy-parity",
+            "name": "sign-in: the next seven-day cycle resets both columns",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "legacy-parity",
+            "name": "sign-in: crossing the date also advances the inactive world's calendar",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "legacy-parity",
+            "name": "sign-in: entrance red dot remains for special rewards and clears after both columns are claimed",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "legacy-parity",
+            "name": "notifications: unaffordable item does not show a red dot",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "legacy-parity",
+            "name": "notifications: item red dot appears exactly at its price",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "legacy-parity",
+            "name": "notifications: spending the money clears the item's red dot",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "legacy-parity",
+            "name": "notifications: capped upgrades do not show a red dot",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "legacy-parity",
+            "name": "notifications: the other world's items do not leak into this world's red dots",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "original-parity",
+            "name": "parity: default coin includes the shipped 0.0001 common income buff",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "original-parity",
+            "name": "parity: hand table and click talent add to three rather than multiply to four",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "original-parity",
+            "name": "parity: critical desk adds two to the original two-fold base critical damage",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "original-parity",
+            "name": "parity: premium helper critical damage retains both base and desk contributions",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "original-parity",
+            "name": "parity: 1.5 global table is an additive buff factor of 2.5",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "original-parity",
+            "name": "parity: strength, magician and two distinct helpers grant the source-defined global bonuses",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "original-parity",
+            "name": "parity: dice talents count specific helpers, R helpers, basic helpers and distinct types independently",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "original-parity",
+            "name": "parity: high-end force adds SR critical damage after base critical calculation",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "original-parity",
+            "name": "parity: free labor adds exactly one dispatch place without allowing over-assignment",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "original-parity",
+            "name": "parity: world entry settles the target world's real absence interval",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "original-parity",
+            "name": "parity: auto-save cannot overwrite the inactive world's exit timestamp",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "original-parity",
+            "name": "parity: returning from another world grants all ten minutes of offline earnings",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "original-parity",
+            "name": "parity: offline doubled receipt can only be consumed once",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "original-parity",
+            "name": "parity: returning to foreground settles the active world without restarting the application",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "original-parity",
+            "name": "parity: old save migration preserves the highest learned helper level for new-world ownership",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "original-parity",
+            "name": "parity: advanced rebirth preserves upgrades and dispatched helpers",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "original-parity",
+            "name": "parity: normal rebirth clears upgrade and dispatch state together",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "original-parity",
+            "name": "parity: elite education retains all sixty-five legal helper positions",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "dice",
+            "name": "dice: an unupgraded roll includes both range endpoints",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "dice",
+            "name": "dice: maximum early upgrades lower all three small-face weights and raise the six-face weight",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "dice",
+            "name": "dice: the actual deterministic roll path produces the upgraded weighted distribution",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "dice",
+            "name": "dice: six-point raise compounds and leaves non-sixes unchanged",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "dice",
+            "name": "dice: purple talent adds after the six-point multiplier rather than to its base upgrade",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "dice",
+            "name": "dice: Super 666 target derives from current main level and configured 40/100 factors",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "dice",
+            "name": "dice: non-six landings cannot charge Super 666",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "dice",
+            "name": "dice: six charge talent applies on actual landings",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "dice",
+            "name": "dice: progress caps at the activation threshold",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "dice",
+            "name": "dice: ad activation uses (20+5)*(5+0.1), consumes charge once and starts its timer",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "dice",
+            "name": "dice: active Super 666 blocks duplicate activation and guide-forced faces take precedence",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "dice",
+            "name": "dice: active and purple talent bonuses add after the raised-six multiplier",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "dice",
+            "name": "dice: Super 666 rolls do not charge the next activation",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "dice",
+            "name": "dice: expiry restores the actual weighted roll path",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "dice",
+            "name": "dice: merchant starts ready and awards the sampled base plus talent",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "dice",
+            "name": "dice: daily cap counts base diamonds and the persisted 180-second interval has a strict boundary",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "dice",
+            "name": "dice: repeated merchant clicks cannot claim during cooldown",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "dice",
+            "name": "dice: merchant cooldown resumes from the saved timestamp and unlocks at its boundary",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "dice",
+            "name": "dice: the last merchant payout may cross the original daily base cap",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "dice",
+            "name": "dice: the daily cap blocks further collections",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "dice",
+            "name": "dice: next day resets both merchant count and cooldown",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "dice",
+            "name": "dice: original slot-machine and both character animation resources are packaged",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "dice",
+            "name": "dice: original activation prefab exposes its animation and initially hidden activation button",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "dice",
+            "name": "dice: original unlock prefab preserves both cards and its dismissible animation mask",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "dice",
+            "name": "dice: original Spine asset parses through the shipped renderer: Uieff_laohuji",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "dice",
+            "name": "dice: the original animation has a playable nonzero timeline: Uieff_laohuji",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "dice",
+            "name": "dice: original Spine asset parses through the shipped renderer: zgygy_666",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "dice",
+            "name": "dice: the original animation has a playable nonzero timeline: zgygy_666",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "dice",
+            "name": "dice: original Spine asset parses through the shipped renderer: zgygy_zuanshishangren",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "dice",
+            "name": "dice: the original animation has a playable nonzero timeline: zgygy_zuanshishangren",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "helpers",
+            "name": "helper parity: serialized dice cross travels 400/480/1360 original pixels at levels 1/5/70",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "helpers",
+            "name": "helper parity: basketball awakening permits zero, one, two and three boundary rebounds",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "helpers",
+            "name": "helper parity: bomb width uses the saved dice-world powder talent even in the coin world",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "helpers",
+            "name": "helper parity: recovered serialized prefab confirms speed 600, base distance 400 and source scale 0.4",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "helpers",
+            "name": "helper parity: basketball remains alive after 1100 traveled pixels and expires by rebound budget rather than fixed distance",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "helpers",
+            "name": "helper parity: queued explosions reserve each coin once before the sixteen-per-frame launch stage",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "helpers",
+            "name": "helper parity: fox pauses at the far end and moves idle coins physically without throwing them",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "helpers",
+            "name": "helper parity: fox clears outbound hits before its return trip",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "helpers",
+            "name": "helper parity: fox returns only after the original half-second pause",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "helpers",
+            "name": "helper parity: actual tentacle sequence supports stretched target length rather than a burst at the helper",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "ui",
+            "name": "UI parity: a double reward adds exactly one resolved receipt to its original world without rerolling shards",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "ui",
+            "name": "UI parity: offline double settles the displayed world's pending gold twice and leaves the active wallet alone",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "ui",
+            "name": "UI parity: repeated offline completion cannot claim the same pending reward twice",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "ui",
+            "name": "UI parity: wheel uses original accelerate, cruise, decelerate and overshoot-return boundaries",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "ui",
+            "name": "UI parity: the wheel settles back from its overshoot to the selected slot",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "ui",
+            "name": "UI parity: configured worlds descend after the first Coming Soon node",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "ui",
+            "name": "UI parity: native dice-world entry overlay and animated guide resources are packaged",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "ui",
+            "name": "UI parity: intro confirms through the exact original game-target prefab",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "ui",
+            "name": "UI parity: desktop uses the shipped fake-video countdown and close-button layout",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "ui",
+            "name": "UI parity: ordinary rewards expose the original ad-double button",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "ui",
+            "name": "UI parity: purchased chests can explicitly suppress doubling",
+            "expected": "",
+            "actual": "",
+            "passed": true
+        },
+        {
+            "suite": "original-behavior",
+            "name": "Initial growth level 1 permits offline earnings",
+            "expected": "600",
+            "actual": "0",
+            "passed": false
+        },
+        {
+            "suite": "original-behavior",
+            "name": "An unclaimed offline receipt remains one fixed reward",
+            "expected": "600",
+            "actual": "1200",
+            "passed": false
+        },
+        {
+            "suite": "original-behavior",
+            "name": "First entry inherits the globally trained helper level",
+            "expected": "30",
+            "actual": "1",
+            "passed": false
+        },
+        {
+            "suite": "original-behavior",
+            "name": "Ordinary rebirth resets other-world upgrades as in the reference",
+            "expected": "rebirth=true, other boost=0",
+            "actual": "True, 4",
+            "passed": false
+        },
+        {
+            "suite": "original-behavior",
+            "name": "Advanced rebirth retains the saved income seed",
+            "expected": "rebirth=true, rate=123",
+            "actual": "True, 1",
+            "passed": false
+        },
+        {
+            "suite": "original-behavior",
+            "name": "Ordinary rebirth retains the saved income seed",
+            "expected": "rebirth=true, rate=123",
+            "actual": "True, 1",
+            "passed": false
+        },
+        {
+            "suite": "original-behavior",
+            "name": "A rolled die retains pre-upgrade base value until landing",
+            "expected": "6.0005999999848427",
+            "actual": "6.9006899999825686",
+            "passed": false
+        }
+    ]
+}

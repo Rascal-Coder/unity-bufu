@@ -79,6 +79,7 @@ namespace Bufu.Rebuild {
 
         // ------------------------------------------------------------ helper target search (RoleVat.FindTargetThrowable)
         public CoinActor FindThrowableForHelper(Vector2 from) {
+            if(DiceGuideBlocksHelpers)return null;
             var candidates=new List<CoinActor>();
             if(Model.Data.world==2) {
                 foreach(var coin in Coins)if(coin&&!coin.Busy&&Model.CanHelperFlip(coin.Quality))candidates.Add(coin);
@@ -92,6 +93,7 @@ namespace Bufu.Rebuild {
             return null;
         }
         public CoinActor FindNearestThrowable(Vector2 from) {
+            if(DiceGuideBlocksHelpers)return null;
             CoinActor best=null;float bestDist=float.MaxValue;
             foreach(var coin in Coins) {
                 if(!coin||coin.Busy||!Model.CanHelperFlip(coin.Quality))continue;
@@ -121,7 +123,7 @@ namespace Bufu.Rebuild {
         void SortActors() {
             if(!ActorPool)return;
             sortBuffer.Clear();
-            foreach(var coin in Coins)if(coin&&coin.transform.parent==ActorPool)sortBuffer.Add(new KeyValuePair<float,Transform>((coin.Flying?2e4f:0)-coin.Rect.anchoredPosition.y,coin.transform));
+            foreach(var coin in Coins)if(coin&&coin.transform.parent==ActorPool)sortBuffer.Add(new KeyValuePair<float,Transform>((coin.Evolving?3e4f:coin.Flying?2e4f:0)-coin.Rect.anchoredPosition.y,coin.transform));
             foreach(var helper in HelperActors)if(helper&&helper.transform.parent==ActorPool)sortBuffer.Add(new KeyValuePair<float,Transform>(1e4f-helper.Rect.anchoredPosition.y,helper.transform));
             sortBuffer.Sort((a,b)=>a.Key.CompareTo(b.Key));
             for(int i=0;i<sortBuffer.Count;i++)if(sortBuffer[i].Value.GetSiblingIndex()!=i)sortBuffer[i].Value.SetSiblingIndex(i);

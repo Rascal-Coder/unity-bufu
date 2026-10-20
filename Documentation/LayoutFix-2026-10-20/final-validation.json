@@ -1,0 +1,74 @@
+{
+  "passed": true,
+  "total_checks": 9271,
+  "cases": [
+    {
+      "case": "SpriteSheetsStore390",
+      "checks": 325,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "case": "SpriteSheetsStore540",
+      "checks": 325,
+      "width": 540,
+      "height": 960
+    },
+    {
+      "case": "SpriteSheetsStoreLandscape",
+      "checks": 325,
+      "width": 960,
+      "height": 540
+    },
+    {
+      "case": "SpriteSheetsLocale390",
+      "checks": 1261,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "case": "SpriteSheetsLocale540",
+      "checks": 1261,
+      "width": 540,
+      "height": 960
+    },
+    {
+      "case": "SpriteSheetsLocaleLandscape",
+      "checks": 1261,
+      "width": 960,
+      "height": 540
+    },
+    {
+      "case": "SpriteSheetsAlignment540",
+      "checks": 4109,
+      "width": 540,
+      "height": 960
+    },
+    {
+      "case": "SpriteSheetsDice390",
+      "checks": 31,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "case": "SpriteSheetsDiceLandscape",
+      "checks": 31,
+      "width": 960,
+      "height": 540
+    },
+    {
+      "case": "SpriteSheetsActivities390",
+      "checks": 171,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "case": "SpriteSheetsActivitiesLandscape",
+      "checks": 171,
+      "width": 960,
+      "height": 540
+    }
+  ],
+  "final_identity": "70ecb6efc3aa8906f4d31da13aa1308e01e65801816853006e44425247623fee",
+  "scope": "All eleven cases use the current player and source identity, including packed UI sprite geometry, word images, commerce spacing, localization, dice and auction flows."
+}

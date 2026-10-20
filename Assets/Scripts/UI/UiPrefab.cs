@@ -33,7 +33,7 @@ namespace Bufu.Rebuild.UI {
         public static bool HasEnglishArt(string key) {
             if(string.IsNullOrEmpty(key))return false;
             if(englishArt.TryGetValue(key,out var yes))return yes;
-            yes=Resources.Load<Texture2D>("UI/Sprites/en/"+key);
+            yes=PackedSpriteSheets.Contains("UI/Sprites/en/"+key)||Resources.Load<Texture2D>("UI/Sprites/en/"+key);
             englishArt[key]=yes;return yes;
         }
 
@@ -45,6 +45,7 @@ namespace Bufu.Rebuild.UI {
 
         static Sprite LoadSprite(string key,string cacheKey,string resource) {
             if(sprites.TryGetValue(cacheKey,out var cached))return cached;
+            if(PackedSpriteSheets.TryGet(resource,out var packed)){sprites[cacheKey]=packed;return packed;}
             LoadMetas();
             var tex=Resources.Load<Texture2D>(resource);
             Sprite sprite=null;

@@ -1,0 +1,1317 @@
+{
+  "sources": {
+    "role_path_method": "Reference/DecompiledCSharp/Constants.cs:325-341",
+    "challenge_binding": "Assets/GameRes/NewUI/Challenge/prefabs/ChallengeMain.prefab"
+  },
+  "prefabs": [
+    {
+      "prefab": "Assets/GameRes/RoleSpine/role.prefab",
+      "role_type": 0,
+      "root_path_id": -8472619109767636880,
+      "root_sha256": "08f44616196aecd7380521871171c19e3f3aa9ff2e52ffae4bda7fed750331ad",
+      "components": [
+        {
+          "node": "/role",
+          "class": "RectTransform",
+          "path_id": -4887194462449428368,
+          "fields": {
+            "m_LocalRotation": {
+              "x": -0.0,
+              "y": -0.0,
+              "z": -0.0,
+              "w": 1.0
+            },
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 4.439028739929199
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "m_SizeDelta": {
+              "x": 100.0,
+              "y": 100.0
+            }
+          }
+        },
+        {
+          "node": "/role",
+          "class": "SkeletonGraphic",
+          "path_id": -6274229251686393744,
+          "raw_sha256": "eec4c2409b9ff03fbfdcb110c6e8790e300b257b345fc9fe5b52a0503be7df14",
+          "fields": {
+            "initialSkinName": "",
+            "initialFlipX": 0,
+            "initialFlipY": 0,
+            "startingAnimation": "idle_front",
+            "startingLoop": 0,
+            "timeScale": 1.0,
+            "freeze": 0,
+            "updateWhenInvisible": 3,
+            "unscaledTime": 0,
+            "allowMultipleCanvasRenderers": 0,
+            "canvasRenderers": [],
+            "separatorSlotNames": [],
+            "enableSeparatorSlots": 0,
+            "separatorParts": [],
+            "updateSeparatorPartLocation": 1
+          }
+        },
+        {
+          "node": "/role",
+          "class": "Role",
+          "path_id": -6197101946836936592,
+          "raw_sha256": "75841b069f081c499891353081722c76d80b1d3966984d48a3d50a8bd2aa4d2e",
+          "fields": {
+            "idleAnimName": "idle_front",
+            "idleBackAnimName": "idle_back",
+            "walkFrontAnimName": "walk_front",
+            "walkBackAnimName": "walk_back",
+            "throwFrontAnimName": "throw_front",
+            "throwBackAnimName": "throw_back",
+            "skillFrontAnimName": "skill_front",
+            "skillBackAnimName": "skill_back",
+            "sleepAnimName": "sleep",
+            "baseMoveSpeed": 400.0,
+            "reachThreshold": 10.0,
+            "coinMinDistance": 75.0,
+            "waitAfterThrow": 0.800000011920929,
+            "sleepCheckInterval": 7.0,
+            "sleepProbability": 0.30000001192092896,
+            "sleepDuration": 5.0,
+            "scatterRadius": 50.0,
+            "halandradius": 120.0
+          }
+        }
+      ]
+    },
+    {
+      "prefab": "Assets/GameRes/RoleSpine/Role_toughguy.prefab",
+      "role_type": 1,
+      "root_path_id": 8442933536813231740,
+      "root_sha256": "5327b9f8ce16b592815ea627c52525f75b2a2796c704dcf01c530aa87003e886",
+      "components": [
+        {
+          "node": "/Role_toughguy",
+          "class": "RectTransform",
+          "path_id": 719421145444986492,
+          "fields": {
+            "m_LocalRotation": {
+              "x": -0.0,
+              "y": -0.0,
+              "z": -0.0,
+              "w": 1.0
+            },
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "m_SizeDelta": {
+              "x": 100.0,
+              "y": 100.0
+            }
+          }
+        },
+        {
+          "node": "/Role_toughguy",
+          "class": "SkeletonGraphic",
+          "path_id": 3288423029169729148,
+          "raw_sha256": "2ead2867020781ecd297a75a6ddb15259ce2424c1603402b1ac16aa44a62db50",
+          "fields": {
+            "initialSkinName": "",
+            "initialFlipX": 0,
+            "initialFlipY": 0,
+            "startingAnimation": "idle_front",
+            "startingLoop": 0,
+            "timeScale": 1.0,
+            "freeze": 0,
+            "updateWhenInvisible": 3,
+            "unscaledTime": 0,
+            "allowMultipleCanvasRenderers": 0,
+            "canvasRenderers": [],
+            "separatorSlotNames": [],
+            "enableSeparatorSlots": 0,
+            "separatorParts": [],
+            "updateSeparatorPartLocation": 1
+          }
+        },
+        {
+          "node": "/Role_toughguy",
+          "class": "Role",
+          "path_id": 4431590604277689980,
+          "raw_sha256": "4c00a58a44f193186a8898373d44a7d455f0a1711cf5cb006e4768230c27e87f",
+          "fields": {
+            "idleAnimName": "idle_front",
+            "idleBackAnimName": "idle_back",
+            "walkFrontAnimName": "walk_front",
+            "walkBackAnimName": "walk_back",
+            "throwFrontAnimName": "throw_front",
+            "throwBackAnimName": "throw_back",
+            "skillFrontAnimName": "skill_front",
+            "skillBackAnimName": "skill_back",
+            "sleepAnimName": "sleep",
+            "baseMoveSpeed": 400.0,
+            "reachThreshold": 10.0,
+            "coinMinDistance": 75.0,
+            "waitAfterThrow": 0.800000011920929,
+            "sleepCheckInterval": 7.0,
+            "sleepProbability": 0.30000001192092896,
+            "sleepDuration": 5.0,
+            "scatterRadius": 50.0,
+            "halandradius": 120.0
+          }
+        }
+      ]
+    },
+    {
+      "prefab": "Assets/GameRes/RoleSpine/Role_miracle.prefab",
+      "role_type": 2,
+      "root_path_id": 8314928727836587787,
+      "root_sha256": "b73ca6e5146a79dc0487a13fd21465baa9b110cda2a272d01888a0ccbb5a08a7",
+      "components": [
+        {
+          "node": "/Role_miracle",
+          "class": "RectTransform",
+          "path_id": 3084066132610643723,
+          "fields": {
+            "m_LocalRotation": {
+              "x": -0.0,
+              "y": -0.0,
+              "z": -0.0,
+              "w": 1.0
+            },
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "m_SizeDelta": {
+              "x": 100.0,
+              "y": 100.0
+            }
+          }
+        },
+        {
+          "node": "/Role_miracle",
+          "class": "SkeletonGraphic",
+          "path_id": 9174671953990383371,
+          "raw_sha256": "b8097a7a75912df5bc0a0cfc04e1d152daf753b6ae32d8d85e11a0a3ba8618fb",
+          "fields": {
+            "initialSkinName": "",
+            "initialFlipX": 0,
+            "initialFlipY": 0,
+            "startingAnimation": "idle_front",
+            "startingLoop": 0,
+            "timeScale": 1.0,
+            "freeze": 0,
+            "updateWhenInvisible": 3,
+            "unscaledTime": 0,
+            "allowMultipleCanvasRenderers": 0,
+            "canvasRenderers": [],
+            "separatorSlotNames": [],
+            "enableSeparatorSlots": 0,
+            "separatorParts": [],
+            "updateSeparatorPartLocation": 1
+          }
+        },
+        {
+          "node": "/Role_miracle",
+          "class": "Role",
+          "path_id": 3540459234262447883,
+          "raw_sha256": "65fd252a3eda923d604c6d1fbd3f5da3bc14dd8eb2dd862d184c691a9ea4ab26",
+          "fields": {
+            "idleAnimName": "idle_front",
+            "idleBackAnimName": "idle_back",
+            "walkFrontAnimName": "walk_front",
+            "walkBackAnimName": "walk_back",
+            "throwFrontAnimName": "throw_front",
+            "throwBackAnimName": "throw_back",
+            "skillFrontAnimName": "skill_front",
+            "skillBackAnimName": "skill_back",
+            "sleepAnimName": "sleep",
+            "baseMoveSpeed": 400.0,
+            "reachThreshold": 10.0,
+            "coinMinDistance": 75.0,
+            "waitAfterThrow": 0.800000011920929,
+            "sleepCheckInterval": 7.0,
+            "sleepProbability": 0.30000001192092896,
+            "sleepDuration": 5.0,
+            "scatterRadius": 50.0,
+            "halandradius": 120.0
+          }
+        }
+      ]
+    },
+    {
+      "prefab": "Assets/GameRes/RoleSpine/Role_magician.prefab",
+      "role_type": 3,
+      "root_path_id": 1960679397951130776,
+      "root_sha256": "df41c663fd0af46976360f24f6dbdc956d157bde324b1a2d03253832ed2dc2e4",
+      "components": [
+        {
+          "node": "/Role_magician",
+          "class": "RectTransform",
+          "path_id": 8163324152345447576,
+          "fields": {
+            "m_LocalRotation": {
+              "x": -0.0,
+              "y": -0.0,
+              "z": -0.0,
+              "w": 1.0
+            },
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "m_SizeDelta": {
+              "x": 100.0,
+              "y": 100.0
+            }
+          }
+        },
+        {
+          "node": "/Role_magician",
+          "class": "SkeletonGraphic",
+          "path_id": -947287508033418088,
+          "raw_sha256": "884e76611e40231949fe7dca44624e067ef3ee29111a49aab669754fc9bdb433",
+          "fields": {
+            "initialSkinName": "",
+            "initialFlipX": 0,
+            "initialFlipY": 0,
+            "startingAnimation": "idle_front",
+            "startingLoop": 0,
+            "timeScale": 1.0,
+            "freeze": 0,
+            "updateWhenInvisible": 3,
+            "unscaledTime": 0,
+            "allowMultipleCanvasRenderers": 0,
+            "canvasRenderers": [],
+            "separatorSlotNames": [],
+            "enableSeparatorSlots": 0,
+            "separatorParts": [],
+            "updateSeparatorPartLocation": 1
+          }
+        },
+        {
+          "node": "/Role_magician",
+          "class": "Role",
+          "path_id": -3346097095272313704,
+          "raw_sha256": "3ffdb098c7df826ac21a058ccb0f183dccfd22face89c799d890932eb208e93f",
+          "fields": {
+            "idleAnimName": "idle_front",
+            "idleBackAnimName": "idle_back",
+            "walkFrontAnimName": "walk_front",
+            "walkBackAnimName": "walk_back",
+            "throwFrontAnimName": "throw_front",
+            "throwBackAnimName": "throw_back",
+            "skillFrontAnimName": "skill_front",
+            "skillBackAnimName": "skill_back",
+            "sleepAnimName": "sleep",
+            "baseMoveSpeed": 500.0,
+            "reachThreshold": 10.0,
+            "coinMinDistance": 60.0,
+            "waitAfterThrow": 0.5,
+            "sleepCheckInterval": 5.0,
+            "sleepProbability": 0.30000001192092896,
+            "sleepDuration": 3.0,
+            "scatterRadius": 50.0,
+            "halandradius": 120.0
+          }
+        }
+      ]
+    },
+    {
+      "prefab": "Assets/GameRes/RoleSpine/Role_gongfu.prefab",
+      "role_type": 4,
+      "root_path_id": 8611786978258334043,
+      "root_sha256": "4fac8c8e4c462afaea6a8cce39ead4589cf5e0a9b50e3b78b5ef9b5e45264e63",
+      "components": [
+        {
+          "node": "/Role_gongfu",
+          "class": "RectTransform",
+          "path_id": 2812477349426245979,
+          "fields": {
+            "m_LocalRotation": {
+              "x": -0.0,
+              "y": -0.0,
+              "z": -0.0,
+              "w": 1.0
+            },
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "m_SizeDelta": {
+              "x": 100.0,
+              "y": 100.0
+            }
+          }
+        },
+        {
+          "node": "/Role_gongfu",
+          "class": "SkeletonGraphic",
+          "path_id": 1773438602685657435,
+          "raw_sha256": "6a86aa8611f5cd6543ac7051b1e15d005e06625abd472fd0179618af36ca9acb",
+          "fields": {
+            "initialSkinName": "",
+            "initialFlipX": 0,
+            "initialFlipY": 0,
+            "startingAnimation": "idle_front",
+            "startingLoop": 0,
+            "timeScale": 1.0,
+            "freeze": 0,
+            "updateWhenInvisible": 3,
+            "unscaledTime": 0,
+            "allowMultipleCanvasRenderers": 0,
+            "canvasRenderers": [],
+            "separatorSlotNames": [],
+            "enableSeparatorSlots": 0,
+            "separatorParts": [],
+            "updateSeparatorPartLocation": 1
+          }
+        },
+        {
+          "node": "/Role_gongfu",
+          "class": "Role",
+          "path_id": 3269797883833758043,
+          "raw_sha256": "f24d1c085cc38f045614ea5a4a10d8b8a3f9d2d14c1c7498945816b9e94636e0",
+          "fields": {
+            "idleAnimName": "idle_front",
+            "idleBackAnimName": "idle_back",
+            "walkFrontAnimName": "walk_front",
+            "walkBackAnimName": "walk_back",
+            "throwFrontAnimName": "throw_front",
+            "throwBackAnimName": "throw_back",
+            "skillFrontAnimName": "skill_front",
+            "skillBackAnimName": "skill_back",
+            "sleepAnimName": "sleep",
+            "baseMoveSpeed": 400.0,
+            "reachThreshold": 10.0,
+            "coinMinDistance": 75.0,
+            "waitAfterThrow": 0.800000011920929,
+            "sleepCheckInterval": 7.0,
+            "sleepProbability": 0.30000001192092896,
+            "sleepDuration": 5.0,
+            "scatterRadius": 50.0,
+            "halandradius": 120.0
+          }
+        }
+      ]
+    },
+    {
+      "prefab": "Assets/GameRes/RoleSpine/Role_cxk.prefab",
+      "role_type": 5,
+      "root_path_id": 7625046083348407114,
+      "root_sha256": "1e313c05d8ee310b517acf927ea6d90d54d6df0227a428c72e031f27658ef185",
+      "components": [
+        {
+          "node": "/Role_cxk",
+          "class": "RectTransform",
+          "path_id": 8461963303119561546,
+          "fields": {
+            "m_LocalRotation": {
+              "x": -0.0,
+              "y": -0.0,
+              "z": -0.0,
+              "w": 1.0
+            },
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 4.439028739929199
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "m_SizeDelta": {
+              "x": 100.0,
+              "y": 100.0
+            }
+          }
+        },
+        {
+          "node": "/Role_cxk",
+          "class": "SkeletonGraphic",
+          "path_id": 840400059384406858,
+          "raw_sha256": "bc6900265095a33fd34cbe7dd9f144f74eb9cffa83150bf08a4925c03b4d156b",
+          "fields": {
+            "initialSkinName": "",
+            "initialFlipX": 0,
+            "initialFlipY": 0,
+            "startingAnimation": "idle_front",
+            "startingLoop": 0,
+            "timeScale": 1.0,
+            "freeze": 0,
+            "updateWhenInvisible": 3,
+            "unscaledTime": 0,
+            "allowMultipleCanvasRenderers": 0,
+            "canvasRenderers": [],
+            "separatorSlotNames": [],
+            "enableSeparatorSlots": 0,
+            "separatorParts": [],
+            "updateSeparatorPartLocation": 1
+          }
+        },
+        {
+          "node": "/Role_cxk",
+          "class": "Role",
+          "path_id": -8032443833955114166,
+          "raw_sha256": "03a040762e8656f29a7198778220ae81dbdf8eec0b13d1b3016044eed8afc81d",
+          "fields": {
+            "idleAnimName": "idle_front",
+            "idleBackAnimName": "idle_back",
+            "walkFrontAnimName": "walk_front",
+            "walkBackAnimName": "walk_back",
+            "throwFrontAnimName": "throw_front",
+            "throwBackAnimName": "throw_back",
+            "skillFrontAnimName": "skill_front",
+            "skillBackAnimName": "skill_back",
+            "sleepAnimName": "sleep",
+            "baseMoveSpeed": 400.0,
+            "reachThreshold": 10.0,
+            "coinMinDistance": 75.0,
+            "waitAfterThrow": 0.800000011920929,
+            "sleepCheckInterval": 7.0,
+            "sleepProbability": 0.30000001192092896,
+            "sleepDuration": 5.0,
+            "scatterRadius": 50.0,
+            "halandradius": 120.0
+          }
+        }
+      ]
+    },
+    {
+      "prefab": "Assets/GameRes/RoleSpine/Role_dashe.prefab",
+      "role_type": 6,
+      "root_path_id": 8644030052517467103,
+      "root_sha256": "bb6e17d119be706289a1fe43c490e71cbcf732b853bc02b92511fbf1f2007b88",
+      "components": [
+        {
+          "node": "/Role_dashe",
+          "class": "RectTransform",
+          "path_id": -1816973487384374305,
+          "fields": {
+            "m_LocalRotation": {
+              "x": -0.0,
+              "y": -0.0,
+              "z": -0.0,
+              "w": 1.0
+            },
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 4.439028739929199
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "m_SizeDelta": {
+              "x": 100.0,
+              "y": 100.0
+            }
+          }
+        },
+        {
+          "node": "/Role_dashe",
+          "class": "SkeletonGraphic",
+          "path_id": 1494342985506214879,
+          "raw_sha256": "7bcf700e83677f37d338048beca8da9707b511576f6dbe0f42ae97d118f23a71",
+          "fields": {
+            "initialSkinName": "",
+            "initialFlipX": 0,
+            "initialFlipY": 0,
+            "startingAnimation": "idle_front",
+            "startingLoop": 0,
+            "timeScale": 1.0,
+            "freeze": 0,
+            "updateWhenInvisible": 3,
+            "unscaledTime": 0,
+            "allowMultipleCanvasRenderers": 0,
+            "canvasRenderers": [],
+            "separatorSlotNames": [],
+            "enableSeparatorSlots": 0,
+            "separatorParts": [],
+            "updateSeparatorPartLocation": 1
+          }
+        },
+        {
+          "node": "/Role_dashe",
+          "class": "Role",
+          "path_id": -8040144933847903265,
+          "raw_sha256": "c03d77c73ca91e42f674c3a51d884c41e6cc0c5bb10523d3ae07279eeb9b4d97",
+          "fields": {
+            "idleAnimName": "idle_front",
+            "idleBackAnimName": "idle_back",
+            "walkFrontAnimName": "walk_front",
+            "walkBackAnimName": "walk_back",
+            "throwFrontAnimName": "throw_front",
+            "throwBackAnimName": "throw_back",
+            "skillFrontAnimName": "skill_front",
+            "skillBackAnimName": "skill_back",
+            "sleepAnimName": "sleep",
+            "baseMoveSpeed": 400.0,
+            "reachThreshold": 10.0,
+            "coinMinDistance": 75.0,
+            "waitAfterThrow": 0.800000011920929,
+            "sleepCheckInterval": 7.0,
+            "sleepProbability": 0.30000001192092896,
+            "sleepDuration": 5.0,
+            "scatterRadius": 50.0,
+            "halandradius": 120.0
+          }
+        }
+      ]
+    },
+    {
+      "prefab": "Assets/GameRes/RoleSpine/Role_daji.prefab",
+      "role_type": 7,
+      "root_path_id": -8802641024700546423,
+      "root_sha256": "c1eb274378ef278b6620a32808ac45c299b8f19a7a193c2c6c19f741eb4a656d",
+      "components": [
+        {
+          "node": "/Role_daji",
+          "class": "RectTransform",
+          "path_id": 3552447071705531017,
+          "fields": {
+            "m_LocalRotation": {
+              "x": -0.0,
+              "y": -0.0,
+              "z": -0.0,
+              "w": 1.0
+            },
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 4.439028739929199
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "m_SizeDelta": {
+              "x": 100.0,
+              "y": 100.0
+            }
+          }
+        },
+        {
+          "node": "/Role_daji",
+          "class": "SkeletonGraphic",
+          "path_id": -4769338876966305143,
+          "raw_sha256": "81262ba162df6c8a1440b8bcbdf311ffb0c3ecffae08902203afcd8f674ce077",
+          "fields": {
+            "initialSkinName": "",
+            "initialFlipX": 0,
+            "initialFlipY": 0,
+            "startingAnimation": "idle_front",
+            "startingLoop": 0,
+            "timeScale": 1.0,
+            "freeze": 0,
+            "updateWhenInvisible": 3,
+            "unscaledTime": 0,
+            "allowMultipleCanvasRenderers": 0,
+            "canvasRenderers": [],
+            "separatorSlotNames": [],
+            "enableSeparatorSlots": 0,
+            "separatorParts": [],
+            "updateSeparatorPartLocation": 1
+          }
+        },
+        {
+          "node": "/Role_daji",
+          "class": "Role",
+          "path_id": -1693602460009463159,
+          "raw_sha256": "65f13b6d2dfb5f6d2a8e9db11addd7320f47fc0d53e78f33deded4c2024baadd",
+          "fields": {
+            "idleAnimName": "idle_front",
+            "idleBackAnimName": "idle_back",
+            "walkFrontAnimName": "walk_front",
+            "walkBackAnimName": "walk_back",
+            "throwFrontAnimName": "throw_front",
+            "throwBackAnimName": "throw_back",
+            "skillFrontAnimName": "skill_front",
+            "skillBackAnimName": "skill_back",
+            "sleepAnimName": "sleep",
+            "baseMoveSpeed": 400.0,
+            "reachThreshold": 10.0,
+            "coinMinDistance": 75.0,
+            "waitAfterThrow": 0.800000011920929,
+            "sleepCheckInterval": 7.0,
+            "sleepProbability": 0.30000001192092896,
+            "sleepDuration": 5.0,
+            "scatterRadius": 50.0,
+            "halandradius": 120.0
+          }
+        }
+      ]
+    },
+    {
+      "prefab": "Assets/GameRes/RoleSpine/Role_iron.prefab",
+      "role_type": 8,
+      "root_path_id": -8972500163412216841,
+      "root_sha256": "f3c95204807c6b6b8bc2dc46b4e8d764de26be981e13b171a91a9fbed6ff7362",
+      "components": [
+        {
+          "node": "/Role_iron",
+          "class": "RectTransform",
+          "path_id": 8521879323408937975,
+          "fields": {
+            "m_LocalRotation": {
+              "x": -0.0,
+              "y": -0.0,
+              "z": -0.0,
+              "w": 1.0
+            },
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "m_SizeDelta": {
+              "x": 100.0,
+              "y": 100.0
+            }
+          }
+        },
+        {
+          "node": "/Role_iron",
+          "class": "SkeletonGraphic",
+          "path_id": -5198695320285334537,
+          "raw_sha256": "5c8cacd460e191ed846b45bea1c24ba91071bd9bd31d330218d0cd6e9a62f692",
+          "fields": {
+            "initialSkinName": "",
+            "initialFlipX": 0,
+            "initialFlipY": 0,
+            "startingAnimation": "idle_front",
+            "startingLoop": 0,
+            "timeScale": 1.0,
+            "freeze": 0,
+            "updateWhenInvisible": 3,
+            "unscaledTime": 0,
+            "allowMultipleCanvasRenderers": 0,
+            "canvasRenderers": [],
+            "separatorSlotNames": [],
+            "enableSeparatorSlots": 0,
+            "separatorParts": [],
+            "updateSeparatorPartLocation": 1
+          }
+        },
+        {
+          "node": "/Role_iron",
+          "class": "Role",
+          "path_id": 4595898636931249143,
+          "raw_sha256": "e125037bfc8cf1f77e9f60f8463d201c2e77988cccbb15bedbdb18fc4522c733",
+          "fields": {
+            "idleAnimName": "idle_front",
+            "idleBackAnimName": "idle_back",
+            "walkFrontAnimName": "walk_front",
+            "walkBackAnimName": "walk_back",
+            "throwFrontAnimName": "throw_front",
+            "throwBackAnimName": "throw_back",
+            "skillFrontAnimName": "skill_front",
+            "skillBackAnimName": "skill_back",
+            "sleepAnimName": "sleep",
+            "baseMoveSpeed": 400.0,
+            "reachThreshold": 10.0,
+            "coinMinDistance": 75.0,
+            "waitAfterThrow": 0.800000011920929,
+            "sleepCheckInterval": 7.0,
+            "sleepProbability": 0.30000001192092896,
+            "sleepDuration": 5.0,
+            "scatterRadius": 50.0,
+            "halandradius": 120.0
+          }
+        }
+      ]
+    },
+    {
+      "prefab": "Assets/GameRes/RoleSpine/Role_halande.prefab",
+      "role_type": 9,
+      "root_path_id": 7034348195525911674,
+      "root_sha256": "ae56f47f1d8f7c6e32dc66ba3db341562485b4bd80952866b980e43d1707a9cb",
+      "components": [
+        {
+          "node": "/Role_halande",
+          "class": "RectTransform",
+          "path_id": 6907710613693752442,
+          "fields": {
+            "m_LocalRotation": {
+              "x": -0.0,
+              "y": -0.0,
+              "z": -0.0,
+              "w": 1.0
+            },
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 4.439028739929199
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "m_SizeDelta": {
+              "x": 100.0,
+              "y": 100.0
+            }
+          }
+        },
+        {
+          "node": "/Role_halande",
+          "class": "SkeletonGraphic",
+          "path_id": -8088618852576041862,
+          "raw_sha256": "2e9c1fc6600748ef2954b10d4048a46d5de64ad69c686e2154aaa2ca44ebfc2d",
+          "fields": {
+            "initialSkinName": "",
+            "initialFlipX": 0,
+            "initialFlipY": 0,
+            "startingAnimation": "idle_front",
+            "startingLoop": 0,
+            "timeScale": 1.0,
+            "freeze": 0,
+            "updateWhenInvisible": 3,
+            "unscaledTime": 0,
+            "allowMultipleCanvasRenderers": 0,
+            "canvasRenderers": [],
+            "separatorSlotNames": [],
+            "enableSeparatorSlots": 0,
+            "separatorParts": [],
+            "updateSeparatorPartLocation": 1
+          }
+        },
+        {
+          "node": "/Role_halande",
+          "class": "Role",
+          "path_id": -5752081287112334214,
+          "raw_sha256": "eff5f008016dc886339565eee7ce3ecde5ed262dbcdee86aa6b362f4e23b630a",
+          "fields": {
+            "idleAnimName": "idle_front",
+            "idleBackAnimName": "idle_back",
+            "walkFrontAnimName": "walk_front",
+            "walkBackAnimName": "walk_back",
+            "throwFrontAnimName": "throw_front",
+            "throwBackAnimName": "throw_back",
+            "skillFrontAnimName": "skill_front",
+            "skillBackAnimName": "skill_back",
+            "sleepAnimName": "sleep",
+            "baseMoveSpeed": 400.0,
+            "reachThreshold": 10.0,
+            "coinMinDistance": 75.0,
+            "waitAfterThrow": 0.800000011920929,
+            "sleepCheckInterval": 7.0,
+            "sleepProbability": 0.30000001192092896,
+            "sleepDuration": 5.0,
+            "scatterRadius": 50.0,
+            "halandradius": 120.0
+          }
+        }
+      ]
+    },
+    {
+      "prefab": "Assets/GameRes/RoleSpine/Role_dushen.prefab",
+      "role_type": 10,
+      "root_path_id": -4598276125180486947,
+      "root_sha256": "7bfcecda093ba1391e327e7a769d04d272e350fae6c4566a2989a5b07d5d0cf9",
+      "components": [
+        {
+          "node": "/Role_dushen",
+          "class": "RectTransform",
+          "path_id": 5585734456187558621,
+          "fields": {
+            "m_LocalRotation": {
+              "x": -0.0,
+              "y": -0.0,
+              "z": -0.0,
+              "w": 1.0
+            },
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 4.439028739929199
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "m_SizeDelta": {
+              "x": 100.0,
+              "y": 100.0
+            }
+          }
+        },
+        {
+          "node": "/Role_dushen",
+          "class": "SkeletonGraphic",
+          "path_id": 1277572401560165085,
+          "raw_sha256": "a53b3fef93d26cff1490e882c967d9ad222bec429e5760575080be7c51c4922c",
+          "fields": {
+            "initialSkinName": "",
+            "initialFlipX": 0,
+            "initialFlipY": 0,
+            "startingAnimation": "idle_front",
+            "startingLoop": 0,
+            "timeScale": 1.0,
+            "freeze": 0,
+            "updateWhenInvisible": 3,
+            "unscaledTime": 0,
+            "allowMultipleCanvasRenderers": 0,
+            "canvasRenderers": [],
+            "separatorSlotNames": [],
+            "enableSeparatorSlots": 0,
+            "separatorParts": [],
+            "updateSeparatorPartLocation": 1
+          }
+        },
+        {
+          "node": "/Role_dushen",
+          "class": "Role",
+          "path_id": 6886075670804437725,
+          "raw_sha256": "53d1afdc0b2bcaea95f9e3f322cc5ffefc840a5caabfee31d68ffa17d8f39f14",
+          "fields": {
+            "idleAnimName": "idle_front",
+            "idleBackAnimName": "idle_back",
+            "walkFrontAnimName": "walk_front",
+            "walkBackAnimName": "walk_back",
+            "throwFrontAnimName": "throw_front",
+            "throwBackAnimName": "throw_back",
+            "skillFrontAnimName": "skill_front",
+            "skillBackAnimName": "skill_back",
+            "sleepAnimName": "sleep",
+            "baseMoveSpeed": 400.0,
+            "reachThreshold": 10.0,
+            "coinMinDistance": 75.0,
+            "waitAfterThrow": 0.800000011920929,
+            "sleepCheckInterval": 7.0,
+            "sleepProbability": 0.30000001192092896,
+            "sleepDuration": 5.0,
+            "scatterRadius": 50.0,
+            "halandradius": 120.0
+          }
+        }
+      ]
+    },
+    {
+      "prefab": "Assets/GameRes/Role/coinCopper.prefab",
+      "challenge_field": "coinCopperPrefab",
+      "root_path_id": 4796505998237557247,
+      "root_sha256": "83e7832f26126933a9104f74dc4cf353bc7c1a36334c32019062ba121212eed0",
+      "components": [
+        {
+          "node": "/coinCopper",
+          "class": "RectTransform",
+          "path_id": 7342765397795004927,
+          "fields": {
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 7.206552028656006
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "m_SizeDelta": {
+              "x": 180.0,
+              "y": 180.0
+            }
+          }
+        },
+        {
+          "node": "/coinCopper",
+          "class": "UISpriteAnimationSequence",
+          "path_id": -1691421616630537729,
+          "raw_sha256": "74d0a0c6998a849082b75769f3c8e16065639947a60d9343e133a969f1431ca4",
+          "fields": {
+            "frameInterval": 0.03999999910593033,
+            "isLooping": 1,
+            "autoPlay": 1,
+            "isPlaying": 1,
+            "currentFrameIndex": 0
+          },
+          "omitted_object_reference_arrays": {
+            "spriteFrames": 9
+          }
+        },
+        {
+          "node": "/coinCopper",
+          "class": "CoinCopper",
+          "path_id": -120296614771039745,
+          "raw_sha256": "2d3a5e58a9a68caab7ef320f84b3a822969ba9ad3596716d9d834b043a60a120",
+          "fields": {
+            "coinType": 0,
+            "_frontWeight": 0.6499999761581421,
+            "floatHeight": 150.0,
+            "floatDuration": 1.0,
+            "fontSize": 48.0,
+            "scaleCompensation": 7.0,
+            "fadeStartRatio": 0.5,
+            "_floatingTextAniScale": 2.799999952316284,
+            "isLuckyEcho": 0
+          }
+        }
+      ]
+    },
+    {
+      "prefab": "Assets/GameRes/Role/coinsilver.prefab",
+      "challenge_field": "coinSilverPrefab",
+      "root_path_id": -6603070091051179890,
+      "root_sha256": "3cd192d2254bcb4183494c39170012922265e1ae30f09cfccd92ea09f0ced1d9",
+      "components": [
+        {
+          "node": "/coinsilver",
+          "class": "RectTransform",
+          "path_id": -3347547103192981362,
+          "fields": {
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 7.206552028656006
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "m_SizeDelta": {
+              "x": 180.0,
+              "y": 180.0
+            }
+          }
+        },
+        {
+          "node": "/coinsilver",
+          "class": "UISpriteAnimationSequence",
+          "path_id": 6165257551689703566,
+          "raw_sha256": "38e752f1b9bb08f7164f853710bd85dc57e5958ec55ba88ff5657864b49d5e5f",
+          "fields": {
+            "frameInterval": 0.03999999910593033,
+            "isLooping": 1,
+            "autoPlay": 1,
+            "isPlaying": 0,
+            "currentFrameIndex": 0
+          },
+          "omitted_object_reference_arrays": {
+            "spriteFrames": 9
+          }
+        },
+        {
+          "node": "/coinsilver",
+          "class": "CoinSilver",
+          "path_id": 7688553525462458510,
+          "raw_sha256": "97c5987b5761ebe1e8683672f1929ccc9b38b3ca30eb24fa3d3ed7619895ab88",
+          "fields": {
+            "coinType": 0,
+            "_frontWeight": 0.6499999761581421,
+            "floatHeight": 150.0,
+            "floatDuration": 1.0,
+            "fontSize": 48.0,
+            "scaleCompensation": 7.0,
+            "fadeStartRatio": 0.5,
+            "_floatingTextAniScale": 2.799999952316284,
+            "isLuckyEcho": 0
+          }
+        },
+        {
+          "node": "/coinsilver/Text (TMP)",
+          "class": "RectTransform",
+          "path_id": 5696807451486019726,
+          "fields": {
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "m_SizeDelta": {
+              "x": 200.0,
+              "y": 50.0
+            }
+          }
+        },
+        {
+          "node": "/coinsilver/Text (TMP)",
+          "class": "TextMeshProUGUI",
+          "path_id": 1171077678423171214,
+          "raw_sha256": "0481cea5e7345354020f116fd0c15158f863f6ed8f97a254307a02556f6f6d8c",
+          "fields": {
+            "checkPaddingRequired": 0
+          }
+        }
+      ]
+    },
+    {
+      "prefab": "Assets/GameRes/Role/coinGold.prefab",
+      "challenge_field": "coinGoldPrefab",
+      "root_path_id": -1550277236962921179,
+      "root_sha256": "3cd4db8a014fab8982d756bb813bb97c677af32807d1565b096e7fc23687c5c0",
+      "components": [
+        {
+          "node": "/coinGold",
+          "class": "RectTransform",
+          "path_id": -1462786765070895835,
+          "fields": {
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 7.206552028656006
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "m_SizeDelta": {
+              "x": 180.0,
+              "y": 180.0
+            }
+          }
+        },
+        {
+          "node": "/coinGold",
+          "class": "UISpriteAnimationSequence",
+          "path_id": 6544978830350644517,
+          "raw_sha256": "b9a551d4d9be4ebdabd80fbea5f5f8876d6c8a12713082466751d528223704e6",
+          "fields": {
+            "frameInterval": 0.03999999910593033,
+            "isLooping": 1,
+            "autoPlay": 1,
+            "isPlaying": 0,
+            "currentFrameIndex": 0
+          },
+          "omitted_object_reference_arrays": {
+            "spriteFrames": 9
+          }
+        },
+        {
+          "node": "/coinGold",
+          "class": "CoinGold",
+          "path_id": 2560001186915710245,
+          "raw_sha256": "7c9b991867cf0116d5bfa71de96198c55d29398a1b457baa158b4329805819cd",
+          "fields": {
+            "coinType": 0,
+            "_frontWeight": 0.6499999761581421,
+            "floatHeight": 150.0,
+            "floatDuration": 1.0,
+            "fontSize": 48.0,
+            "scaleCompensation": 7.0,
+            "fadeStartRatio": 0.5,
+            "_floatingTextAniScale": 2.799999952316284,
+            "isLuckyEcho": 0
+          }
+        },
+        {
+          "node": "/coinGold/Text (TMP)",
+          "class": "RectTransform",
+          "path_id": 1218381824998995237,
+          "fields": {
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "m_SizeDelta": {
+              "x": 200.0,
+              "y": 50.0
+            }
+          }
+        },
+        {
+          "node": "/coinGold/Text (TMP)",
+          "class": "TextMeshProUGUI",
+          "path_id": 794196576800240933,
+          "raw_sha256": "fe64d75a3d72d97b046ca9b4293a7ed29712b90f4e03ea1abfe01dcf4de8416d",
+          "fields": {
+            "checkPaddingRequired": 0
+          }
+        }
+      ]
+    },
+    {
+      "prefab": "Assets/GameRes/Role/coinPurple.prefab",
+      "challenge_field": "coinPurplePrefab",
+      "root_path_id": 6765512920676168339,
+      "root_sha256": "c3b6b2b91162867c2b94678a04a1764175aac0fdbba66f58bb62e0df1ad4089f",
+      "components": [
+        {
+          "node": "/coinPurple",
+          "class": "RectTransform",
+          "path_id": 6477566485426336403,
+          "fields": {
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "m_SizeDelta": {
+              "x": 180.0,
+              "y": 180.0
+            }
+          }
+        },
+        {
+          "node": "/coinPurple",
+          "class": "UISpriteAnimationSequence",
+          "path_id": 7168539827510899347,
+          "raw_sha256": "2f07eecfa4b36e4835d0b0b4a2bec92f322db2eed4e1754ba676da26d3972f1e",
+          "fields": {
+            "frameInterval": 0.03999999910593033,
+            "isLooping": 1,
+            "autoPlay": 1,
+            "isPlaying": 1,
+            "currentFrameIndex": 0
+          },
+          "omitted_object_reference_arrays": {
+            "spriteFrames": 9
+          }
+        },
+        {
+          "node": "/coinPurple",
+          "class": "CoinPurple",
+          "path_id": 2704475880768664211,
+          "raw_sha256": "7839a2157da5ca855afbd4eea84d1386262c03a18a6250385e376692afc5bc14",
+          "fields": {
+            "coinType": 3,
+            "_frontWeight": 0.6000000238418579,
+            "floatHeight": 150.0,
+            "floatDuration": 1.0,
+            "fontSize": 48.0,
+            "scaleCompensation": 7.0,
+            "fadeStartRatio": 0.5,
+            "_floatingTextAniScale": 2.799999952316284,
+            "isLuckyEcho": 0
+          }
+        },
+        {
+          "node": "/coinPurple/Text (TMP)",
+          "class": "RectTransform",
+          "path_id": -4236305706681699693,
+          "fields": {
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "m_SizeDelta": {
+              "x": 200.0,
+              "y": 50.0
+            }
+          }
+        },
+        {
+          "node": "/coinPurple/Text (TMP)",
+          "class": "TextMeshProUGUI",
+          "path_id": -6151185322922085741,
+          "raw_sha256": "dc6cb928c247935b43efc42b29ebe4f33235859c80a0ca10577222ccc787b9c5",
+          "fields": {
+            "checkPaddingRequired": 0
+          }
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Parameters are serialized values; runtime source can override them.",
+    "Object reference arrays are omitted, not reported as null source references.",
+    "Coin jump height is runtime static CoinConfig.JumpHeight=500, not a prefab field."
+  ]
+}

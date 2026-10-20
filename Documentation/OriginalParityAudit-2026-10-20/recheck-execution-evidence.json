@@ -1,0 +1,77 @@
+{
+  "checked_utc": "2026-10-20T03:48:32.253262+00:00",
+  "reference_package": "2026-10-14-626",
+  "keep_english": true,
+  "runtime_original_package_observed": false,
+  "source_snapshot": "recheck-snapshot.json",
+  "source_match_count": 75,
+  "source_mismatches": [],
+  "model_checks": {
+    "editor": "2022.3.62f3c1",
+    "passed": 164,
+    "failed": 7,
+    "result": "RecheckRun/model-checks.json"
+  },
+  "build": {
+    "result": "Succeeded",
+    "editor": "2022.3.62f3c1",
+    "path": "E:\\rea-games\\unity-bufu\\Build\\ParityProject\\Build\\ParityAuditPlayer\\BufuRebuild.exe",
+    "errors": 0,
+    "warnings": 1
+  },
+  "ui_checks": {
+    "passed": true,
+    "checks": 82,
+    "width": 540,
+    "height": 960,
+    "result": "RecheckRun/runtime-540x960/runtime-check.json"
+  },
+  "audit_player_sha256": "7b4043d08fd5a9d70a9f618656a4fb7dfd795f6054b6d8a58f6edc63601da9b8",
+  "probe_source_sha256": "5e2a23775e576ddb20d9fab5f29099ce93c31a4c5efd3beef3d6044798626f0b",
+  "screenshots": [
+    {
+      "path": "RecheckRun/runtime-540x960/01-aligned-scene-input.png",
+      "sha256": "35657621455d2c90e5235203718c4da7b966e6b6237fc719a06e428bbfa630c2"
+    },
+    {
+      "path": "RecheckRun/runtime-540x960/02-65-helpers-123-coins.png",
+      "sha256": "6a146f2217f7de668f82dbba429938ec05df9383387054c5676269e663533fa6"
+    },
+    {
+      "path": "RecheckRun/runtime-540x960/03-evolution-aggregate.png",
+      "sha256": "66941cfba366daefa1abd31b4f16eb681c94d22db1c7a849b13bf14b687c8265"
+    },
+    {
+      "path": "RecheckRun/runtime-540x960/04-evolution-result-preserved-helpers.png",
+      "sha256": "f74c13bfd75225d446dc34106d2a807ba0eca6195a3b160ff30fa1170c441da0"
+    },
+    {
+      "path": "RecheckRun/runtime-540x960/05-original-super666-activation.png",
+      "sha256": "254efa56a263d9d5768f1f1921f4ae7390a254455074c97e55d49dcb5cf02061"
+    },
+    {
+      "path": "RecheckRun/runtime-540x960/06-real-super666-and-merchant-hud.png",
+      "sha256": "4f490396b471ce632494509b259b9021a84d987503a817f061e7fa4104d8a34e"
+    },
+    {
+      "path": "RecheckRun/runtime-540x960/07-merchant-real-cooldown.png",
+      "sha256": "96c1722917dd690fc0a09ec7eee7ce4a4956797f6801304b0c51c73dcb26942c"
+    },
+    {
+      "path": "RecheckRun/runtime-540x960/08-original-pc-ad-complete.png",
+      "sha256": "503117a5d07f804140c31fcc54603c9bacc60a7ae0e44b935cae108b847963c9"
+    },
+    {
+      "path": "RecheckRun/runtime-540x960/09-original-shop-double-reward.png",
+      "sha256": "ed194daae0b2ba639d020fc5d2d613d18f29a65fb8acba9987a5e789be18b31b"
+    },
+    {
+      "path": "RecheckRun/runtime-540x960/10-original-world-coin-island.png",
+      "sha256": "bade6e0ae115d7aca8dac18548723f458cbd52ed612fd1cf81236e9821041258"
+    },
+    {
+      "path": "RecheckRun/runtime-540x960/11-original-world-dice-island.png",
+      "sha256": "113e10f8ad6f9de4b24e61a9e3d1596f247d161d1c6d40370b38d07f67932d83"
+    }
+  ]
+}

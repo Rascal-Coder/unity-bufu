@@ -1,0 +1,60 @@
+只读交叉复核补充（2026-10-20）
+范围：GameModel.Parity.cs、GameModel.cs、GameModel.Dice.cs、SceneActors.cs 的收益、离线、重生、全局帮手等级；核对 Reference/DecompiledCSharp。游戏源码未在本复核中修改。
+本报告基于复核时源码快照；父任务后续修复可能已消除对应问题。未执行 Unity 运行验证。
+
+高置信发现
+
+1. [P1] 骰子起飞快照不完整：强化/进化仍在落地重算。
+当前：SceneActors.RollOutcome 只把 DiceValueMultiplier 存为 dicePayoutScale；GameModel.Value 在落地读取 State.boosts 和 State.evolution。
+原版：Module/Role/DiceVat.cs:650-656 在 Roll 时调用 GetDiceBaseValue，结果与 face/valueMultiplier 一起进入 pendingResult；DiceWorldController.cs:835-843 落地仅使用已生成的 rollResult.Value 进入 GetDiceFinalValue。
+GetDiceBaseValue 的品质强化与进化已包括在 UpgradeManager.cs:1715-1765 的 GetDiceOnePointValue 内。
+影响：骰子飞行期间购买价值升级或进化，会追溯改变已经投出的骰子收益；原版不会。
+建议：起飞保存完整骰子 baseValue × faceMultiplier × rollValueMultiplier；落地再应用 helper/Income/重生/手动/暴击项。不要把这些落地项一并提前快照。
+
+2. [P2] 骰子暴击抽取过早。
+当前：SceneActors.RollOutcome 起飞时抽 critical。
+原版：DiceRollResult 只有 Quality/Face/BaseValue/ValueMultiplier；DiceWorldController.HandleDiceLanded → UpgradeManager.GetDiceFinalValue → BuffManager.GetFinalIncome:159-160 在落地才抽暴击并读取当时的暴击率。
+影响：飞行期间购买暴击率天赋，原版会作用到该次落地，当前不会。
+建议：仅骰子在 LandDice 结算前抽取 critical；硬币另按其原版流程处理。
+
+3. [P1] 未进入世界的预先拥有会绕过全局帮手等级继承。
+当前：GameModel.Validate 末尾对 w=1..2 均 RefreshHelperUnlocks；大力士条件为 -1，因此新档未进入骰子世界时已经创建了 world2.helper1(level=1)。以后硬币世界大力士升到30，globalHelperLevels=30，首次进入骰子世界仍因既有 helper1 而跳过创建，停在1级。
+原版：FacilityData.helperOwned 初始化为空；HelperItem.UpdateUnlockedState 才调用 SetHelperOwned；GameDataManager.cs:4463-4471 在实际首次拥有时使用 GetGlobalHelperSkillLevel。
+建议：不要为从未访问的世界预先创建帮手；或记录明确首次进入状态，只在首次实际进入时校准这些预置帮手。不能无条件同步所有已拥有帮手，以免覆盖独立世界等级。
+
+4. [P1，原版反直觉副作用] 普通重生在原版清空所有世界的升级/进化。
+当前：GameModel.Rebirth(normal) 仅清当前 State 的 quantity/boosts/skills/evolution/evolvedAt/helperAdCap。
+原版调用链：TalentRebornTip.cs:402 → UpgradeManager.ResetData:562 → GameDataManager.ResetUpgradeData:4131-4154；后者遍历 _worldDataCollection.worlds，清空各世界 upgradeItemLevels/unlockedUpgradeItems/currencyEvolutionItems，helperADLevel=5。
+注意：同一重生中的 ResetFacilityData 仅清当前世界 helperCount，不能同时误清其他世界派遣。
+建议：若目标严格还原原版实际行为，普通重生清两个世界的上述升级/进化状态；仅当前世界派遣归零。该条明确是原版副作用，不是推荐重新设计。
+
+5. [P2] 离线收益允许条件多挡了一个成长等级。
+当前：GameModel.Parity.AccumulateOfflineWorld 使用 state.mission>=1；本重建 MainLevel=mission+1。
+原版：OfflineIncomeManager.cs:305 只在 GetCurrentMainMissionLevel()<1 时禁止；MissionManager 将有效初始任务编号设为1。
+影响：重建成长1级（mission=0）被额外禁止离线收益。
+建议：按本模型对应的 MainLevel>=1 校验，而非 mission>=1；其余有效时间戳和120秒条件保留。
+
+6. [P1] 已生成但未领取的离线奖励仍继续追加，能拆分离线窗口越过原上限。
+当前：AccumulateOfflineWorld 无 pending 保护，每次 state.pendingOffline+=reward；ResumeFromBackground 无条件再次调用。Boot 也预先结算全部世界并更新时间戳。
+原版：OfflineIncomeManager.OnGameFocusRegained:104-110 已有奖励时只重开弹窗并 return；Start 恢复持久化奖励成功后不重新计算。原 GDM 保存还受 IsOfflineRewardProtected 保护。
+影响：未领取奖励时反复后台/前台会追加新收益；未进入的世界还可能被多次启动拆分成多个6小时上限窗口。
+建议：已存在 pendingOffline 时保持原已生成的一笔，不继续累计；领取后再更新离线时间基准。离线与保存时间戳应统一处理，避免重复结算。
+
+7. [P2] 重生把收益统计一律清为1，原版普通/广告重生不同。
+当前：Rebirth(normal) 两种路径均 State.averagePerMinute=1 并 income.Clear()。
+原版：广告重生不调用 RestUpgradeData，原滚动统计继续；普通重生 ResetData 后 LoadData → InitializeGoldIncomeFromSavedData，按已保存 averageCoin 重新播种统计。SetGold 只设钱包，不清收益队列。
+影响：重生后短时间的晋升目标、应援金币、离线基数与原版不一致，广告重生尤为明显。
+建议：广告重生保留统计；普通重生按原保存的平均收益重新播种，而不是强制1。
+
+已确认正确，不应再次误修
+
+- InitializeCommon 的 0.0001f 常驻匿名 Income buff 确实存在，GameModel.Parity 使用 (1 + (double).0001f) 正确。
+- Income 的桌台项使用 (1+DeskPower) 连乘，再加天赋项，符合 BuffManager.GetFinalValue。
+- 原 Support 匿名同值 buff 会 StackCount++，并把所有层的 EndTime 延长到 max；当前 SupportModel 的合并堆层及最大结束时间符合原怪异行为。不要改成世界隔离或每层独立到期。
+- 手动倍率为桌台原始数值连乘后加手动天赋；桌台暴伤为 Common17 + 两类暴伤桌台之和，再加帮手 extraBuff；骰子211在 max(1,...) 后额外相加。当前这些结构正确。
+- 硬币魔法师觉醒：铜币 +0.3，其他品质 +0.5；钢铁人 +0.5；九尾/钢铁专属金币天赋实际读取等级数值。当前结构正确。
+- 骰子 GetDiceBaseValue 已包括升级和进化，DiceValueMultiplier 中超级/紫色加成在该基础之外处理的代数结构正确；问题是完整基础值快照时点，而非简单把这些加成再次并进强化幂次。
+- globalHelperLevels 记录最高升级等级，并在实际新拥有时继承的设计方向正确；问题是未进入世界的提前拥有时机。
+
+收尾状态
+父任务已表示当前 C# 静态编译通过；上述是只读复核发现，不代表 Unity 运行确认。按父任务新指示停止扩展审计，本文件后不再修改共享源码。

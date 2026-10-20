@@ -1,0 +1,121 @@
+{
+  "passed": true,
+  "before_bytes": 586157640,
+  "after_bytes": 344480731,
+  "saved_bytes": 241676909,
+  "saved_percent": 41.23070186375119,
+  "before_mib": 559.0034866333008,
+  "after_mib": 328.5224256515503,
+  "saved_mib": 230.4810609817505,
+  "migrated_sprites": 1251,
+  "sheet_pages": 66,
+  "duplicate_textures_archived": 212,
+  "geometry_resampled": false,
+  "texture_profile": "Windows BC7; Android/iPhone ASTC 4x4 configured but not built or tested",
+  "build": {
+    "result": "Succeeded",
+    "editor": "2022.3.62f3c1",
+    "path": "E:\\rea-games\\unity-bufu\\Build/LayoutFixCommercialPlayer/BufuRebuild.exe",
+    "errors": 0,
+    "warnings": 0,
+    "warningMessages": []
+  },
+  "validation_cases": 12,
+  "assertions": 9293,
+  "runtime": {
+    "sprites": 1251,
+    "pages": 66,
+    "looseTextures": 0,
+    "textureBytes": 95034032,
+    "scope": "QA loads every migrated sprite for validation; these bytes are not a normal gameplay peak. Pages load on demand during normal play."
+  },
+  "visual": {
+    "passed": true,
+    "interpretation": "Same-size static UI crops. Mean RGB error on 0..255 scale; compression may alter pixels. Full runtime screenshots were also inspected. This does not measure animated content or frame rate.",
+    "cases": [
+      {
+        "scene": "Diamond store",
+        "before": "Documentation\\LayoutFix-2026-10-20\\NativeWordsStore390\\01-store-diamonds.png",
+        "after": "Documentation\\LayoutFix-2026-10-20\\SpriteSheetsStore390\\01-store-diamonds.png",
+        "region": [
+          20,
+          190,
+          370,
+          548
+        ],
+        "mean_absolute_rgb_error_255": 0.262,
+        "p99_rgb_error_255": 3.0
+      },
+      {
+        "scene": "No Ads store",
+        "before": "Documentation\\LayoutFix-2026-10-20\\NativeWordsStore390\\02-store-no-ads.png",
+        "after": "Documentation\\LayoutFix-2026-10-20\\SpriteSheetsStore390\\02-store-no-ads.png",
+        "region": [
+          20,
+          220,
+          370,
+          510
+        ],
+        "mean_absolute_rgb_error_255": 0.2431,
+        "p99_rgb_error_255": 2.0
+      },
+      {
+        "scene": "Settings",
+        "before": "Documentation\\LayoutFix-2026-10-20\\NativeWordsLocale390\\01-english-settings.png",
+        "after": "Documentation\\LayoutFix-2026-10-20\\SpriteSheetsLocale390\\01-english-settings.png",
+        "region": [
+          60,
+          320,
+          335,
+          625
+        ],
+        "mean_absolute_rgb_error_255": 0.1259,
+        "p99_rgb_error_255": 2.0
+      },
+      {
+        "scene": "Coin World title",
+        "before": "Documentation\\LayoutFix-2026-10-20\\NativeWordsLocale390\\11-english-worlds.png",
+        "after": "Documentation\\LayoutFix-2026-10-20\\SpriteSheetsLocale390\\11-english-worlds.png",
+        "region": [
+          94,
+          220,
+          296,
+          280
+        ],
+        "mean_absolute_rgb_error_255": 0.2954,
+        "p99_rgb_error_255": 3.0
+      },
+      {
+        "scene": "Evolution title",
+        "before": "Documentation\\LayoutFix-2026-10-20\\NativeWordsLocale390\\15-english-evolution.png",
+        "after": "Documentation\\LayoutFix-2026-10-20\\SpriteSheetsLocale390\\15-english-evolution.png",
+        "region": [
+          130,
+          252,
+          260,
+          295
+        ],
+        "mean_absolute_rgb_error_255": 0.332,
+        "p99_rgb_error_255": 3.0
+      },
+      {
+        "scene": "Activity overview",
+        "before": "Documentation\\LayoutFix-2026-10-20\\NativeWordsActivities390\\15a-local-activities-overview.png",
+        "after": "Documentation\\LayoutFix-2026-10-20\\SpriteSheetsActivities390\\15a-local-activities-overview.png",
+        "region": [
+          20,
+          120,
+          370,
+          390
+        ],
+        "mean_absolute_rgb_error_255": 0.2624,
+        "p99_rgb_error_255": 2.0
+      }
+    ]
+  },
+  "delivery_files": 213,
+  "before_backup": "E:\\rea-games\\unity-bufu\\Build\\Windows-before-sheets-20261020",
+  "source_backup": "Assets/SourceArt/SpriteSheetSources",
+  "source_assembly_sha256": "70ecb6efc3aa8906f4d31da13aa1308e01e65801816853006e44425247623fee",
+  "scope": "Identical Development Windows64 build options and same editor. Full delivered folders compared, not APK download sizes. No source resampling. Block texture compression changes pixels slightly; static screenshot crop metrics retained."
+}

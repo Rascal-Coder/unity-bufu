@@ -1,0 +1,79 @@
+{
+  "path": "Assets/GameRes/Role/coins_tornado2.prefab",
+  "nodes": [
+    {
+      "n": "coins_tornado2",
+      "p": -1,
+      "a": true,
+      "c": [
+        {
+          "m_Enabled": 1,
+          "spriteFrames": [
+            {
+              "sprite": "zgygy_roleskill_miracle_1_00"
+            },
+            {
+              "sprite": "zgygy_roleskill_miracle_1_01"
+            },
+            {
+              "sprite": "zgygy_roleskill_miracle_1_02"
+            },
+            {
+              "sprite": "zgygy_roleskill_miracle_1_03"
+            },
+            {
+              "sprite": "zgygy_roleskill_miracle_1_04"
+            },
+            {
+              "sprite": "zgygy_roleskill_miracle_1_05"
+            },
+            {
+              "sprite": "zgygy_roleskill_miracle_1_06"
+            },
+            {
+              "sprite": "zgygy_roleskill_miracle_1_07"
+            },
+            {
+              "sprite": "zgygy_roleskill_miracle_1_08"
+            },
+            {
+              "sprite": "zgygy_roleskill_miracle_1_09"
+            },
+            {
+              "sprite": "zgygy_roleskill_miracle_1_10"
+            },
+            {
+              "sprite": "zgygy_roleskill_miracle_1_11"
+            },
+            {
+              "sprite": "zgygy_roleskill_miracle_1_12"
+            }
+          ],
+          "frameInterval": 0.03999999910593033,
+          "isLooping": 1,
+          "autoPlay": 1,
+          "isPlaying": 0,
+          "currentFrameIndex": 0,
+          "t": "UISpriteAnimationSequence"
+        }
+      ],
+      "rt": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.0,
+        0.0,
+        100.0,
+        100.0,
+        0.5,
+        0.5,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    }
+  ]
+}

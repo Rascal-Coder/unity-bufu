@@ -1,0 +1,71 @@
+游戏中文残留、英文遮挡与排版检查
+日期：2026-10-20（Asia/Shanghai）
+
+结论：已采样界面未发现中文残留；确认仍有 6 处界面问题，4 处中等影响、2 处轻微影响。本次没有修复游戏代码。
+当前渲染验证状态：partial。交付身份：matched（具体哈希核对见 audit-evidence.json）。修复闭环：不适用。
+
+检查对象与范围
+对象为 E:/rea-games/unity-bufu/Build/Windows/BufuRebuild.exe，Unity 2022.3.62f3c1，Windows Direct3D 11 渲染。
+主体为英文玩家界面；用独立验证模型提供成长 91 级、足量货币、已解锁活动和骰子技能等必要状态。
+检查比例：390×844、540×960、960×540。横屏保持项目既有竖屏内容和两侧黑边，该设计不计为异常。
+覆盖物品、帮手、桌台、天赋、重生、签到、转盘商城、世界选择、增益支持、广告模拟、进化、离线奖励、奖励回执、成长报纸、骰子技能/商人、限时挑战、拍卖竞价及结算、内购商店三个分类。
+只读检查与独立诊断属于本次授权范围；没有修改正式玩家存档，没有进行真实付款、真实广告投放或发布。
+证据来自游戏实际 uGUI 层级的离屏渲染，不将其表述为真机或原生窗口的视觉通过证明。
+
+1. 中等影响 / 遮挡：商城礼包入口盖住宝箱进度条
+复现：进入 Shop，观察页面上方。Diamond & Helper Packs 横条覆盖原宝箱进度条和宝箱左部；0/5 计数挤在上边缘。
+在三种比例均可见。英文文本自身没有溢出，但新增控件占用了既有进度区域。
+截图：shop-progress-covered.png；完整画面 DiagnosticLocale390/10-english-shop.png。
+代码位置：Assets/Scripts/GameController.Purchases.cs 的 BindShopPurchaseEntry，入口固定在顶部 -360、大小 840×112，未给已有进度区域留位。
+建议：重新分配入口与进度条的独立纵向空间，复测进度宝箱入口点击和进度显示。
+
+2. 中等影响 / 遮挡：拍卖结果的物品名和价格被主持人挡住
+复现：Challenge → Auction → 完成竞价，查看六件物品结果。左下物品的英文名和金额与主持人、麦克风重叠。
+540×960 的正式构建截图可见；390×844 的诊断截图同样可复现。不同随机物品名仍发生同类遮挡。
+截图：auction-item-covered.png；完整画面 Activities540/18-local-auction-result.png 和 DiagnosticActivities390/18-local-auction-result.png。
+代码位置：Assets/Scripts/GameController.Activities.cs 的 FitAuctionItemCaption 与 RefreshActivityAuction；结果卡片沿用 itemPos，未避开 hostImg。
+建议：调整结果卡片区域或主持人层级/位置，确保六件物品名称和价格全部可见。
+
+3. 中等影响 / 遮挡：骰子商人和超级666控件覆盖升级卡片
+复现：骰子世界解锁商人和超级666，激活超级666并领取商人奖励；观察右下升级区。
+Ready in 180s / Active: 19s 提示、角色和箭头侵入 Bronze Die 卡片，遮住卡片标题/等级附近区域和绿色升级按钮金额。
+验证比例为540×960；其他比例下该状态未逐一复测。
+截图：dice-hud-covered.png；完整画面 DiagnosticAlignment540/06-real-super666-and-merchant-hud.png 和 07-merchant-real-cooldown.png。
+代码位置：Assets/Scripts/GameController.Dice.cs 的 BindDiceHud / RefreshDiceHud，以及 DownPanel/specialRole 的原有布局。
+建议：把技能与商人入口限制在主场景安全区域，或为升级面板预留它们的实际包围区域。
+
+4. 中等影响 / 控件显示：模拟广告关闭按钮是空白白色方块
+复现：打开 Windows 本地奖励广告，等待倒计时结束。说明要求点击 Close Ad，但出现的控件只有白色方块，无英文或关闭图标。
+三种比例均可见。测试确认该白块可以点击并完成领取，因此是识别性和显示缺陷，不是领取流程完全不可用。
+截图：ad-close-blank.png；完整画面 DiagnosticLocale390/14-english-ad-complete.png。
+代码位置：Assets/Resources/UI/Prefabs/fakevideo/FakeVideoPanel.json 的 Button 仅含白色 Image；GameController.Support.cs 的 ShowOriginalAd 未补充关闭图标或文字。
+建议：使用明确的 Close Ad 按钮或关闭图标，保持点击奖励逻辑不变。
+
+5. 轻微影响 / 英文遮挡：桌台 Upgrade 末尾与升级箭头重叠
+复现：Helpers → Tables，桌台可升级时查看黄色 Upgrade 按钮。箭头压在文字末尾，多个卡片重复发生。
+三种比例都能看到；390×844 下尤为拥挤。
+截图：upgrade-label-arrow.png；完整画面 DiagnosticLocale390/04b-english-tables.png。
+建议：给箭头保留独立右侧区域，重新安排英文标签宽度。
+
+6. 轻微影响 / 英文遮挡：拍卖热度 Fever Pitch 末尾压到箭头
+复现：拍卖处于 Raise Stage 时，观察右侧热度刻度。Fever Pitch 的尾部与三角指示发生重叠，标签区不足以容纳英文。
+正式构建540×960截图可见；该热度状态并非每次竞价都触发，未将未触发状态记作通过。
+截图：auction-heat-labels.png；完整画面 Activities540/17-local-auction-bidding.png。
+代码依据：Localization/catalog.json 将“白热化”译为 Fever Pitch，原刻度容器沿用较窄的中文布局。
+建议：扩大标签独立区域或使用较短文案，并把指示箭头与文字分开布局。
+
+中文与自动检查结果
+958 条英文目录词条未发现汉字；83 项已知中文图文候选均有对应英文图片。这只是目录和替代资源存在性检查，不能证明所有未打开图片都无中文。
+本轮成功流程生成90张截图，均通过原图或保留单格原始尺寸的拼图查看；活动中文检查、三比例本地化检查、实时文本采样未发现中文。
+实时 TMP 溢出诊断未报溢出，但上述可见遮挡仍成立，不能把自动检查通过视为视觉通过。
+7个成功流程累计4580项断言，含重复目录检查；不把这个数字解释为4580个独立视觉场景。
+详细运行结果、逐截图哈希、文本采样计数、交付文件比对见 audit-evidence.json。
+
+诊断方式与可靠性边界
+正式构建的旧 --verify-localization 入口在加载完成前就打开设置，因此三种比例均提前失败。这是测试入口时序问题，不直接归为游戏按钮缺陷。
+为了继续检查，复制构建到本报告目录的 DiagnosticPlayer，只在诊断副本的 RuntimeVerification 中加入等待 BootFinished / 加载页关闭，以及文本采样；玩法和界面实现未修改。没有替换 Build/Windows 中的程序集。
+诊断使用与交付构建对应的 Build/ParityProject 源快照；当前项目源码与上次构建记录的92份源文件/配置快照一致。所有正式交付文件另外逐项核对哈希。
+诊断差异和程序集哈希见 diagnostic-identity.json；诊断准备脚本 prepare_diagnostic.py 保留以供复现。
+
+未验证：Android/iOS 真机、开场视频、新手完整流程、所有随机事件与稀有奖励分支、每个滚动位置、每位帮手的所有升级状态。
+本报告的“未发现中文”仅限已检查范围，不代表对全游戏所有状态作绝对保证。

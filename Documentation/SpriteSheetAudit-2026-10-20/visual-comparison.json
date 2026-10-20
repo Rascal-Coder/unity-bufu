@@ -1,0 +1,84 @@
+{
+  "passed": true,
+  "interpretation": "Same-size static UI crops. Mean RGB error on 0..255 scale; compression may alter pixels. Full runtime screenshots were also inspected. This does not measure animated content or frame rate.",
+  "cases": [
+    {
+      "scene": "Diamond store",
+      "before": "Documentation\\LayoutFix-2026-10-20\\NativeWordsStore390\\01-store-diamonds.png",
+      "after": "Documentation\\LayoutFix-2026-10-20\\SpriteSheetsStore390\\01-store-diamonds.png",
+      "region": [
+        20,
+        190,
+        370,
+        548
+      ],
+      "mean_absolute_rgb_error_255": 0.262,
+      "p99_rgb_error_255": 3.0
+    },
+    {
+      "scene": "No Ads store",
+      "before": "Documentation\\LayoutFix-2026-10-20\\NativeWordsStore390\\02-store-no-ads.png",
+      "after": "Documentation\\LayoutFix-2026-10-20\\SpriteSheetsStore390\\02-store-no-ads.png",
+      "region": [
+        20,
+        220,
+        370,
+        510
+      ],
+      "mean_absolute_rgb_error_255": 0.2431,
+      "p99_rgb_error_255": 2.0
+    },
+    {
+      "scene": "Settings",
+      "before": "Documentation\\LayoutFix-2026-10-20\\NativeWordsLocale390\\01-english-settings.png",
+      "after": "Documentation\\LayoutFix-2026-10-20\\SpriteSheetsLocale390\\01-english-settings.png",
+      "region": [
+        60,
+        320,
+        335,
+        625
+      ],
+      "mean_absolute_rgb_error_255": 0.1259,
+      "p99_rgb_error_255": 2.0
+    },
+    {
+      "scene": "Coin World title",
+      "before": "Documentation\\LayoutFix-2026-10-20\\NativeWordsLocale390\\11-english-worlds.png",
+      "after": "Documentation\\LayoutFix-2026-10-20\\SpriteSheetsLocale390\\11-english-worlds.png",
+      "region": [
+        94,
+        220,
+        296,
+        280
+      ],
+      "mean_absolute_rgb_error_255": 0.2954,
+      "p99_rgb_error_255": 3.0
+    },
+    {
+      "scene": "Evolution title",
+      "before": "Documentation\\LayoutFix-2026-10-20\\NativeWordsLocale390\\15-english-evolution.png",
+      "after": "Documentation\\LayoutFix-2026-10-20\\SpriteSheetsLocale390\\15-english-evolution.png",
+      "region": [
+        130,
+        252,
+        260,
+        295
+      ],
+      "mean_absolute_rgb_error_255": 0.332,
+      "p99_rgb_error_255": 3.0
+    },
+    {
+      "scene": "Activity overview",
+      "before": "Documentation\\LayoutFix-2026-10-20\\NativeWordsActivities390\\15a-local-activities-overview.png",
+      "after": "Documentation\\LayoutFix-2026-10-20\\SpriteSheetsActivities390\\15a-local-activities-overview.png",
+      "region": [
+        20,
+        120,
+        370,
+        390
+      ],
+      "mean_absolute_rgb_error_255": 0.2624,
+      "p99_rgb_error_255": 2.0
+    }
+  ]
+}

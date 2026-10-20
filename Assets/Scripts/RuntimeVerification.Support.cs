@@ -74,10 +74,10 @@ namespace Bufu.Rebuild {
             dialog=Field<UiView>("supportDialog");Check(dialog.Resource.EndsWith("Ad/AdSpeed"),"inspire uses original support popup");
             yield return Capture("06-inspire-native-dialog.png");
             Click(dialog.Ref<Button>("CoinSlotSupportDialog","getButton"),"start original offline ad");yield return null;
-            var ad=Field<GameObject>("originalAd");Check(ad&&!ad.transform.Find("CloseButton").gameObject.activeSelf&&model.SupportSpeedMultiplier==1,"offline ad begins without an early reward");
+            var ad=Field<GameObject>("originalAd");Check(ad&&!AdCloseButton(ad).gameObject.activeSelf&&model.SupportSpeedMultiplier==1,"offline ad begins without an early reward");
             yield return new WaitForSecondsRealtime(2.2f);
-            Check(ad.transform.Find("CloseButton").gameObject.activeSelf&&model.SupportSpeedMultiplier==1,"two-second ad completion waits for explicit close before reward");
-            Click(ad.transform.Find("CloseButton").GetComponent<Button>(),"close completed native offline ad");yield return null;yield return null;
+            Check(AdCloseButton(ad).gameObject.activeSelf&&model.SupportSpeedMultiplier==1,"two-second ad completion waits for explicit close before reward");
+            Click(AdCloseButton(ad),"close completed native offline ad");yield return null;yield return null;
             Check(model.SupportSpeedMultiplier==2&&model.SupportRemaining(SupportKind.Speed)>295,"closing finished ad grants original speed buff and cooldown");
             Check(Field<UiView>("supportDialog")==null,"successful support closes original popup");
             var effects=Field<UiView[]>("supportEffects");
@@ -96,7 +96,7 @@ namespace Bufu.Rebuild {
                 Click(dialog.Ref<Button>("CoinSlotSupportDialog","getButton"),"claim support celebration "+kind);yield return null;
                 yield return new WaitForSecondsRealtime(2.2f);
                 ad=Field<GameObject>("originalAd");
-                Click(ad.transform.Find("CloseButton").GetComponent<Button>(),"finish support celebration "+kind);yield return null;yield return null;
+                Click(AdCloseButton(ad),"finish support celebration "+kind);yield return null;yield return null;
                 yield return new WaitForSeconds(.4f);
                 Check(ParticleMeshVertices(effects[index])>0,"support celebration renders particles: "+kind);
                 yield return Capture("08-"+kind+"-celebration.png");

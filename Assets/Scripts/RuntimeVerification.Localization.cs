@@ -11,6 +11,13 @@ using UnityEngine.UI;
 
 namespace Bufu.Rebuild {
     public sealed partial class RuntimeVerification {
+        void CheckWordArtSet(Transform root,params string[] keys) {
+            var images=root.GetComponentsInChildren<Image>().Where(i=>i.isActiveAndEnabled&&i.sprite).ToArray();
+            foreach(string key in keys) {
+                var matches=images.Where(i=>i.sprite.name=="word-"+key+"-native-v4").ToArray();
+                Check(matches.Length>0&&matches.All(i=>i.preserveAspect&&!i.raycastTarget&&i.rectTransform.rect.width>0&&i.rectTransform.rect.height>0),"word art: "+key+" renders as a proportional image without intercepting input");
+            }
+        }
         static bool UsesEnglishArtwork(Sprite current) {
             if(!current)return true;
             return !UiAssets.HasEnglishArt(current.name)||current==UiAssets.Sprite(current.name);
@@ -45,7 +52,9 @@ namespace Bufu.Rebuild {
             Check(L10n.Language=="en"&&L10n.IsEnglish,"Chinese language is disabled and only English remains active");
             model.State.mission=90;model.State.pendingGoals.Clear();model.State.gold=1e30;model.State.points=100;model.Data.diamonds=100000;Refresh();
             var top=Field<UiView>("top");Click(top.Ref<Button>("TopPanel","setupBtn"),"open settings");yield return null;
+            Check(!top.Ref("TopPanel","inviteBtn").activeInHierarchy,"Invite and its countdown are removed from this version, including unlocked growth levels");
             var setup=LatestPopup("Popup/setupPanel");
+            CheckWordArtSet(setup.Root.transform,"cloud-save","gift-packs");
             Check(setup.Root.transform.Find("Language Settings")==null,"settings panel has no Chinese language selector");
             Check(setup.Nodes[4].GetComponent<TMP_Text>().text=="Music"&&setup.Nodes[5].GetComponent<TMP_Text>().text=="Sound","settings labels are in English");
             Check( game.GetComponentsInChildren<Image>(true).All(image=>UsesEnglishArtwork(image.sprite)),"English replaces remade image artwork and keeps every other sprite, including its name");
@@ -85,17 +94,28 @@ namespace Bufu.Rebuild {
             var checkInArt=signIn.Node("bg").GetComponent<Image>().sprite;
             Check(checkInArt&&checkInArt.name=="qd_pic_bg_scale2"&&checkInArt==UiAssets.Sprite("qd_pic_bg_scale2"),"check-in shows the English title artwork under the original sprite name");
             game.ClosePopup(signIn);yield return null;
-            Call("SelectTab",5);yield return LocaleScreenshot("10-english-shop",game.Root);
-            Call("SelectTab",6);yield return LocaleScreenshot("11-english-worlds",game.Root);
+            Call("SelectTab",5);yield return null;Canvas.ForceUpdateCanvases();
+            var shopPage=Field<UiView>("shopView");
+            var progress=RootBounds(shopPage.Ref<Image>("ShopTurntablePanel","progressSlider").rectTransform);
+            var wheelBounds=RootBounds((RectTransform)shopPage.Node("spinnerGroup").transform);
+            foreach(var entrance in Field<Dictionary<StoreCategory,Button>>("shopPurchaseEntries").Values) {
+                var bounds=RootBounds((RectTransform)entrance.transform);
+                Check(!bounds.Overlaps(progress)&&!bounds.Overlaps(wheelBounds),"shop: right-side offer stays clear of progress and the wheel");
+            }
+            var guarantee=shopPage.Node("processBar").transform.Find("SR Guarantee").GetComponent<TMP_Text>();guarantee.ForceMeshUpdate();
+            Check(guarantee.fontSize>=44&&!guarantee.isTextOverflowing&&guarantee.text.StartsWith("Every 5 pulls:"),"shop: the entire SR guarantee has one readable font size and baseline");
+            yield return LocaleScreenshot("10-english-shop",game.Root);
+            Call("SelectTab",6);yield return null;CheckWordArtSet(game.Root,"choose-world","coin-world","dice-world");yield return LocaleScreenshot("11-english-worlds",game.Root);
             Call("SelectTab",1);Call("ShowSupport",SupportKind.Income);yield return null;var support=Field<UiView>("supportDialog");
             yield return LocaleScreenshot("12-english-support",support.Root.transform);
             Click(support.Ref<Button>("CoinSlotSupportDialog","closeButton"),"close English support");yield return null;
             Call("ShowOriginalAd",(Action)(()=>{}));yield return null;var ad=Field<GameObject>("originalAd");
             yield return LocaleScreenshot("13-english-ad",ad.transform);yield return new WaitForSecondsRealtime(2.2f);
             var adText=ad.transform.Find("AdContentText").GetComponent<TMP_Text>();adText.ForceMeshUpdate();
-            Check(adText.rectTransform.rect.width<=Screen.width*.85f&&!adText.isTextOverflowing,"English ad copy fits the actual narrow viewport");
-            yield return LocaleScreenshot("14-english-ad-complete",ad.transform);Click(ad.transform.Find("CloseButton").GetComponent<Button>(),"close English reward ad");yield return null;yield return null;
+            Check(RootBounds(adText.rectTransform).width<=game.Root.rect.width*.85f&&!adText.isTextOverflowing,"English ad copy fits the actual narrow viewport");
+            yield return LocaleScreenshot("14-english-ad-complete",ad.transform);Click(AdCloseButton(ad),"close English reward ad");yield return null;yield return null;
             Call("ShowEvolve",1,(Action)(()=>{}));yield return null;var evolve=LatestPopup("Evolve/EvolvePanel");
+            CheckWordArtSet(evolve.Root.transform,"evolution","evolve");
             yield return LocaleScreenshot("15-english-evolution",evolve.Root.transform);game.ClosePopup(evolve);yield return null;
             model.State.pendingOffline=12345;Field<double[]>("awaySeconds")[0]=7380;Call("ShowOffline");yield return null;
             var offline=Field<UiView>("offlineView");yield return LocaleScreenshot("16-english-offline",offline.Root.transform);
@@ -121,10 +141,10 @@ namespace Bufu.Rebuild {
             var tip=game.TipPool.Find("SleepTip");
             Check(tip!=null&&helper.Sleeping,"sleeping helper shows the wake bubble");
             var image=tip.GetComponent<Image>();
-            var english=Resources.Load<Texture2D>("UI/Sprites/en/xsyd_huanxing");
+            var english=UiAssets.Sprite("xsyd_huanxing");
             Check(image.sprite&&image.sprite.name=="xsyd_huanxing"&&image.sprite==UiAssets.Sprite("xsyd_huanxing"),"bubble uses the English wake sprite");
-            Check(english!=null&&english.width==230&&english.height==189,"English wake texture imported at 230x189, actual "+(english?english.width+"x"+english.height:"missing"));
-            var shown=CopyTexture(image.sprite.texture);var englishCopy=CopyTexture(english);
+            Check(english!=null&&english.rect.width==230&&english.rect.height==189,"English wake sub-sprite retains its 230x189 logical size");
+            var shown=CopySpriteRegion(image.sprite);var englishCopy=CopySpriteRegion(english);
             float englishDelta=MeanDelta(shown,englishCopy);
             File.WriteAllBytes(Path.Combine(output,"wake-sprite.png"),shown.EncodeToPNG());
             Destroy(shown);Destroy(englishCopy);
@@ -133,6 +153,11 @@ namespace Bufu.Rebuild {
             Check(errors.Count==0,"wake bubble has no runtime errors");Complete(true,null);
         }
 
+        static Texture2D CopySpriteRegion(Sprite sprite) {
+            var page=CopyTexture(sprite.texture);var r=sprite.textureRect;
+            var result=new Texture2D((int)r.width,(int)r.height,TextureFormat.RGBA32,false);
+            result.SetPixels(page.GetPixels((int)r.x,(int)r.y,(int)r.width,(int)r.height));result.Apply();Destroy(page);return result;
+        }
         static Texture2D CopyTexture(Texture source) {
             var rt=RenderTexture.GetTemporary(source.width,source.height,0,RenderTextureFormat.ARGB32);
             Graphics.Blit(source,rt);var previous=RenderTexture.active;RenderTexture.active=rt;

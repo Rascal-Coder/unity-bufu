@@ -17,10 +17,10 @@ namespace Bufu.Rebuild {
         string output;GameController game;float timeout;bool finished;
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         static void Init(){if(GameController.VerificationMode)new GameObject("Runtime QA",typeof(RuntimeVerification));}
-        void Awake() {var args=Environment.GetCommandLineArgs();int at=Array.IndexOf(args,"--verify-rebuild");output=at>=0&&at+1<args.Length?args[at+1]:Application.persistentDataPath;Directory.CreateDirectory(output);Application.logMessageReceived+=Log;}
+        void Awake() {DontDestroyOnLoad(gameObject);var args=Environment.GetCommandLineArgs();int at=Array.IndexOf(args,"--verify-rebuild");if(at<0)at=Array.IndexOf(args,"--verify-alignment");output=at>=0&&at+1<args.Length&&!args[at+1].StartsWith("--")?args[at+1]:Path.Combine(Application.temporaryCachePath,"BufuVerification");Directory.CreateDirectory(output);Application.logMessageReceived+=Log;}
         void OnDestroy(){Application.logMessageReceived-=Log;}
         void Log(string message,string trace,LogType type){if(type==LogType.Error||type==LogType.Exception||type==LogType.Assert)errors.Add(message+"\n"+trace);}
-        void Update(){timeout+=Time.unscaledDeltaTime;if(timeout>90&&!finished)Complete(false,"Runtime QA timed out\n"+string.Join("\n",errors));}
+        void Update(){timeout+=Time.unscaledDeltaTime;if(timeout>(Environment.GetCommandLineArgs().Contains("--verify-alignment")?180:90)&&!finished)Complete(false,"Runtime QA timed out\n"+string.Join("\n",errors));}
         void Check(bool condition,string text) {if(!condition)throw new Exception(text);checks.Add(text);}
 
         // Drive nested verification iterators so failures immediately produce a useful result file.
@@ -36,7 +36,15 @@ namespace Bufu.Rebuild {
         }
 
         IEnumerator Verify() {
-            yield return null;yield return new WaitForSeconds(.8f);game=FindObjectOfType<GameController>();
+            if(Environment.GetCommandLineArgs().Contains("--verify-alignment")) {
+                while(!(game=FindObjectOfType<GameController>())||!game.BootFinished)yield return null;
+                while(LaunchScreen.Current)yield return null;
+                if(Environment.GetCommandLineArgs().Contains("--alignment-full"))VerifyPackedSprites();
+                Check(GameController.VerificationMode&&game.Model!=null,"alignment runs on the isolated verification model after boot");
+                yield return VerifyAlignment();yield break;
+            }
+            while(!(game=FindObjectOfType<GameController>())||!game.BootFinished)yield return null;
+            while(LaunchScreen.Current)yield return null;
             Check(game!=null&&game.Model!=null,"runtime initialization");
             VerifyBottomNavigation();
             if(Environment.GetCommandLineArgs().Contains("--verify-wake")){yield return VerifyWakeTip();yield break;}
@@ -60,8 +68,8 @@ namespace Bufu.Rebuild {
             var coin=game.Coins.FirstOrDefault(c=>FirstHit(ScreenPoint(c.Rect))?.GetComponent<CoinActor>()==c);
             Check(coin!=null,"actual UI raycast reaches a coin");
             var pointer=Pointer(ScreenPoint(coin.Rect));var coinHit=FirstHit(pointer.position);
-            ExecuteEvents.ExecuteHierarchy(coinHit,pointer,ExecuteEvents.pointerDownHandler);
-            Check(coin.Busy,"pointer input starts coin animation");yield return new WaitForSeconds(.8f);
+            game.BeginScenePointer(pointer.position);Check(!coin.Busy,"pointer down does not throw before release");game.EndScenePointer(pointer.position);
+            Check(coin.Busy,"unified pointer release starts the nearest coin animation");yield return new WaitForSeconds(.8f);
             for(int i=0;i<12&&game.Model.State.gold<25;i++){game.FlipAll();yield return new WaitForSeconds(.8f);}
             Check(game.Model.State.gold>=25,"manual animation completion settles actual income");
             var helper=upgrade.Find("ItemPanel/panel1/Scroll View/Viewport/Content/item0_1");
@@ -137,15 +145,15 @@ namespace Bufu.Rebuild {
 
         void VerifyBottomNavigation() {
             Canvas.ForceUpdateCanvases();var view=Field<UiView>("upgrade");
-            Check(!view.Ref("UpgradePanel","button4").activeInHierarchy,"removed challenge tab has no visible or clickable entry");
-            int[] ids={1,2,3,5,6};Rect previous=default;float width=0;
+            Check(view.Ref("UpgradePanel","button4").activeInHierarchy,"original local-activities navigation entry is restored");
+            int[] ids={1,2,3,4,5,6};Rect previous=default;float width=0;
             foreach(int id in ids) {
                 var button=view.Ref<RectTransform>("UpgradePanel","button"+id);var bounds=RootBounds(button);
                 Check(button.gameObject.activeInHierarchy&&bounds.xMin>=game.Root.rect.xMin&&bounds.xMax<=game.Root.rect.xMax,"bottom navigation stays inside safe content width: "+id);
-                if(width>0)Check(Mathf.Abs(bounds.width-width)<1&&bounds.xMin>previous.xMax,"five equal navigation cells do not overlap: "+id);
+                if(width>0)Check(Mathf.Abs(bounds.width-width)<1&&bounds.xMin>previous.xMax,"six equal navigation cells do not overlap: "+id);
                 width=bounds.width;previous=bounds;
             }
-            Check(width>260,"five-tab layout uses available width for larger touch targets");
+            Check(width>220,"six original navigation cells retain usable touch targets");
         }
 
         T Field<T>(string name) {var field=typeof(GameController).GetField(name,BindingFlags.Instance|BindingFlags.NonPublic);if(field==null)throw new MissingFieldException(name);return (T)field.GetValue(game);}
@@ -286,7 +294,7 @@ namespace Bufu.Rebuild {
             Debug.Log("REBUILD_RUNTIME_QA "+success+" checks="+checks.Count);Application.Quit(success?0:2);
 #if UNITY_EDITOR
             var args=Environment.GetCommandLineArgs();
-            if(args.Contains("--verify-wake")||args.Contains("--verify-support"))UnityEditor.EditorApplication.Exit(success?0:2);
+            if(args.Contains("--verify-wake")||args.Contains("--verify-support")||args.Contains("--verify-alignment"))UnityEditor.EditorApplication.Exit(success?0:2);
 #endif
         }
     }
