@@ -4769,6 +4769,11 @@
       "en": "The bankrupt lad fights back."
     },
     {
+      "key": "encounter.refund",
+      "zh": "看广告可返还xx",
+      "en": "Watch an ad to recover xx"
+    },
+    {
       "key": "guide.fortune.title",
       "zh": "开始致富！",
       "en": "Your Fortune\nBegins!"

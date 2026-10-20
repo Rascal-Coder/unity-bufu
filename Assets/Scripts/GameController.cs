@@ -82,7 +82,8 @@ namespace Bufu.Rebuild {
             if(dirty&&saveTimer>10&&!VerificationMode){SaveStore.Save(Model);dirty=false;saveTimer=0;}
             if(Input.GetKeyDown(KeyCode.Escape)&&ModalOpen)CloseTopPopup();
             else if(Input.GetKeyDown(KeyCode.Space)&&!ModalOpen)FlipAll();
-            if(Model!=null&&!CutscenePlaying&&!Model.PromotionRunning&&!Model.PromotionWonPending&&goalView==null&&offlineView==null&&Model.PendingGoal!=null)ShowGoal();
+            if(Model!=null&&encounterRoot==null&&Model.PendingEncounter!=null&&interfaceReady&&!VerificationMode&&!CutscenePlaying&&offlineView==null)ShowEncounter();
+            if(Model!=null&&!CutscenePlaying&&!Model.PromotionRunning&&!Model.PromotionWonPending&&goalView==null&&offlineView==null&&encounterRoot==null&&Model.PendingEncounter==null&&Model.PendingGoal!=null)ShowGoal();
             UpdatePromotion();
             UpdateGuide();
             ApplyAudio();
@@ -163,7 +164,7 @@ namespace Bufu.Rebuild {
         // ---------------------------------------------------------------- popups
         public UiView OpenPopup(string resource) {var v=UiPrefab.Instantiate(resource,popupLayer);popups.Add(v.Root);return v;}
         public void ClosePopup(UiView v){if(v==null||!v.Root)return;popups.Remove(v.Root);Destroy(v.Root);}
-        void CloseTopPopup(){if(CutscenePlaying||originalAd)return;if(promotionDialog!=null&&promotionDialog.Root&&popups.LastOrDefault()==promotionDialog.Root){promotionDialog.Ref<Button>("DialogPanel","bgButton").onClick.Invoke();return;}popups.RemoveAll(x=>!x);if(popups.Count==0)return;var go=popups[popups.Count-1];popups.RemoveAt(popups.Count-1);Destroy(go);}
+        void CloseTopPopup(){if(CutscenePlaying||originalAd||encounterAd)return;if(promotionDialog!=null&&promotionDialog.Root&&popups.LastOrDefault()==promotionDialog.Root){promotionDialog.Ref<Button>("DialogPanel","bgButton").onClick.Invoke();return;}popups.RemoveAll(x=>!x);if(popups.Count==0)return;if(encounterRoot&&popups[popups.Count-1]==encounterRoot){CloseEncounterFromBack();return;}var go=popups[popups.Count-1];popups.RemoveAt(popups.Count-1);Destroy(go);}
 
         GameObject toastObject;
         /// <summary>BroadcastManager.ShowPopUpTip: fades in, holds 2s, then fades out while rising.</summary>
@@ -327,7 +328,8 @@ namespace Bufu.Rebuild {
         // ---------------------------------------------------------------- restart after "clear save"
         void ResetGame() {
             bool dev=Model.DeveloperMode,maxed=Model.Maxed;
-            Model.Changed-=OnChanged;Model=new GameModel(null,dev,maxed);Model.Changed+=OnChanged;SaveStore.Save(Model);
+            encounterRoot=null;encounterPhase=EncounterPhase.None;encounterAd=false;
+            Model.Encounter-=OnEncounterOffered;Model.Changed-=OnChanged;Model=new GameModel(null,dev,maxed);Model.Changed+=OnChanged;Model.Encounter+=OnEncounterOffered;SaveStore.Save(Model);
             watchers.Clear();popups.Clear();goalView=null;offlineView=null;facilityView=null;shopView=null;worldView=null;talentView=null;
             helperWorld=-1;promotionView=null;promotionHud=null;promotionDialog=null;shownPromotion=null;Time.timeScale=1;
             foreach(var layer in new[]{bgLayer,mainLayer,popupLayer})foreach(Transform child in layer)Destroy(child.gameObject);

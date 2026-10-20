@@ -34,6 +34,7 @@ namespace Bufu.Rebuild {
     [Serializable] public sealed class WorldState {
         public double gold, lifetime, averagePerMinute=1, pendingOffline, rebirthMultiplier=1;
         public long[] supportLastTime=new long[3]; public int promotionId=1; public int mission,rebirth,points,checkDay=1,checkDate,checkMask,checkAdMask,helperAdCap,usingDesk,rebornLevel=-1; public bool checkClaimed; public long lastExit;
+        public int randomEventMask;
         public int[] quantity=new int[128], boosts=new int[128], evolution=new int[128], evolvedAt=new int[128], talents=new int[400], skills=new int[128], deskLevel=new int[128];
         public List<int> pendingGoals=new List<int>(); public List<HelperState> helpers=new List<HelperState>();
     }
@@ -255,6 +256,24 @@ namespace Bufu.Rebuild {
             CheckGrowth();Changed?.Invoke();return true;
         }
         public bool ClaimCheckIn(){for(int d=1;d<=7;d++)if(CanClaimCheckIn(d))return ClaimCheckIn(d);return false;}
+        /// <summary>Wallet only. Lifetime and the income window stay put, matching TrySpendGold.</summary>
+        public bool TrySpendGold(double amount) {
+            if(!Finite(amount)||amount<=0||State.gold<amount)return false;
+            State.gold-=amount;Changed?.Invoke();return true;
+        }
+        public bool TrySpendDiamonds(double amount) {
+            if(!Finite(amount)||amount<=0||Data.diamonds<amount)return false;
+            Data.diamonds-=amount;Changed?.Invoke();return true;
+        }
+        /// <summary>AddGoldInternal plus AddGold(0): the wallet grows and missions are checked, without counting the payout as income.</summary>
+        public void AddEncounterGold(double amount) {
+            if(!Finite(amount)||amount<=0)return;
+            State.gold+=amount;CheckGrowth();Changed?.Invoke();
+        }
+        public void AddEncounterDiamonds(double amount) {
+            if(!Finite(amount)||amount<=0)return;
+            Data.diamonds+=Math.Floor(amount);Changed?.Invoke();
+        }
         public void GrantAmount(int itemId,double amount) {
             if(!Finite(amount)||amount<=0)return;
             if(itemId==1)State.gold+=amount;else GrantItem(itemId,(int)Math.Round(amount));
@@ -348,6 +367,7 @@ namespace Bufu.Rebuild {
         public Mission NextMission=>missions.Where(x=>x.worldId==Data.world).OrderBy(x=>x.id).Skip(State.mission).FirstOrDefault();
         public event Action Growth;
         void CheckGrowth() {
+            TryTakeEncounter();
             var m=NextMission;int guard=0;bool grew=false;
             while(!PromotionReady&&m!=null&&State.gold>=m.mainMissionNum&&guard++<100) {
                 State.mission++;State.pendingGoals.Add(m.id);grew=true;
@@ -355,6 +375,35 @@ namespace Bufu.Rebuild {
             }
             if(grew){RefreshWorldUnlocks();RefreshHelperUnlocks(Data.world);}
             if(grew)Growth?.Invoke();
+        }
+        /// <summary>One offer from the mission being worked, before that mission can complete. The bit is spent when the offer is raised.</summary>
+        public sealed class EncounterOffer { public int Index,CommonId; public bool Diamond; public double Stake; }
+        public event Action<EncounterOffer> Encounter;
+        public EncounterOffer PendingEncounter {get;private set;}
+        public float EncounterWinRate { get { float rate=Mathf.Clamp01((float)Factor(42)); return rate<=0f?.55f:rate; } }
+        public void ClearEncounter(){PendingEncounter=null;}
+        public bool TryTakeEncounter() {
+            if(PendingEncounter!=null||PromotionRunning)return false;
+            var mission=NextMission;if(mission==null)return false;
+            int level=MainLevel;double gold=State.gold;
+            int[] ids={37,38,39,40};
+            for(int i=0;i<ids.Length;i++) {
+                if((State.randomEventMask&(1<<i))!=0)continue;
+                if(!TryParseEncounterFactor(Factor(ids[i]),out int need,out float progress))continue;
+                if(need!=level)continue;
+                double threshold=mission.mainMissionNum*progress;
+                bool diamond=ids[i]==40;
+                if(gold<threshold||!diamond&&threshold<=0)continue;
+                State.randomEventMask|=1<<i;
+                PendingEncounter=new EncounterOffer{Index=i,CommonId=ids[i],Diamond=diamond,Stake=diamond?0:threshold};
+                Encounter?.Invoke(PendingEncounter);return true;
+            }
+            return false;
+        }
+        static bool TryParseEncounterFactor(double factor,out int level,out float progress) {
+            level=0;progress=0f;if(factor<=0)return false;
+            float value=(float)factor;level=Mathf.FloorToInt(value+.0001f);progress=Mathf.Round((value-level)*100f)/100f;
+            return level>0&&progress>0f&&progress<1f;
         }
         public Mission PendingGoal=>State.pendingGoals.Count==0?null:missions.FirstOrDefault(x=>x.id==State.pendingGoals[0]);
         /// <summary>Mission rewards are granted when the goal panel is confirmed, like GoalReachPanel.ClaimCurrentReward.</summary>

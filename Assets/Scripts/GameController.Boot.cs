@@ -56,7 +56,7 @@ namespace Bufu.Rebuild {
             Model=new GameModel(maxedSession||VerificationMode?new SaveData():SaveStore.Load(dev),dev,maxedSession);
             long now=System.DateTimeOffset.UtcNow.ToUnixTimeSeconds();
             for(int i=0;i<2;i++){var s=Model.Data.worlds[i];awaySeconds[i]=s.lastExit>0?System.Math.Min(System.Math.Max(0,now-s.lastExit),21600):0;}
-            Model.AccumulateOffline(now);Model.Changed+=OnChanged;
+            Model.AccumulateOffline(now);Model.Changed+=OnChanged;Model.Encounter+=OnEncounterOffered;
         }
 
         /// <summary>
