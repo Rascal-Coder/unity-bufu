@@ -1,0 +1,29 @@
+TycoonRush / Google Play 宣传素材
+版本：2026-10-21，冲击力加强版
+
+本次按用户要求使用拼装式宣传插画，不再展示整屏游戏 UI。
+高级助手群像、技能特效、硬币进化与双世界场景基于本项目原有资源设计。
+Flip 页叠加的是项目 ty_num_both 原生数字 PNG，包括黄色暴击、白色收益和暴击标记。
+品牌统一写为 TycoonRush。
+
+Upload/Portrait：4 张 1080×1920 竖版，建议按文件名 01–04 排序。
+Upload/Landscape：4 张 1920×1080 横版；帮手横版直接拼装项目原生角色与技能素材，其余为单独生成的横向构图。
+Upload/TycoonRush-feature-1024x500.png：Feature graphic，RGB，无 alpha。
+同名 JPG 为可选替代文件，两者任选一种上传。
+
+StoreListing-en.txt：英文简介及介绍文案。
+AltText-en.txt：每张图的英文替代文字。
+TycoonRush-portrait-overview.png：竖版总览。
+TycoonRush-landscape-overview.png：横版总览。
+Layouts/：嵌入原素材的 SVG 排版源文件。
+Sources/：保留生成原图。
+impact-generation-sources.json：内置 image_gen 工具的提示词、参考图和来源。
+composition-manifest.json：最终构图、原生数字资源、输出文件及 SHA-256。
+validation.json：尺寸、色彩通道、文件完整性和文字检查记录。
+
+Archive/ScreenshotApproach 是前一版实机截图方案，仅留作历史对比，不在交付压缩包内。
+SourceScreens 为隔离存档中的素材采集，不在交付包内，不改变正常游戏存档。
+这些图片是宣传插画，不是未加工的实际操作截图。
+
+重新导出：使用带 sharp 的 Node 运行 Tools/Marketing/build_impact_graphics.cjs。
+本次没有上传或发布到 Google Play。

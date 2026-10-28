@@ -4,6 +4,22 @@ Obj/
 Logs/
 UserSettings/
 Build/
+/Builds/
+/obj/
+/MemoryCaptures/
+/Recordings/
+
+# Local IDE settings and operating-system metadata.
+/.vs/
+*.csproj.user
+*.suo
+*.userprefs
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Reproducible marketing delivery archives; retain artwork and source files.
+/Marketing/**/*.zip
 *.csproj
 *.sln
 *.log
@@ -33,3 +49,8 @@ __pycache__/
 !/Documentation/LayoutFix-2026-10-20/*.json
 !/Documentation/LayoutFix-2026-10-20/*.txt
 !/Documentation/LayoutFix-2026-10-20/SpriteSheets*/
+# Latest purchase UI verification; earlier benefit and layout runs stay local.
+!/Documentation/LayoutFix-2026-10-20/PurchaseWordsStore390/
+!/Documentation/LayoutFix-2026-10-20/PurchaseWordsStore540/
+!/Documentation/LayoutFix-2026-10-20/PurchaseWordsStoreLandscape/
+!/Documentation/LayoutFix-2026-10-20/PurchaseWordsAlignment540/

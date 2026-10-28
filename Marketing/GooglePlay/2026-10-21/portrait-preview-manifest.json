@@ -1,0 +1,154 @@
+{
+  "brand": "TycoonRush",
+  "approach": "Assembled illustrated promotional scenes based on native game asset reference boards, as requested by the user. Generated scene family, exact image captions and wordmark, native sprite income numbers with outline. Portrait and landscape compositions generated separately; no stretched or cropped portrait panels.",
+  "tool": "Built-in image_gen.imagegen + editable SVG typography composition",
+  "prompt_manifest": "impact-generation-sources.json",
+  "cards": [
+    {
+      "id": "01-flip-your-fortune",
+      "scene": "flip-impact-v2",
+      "caption": "caption-flip",
+      "title": "Flip Your Fortune",
+      "alt": "TycoonRush: a fountain of gold and purple coins surrounds the tycoon, with native critical-hit and income numbers."
+    },
+    {
+      "id": "02-build-your-team",
+      "scene": "team-impact-v2",
+      "caption": "caption-team",
+      "title": "Build Your Team",
+      "alt": "TycoonRush: six advanced helpers charge forward with rockets, heart projectiles, tentacles and star magic."
+    },
+    {
+      "id": "03-upgrade-your-coins",
+      "scene": "coins-impact-v2",
+      "caption": "caption-upgrade",
+      "title": "Upgrade Your Coins",
+      "alt": "TycoonRush: bronze, silver and gold coins spiral toward a giant jeweled purple 600 coin in an evolution burst."
+    },
+    {
+      "id": "04-explore-two-worlds",
+      "scene": "worlds-impact-v2",
+      "caption": "caption-worlds",
+      "title": "Explore Two Worlds",
+      "alt": "TycoonRush: coin treasure and giant dice fill two floating worlds linked by a sweeping trail of coins and light."
+    }
+  ],
+  "scene_sources": [
+    {
+      "file": "Marketing/GooglePlay/2026-10-21/Sources/flip-impact-v2-generated.png",
+      "sha256": "0eeeb02b4f8e34d8933e41ee055fa1f6a7acffaaa571e4f39d6a13913c948268"
+    },
+    {
+      "file": "Marketing/GooglePlay/2026-10-21/Sources/team-impact-v2-generated.png",
+      "sha256": "80d8e64907bd590790170022db15481b65e3575a22b400ff7e6cafcdd78cbab4"
+    },
+    {
+      "file": "Marketing/GooglePlay/2026-10-21/Sources/coins-impact-v2-generated.png",
+      "sha256": "beef41119cfc53f99d6f6d1a1b3d37998c70ded272de1b28c526ba5ac06999df"
+    },
+    {
+      "file": "Marketing/GooglePlay/2026-10-21/Sources/worlds-impact-v2-generated.png",
+      "sha256": "425b2d18c716a7e1f4df3d86817fd52a0a4541ee9caf6b9487e7f2c05b21f5f4"
+    }
+  ],
+  "native_income_glyphs": [
+    {
+      "file": "Assets/SourceArt/SpriteSheetSources/UI/Sprites/ty_num_both_39.png",
+      "sha256": "36dcbe2518733071345377253889fe58d4648ee076b92a5288e82e90e72ee6d9"
+    },
+    {
+      "file": "Assets/SourceArt/SpriteSheetSources/UI/Sprites/ty_num_both_48.png",
+      "sha256": "ca9410527b05f6e38f67771b684c3c33f3632d35597ae2aed9c533965e5493a0"
+    },
+    {
+      "file": "Assets/SourceArt/SpriteSheetSources/UI/Sprites/ty_num_both_41.png",
+      "sha256": "eeeeb8eeb708fc55f8a48786ccfcbce8b846be63d53ebfba9b65d68285cac79c"
+    },
+    {
+      "file": "Assets/SourceArt/SpriteSheetSources/UI/Sprites/ty_num_both_50.png",
+      "sha256": "da2dda9b5d26619a760bbdeb5439e13fe4a582fb6b5f4b70d0d3350e2dde4f0b"
+    },
+    {
+      "file": "Assets/SourceArt/SpriteSheetSources/UI/Sprites/ty_num_both_63.png",
+      "sha256": "fc2cf2c0ea7da321e427972b2ff54bf72b5567825328f3d4a20ff43a0e05f45c"
+    },
+    {
+      "file": "Assets/SourceArt/SpriteSheetSources/UI/Sprites/ty_num_both_0.png",
+      "sha256": "5dbb439d0d7b7c34e953f14a9f1467b5a08a098aab049a077c5c77ee6a42d48b"
+    },
+    {
+      "file": "Assets/SourceArt/SpriteSheetSources/UI/Sprites/ty_num_both_1.png",
+      "sha256": "910c4d6dacbe6e5795ca007de53681fca9881f257bc34ef5416fd550811ecd76"
+    },
+    {
+      "file": "Assets/SourceArt/SpriteSheetSources/UI/Sprites/ty_num_both_6.png",
+      "sha256": "445229dcd1672631cabf4e79fae1bf379e120a361934fd95a651bbf90652c023"
+    },
+    {
+      "file": "Assets/SourceArt/SpriteSheetSources/UI/Sprites/ty_num_both_12.png",
+      "sha256": "a2dc39301d8afeec2487ae93590782c46af6a3c56eaf749fb632c9e6ce9c5e2f"
+    },
+    {
+      "file": "Assets/SourceArt/SpriteSheetSources/UI/Sprites/ty_num_both_11.png",
+      "sha256": "6898434c1b340e0215248485fa7211f4d07ce2a22df7784fe1c88b5754ecf79e"
+    },
+    {
+      "file": "Assets/SourceArt/SpriteSheetSources/UI/Sprites/ty_num_both_3.png",
+      "sha256": "e75481cd44c076b1650e1da4511e26996ebc3092420391c8ecea68d18d5c2459"
+    },
+    {
+      "file": "Assets/SourceArt/SpriteSheetSources/UI/Sprites/ty_num_both_25.png",
+      "sha256": "e4b8238971339e54d797ac3798146bff863c575b35171c8484e868a010e28358"
+    },
+    {
+      "file": "Assets/SourceArt/SpriteSheetSources/UI/Sprites/ty_num_both_42.png",
+      "sha256": "3c3a221232b1b0be378fd630b282d29e08b1b376a0d3f0ec57d1be967306e1fe"
+    },
+    {
+      "file": "Assets/SourceArt/SpriteSheetSources/UI/Sprites/ty_num_both_43.png",
+      "sha256": "d3c60457b631a458b4332bd9393282aa17d51de243ea0e1bd83598b36e7d2fe6"
+    },
+    {
+      "file": "Assets/SourceArt/SpriteSheetSources/UI/Sprites/ty_num_both_9.png",
+      "sha256": "2bfc0fefe4555add98bf31058711c44adcbc73ac3c7b36e3412cd65d3e9e1510"
+    },
+    {
+      "file": "Assets/SourceArt/SpriteSheetSources/UI/Sprites/ty_num_both_5.png",
+      "sha256": "80a2eb861cd2c4b895286cdda784a80bc6c2b82df60f4f8e0b6c0e8856aa945a"
+    }
+  ],
+  "outputs": [
+    {
+      "file": "Marketing/GooglePlay/2026-10-21/Upload/Portrait/01-flip-your-fortune-1080x1920.png",
+      "width": 1080,
+      "height": 1920,
+      "mode": "RGB",
+      "sha256": "a5ca2d72b430dc7f7711522c74af7d9f2a8909516058cd130c069cc686b66a1b",
+      "layout": "Marketing/GooglePlay/2026-10-21/Layouts/01-flip-your-fortune-1080x1920.svg"
+    },
+    {
+      "file": "Marketing/GooglePlay/2026-10-21/Upload/Portrait/02-build-your-team-1080x1920.png",
+      "width": 1080,
+      "height": 1920,
+      "mode": "RGB",
+      "sha256": "500354f2bcc6f329af165b15a67e8a6491fc73a043f1897a925fcde55192d999",
+      "layout": "Marketing/GooglePlay/2026-10-21/Layouts/02-build-your-team-1080x1920.svg"
+    },
+    {
+      "file": "Marketing/GooglePlay/2026-10-21/Upload/Portrait/03-upgrade-your-coins-1080x1920.png",
+      "width": 1080,
+      "height": 1920,
+      "mode": "RGB",
+      "sha256": "0462ef4e3289f7833294ce7687810ccf0352d7ab82a1f1148093ebfc029f4f3e",
+      "layout": "Marketing/GooglePlay/2026-10-21/Layouts/03-upgrade-your-coins-1080x1920.svg"
+    },
+    {
+      "file": "Marketing/GooglePlay/2026-10-21/Upload/Portrait/04-explore-two-worlds-1080x1920.png",
+      "width": 1080,
+      "height": 1920,
+      "mode": "RGB",
+      "sha256": "8f049d64118daefd071e76b3bf04cc819d7175f1574ee49a3762d2524834e047",
+      "layout": "Marketing/GooglePlay/2026-10-21/Layouts/04-explore-two-worlds-1080x1920.svg"
+    }
+  ]
+}

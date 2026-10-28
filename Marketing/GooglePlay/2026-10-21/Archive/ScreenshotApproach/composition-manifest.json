@@ -1,0 +1,118 @@
+{
+  "brand": "TycoonRush",
+  "reference": "https://play.google.com/store/apps/details?id=com.buffstudio.tower.zombies.defense.idle.game",
+  "approach": "One genuine game feature per image. Yellow angled caption strip. Exact captured UI is embedded unchanged in editable SVG layouts; decorative lettering is generated. World images use the original transparent island sprites, matching the two captured island views.",
+  "native_world_assets": [
+    "world_pic_island_01_x2",
+    "world_pic_island_02_x2"
+  ],
+  "cards": [
+    {
+      "id": "01-flip-your-fortune",
+      "caption": "caption-flip",
+      "title": "Flip Your Fortune",
+      "source": "01-flip-coins.png",
+      "sub": "Tap. Flip. Keep growing.",
+      "zoom": [
+        0,
+        230,
+        540,
+        300
+      ],
+      "background": "#b86079"
+    },
+    {
+      "id": "02-build-your-team",
+      "caption": "caption-team",
+      "title": "Build Your Team",
+      "source": "02-helper-team.png",
+      "sub": "Helpers with unique skills.",
+      "zoom": [
+        0,
+        175,
+        540,
+        485
+      ],
+      "background": "#8977c6"
+    },
+    {
+      "id": "03-upgrade-your-coins",
+      "caption": "caption-upgrade",
+      "title": "Upgrade Your Coins",
+      "source": "03-coin-upgrades.png",
+      "sub": "From bronze to gold.",
+      "zoom": [
+        0,
+        520,
+        540,
+        360
+      ]
+    },
+    {
+      "id": "04-explore-two-worlds",
+      "caption": "caption-worlds",
+      "title": "Explore Two Worlds",
+      "source": "04-coin-world.png",
+      "sub": "Coins and dice. Two ways to grow.",
+      "worlds": true
+    }
+  ],
+  "outputs": [
+    {
+      "file": "Marketing/GooglePlay/2026-10-21/Upload/Portrait/01-flip-your-fortune-1080x1920.png",
+      "width": 1080,
+      "height": 1920,
+      "mode": "RGB",
+      "layout": "Marketing/GooglePlay/2026-10-21/Layouts/01-flip-your-fortune-1080x1920.svg"
+    },
+    {
+      "file": "Marketing/GooglePlay/2026-10-21/Upload/Landscape/01-flip-your-fortune-1920x1080.png",
+      "width": 1920,
+      "height": 1080,
+      "mode": "RGB",
+      "layout": "Marketing/GooglePlay/2026-10-21/Layouts/01-flip-your-fortune-1920x1080.svg"
+    },
+    {
+      "file": "Marketing/GooglePlay/2026-10-21/Upload/Portrait/02-build-your-team-1080x1920.png",
+      "width": 1080,
+      "height": 1920,
+      "mode": "RGB",
+      "layout": "Marketing/GooglePlay/2026-10-21/Layouts/02-build-your-team-1080x1920.svg"
+    },
+    {
+      "file": "Marketing/GooglePlay/2026-10-21/Upload/Landscape/02-build-your-team-1920x1080.png",
+      "width": 1920,
+      "height": 1080,
+      "mode": "RGB",
+      "layout": "Marketing/GooglePlay/2026-10-21/Layouts/02-build-your-team-1920x1080.svg"
+    },
+    {
+      "file": "Marketing/GooglePlay/2026-10-21/Upload/Portrait/03-upgrade-your-coins-1080x1920.png",
+      "width": 1080,
+      "height": 1920,
+      "mode": "RGB",
+      "layout": "Marketing/GooglePlay/2026-10-21/Layouts/03-upgrade-your-coins-1080x1920.svg"
+    },
+    {
+      "file": "Marketing/GooglePlay/2026-10-21/Upload/Landscape/03-upgrade-your-coins-1920x1080.png",
+      "width": 1920,
+      "height": 1080,
+      "mode": "RGB",
+      "layout": "Marketing/GooglePlay/2026-10-21/Layouts/03-upgrade-your-coins-1920x1080.svg"
+    },
+    {
+      "file": "Marketing/GooglePlay/2026-10-21/Upload/Portrait/04-explore-two-worlds-1080x1920.png",
+      "width": 1080,
+      "height": 1920,
+      "mode": "RGB",
+      "layout": "Marketing/GooglePlay/2026-10-21/Layouts/04-explore-two-worlds-1080x1920.svg"
+    },
+    {
+      "file": "Marketing/GooglePlay/2026-10-21/Upload/Landscape/04-explore-two-worlds-1920x1080.png",
+      "width": 1920,
+      "height": 1080,
+      "mode": "RGB",
+      "layout": "Marketing/GooglePlay/2026-10-21/Layouts/04-explore-two-worlds-1920x1080.svg"
+    }
+  ]
+}

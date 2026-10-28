@@ -1,0 +1,80 @@
+{
+  "tool": "Built-in image_gen.imagegen",
+  "brand": "TycoonRush",
+  "source_spec": "generation-sources.json",
+  "normalization": "Transparent alpha trim with an 8px guard only; feature graphic proportional fit to 1024x500 and RGB export. Original generated sources retained. No screenshots are repainted.",
+  "assets": [
+    {
+      "id": "caption-flip",
+      "text": "Flip Your Fortune",
+      "source": "Marketing\\GooglePlay\\2026-10-21\\Sources\\caption-flip-generated.png",
+      "asset": "Marketing\\GooglePlay\\2026-10-21\\Assets\\caption-flip.png",
+      "size": [
+        2095,
+        360
+      ],
+      "mode": "RGBA",
+      "sha256": "78501a72c9e0cf02a0767f75d561c933dc7426013d1f096a1f0899da177e4861"
+    },
+    {
+      "id": "caption-team",
+      "text": "Build Your Team",
+      "source": "Marketing\\GooglePlay\\2026-10-21\\Sources\\caption-team-generated.png",
+      "asset": "Marketing\\GooglePlay\\2026-10-21\\Assets\\caption-team.png",
+      "size": [
+        2096,
+        333
+      ],
+      "mode": "RGBA",
+      "sha256": "bc6031dc66fd9efbf08f2f24919056272518e71c7b600bd2a2cb36b0fddfb6b7"
+    },
+    {
+      "id": "caption-upgrade",
+      "text": "Upgrade Your Coins",
+      "source": "Marketing\\GooglePlay\\2026-10-21\\Sources\\caption-upgrade-generated.png",
+      "asset": "Marketing\\GooglePlay\\2026-10-21\\Assets\\caption-upgrade.png",
+      "size": [
+        2151,
+        345
+      ],
+      "mode": "RGBA",
+      "sha256": "8041cc6d013293176e0335eb5499a26f1a896f583cfdc0b8b5b7c1f7ca206417"
+    },
+    {
+      "id": "caption-worlds",
+      "text": "Explore Two Worlds",
+      "source": "Marketing\\GooglePlay\\2026-10-21\\Sources\\caption-worlds-generated.png",
+      "asset": "Marketing\\GooglePlay\\2026-10-21\\Assets\\caption-worlds.png",
+      "size": [
+        2139,
+        310
+      ],
+      "mode": "RGBA",
+      "sha256": "9842095a03ebd5a611e5d85aa861d17bd70c9cc8a9b6b7427da8c2a49aecbd31"
+    },
+    {
+      "id": "wordmark",
+      "text": "TycoonRush",
+      "source": "Marketing\\GooglePlay\\2026-10-21\\Sources\\wordmark-generated.png",
+      "asset": "Marketing\\GooglePlay\\2026-10-21\\Assets\\wordmark.png",
+      "size": [
+        2051,
+        465
+      ],
+      "mode": "RGBA",
+      "sha256": "a5ddfc8f02d81314a3d47cccdc593e3130ca1ccfac96107f97a01f03b2bbe331"
+    },
+    {
+      "id": "feature",
+      "text": "TycoonRush",
+      "source": "Marketing\\GooglePlay\\2026-10-21\\Sources\\feature-generated.png",
+      "asset": "Marketing\\GooglePlay\\2026-10-21\\Upload\\TycoonRush-feature-1024x500.png",
+      "size": [
+        1024,
+        500
+      ],
+      "mode": "RGB",
+      "sha256": "07be898e083b43a3898a3769e7a7ecbea80b50ab29b63cdd0c79b75ab2424789"
+    }
+  ]
+}

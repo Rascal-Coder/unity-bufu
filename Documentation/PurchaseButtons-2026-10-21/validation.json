@@ -1,0 +1,55 @@
+{
+  "passed": true,
+  "checks": 5516,
+  "cases": [
+    {
+      "name": "PurchaseWordsStore390",
+      "checks": 462,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "name": "PurchaseWordsStore540",
+      "checks": 462,
+      "width": 540,
+      "height": 960
+    },
+    {
+      "name": "PurchaseWordsStoreLandscape",
+      "checks": 462,
+      "width": 960,
+      "height": 540
+    },
+    {
+      "name": "PurchaseWordsAlignment540",
+      "checks": 4130,
+      "width": 540,
+      "height": 960
+    }
+  ],
+  "build": {
+    "result": "Succeeded",
+    "editor": "2022.3.62f3c1",
+    "path": "E:\\rea-games\\unity-bufu\\Build/LayoutFixCommercialPlayer/BufuRebuild.exe",
+    "errors": 0,
+    "warnings": 0,
+    "warningMessages": []
+  },
+  "assembly_sha256": "576a99967686dab668926c568e63fbf247b6ee622c3ba36061510b7cace1017f",
+  "runtime": {
+    "sprites": 1258,
+    "pages": 68,
+    "looseTextures": 0,
+    "textureBytes": 89126336,
+    "scope": "QA loads every migrated sprite for validation; these bytes are not a normal gameplay peak. Pages load on demand during normal play."
+  },
+  "new_word_sprites": 4,
+  "new_atlas_pages": 1,
+  "delivery_files": 213,
+  "before_mib": 328.7300605773926,
+  "after_mib": 329.14771270751953,
+  "delta_mib": 0.4176521301269531,
+  "native_number_glyphs": 12,
+  "new_number_bitmaps": 0,
+  "scope": "Native ty_num_both PNG quantities with dark brown outlines and proportional spacing. Wider small purchase controls, scaled frame borders and padded PNG status labels; actual localized prices remain live text. Catalog rewards and checkout behavior retained."
+}

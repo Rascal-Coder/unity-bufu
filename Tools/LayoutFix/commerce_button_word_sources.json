@@ -1,0 +1,26 @@
+[
+  {
+    "id": "unavailable",
+    "text": "Unavailable",
+    "prompt": "Create a production-ready transparent PNG game UI word sprite. Reference image is the game's existing Back word sprite: match its friendly rounded hand-lettered cartoon letters, clean thick dark chocolate brown outline, white/ivory letter fill, subtle minimal warm highlight. Exact single-line text: \"Unavailable\". Keep title case exactly. Important: this must remain readable when placed in a small purchase button. Use reasonably condensed, upright smooth bold letters with open counters and clearly separated characters, consistent baseline, even spacing, moderate dark brown outline (roughly 9% cap height), no large drop shadow. Not a logo, no swashes. Center the complete word with generous transparent space around it. NO button frame, no other words, no icons, no background or checkerboard painted into the art. Use the reference only for type style. Transparent background, isolated lettering, wide horizontal composition.",
+    "generated_source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-ff762197-7b89-4ec6-b153-c0209b27d537.png"
+  },
+  {
+    "id": "owned",
+    "text": "Owned",
+    "prompt": "Create a production-ready transparent PNG game UI word sprite. Reference image is the game's existing Back word sprite: match its friendly rounded hand-lettered cartoon letters, clean thick dark chocolate brown outline, white/ivory letter fill, subtle minimal warm highlight. Exact single-line text: \"Owned\". Keep title case exactly. Important: this must remain readable when placed in a small purchase button. Use reasonably condensed, upright smooth bold letters with open counters and clearly separated characters, consistent baseline, even spacing, moderate dark brown outline (roughly 9% cap height), no large drop shadow. Not a logo, no swashes. Center the complete word with generous transparent space around it. NO button frame, no other words, no icons, no background or checkerboard painted into the art. Use the reference only for type style. Transparent background, isolated lettering, wide horizontal composition.",
+    "generated_source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-2ae64002-84cf-416c-a2c6-6269b4a314ab.png"
+  },
+  {
+    "id": "pending",
+    "text": "Pending",
+    "prompt": "Create a production-ready transparent PNG game UI word sprite. Reference image is the game's existing Back word sprite: match its friendly rounded hand-lettered cartoon letters, clean thick dark chocolate brown outline, white/ivory letter fill, subtle minimal warm highlight. Exact single-line text: \"Pending\". Keep title case exactly. Important: this must remain readable when placed in a small purchase button. Use reasonably condensed, upright smooth bold letters with open counters and clearly separated characters, consistent baseline, even spacing, moderate dark brown outline (roughly 9% cap height), no large drop shadow. Not a logo, no swashes. Center the complete word with generous transparent space around it. NO button frame, no other words, no icons, no background or checkerboard painted into the art. Use the reference only for type style. Transparent background, isolated lettering, wide horizontal composition.",
+    "generated_source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-f7ebd5cc-4550-41c0-b3b2-681213ac09d3.png"
+  },
+  {
+    "id": "please-wait",
+    "text": "Please wait",
+    "prompt": "Create a production-ready transparent PNG game UI word sprite. Reference image is the game's existing Back word sprite: match its friendly rounded hand-lettered cartoon letters, clean thick dark chocolate brown outline, white/ivory letter fill, subtle minimal warm highlight. Exact single-line text: \"Please wait\". Keep title case exactly. Important: this must remain readable when placed in a small purchase button. Use reasonably condensed, upright smooth bold letters with open counters and clearly separated characters, consistent baseline, even spacing, moderate dark brown outline (roughly 9% cap height), no large drop shadow. Not a logo, no swashes. Center the complete word with generous transparent space around it. NO button frame, no other words, no icons, no background or checkerboard painted into the art. Use the reference only for type style. Transparent background, isolated lettering, wide horizontal composition.",
+    "generated_source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-019a681b-e48b-46e6-9029-ec34daf04565.png"
+  }
+]

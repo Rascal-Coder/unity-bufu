@@ -81,6 +81,11 @@ namespace Bufu.Rebuild {
             var frame=Sprite.Create(art.texture,art.rect,new Vector2(.5f,.5f),100,0,SpriteMeshType.FullRect,new Vector4(64,42,64,42));
             storeFrames[key]=frame;return frame;
         }
+        static void StoreProductBand(Transform parent,float width,float height) {
+            var band=NewRect("Product Name Band",parent);band.anchorMin=band.anchorMax=new Vector2(0,.5f);
+            band.anchoredPosition=new Vector2(width*.5f,height*.5f-54);band.sizeDelta=new Vector2(width-44,72);
+            var image=band.gameObject.AddComponent<Image>();image.sprite=StoreFooterFill();image.color=new Color(.63f,.46f,.28f);image.raycastTarget=false;
+        }
         static RectTransform StoreArt(Transform parent,string name,string sprite,Vector2 position,Vector2 size) {
             var rect=NewRect(name,parent);rect.anchorMin=rect.anchorMax=new Vector2(0,.5f);rect.anchoredPosition=position;rect.sizeDelta=size;
             var image=rect.gameObject.AddComponent<Image>();image.sprite=StoreIllustration(sprite);image.preserveAspect=true;image.raycastTarget=false;return rect;
@@ -126,7 +131,9 @@ namespace Bufu.Rebuild {
             overlay.offsetMin=new Vector2(28,410);overlay.offsetMax=new Vector2(-28,-212);
             var background=overlay.gameObject.AddComponent<Image>();background.sprite=Sp("shop_pic_scene01_scale2");
             Canvas.ForceUpdateCanvases();
-            float bodyHeight=category==StoreCategory.NoAds?964:category==StoreCategory.Fragments?1752:1168;
+            float bodyHeight=category==StoreCategory.NoAds?964:category==StoreCategory.Fragments?1752:1408;
+            // Show complete fragment rows at rest; shorter screens use two rows and scroll.
+            if(category==StoreCategory.Fragments)bodyHeight=608*Mathf.Clamp(Mathf.FloorToInt((overlay.rect.height-48-386)/608),1,3);
             var panel=NewRect("Panel",overlay);panel.anchorMin=panel.anchorMax=new Vector2(.5f,.5f);panel.pivot=new Vector2(.5f,.5f);
             panel.anchoredPosition=Vector2.zero;panel.sizeDelta=new Vector2(overlay.rect.width-64,Mathf.Min(overlay.rect.height-48,bodyHeight+386));
             var layout=panel.gameObject.AddComponent<VerticalLayoutGroup>();layout.spacing=22;layout.childControlHeight=layout.childControlWidth=true;layout.childForceExpandHeight=false;layout.childForceExpandWidth=true;
@@ -140,6 +147,14 @@ namespace Bufu.Rebuild {
             var viewport=NewRect("Viewport",scroll);Stretch(viewport);viewport.gameObject.AddComponent<Image>().color=Color.clear;viewport.gameObject.AddComponent<RectMask2D>();
             purchaseContent=NewRect("Products",viewport);purchaseContent.anchorMin=new Vector2(0,1);purchaseContent.anchorMax=Vector2.one;purchaseContent.pivot=new Vector2(.5f,1);purchaseContent.sizeDelta=Vector2.zero;
             purchaseScroll.content=purchaseContent;purchaseScroll.viewport=viewport;
+            if(category==StoreCategory.Fragments) {
+                var rail=NewRect("Product Scrollbar",scroll);rail.anchorMin=new Vector2(1,0);rail.anchorMax=Vector2.one;rail.anchoredPosition=new Vector2(-4,0);rail.sizeDelta=new Vector2(10,-24);
+                var track=rail.gameObject.AddComponent<Image>();track.color=new Color(.2f,.1f,.04f,.35f);track.raycastTarget=false;
+                var sliding=NewRect("Sliding Area",rail);Stretch(sliding);var handle=NewRect("Handle",sliding);Stretch(handle);
+                var handleImage=handle.gameObject.AddComponent<Image>();handleImage.sprite=StoreFrame("ty_btn_yellow01",24);handleImage.type=Image.Type.Sliced;
+                var scrollbar=rail.gameObject.AddComponent<Scrollbar>();scrollbar.direction=Scrollbar.Direction.BottomToTop;scrollbar.handleRect=handle;scrollbar.targetGraphic=handleImage;
+                scrollbar.interactable=false;purchaseScroll.verticalScrollbar=scrollbar;purchaseScroll.verticalScrollbarVisibility=ScrollRect.ScrollbarVisibility.AutoHide;
+            }
             purchaseStatus=StoreText(panel,"Purchase Status","",72,32);purchaseStatus.color=StoreWhite;purchaseStatus.outlineColor=StoreInk;purchaseStatus.outlineWidth=.15f;
             var utilities=StoreRow(panel,"Purchase Utilities",88);
             purchaseRestore=StoreButton(utilities,"Check Purchases","Restore purchases",()=>purchases.Restore());
@@ -165,7 +180,7 @@ namespace Bufu.Rebuild {
             var products=PurchaseCatalog.Products.Where(p=>p.category==category).ToArray();selectedPurchase=products[0];
             Canvas.ForceUpdateCanvases();float width=purchaseScroll.viewport.rect.width-32,gap=24;
             bool fragments=category==StoreCategory.Fragments,noAds=category==StoreCategory.NoAds;
-            float heroHeight=600,smallHeight=520,noAdsHeight=940,fragmentHeight=560;
+            float heroHeight=700,smallHeight=660,noAdsHeight=940,fragmentHeight=584;
             purchaseContent.sizeDelta=new Vector2(0,fragments?5*(fragmentHeight+gap)+12:noAds?noAdsHeight+24:heroHeight+smallHeight+gap+24);
             for(int i=0;i<products.Length;i++) {
                 var product=products[i];var capture=product;bool featured=category==StoreCategory.Diamonds&&i==2;
@@ -177,46 +192,61 @@ namespace Bufu.Rebuild {
                 var frame=card.GetComponent<Image>();frame.sprite=StoreProductFrame();frame.type=Image.Type.Sliced;
                 var cardColors=card.colors;cardColors.highlightedColor=cardColors.selectedColor=Color.white;card.colors=cardColors;
                 var outline=card.gameObject.AddComponent<Outline>();outline.effectColor=StoreInk;outline.effectDistance=new Vector2(4,-4);outline.useGraphicAlpha=true;
-                var footer=NewRect("Purchase Footer",card.transform);footer.anchorMin=footer.anchorMax=new Vector2(0,.5f);footer.anchoredPosition=new Vector2(w*.5f,-h*.5f+94);footer.sizeDelta=new Vector2(w-44,144);
+                float actionOffset=noAds?94:102;
+                var footer=NewRect("Purchase Footer",card.transform);footer.anchorMin=footer.anchorMax=new Vector2(0,.5f);footer.anchoredPosition=new Vector2(w*.5f,-h*.5f+actionOffset);footer.sizeDelta=new Vector2(w-44,noAds?144:160);
                 var footerImage=footer.gameObject.AddComponent<Image>();footerImage.sprite=StoreFooterFill();footerImage.raycastTarget=false;
+                if(!noAds) {
+                    StoreProductBand(card.transform,w,h);
+                    var glow=StoreArt(card.transform,"Reward Spotlight","challenge_pic_island_light_scale2",fragments?new Vector2(w*.33f,48):featured?new Vector2(w*.73f,30):new Vector2(w*.5f,100),fragments?new Vector2(330,300):featured?new Vector2(490,420):new Vector2(390,300));
+                    glow.GetComponent<Image>().color=new Color(1,1,1,.55f);
+                }
                 string art=fragments?product.rewardId.ToString():noAds?"art:no-ads-pass-native-v2":featured?"art:diamond-vault-native-v2":i==0?"ty_icon_diamond02":"shop_icon_adDiamond";
-                Vector2 iconPosition=fragments?new Vector2(w*.5f,110):noAds?new Vector2(w*.29f,85):featured?new Vector2(w*.73f,75):new Vector2(w*.5f,65);
-                Vector2 iconSize=fragments?new Vector2(250,220):noAds?new Vector2(460,430):featured?new Vector2(w*.49f,h-200):new Vector2(230,180);
+                Vector2 iconPosition=fragments?new Vector2(w*.33f,48):noAds?new Vector2(w*.29f,135):featured?new Vector2(w*.73f,30):new Vector2(w*.5f,100);
+                Vector2 iconSize=fragments?new Vector2(310,280):noAds?new Vector2(440,360):featured?new Vector2(w*.49f,400):new Vector2(350,250);
                 StoreArt(card.transform,"Product Icon",art,iconPosition,iconSize);
-                var stock=StoreCardText(card.transform,"Product Stock","",new Vector2(w*.5f,-92),new Vector2(w-50,36),34);stock.alignment=TextAlignmentOptions.Center;stock.color=StoreInk;
+                var stock=StoreCardText(card.transform,"Product Stock","",new Vector2(w*(fragments ? .77f : .5f),fragments?-82:-90),new Vector2(fragments?w*.36f:w-50,36),36);stock.alignment=TextAlignmentOptions.Center;stock.color=StoreInk;
                 if(fragments) {
                     string name=L10n.Translate(Model.helperRoles.First(p=>p.id==product.rewardId-100).helperName);
-                    var title=StoreCardText(card.transform,"Product Name",name,new Vector2(w*.5f,-40),new Vector2(w-60,60),46);title.alignment=TextAlignmentOptions.Center;title.color=StoreInk;
-                    var amount=StoreCardText(card.transform,"Pack Amount","x"+product.amount,new Vector2(92,h*.5f-61),new Vector2(130,75),52);amount.color=StoreInk;amount.alignment=TextAlignmentOptions.MidlineLeft;
+                    var title=StoreCardText(card.transform,"Product Name",name,new Vector2(w*.5f-16,h*.5f-54),new Vector2(w-132,60),48);title.alignment=TextAlignmentOptions.Center;title.color=StoreWhite;
+                    var badge=StoreArt(card.transform,"Fragment Quantity Badge","ty_btn_yellow01",new Vector2(w*.77f,65),new Vector2(190,96));badge.GetComponent<Image>().type=Image.Type.Sliced;badge.GetComponent<Image>().preserveAspect=false;badge.GetComponent<Image>().sprite=StoreFrame("ty_btn_yellow01",24);badge.GetComponent<Image>().pixelsPerUnitMultiplier=2.1f;
+                    var amount=StoreCardText(card.transform,"Pack Amount","x"+product.amount,new Vector2(w*.77f,65),new Vector2(174,86),82);amount.color=StoreInk;amount.alignment=TextAlignmentOptions.Center;
+                    StoreNumberArt(amount,72);
+                    var type=StoreCardText(card.transform,"Reward Type","Fragments",new Vector2(w*.77f,-20),new Vector2(w*.36f,45),36);type.color=StoreInk;type.alignment=TextAlignmentOptions.Center;
                 } else if(noAds||featured) {
                     float cx=noAds?w*.5f:w*.255f,tw=noAds?w-100:w*.43f;
-                    var badge=StoreCardText(card.transform,"Pack Label",noAds?"ONE-TIME PURCHASE":"DIAMOND VAULT",new Vector2(cx,h*.5f-62),new Vector2(tw,60),noAds?40:42);badge.color=StoreInk;if(noAds)badge.alignment=TextAlignmentOptions.Center;
+                    var badge=StoreCardText(card.transform,"Pack Label",noAds?"ONE-TIME PURCHASE":"DIAMOND VAULT",new Vector2(noAds?cx:w*.5f,h*.5f-(noAds?62:54)),new Vector2(noAds?tw:w-150,60),noAds?40:42);badge.color=StoreInk;badge.alignment=TextAlignmentOptions.Center;
                     if(!noAds)WordArtLabel(badge,"diamond-vault",60);
                     if(!noAds) {
-                        var amount=StoreCardText(card.transform,"Reward Amount","+"+product.amount.ToString("N0",L10n.Culture),new Vector2(cx,45),new Vector2(tw,150),130);amount.color=StoreInk;
-                        var type=StoreCardText(card.transform,"Reward Type","Diamonds",new Vector2(cx,-75),new Vector2(tw,74),46);type.color=StoreInk;
+                        var amount=StoreCardText(card.transform,"Reward Amount","+"+product.amount.ToString(L10n.Culture),new Vector2(cx,30),new Vector2(tw,174),158);amount.color=StoreInk;amount.alignment=TextAlignmentOptions.Center;
+                        StoreNumberArt(amount,154);
+                        var type=StoreCardText(card.transform,"Reward Type","Diamonds",new Vector2(cx,-87),new Vector2(tw,66),48);type.color=StoreInk;type.alignment=TextAlignmentOptions.Center;
                     }
                     if(noAds) {
-                        var tagline=StoreCardText(card.transform,"Reward Type","Every ad reward.\nNo videos.",new Vector2(w*.73f,110),new Vector2(w*.43f,170),58);tagline.alignment=TextAlignmentOptions.Center;tagline.color=StoreInk;
-                        var limits=StoreCardText(card.transform,"Reward Limits","Cooldowns & daily limits apply.",new Vector2(w*.73f,-65),new Vector2(w*.43f,95),34);limits.alignment=TextAlignmentOptions.Center;limits.color=StoreInk;
-                        string[] benefits={"All ad rewards","One-tap claims","Permanent"};
+                        var tagline=StoreCardText(card.transform,"Reward Type","Every ad reward.\nNo videos.",new Vector2(w*.73f,170),new Vector2(w*.43f,150),58);tagline.alignment=TextAlignmentOptions.Center;tagline.color=StoreInk;
+                        var limits=StoreCardText(card.transform,"Reward Limits","Cooldowns & daily limits apply.",new Vector2(w*.73f,22),new Vector2(w*.43f,74),34);limits.alignment=TextAlignmentOptions.Center;limits.color=StoreInk;
+                        string[] benefits={"No videos","One-tap claims","Permanent"};
+                        string[] benefitArt={"benefit-no-video-native-v1","benefit-quick-claim-native-v1","benefit-permanent-native-v1"};
                         for(int b=0;b<benefits.Length;b++) {
                             float bx=w*(b+.5f)/3;
-                            StoreArt(card.transform,"Benefit Icon "+b,"ty_icon_confirmed",new Vector2(bx,-180),new Vector2(54,54));
-                            var caption=StoreCardText(card.transform,"Benefit "+b,benefits[b],new Vector2(bx,-245),new Vector2(w/3-36,58),36);caption.alignment=TextAlignmentOptions.Center;caption.color=StoreInk;
+                            var tile=NewRect("Benefit Tile "+b,card.transform);tile.anchorMin=tile.anchorMax=new Vector2(0,.5f);tile.anchoredPosition=new Vector2(bx,-168);tile.sizeDelta=new Vector2(w/3-48,250);
+                            var tileImage=tile.gameObject.AddComponent<Image>();tileImage.color=new Color(1,.96f,.78f,.72f);tileImage.raycastTarget=false;
+                            var edge=tile.gameObject.AddComponent<Outline>();edge.effectColor=new Color(.64f,.38f,.12f,.3f);edge.effectDistance=new Vector2(2,-2);
+                            StoreArt(card.transform,"Benefit Icon "+b,"art:"+benefitArt[b],new Vector2(bx,-130),new Vector2(176,176));
+                            var caption=StoreCardText(card.transform,"Benefit "+b,benefits[b],new Vector2(bx,-258),new Vector2(w/3-64,44),40);caption.alignment=TextAlignmentOptions.Center;caption.color=StoreInk;
                         }
                     }
                 } else {
-                    var name=StoreCardText(card.transform,"Pack Label",i==0?"POCKET PACK":"DIAMOND STASH",new Vector2(w*.5f,h*.5f-48),new Vector2(w-60,50),36);name.alignment=TextAlignmentOptions.Center;name.color=StoreInk;
+                    var name=StoreCardText(card.transform,"Pack Label",i==0?"POCKET PACK":"DIAMOND STASH",new Vector2(w*.5f-16,h*.5f-54),new Vector2(w-132,50),36);name.alignment=TextAlignmentOptions.Center;name.color=StoreInk;
                     WordArtLabel(name,i==0?"pocket-pack":"diamond-stash",50);
-                    var amount=StoreCardText(card.transform,"Reward Amount","+"+product.amount.ToString("N0",L10n.Culture),new Vector2(w*.5f,-65),new Vector2(w-70,50),60);amount.alignment=TextAlignmentOptions.Center;amount.color=StoreInk;
+                    var amount=StoreCardText(card.transform,"Reward Amount","+"+product.amount.ToString(L10n.Culture),new Vector2(w*.5f,-82),new Vector2(w-70,100),108);amount.alignment=TextAlignmentOptions.Center;amount.color=StoreInk;
+                    StoreNumberArt(amount,100);
                 }
                 var buy=StoreButton(card.transform,"Buy Product","",()=>{selectedPurchase=capture;RefreshPurchaseStore();purchases.Buy(capture.id);});var buyRect=(RectTransform)buy.transform;
-                buyRect.anchorMin=buyRect.anchorMax=new Vector2(0,.5f);buyRect.sizeDelta=new Vector2(Mathf.Min(w-80,noAds||featured?520:360),112);
-                buyRect.anchoredPosition=new Vector2(w*.5f,-h*.5f+94);
-                buy.GetComponent<Image>().color=Color.white;
-                var buyText=buy.GetComponentInChildren<TMP_Text>();buyText.color=Color.white;buyText.fontSize=buyText.fontSizeMax=42;
-                var infoRect=NewRect("Details",card.transform);infoRect.anchorMin=infoRect.anchorMax=new Vector2(1,1);infoRect.anchoredPosition=new Vector2(-48,-45);infoRect.sizeDelta=new Vector2(60,60);
+                buyRect.anchorMin=buyRect.anchorMax=new Vector2(0,.5f);buyRect.sizeDelta=new Vector2(Mathf.Min(w*.69f,noAds||featured?520:440),112);
+                buyRect.anchoredPosition=new Vector2(w*.5f,-h*.5f+actionOffset);
+                buy.GetComponent<Image>().color=Color.white;buy.GetComponent<Image>().pixelsPerUnitMultiplier=2.1f;
+                var buyText=buy.GetComponentInChildren<TMP_Text>();buyText.color=Color.white;buyText.fontSize=buyText.fontSizeMax=52;buyText.fontSizeMin=36;buyText.fontStyle=FontStyles.Bold;buyText.enableWordWrapping=false;buyText.margin=new Vector4(64,20,64,20);buyText.outlineColor=StoreInk;buyText.outlineWidth=.15f;
+                var infoRect=NewRect("Details",card.transform);infoRect.anchorMin=infoRect.anchorMax=new Vector2(1,1);infoRect.anchoredPosition=new Vector2(-48,noAds?-45:-54);infoRect.sizeDelta=new Vector2(60,60);
                 var infoImage=infoRect.gameObject.AddComponent<Image>();infoImage.sprite=Sp("upgrade_icon_information");var info=infoRect.gameObject.AddComponent<Button>();info.targetGraphic=infoImage;
                 Click(info,()=>ShowDialog(PurchaseCatalog.Title(capture,Model)+"\n\n"+PurchaseCatalog.Description(capture),null));
                 purchaseCards.Add(product.id,card);purchaseActions.Add(product.id,buy);purchaseDetails.Add(product.id,info);purchaseCardCopy.Add(product.id,buy.GetComponentInChildren<TMP_Text>());purchaseCardStock.Add(product.id,stock);
@@ -230,7 +260,7 @@ namespace Bufu.Rebuild {
             foreach(var pair in purchaseCards) {
                 var product=PurchaseCatalog.Find(pair.Key);var details=purchases.Details(pair.Key);
                 string state=purchases.IsOwned(product)?"Owned":purchases.IsPending(pair.Key)?"Payment pending":purchases.Busy?"Please wait...":details!=null&&purchases.Available?details.localizedPrice:"Unavailable";
-                Txt(purchaseCardCopy[pair.Key],state);purchaseActions[pair.Key].interactable=purchases.CanBuy(product);
+                Txt(purchaseCardCopy[pair.Key],state);PurchaseButtonCopy(purchaseCardCopy[pair.Key],state);purchaseActions[pair.Key].interactable=purchases.CanBuy(product);
                 purchaseActions[pair.Key].GetComponent<Image>().sprite=StoreControl(purchases.CanBuy(product)?"shop-buy-native-v2":"shop-disabled-native-v2");
                 pair.Value.GetComponent<Image>().color=Color.white;
                 pair.Value.GetComponent<Outline>().enabled=selectedPurchase.id==pair.Key;

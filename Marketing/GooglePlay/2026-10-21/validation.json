@@ -1,0 +1,115 @@
+{
+  "passed": true,
+  "brand": "TycoonRush",
+  "scope": "Google Play promotional illustration assets, not unedited gameplay screenshots.",
+  "outputs": [
+    {
+      "file": "Marketing/GooglePlay/2026-10-21/Upload/Portrait/01-flip-your-fortune-1080x1920.png",
+      "size": [
+        1080,
+        1920
+      ],
+      "mode": "RGB",
+      "bytes": 4063945,
+      "sha256": "a5ca2d72b430dc7f7711522c74af7d9f2a8909516058cd130c069cc686b66a1b"
+    },
+    {
+      "file": "Marketing/GooglePlay/2026-10-21/Upload/Landscape/01-flip-your-fortune-1920x1080.png",
+      "size": [
+        1920,
+        1080
+      ],
+      "mode": "RGB",
+      "bytes": 3966408,
+      "sha256": "d0bcff196a42ab272d2727cc2d2266277f3de3593ca3980fff2f91a00390384c"
+    },
+    {
+      "file": "Marketing/GooglePlay/2026-10-21/Upload/Portrait/02-build-your-team-1080x1920.png",
+      "size": [
+        1080,
+        1920
+      ],
+      "mode": "RGB",
+      "bytes": 3980950,
+      "sha256": "500354f2bcc6f329af165b15a67e8a6491fc73a043f1897a925fcde55192d999"
+    },
+    {
+      "file": "Marketing/GooglePlay/2026-10-21/Upload/Landscape/02-build-your-team-1920x1080.png",
+      "size": [
+        1920,
+        1080
+      ],
+      "mode": "RGB",
+      "bytes": 1297155,
+      "sha256": "a58dcb3788d1f92fb76bc9f1a932790eaec56892c32e2fc191de74749b649872"
+    },
+    {
+      "file": "Marketing/GooglePlay/2026-10-21/Upload/Portrait/03-upgrade-your-coins-1080x1920.png",
+      "size": [
+        1080,
+        1920
+      ],
+      "mode": "RGB",
+      "bytes": 4160581,
+      "sha256": "0462ef4e3289f7833294ce7687810ccf0352d7ab82a1f1148093ebfc029f4f3e"
+    },
+    {
+      "file": "Marketing/GooglePlay/2026-10-21/Upload/Landscape/03-upgrade-your-coins-1920x1080.png",
+      "size": [
+        1920,
+        1080
+      ],
+      "mode": "RGB",
+      "bytes": 4102918,
+      "sha256": "ffdc48021fcc1c5b43c3e327483dafc9e3ddf0f7fdaedc624042fa0f37c98163"
+    },
+    {
+      "file": "Marketing/GooglePlay/2026-10-21/Upload/Portrait/04-explore-two-worlds-1080x1920.png",
+      "size": [
+        1080,
+        1920
+      ],
+      "mode": "RGB",
+      "bytes": 4135126,
+      "sha256": "8f049d64118daefd071e76b3bf04cc819d7175f1574ee49a3762d2524834e047"
+    },
+    {
+      "file": "Marketing/GooglePlay/2026-10-21/Upload/Landscape/04-explore-two-worlds-1920x1080.png",
+      "size": [
+        1920,
+        1080
+      ],
+      "mode": "RGB",
+      "bytes": 3979930,
+      "sha256": "7a358f696b5fed0a4325f4d071d472b638bfabd62a5c91507981f18cc7ed97f0"
+    },
+    {
+      "file": "Marketing/GooglePlay/2026-10-21/Upload/TycoonRush-feature-1024x500.png",
+      "size": [
+        1024,
+        500
+      ],
+      "mode": "RGB",
+      "bytes": 1254577,
+      "sha256": "acdce47503d47be2b60d158a7fbb720ee194849dfa959b4d35b5d1d23280ef30"
+    }
+  ],
+  "counts": {
+    "portrait": 4,
+    "landscape": 4,
+    "feature_png": 1,
+    "feature_jpeg": 1
+  },
+  "short_description_characters": 70,
+  "native_income_glyphs_verified": 16,
+  "source_hashes_verified": true,
+  "visual_review": [
+    "Reviewed four portrait cards together at 324x576 and Flip at full resolution.",
+    "Reviewed all landscape cards and feature graphic.",
+    "Corrected native decimal sprite scale/baseline; decimals now legible.",
+    "Moved landscape income text clear of helper faces.",
+    "Captions remain separate exact PNG assets. Brand wordmark reads TycoonRush.",
+    "Team landscape uses six native VAT helper renders with native skill sprites; other scenes are generated promotional illustrations based on project art."
+  ],
+  "normal_game_modified_by_marketing": false
+}

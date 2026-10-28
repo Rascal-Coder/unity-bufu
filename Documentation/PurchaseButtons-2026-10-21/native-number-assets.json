@@ -1,0 +1,65 @@
+{
+  "source": "Existing project ty_num_both white number PNG sprites. No generated numeric bitmap assets.",
+  "assets": [
+    {
+      "asset": "Assets\\SourceArt\\SpriteSheetSources\\UI\\Sprites\\ty_num_both_40.png",
+      "sha256": "baf72333b8bf9d8ed6f8df7139a672c3a47828db1993fcc484963cb30d3a1dbd",
+      "resource_key": "UI/Sprites/ty_num_both_40"
+    },
+    {
+      "asset": "Assets\\SourceArt\\SpriteSheetSources\\UI\\Sprites\\ty_num_both_41.png",
+      "sha256": "eeeeb8eeb708fc55f8a48786ccfcbce8b846be63d53ebfba9b65d68285cac79c",
+      "resource_key": "UI/Sprites/ty_num_both_41"
+    },
+    {
+      "asset": "Assets\\SourceArt\\SpriteSheetSources\\UI\\Sprites\\ty_num_both_42.png",
+      "sha256": "3c3a221232b1b0be378fd630b282d29e08b1b376a0d3f0ec57d1be967306e1fe",
+      "resource_key": "UI/Sprites/ty_num_both_42"
+    },
+    {
+      "asset": "Assets\\SourceArt\\SpriteSheetSources\\UI\\Sprites\\ty_num_both_43.png",
+      "sha256": "d3c60457b631a458b4332bd9393282aa17d51de243ea0e1bd83598b36e7d2fe6",
+      "resource_key": "UI/Sprites/ty_num_both_43"
+    },
+    {
+      "asset": "Assets\\SourceArt\\SpriteSheetSources\\UI\\Sprites\\ty_num_both_44.png",
+      "sha256": "466721dde9c224ffc11f9a595cbafc60eab96480c111236ed193ad1bac0a6d40",
+      "resource_key": "UI/Sprites/ty_num_both_44"
+    },
+    {
+      "asset": "Assets\\SourceArt\\SpriteSheetSources\\UI\\Sprites\\ty_num_both_45.png",
+      "sha256": "a03a8906a6a6f5b36c9cfc61455bc7b77cd3bfa39ba18949ddfb801cb7c4c912",
+      "resource_key": "UI/Sprites/ty_num_both_45"
+    },
+    {
+      "asset": "Assets\\SourceArt\\SpriteSheetSources\\UI\\Sprites\\ty_num_both_46.png",
+      "sha256": "0a582c7b7f4bbcaf2dc169b10f0532b1347bd610c572d5469ed3bff268a48239",
+      "resource_key": "UI/Sprites/ty_num_both_46"
+    },
+    {
+      "asset": "Assets\\SourceArt\\SpriteSheetSources\\UI\\Sprites\\ty_num_both_47.png",
+      "sha256": "c73c55917fef4e55ad84acdd60de981a8c8e1b220027ad26ba00fa5fb20df74a",
+      "resource_key": "UI/Sprites/ty_num_both_47"
+    },
+    {
+      "asset": "Assets\\SourceArt\\SpriteSheetSources\\UI\\Sprites\\ty_num_both_48.png",
+      "sha256": "ca9410527b05f6e38f67771b684c3c33f3632d35597ae2aed9c533965e5493a0",
+      "resource_key": "UI/Sprites/ty_num_both_48"
+    },
+    {
+      "asset": "Assets\\SourceArt\\SpriteSheetSources\\UI\\Sprites\\ty_num_both_49.png",
+      "sha256": "0940f882475e7aa0e6012b8e594369ee965a0ef132032bcdcb3ab39eda418f2b",
+      "resource_key": "UI/Sprites/ty_num_both_49"
+    },
+    {
+      "asset": "Assets\\SourceArt\\SpriteSheetSources\\UI\\Sprites\\ty_num_both_39.png",
+      "sha256": "36dcbe2518733071345377253889fe58d4648ee076b92a5288e82e90e72ee6d9",
+      "resource_key": "UI/Sprites/ty_num_both_39"
+    },
+    {
+      "asset": "Assets\\SourceArt\\SpriteSheetSources\\UI\\Sprites\\ty_num_both_74.png",
+      "sha256": "e9d54c2f91aaec2b121a0d4683402ecaf16a5075feb6ce80e6729e3314a16302",
+      "resource_key": "UI/Sprites/ty_num_both_74"
+    }
+  ]
+}

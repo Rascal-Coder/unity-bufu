@@ -135,3 +135,9 @@ for item in migrated+duplicates:
             else:shutil.move(str(sm),str(dm))
     else:assert dst.exists() and sha(dst)==item['sha256']
 print('SPRITE_SHEETS_READY',len(entries),'sprites',len(all_pages),'pages',len(duplicates),'duplicate source textures archived')
+if (root/'Tools/LayoutFix/commerce_benefit_sources.json').exists():
+    import subprocess
+    subprocess.run([sys.executable,str(root/'Tools/LayoutFix/build_commerce_benefits.py')],check=True)
+if (root/'Tools/LayoutFix/commerce_button_word_sources.json').exists():
+    import subprocess
+    subprocess.run([sys.executable,str(root/'Tools/LayoutFix/build_commerce_button_words.py')],check=True)

@@ -1,0 +1,90 @@
+{
+  "tool": "Built-in image_gen.imagegen",
+  "reference": "Existing word-back-native-v4.png: rounded ivory letters and dark brown outlines.",
+  "normalization": "Alpha trim, proportional resize to at most 768x128, 8px transparent padding. No repainting. Shared runtime sheet with 4px outer guards. Bottom-left Unity sprite coordinates are verified against original RGBA pixels.",
+  "pixel_integrity_verified": true,
+  "assets": [
+    {
+      "id": "unavailable",
+      "text": "Unavailable",
+      "prompt": "Create a production-ready transparent PNG game UI word sprite. Reference image is the game's existing Back word sprite: match its friendly rounded hand-lettered cartoon letters, clean thick dark chocolate brown outline, white/ivory letter fill, subtle minimal warm highlight. Exact single-line text: \"Unavailable\". Keep title case exactly. Important: this must remain readable when placed in a small purchase button. Use reasonably condensed, upright smooth bold letters with open counters and clearly separated characters, consistent baseline, even spacing, moderate dark brown outline (roughly 9% cap height), no large drop shadow. Not a logo, no swashes. Center the complete word with generous transparent space around it. NO button frame, no other words, no icons, no background or checkerboard painted into the art. Use the reference only for type style. Transparent background, isolated lettering, wide horizontal composition.",
+      "generated_source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-ff762197-7b89-4ec6-b153-c0209b27d537.png",
+      "asset": "Assets\\SourceArt\\CommerceButtonWords\\word-purchase-unavailable-native-v4.png",
+      "size": [
+        692,
+        144
+      ],
+      "sha256": "8abdbe8eb65b2ff5cc1301c39e810599c0dd22eb263084957ee4a6dbffdaa1dd",
+      "resource_key": "CommerceArt/word-purchase-unavailable-native-v4",
+      "packed_rect": [
+        4,
+        460,
+        692,
+        144
+      ]
+    },
+    {
+      "id": "owned",
+      "text": "Owned",
+      "prompt": "Create a production-ready transparent PNG game UI word sprite. Reference image is the game's existing Back word sprite: match its friendly rounded hand-lettered cartoon letters, clean thick dark chocolate brown outline, white/ivory letter fill, subtle minimal warm highlight. Exact single-line text: \"Owned\". Keep title case exactly. Important: this must remain readable when placed in a small purchase button. Use reasonably condensed, upright smooth bold letters with open counters and clearly separated characters, consistent baseline, even spacing, moderate dark brown outline (roughly 9% cap height), no large drop shadow. Not a logo, no swashes. Center the complete word with generous transparent space around it. NO button frame, no other words, no icons, no background or checkerboard painted into the art. Use the reference only for type style. Transparent background, isolated lettering, wide horizontal composition.",
+      "generated_source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-2ae64002-84cf-416c-a2c6-6269b4a314ab.png",
+      "asset": "Assets\\SourceArt\\CommerceButtonWords\\word-purchase-owned-native-v4.png",
+      "size": [
+        488,
+        144
+      ],
+      "sha256": "bd809345a29c1c3bb9c04e1687aee12c185a835a6c5d5d80ab03dfdf2209e1c7",
+      "resource_key": "CommerceArt/word-purchase-owned-native-v4",
+      "packed_rect": [
+        4,
+        308,
+        488,
+        144
+      ]
+    },
+    {
+      "id": "pending",
+      "text": "Pending",
+      "prompt": "Create a production-ready transparent PNG game UI word sprite. Reference image is the game's existing Back word sprite: match its friendly rounded hand-lettered cartoon letters, clean thick dark chocolate brown outline, white/ivory letter fill, subtle minimal warm highlight. Exact single-line text: \"Pending\". Keep title case exactly. Important: this must remain readable when placed in a small purchase button. Use reasonably condensed, upright smooth bold letters with open counters and clearly separated characters, consistent baseline, even spacing, moderate dark brown outline (roughly 9% cap height), no large drop shadow. Not a logo, no swashes. Center the complete word with generous transparent space around it. NO button frame, no other words, no icons, no background or checkerboard painted into the art. Use the reference only for type style. Transparent background, isolated lettering, wide horizontal composition.",
+      "generated_source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-f7ebd5cc-4550-41c0-b3b2-681213ac09d3.png",
+      "asset": "Assets\\SourceArt\\CommerceButtonWords\\word-purchase-pending-native-v4.png",
+      "size": [
+        482,
+        144
+      ],
+      "sha256": "3e109827523ccaf0f2a6a6a8729283d2741381174e16a527c3a31006efd40595",
+      "resource_key": "CommerceArt/word-purchase-pending-native-v4",
+      "packed_rect": [
+        4,
+        156,
+        482,
+        144
+      ]
+    },
+    {
+      "id": "please-wait",
+      "text": "Please wait",
+      "prompt": "Create a production-ready transparent PNG game UI word sprite. Reference image is the game's existing Back word sprite: match its friendly rounded hand-lettered cartoon letters, clean thick dark chocolate brown outline, white/ivory letter fill, subtle minimal warm highlight. Exact single-line text: \"Please wait\". Keep title case exactly. Important: this must remain readable when placed in a small purchase button. Use reasonably condensed, upright smooth bold letters with open counters and clearly separated characters, consistent baseline, even spacing, moderate dark brown outline (roughly 9% cap height), no large drop shadow. Not a logo, no swashes. Center the complete word with generous transparent space around it. NO button frame, no other words, no icons, no background or checkerboard painted into the art. Use the reference only for type style. Transparent background, isolated lettering, wide horizontal composition.",
+      "generated_source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-019a681b-e48b-46e6-9029-ec34daf04565.png",
+      "asset": "Assets\\SourceArt\\CommerceButtonWords\\word-purchase-please-wait-native-v4.png",
+      "size": [
+        700,
+        144
+      ],
+      "sha256": "a279c4703e1e28f1b666d56b3b8a64a2381ebd3bb8d9a7a408c4d47dc23b069a",
+      "resource_key": "CommerceArt/word-purchase-please-wait-native-v4",
+      "packed_rect": [
+        4,
+        4,
+        700,
+        144
+      ]
+    }
+  ],
+  "sheet": "Assets\\Resources\\PackedUI\\commerce-purchase-words-v1.png",
+  "sheet_size": [
+    708,
+    608
+  ],
+  "sheet_sha256": "fa10183696e733b5d20054faaabed43d98f21644131e8737bf36a80285adc25f"
+}

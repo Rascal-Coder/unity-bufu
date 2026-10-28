@@ -1,0 +1,54 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "name": "NoAdsBenefitsStore390",
+      "checks": 330,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "name": "NoAdsBenefitsStore540",
+      "checks": 330,
+      "width": 540,
+      "height": 960
+    },
+    {
+      "name": "NoAdsBenefitsStoreLandscape",
+      "checks": 330,
+      "width": 960,
+      "height": 540
+    },
+    {
+      "name": "NoAdsBenefitsAlignment540",
+      "checks": 4118,
+      "width": 540,
+      "height": 960
+    }
+  ],
+  "checks": 5108,
+  "source_assembly_sha256": "eba254cfb2b1510df68ab449aed5006eb144bca28744ffd88fdeb6515b95b711",
+  "runtime": {
+    "sprites": 1254,
+    "pages": 67,
+    "looseTextures": 0,
+    "textureBytes": 95243600,
+    "scope": "QA loads every migrated sprite for validation; these bytes are not a normal gameplay peak. Pages load on demand during normal play."
+  },
+  "existing_sprite_entries_unchanged": 1251,
+  "other_offer_comparison": [
+    {
+      "scene": "01-store-diamonds.png",
+      "mean_rgb_delta_255": 0.0
+    },
+    {
+      "scene": "03a-store-fragments-top.png",
+      "mean_rgb_delta_255": 0.0
+    }
+  ],
+  "before_mib": 328.5224256515503,
+  "after_mib": 328.72539138793945,
+  "delta_mib": 0.20296573638916016,
+  "delivery_files": 213,
+  "scope": "Current source identity: three product viewport runs and full alignment/sprite catalog. Benefit art and No Ads composition changed; billing, other pack layouts and gameplay retained."
+}

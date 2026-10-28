@@ -1,0 +1,68 @@
+{
+  "tool": "Built-in image_gen.imagegen",
+  "brand": "TycoonRush",
+  "reference_url": "https://play.google.com/store/apps/details?id=com.buffstudio.tower.zombies.defense.idle.game",
+  "approach": "One feature per screenshot, native game imagery, angled yellow caption strip, white/brown rounded lettering. Original screenshot assets and this game's own art; reference game screenshots are not reused.",
+  "assets": [
+    {
+      "id": "caption-flip",
+      "text": "Flip Your Fortune",
+      "prompt": "Create a transparent PNG word-art asset for a polished cartoon mobile-game Google Play screenshot caption. Exactly ONE centered horizontal line. Native game's rounded chunky hand-lettered style, upright smooth letters, clean even spacing, warm white/ivory fill, bold dark chocolate brown outline, short dark brown lower shadow, crisp open counters, readable on a bright yellow footer. Title Case, not ALL CAPS. No panel, no button, no decoration, no icons, no background. Generous transparent padding. Match the attached existing Back word sprite style. Exact text: \"Flip Your Fortune\"",
+      "refs": [
+        "E:/rea-games/unity-bufu/Assets/SourceArt/SpriteSheetSources/CommerceArt/word-back-native-v4.png"
+      ],
+      "transparent": true,
+      "source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-e2c6e5c5-e82c-47c2-99e4-52e5ef42daa5.png"
+    },
+    {
+      "id": "caption-team",
+      "text": "Build Your Team",
+      "prompt": "Create a transparent PNG word-art asset for a polished cartoon mobile-game Google Play screenshot caption. Exactly ONE centered horizontal line. Native game's rounded chunky hand-lettered style, upright smooth letters, clean even spacing, warm white/ivory fill, bold dark chocolate brown outline, short dark brown lower shadow, crisp open counters, readable on a bright yellow footer. Title Case, not ALL CAPS. No panel, no button, no decoration, no icons, no background. Generous transparent padding. Match the attached existing Back word sprite style. Exact text: \"Build Your Team\"",
+      "refs": [
+        "E:/rea-games/unity-bufu/Assets/SourceArt/SpriteSheetSources/CommerceArt/word-back-native-v4.png"
+      ],
+      "transparent": true,
+      "source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-78994916-76d5-4d79-a9eb-3542bab3cf6c.png"
+    },
+    {
+      "id": "caption-upgrade",
+      "text": "Upgrade Your Coins",
+      "prompt": "Create a transparent PNG word-art asset for a polished cartoon mobile-game Google Play screenshot caption. Exactly ONE centered horizontal line. Native game's rounded chunky hand-lettered style, upright smooth letters, clean even spacing, warm white/ivory fill, bold dark chocolate brown outline, short dark brown lower shadow, crisp open counters, readable on a bright yellow footer. Title Case, not ALL CAPS. No panel, no button, no decoration, no icons, no background. Generous transparent padding. Match the attached existing Back word sprite style. Exact text: \"Upgrade Your Coins\"",
+      "refs": [
+        "E:/rea-games/unity-bufu/Assets/SourceArt/SpriteSheetSources/CommerceArt/word-back-native-v4.png"
+      ],
+      "transparent": true,
+      "source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-2bb64aa9-d807-419f-ae26-7c078df2602b.png"
+    },
+    {
+      "id": "caption-worlds",
+      "text": "Explore Two Worlds",
+      "prompt": "Create a transparent PNG word-art asset for a polished cartoon mobile-game Google Play screenshot caption. Exactly ONE centered horizontal line. Native game's rounded chunky hand-lettered style, upright smooth letters, clean even spacing, warm white/ivory fill, bold dark chocolate brown outline, short dark brown lower shadow, crisp open counters, readable on a bright yellow footer. Title Case, not ALL CAPS. No panel, no button, no decoration, no icons, no background. Generous transparent padding. Match the attached existing Back word sprite style. Exact text: \"Explore Two Worlds\"",
+      "refs": [
+        "E:/rea-games/unity-bufu/Assets/SourceArt/SpriteSheetSources/CommerceArt/word-back-native-v4.png"
+      ],
+      "transparent": true,
+      "source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-76957d57-f56b-4977-a9fb-d28769190d26.png"
+    },
+    {
+      "id": "wordmark",
+      "text": "TycoonRush",
+      "prompt": "Create a polished transparent PNG game title wordmark. Exact spelling is \"TycoonRush\": capital T, lowercase ycoon, capital R, lowercase ush, NO space, NO all-caps. One horizontal line, rounded heavy cartoon lettering, friendly bold proportions, clear open counters, warm luminous golden-yellow fill with restrained two-tone upper cream highlights and orange lower shading, thick chocolate-brown contour with a small darker lower shadow, matching the green-hatted tycoon coin game in the reference. Keep the text clean and legible rather than hyper-detailed. No characters, coins, logo icons, panel, background or extra words. Centered with generous transparent margin.",
+      "refs": [
+        "E:/rea-games/unity-bufu/Assets/AppLogoLight.png"
+      ],
+      "transparent": true,
+      "source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-39f1d94c-209d-4739-bffc-7bf01ff3c787.png"
+    },
+    {
+      "id": "feature",
+      "text": "TycoonRush",
+      "prompt": "Edit only the title lettering in this finished promotional graphic. Replace the all-capital TYCOON RUSH title on the left with the correct brand capitalization \"TycoonRush\": the top line must read \"Tycoon\" (capital T, lowercase ycoon), and the bottom line must read \"Rush\" (capital R, lowercase ush). It is a PascalCase brand, not all uppercase. Preserve the two-line arrangement and all letter styling: chunky golden cartoon letters, cream highlights, orange shade, deep brown outline. Adjust letter proportions naturally to fill the existing left title zone without crowding the edges. Preserve every other part exactly: smiling original green top-hat tycoon, simple white helpers, all coins and their correct denominations (bronze1,silver10,gold100,purple200), wood platform, green bundles, burgundy-gold interior, lighting, framing and safe margins. No other text or design changes. Opaque full-bleed wide landscape aspect 1024:500.",
+      "refs": [
+        "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-c2ec4d3f-6c5b-4608-9a71-30c1b31e8024.png"
+      ],
+      "transparent": false,
+      "source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-f32dc19b-9126-40de-89f7-7b09e17b4563.png"
+    }
+  ]
+}

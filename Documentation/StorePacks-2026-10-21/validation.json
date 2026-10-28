@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "name": "PackPolishStore390",
+      "checks": 367,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "name": "PackPolishStore540",
+      "checks": 367,
+      "width": 540,
+      "height": 960
+    },
+    {
+      "name": "PackPolishStoreLandscape",
+      "checks": 367,
+      "width": 960,
+      "height": 540
+    },
+    {
+      "name": "PackPolishAlignment540",
+      "checks": 4118,
+      "width": 540,
+      "height": 960
+    }
+  ],
+  "checks": 5219,
+  "source_assembly_sha256": "17d3062c321358e4e0bf7a240dd7d4d8dec098d6911ffa9d8fea355e94c37025",
+  "purchase_catalog_sha256": "6056f0a6d89bb6ed2cc6f7a586a04fb7c8dc309f9a3297c93e054766ffbe4311",
+  "no_ads_product_region_mean_rgb_delta_255": 0.004174149659863946,
+  "runtime": {
+    "sprites": 1254,
+    "pages": 67,
+    "looseTextures": 0,
+    "textureBytes": 95243600,
+    "scope": "QA loads every migrated sprite for validation; these bytes are not a normal gameplay peak. Pages load on demand during normal play."
+  },
+  "new_bitmap_assets": 0,
+  "delivery_files": 213,
+  "delivery_mib": 328.7300605773926,
+  "scope": "Diamond quantity/art hierarchy, native product name bands, fragment portrait/count layout, complete visible rows and scroll indicator. Existing rewards, quantities, payment states and No Ads benefits retained."
+}

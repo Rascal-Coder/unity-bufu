@@ -7,9 +7,12 @@ using UnityEngine;
 
 public static class LayoutFixBuild {
     [Serializable] public sealed class BuildResult { public string result,editor,path;public int errors,warnings;public string[] warningMessages; }
-    public static void Build() {
+    public static void Build()=>BuildPlayer(true);
+    // For index/script iteration after a successful full texture-profile build.
+    public static void BuildIncremental()=>BuildPlayer(false);
+    static void BuildPlayer(bool refreshTextureProfiles) {
         string root=Path.GetFullPath("../..");
-        foreach(string asset in Directory.GetFiles("Assets/Resources","*.png",SearchOption.AllDirectories).Select(p=>p.Replace('\\','/')).Where(PackedUiTextureImporter.Handles)) {
+        if(refreshTextureProfiles)foreach(string asset in Directory.GetFiles("Assets/Resources","*.png",SearchOption.AllDirectories).Select(p=>p.Replace('\\','/')).Where(PackedUiTextureImporter.Handles)) {
             AssetDatabase.ImportAsset(asset,ImportAssetOptions.ForceSynchronousImport);
             var importer=(TextureImporter)AssetImporter.GetAtPath(asset);
             PackedUiTextureImporter.Configure(importer);importer.SaveAndReimport();

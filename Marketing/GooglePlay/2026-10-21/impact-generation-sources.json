@@ -1,0 +1,70 @@
+{
+  "tool": "Built-in image_gen.imagegen",
+  "brand": "TycoonRush",
+  "mode": "Illustrated promotional compositions based on native project asset reference boards. User requested assembled artwork instead of actual UI. Team landscape directly assembles six native helper renders and native skill sprites. Feature adapts the wide coin explosion with the exact brand wordmark.",
+  "assets": [
+    {
+      "id": "team-impact-v2",
+      "refs": [
+        "E:/rea-games/unity-bufu/Marketing/GooglePlay/2026-10-21/References/native-advanced-helpers.png",
+        "E:/rea-games/unity-bufu/Marketing/GooglePlay/2026-10-21/References/native-coin-evolution.png"
+      ],
+      "prompt": "Use case: ads-marketing. Create ONE finished premium mobile-game promotional illustration, portrait 9:16, 1080x1920. This is an assembled promotional artwork, not a screenshot or an interface. Source image 1 is the exact character asset family from our own game; source image 2 is our coins. Preserve those designs, simple chibi proportions, rounded black outlines, flat cel shading, white/peach faces, original costume colors. Use six advanced helpers as an exciting LARGE TEAM action scene: red armored flying helper and orange nine-tailed fox prominent at the front, white-haired tentacle helper, blue/purple awakened wizard with star wand, gold muscular helper and dice-headed helper supporting behind. Strong readable silhouettes, each separate and recognizable, six characters maximum, no tiny generic helper crowd. Arrange them in a dynamic forward-facing V composition filling the top 78% of the page. Pink glowing heart projectiles sweep from the fox, two red/white rockets fly diagonally behind the armored helper, gold spell sparks and purple star magic frame the group. A few ornate native 100 gold and 600 purple coins add depth. Saturated purple radial burst background with warm golden backlight, forceful comic motion trails, clear depth through scale and overlap. Commercial casual idle game art, bold simple 2D cartoon compositing, high-quality clean edges, vibrant and joyful. Keep the bottom 20% a quiet plain dark purple area for a title to be added later. No text, lettering, numbers outside the coin designs, logos, interface, buttons, card panels, borders, phone frame or watermark. No photorealism, no painterly texture, no realistic anatomy. Do not copy reference-sheet grid or mauve sheet background. The six helpers and their specific recognizable native art style are the subject, make them BIG and visually punchy.",
+      "source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-4798113f-871a-4cf4-8491-2bf098dbcca4.png"
+    },
+    {
+      "id": "flip-impact-v2",
+      "refs": [
+        "C:/Users/aaa/.codex/generated_images/01a157e5-fb8b-7423-acd7-bb0a9c8a1882/exec-4798113f-871a-4cf4-8491-2bf098dbcca4.png",
+        "E:/rea-games/unity-bufu/Marketing/GooglePlay/2026-10-21/References/native-coin-evolution.png",
+        "E:/rea-games/unity-bufu/Assets/AppLogoLight.png",
+        "E:/rea-games/unity-bufu/Marketing/GooglePlay/2026-10-21/References/native-advanced-helpers.png"
+      ],
+      "prompt": "Use case: ads-marketing. Create ONE premium mobile-game promotional illustration, portrait 9:16, 1080x1920. Assembled marketing artwork, no UI or phone. Image 1 is the approved companion poster: match its clean thick black/brown outlines, joyful cel-shaded chibi mobile-game art, brilliant gold and purple highlights, heroic depth, comic impact, confident large silhouettes and high commercial polish. Other images are actual native game assets: preserve their recognizable identities and exact coin denominations. Top 78% contains the illustration. Bottom 20% quiet dark purple negative space, later title overlay. No text, letters, slogans, logos, watermarks, buttons, cards or interface; coin denominations are the sole exception. Do not reproduce reference boards or grids. No photorealism or realistic anatomy. SUBJECT: explosive coin flipping and critical-hit income, a huge upward spiral/fountain of 35-50 chunky bronze 1, silver 10, gold 100, ornate purple 600 coins from this game. Gold and high-tier jeweled purple coins dominate, including several oversized near-camera coins with visible embossed faces at varied angles. The white round-faced green top-hat mustached tycoon from image 3 cheers near the lower middle; two of the game's very simple white helpers fling coins upward on either side. A gold awakened muscular helper can be farther behind. Background burgundy-gold royal hall simplified behind a white-hot golden impact burst. Thick orange comic critical impact streaks, sparkles and red-orange starbursts give the feeling of explosive payouts. Keep coherent silhouette grouping and readable coins rather than flat confetti. Leave five clean little pockets among the coins for native floating income numbers to be composited later; DO NOT draw any payout numbers yourself. BIG coins, exuberant motion, highly compelling at thumbnail size. Full-bleed composition with 5% safe margin for faces; bottom remains dark purple and empty.",
+      "source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-814f8cb1-eb55-4ca6-85ca-492462149790.png"
+    },
+    {
+      "id": "coins-impact-v2",
+      "refs": [
+        "C:/Users/aaa/.codex/generated_images/01a157e5-fb8b-7423-acd7-bb0a9c8a1882/exec-4798113f-871a-4cf4-8491-2bf098dbcca4.png",
+        "E:/rea-games/unity-bufu/Marketing/GooglePlay/2026-10-21/References/native-coin-evolution.png"
+      ],
+      "prompt": "Use case: ads-marketing. Create ONE premium mobile-game promotional illustration, portrait 9:16, 1080x1920. Assembled marketing artwork, no UI or phone. Image 1 is the approved companion poster: match its clean thick black/brown outlines, joyful cel-shaded chibi mobile-game art, brilliant gold and purple highlights, heroic depth, comic impact, confident large silhouettes and high commercial polish. Other images are actual native game assets: preserve their recognizable identities and exact coin denominations. Top 78% contains the illustration. Bottom 20% quiet dark purple negative space, later title overlay. No text, letters, slogans, logos, watermarks, buttons, cards or interface; coin denominations are the sole exception. Do not reproduce reference boards or grids. No photorealism or realistic anatomy. SUBJECT: an extravagant coin-upgrade evolution showcase. A HUGE jeweled ornate purple 600 coin (row 4 column 5 of image 2) is the main hero floating upper-right/center, with its 600 denomination perfectly legible, brilliant violet faceted rim, cyan inset jewels, thick cartoon silhouette. Around it a spiraling diagonal evolution path shows many gold 100, silver 10 and bronze 1 coins in increasingly ornate tiers, clearly matching image 2. 25-35 coins total in depth, including small piles at the bottom of the illustration and oversized coins passing the edges. In the lower-left a tiny white helper marvels at the evolved coin, subordinate to the enormous main coin. Gold-to-purple radiant beams, concentric evolution shockwave rings, star-shaped sparkles and a golden whirlwind imply upgrading and accelerating wealth. Simple warm burgundy/gold royal hall silhouettes behind a purple gold explosion. Avoid turning this into a grid or a shop; no arrows or text labels. The main evolved coin must dominate like a trophy, with 3 secondary large gold coins; detailed yet clean, powerful upward progression. Bottom 20% empty quiet dark purple.",
+      "source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-03e789ff-a84c-4ac6-b08a-5c8fe547baa4.png"
+    },
+    {
+      "id": "worlds-impact-v2",
+      "refs": [
+        "C:/Users/aaa/.codex/generated_images/01a157e5-fb8b-7423-acd7-bb0a9c8a1882/exec-4798113f-871a-4cf4-8491-2bf098dbcca4.png",
+        "E:/rea-games/unity-bufu/Marketing/GooglePlay/2026-10-21/References/native-worlds.png",
+        "E:/rea-games/unity-bufu/Marketing/GooglePlay/2026-10-21/References/native-coin-evolution.png"
+      ],
+      "prompt": "Use case: ads-marketing. Create ONE premium mobile-game promotional illustration, portrait 9:16, 1080x1920. Assembled marketing artwork, no UI or phone. Image 1 is the approved companion poster: match its clean thick black/brown outlines, joyful cel-shaded chibi mobile-game art, brilliant gold and purple highlights, heroic depth, comic impact, confident large silhouettes and high commercial polish. Other images are actual native game assets: preserve their recognizable identities and exact coin denominations. Top 78% contains the illustration. Bottom 20% quiet dark purple negative space, later title overlay. No text, letters, slogans, logos, watermarks, buttons, cards or interface; coin denominations are the sole exception. Do not reproduce reference boards or grids. No photorealism or realistic anatomy. SUBJECT: TWO exciting distinct floating worlds from the game. Image 2 shows their native designs. Upper half: coin world, a red carpet wooden platform with a huge glimmering heap of bronze1 silver10 gold100 and purple600 coins, a rolled map, wooden barrel. Lower middle: dice world, lush circular stone island ringed by bright green bushes, dominant large ivory six-pip dice and smaller gold/silver/purple dice. Recompose both islands into a dynamic diagonal depth scene, coin world upper-left and dice world lower-right, big and legible, clearly two worlds only. A broad glowing gold/purple swoosh arcs BETWEEN both worlds over saturated teal water/cloud sky, creating an energetic connection; sparkling coins and dice tumble along the arc. Make gold coin treasure and giant dice the powerful focal objects. Thick native dark outlines, rounded corners, charming 2D cel shading, sun rays, bright rim light. No realistic landscape, no tiny third islands, no map UI, no location labels, no invented buildings, no words. Keep both world silhouettes fully visible within the top78%. Bottom20% empty quiet dark purple.",
+      "source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-77c768f0-1d83-4345-9885-a85932b3d29c.png"
+    },
+    {
+      "id": "flip-impact-landscape-v2",
+      "refs": [
+        "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-814f8cb1-eb55-4ca6-85ca-492462149790.png"
+      ],
+      "prompt": "Use case: ads-marketing. Recompose the attached approved portrait promotional scene as ONE brand-new WIDE landscape companion illustration, 16:9 1920x1080. Preserve the exact same recognizable native game character designs, coin colors, correct coin denominations 1/10/100/600, all main subjects and art style, thick outlines, cel shading, powerful gold/purple light and exciting motion. Rearrange positions naturally across the broad frame so every main face and primary object is visible. This is a designed landscape composition, do not crop or stretch the portrait and do not put a portrait rectangle inside it. Keep the illustration very large and punchy, distributed across the upper 78% with clear primary and secondary focal objects. Top and side 5% safe margins for faces/essential objects. Bottom 22% quiet deep purple with soft clouds, no subjects there; a headline footer will be added later. No text or numbers except the existing coin denominations, no logo, no UI, no phone mockup, no card borders, no watermark. A dynamic fountain of many coins, the smiling green top-hat tycoon toward middle-right, advanced gold helper and star wizard supporting, big gold100 and purple600 coins. Leave a few small clear spaces for floating income glyphs later.",
+      "source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-b32752ce-4841-49b7-be7e-8100dbd2003c.png"
+    },
+    {
+      "id": "coins-impact-landscape-v2",
+      "refs": [
+        "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-03e789ff-a84c-4ac6-b08a-5c8fe547baa4.png"
+      ],
+      "prompt": "Create a wide 16:9 landscape edition of this promotional illustration for our mobile game TycoonRush. Keep the same characters, objects, colors, coin denominations and cheerful thick outlined cartoon style. Recompose rather than stretch: arrange the illustration horizontally across the top 78 percent, with the main subjects large, clearly separated and fully visible. Keep the bottom 22 percent quiet dark purple for a title overlay. Preserve the visual identities from the provided image. High quality 1920x1080 artwork. No added text, logo, UI or watermark.",
+      "source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-27425fb7-34c0-4e37-be6e-8e17d113c190.png"
+    },
+    {
+      "id": "worlds-impact-landscape-v2",
+      "refs": [
+        "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-77c768f0-1d83-4345-9885-a85932b3d29c.png"
+      ],
+      "prompt": "Create a wide 16:9 landscape edition of this promotional illustration for our mobile game TycoonRush. Keep the same characters, objects, colors, coin denominations and cheerful thick outlined cartoon style. Recompose rather than stretch: arrange the illustration horizontally across the top 78 percent, with the main subjects large, clearly separated and fully visible. Keep the bottom 22 percent quiet dark purple for a title overlay. Preserve the visual identities from the provided image. High quality 1920x1080 artwork. No added text, logo, UI or watermark.",
+      "source": "C:\\Users\\aaa\\.codex\\generated_images\\01a157e5-fb8b-7423-acd7-bb0a9c8a1882\\exec-5d71b6d5-aab0-44ee-8f14-8aa58dfeb89d.png"
+    }
+  ]
+}
